@@ -489,3 +489,17 @@ pwa and web apk on playstore:
 
 ***
 
+[Official git rebase](https://git-scm.com/docs/git-rebase)
+
+***
+
+Go to a particular commit - 
+
+```bash
+git reset --hard <commit-hash>
+```
+
+get the hashes via git log.
+
+***
+
