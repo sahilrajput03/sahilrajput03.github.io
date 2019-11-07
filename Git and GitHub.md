@@ -374,3 +374,43 @@ user@host:~/gittest$ git branch
 
 ***
 
+This should be understood in the context of **[GitHub forks](https://help.github.com/articles/fork-a-repo/)** (where you fork a GitHub repo on GitHub before cloning that fork locally).
+
+- `upstream` generally refers to the original repo that you have forked
+  (see also "[Definition of “`downstream`” and “`upstream`”](https://stackoverflow.com/a/2749166/6309)" for more on `upstream` term)
+- `origin` is your fork: your own repo on GitHub, clone of the original repo of GitHub
+
+From the GitHub page:
+
+> When a repo is cloned, it has a default remote called `origin` that points to your fork on GitHub, not the original repo it was forked from.
+> To keep track of the original repo, you need to add another remote named `upstream`
+
+```
+git remote add upstream git://github.com/<aUser>/<aRepo.git>
+```
+
+(with `aUser/aRepo` the reference for the original creator and repository, that you have forked)
+
+You will use `upstream` to **fetch from the original repo** (in order to keep your local copy in sync with the project you want to contribute to).
+
+```
+git fetch upstream
+```
+
+(`git fetch` alone would fetch from `origin` by default, which is not what is needed here)
+
+You will use `origin` to **pull and push** since you can contribute to your own repository.
+
+```
+git pull
+git push
+```
+
+(again, without parameters, 'origin' is used by default)
+
+You will contribute back to the `upstream` repo by making a **[pull request](https://help.github.com/articles/about-pull-requests/)**.
+
+![fork and upstream](https://i.stack.imgur.com/cEJjT.png)
+
+***
+
