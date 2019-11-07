@@ -1,0 +1,706 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Javascript-ComeOn</title></head>
+<body><p><a href='https://github.com/sahilrajput03/sahilrajput03.github.io/edit/master/index2.md'>Edit</a></p>
+<h2>About Classes and Fun</h2>
+<p><a href='https://www.digitalocean.com/community/tutorials/understanding-classes-in-javascript'>Understanding Classes in JavaScript</a></p>
+<p><a href='https://www.w3schools.com/js/js_classes.asp'>JavaScript Classes - ECMAScript 2015 @ w3schools.com</a></p>
+<p><a href='https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction'>Introduction to the DOM @MDN</a>	</p>
+<p><a href='https://eslint.org/docs/rules/no-undef#disallow-undeclared-variables-no-undef'>Undeclared Variables Notify - Using ESLint</a>	</p>
+<p><a href='https://code.visualstudio.com/docs/editor/debugging'>Debuggin in js @ MDN</a></p>
+<hr />
+<h4>Example - Object, Array Object</h4>
+<pre><code class='language-javascript' lang='javascript'>const saf = () =&gt; [10,20,30]
+const [p,q,r] = saf()
+</code></pre>
+<hr />
+<p><a href='https://stackoverflow.com/questions/15886272/what-is-the-difference-between-a-function-call-and-function-reference'>Read here - Function call and Function Reference@StackOverflow</a> 
+•Do you need the function to run now?</p>
+<p>Than add the () to execute it</p>
+<p>•Do you need to function to be referenced so it is called later?</p>
+<p>Do not add the ().</p>
+<p>•Do you want to pass the values and wants it to be executed later. Pass the values and get it referenced via the function.</p>
+<p>like, either () =&gt; <strong>(</strong>	mamosa(23)	<strong>)</strong> or () =&gt; <strong>{</strong>	mamosa(23)	<strong>}</strong></p>
+<p>••&gt; Also, here <code>setTimeout()</code> function expects 1st parameter as function reference and second parameter as time in milliseconds. i.e., <code>setTimeout(function-reference, time-in-milliseconds)</code>. 
+The function passed as the first parameter to the <em>setTimeout</em> function is invoked one second after calling the <em>setTimeout</em> function. So what we refer to function reference is -</p>
+<pre><code class='language-javascript' lang='javascript'>setTimeout(
+    function rafell(){setCounter(counter + 1)}
+    ,
+    1000
+  )
+</code></pre>
+<p>or</p>
+<pre><code class='language-javascript' lang='javascript'>setTimeout(
+    function (){setCounter(counter + 1)}
+    ,
+    1000
+  )
+</code></pre>
+<p>or</p>
+<pre><code class='language-javascript' lang='javascript'>setTimeout(
+	() =&gt; {setCounter(counter + 1)}
+    ,
+    1000
+  )
+</code></pre>
+<p>or</p>
+<pre><code class='language-javascript' lang='javascript'>setTimeout(
+    () =&gt; (setCounter(counter + 1))
+    ,
+    1000
+  )
+</code></pre>
+<p>So, these were all the possible cases for the function reference.</p>
+<hr />
+<p>Important Link for -  <a href='https://stackoverflow.com/questions/6605640/javascript-by-reference-vs-by-value'>call by value or reference - examples@StackOverflow</a></p>
+<hr />
+<pre><code class='language-javascript' lang='javascript'>const App = (props) =&gt; {
+  const [ counter, setCounter ] = useState(0)
+
+  const handleClick = () =&gt; {
+    console.log(&#39;clicked&#39;)
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;div&gt;{counter}&lt;/div&gt;
+      &lt;button onClick=handleClick&gt; // onClick needs a &quot;reference to function&quot;(or function reference), not a &quot;call to function&quot;(or function call);;ALSO a fuction call would be like &quot;handleClick()&quot;
+        plus
+      &lt;/button&gt;
+    &lt;/div&gt;
+  )
+
+</code></pre>
+<p>and with the change to call by reference.</p>
+<pre><code class='language-javascript' lang='javascript'>const App = (props) =&gt; {
+  const [ counter, setCounter ] = useState(0)
+
+  const handleClick = () =&gt; {
+    console.log(&#39;clicked&#39;)
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;div&gt;{counter}&lt;/div&gt;
+      &lt;button onClick={() =&gt; handleClick()}&gt; // THIS LINE even now works perfectly.
+        plus
+      &lt;/button&gt;
+    &lt;/div&gt;
+  )
+
+</code></pre>
+<p>Below example breaks.</p>
+<pre><code class='language-javascript' lang='javascript'>const App = (props) =&gt; {
+  const [ counter, setCounter ] = useState(0)
+
+  const handleClick = () =&gt; {
+    console.log(&#39;clicked&#39;)
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;div&gt;{counter}&lt;/div&gt;
+      &lt;button onClick={() =&gt; handleClick}&gt; // THIS LINE now a fuction body which contains a &quot;function reference&quot; and thus, the onClick will not execute the handleClick() function.
+        plus
+      &lt;/button&gt;
+    &lt;/div&gt;
+  )
+
+</code></pre>
+<hr />
+<p>a function call can be a function reference - i.e., <code>const setToValue = (value) =&gt; () =&gt; setCounter(value)</code>
+Here, <code>setToValue(0)</code> or <code>setToValue(1)</code> is a function call in itself but actually a function reference when the evaluation occurs.
+• Double arrow functions can be thought of as functions that have to be called twice in order to get the final result.
+• This way of utilizing functions that return functions is effectively the same thing as <a href='https://web.archive.org/web/20170919010057/http://www.datchley.name/currying-vs-partial-application/'>currying</a> in functional programming. The term currying does not originate from functional programming, rather the term is deeply rooted in <a href='https://en.wikipedia.org/wiki/Currying'>mathematics</a>.
+Double Arrow (My Lang): Function call to a function returning another function which returns a function call. ;)</p>
+<hr />
+<p><a href='https://wesbos.com/'>https://wesbos.com</a> - Good LINK - tutor - JS react teacher</p>
+<hr />
+<p>Setting Language mode to &quot;JavaScript React&quot;.I would feel the below is the easiest way of formatting the code</p>
+<ol start='' >
+<li>Click on the bottom right on VS Code Editor where it says Javascript.</li>
+<li>You will see an option to Select the language Mode, here you can search for JavaScriptReact and select. That&#39;s it. This should solve your problem.</li>
+
+</ol>
+<hr />
+<h4>Comments in JSX - </h4>
+<p><code>{/* A JSX comment */}</code> </p>
+<p><strong>OR</strong> </p>
+<pre><code class='language-react' lang='react'>{/* 
+  Multi
+  line
+  comment
+*/}
+</code></pre>
+<hr />
+<p>NO nee - extra worries -  [46 k, downloads]React Syntax Highlighter - extension <a href='https://marketplace.visualstudio.com/items?itemName=blanu.vscode-styled-jsx'>extension link</a></p>
+<hr />
+<pre><code class='language-javascript' lang='javascript'>let sd = [6,7,24,6,7,7,4,3,00]
+sd.join(&quot;..&quot;) // OUTPUT: &quot;6..7..24..6..7..7..4..3..0&quot;
+sd.join(&#39;yono&#39;) // OUTPUT: &quot;6yono7yono24yono6yono7yono7yono4yono3yono0&quot;
+sd.join(&#39; &#39;) // OUTPUT: &quot;6 7 24 6 7 7 4 3 0&quot;
+yui = sd.join(&#39; &#39;)
+typeof yui //OUTPUT: &quot;string&quot;
+
+sd.concat(999,999) // OUTPUT: (11) [6, 7, 24, 6, 7, 7, 4, 3, 0, 999, 999]
+iuo = sd.concat(888,888)
+typeof iuo // OUTPUT: &quot;object&quot;
+</code></pre>
+<hr />
+<pre><code class='language-javascript' lang='javascript'>&lt;p id=&quot;demo&quot;&gt;JavaScript can change HTML content.&lt;/p&gt;
+		//		^^ this refers to the &gt;&gt; innerHTML property of the p tag(or any other tag).
+&lt;button type=&quot;button&quot; onclick=&#39;document.getElementById(&quot;demo&quot;).innerHTML = &quot;Hello JavaScript!&quot;&#39;&gt;Click Me!&lt;/button&gt;
+</code></pre>
+<hr />
+<p><a href='https://github.com/Microsoft/vscode-chrome-debug'>vscode - chrome debug - debug</a></p>
+<p><a href='https://da-14.com'>da-14.com</a> - Trusted JavaScript Adepts - (Has Regular Blog)</p>
+<p>React 16: A look inside an API-compatible rewrite of our frontend UI library - <a href='https://engineering.fb.com/web/react-16-a-look-inside-an-api-compatible-rewrite-of-our-frontend-ui-library/'>post@engineering.fb.com</a>		 </p>
+<hr />
+<p><a href='https://www.w3schools.com/js/js_examples.asp'>JavaScript Examples</a>	<a href='https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_variables1'>Exercise</a>	<a href='https://www.w3schools.com/js/js_type_conversion.asp'>JavaScript Type Conversion</a>	<a href='https://www.w3schools.com/jsref/default.asp'>JavaScript and HTML DOM Reference</a>	</p>
+<p><a href='https://www.w3schools.com/js/default.asp'>JavaScript Tutorial</a></p>
+<p><a href='https://www.w3schools.com/jsref/jsref_prototype_array.asp'>JavaScript Array prototype Constructor</a> - Important Link to create external methods for <code>Array.prototype.Ucase</code> like methods , like this one was for changing every array element to uppercase.</p>
+<p><a href='https://code.visualstudio.com/docs/editor/userdefinedsnippets#_creating-your-own-snippets'>Creating Snippets in Visual Studio Code</a>	</p>
+<p>Distractions - <a href='https://www.w3schools.com/js/js_array_iteration.asp'>JavaScript Array Iteration Methods</a>	,	<a href='https://www.w3schools.com/js/js_object_accessors.asp'>JavaScript Object Accessors</a>	,	<a href='https://www.w3schools.com/js/js_object_definition.asp'>JavaScript Objects</a>	,</p>
+<p><a href='https://www.w3schools.com/graphics/google_maps_intro.asp'>Google Maps Tutorial</a> 	</p>
+<hr />
+<p><a href='https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm'>npm and npx</a>	</p>
+<hr />
+<p>Bored - LOok here - </p>
+<p><a href='https://github.com/tc39/proposal-object-rest-spread'>tc39/proposal-object-rest-spread</a>	<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment'>Destructuring assignment</a>	<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax'>Spread syntax</a>	</p>
+<p>W3schools.com - <a href='https://www.w3schools.com/js/js_function_apply.asp'>JavaScript Function Apply</a>, <a href='https://www.w3schools.com/js/js_function_call.asp'>JavaScript Function Call</a>,	<a href='https://www.w3schools.com/js/js_function_call.asp'>JavaScript Use Strict</a>,	</p>
+<hr />
+<hr />
+<h6>Objects Some Concepts : source: <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign'>Link</a> </h6>
+<h4>Object.assign()</h4>
+<h5>Cloning Object:(Shallow Copy)</h5>
+<pre><code class='language-javascript' lang='javascript'>var obj = { a: 1 };
+var copy = Object.assign({}, obj);
+
+console.log(copy); // { a: 1 }
+</code></pre>
+<hr />
+<h5>Deep Cloning an Object:(Deep Copy)</h5>
+<pre><code class='language-javascript' lang='javascript'>var obj1 = { a: 0 , b: { c: 0}};
+let obj3 = JSON.parse(JSON.stringify(obj1));
+
+console.log(JSON.stringify(obj3)); // { a: 0, b: { c: 0}}
+</code></pre>
+<hr />
+<h5>Shallow Copy VS. Deep Copy</h5>
+<pre><code class='language-javascript' lang='javascript'>function test() {
+  &#39;use strict&#39;;
+
+  let obj1 = { a: 0 , b: { c: 0}};
+  let obj2 = Object.assign({}, obj1);
+  console.log(JSON.stringify(obj2)); // { a: 0, b: { c: 0}}
+  
+  obj1.a = 1;
+  console.log(JSON.stringify(obj1)); // { a: 1, b: { c: 0}}
+  console.log(JSON.stringify(obj2)); // { a: 0, b: { c: 0}}
+  
+  obj2.a = 2;
+  console.log(JSON.stringify(obj1)); // { a: 1, b: { c: 0}}
+  console.log(JSON.stringify(obj2)); // { a: 2, b: { c: 0}}
+  
+  obj2.b.c = 3;
+  console.log(JSON.stringify(obj1)); // { a: 1, b: { c: 3}}
+  console.log(JSON.stringify(obj2)); // { a: 2, b: { c: 3}}
+  
+  // Deep Clone
+  obj1 = { a: 0 , b: { c: 0}};
+  let obj3 = JSON.parse(JSON.stringify(obj1));
+  obj1.a = 4;
+  obj1.b.c = 4;
+  console.log(JSON.stringify(obj3)); // { a: 0, b: { c: 0}}
+}
+
+test();
+</code></pre>
+<hr />
+<h5>Merging object:</h5>
+<pre><code class='language-javascript' lang='javascript'>var o1 = { a: 1 };
+var o2 = { b: 2 };
+var o3 = { c: 3 };
+
+var obj = Object.assign(o1, o2, o3);
+console.log(obj); // { a: 1, b: 2, c: 3 }
+console.log(o1);  // { a: 1, b: 2, c: 3 }, object &quot;o1&quot; itself is changed.
+</code></pre>
+<hr />
+<h5>Merging objects with same properties:</h5>
+<pre><code class='language-javascript' lang='javascript'>var o1 = { a: 1, b: 1, c: 1 };
+var o2 = { b: 2, c: 2 };
+var o3 = { c: 3 };
+
+var obj = Object.assign({}, o1, o2, o3);
+console.log(obj); // { a: 1, b: 2, c: 3 }
+//o1,o2,o3 remains the same even though.
+</code></pre>
+<p>The properties are overwritten by other objects that have the same properties later in the parameters order.</p>
+<hr />
+<p><a href='https://github.com/tc39/proposal-object-rest-spread' target='_blank' class='url'>https://github.com/tc39/proposal-object-rest-spread</a></p>
+<h4>Object Rest/Spread Properties for <code>ECMAScript</code></h4>
+<p>ECMAScript 6 introduces <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment'>rest elements</a> for array destructuring assignment and <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator'>spread elements</a> for array literals.</p>
+<p>This proposal introduces analogous <a href='https://github.com/tc39/proposal-object-rest-spread/blob/master/Rest.md'>rest properties</a> for object destructuring assignment and <a href='https://github.com/tc39/proposal-object-rest-spread/blob/master/Spread.md'>spread properties</a> for object literals.
+<strong>source</strong>: 
+	&quot;Here the <a href='https://github.com/tc39/proposal-object-rest-spread'>object spread</a> syntax is being used, which hasn&#39;t yet been standardized as a part of JavaScript&#39;s language specification.&quot; - <em>Full Stack Course</em></p>
+<hr />
+<h5>Converting string to number with unary operator:</h5>
+<pre><code class='language-javascript' lang='javascript'>&gt;	y = &quot;5&quot;
+&lt;•	&quot;5&quot;
+&gt;	x = +y
+&lt;•	5
+</code></pre>
+<p>If the variable cannot be converted, it will still become a number, but with the value NaN</p>
+<pre><code class='language-javascript' lang='javascript'>var y = &quot;John&quot;
+var x = +y // x is a number NaN
+</code></pre>
+<p>PS:</p>
+<pre><code class='language-javascript' lang='javascript'>&gt;	y = &quot;5&quot;
+&gt;	q = 0+y
+&lt;•&quot;05&quot;
+//Also
+&gt;	Number(&quot;a&quot;)
+&lt;•	NaN
+//Also
+&gt;	Number(&quot;10&quot;)
+&lt;•	10
+//Also
+&gt;	Number(&quot;10s&quot;)
+&lt;•	NaN
+//Also
+&gt;	Number(&quot;true&quot;)
+&lt;•	NaN
+//Also
+&gt;	Number(true)
+&lt;•	1
+//Also
+&gt;	Number(false)
+&lt;•	0
+</code></pre>
+<hr />
+<h4>Use of JSON.stringify() and JSON.parse()</h4>
+<pre><code class='language-javascript' lang='javascript'>&gt;	w = {ram:20,shayam:40}
+&lt;•	►{ram: 20, shayam: 40}
+&gt;	console.log(w+1)
+&lt;•	[object Object]1
+</code></pre>
+<hr />
+<h5>Arguments object for older Function -</h5>
+<pre><code class='language-javascript' lang='javascript'>&gt;	function yah(){ return(arguments.length)}
+&gt;	yah(2,3,4)
+&lt;•	3
+
+// with arrow function, throws error arguments is not defined.
+&gt;	let yahu = () =&gt;{ return(arguments.length)}
+&lt;•	undefined
+&gt;	yahu(2,3,5)
+&lt;•	VM3640:1 Uncaught ReferenceError: arguments is not defined
+    at yahu (&lt;anonymous&gt;:1:20)
+    at &lt;anonymous&gt;:1:1
+</code></pre>
+<hr />
+<p>Also read here: - <a href='https://stackoverflow.com/questions/2856059/passing-an-array-as-a-function-parameter-in-javascript'>Passing an array as a function parameter in JavaScript</a>	</p>
+<p>Answer: </p>
+<pre><code class='language-javascript' lang='javascript'>const args = [&#39;p0&#39;, &#39;p1&#39;, &#39;p2&#39;];
+call_me.apply(this, args);
+</code></pre>
+<p>or <strong>If the environment supports ECMAScript 6</strong>, you can use a <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator#A_better_apply'>spread argument</a> instead:</p>
+<pre><code class='language-javascript' lang='javascript'>call_me(...args);
+</code></pre>
+<hr />
+<pre><code class='language-javascript' lang='javascript'>&gt;	yahi = () =&gt; {return (arguments.length)}
+&lt;•	() =&gt; {return (arguments.length)}
+// if function is created with keyword &quot;function&quot;, then it would be
+&gt;	function yah(){ return(arguments.length)}
+&lt;•	ƒ yah(){ return(arguments.length)}
+</code></pre>
+<hr />
+<pre><code class='language-javascript' lang='javascript'>&gt;	JSON.stringify(function radhe(){return 0}()	)
+&lt;•	&quot;0&quot;
+&gt; 	JSON.stringify(function radhe(){return 0}	)
+&lt;•	undefined // for all type of functions.
+</code></pre>
+<hr />
+<p>stackoverflow what is REQUEST PAYLOAD: <a href='https://stackoverflow.com/questions/23118249/whats-the-difference-between-request-payload-vs-form-data-as-seen-in-chrome' target='_blank' class='url'>https://stackoverflow.com/questions/23118249/whats-the-difference-between-request-payload-vs-form-data-as-seen-in-chrome</a></p>
+<hr />
+<h5>Add style to react using style attribute with dual curly braces.</h5>
+<pre><code class='language-react' lang='react'>&lt;tr&gt;
+      &lt;td style={{width: &quot;90px&quot;}}&gt;{props.text}&lt;/td&gt;
+      &lt;td style={{width: &quot;90px&quot;}}&gt;{props.value}&lt;/td&gt;
+    &lt;/tr&gt;
+</code></pre>
+<hr />
+<p>Fix decimals in javascript : <a href='https://www.w3schools.com/jsref/jsref_tofixed.asp'>w3schools.com - Number.tofixed</a></p>
+<hr />
+<p>Finding maximum value from the array:</p>
+<pre><code class='language-javascript' lang='javascript'>console.log(Math.max(1, 3, 2));
+// expected output: 3
+
+console.log(Math.max(-1, -3, -2));
+// expected output: -1
+
+var array1 = [1, 3, 2];
+
+console.log(Math.max(...array1));
+// expected output: 3
+
+</code></pre>
+<hr />
+<p>Array.from() - <a href='https://www.w3schools.com/jsref/jsref_from.asp'>w3schools - one of ECMA 6 Rules</a></p>
+<hr />
+<h3>Shallow Copy Only</h3>
+<p>Please note <code>spread</code> only goes one level deep when copying an array. So if you&#39;re trying to copy a multi-dimensional arrays, you will have to use other alternatives.</p>
+<p>source: <a href='https://www.samanthaming.com/tidbits/35-es6-way-to-clone-an-array'>ES6 Way to Clone an Array 🐑</a> look for more Star things.</p>
+<hr />
+<h3>Mutable vs Immutable Data Types</h3>
+<p>Mutable:</p>
+<ul>
+<li>object</li>
+<li>array</li>
+<li>function</li>
+
+</ul>
+<p>Immutable:</p>
+<p>All primitives are immutable.</p>
+<ul>
+<li>string</li>
+<li>number</li>
+<li>boolean</li>
+<li>null</li>
+<li>undefined</li>
+<li>symbol</li>
+
+</ul>
+<h3>Why Can’t I Use <code>=</code> to Copy an Array?</h3>
+<p>Because arrays in JS are reference values, so when you try to copy it using the <code>=</code> it will only copy the reference to the original array and not the value of the array. To create a real copy of an array, you need to copy over the value of the array under a new value variable. That way this new array does not reference to the old array address in memory.</p>
+<pre><code class='language-javascript' lang='javascript'>const sheeps = [&#39;🐑&#39;, &#39;🐑&#39;, &#39;🐑&#39;];
+
+const fakeSheeps = sheeps;
+const cloneSheeps = [...sheeps];
+
+console.log(sheeps === fakeSheeps);
+// true --&gt; it&#39;s pointing to the same memory space
+
+console.log(sheeps === cloneSheeps);
+// false --&gt; it&#39;s pointing to a new memory space
+</code></pre>
+<h3>Problem with Reference Values</h3>
+<p>If you ever dealt with Redux or any state management framework. You will know immutability is super important. Let me briefly explain. An immutable object is an object where the state can&#39;t be modified after it is created. The problem with JavaScript is that <code>arrays</code> are mutable. So this can happen:</p>
+<pre><code class='language-javascript' lang='javascript'>const sheeps = [&#39;🐑&#39;, &#39;🐑&#39;];
+
+const sheeps2 = sheeps;
+
+sheeps2.push(&#39;🐺&#39;);
+
+console.log(sheeps2);
+// [ &#39;🐑&#39;, &#39;🐑&#39;, &#39;🐺&#39; ]
+
+// Ahhh 😱 , our original sheeps have changed?!
+console.log(sheeps);
+// [ &#39;🐑&#39;, &#39;🐑&#39;, &#39;🐺&#39; ]
+</code></pre>
+<p>That&#39;s why we need to clone an array:</p>
+<pre><code class='language-javascript' lang='javascript'>const sheeps = [&#39;🐑&#39;, &#39;🐑&#39;];
+
+const sheeps2 = [...sheeps];
+
+// Let&#39;s change our sheeps2 array
+sheeps2.push(&#39;🐺&#39;);
+
+console.log(sheeps2);
+// [ &#39;🐑&#39;, &#39;🐑&#39;, &#39;🐺&#39; ]
+
+// ✅ Yay, our original sheeps is not affected!
+console.log(sheeps);
+// [ &#39;🐑&#39;, &#39;🐑&#39; ]
+</code></pre>
+<hr />
+<h3>Shallow Copy Only</h3>
+<p>Please note <code>spread</code> only goes one level deep when copying an array. So if you&#39;re trying to copy a multi-dimensional arrays, you will have to use other alternatives.</p>
+<pre><code class='language-javascript' lang='javascript'>const nums = [
+  [1, 2], 
+  [10],
+];
+
+const cloneNums = [...nums];
+
+// Let&#39;s change the first item in the first nested item in our cloned array.
+cloneNums[0][0] = &#39;👻&#39;;
+
+console.log(cloneNums);
+// [ [ &#39;👻&#39;, 2 ], [ 10 ], [ 300 ] ]
+ 
+// NOOooo, the original is also affected
+console.log(nums);
+// [ [ &#39;👻&#39;, 2 ], [ 10 ], [ 300 ] ]
+</code></pre>
+<p>🤓 Here&#39;s an interesting thing I learned. Shallow copy means the first level is copied, deeper levels are <strong>referenced</strong>.</p>
+<h2>Community Input</h2>
+<h3><code>Array.from</code> is Another Way to Clone Array</h3>
+<pre><code class='language-javascript' lang='javascript'>const sheeps = [&#39;🐑&#39;, &#39;🐑&#39;, &#39;🐑&#39;];
+
+const cloneSheeps = Array.from(sheeps);
+</code></pre>
+<p><em>Thanks: <a href='https://twitter.com/hakankaraduman_/status/1046145318251843584'>@hakankaraduman</a></em></p>
+<ul>
+<li><p><em><a href='https://twitter.com/hakankaraduman_/status/1046148497047719936'>@hakankaraduman</a>:</em> yes, I try not to use spread, it confuses me when reading the code because it does two things, spreading or gathering according to context</p>
+</li>
+<li><p><em><a href='https://www.linkedin.com/in/~cj-johnson'>CJ J</a>:</em> I think the best way is the one that most closely matches the semantics of the operation. I prefer to use <code>Array.from</code></p>
+<p>source - same old one - <a href='http://www.samanthaming.com/' target='_blank' class='url'>www.samanthaming.com/</a></p>
+<p>this resource -  <a href='https://www.samanthaming.com/tidbits/35-es6-way-to-clone-an-array' target='_blank' class='url'>https://www.samanthaming.com/tidbits/35-es6-way-to-clone-an-array</a> </p>
+<hr />
+<p>antecdotes -  <a href='https://www.comp.nus.edu.sg/~damithch/pages/SE-quotes.htm' target='_blank' class='url'>https://www.comp.nus.edu.sg/~damithch/pages/SE-quotes.htm</a> </p>
+<hr />
+<p><a href='https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318'>Index as a key is an anti-pattern@Medium MUST READ</a></p>
+<p><a href='https://reactjs.org/docs/lists-and-keys.html#keys'> https://reactjs.org/docs/lists-and-keys.html#keys </a></p>
+<hr />
+<p><a href='https://www.w3schools.com/js/js_object_prototypes.asp'>JavaScript Object Prototypes</a></p>
+<hr />
+<p>Js Refactor for easy conversion of arrow function to braces and vice versa</p>
+<p><a href='https://marketplace.visualstudio.com/items?itemName=cmstead.jsrefactor'>link to marketplace in vscode</a></p>
+<hr />
+<p> <a href='https://stackoverflow.com/questions/24427621/innertext-vs-innerhtml-vs-label-vs-text-vs-textcontent-vs-outertext/24428100' target='_blank' class='url'>https://stackoverflow.com/questions/24427621/innertext-vs-innerhtml-vs-label-vs-text-vs-textcontent-vs-outertext/24428100</a> </p>
+<hr />
+<p><a href='https://www.w3schools.com/howto/howto_js_filter_lists.asp'>How TO - Filter/Search List with JS in w3schools.com - inspiration for making search engine</a></p>
+<hr />
+<p>Providing ids to react JSX format - <a href='https://stackoverflow.com/questions/38486660/how-to-add-a-classname-id-to-react-bootstrap-component' target='_blank' class='url'>https://stackoverflow.com/questions/38486660/how-to-add-a-classname-id-to-react-bootstrap-component</a></p>
+<p><em>prettymuchsimilar</em></p>
+<hr />
+<p>JS string slice - <a href='https://www.w3schools.com/jsref/jsref_slice_string.asp' target='_blank' class='url'>https://www.w3schools.com/jsref/jsref_slice_string.asp</a></p>
+<hr />
+<p>Removing array elements in js - roughly need</p>
+<p> <a href='https://stackoverflow.com/questions/9289/removing-elements-with-array-map-in-javascript' target='_blank' class='url'>https://stackoverflow.com/questions/9289/removing-elements-with-array-map-in-javascript</a> </p>
+<hr />
+<p>//code for fetching persons form the data.json using axios, useState, and json-server// start any script with &gt;&gt; npm run &quot;script-as-defined-in-package.json--file&quot; &quot;&quot;</p>
+<p>  // you may run react server via - npm run start OR npm start ; you may run json-server via npm run server (only if you have defined its loading config in scripts in package.json file properly.)</p>
+<hr />
+<p>Using the effect hook - <a href='https://reactjs.org/docs/hooks-effect.html' target='_blank' class='url'>https://reactjs.org/docs/hooks-effect.html</a></p>
+<p>There are two hooks - state hooks and effect hooks in react.</p>
+<hr />
+<h3>effects in React:(useEffect)</h3>
+<blockquote><p>import React, {useEffect} from &#39;react&#39;</p>
+<p>or</p>
+<p>import React, { useState, useEffect } from &#39;react&#39;</p>
+</blockquote>
+<p> Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects. Whether or not you’re used to calling these operations “side effects” (or just “effects”), you’ve likely performed them in your components before. </p>
+<p>source: <a href='https://reactjs.org/docs/hooks-effect.html' target='_blank' class='url'>https://reactjs.org/docs/hooks-effect.html</a></p>
+</li>
+
+</ul>
+<hr />
+<p> suffice :  be enough or adequate. </p>
+<hr />
+<pre><code class='language-javascript' lang='javascript'>&lt;input value={search} onChange={handleSearchChange} placeholder=&quot;Search..&quot;&gt;&lt;/input&gt;
+</code></pre>
+<p>&nbsp;</p>
+<hr />
+<p>Styling in react: <a href='https://codeburst.io/4-four-ways-to-style-react-components-ac6f323da822'>Codeburst article</a>, 		<a href='https://codeburst.io/4-four-ways-to-style-react-components-ac6f323da822'>img tag in react</a>			,<a href='https://www.w3schools.com/react/react_css.asp'>styling in react @w3schools.com</a>, </p>
+<p>learn methods - Javascript 	 <a href='https://www.w3schools.com/jsref/jsref_filter.asp' target='_blank' class='url'>https://www.w3schools.com/jsref/jsref_filter.asp</a> </p>
+<hr />
+<p>Jquery searching(although I didn&#39;t used it.) -  <a href='https://www.w3schools.com/jquery/jquery_filters.asp' target='_blank' class='url'>https://www.w3schools.com/jquery/jquery_filters.asp</a> </p>
+<p>Learning Jquery -  <a href='https://www.w3schools.com/jquery/' target='_blank' class='url'>https://www.w3schools.com/jquery/</a> </p>
+<hr />
+<p>Read about promises in JS - <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then'>@MDN</a>	<a href='https://javascript.info/promise-chaining'>@suggested by fullstack course</a>	</p>
+<hr />
+<p>code becomes bloated: </p>
+<p> <a href='https://dictionary.cambridge.org/dictionary/english/swollen'>swollen</a> <strong>and</strong> <a href='https://dictionary.cambridge.org/dictionary/english/rounded'>rounded</a> <strong>because of</strong> <a href='https://dictionary.cambridge.org/dictionary/english/contain'>containing</a> <strong>too much</strong> <a href='https://dictionary.cambridge.org/dictionary/english/air'>air</a><strong>,</strong> <a href='https://dictionary.cambridge.org/dictionary/english/liquid'>liquid</a><strong>, or</strong> <a href='https://dictionary.cambridge.org/dictionary/english/food'>food</a><strong>:</strong> </p>
+<hr />
+<h4>Running json-server locally(meaning to be able to access via 192.168.43.29 via mobile) via npx command in the node package-</h4>
+<p>•To run at local address i.e. 192.168.43.29 on default port 3000 via <strong>npx</strong> for locally instlled on default port
+<code>npx json-server --host 192.168.43.29 db.json</code> </p>
+<p>&nbsp;</p>
+<p>•Common <strong>custom</strong> is to run the json-server on <strong>port: 3001</strong> via below command:
+<code>npx json-server --host 192.168.43.29 --port 3001 db.json</code></p>
+<p>&nbsp;</p>
+<p>•Command on Fullstackopen.com - </p>
+<p><code>json-server -p3001 db.json</code></p>
+<p>src: <a href='https://stackoverflow.com/questions/55547572/json-server-is-not-recognized-as-an-internal-or-external-command'>@StackOverflow</a></p>
+<hr />
+<p>npm vs. npx</p>
+<p>src: <a href='https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm/52018825#52018825'>@StackOverflow</a></p>
+<hr />
+<h4>Serve multiple files via npm -</h4>
+<p>  <a href='https://github.com/typicode'>typicode</a> commented on Apr 25, 2016 - <em>I can see another ways of doing this, but it has cons.</em></p>
+<p><em>Create <code>db.js</code>:</em></p>
+<pre><code class='language-javascript' lang='javascript'>module.exports = function() {
+  return {
+    one: require(&#39;./one.json&#39;),
+    two: require(&#39;./two.json&#39;)
+  }
+}
+</code></pre>
+<p>run the json-server via - </p>
+<p><code>json-server db.js</code></p>
+<p>See all the objects in the two json files at 
+<a href='http://localhost:3000/db' target='_blank' class='url'>http://localhost:3000/db</a> (no matter how many files you join the <strong><em>db.js</em></strong> file or may be <strong><em>SomeTHingName.js</em></strong>
+, the database will always be available @ URL <strong><em>localhost:3000/db</em></strong> -the complete database including multiple files ) Also, the database can also be fetched via the imported varible names i.e., localhost:3000/one or localhost:3000/two individually.</p>
+<p><em>Data won&#39;t be persisted and you can&#39;t watch for changes. But if it&#39;s a test, that&#39;s fine.**
+**Or, as suggested previously, manually copy the content of the JSON files and create a <code>db.json</code> file. Unlike the <code>db.js</code> solution, If you restart your server, changed data won&#39;t be lost.</em></p>
+<p>&nbsp;</p>
+<hr />
+<p>If you are working with routes like above and want to be working with resource like - </p>
+<p>localhost:30001/ persons, then you may server the file as array of object(not the object which contains the resource (property) i.e. persons).
+Earlier, while serving the <code>data.json</code> was containing an object which contained a property naming persons which further contains an <strong><em>array of objects</em></strong>. </p>
+<p>And, now we have defined the <strong><em>array of objects</em></strong> itself in the route file and imported it as variable <em>persons</em> in the <code>TheSingleFileWorkedAsIs.js</code> otherwise - <code>server.js</code> (actually linked  to <code>db.js</code> which contains the <code>persons</code> route) </p>
+<p><strong>src</strong>: <a href='https://stackoverflow.com/questions/36836424/cant-watch-multiple-files-with-json-server'>@StackOverflow(two-files-js)</a>
+<strong>src</strong>: <a href='https://github.com/typicode/json-server/issues/265'>github.com/tpicode</a>	</p>
+<hr />
+<p>Referring comments in json - <a href='https://stackoverflow.com/questions/244777/can-comments-be-used-in-json'>@StackOverflow</a></p>
+<hr />
+<pre><code class='language-jsx' lang='jsx'>export default {getAll,create,update}
+// export default {
+//     getAll: getAll,
+//     create: create,
+//     update: update
+// }
+
+***
+import axios from &#39;axios&#39;
+import Note from &#39;./components/Note&#39;
+import React, { useState, useEffect } from &#39;react&#39;
+import noteService from &#39;./services/notes&#39;
+import React, { useState } from &#39;react&#39;
+
+
+</code></pre>
+<hr />
+<p><a href='https://blog.logrocket.com/how-to-make-http-requests-like-a-pro-with-axios/'>How to make HTTP requests like a pro with Axios</a></p>
+<hr />
+<p>VSCODE MASTERY-</p>
+<p>Ctrl+shift+. =&gt; Navigate Through the code via the OUTLINE(also present in left panel)</p>
+<p>Ctrl+. =&gt; Code Actions</p>
+<p>Ctrl+, =&gt; Settings</p>
+<p>Ctrl+L =&gt; Select the whole current line and then selects the line below it if further pressed.</p>
+<p>Alt+right or Alt+left for adjusting the window to the left or right according to the use in VS code.</p>
+<p>Ctrl+e =&gt; Open the easy files navigator</p>
+<p>Ctrl+shift+L =&gt; selects the selected text everywhere and places cursor there too. AWESEO</p>
+<hr />
+<p>IMPORTING CSS FILE IN REACT - </p>
+<p><code>import &#39;./index.css&#39;</code></p>
+<hr />
+<p>Centering the content of div elements in html (or React) </p>
+<pre><code class='language-html' lang='html'>&lt;div align=&quot;center&quot; style={footerStyle}&gt;
+</code></pre>
+<hr />
+<p><a href='https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes'>Pseudo-classes @ MDN Web Docs</a>	<a href='https://reactjs.org/docs/dom-elements.html#style'>DOM Elements @ React Docs</a>	</p>
+<hr />
+<p><a href='https://github.com/npm/validate-npm-package-name'>npm/validate-npm-package-name</a> - Good list of rules defining the name.</p>
+<hr />
+<p><a href='https://www.freecodecamp.org/news/how-open-source-licenses-work-and-how-to-add-them-to-your-projects-34310c3cf94/'>How open source licenses work and how to add them to your projects</a></p>
+<hr />
+<p>Ctrl+shift+m in chrome &gt;&gt; shows the user in chrome and tripple tab for passwords field&gt;Enter.</p>
+<hr />
+<p>Chrome: <a href='https://stackoverflow.com/questions/56043151/what-is-the-difference-between-transferred-and-resources-in-chrome-devtools'>@StackOverflow - transferred vs. resources</a>	</p>
+<hr />
+<p><a href='https://marketplace.visualstudio.com/items?itemName=humao.rest-client'>Rest Client in VS Code</a>	</p>
+<hr />
+<p>In node use backslash for any characters like &#39;  in strings there for escaping characters.</p>
+<hr />
+<p>Load time vs. Finish time.
+<strong>Finish time</strong>:   Includes the asynchronously loading(non blocking) objects/elements on the page which may continue downloading way after the onload event for page has fired. </p>
+<p><strong>Load time</strong>:   Response time for a website generally speaking means &#39;Load&#39; time because that is more easily user perceivable, at this point user can see browser has finished working and page is ready on their screen. Finish time, although technically also a response time doesn&#39;t have as much end-user implication. </p>
+<p> <em>In some cases it seems the Finish timer never stops and continues increasing so it may not be the best assessment of web page response time.</em> </p>
+<hr />
+<p> <strong>Idempotence</strong> means that applying an operation once or applying it multiple times has the same effect. </p>
+<hr />
+<p> The next step is to add the library <a href='https://www.npmjs.com/package/morgan'>Morgan</a>. Install it by running <code>npm install morgan</code>. We’ll need Morgan to know of the request id we added to the request body in the last step. So in the file <em>app.js</em>. </p>
+<hr />
+<p>Non-existent Files -  <a href='https://superuser.com/questions/1060888/non-existent-files-in-windows-documents-folder' target='_blank' class='url'>https://superuser.com/questions/1060888/non-existent-files-in-windows-documents-folder</a> </p>
+<hr />
+<p>Download a file with Curl: (usually github)</p>
+<pre><code class='language-shell' lang='shell'>curl -LO https://github.com/github/gitignore/raw/master/Node.gitignore
+//here -L option provide the service of redirection.
+//here -O(uppercase) options tells curl to save with name of original file
+//here if there would be lowercase o, then we woud provide the filename additionally with the desired extension.
+
+curl -O  https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore
+
+Below command doesn&#39;t work-
+curl -LO  https://github.com/github/gitignore/blob/master/Node.gitignore
+</code></pre>
+<p>&nbsp;</p>
+<hr />
+<p>•<code>rm -rf x</code></p>
+<p>x - Could be a single file/folder.</p>
+<hr />
+<p>•<code>rm -rf .</code></p>
+<p>. means everything in the current folder except hidden files/folder(i.e files/folders starting with .)</p>
+<hr />
+<p>• <code>rm -rf .*</code></p>
+<p>.* means everything in the current folder.</p>
+<hr />
+<p>Removing a git could be done as ..</p>
+<p>• <code>rm -rf .git</code></p>
+<p>this would simply delete the .git folder in current folder.</p>
+<hr />
+<p>Network Analysis Reference - Chrome</p>
+<p><a href='https://developers.google.com/web/tools/chrome-devtools/network/reference#timing-explanation'>Blogpost @ developers.google.com</a></p>
+<hr />
+<pre><code class='language-javascript' lang='javascript'>var text = &#39;3.14someRandomStuff234&#39;;
+var pointNum = parseFloat(text);
+// returns 3.14 // returns only the digits with decimal till letter character is encountered.
+</code></pre>
+<hr />
+<pre><code class='language-javascript' lang='javascript'>var text = &#39;42px&#39;;
+var integer = parseInt(text, 10);
+// returns 42 // returns without any decimal
+</code></pre>
+<hr />
+<pre><code class='language-javascript' lang='javascript'>&quot;I am number 1 and I love number 13.&quot;.replace(/[^0-9]/g,&#39;&#39;)
+// output =&gt; &quot;113&quot;
+</code></pre>
+<hr />
+<pre><code class='language-javascript' lang='javascript'>&quot;Anything that is some string.&quot;.replace(/[^a-zA-Z0-9]/g,&#39;-&#39;);
+// outpu =&gt; it wud output the string only with the character set defined above i.e., a to z ; A to Z; and 0 to 9. If it found any other character then it would replace it with character &#39;-&#39;.
+</code></pre>
+<p>src : <a href='https://stackoverflow.com/questions/1983767/only-keep-a-z-0-9-and-remove-other-characters-from-string-using-javascript'>Link to StackOverflow question.</a></p>
+<hr />
+<pre><code class='language-javascript' lang='javascript'>By adding our .cleanup() method to the String object itself, you can then cleanup any string in Javascript simply by calling a local method, like this:
+
+# Attaching our method to the String Object
+String.prototype.cleanup = function() {
+   return this.toLowerCase().replace(/[^a-zA-Z0-9]+/g, &quot;-&quot;);
+}
+
+# Using our new .cleanup() method
+var clean = &quot;Hello World&quot;.cleanup(); // &quot;hello-world&quot;
+Because there is a plus sign at the end of the regular expression it matches one or more characters. Thus, the output will always have one &#39;-&#39; for each series of one or more non-alphanumeric characters:
+
+# An example to demonstrate the effect of the plus sign in the regular expression above
+var foo = &quot;  Hello   World    . . .     &quot;.cleanup(); // &quot;-hello-world-&quot;
+Without the plus sign the result would be &quot;--hello-world--------------&quot; for the last example
+</code></pre>
+<hr />
+<p>&nbsp;</p>
+<p><a href='https://www.w3schools.com/jsref/jsref_replace.asp'> w3school - replace()jsref/jsref_replace.asp </a></p>
+<p>&nbsp;</p>
+<hr />
+<h5>JavaScript toJSON() Method: Definition and Usage</h5>
+<p>The toJSON() method converts a Date object into a string, formatted as a JSON date.</p>
+<p>JSON dates have the same format as the ISO-8601 standard: YYYY-MM-DDTHH:mm:ss.sssZ</p>
+<figure><table>
+<thead>
+<tr><th style='text-align:left;' >Return Value:</th><th>A String, representing the date and time formated as a JSON date</th></tr></thead>
+<tbody><tr><td style='text-align:left;' >JavaScript Version:</td><td>ECMAScript 5</td></tr></tbody>
+</table></figure>
+<hr />
+<p>Try and catch error in JS</p>
+<pre><code class='language-javascript' lang='javascript'>Note.findById(request.params.id)
+        .then(note =&gt; {
+            // console.log(&quot;---sf-sf---s-ff-befor .. note.JSON()&quot;);
+            response.json(note.toJSON())
+            throw new Error(&quot;*****Whooooooooooooops!********&quot;);
+        })
+        .catch(err =&gt; console.log(err))
+</code></pre>
+<hr />
+<p><a href='https://marketplace.visualstudio.com/items?itemName=humao.rest-client'>Rest Client - Read here knowledge spreads..</a></p>
+<hr />
+<p>Api -  <a href='https://swapi.co/'>https://swapi.co</a> </p>
+<hr />
+<p>&nbsp;</p>
+</body>
+</html>
