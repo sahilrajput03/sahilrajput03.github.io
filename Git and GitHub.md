@@ -364,3 +364,13 @@ git checkout -t origin/master
 
 ***
 
+`git branch` with no arguments displays the current branch marked with an asterisk in front of it:
+
+```
+user@host:~/gittest$ git branch
+* master
+  someotherbranch
+```
+
+***
+
