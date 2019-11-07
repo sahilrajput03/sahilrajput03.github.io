@@ -1051,3 +1051,27 @@ Api -  [https://swapi.co](https://swapi.co/)
 
 ***
 
+#####  Clean unused dependenices in package.json 
+
+```bash
+npm cache clean
+npm ERR! As of npm@5, the npm cache self-heals from corruption issues and data extracted from the cache is guaranteed to be valid. If you want to make sure everything is consistent, use 'npm cache verify' instead. On the other hand, if you're debugging an issue with the installer, you can use `npm install --cache /tmp/empty-cache` to use a temporary cache instead
+of nuking the actual one.
+npm ERR!
+npm ERR! If you're sure you want to delete the entire cache,
+rerun this command with --force.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\chetan\AppData\Roaming\npm-cache\_logs\2019-11-07T03_08_56_989Z-debug.log
+```
+
+```bash
+//So hereby use if you want to force npm to clean ca
+npm cache clean --force
+npm cache verify
+```
+
+
+
+***
+
