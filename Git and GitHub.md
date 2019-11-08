@@ -493,13 +493,45 @@ pwa and web apk on playstore:
 
 ***
 
-Go to a particular commit - 
+##### Go to a particular commit - 
 
 ```bash
 git reset --hard <commit-hash>
 ```
 
 get the hashes via git log.
+
+***
+
+##### Reset to the most recent commit and erase all the changes in your working tree and index:
+
+```bash
+git reset --hard HEAD
+```
+
+***
+
+###### Reverse a particular commit // This is not a commonly used command..so try not to use..(although works great)
+
+```bash
+git revert <commit-hash>
+```
+
+***
+
+######  Create branch from another branch:
+
+```bash
+git checkout -b myFeature dev
+```
+
+***
+
+###### Print all commits with single commit status in one line-
+
+```bash
+git log --oneline
+```
 
 ***
 
