@@ -49,7 +49,7 @@ $ git commit -m "First commit"					# Commits the tracked changes and prepares th
 $ git remote add origin <remote repository URL>	# Sets the new remote
 $ git remote -v									# Verifies the new remote URL
 
-$ git remote rm destination 					#remove the remote named as destination
+$ git remote rm origin 					#remove/delete the remote named as origin
 
 $ git push origin master						# Pushes the changes in your local repository up to the remote repository you specified as the origin
 ```
@@ -531,6 +531,117 @@ git checkout -b myFeature dev
 
 ```bash
 git log --oneline
+```
+
+***
+
+##### Git with GitHub quick:
+
+•Create online repo Github.
+
+•Now, create a folder with name of your choice.
+
+```bash
+cd newFolder
+git clone <repo-url> <space> <dot>
+READY TO ROCK AND ROLL.
+```
+
+***
+
+##### Git with GitHub quick:(Reverse)
+
+•Create local repo(in any project folder, do **git init**, and make some commits as usual)
+
+•Create online repo in Github(**copy** the **repo-url.git**)[DO NOT INITIALIZE IT WITH ANY README FILE..]
+
+```bash
+FINALLY DO THE PUSH with switch --all
+git push origin --all
+```
+
+***
+
+##### Help for git push
+
+```bash
+git push -h >> show help for the push command.
+```
+
+***
+
+```bash
+git push origin --all (push all references)
+OR
+git push --all (push all references)
+##both the commands above will push all the local branches to the remote 'origin'
+```
+
+***
+
+```bash
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+######
+-u, --set-upstream    set upstream for git pull/status
+USED AS:
+git push
+#{so setting the remote as upstream for the branch specified after the remote/ if branch is not specified after the remote name, then the current branch is considered for the operation }
+# for example.
+chetan@insidebug MINGW64 ~/Desktop/tttt (master)
+$ git push -u origin2
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin2'.
+
+chetan@insidebug MINGW64 ~/Desktop/tttt (master)
+$ git push -u origin
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+chetan@insidebug MINGW64 ~/Desktop/tttt (master)
+$ git push -u origin master2
+Everything up-to-date
+Branch 'master2' set up to track remote branch 'master2' from 'origin'.
+
+chetan@insidebug MINGW64 ~/Desktop/tttt (master)
+$ git push -u origin2 master2
+Everything up-to-date
+Branch 'master2' set up to track remote branch 'master2' from 'origin2'.
+```
+
+***
+
+##### Push single branch
+
+```bash
+#After making appropriate branching and commits
+#Pushing single branch to remote i.e., master
+git push origin master
+
+#Pushing all the local branches to remote i.e. all the branches with their respective commits differently
+git push origin --all
+
+```
+
+***
+
+```bash
+#remove untracked files
+git clean -f
+```
+
+***
+
+##### Add multiple push URLs to the repository
+
+```bash
+#Before adding any pushurl's to the local repo, you need to have a remote named as origin as indicated in the command. Also on adding the first pushurl to the local repository, the origin's push url will be replaced by the new pushurl specified as the argument. Surely, the original push url for the remote can be added again with the same command but with the url of the origin's original git-reo url. You can add as many push urls to the repository.
+git remote set-url --add --push origin git@github.com:muccg/my-project.git
+git remote set-url --add --push origin git@bitbucket.org:ccgmurdoch/my-project.git
+
 ```
 
 ***
