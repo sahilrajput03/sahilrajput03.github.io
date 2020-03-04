@@ -1075,3 +1075,44 @@ npm cache verify
 
 ***
 
+```javascript
+//Javascript replace method to retain only character from numeric 0 to 9.
+ii = ii.replace(/[^0-9]/g,'')
+```
+
+***
+
+Minimum and maximum value for a number in personSchema in moongose.Schema
+
+[Mongoose Schema number field to be at exact length](https://stackoverflow.com/questions/46806943/mongoose-schema-number-field-to-be-at-exact-length)
+
+***
+
+```js
+rules: {"no-unused-vars": "off"}
+```
+
+For disabling the error for unused variables - eslint.
+
+***
+
+You should always use lines as 'unix' in eslint,(.eslintrc.js file).
+
+***
+
+Minimise Everything with [Winodws + M]
+
+***
+
+command prompt: 
+
+```bash
+if 2 EQU (ECHO "Amazing thing") else (echo "Not such amazing thing")
+```
+
+***
+
+  `if not exist "C:\VTS\" mkdir C:\VTS` 
+
+***
+

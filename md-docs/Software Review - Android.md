@@ -16,3 +16,33 @@ UMANG - The Spirit of India. - Indian Government App - Services, Schemes - State
 
 *Stories, Podcasts and Audiobooks - Headphones* - App by Raghav Saini.
 
+2 Player Games
+
+Ac Market
+
+Adblock
+
+Adblock Plus for Samsung Internet
+
+Adobe Acrobat
+
+Amazon Web
+
+AnkiDroid
+
+Apk Extractor
+
+App Search Plus
+
+Audible - Audio Books
+
+Audiobooks.com
+
+Beebom - Tech that Matters
+
+Bigbasket
+
+Blogger
+
+Booklight
+

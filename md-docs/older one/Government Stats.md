@@ -96,3 +96,37 @@ The **Legislative Assembly** (*Vidhan Sabha* in [Hindi](https://en.wikipedia.org
 
 ***
 
+***
+
+•**Jawaharlal Nehru**(served 16years as PM): Born on 14 Nov, 1889.(Died because of Heart Attack)
+•**Jawaharlal and Kamala Nehru** married on 8 February, 1916 . **Kamala** was born on 1 August 1899 
+•**Indira Gandhi** (served 16years as PM) & (Born - 19 Nov. 1917 & Died - Assassination) daughter of Jawaharlal Nehru(first PM of India).
+•**Indira Priyadarshini Nehru** (the daughter of Jawaharlal Nehru) married **Feroze Gandhi** in 1942 and adopted his surname.
+• **Feroze Gandhi(The Gandhi Head in Nehru's Family)**:  Born on 12 September 1912 and Died on  8 September 1960 (aged 47). He  was an Indian politician and journalist. Feroze died in 1960 in Delhi, after suffering a second heart attack. 
+•**Indira Gandhi**: She **married Feroze Gandhi** at the age of 25, in 1942. Their marriage lasted 18 years, until Feroze died of a heart attack in 1960. They had two sons – Rajiv (b. 1944) and Sanjay (b. 1946). Her younger son Sanjay had initially been her chosen heir; but after his death in a flying accident in June 1980, Gandhi persuaded her reluctant elder son Rajiv to quit his job as a pilot and enter politics in February 1981. Rajiv took office as prime minister following his mother's assassination in 1984; he served until December 1989. Rajiv Gandhi himself was assassinated by a suicide bomber working on behalf of LTTE on 21 May 1991.
+Rajiv Gandhi was assassinated in after 7 years of her mothers assassination.
+
+•**Rajiv Gandhi** and **Sanjay Gandhi** [Sanjay Gandhi died in plane accident] were children of Indira Gandhi.
+•**Sonia Gandhi**(72yrs) w/o Rajiv Gandhi(6th PM[served for 5 years]).
+•**Rajiv Gandhi** **married Sonia Gandhi** in 1968.
+•**Rajiv Gandhi**- He took office after the 1984 assassination of his mother Indira Gandhi, Prime Minister.
+•**Indira Gandhi**, to become the youngest Indian Prime Minister at the age of 40.
+
+•**Jawaharlal** Nehru served for 17 years as PM of India.
+•**Rahul Gandhi** (age:49yrs) is son of Rajiv Gandhi and Sonia Gandhi.
+ **Priyanka Gandhi** (born 12 January 1972)  also known by her married name **Priyanka Gandhi Vadra**.
+
+• **Maneka Gandhi**:  **Maneka Sanjay Gandhi** (also spelled Menaka) ([*née*](https://en.wikipedia.org/wiki/Married_and_maiden_names) Anand; born 26 August 1956) is an Indian politician. She is a member of Lok Sabha, the lower house of the Indian parliament. She belongs to Bharatiya Janata Party. She is also an [animal rights activist](https://en.wikipedia.org/wiki/Animal_rights), environmentalist, and wife of the Indian politician [Sanjay Gandhi](https://en.wikipedia.org/wiki/Sanjay_Gandhi). She has been a minister in four governments, most recently in Narendra Modi's government from May 2014 to May 2019, and has authored a number of books in the areas of [etymology](https://en.wikipedia.org/wiki/Etymology), law and [animal welfare](https://en.wikipedia.org/wiki/Animal_welfare). 
+
+•**Varun Gandhi** was born in [Delhi](https://en.wikipedia.org/wiki/Delhi) on 13 March 1980 to [Sanjay Gandhi](https://en.wikipedia.org/wiki/Sanjay_Gandhi) and [Maneka Gandhi](https://en.wikipedia.org/wiki/Maneka_Gandhi). He is the grandson of former [Prime Minister of India](https://en.wikipedia.org/wiki/Prime_Minister_of_India), [Indira Gandhi](https://en.wikipedia.org/wiki/Indira_Gandhi) and the great-grandson of India's first Prime Minister, [Jawaharlal Nehru](https://en.wikipedia.org/wiki/Jawaharlal_Nehru).   He is also member of the [Bharatiya Janata Party](https://en.wikipedia.org/wiki/Bharatiya_Janata_Party) and was inducted into [Rajnath Singh's](https://en.wikipedia.org/wiki/Rajnath_Singh) team in March 2012 as General Secretary. 
+
+•Three members of the family [Jawaharlal Nehru](https://en.wikipedia.org/wiki/Jawaharlal_Nehru), [Indira Gandhi](https://en.wikipedia.org/wiki/Indira_Gandhi), and [Rajiv Gandhi](https://en.wikipedia.org/wiki/Rajiv_Gandhi) have served as the [Prime Minister of India](https://en.wikipedia.org/wiki/Prime_Minister_of_India), while several others have been [members](https://en.wikipedia.org/wiki/Member_of_Parliament) of [the parliament](https://en.wikipedia.org/wiki/Parliament_of_India).
+
+•Sanjay Gandhi married [Maneka Anand](https://en.wikipedia.org/wiki/Maneka_Gandhi), who was 10 years his junior, in New Delhi in October 1974.[[40\]](https://en.wikipedia.org/wiki/Sanjay_Gandhi#cite_note-mjournal-40) Their son, [Varun Gandhi](https://en.wikipedia.org/wiki/Varun_Gandhi), was born shortly before Sanjay's death.[[19\]](https://en.wikipedia.org/wiki/Sanjay_Gandhi#cite_note-mherald-19) 
+
+```
+Maneka and Varun Gandhi represent the [Bharatiya Janata Party](https://en.wikipedia.org/wiki/Bharatiya_Janata_Party) (BJP) in the [Lok Sabha](https://en.wikipedia.org/wiki/Lok_Sabha.
+```
+
+***
+

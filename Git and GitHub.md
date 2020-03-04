@@ -40,7 +40,7 @@ Adding existing project to Github
 ```
 Initialize the local directory as a Git repository.
 
-$ git init										#Initialize the current directory as repository root.
+$ git init										#Initialize the current directory as repository.
 
 $ git add .										# Adds the files in the local repository and stages them for commit. To unstage a file, use 'git reset HEAD YOUR-FILE'
 
@@ -61,8 +61,6 @@ $ git push origin master						# Pushes the changes in your local repository up t
 ***
 
 [Resolving a merge conflict on GitHub](https://help.github.com/en/articles/resolving-a-merge-conflict-on-github)	
-
-git branch - show branches locally.
 
 [Github Cheatsheet](https://gist.github.com/hofmannsven/6814451)
 
@@ -477,7 +475,7 @@ src: [How do I delete a Git branch locally and remotely..?](https://stackoverflo
 
 ***
 
-[How do I resolve git saying “Commit your changes or stash them before you can merge”?](https://stackoverflow.com/questions/15745045/how-do-i-resolve-git-saying-commit-your-changes-or-stash-them-before-you-can-me)
+[How do I resolve git saying “Commit your changes or stash them before you can merge”?](https://stackoverflow.com/questions/15745045/how-do-i-resolve-git-saying-commit-youdiscar-changes-or-stash-them-before-you-can-me)
 
 ***
 
@@ -642,6 +640,67 @@ git clean -f
 git remote set-url --add --push origin git@github.com:muccg/my-project.git
 git remote set-url --add --push origin git@bitbucket.org:ccgmurdoch/my-project.git
 
+```
+
+***
+
+##### Delete any repository with bash
+
+```bash
+rm -rf .git #inside the repository.
+```
+
+***
+
+## Disable automatic conversion/ handling of line conversions:
+
+DISABLE EOL CONVERSIONS - StackOverflow.com
+
+src: [Git replacing LF with CRLF@Ultimate@StackOverflow](https://stackoverflow.com/questions/1967370/git-replacing-lf-with-crlf/20653073)
+src2: [Getting Started - First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
+
+ `So, write git config core.autocrlf in the working dir to check the currently used value and` 
+
+ `git config --local core.autocrlf false` to  disable it, and this command will actually add
+
+`autocrlf = false` to the `.git/config` file of the project.
+
+`"C:\Users\chetan\.gitconfig"` - the used specific .gitconfig file.
+
+To alter it : use command
+
+ `git config --global core.autocrlf false` <= Personal choice of coders.[as setting it false won't ever notify you about the changing the line endings ever, as setting it to false git doesn't care about the line endings, files are fetched as it is and pulled as they are modified and vice versa]
+
+***
+
+### General Git Cloning and Dealing with branches
+
+```bash
+git branch 
+# show all local branches.
+git branch -a
+# View all branches(local and remote branches)
+git clone <repo-url>
+# clone a complete repository
+git checkout <branch-name>
+# Checkout  a particular branch(all branches are present locally already) // Change branch // Move to other branch. THIS IS CALLED CHECKOUT A BRANCH.
+
+***
+git clone --branch <branch-name> <repository-url>
+# Clone a particular branch.
+```
+
+***
+
+Discard local changes:
+
+```bash
+ git reset --hard 
+ #OR TRY CHECKOUT THE BRANCH WITH WITH FORCE
+ git checkout -f
+ 
+ #this works with any branch too
+ git checkout <branch-name> -f
 ```
 
 ***
