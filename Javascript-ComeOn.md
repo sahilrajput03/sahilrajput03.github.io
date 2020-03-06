@@ -1116,3 +1116,25 @@ if 2 EQU (ECHO "Amazing thing") else (echo "Not such amazing thing")
 
 ***
 
+## Connect to adb over wifi:
+
+connect mobile with usb to pc
+
+And make sure you have it in the devices: adb devices
+
+Then make the listen on other port
+
+```bash
+adb tcip 5555
+```
+
+Disconnect the device.
+
+Connect to device over wifi 
+
+{you can use arp -a command to scan the connected devices with the network you have connected to (you may confirm with the mac accress.)}
+
+adb connect <device-ip>:5555
+
+***
+
