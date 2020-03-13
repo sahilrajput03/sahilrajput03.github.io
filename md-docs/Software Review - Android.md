@@ -46,3 +46,8 @@ Blogger
 
 Booklight
 
+jio_news,
+
+jio_cinema,
+
+adblock browser, 

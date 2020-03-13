@@ -11,6 +11,16 @@ ECHO NEXT LINE CHARACTER: echo ..... && echo.This comes as new line.
 EXAMPLES: 
 cd jekyll-jinn/_site/ && xcopy . "../.." /e /i {" Quotes are important, otherwise cmd interpret them as option rather parameters}
 
+
+
+=>bat file example contents:-
+
+echo "sahil"
+echo "mohit"
+@pause
+
+{bat executables are like each line contains one command, and any command including multiple && , is considered single command}
+
 __________________________________________________________
 # LINUX:
 
