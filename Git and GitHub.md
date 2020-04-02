@@ -287,9 +287,9 @@ src: [@Github Questions](https://github.community/t5/GitHub-Pages/Github-Pages-a
 
 ***
 
-###### if pushing say you  are ahead of remote repository:
+# When Pushing says you  are ahead of remote repository:
 
-then first pull and then immediately push..
+Then first PULL and then immediately PUSH..
 
 git pull origin (if configured default repo for the remote, otherwise define the local branch too i.e., git pull origin master)
 
@@ -297,7 +297,7 @@ git push origin(if configured default repo for the remote, otherwise define the 
 
 ***
 
-##### fullstack course building build with gatsby >>
+# Fullstack course building build with gatsby >>
 
 ##### Get stuck on "Building static HTML for pages in gatsby build" #10630
 
@@ -326,7 +326,7 @@ EEHYYY.. if changing the background color and the prism-dark.css to prism.dark..
 
 ***
 
-##### Create Aliases..-
+# Create Aliases..-
 
 ###### Git commit with no commit message:
 
@@ -336,7 +336,7 @@ And if you add an alias for it then it's even better right?
 git config --global alias.nccommit 'commit -a --allow-empty-message -m ""'
 ```
 
-Now you just do an nccommit, nc because of no comment, and everything should be commited.
+Now you just do an **nccommit**, nc because of no comment, and everything should be commited.
 
 ***
 
@@ -356,7 +356,7 @@ git log origin/master
 
 git init
 git remote add origin PATH/TO/REPO
-git fetch #FETCHES THE COMPLETE .GIT FOLDER THERE..(REMOTE)
+git fetch #FETCHES THE COMPLETE .GIT FOLDER FROM THE REMOTE
 git reset origin/master  # Required when the versioned files existed in path before "git init" of this repo.
 git checkout -t origin/master
 
@@ -479,14 +479,6 @@ src: [How do I delete a Git branch locally and remotely..?](https://stackoverflo
 
 ***
 
-pwa and web apk on playstore:
-
-[Google Play Store now open for Progressive Web Apps 😱, 1 feb 2019](https://medium.com/@firt/google-play-store-now-open-for-progressive-web-apps-ec6f3c6ff3cc) ,
-
-[Publish a PWA (Progressive Web App) in the Google Play Store, 21 March 2019](https://blog.karumi.com/publish-a-progressive-web-application-in-google-play-store/)
-
-***
-
 [Official git rebase](https://git-scm.com/docs/git-rebase)
 
 ***
@@ -517,11 +509,21 @@ git revert <commit-hash>
 
 ***
 
-######  Create branch from another branch:
+# <u>Create branch from another branch and change to new branch:</u>
 
 ```bash
 git checkout -b myFeature dev
 ```
+
+****
+
+# Create branch from current branch and change to new branch:
+
+```bash
+git checkout -b myFeature
+```
+
+
 
 ***
 
@@ -652,7 +654,7 @@ rm -rf .git #inside the repository.
 
 ***
 
-## Disable automatic conversion/ handling of line conversions:
+# Disable automatic conversion/ handling of line conversions:
 
 DISABLE EOL CONVERSIONS - StackOverflow.com
 
@@ -692,7 +694,7 @@ git clone --branch <branch-name> <repository-url>
 
 ***
 
-Discard local changes:
+# Discard local changes:
 
 ```bash
  git reset --hard 
@@ -702,6 +704,82 @@ Discard local changes:
  #this works with any branch too
  git checkout <branch-name> -f
 ```
+
+***
+
+Good One: You may download: https://egghead.io/courses/practical-git-for-everyday-professional-use 
+
+ https://egghead.io/courses/productive-git-for-developers 
+
+***
+
+# Git STASH:
+
+```bash
+//stash meaning: store something safely in a hidden/secret place.
+
+git stash save 'message-about-the-changes-to-be-stashed' // you may make as many stashes with approprite 
+												message and clears the recent changes from the local 												branch and save them to secret place 'message....•'
+			
+git stash list // shows all the stashes you have made
+
+git stash pop  // will pop out the last stash you have made || you may use `git stash apply` <= this also works good.
+
+git stash clear // will clear the list of the stashes.
+	awesome-video@https://www.youtube.com/watch?v=KLEDKgMmbBI
+```
+
+***
+
+```
+$ git commit -a
+```
+
+which will automatically notice any modified (but not new) files, add them to the index, and commit, all in one step.
+
+***
+
+Opening git guides, 
+
+```bash
+git help // shows all related info about the below ones.
+git help -a // all available commands
+git help -g // all git related guides >> Opening guides: git help <git-guide>
+```
+
+***
+
+So for Git 2 the answer is:
+
+- `git add .` and `git add -A .` and `git add --all` add new/modified/deleted files in the current directory
+
+***
+
+In git help documents, you will find it talking about the index, so index is nothing but the staging state.
+
+***
+
+AWESOMEE - An official visual git cheatsheet @  https://ndpsoftware.com/git-cheatsheet.html#loc=workspace; 
+
+***
+
+Official git documentation -  https://git-scm.com/doc  - Always prefer to read real docs.
+
+***
+
+```bash
+git pull
+The above command equals to below command. As git fetch just add the history of remote repository to the local copy of the repository.
+git fetch ; git fetch
+```
+
+***
+
+git cheatsheet from git-scm :  https://github.github.com/training-kit/downloads/github-git-cheat-sheet/ 
+
+***
+
+## Delete line in vi editor, use shortcut: dd
 
 ***
 
