@@ -1,5 +1,3 @@
-[Edit](https://github.com/sahilrajput03/sahilrajput03.github.io/edit/master/index2.md)
-
 ## About Classes and Fun
 [Understanding Classes in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-classes-in-javascript)
 
@@ -151,6 +149,19 @@ Here, `setToValue(0)` or `setToValue(1)` is a function call in itself but actual
 • Double arrow functions can be thought of as functions that have to be called twice in order to get the final result.
 • This way of utilizing functions that return functions is effectively the same thing as [currying](https://web.archive.org/web/20170919010057/http://www.datchley.name/currying-vs-partial-application/) in functional programming. The term currying does not originate from functional programming, rather the term is deeply rooted in [mathematics](https://en.wikipedia.org/wiki/Currying).
 Double Arrow (My Lang): Function call to a function returning another function which returns a function call. ;)
+
+## currying
+
+```js
+tu = (t) =>  () =>  () =>  () => console.log('hulaaa',t)
+tu('sa')()()()
+***
+    The example you are looking for:
+tu = (t) =>  () =>  () =>  () => t()
+tu(()=>console.log('sahil'))()()()
+```
+
+
 
 ***
 
@@ -1038,8 +1049,49 @@ Note.findById(request.params.id)
             response.json(note.toJSON())
             throw new Error("*****Whooooooooooooops!********");
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err))	
+
+***
+
+NOTE: YOU CAN'T DO ABOVE SYNTAX IN TRY AND CATCH BLOCKS.
+//example =>
+try {
+console.log(undeclaredVariable23)
+}
+catch(err => console.log('pippi is throwing error, my lord. err:',err) )
+// AS THE ABOVE STATEMENT WILL THROW ERROR, Uncaught SyntaxError: Unexpected token '=>'
+//Correct usage => 
+try {
+  Block of code to try
+}
+catch(err) {
+  Block of code to handle errors
+}
+    
+    
+** optionally you can use finally too:
+// example => 
+try {
+  Block of code to try
+}
+catch(err) {
+  Block of code to handle errors
+}
+finally {
+  Block of code to be executed regardless of the try / catch result
+}
+    
+** YOU may throw custom errors like the one beloe:
+// example => 
+try {
+	if(true) throw "Too big";
+}
+catch (err) {
+  console.log('pippi is throwing error, my lord. err:',err)
+}
 ```
+
+
 
 ***
 
@@ -1135,6 +1187,67 @@ Connect to device over wifi
 {you can use arp -a command to scan the connected devices with the network you have connected to (you may confirm with the mac accress.)}
 
 adb connect <device-ip>:5555
+
+***
+
+# async await, promises
+
+![img](https://miro.medium.com/max/1001/1*0mBlni5vsYZE2wFzfVv8EA.png)
+
+https://medium.com/better-programming/should-i-use-promises-or-async-await-126ab5c98789
+
+***
+
+# Why Is Export Default Const invalid in node(react style)?
+
+https://stackoverflow.com/questions/36261225/why-is-export-default-const-invalid
+
+***
+
+# React Hooks: How to use useEffect() @medium.com
+
+https://medium.com/javascript-in-plain-english/react-hooks-how-to-use-useeffect-ecea3e90d84f
+
+follow the related code in your code in the help code folder. yeah...!!
+
+```js
+useEffect(() => {
+    user && blogService.getAll().then((initialNotes) => setBlogs(initialNotes));
+    console.log("useeffect executed..");
+  });
+//here above code can only access the user variable from the the app component if it is set to update on every render
+***
+#    below code is suggested by hook-guide in chrome dev tools**
+useEffect(() => {
+    user && readyToFetch&& blogService.getAll().then((initialNotes) => setBlogs(initialNotes)) && setreadyToFetch(false)
+    console.log("useeffect executed..");
+  },[user,readyToFetch]);
+///the last parameter i.e., [user, readyTOFetch] states that only when these variables have changes then only the useEffect() function will execute.
+```
+
+
+
+***
+
+# Master the JavaScript Interview: What is a Promise? @medium.com  << IMPORTANT AS HELLLL.
+
+https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
+
+***
+
+# .then(func1,func2)
+
+func1 will execute if promise is fulfilled, and func2 will execute if promise if rejected.
+
+***
+
+# Promises
+
+//everything returned from a .then method is a promise.
+
+ //to fetch the array of data from it, you need to assign from inside it
+
+ // like .then(t=>variable=t) and variable will be assigned the data from the promise.
 
 ***
 

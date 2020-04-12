@@ -15,6 +15,18 @@ cd jekyll-jinn/_site/ && xcopy . "../.." /e /i {" Quotes are important, otherwis
 
 ***
 
+You may recover the premission of a folder via using this article: [Links](https://answers.microsoft.com/en-us/windows/forum/windows_8-files/you-dont-currently-have-permission-to-access-this/2cc4abe2-41ea-4023-b594-104c3b9e9f4d?auth=1) . Although, what actually solved the harsh problem is below command:
+
+```bash
+TAKEOWN /F <DIRECTORY> /R /D Y
+```
+
+***
+
+You may set the low battery action and critical battery action to hibernate. And set the respective percentage to 20% and 12%. So than even when you have hibernated while doing work you  could boot again the last time and you know that you are risking the failure of power for the system this time. Its very important. You must set the reserve battery level below the critical battery level so that when you are risking power failure you could have some benefit of power. You must set it to 7%, so that when you start up pc after hibernating twice it could take the action to get the reserve battery when the battery reaches 7% after some time.
+
+***
+
 ## Create folder: md or mkdir
 
 ***

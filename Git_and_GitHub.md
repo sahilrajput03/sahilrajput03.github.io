@@ -46,6 +46,7 @@ $ git add .										# Adds the files in the local repository and stages them fo
 
 $ git commit -m "First commit"					# Commits the tracked changes and prepares them to be pushed to a remote repository. To remove this commit and modify the file, use 'git reset --soft HEAD~1' and commit and add the file again.
 
+
 $ git remote add origin <remote repository URL>	# Sets the new remote
 $ git remote -v									# Verifies the new remote URL
 
@@ -53,6 +54,12 @@ $ git remote rm origin 					#remove/delete the remote named as origin
 
 $ git push origin master						# Pushes the changes in your local repository up to the remote repository you specified as the origin
 ```
+
+```bash
+#remove commit, #delete commit FOLLOW THE LINK...
+```
+
+Link https://www.git-tower.com/learn/git/faq/undo-last-commit
 
 ***
 
@@ -679,7 +686,7 @@ To alter it : use command
 
 ```bash
 git branch 
-# show all local branches.
+# show all local branches, #show branches, #show all branches
 git branch -a
 # View all branches(local and remote branches)
 git clone <repo-url>
@@ -780,6 +787,12 @@ git cheatsheet from git-scm :  https://github.github.com/training-kit/downloads/
 ***
 
 ## Delete line in vi editor, use shortcut: dd
+
+***
+
+# .gitignore file pattern:
+
+https://linuxize.com/post/gitignore-ignoring-files-in-git/
 
 ***
 

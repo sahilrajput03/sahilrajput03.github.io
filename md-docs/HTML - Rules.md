@@ -301,3 +301,23 @@ EMMET CheatSheet:  https://docs.emmet.io/cheat-sheet/
 
 ***
 
+# onclick in div
+
+```html
+<div onclick="alert('clicked')">
+    This text generates alert.
+</div>
+above property can be assigned to any div, paragraph, span and other tags(you may test others, testing is always important.)
+
+important note # BUT WHEN YOU WANT TO USE THIS PROPERTY IN REACT, YOU MUST USE THEM AS 
+<div onClick={()=>alert("li click")}>
+    This text generates alert.
+</div>
+sO BEWARE OF REACT, REACT USUALLY HURTS EVERBODY. Be prepare for it.
+
+***
+Other React html: you should always use <p> as <p></p>, <br> as <br></br>
+```
+
+***
+

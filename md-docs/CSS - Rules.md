@@ -87,3 +87,29 @@ Emmet Cheat Sheet:  https://docs.emmet.io/cheat-sheet/
 
 ***
 
+# Remove blue border from css custom-styled button in Chrome
+
+https://stackoverflow.com/questions/20340138/remove-blue-border-from-css-custom-styled-button-in-chrome
+
+inshort:
+
+```css
+button:focus {outline:0;}
+```
+
+***
+
+# Sort array of objects with their properties:
+
+```js
+notes = [{},{},{},{}]
+notes.sort((a,b)=>b.likes-a.likes) // will sort in descending order.
+notes.sort((a,b)=>a.likes-b.likes) // will sort in ascending order.
+```
+
+[Link](http://www.javascriptkit.com/javatutors/arraysort2.shtml)
+
+****
+
+
+

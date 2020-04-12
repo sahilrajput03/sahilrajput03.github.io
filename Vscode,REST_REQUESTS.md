@@ -24,6 +24,7 @@ Content-Type: application/json
 ```js
 #simple get request
 get http://localhost:3001/notes
+// when using locahost, you should always use http not https, bcoz you to use https you need to configure you node server for that.
 ```
 
 ```js

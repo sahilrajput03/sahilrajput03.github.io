@@ -7,6 +7,10 @@ Google Codelab  for FIDO2: First android fido2 api:  [Link](https://codelabs.dev
 [Help blog @ google](https://developers.google.com/web/updates/2018/05/webauthn)
 [Search demos for fido2 on google](https://www.google.com/search?q=FIDO2+DEMO&rlz=1C1CHBF_enIN868IN868&oq=FIDO2+DEMO&aqs=chrome..69i57j69i60l3.2452j0j4&sourceid=chrome&ie=UTF-8)
 
+# Chrome Extension - [Link](https://chrome.google.com/webstore/detail/virtual-authenticators-ta/gafbpmlmeiikmhkhiapjlfjgdioafmja)
+
+### Use protocol:ctap2 and transport: internal in Virtual Authenticator tab near console tab.
+
 ***
 
 # SomeDemos:(fido2 doesn't work on rooted devices)

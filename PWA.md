@@ -24,3 +24,11 @@ pwa and web apk on playstore:
 
 ***
 
+```js
+condition1 && condition2 && condition3 &&...&&console.log("coca-cola") 
+```
+
+the above statement prints "coca-cola" as long as all the conditions before it  are truthy value.
+
+***
+
