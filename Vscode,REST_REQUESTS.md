@@ -82,3 +82,9 @@ DELETE http://localhost:3001/api/notes/5dbfebdd9edc4017dce88838
 
 ***
 
+![fullstack content](Vscode,REST_REQUESTS.assets/26e.png)
+
+
+
+![maxresdefault](Vscode,REST_REQUESTS.assets/maxresdefault.jpg)
+
