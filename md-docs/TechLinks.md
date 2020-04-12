@@ -94,3 +94,4 @@ python - garden [python.org/dev/peps/pep-0020](https://www.python.org/dev/peps/p
 
 ***
 
+![w3 vs. Bootstrap_1](https://i.loli.net/2020/04/12/Hohq59E7MRB6iAC.jpg)
