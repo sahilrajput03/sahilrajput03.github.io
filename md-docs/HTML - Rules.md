@@ -337,19 +337,19 @@ Type	Description
 
 ***
 
-![image-20200416172356378](HTML%20-%20Rules.assets/image-20200416172356378.png)
+![image-20200416172356378](image-20200416172356378.png)
 
 ***
 
-![image-20200416172527245](HTML%20-%20Rules.assets/image-20200416172527245.png)
+![image-20200416172527245](image-20200416172527245.png)
 
 ***
 
-![
+![img](image-20200416172947038.png)
 
-](HTML%20-%20Rules.assets/image-20200416172947038.png)![image-20200416173048618](HTML%20-%20Rules.assets/image-20200416173048618.png)
+![image-20200416173048618](image-20200416173048618.png)
 
-![image-20200416173104881](HTML%20-%20Rules.assets/image-20200416173104881.png)
+![image-20200416173104881](image-20200416173104881.png)
 
 https://www.w3schools.com/jsref/prop_radio_checked.asp
 

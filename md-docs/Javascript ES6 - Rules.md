@@ -25,11 +25,11 @@ The type attribute is not required. JavaScript is the default scripting language
 alert("I am a alert.")
 ```
 
-![1569572047754](Javascript%20ES6%20-%20Rules.assets/1569572047754.png) 
+![1569572047754](1569572047754.png) 
 
 OR if address is 127.0.0.1 then it wud be-
 
-![1569572129341](Javascript%20ES6%20-%20Rules.assets/1569572129341.png) 
+![1569572129341](1569572129341.png) 
 
 ***
 
@@ -83,7 +83,7 @@ myObject.fullName();
 
 
 
- ![1569573391481](Javascript%20ES6%20-%20Rules.assets/1569573391481.png) 
+ ![1569573391481](1569573391481.png) 
 
 ***
 
@@ -91,7 +91,7 @@ myObject.fullName();
 alert(window);
 ```
 
-![1569573740613](Javascript%20ES6%20-%20Rules.assets/1569573740613.png)
+![1569573740613](1569573740613.png)
 
 ***
 
@@ -99,7 +99,7 @@ alert(window);
 alert(Window);
 ```
 
-![1569573814015](Javascript%20ES6%20-%20Rules.assets/1569573814015.png)
+![1569573814015](1569573814015.png)
 
 ***
 
@@ -112,13 +112,13 @@ window.prompt("I'm Prompt Box.\nPlease enter your name","Harry Potter(By Default
 alert("Hello\nHow are you?");
 ```
 
-![1569674149780](Javascript%20ES6%20-%20Rules.assets/1569674149780.png) 
+![1569674149780](1569674149780.png) 
 
-![1569674166878](Javascript%20ES6%20-%20Rules.assets/1569674166878.png) 
+![1569674166878](1569674166878.png) 
 
-![1569674180634](Javascript%20ES6%20-%20Rules.assets/1569674180634.png) 
+![1569674180634](1569674180634.png) 
 
-![1569674194753](Javascript%20ES6%20-%20Rules.assets/1569674194753.png) For more check at w3Schools.com 
+![1569674194753](1569674194753.png) For more check at w3Schools.com 
 
 ***
 
