@@ -49,7 +49,9 @@ wmic os get osarchitecture
 
 ***
 
-THE MOTIVE OF THE DESIRED CODE IS TO ENSURE THE VARIABLE TO BE 'undefined'
+## THE MOTIVE OF THE DESIRED CODE IS TO ENSURE THE VARIABLE TO BE 'undefined', find if the variable is undefined
+
+## Check if the variable is undefined
 
 ```js
 #somethings that works amaz...
@@ -81,10 +83,4 @@ DELETE http://localhost:3001/api/notes/5dbfebdd9edc4017dce88838
 ```
 
 ***
-
-
-
-
-
-
 

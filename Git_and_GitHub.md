@@ -685,6 +685,10 @@ To alter it : use command
 ### General Git Cloning and Dealing with branches
 
 ```bash
+BEST WAY TO GET THE LIST OF AVAILBE BRANCHES TO CHECKOUT FROM IS:
+git checkout <tab> <tab>
+//output=> this will list out all the possible branches from which you can checkout. While git branch -a just shows the available remote branches, not the locally cloned branches.
+
 git branch 
 # show all local branches, #show branches, #show all branches
 git branch -a
@@ -795,4 +799,25 @@ git cheatsheet from git-scm :  https://github.github.com/training-kit/downloads/
 https://linuxize.com/post/gitignore-ignoring-files-in-git/
 
 ***
+
+Stash your changes
+
+```bash
+chetan@insidebug MINGW64 /c/FullstackopenProjects/redux-notes/src (part6-1)
+$ git checkout part6-2
+error: Your local changes to the following files would be overwritten by checkout:
+        src/reducers/noteReducer.js
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+chetan@insidebug MINGW64 /c/FullstackopenProjects/redux-notes/src (part6-1)
+$ git stash
+Saved working directory and index state WIP on part6-1: 57cbab1 part6-1
+
+chetan@insidebug MINGW64 /c/FullstackopenProjects/redux-notes/src (part6-1)
+$ git checkout part6-2
+Switched to a new branch 'part6-2'
+Branch 'part6-2' set up to track remote branch 'part6-2' from 'origin'.
+
+```
 

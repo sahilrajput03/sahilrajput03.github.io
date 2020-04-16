@@ -217,8 +217,24 @@ response.send("abrakadabra"); // CONTENT-TYPE:TEXT/HTML, STATUS-CODE:200
 
 
 response.json(notes.map((note) => note.toJSON())); // basically converts the array of objects to array of json. JSON is text, and we can convert any JavaScript object into JSON, and send and receive JSON to the server.
-
 ***
+
+# Check in db if some property already exists..
+const person = await User.find({ username: body.username }); // # finds in DB
+    if (person) {
+      response.status(400).send("username already exists.")
+//    response.status(400).end() // use this line instead of the above to # NOT RETURN ANYTHING.
+//    response.end() // use this line instead if you want # DEFAULT STATUS CODE i.e., 200 OK.
+    }
+***
+
+# Do it in another form:(use chaining benefit.)
+const person = await User.find({ username: body.username }).then(person => {
+if(person){
+// response here....
+}
+})
+
 
 # HOW THEN CHAINING WORKS
 
@@ -229,58 +245,97 @@ request.then((response) => response.data).then((d)=>console.log(d))
 ***
 
 CHEATTT:
-
-response.send(blogs) // THE ABOVE RESPONSE.JSON(BLAH BLAH BLAH.. ) AND THIS LINE WORKS SAME. Doubt test it. So this means you cansend the js objects as it is. And they appear same as in the browser as well.
+response.send(blogs) // THE ABOVE RESPONSE.JSON(BLAH BLAH BLAH.. ) AND THIS LINE WORKS SAME. Doubt test it. So this means you cans end the js objects as it is. And they appear same as in the browser as well.
 
 
 ***
+# Common status code classes:
 
-# http Common usecases and status codes: (for CRUD operations too..)
+1xxs – # Informational responses: The server is thinking through the request.
+2xxs – # SUCCESS! The request was successfully completed and the server gave the browser the expected response.
+3xxs – # Redirection: You got redirected somewhere else. The request was received, but there’s a redirect of some kind.
+4xxs – ## Client errors: Page not found. The site or page couldn’t be reached. (The request was made, but the page isn’t valid — this is an error on the website’s side of the conversation and often appears when a page doesn’t exist on the site.)
+5xxs – ## Server errors: Failure. A valid request was made by the client but the server failed to complete the request.
+***
 
-200,201 - # (OK,SUCCESS), (CREATED,UPDATED)
 
-400,401,402,403 - # (Bad Request, Unauthorised, FAILED Reason-1, FAILED Reason-2, FAILED Reason-3)
+# HTTP COMMON USECASES AND STATUS CODES: (for CRUD OPERATIONS too..)
+200: series-
+200 OK
+201 Created
+202 Accepted
+203 Non-Authoritative Information
+204 No Content
+205 Reset Content
+206 Partial Content
+207 Multi Status
+208 Already Reported
+209 unknown
+210 unknown
 
-Some Default Error codes: 
-# Status Code: 500 => 
-From moongose library: ValidationError ,User validation failed: username: Path `username` (`d`) is shorter than the minimum allowed length (3)
+400: series-
+400 Bad Request
+401 Unauthorised
+402 Payment Required
+403 Forbidden
+404 Not Found
+405 Method Not Allowed
+406 Not Acceptable
+407 Proxy Authentication Required
+408 Request Timeout
+409 Conflict
+410 Gone
+411 Length Required
+412 Precondition Failed
+413 Payload Too Large
+414 URI Too Long
+415 Unsupported Media Type
+416 Range Not Satisfiable
+417 Expectation Failed
+418 I'm a Teapot
+419 unknown
+420 unknown
+etc....
 
-#
+500: series-
+500 Internal Server Error
+501 Not Implemented
+502 Bad Gateway
+503 Service Unavailable
+504 Gateway Timeout
+505 HTTP Version Not Supported
+506 Variant Also Negotiates
+507 Insufficient Storage
+508 Loop Detected
+509 Bandwidth Limit Exceeded
+510 Not Extended
+511 Network Authentication Required
+512 unknown
+513 unknown
+
+#Other Status Code, Some Default Error codes from libraries:
+*ERROR STATUS CODE FROM MOONGOOSE:
+500 Internal Server Error
+ValidationError ,User validation failed: username: Path `username` (`d`) is shorter than the minimum allowed length (3)
 ***
 
 # Front end, checking the status of the promise like this -
-
 request.then((response) => console.log("response.status :", response.status));
-
 request.then((response) => alert("response.status :"+ response.status));
-
 ***
 
-Although,   request.then((response) => alert("response.status :", response.status)); // doesn't work LOL bcoz using ',' is only supported in console.log(a,b,c,d,e,etc)
+# Although,   request.then((response) => alert("response.status :", response.status)); // doesn't work LOL bcoz using ',' is only supported in console.log(a,b,c,d,e,etc)
 
 Short notes: 	
 • console.log()	>> , and + works
-
 • alert() 	   	>> + 	'( , dont work)'
-
 • confirm()		>> + 	'( , dont work)'
-
 • prompt()		>> +	'( , dont work)' , also if nothing is send in prompt, it will return null.
-
-
 ***
 
-Common status code classes:
 
-1xxs – // Informational responses: The server is thinking through the request.
 
-2xxs – // SUCCESS! The request was successfully completed and the server gave the browser the expected response.
 
-3xxs – // Redirection: You got redirected somewhere else. The request was received, but there’s a redirect of some kind.
-
-4xxs – ## Client errors: Page not found. The site or page couldn’t be reached. (The request was made, but the page isn’t valid — this is an error on the website’s side of the conversation and often appears when a page doesn’t exist on the site.)
-
-5xxs – ## Server errors: Failure. A valid request was made by the client but the server failed to complete the request.
 ```
 
 Blog post link - [Link](https://moz.com/learn/seo/http-status-codes)
@@ -1047,7 +1102,7 @@ Happy coding!! So hooks are real.
 
 ***
 
-Code Folding: 
+# Code Folding: 
 
 To fold all - Ctrl+K Ctrl+ 0
 To unfold all - Ctrl+K Ctrl+J
@@ -1858,6 +1913,494 @@ try {
 catch(err) {
   Block of code to handle errors
 }
+```
+
+***
+
+# Add typechecking to js files(with ts checking)
+
+```json
+  "javascript.implicitProjectConfig.checkJs": true
+// add the above line the user settings.json file in the end before the last closing brace.
+-[there are two settings.json >> user>settings.json and work>settings.json, do edit with your preference.]
+//TO OPEN SETTINGS.JSON FILE, just search for "json" in search settings pallete.
+//ALSO YOU'LL NEED TO SPECIFY -
+//@ts-nocheck or @ts-expect-error
+```
+
+***
+
+# Set icon-theme in vscode
+
+"File Icon Theme" in settings search pallette, and set **Seti (Visual Studio Code)**
+
+***
+
+# JavaScript Switch Statement
+
+```js
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block // if no case is mathced, then default case is executed.
+}
+This is how it works:
+
+The switch expression is evaluated once.
+The value of the expression is compared with the values of each case.
+If there is a match, the associated block of code is executed.
+```
+
+***
+
+## Amazing article on Static language and Dynamic language
+
+https://hackernoon.com/i-finally-understand-static-vs-dynamic-typing-and-you-will-too-ad0c2bd0acc7
+
+***
+
+## Another article on same topic 
+
+https://www.sitepoint.com/typing-versus-dynamic-typing/
+
+***
+
+INshorts: 
+
+## Strong vs. weak Typing :
+
+Programming languages that exhibit "strong typing" are "strong typed," and those that exhibit "weak typing" are "weak typed".
+
+Programming languages in which variables have specific data types are strong typed. This implies that in strong typed languages, variables are necessarily bound to a particular data type. Python is strong typed, and so is Java.
+
+##### Static Typed or Dynamic Typed?
+
+There are advocates of both forms of typing. Asserting that one is better than the other would only lead to a debate of no consequence.
+
+There are those who advocate dynamic typing for the simplicity and saving in terms of time that it offers; they believe that type checking need not be an integral part of the programming language design per se, but instead, that third-party solutions (like pychecker) could be used to server that purpose.
+
+On the other hand, there are advocates of static typing, who believe that static typing (leading to forced variable declaration) is an important requirement of programming language design.
+
+***
+
+# **IMPORTANT TO LISTEN EVERY TIME**
+
+```
+STATIC, DYNAMIC LANGUAGES. 
+STRONG AND WEAK TYPED LANGUAGES.
+JS IS DYNAMIC AND WEAK TYPED. Whereas python is dynamic and strong typed lang.
+**
+Javascript doen't compile. It is interpreted/scripting/dynamic language, it is converted to machine code at runtime. Whereas other languages              
+
+# Javascript is WEAK TYPED as it doen't have different variable types. There is a single data type i.e., object. Whereas in STRONG TYPED, there are different variable types like string, array, object,etc.
+
+# Javascript is DYNAMIC LANGUAGE as till runtime you don't know the errors, such as undeclared variables, but will show the errors at runtime.			 Whereas in STATIC languages, the code won't even compile if undeclared variable is in use.
+```
+
+
+
+***
+
+Typescript is need for cathcing errors and failed assumptions about the code at the coding time.
+
+It helps in static typing, classes, modules.
+
+***
+
+ MS has extended JS to include a type system and compiled it down to plain JS. The translation layer is much more coherent.
+
+```js
+true + true
+//ouput: 20
+```
+
+***
+
+public static int Model
+
+Statements live aboe in java have the keyword static, tells the compiler intiate the variable Model with 0.
+
+***
+
+```
+Car.prototype.constructor
+//output: the complete class of the car is printed as it is.
+
+
+Hoisting
+Unlike functions, and other JavaScript declarations, class declarations are not hoisted.
+
+That means that you must declare a class before you can use it 	
+
+
+
+
+
+
+JavaScript Classes are written in "strict mode"
+You will get an error if you try to use a variable without declaring it.
+
+Press F12 to see the error description in the console.
+```
+
+https://www.w3schools.com/js/js_classes.asp
+
+***
+
+## Using function to return desired objects:
+
+```js
+const cars = (name, model) => { return {"carName":name, "carModel":model}}
+let newCar = cars('hyundai','2011')
+newCar// output:=>
+{carName: "hyundai", carModel: "2011"}
+```
+
+***
+
+# Does code execute after returnin once:
+
+```js
+let carl = () => {
+if(true)
+return 23
+console.log('after initial return')
+return 25
+}
+undefined
+carl()
+23
+```
+
+***
+
+## npm install doesn't install devDependencies
+
+```js
+// packages under devDependencies doesn't get installed when you do a npm install on the project.
+You have to install them with:
+npm install --only=dev// works greattt // also // npm install --only=prod // will install general dependecies only
+//above statement will install all the dev dependencies in the project, but not the general ones.
+```
+
+***
+
+```js
+return { ...state, good: state.good+1 };
+return { ...state, good: state.good++ };
+// out of the above statements, 2nd statement doesn't work.
+```
+
+***
+
+![before installing jest](https://i.loli.net/2020/04/14/y3zD6U1F5NrIWvZ.png)
+
+This error is resolved via putting below line in .env file.
+
+```
+SKIP_PREFLIGHT_CHECK=true
+```
+
+Moral of the story, always install dependencies locally(in this case if you hadn't installed the jest globally it would not have caused the probem)
+
+****
+
+## You should run testlocally via npm test <optional-regexpattern>, 
+
+```js
+npm test <optional-regex-pattern> // this works.
+    // using below pattern would cause the globally installed jest to function// although it is only for projects created with create-react-app.
+    jest 
+	or 
+	jest <optional-regex-pattern>
+        
+#all above doesn't work because react comes with jest setup inbuilt.
+#in all other backend projects, you may use jest as usual, like jest <regex-pattern>
+```
+
+***
+
+## just to know
+
+```js
+$ npm test -v
+6.9.0
+
+chetan@insidebug MINGW64 /c/FullstackopenProjects/unicafe-redux
+$ npm -v
+6.9.0
+```
+
+***
+
+# You should test projects creaed from create-react-app as it supports to be tested by react-scripts test command only that supports only the verion of jest that comes with it internally.
+
+```
+.env file
+#SKIP_PREFLIGHT_CHECK=true 
+# above line only need to be uncommented if you have installed jest locally, as projects created with create-react-app have jest inbuilt, you don't need to install it explicitly.
+#The inbuilt jest with react-scripts can be used via `npm test` or `react-scripts test`.
+```
+
+
+
+```js
+it doen't matter if you install jest locally, or globally, or not intall jest at all.
+As react projects comes with built in jest that is configured, and to test use 
+npm test <optional-regex-pattern> 
+or
+react-scripts test <optional-regex-pattern>
+# SO  YOU SHOULD PREFER TO KEEP .env file in projects created with create-react-app, and put 
+SKIP_PREFLIGHT_CHECK=true 
+in that file, THAT WILL allow THE `npm test` to use the version of jest insides the node modules which was created by the earlier create-react-project, keeping the other vesion installed too(that is listed in the package.json). Also, if you havent installed any jest additionally(in dependencies, or dev-dependencies), you don't need to do this in .env file. 
+
+@@Also, if you do `npm ls jest`
+// IT shows you the dependency tree for the current project.
+$ npm ls jest
+unicafe-redux@0.1.0 C:\FullstackopenProjects\unicafe-redux
++-- jest@25.3.0		// it is showing this bcoz I had installed jest via `npm i jest --save-dev`
+`-- react-scripts@3.0.1
+  `-- jest@24.7.1
+
+//AFTER removing jest dependency from the package.json and doing `npm install` again, and then doing `npm ls jest` // shows that it has uninstalled the locally installed version of jest
+$ npm ls jest
+unicafe-redux@0.1.0 C:\FullstackopenProjects\unicafe-redux
+`-- react-scripts@3.0.1
+  `-- jest@24.7.1
+
+```
+
+****
+
+## Uninstalling dependies in node
+
+```js
+The command is simply npm uninstall <name>
+
+The Node.js documents https://npmjs.org/doc/ have all the commands that you need to know with npm.
+
+A local install will be in the node_modules/ directory of your application. This won't affect the application if a module remains there with no references to it.
+
+If you're removing a global package, however, any applications referencing it will crash.
+
+Here are different options:
+
+npm uninstall <name> removes the module from node_modules but does not update package.json
+
+npm uninstall <name> --save also removes it from dependenciesin package.json
+
+npm uninstall <name> --save-dev also removes it from devDependencies in package.json
+
+npm uninstall -g <name> --save also removes it globally
+@StackoverFlow
+```
+
+***
+
+## Online node execution
+
+https://www.katacoda.com/courses/nodejs/playground
+
+amazing than ever:
+
+https://repl.it/languages/nodejs
+
+***
+
+## Find out the NODE_ENV VARIABLE
+
+If you have defined `NODE_ENV` variable then you should be able to see this by typing `node` in the command prompt which will open the node cell and then type `process.env.NODE_ENV`.
+
+To check the existing env variables .. type this .. `process.env`
+
+You can only get the value of NODE_ENV if you have defined it in your enviornment.
+
+***
+
+## Using .env variables with react
+
+You don't need to install `dotenv` for your project explicitly, its already packed with creat-react-app, and you don't need to to import  anyfile too.
+
+```JS
+.env file >>
+REACT_APP_VARIABLE_A=CARS
+REACT_APP_VARIABLE_B=SUSUZUKI
+NODE_ENV=TESTIFYYY // even though you specify NODE-ENV, it won't change, its not allowed. React itself sets this flag.
+
+ANY FILE THAT WANTS TO ACCESS THE VARIABLES FROM .env FILE // You have to KILL, AND npm start agian.
+console.log(process.env)
+console.log(process.env.REACT_APP_VARIABLE_A);
+console.log(process.env.REACT_APP_VARIABLE_B);
+
+```
+
+***
+
+```js
+undefined
+>> undefined
+
+"undefined"
+>> "undefined" //output 1
+
+typeof undefined //type of returns an string -> "undefined"
+>> "undefined" //output 2
+
+#UNDEFINED TESTING:
+typeof undefined === "undefined" //Since output 1 and output 2 are equal, hence this evaluates-> true
+>> true
+if(typeof ghost === "undefined"){ // both double and trippe = operator works
+console.log('GHOST WORLD')
+}// PRINTS 'GHOST WORLD' for undefined variables, without any reference error.
+
+#NULL TESTING(WORKS)
+null == undefined // double operator
+>> true
+null == null // double operator
+>> true
+null === null // tripple
+>> true
+null === undefined
+false // as without type conversion, null is an object.
+
+#SINGLE FUNCTION TO CHECK BOTH NULL, UNDEFINED
+if(typeof ghost === "undefined" || ghost === null){ // all works
+console.log('GHOST WORLD') // all works
+} // all works
+
+#failing test...
+if(ghost == null || ghost == undefined){ 
+console.log('GHOST WORLD')
+}		// since the above code SEEMS to be working, BUT IT DOESN'T if variable is undefined, as it throws error Reference error, from which we are rescuing.
+```
+
+***
+
+## You should never delete package-lock.json file or alter it ever.
+
+https://stackoverflow.com/questions/54124033/deleting-package-lock-json-to-resolve-conflicts-quickly
+
+Yes, it can and will affect all the project in really bad way.
+
+1. if your team does not run `npm install` after each `git pull` you all are using different dependencies' versions. So it ends with "but it works for me!!" and "I don't understand why my code does not work for you"
+2. even if all the team runs `npm install` it still does not mean everything is ok. at some moment you may find your project acts differently. in a part that you have not been changing for years. and after (probably, quite painful) debugging you will find it's because of 3rd level dependency has updated for next major version and this led some breaking changes.
+
+Conclusion: don't ever delete `package-lock.json`. in your case you better do next way:
+
+**Approach 1**
+
+1. revert your changes in `package-lock.json`
+2. `stash` your changes
+3. `pull` most recent code version
+4. run `npm install` for all the dependencies you need to be added
+5. unstash your changes.
+
+**Approach 2**
+
+1. run merging
+2. for conflict resolution choose "their changes only" strategy on `package-lock.json`
+3. run `npm install` so dependencies you want to add are also included into `package-lock.json`
+4. finish with committing merge commit.
+
+PS yes, for first level dependencies if we specify them without ranges (like `"react": "16.12.0"`) we get the same versions each time we run `npm install`. But we cannot say the same about dependencies of 2+ level deep (dependencies that our dependencies are relying on), so `package-lock.json` is really important for stability.
+
+```JS
+resolve quickly my way..
+Download the older package-lock.json file and PLACE it in the project folder.
+>> rm -rf node_modules
+>> npm install
+```
+
+Also, you can read more here..
+
+https://medium.com/coinmonks/everything-you-wanted-to-know-about-package-lock-json-b81911aa8ab8
+
+***
+
+## Best way to sort an array of object with each object having property votes
+
+```js
+stateTemp.sort((a, b) => b.votes - a.votes)
+```
+
+***
+
+## process.env in create-react-app projects
+
+```js
+console.log('****:**')
+console.log(process.env.REACT_APP_NODE_ENV)
+console.log(process.env)
+console.log('*****')
+```
+
+***
+
+Focus from chrome developers tools to page >> tab
+
+From **page** to **chrome developers tools**  >> shift+tab, tab, tab, tab, tab till you reach dev tools.
+
+***
+
+Goto a line 21 with column number 22
+
+```js
+:21:22
+```
+
+***
+
+## Go to symbol in current workspace: 
+
+Ctrl + T, type the filename/functionname/variablenaeme
+
+Ctrl + E, go to file. (also use sometimes.)
+
+***
+
+## Search text within a text string
+
+```js
+CASE-SENSITIVE SEARCH WITHIN STRING
+'A string to test JavaScript string methods'.indexOf('string')
+//Output: 2 // returns the index of the starting character of the given text
+
+'A string to test JavaScript string methods'.indexOf('to test Java')
+//Output: 9 // returns the index of the starting character of the given text
+
+'A string to test JavaScript string methods'.indexOf('kaka')
+//Output: -1 // for no any text that is not there in the string.
+
+CASE-INSENSITIVE SEARCH WITHIN STRING
+'A string to test JavaScript string methods'.search(new RegExp("JAVA", "i"))//i is for insensitivity
+//Output: 17 // instead of the "JAVA", YOU COULD USE A STRING VARIABLE SMOOTHLY.
+
+'A string to test JavaScript string methods'.search(/JAVASCRIPT/i) // you CANNOT USE string here
+//Output: 17
+
+'A string to test JavaScript string methods'.search(/JAVASofCRIPT/i) // you CANNOT USE string here
+//Output: -1
+
+'A CAR string to test JavaScript string methods'.search(/caR/i) // you CANNOT USE string here
+//Output:  2
+// STRING Search method accepts a single argument: a pattern to search for in the string it is invoked on. This argument can be a regular expression or a string, which will automatically be converted to a regular expression. The search method is similar to the indexOf and lastIndexOf methods in that it returns the location of the first found match, or -1 if it is not found. We demonstrate with a case-insensitive search using the same string 
+```
+
+[Source Link](https://www.dyn-web.com/javascript/strings/search.php), [Source Link 2@w3school](https://www.w3schools.com/jsref/jsref_regexp_i.asp)
+
+***
+
+Dollar Bracket:
+
+```js
+# There should be no space between $ and the {}.
+Like, $ {someVariable} is not allowed, it doesn't give error, and doesn't work too.
+Rather, ${someVariable} works good.
 ```
 
 ***

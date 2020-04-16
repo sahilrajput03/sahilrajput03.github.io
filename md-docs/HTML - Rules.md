@@ -321,3 +321,37 @@ Other React html: you should always use <p> as <p></p>, <br> as <br></br>
 
 ***
 
+```html
+The <input> Element  - w3schools.com
+The <input> element is the most important form element.
+
+The <input> element is displayed in several ways, depending on the type attribute.
+
+Here are some examples:
+
+Type	Description
+<input type="text">	Defines a single-line text input field
+<input type="radio">	Defines a radio button (for selecting one of many choices)
+<input type="submit">	Defines a submit button (for submitting the form)
+```
+
+***
+
+![image-20200416172356378](HTML%20-%20Rules.assets/image-20200416172356378.png)
+
+***
+
+![image-20200416172527245](HTML%20-%20Rules.assets/image-20200416172527245.png)
+
+***
+
+![
+
+](HTML%20-%20Rules.assets/image-20200416172947038.png)![image-20200416173048618](HTML%20-%20Rules.assets/image-20200416173048618.png)
+
+![image-20200416173104881](HTML%20-%20Rules.assets/image-20200416173104881.png)
+
+https://www.w3schools.com/jsref/prop_radio_checked.asp
+
+***
+

@@ -1,6 +1,6 @@
 
 
-![1_seanbyrne_madeleyheathfishpond](TechLinks.assets/1_seanbyrne_madeleyheathfishpond.jpg)
+![1_seanbyrne_madeleyheathfishpond](1_seanbyrne_madeleyheathfishpond.jpg)
 
 
 
@@ -58,7 +58,7 @@
 
 [Top Javascript Coders](https://www.google.com/search?q=top+javascript+coders&rlz=1C1CHBF_enIN865IN865&oq=top+javascript+coders&aqs=chrome..69i57j0l5.4378j0j1&sourceid=chrome&ie=UTF-8) 
 
-![w3 vs. Bootstrap_1](TechLinks.assets/w3%20vs.%20Bootstrap_1.jpg)
+![w3 vs. Bootstrap_1](w3%20vs.%20Bootstrap_1.jpg)
 
 ***
 
@@ -94,4 +94,5 @@ python - garden [python.org/dev/peps/pep-0020](https://www.python.org/dev/peps/p
 
 ***
 
-![w3 vs. Bootstrap_1](https://i.loli.net/2020/04/12/Hohq59E7MRB6iAC.jpg)
+
+

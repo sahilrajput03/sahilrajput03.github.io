@@ -275,6 +275,7 @@ console.log(copy); // { a: 1 }
 ```javascript
 var obj1 = { a: 0 , b: { c: 0}};
 let obj3 = JSON.parse(JSON.stringify(obj1));
+let obj3
 
 console.log(JSON.stringify(obj3)); // { a: 0, b: { c: 0}}
 ```

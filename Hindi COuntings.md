@@ -128,3 +128,6 @@
 98    ninety eight   ९८    अट्ठानवे   Adhaanavay
 99    ninety nine   ९९    निन्यानवे  Ninyaanavay
 100   one hundred  १००   एक सौ   Ek Sau
+
+![image-20200416235044136](image-20200416235044136.png)
+

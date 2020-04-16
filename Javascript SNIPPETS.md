@@ -4,30 +4,59 @@ Link - @[medium](https://medium.com/javascript-in-plain-english/here-are-some-us
 
 - **isNullOrUndefined : check whether a value is null or undefined.**
 
+- ```js
+  // IDEALLY you should use below, it covers all the edgecases, its fair and square:
+  if(typeof bullshit === 'undefined' || bullshit === null ){
+  console.log('YES..GHOST..') 
+      // more code here...
+  }else{
+      // more code here...
+  }
+  ```
+
+  
+
 ```js
+# DEEP RESEARCH:
 const isNullOrUndefined = val => val === undefined || val === null;
 console.log(isNullOrUndefined(null));        // true
 console.log(isNullOrUndefined(undefined));   // true
-console.log(isNullOrUndefined('Batman'));    // false
+let poom // not intialized, hence undefined 			#DECLARE VARIABLE
+>> undefined
+let carl = undefined // explicityl defined undefined 	 #DECLARE VARIABLE
+>> undefined
+let roy = null // explicity defined null 				#DECLARE VARIABLE
+>> null
+isNullOrUndefined(poom)
+true
+isNullOrUndefined(carl)
+true
+isNullOrUndefined(roy)
+true
+isNullorUndefined(someUndeclaredVariable)				// #UNDECLARED VARIABLE
+>># THROWS ERROR, HENCE YOU HAVE TO HANDLE IT, or do it in the below way. 
+if(typeof someUndeclaredVariable === 'undefined'){
+console.log('GHOST...(its undeclared)') 				// #UNDECLARED VARIABLE
+}
+```
 
-*** above doen't work but below one works:
-// try executing the below code in chrome dev tools.
+
+
+```js
+//LEARN ABOUT THE ERORRS, Try executing the below code in chrome dev tools, OR NODE
 try{
     console.log(someundefinedvariable)
 }
 catch(err){
-console.log('---\n\n')
-console.log('errObjectItself:',err) // err = err.stack // it helps in finding the line of error 
-console.log('\n')
-console.log('err.toString():',err.toString())
-console.log('\n')
-console.log('err.name:',err.name)
-console.log('\n')
-console.log('error.message:',err.message)
+console.log('\n\n---Informative Info..\n\n')
+console.log('errObjectItself:',err,'\n') // err = err.stack // it helps in finding the line of error 
+console.log('err.toString():',err.toString(),'\n')
+console.log('err.name:',err.name,'\n')
+console.log('err.message:',err.message)
 }
-***
-
 ```
+
+
 
 ## Deal with specific error:
 
