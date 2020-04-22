@@ -39,6 +39,19 @@ Content-Type: application/json
 
 ```
 
+```js
+#put
+put  http://localhost:3003/api/blogs/5e88bc06cf0e942188515fd1
+Content-Type: application/json
+
+{
+    "likes": 30
+}
+#You have to sent what all you need at that url(let say you forget to send the content then it will be removed what was already there), you can skip id(atleast with json-server). And if 
+```
+
+
+
 ***
 
 ## Know your architecture of windows:

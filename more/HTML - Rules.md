@@ -355,3 +355,62 @@ https://www.w3schools.com/jsref/prop_radio_checked.asp
 
 ***
 
+![image-20200418150548100](image-20200418150548100.png)
+
+***
+
+![image-20200418150642528](image-20200418150642528.png)
+
+![image-20200418150726380](image-20200418150726380.png)
+
+![image-20200418150749897](image-20200418150749897.png)
+
+***
+
+![image-20200418150923276](image-20200418150923276.png)
+
+***
+
+## Crux of the research of absolute , relative, root relative url
+
+![image-20200418151141498](image-20200418151141498.png)
+
+Above example is the interesting one, since the root/absolute url is set to https://www.32schools.com/tags ,(target="_blank has no relevace in the context we are talking but it means that all links will be open in new tab, unless they are specified with target="_self"  explicitly.)
+So, all the url of the page are now modified accordingly, like 
+
+href="images/stickman.gif" >> href="https://www.32schools.com/tags/images/stickman.git"
+href="/tag_base.asp" >> href="https://www.32schools.com/tag_base.asp" << THIS ONE IS INTERESTING(root relative)
+This is so because, **setting** base href="domain/subfolder" >>  willl set the 
+root domain **to** domain
+root url  **to** domain/subfolder. 
+
+-----**By default** (if you do not specifiy <base> tag in your page.html):-
+root domain=> current domain of the page => www.google.com, www.youtube.com, www.facebook.com
+root url => current url of the page => www.google.com, www.google.com/drive
+
+***
+
+![image-20200418152811073](image-20200418152811073.png)
+
+cd to root folder (this is example of relative url)
+
+***
+
+![image-20200418152924652](image-20200418152924652.png)
+
+cd to root/Users folder. (this is example of relative url)
+
+***
+
+![image-20200418154717492](image-20200418154717492.png)
+
+***
+
+From [Working with CSS preprocessors in Chrome DevTools](https://developers.google.com/chrome-developer-tools/docs/css-preprocessors):
+
+> Many developers generate CSS style sheets using a CSS preprocessor, such as Sass, Less, or Stylus. Because the CSS files are generated, editing the CSS files directly is not as helpful.
+>
+> For preprocessors that support CSS source maps, DevTools lets you live-edit your preprocessor source files in the Sources panel, and view the results without having to leave DevTools or refresh the page. When you inspect an element whose styles are provided by a generated CSS file, the Elements panel displays a link to the original source file, not the generated .css file.
+
+***
+

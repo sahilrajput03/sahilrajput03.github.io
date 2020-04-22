@@ -821,3 +821,65 @@ Branch 'part6-2' set up to track remote branch 'part6-2' from 'origin'.
 
 ```
 
+***
+
+https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches
+
+***
+
+## Change the name of current branch#786
+
+```bash
+git branch -m <new-branch-name> // change the name of currently checked out branch
+git branch -m <old-branch-name> <new-branch-name> // general syntax for changing name of any branch
+```
+
+***
+
+# **Remove Untracked/Uncached/Unstaged Data (files/folder)#786**
+
+```bash
+git clean -fd //Cleans the Untracked/Uncached/Unstaged Area
+```
+
+***
+
+## Creating new empty branch#786
+
+```bash
+git checkout --orphan <branch-name> // checkout to an unborned branch.
+git rm -rf . 		//Deletes everything except the .git folder
+*(There is forth category too, i.e., ignored)
+```
+
+***
+
+## Deletes everything except the .git folder #786
+
+```bash
+git rm -rf . // deletes everything of the repository except the .git folder
+```
+
+***
+
+## Forcefully checkout current branch(if you messed up anything)
+
+```bash
+git checkout -f
+```
+
+***
+
+## Everything from staging area/cached area /tracked area  TO UNSTAGED Area/CACHEDArea/UNTRACKED Area-
+
+(In other words you can say UNDO git add .)
+
+```bash
+git reset OR git rm --cached -r .
+****
+git rm --cached <fielname> //for individual file
+```
+
+***
+
+## 

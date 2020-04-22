@@ -927,6 +927,31 @@ axios.delete(URL, {
 
 ***
 
+# axios.put
+
+```js
+const increaseVoteAxios = async (content, id, votes) => {
+  let currentAnecUrlWithId = `${baseUrl}/${id}`;
+  const object = { content, votes: votes + 1 };
+  try {
+    const response = await axios.put(currentAnecUrlWithId, object);
+    console.log("response.status:", response.status);
+    return response.data;
+  } catch (error) {
+    console.log(
+      "☻☻☻-004 ASYNC FUNCTION FAILED IN ./src/services/anecdoteAxios.js"
+    );
+    return null;
+  }
+};
+```
+
+
+
+***
+
+
+
 # For testing in single file via nodemon
 
 ```js
@@ -1827,7 +1852,9 @@ Chrome Dev TOols : Ctrl+ shift + j/i for elements/console OR••
 
 ***
 
-Change dock Style: Ctrl + shift + d.
+## Chrome Developer Tools
+
+Change dock Style: Ctrl + shift + d. (Detach dock)
 
 You may edit styes in html pages if they are located in some css file. Check all the .css files in website via pressing ctrl+p and typing .css and it will localte the .css files, Alternatievely you may click on the the line number mentioned in the right side css style panel in the elements tab. And from there you will be redirected to the file, so make changes there and you would be having an option to save the file via right clicking in the file after making the desired changes to the file, all changes you would make are hot updates, i.e., it updates as you type.
 
@@ -2402,6 +2429,187 @@ Dollar Bracket:
 Like, $ {someVariable} is not allowed, it doesn't give error, and doesn't work too.
 Rather, ${someVariable} works good.
 ```
+
+***
+
+## Instead of npm install, you can do npm i, too.
+
+***
+
+Managing different remotes in the same repo with the help of different branches.
+
+***
+
+```bash
+chetan@insidebug MINGW64 /c/FullstackopenProjects/redux-anecdotes
+$ jest -v
+24.8.0
+
+chetan@insidebug MINGW64 /c/FullstackopenProjects/redux-anecdotes
+$ cd ..
+
+chetan@insidebug MINGW64 /c/FullstackopenProjects
+$ jest -v
+25.3.0
+```
+
+***
+
+## Option to add braces to arrow function:
+
+Place cursor between 
+
+```js
+const getId = () => (100000 * Math.random()).toFixed(0);
+	  after first = and before '>'.
+```
+
+Press ctrl+.
+
+![image-20200419163645783](image-20200419163645783.png)
+
+Same goes the other way:
+
+![image-20200419163729244](image-20200419163729244.png)
+
+****
+
+## Amazing code snippet which I was working upon long before..
+
+```js
+let abhi = () => {
+    setTimeout(() => {console.log('message is here...');setTimeout(() => {console.log('message is here...');if(flame)setTimeout(() => {console.log('message is here...');setTimeout(() => console.log('message is here...'),4000)},3000)},2000)},1000)   
+}
+flame =false // execute this too if you want to stop it mid way...
+flame =true // exeute this too if you want to be unstoppable
+abhi()
+```
+
+***
+
+## Infinite recursive function:
+
+```js
+let lamha = () => {
+    setTimeout(()=> {{console.log('I\' executing...',new Date().getSeconds()); if(andha) lamha()}},2000)    
+}
+let andha = true
+lamha()
+// Output: this function will execute forever unless YOU SPECIFY andha to be false IN THE RUN TIME OR LATER TIME WHEN YOU WANT THE LOOP TO DISCONNECT.
+```
+
+***
+
+## When your react server is on, you may not hung up the server to install any package, instead you can install in other terminal session
+
+***
+
+## To disable automatic browser opening the desired url
+
+You can run `BROWSER=none npm start` or 
+create an `.env` file with `BROWSER=none` in it to prevent the browser from opening.
+
+***
+
+![image-20200421155952428](image-20200421155952428.png)
+
+File structure, for npm run build in the create-react-app.
+
+***
+
+### Miracle Tragedy:
+
+```js
+const foo = {}
+foo.a = 10 //successful
+**
+foo.b.c = 10 //error is thrown
+//Uncaught TypeError: Cannot set property 'c' of undefined
+**
+foo.d = {e:10} //successful
+**
+foo.m = {}
+foo.m.n = 10 //successful
+```
+
+***
+
+![image-20200421204331687](image-20200421204331687.png)
+
+***
+
+![image-20200421204624007](image-20200421204624007.png)
+
+***
+
+of JSON input while parsing near '...s":"^2.0.2","fs-extra' >> while doing 
+
+```js
+npm install css-loader
+```
+
+***
+
+Doing npm cache clean --force will clear most of the contents in the **npm-cache** folder in %appdata%
+
+***
+
+```js
+car = ['i10','i20','i30']
+(3) ["i10", "i20", "i30"]
+for(i of car){
+console.log(i)
+}
+```
+
+***
+
+car ={}
+
+***
+
+```js
+Math.floor(22.342)
+//22
+```
+
+***
+
+## Lodash
+
+```js
+console.log("###", _.countBy(["foo", "man", "chew", "bar", "bar"], (t) => t));
+//Output:   ### { foo: 1, man: 1, chew: 1, bar: 2 }
+```
+
+```js
+const desiredAuthor = _.head(_(authors).countBy().entries().maxBy(_.last)); 
+  // using lodash, we find author(string) who occured most in the authorList(string array i.e., ['sahil','mohit','sahil','anuj']).
+```
+
+Using lodash is weird, you can not console.log everthing to test the desired result.
+
+Better option is to keep reference of use-cases of lodash from the examples online.
+
+***
+
+## Include
+
+```js
+console.log(['joe', 'jane', 'mary'].includes('jane')); //true
+```
+
+***
+
+Windows Switching: Ctrl + Alt + Tab, 
+
+Alt+Tab, 
+
+Alt+Esc(works best when you have two or three windows opened)
+
+***
+
+![image-20200422191710435](image-20200422191710435.png)
 
 ***
 

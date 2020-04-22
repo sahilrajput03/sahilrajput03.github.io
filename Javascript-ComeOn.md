@@ -1041,7 +1041,58 @@ JSON dates have the same format as the ISO-8601 standard: YYYY-MM-DDTHH:mm:ss.ss
 
 ***
 
-Try and catch error in JS
+## throw keyword:
+
+You may throw CUSTOM ERRORS like the one below:
+
+```js
+try {
+	if(true) throw "Too big";
+}
+catch (err) {
+  console.log('Error is:',err,'\nWith err.message:',err.message)
+}
+//Output:
+Error is: Too big 
+With err.message: undefined
+```
+
+**
+Different style of throw:
+
+```js
+throw { name: "Nicholas" };
+// Uncaught {name: "Nicholas"}
+throw true;
+// Uncaught true
+throw 12345;
+// Uncaught 12345
+throw new Date();
+// Uncaught Sun Apr 19 2020 18:28:04 GMT+0530 (India Standard Time)
+throw "message";
+// Uncaught message
+
+```
+
+**
+
+### Create your own custom error:
+
+```js
+function MyError(message){
+    this.message = message; //you may specify more things here....according to need...
+}
+throw new MyError("Hello world!");
+//Output: Uncaught MyError {message: "Hello world!"}
+```
+
+
+
+***
+
+
+
+## Try and catch error in JS
 
 ```js
 Note.findById(request.params.id)
@@ -1051,27 +1102,17 @@ Note.findById(request.params.id)
             throw new Error("*****Whooooooooooooops!********");
         })
         .catch(err => console.log(err))	
-
-***
-
-NOTE: YOU CAN'T DO ABOVE SYNTAX IN TRY AND CATCH BLOCKS.
-//example =>
-try {
-console.log(undeclaredVariable23)
-}
-catch(err => console.log('pippi is throwing error, my lord. err:',err) )
-// AS THE ABOVE STATEMENT WILL THROW ERROR, Uncaught SyntaxError: Unexpected token '=>'
-//Correct usage => 
+// Output: Uncaught SyntaxError: Unexpected token '=>'
+*********************************************************************
+Syntax of try and catch :
 try {
   Block of code to try
 }
 catch(err) {
   Block of code to handle errors
 }
-    
-    
-** optionally you can use finally too:
-// example => 
+************************************************************************
+Optionally you can use finally too:
 try {
   Block of code to try
 }
@@ -1081,15 +1122,11 @@ catch(err) {
 finally {
   Block of code to be executed regardless of the try / catch result
 }
+   
+***********************************************************************
+NOTE: For .then PROMISES YOU have to use callback for the catch...like below
+.then((val)=>consolle.log(val, "error bcoz consolle is not correct")).catch(err => console.log('pippi is throwing error, my lord. err:',err) )
     
-** YOU may throw custom errors like the one beloe:
-// example => 
-try {
-	if(true) throw "Too big";
-}
-catch (err) {
-  console.log('pippi is throwing error, my lord. err:',err)
-}
 ```
 
 
