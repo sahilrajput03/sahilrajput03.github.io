@@ -2613,3 +2613,4 @@ Alt+Esc(works best when you have two or three windows opened)
 
 ***
 
+e
