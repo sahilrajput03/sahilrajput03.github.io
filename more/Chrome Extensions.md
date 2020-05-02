@@ -53,10 +53,10 @@ Tip**: [Chrome Sheets - Template Category - Checkuout Sight](https://docs.google
 48 Url Shortener Offered by: thebyteseffect.com [Link](https://chrome.google.com/webstore/detail/url-shortener/godoifjoiadanijplaghmhgfeffnblib?hl=en) 
 49 One Click URL Shortener Offered by: Pro Inc. [Link](https://chrome.google.com/webstore/detail/one-click-url-shortener/fjnodoodcohggdkacpmiidjikhlihcdk?hl=en) 
 50 Lazarus Form Recovery 
-51 Video Speed Controller [Link](https://chrome.https://convertio.cogoogle.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk?hl=en) 
+51 Video Speed Controller [Link](https://chrome.https://convertio.cogoogle.com/webstore/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk?hl=en) -- Youtube Speed Controller Amazing 
 52 JSONView 
 53 Typio Form Recovery 
-54 Auto Quality for YouTube™ [Link](https://chrome.google.com/webstore/detail/auto-quality-for-youtube/iaddfgegjgjelgkanamleadckkpnjpjc?hl=en) 
+54 Auto Quality for YouTube™ [Link](https://chrome.google.com/webstore/detail/auto-quality-for-youtube/iaddfgegjgjelgkanamleadckkpnjpjc?hl=en) >> Includes autopause video at the load of the page.
 55 Multiple Tools for Facebook
 56 convertio.co - A Document format converter - https://convertio.co 
 57.Screen Recorder - [Link](https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden/related?hl=en) AWESOMEEEONE[Ratan]

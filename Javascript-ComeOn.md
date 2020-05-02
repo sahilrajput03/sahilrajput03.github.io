@@ -1159,6 +1159,22 @@ npm ERR!     C:\Users\chetan\AppData\Roaming\npm-cache\_logs\2019-11-07T03_08_56
 //So hereby use if you want to force npm to clean ca
 npm cache clean --force
 npm cache verify
+
+***
+$ npm -v
+// Output: 6.9.0
+$ npm install -g npm
+$ npm -v
+// Output:6.14.4
+
+```
+
+# [npm - using stale package data  - Error?? ](https://stackoverflow.com/questions/45553401/npm-using-stale-package-data)
+
+```bash
+rm ./package-lock.json
+rm -r ./node_modules
+npm cache clear --force
 ```
 
 
@@ -1225,6 +1241,38 @@ Connect to device over wifi
 {you can use arp -a command to scan the connected devices with the network you have connected to (you may confirm with the mac accress.)}
 
 adb connect <device-ip>:5555
+
+## Store a file: 
+
+**Press win+X and press a (To open command prompt as admin.)**
+
+Execute the below code in once.
+
+```bash
+cd /adbPulledData
+adb connect 192.168.43.1:5555
+adb pull /sdcard/Apple/Mahabharat/51-71/new/76(240P).mp4 ./
+adb pull /sdcard/Apple/Mahabharat/51-71/new/77(240P).mp4 ./
+adb pull /sdcard/Apple/Mahabharat/51-71/new/78(240P).mp4 ./
+adb pull /sdcard/Apple/Mahabharat/51-71/new/79(240P).mp4 ./
+adb pull /sdcard/Apple/Mahabharat/51-71/new/80(240P).mp4 ./
+adb pull /sdcard/Apple/Mahabharat/51-71/72.mp4 ./
+#THIS LINE IS INTENTIONALLY PUT. To let the last command execute(with the newline character).
+```
+
+```bash
+adb pull /sdcard/Apple/Mahabharat/www ./
+#Above command will pull the complete folder www to the current folder.
+```
+
+```bash
+adb push <file/folder to be pushed> /sdcard/Apple
+
+# To Disconnect all devices:
+adb disconnect
+```
+
+
 
 ***
 

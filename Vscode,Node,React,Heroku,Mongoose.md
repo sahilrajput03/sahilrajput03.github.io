@@ -190,6 +190,14 @@ set SAHIL=SOMETHING-ANYTHING
 
 set SAHIL : will print the value of system variable in cmd.
 
+```bash
+C:\Users\chetan>set cdd=cd ..
+
+C:\Users\chetan>%cdd%		# Also you can get value as: echo %cdd%
+
+C:\Users>
+```
+
  https://www.poftut.com/how-to-list-set-get-windows-environment-variables-with-set-command-in-command-line-ms-dos/ 
 
 ***
@@ -971,6 +979,8 @@ https://kapeli.com/cheat_sheets/Axios.docset/Contents/Resources/Documents/index
 # Axios single file testing
 
 via **nodemon**
+
+You may use axios for static(absolute domain:port in the baseUrl [*const baseUrl2 = 'http://localhost:3003/api/login'*], that'll work too, but you would have to make changes everywhere then. And thats not affordable.)
 
 `nodemon <Axios_commands_file.js>`
 
@@ -2229,13 +2239,15 @@ npm uninstall -g <name> --save also removes it globally
 
 ***
 
-## Online node execution
+## Online node execution , node playground, node online,
 
 https://www.katacoda.com/courses/nodejs/playground
 
 amazing than ever:
 
-https://repl.it/languages/nodejs
+https://repl.it/languages/nodejs <= this is what you actually require, and this has support from github, and also enables collaboration. Although, in vscode you have collaboration pluging from microsoft itself, is much more impressive. But you need to login with google/facebook to be able to collaborate with people with a link, and the other person also has to make account via google. The good news is you don't need to verify manually via email.
+
+https://codesandbox.io/ - amazing templates for making projects at tips, save your templates there.
 
 ***
 
@@ -2613,4 +2625,450 @@ Alt+Esc(works best when you have two or three windows opened)
 
 ***
 
-e
+### Webpack has to be restarted when we make changes to its configuration file. It is also possible to make webpack watch for changes made to itself but we will not do that this time.
+
+***
+
+## Size vs. size on disk:
+
+1.Size is the actual byte count of the file while size on disk is the actual byte count that it occupies on the disk.
+2.Size on disk is usually bigger than the actual size of the file.
+3.Size on disk can be smaller than the actual size for drives that use compression.
+
+***
+
+If we inspect the contents of the bundle file, we notice that it could be greatly optimized in terms of file size by removing all of the comments. There's no point in manually optimizing these files, as there are many existing tools for the job.
+
+The optimization process for JavaScript files is called *minification*. One of the leading tools intended for this purpose is [UglifyJS](http://lisperator.net/uglifyjs/).
+
+Starting from version 4 of webpack, the minification plugin does not require additional configuration to be used. It is enough to modify the npm script in the *package.json* file to specify that webpack will execute the bundling of the code in *production* mode:
+
+```js
+    "build": "webpack --mode=production",
+    "start": "webpack-dev-server --mode=development"
+```
+
+
+
+***
+
+![image-20200422211332904](image-20200422211332904.png)
+
+![image-20200422211357892](image-20200422211357892.png)
+
+***
+
+![image-20200422211644330](image-20200422211644330.png)
+
+***
+
+![image-20200422213142160](image-20200422213142160.png)
+
+![image-20200422213206728](image-20200422213206728.png)
+
+Solve this by below method:::
+
+![image-20200422213037701](image-20200422213037701.png)
+
+Hide this warning by:-
+
+![image-20200422213259353](image-20200422213259353.png)
+
+***
+
+![image-20200422215650677](image-20200422215650677.png)
+
+***
+
+## Node online environment:
+
+https://npm.runkit.com/
+
+***
+
+## Webserver on npm: 
+
+## => Always prefer: live-server
+
+**Directory Listings support:** live-server, http-server,  No-> static-server, No -> lite-server
+
+**Hotreload Support:** lite-server, liver-server, NO -> static-server(but manual refresh does work), NO ->http-server(but manual refresh does work)
+
+```bash
+1. npx static-server # npm i -g lite-server (doesnt support directory listings)
+2. http-server <directory> OR http-server . OR http-server (with no arguments) # npm i -g lite-server
+3. lite-server #Slowest App(in terms of starting the application) npm i -g lite-server  #** WITH HOTRELOAD
+#Warning lite-server takes time to start its server, you must use live-server.
+4. live-server # npm i -g live-server  #** WITH HOTRELOAD
+```
+
+lite-server --baseDir="dist"
+
+***
+
+Ctrl+ k Ctrl+ S will show you all the shortcuts(keybindings).
+
+Ctrl + k, z : Will open zen mode, distraction free mode. Press double esc to exit out.
+
+Ctrl + k, m : Will open change language mode.
+
+***
+
+## Better comments: (paste below code in js file)
+
+```js
+// simple comment
+// // stricked comment
+// ? 
+// !
+// * I love to do things here.
+// todo: 
+/** to use this type of commenting just type /** and it will show the intellisense
+ * @param tomi 
+ */
+
+```
+
+## Color Highlight:
+
+```js
+const color23 = '#12ff12'
+```
+
+## Image Preview:
+
+```js
+const image = 'https://in.bmscdn.com/iedb/artist/images/website/poster/large/pawan-kumar-3553-24-03-2017-17-34-29.jpg'
+const image2 = 'https://i.ytimg.com/vi/zk3dljvlG0U/maxresdefault.jpg'
+```
+
+## Paste json as code;
+
+```json
+{
+    car:'alto'
+}
+```
+
+If you would try, the above code you would get error i.e., clipboard doesn't contain valid json code.
+
+But if you format the code with prettier, i.e., paste the above same json to file and save with Ctrl+s, then it will properly format it to:-
+
+```js
+{
+  "car": "alto"
+}
+```
+
+and now you can paste the above json, via paste json as code in any file.
+
+
+
+## Debugging
+
+It is the best thing, **use debugger as pressing F5** (**fn+F5** will actually work). It will pause at break points, to start again, press F5(fn+F5 will work actually), and will pause at break point, to start again press F5(fn+F5 will work actually). 
+
+To any time **stop the debugger**: press **shif+F5** (without fn key will work.)
+
+ALSO: you can type the variable names to their value evaluated at the time.
+
+ALSO: when the line is encountered i.e., the line is highlighted(when paused at break point), debugger has stopped at the start of the line. So, you can access all the data before that line via variables.
+
+**Remove breakpoints: Alt, R, A** >> will remove all the breakpoints.
+
+**Toggle many Breakpoints at once**: Place cursors at desired places via pressing and holding Alt key(will enable multiple cursors) and then **press F9 (fn + F9 will work actually)**.
+
+You may use chrome debugger as environment for the debugger to debug inside the chrome browser.
+
+***
+
+Important [npm commands](https://gist.github.com/ankurk91/48e0844320601ebc0cae#update-npm-itself)
+
+```bash
+NPM PACK, NPM-PACK-ALL,:
+_    
+# Personal Project with production dependencies(to include developmetn devs: --dev-deps)    
+failed-failed-failed-failed-failed-failed
+// Installation: npm i -g npm-pack-all
+npm-pack-all // do in any project(should have package.json file)
+npm-pack-all --dev-deps // do in any projecgitt(should have package.json file)
+tar -xzf <.tgz file> // to extract the .tgz file
+  //if the above one doesn't work, use tar -xf <.tgz file>
+mv package <the project name you want>
+#ABOVE METHOD IS THE BEST(as it saves us from the installation time from the internet)
+
+_
+#List all dependecy tree in node_modules folder
+npm ls
+
+_
+# NPM PACK (ignores the node_modules folder(thus doen't pack the dependent devps))
+$ npm pack axios // will download the axios tarball(.tgz) to current folder.
+// (doesn't pack the dependencies, so use for dependecies, but this is a good way to pack a personal project without dependencies)
+$ npm pack lodash // will download the axios tarball(.tgz) to current folder.
+$ npm pack axios lodash ..as_many_you_want
+
+_
+# To install these packages in your local node_modules folder:
+$ npm i <location to tgz file> // you cannot install personal projects as dependencies(it has to have index.js file in the root of the )
+(above command may give error in mingw, but command prompt will never output any error.)
+
+_
+# Personal Project(the only objecttive is backup/save/share in a feasible manner):
+npm pack // will pack the project in .tgz file
+tar -xzf <.tgz file> // will extract the project files(will have a single package folder)
+mv package <the project name you want>
+	^renamed-to^
+
+
+_
+# NPM VIEW
+$ npm view <package-name> // will output package details and link to the tarball(.tgz file of the package).
+$ npm view axios
+$ npm view lodash
+
+
+_
+# extras:
+To extract the package:(this is not much useful, as you may use winrar to extract)
+$ tar -xzf lodash-4.17.4.tgz
+$ tar -xzf axios-0.19.2.tgz
+
+# Know where is your global forlder:
+npm config get prefix // in command or bash
+//output=> C:\Users\chetan\AppData\Roaming\npm
+```
+
+***
+
+# **#Using tar, #tarball,** 
+
+```bash
+$ tar -czvf <new file.tgz or file.tar.gz> <content to be archived> 
+#Creates .tar.gz file(.tar.gz and .tgz are different extension representaion for same data type)
+	$(tar -czvf simpletar.tar file1 file2 dir1 dir2)
+$ tar -xzvf <.tgz file> #extracts the .tgz file to current folder
+$ tar -xvf <.tgz file> -C package #extracts in package folder
+```
+
+Here’s what those switches actually mean:
+
+- -c: **C**reate an archive.
+
+- -z: Compress the archive with g**z**ip.
+
+- -v: Display progress in the terminal while creating the archive, also known as “**v**erbose” mode. The v is always optional in these commands, but it’s helpful.
+
+- -f: Allows you to specify the **f**ilename of the archive.
+
+- * -C set desired target location for extraction of the .tgz file
+
+  
+
+  # **#Best way and only way to compress to npm project:**
+
+  [link helped](https://stackoverflow.com/questions/1371261/get-current-directory-name-without-full-path-in-a-bash-script) ; [link helped2](https://www.thegeekstuff.com/2010/05/bash-variables/); ==your project directory name should not have spaces.==
+
+  ```bash
+  tar -czf ${PWD##*/}"-project_backup".tgz ../${PWD##*/}
+  ```
+
+  or:-
+
+  ```bash
+  result=${PWD##*/}
+  tar -czf $result"-project_backup".tgz ../$result
+  ```
+
+  Below is a personal script to package the project. If the current directory has mypackage.tgz file already, it would be replaced by the new one.
+
+  ```bash
+  mkdir -p ../packageX
+  cp -r * ../packageX/
+  tar -czf mypackage.tgz ../packageX
+  rm -rf ../packageX
+  #Your project file has been generated with name mypackage.tgz
+  ```
+
+  Below script uses mv, and its fast, but must never actually use it, as it could lead to loss of files when the project files are in use at the time execution:
+
+  ```bash
+  # never use this one.
+  mkdir package
+  mv * .* package
+  tar -czf mypackage.tgz package
+  mv package/* package/.* .
+  rmdir package
+  echo "this line is inted to let the last line execute"
+  ```
+
+  
+
+  ### Using tar with no compression(almost the same size of the contents)
+
+  ```bash
+  tar -cvf simpletar.tar <file/dir> <file/files> <<more files to archive..>>
+  tar -xvf simpletar.tar # will extract to current folder.
+  tar -xvf simpletar.tar -C dest # will extract to dest folder.
+  ```
+
+  ## mkdir
+
+  ```bash
+  mkdir -p /var/path/to/your/dir
+  # creates all the required directories
+  ```
+
+  
+
+  ***
+
+  ## #Moving in teminal #Bash, #moving in cmd, #moving cmd,#move all files, # move everything, #move files, #move all files, # move hidden files 
+
+  ```bash
+  Syntax:
+  $ mv [file/files] [directory]
+  
+  $ mv package/* . # this will move all the files from the package to the current directory(except the files starting with .)
+  
+  $ mv package/.* . # this will move all the files from the package to the current directory(only the files starting with .)
+  
+  $ mv package/.* package/* . # this will move all the files from the package to the current directory (includes ALL FILES).
+  # All in addition to the moving you'll get the acceptable errors i.e.,
+  # 1. mv: cannot move ‘from/.’ to ‘to/.’: Device or resource busy
+  # 2. mv: cannot remove ‘from/..’: s  directory
+  ```
+
+  ```bash
+  rm -rf * .*
+  # will remove all files, and files starting with .
+  ls -a
+  # will show all files, hidden files too.
+  ```
+
+  
+
+***
+
+## You can check how up to date your dependencies are using the command
+
+```bash
+npm outdated --depth 0
+```
+
+The npm [audit](https://docs.npmjs.com/cli/audit) command can be used to check the security of dependencies.
+
+```bash
+npm audit
+```
+
+```bash
+// Let's run npm audit fix as the report suggests:
+npm audit fix
+```
+
+
+
+***
+
+## Files exclude
+
+Search for "files exclude" in vscode settings and add *.tgz there. [link helped](https://stackoverflow.com/questions/30140112/how-do-i-hide-certain-files-from-the-sidebar-in-visual-studio-code)
+
+***
+
+## Proxy in webpack config:
+
+in file **webpack.config.js**
+
+```bash
+devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    port: 9000,
+    proxy: {								# You
+        '/api': {							# need to add
+            target: 'http://localhost:3003',	# proxy 
+            secure: false						# here
+        }									# and that's all.
+    }
+}
+```
+
+Once you add this proxy, you will get the results for 
+
+*localhost:3000/api/users* **same as** localhost:3003/api/users
+
+l*ocalhost:3000/api/login* **same as** localhost:3003/api/login
+
+*localhost:3000/api/blogs* **same as** localhost:3003/api/blogs
+
+[help link](https://medium.com/@drgenejones/proxying-an-external-api-with-webpack-serve-code-and-a-restful-data-from-separate-endpoints-4da9b8daf430)
+
+
+
+***
+
+## For each:
+
+```js
+var myArray = [123, 15, 187, 32]
+myArray.forEach(function (value, i) {
+    console.log('%d: %s', i, value);
+});
+```
+
+***
+
+Keyboard shortcuts vscode updated(1 may, 2020.):-
+
+```
+{
+  "key": "ctrl+alt+.",
+  "command": "workbench.action.terminal.focusNext"
+}
+{
+  "key": "ctrl+alt+,",
+  "command": "workbench.action.terminal.focusPrevious"
+}
+{
+  "key": "alt+right",
+  "command": "workbench.action.navigateForward"
+}
+{
+  "key": "alt+left",
+  "command": "workbench.action.navigateBack"
+}
+```
+
+***
+
+## Sending html file via express server
+
+```js
+//assuming app is express Object.
+app.get('/',function(req,res) {
+  res.sendFile('index.html');
+});
+```
+
+[Reference](https://codeforgeek.com/render-html-file-expressjs/)
+
+***
+
+## Send a link to mobile in chrome:
+
+Right click a tab, and press S.
+
+***
+
+## Sending html in express
+
+```js
+ res.send(
+    `<div><p>Phonebook has info for ${persons.length} people.<p> ${time}</div>`
+  );
+```
+
+***
+

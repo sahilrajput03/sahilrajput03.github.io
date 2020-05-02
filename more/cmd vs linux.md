@@ -1,3 +1,65 @@
+## #Moving in teminal #Bash, #moving in cmd, #moving cmd,#move all files, # move everything, #move files, #move all files, # move hidden files 
+
+```bash
+Syntax:
+$ mv [file/files] [directory]
+
+$ mv package/* . # this will move all the files from the package to the current directory(except the files starting with .)
+
+$ mv package/.* . # this will move all the files from the package to the current directory(only the files starting with .)
+
+$ mv package/.* package/* . # this will move all the files from the package to the current directory (includes ALL FILES).
+# All in addition to the moving you'll get the acceptable errors i.e.,
+# 1. mv: cannot move ‘from/.’ to ‘to/.’: Device or resource busy
+# 2. mv: cannot remove ‘from/..’: s  directory
+```
+
+***
+
+## Download something with wget:
+
+```bash
+wget <link to anything>
+```
+
+
+
+***
+
+```bash
+cd %userprofile%
+will open the current user's directory, additionally you may open via cd /users/chetan
+```
+
+
+
+***
+
+
+
+In windows, directory system is case insensitive, so Car and car can not exist in the same folder.
+
+Similary, when you cd /users/chetan or cd /Users/Chetan will result in same things(it would not give sideeffect).
+
+```bash
+dir /p
+will print directory content to the screen but will stop when the screen is filled.
+```
+
+
+
+***
+
+## Enable pasting with right click of mouse:
+
+If you enable "Quick edit mode" then you can paste by right clicking with the mouse anywhere in the window - its not as quick as a shortcut key, but its quicker than the context menu.
+
+To enable quick edit mode right click on the window border and select properties, on the resulting properties dialog make sure that "**Quick edit mode**" is selected and press OK:
+
+![Screenshot of the properties dialog](ft1L6.png)
+
+***
+
 # COMMAND PROMPT:
 
 COPY: `xcopy src dest /e /i {insides of src folder into dest folder}`
@@ -49,3 +111,49 @@ pause in linux: read -p "The command has been completed. Press Enter  key to con
  mv dotenv_unix .env 
 Edit FIle: `vi <file>`
 
+***
+
+## Installing chocolatey:
+
+Open powershell with admin.
+
+1. Run 
+
+```bash
+Get-ExecutionPolicy
+```
+
+2. If it returns Restricted, then run 
+
+```bash
+Set-ExecutionPolicy AllSigned or 
+Set-ExecutionPolicy Bypass -Scope Process.
+```
+
+3. Run the script:
+
+   ```bash
+   Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+   ```
+
+   4. Wait a few seconds for the command to complete
+
+   5. If you don't see any errors, you are ready to use Chocolatey! 
+
+      ```
+      choco
+      choco -?
+      ```
+
+      ```bash 
+      PS C:\Windows\system32> choco
+      Chocolatey v0.10.15
+      Please run 'choco -?' or 'choco <command> -?' for help menu.
+      PS C:\Windows\system32>
+      ```
+
+      
+
+   ***
+
+   

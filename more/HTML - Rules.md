@@ -1,3 +1,44 @@
+cars
+
+***
+
+## HTML inline elements
+
+\1. **HTML inline level elements** can appear in the body of an HTML page.
+
+\2. It can contain data and other **inline** elements.
+
+\3. By default, **inline elements** do not begin on new lines.
+
+\4. **inline elements** create shorter structures (than block level elements).
+
+**List of inline elements**
+
+- b, big, i, small, tt
+- abbr, acronym, cite, code, dfn, em, kbd, strong, samp, var
+- a, bdo, br, img, map, object, q, script, span, sub, sup
+- button, input, label, select, textarea
+
+***
+
+## List of block level elements/ #block elements
+
+- p
+- h1, h2, h3, h4, h5, h6
+- ol, ul
+- pre
+- address
+- blockquote
+- dl
+- div
+- fieldset
+- form
+- hr
+- noscript
+- table
+
+***
+
 ### HTML - Rules
 
 Below Code prints as it is in html with the give newline and defined number of spaces.

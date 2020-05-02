@@ -30,6 +30,7 @@ $ jest my-test  #jest will fetch file location automatically.
 
 ```js
 npx jest -t 'a specific note is within the returned notes'
+npx jest -t '<test-name>' || '<test-description>' (single or double quotes)
 ```
 
 The provided **parameter** can refer to the **name of the test** or the **describe block**. The parameter can also contain just a **part of the name**.
@@ -129,18 +130,21 @@ mode(["a","b","b","b","b","c","c","c"])
 
 ***
 
-Remove duplicates, Unique array, 
+## Remove all duplicates in an array
 
-```js
-GETTING UNIQUE ARRAY FORM OLD ARRAY
-array = ["sahil","mohit","sahil"]
-uniq = [...new Set(array)];
-// uniq => ["sahil","mohit"]
-```
+tags: #Remove duplicates in array, #Unique array, #remove all duplicates, #only unique; [Link](https://www.geeksforgeeks.org/how-to-convert-set-to-array-in-javascript/)
+
+- [ ] ```js
+  GETTING UNIQUE ARRAY FORM OLD ARRAY
+  const arrayUnion = ["sahil","mohit","sahil"]
+  const uniqSet = [...new Set(arrayUnion)];
+  const uniqArray = Array.from(uniqSet) # also, let uniqArray = [...uniqSet]; this works too.
+  // uniqArray => ["sahil","mohit"]
+  ```
 
 ***
 
-We specified the mode of the application to be *development* in the *npm run watch* script that uses nodemon. We also specified that the default *npm start* command will define the mode as *production*.
+We specified the mode of the application to be *development* in the *npm run watch* script that uses nodemon. We also specified that the default *npm start* ==command== will define the mode as *production*
 
 There is a slight issue in the way that we have specified the mode of the application in our scripts: it will not work on Windows. We can correct this by installing the [cross-env](https://www.npmjs.com/package/cross-env) package with the command:
 
@@ -248,14 +252,25 @@ module.exports = {
 # watch mode in tests:
 
 ```bash
-jest -t <text> --watch
+jest -t <test_name, test_description> --watch
+jest <filename> --watch
 #now anytime you can stop the execution of the tests with *q*
 #rerun just press *Enter* key.
 ```
 
 ***
 
-# If testing is slow  , it means your internet connection sucks; better do testing on locally running database servers.
+# ==If testing is slow  , it means your internet connection sucks; better do testing on locally running database servers.==
+
+***
+
+```js
+/ The second parameter in map and foreach loop is index of the array
+var myArray = [123, 15, 187, 32]
+myArray.forEach(function (value, i) {
+    console.log('%d: %s', i, value);
+});
+```
 
 ***
 

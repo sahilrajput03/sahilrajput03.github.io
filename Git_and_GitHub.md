@@ -1,3 +1,166 @@
+## How contributing works
+
+Nobody can push directly to your repository if you are not already granting them write access.
+
+The process for contributing to a public repository in GitHub starts by forking the repository, then **pushing the change onto the forked**, then creating a **pull request onto the original repository**. After that comes the role of the project owner to review and take action (merge/decline) of the requested code change.
+
+```
+If the repository is public others can fork it, commit to their own fork.
+
+They can then ask you to pull some of the changes in their fork into your repository via a pull-request.
+```
+
+```
+Too, all repositories are read-only for anonymous users. By default only the owner of the repository has write access. If you can push to your own repo, it's because you are using one of the supported authentification methods (HTTPS, SSH, ...).
+
+If you want to grant someone else privileges to push to your repo, you would need to configure that access in the project settings.
+
+To contribute to projects in which you don't have push access, you push to your own copy of the repo, then ask for a pull-request. Linux is not a good example for that, because the kernel developers do not use GitHub pull requests.
+```
+
+
+
+***
+
+## Create branch name with a slash
+
+```bash
+$  git checkout -b hotfix/fixed-readme
+```
+
+
+
+***
+
+## Install hub with choco(to manage github via command line)
+
+```bash
+$ choco install hub
+```
+
+To get general info about hub command-line:
+
+```bash
+$ hub
+```
+
+Create new gist:
+
+```bash
+$ hub gist create -c <file> # you could have used --public instead, but it would not copy the url to clipboard but echo the url on terminal.
+```
+
+above command copies the url of the file on web to clipboard.
+
+```bash
+$ hub gist create -co <file>
+```
+
+above command **c**opies the url, and **o**pens it in default browser.
+
+__
+
+Open the current repo in browser:
+
+```bash
+$ hub browse
+```
+
+__
+
+Create new branch from local repositories:
+
+```bash
+$ hub create
+```
+
+Above command will create the repository with the name of the folder in which the local repository is contained. If the folder is name is like, Part 1, then the repository name will be :- Part-1. Hyphen(dash) is added inplace of spaces.
+
+__
+Deleting branch with hub:
+
+You need to enable token for deleting repositories via visiting https://github.com/settings/tokens/ and opening hub for your pc. And then enable token for **delete_repo** and click **Update token** button. That's all.
+
+```bash
+$ hub delete <repo-name>
+```
+
+View repository: https://github.com/github/hub to learn more about hub commandline.
+
+***
+
+## View all local branches:
+
+The below command shows all local and all remote branches(irrespectively they have been checked out earlier or not).
+
+```bash
+git checkout <press-tab><press-tab>
+```
+
+**Note**: we have git branch and git branch -a to get the list of branches present in the repository. 
+But the former one (**git branch**) can show branches which you have **checkedout earlier atleast once**.
+And the latter one (**git branch -a**) shows branches which you have **checkedout earlier atleast once**(or more) and **all remote branches**.
+
+***
+
+## Clone a single branch only:
+
+Below command only clones the the desired branch:
+
+```bash
+$ git clone --single-branch --branch <branchname> <remote-repo>
+```
+
+__
+But if you want all remote branches, but checkout the one you desired:
+
+```bash
+$ git clone --branch <branchname> url
+```
+
+***
+
+
+
+## Work with same branch in gitbhub with different local repositories and push them:
+
+### The best of all tools:
+
+**Initialize local repository, and then add a remote, and then set default remote for the checkedout branch and simultaneously push to the same remote.**
+
+```bash
+git init
+touch readme.md
+git add .
+git commit -m Readme_file_added
+git branch -m <my-project2-branch> #Chang the name of branch to your desired choice.
+git remote add origin <ssh-url-of-the-repo>
+git push -u origin <my-project2-branch>
+# any further push can be done easily with ...
+[$ git push]
+#..., as the remote for the checkedout branch is set default upstrea.
+
+_
+Git push syntax:
+$ git push <remote-name> <branch-name>
+$ git push <remote-name> #This works when you have set default upstream for the checkedout branch.
+Most commonly used one:-
+$ git push #This works when you have set default upstream for the checkedout branch.
+
+_
+Git push bad syntaxes:
+$ git push <branch-name> :- would give error like below
+fatal: '<branch-name>' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+```
+
+
+
+***
+
+
+
 Git Guide - [Guide Awesome and recommeded by Github.com](https://gist.github.com/hofmannsven/6814451)
 
 • Use `git status` to check differences.
@@ -439,33 +602,31 @@ Atlassian has some excellent documentation on merging vs. rebasing.
 
 ***
 
-###### About deleting branches locally and on remotes.
+## #About deleting branches locally and on remotes,#delete branch,
 
-```
+*You **CANNOT** delete a **checked out** branch.* 
+*You **CANNOT** delete **default branch on github remote** repository.*
+
+```bash
 Executive Summary
-$ git push -d <remote_name> <branch_name>
-$ git branch -d <branch_name>
-Note that in most cases the remote name is origin.
+$ git push -d <remote_name> <branch_name> #doesn't deletes branch on local machine
+$ git branch -d <branch_name> #doesn't deletes branch on remote.
+# Note that in most cases the remote name is origin.
 
+_
 Delete Local Branch
-To delete the local branch use one of the following:
-
 $ git branch -d branch_name
 $ git branch -D branch_name
-Note: The -d option is an alias for --delete, which only deletes the branch if it has already been fully merged in its upstream branch. You could also use -D, which is an alias for --delete --force, which deletes the branch "irrespective of its merged status." [Source: man git-branch]
+# Note: The -d option is an alias for --delete, which only deletes the branch if it has already been fully merged in its upstream branch. 
+# You could also use -D, which is an alias for --delete --force, which deletes the branch "irrespective of its merged status." [Source: man git-branch]
 
-Delete Remote Branch [Updated on 8-Sep-2017]
-As of Git v1.7.0, you can delete a remote branch using
-
-$ git push <remote_name> --delete <branch_name>
-which might be easier to remember than
-
-$ git push <remote_name> :<branch_name>
-which was added in Git v1.5.0 "to delete a remote branch or a tag."
-
-Starting on Git v2.8.0 you can also use git push with the -d option as an alias for --delete.
-
-Therefore, the version of Git you have installed will dictate whether you need to use the easier or harder syntax.
+_
+Delete Remote Branch
+$ git push -d <remote_name> <branch_name> #doesn't deletes branch on local machine
+# Defalut branch CANNOT BE DELETED IN GITHUB.
+# Use --delete option as an alias for -d.
+Also, below command does the same above thing.
+$ git push <remote_name> :<branch_name> # Doesn't deletes branch on local machine
 ```
 
 src: [How do I delete a Git branch locally and remotely..?](https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely) 
@@ -516,7 +677,7 @@ git revert <commit-hash>
 
 ***
 
-# <u>Create branch from another branch and change to new branch:</u>
+## Create branch from another branch and change to new branch:
 
 ```bash
 git checkout -b myFeature dev
@@ -524,34 +685,20 @@ git checkout -b myFeature dev
 
 ****
 
-# Create branch from current branch and change to new branch:
+## Create branch from current branch and change to new branch:
 
 ```bash
 git checkout -b myFeature
 ```
 
-
-
-***
-
-###### Print all commits with single commit status in one line-
-
 ```bash
 git log --oneline
+# Print all commits with single commit status in one line syntaxes.
 ```
 
-***
-
-##### Git with GitHub quick:
-
-•Create online repo Github.
-
-•Now, create a folder with name of your choice.
-
 ```bash
-cd newFolder
-git clone <repo-url> <space> <dot>
-READY TO ROCK AND ROLL.
+git clone <repo-url> .
+# Cone a repo in curren directory
 ```
 
 ***
@@ -766,41 +913,49 @@ So for Git 2 the answer is:
 
 ***
 
-In git help documents, you will find it talking about the index, so index is nothing but the staging state.
+### In git help documents, you will find it talking about the index, so index is nothing but the staging state.
 
 ***
 
-AWESOMEE - An official visual git cheatsheet @  https://ndpsoftware.com/git-cheatsheet.html#loc=workspace; 
+## AWESOMEE - An official visual git cheatsheet 
+
+@  https://ndpsoftware.com/git-cheatsheet.html#loc=workspace; 
 
 ***
 
-Official git documentation -  https://git-scm.com/doc  - Always prefer to read real docs.
+### Official git documentation -  
+
+https://git-scm.com/doc  - Always prefer to read real docs.
 
 ***
+
+
 
 ```bash
 git pull
-The above command equals to below command. As git fetch just add the history of remote repository to the local copy of the repository.
+# The above command equals to below command as git fetch just add the history of remote repository to the local copy of the repository.
 git fetch ; git fetch
 ```
 
 ***
 
-git cheatsheet from git-scm :  https://github.github.com/training-kit/downloads/github-git-cheat-sheet/ 
+### git cheatsheet from git-scm :  
+
+https://github.github.com/training-kit/downloads/github-git-cheat-sheet/ 
 
 ***
 
-## Delete line in vi editor, use shortcut: dd
+## Delete a line in vi editor, use shortcut: dd
 
 ***
 
-# .gitignore file pattern:
+## .gitignore file pattern,#adding files .gitignore,#folders in .gitignore,#forder .gitignore:
 
 https://linuxize.com/post/gitignore-ignoring-files-in-git/
 
 ***
 
-Stash your changes
+## Stash your changes
 
 ```bash
 chetan@insidebug MINGW64 /c/FullstackopenProjects/redux-notes/src (part6-1)
@@ -827,11 +982,13 @@ https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-man
 
 ***
 
-## Change the name of current branch#786
+## #Rename Branch, #Change the name of  branch , #name of branch, #branch name,  #change branch name, #change name of branch,#786
+
+NOTE: YOU CAN ONLY CHANGE THE NAME OF BRANCH ONCE FIRST COMMIT IS MADE.
 
 ```bash
-git branch -m <new-branch-name> // change the name of currently checked out branch
-git branch -m <old-branch-name> <new-branch-name> // general syntax for changing name of any branch
+git branch -m desiredBranchName // Changes the name of currently checked out branch
+git branch -m branchName desiredBranchName // General syntax for changing name of any branch
 ```
 
 ***
@@ -875,11 +1032,33 @@ git checkout -f
 (In other words you can say UNDO git add .)
 
 ```bash
-git reset OR git rm --cached -r .
-****
+$(All the below commands works in same manner)
+git reset
+git rm --cached -r .
 git rm --cached <fielname> //for individual file
 ```
 
 ***
 
-## 
+## #Gitk - a graphical interface of git
+
+```bash
+gitk 
+# In a git repository.
+$(You can easily reverse a git commit and view everything correctly.)
+```
+
+***
+
+## Generate a new ssh key:
+
+Basically this features adds a ssh encrytion on your side(machine), and it bind the passphrase to the repository to the local pc and authenticated changes would be made only who has the encryted private key. Public key is stored on the github settings.
+
+```bash
+Step1: $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com" 
+//Use your own email address.
+Step2: Copy the content of .pub file(C:\Users\chetan\.ssh\something.pub) and paste it in Github>Settings>Ssh and Cpg keys>New Ssh key.
+```
+
+***
+
