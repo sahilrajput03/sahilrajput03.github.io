@@ -1,3 +1,33 @@
+## Renaming extensions of multiple files:
+
+https://unix.stackexchange.com/questions/19654/how-do-i-change-the-extension-of-multiple-files
+
+***
+
+## Converting multiple file with pandocto html, pandoc
+
+```bash
+for f in *.md ; do pandoc ${f} -f markdown -t html -s -o ${f%.md}.html  ; done
+
+___
+#assigns appropriate metadat for all files
+for f in *.md ; do pandoc "${f}" -f markdown -t html -s -o "${f%.md}.html" --metadata title="${f%.md}"  ; done
+
+___
+# to folder html in current folder
+for f in *.md ; do pandoc "${f}" -f markdown -t html -s -o html/"${f%.md}.html" --metadata title="${f%.md}"  ; done
+```
+
+
+
+
+
+***
+
+https://devhints.io/bash - bash cheatsheet.
+
+***
+
 ## #Moving in teminal #Bash, #moving in cmd, #moving cmd,#move all files, # move everything, #move files, #move all files, # move hidden files 
 
 ```bash
