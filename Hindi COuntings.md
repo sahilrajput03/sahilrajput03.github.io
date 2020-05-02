@@ -12,6 +12,8 @@
 9     nine   ९     नौ    Nao
 10    ten    १०    दस    Das
 
+
+
 ## 11 to 20 in Hindi
 
 11    eleven       ११    ग्यारह Gyaarah

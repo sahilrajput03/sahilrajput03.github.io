@@ -1,3 +1,11 @@
+## Github pages jekyll error build erro:
+
+https://stackoverflow.com/questions/25262183/github-page-build-failure
+
+***
+
+
+
 ## How contributing works
 
 Nobody can push directly to your repository if you are not already granting them write access.
