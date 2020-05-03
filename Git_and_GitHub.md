@@ -56,6 +56,7 @@ Create new gist:
 
 ```bash
 $ hub gist create -c <file> # you could have used --public instead, but it would not copy the url to clipboard but echo the url on terminal.
+$ hub gist create -v <file1> <file2> <file3> <as many you want>
 ```
 
 above command copies the url of the file on web to clipboard.

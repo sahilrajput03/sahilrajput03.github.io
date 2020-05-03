@@ -260,7 +260,7 @@ jest <filename> --watch
 
 ***
 
-# ==If testing is slow  , it means your internet connection sucks; better do testing on locally running database servers.==
+## ==If testing is slow  , it means your internet connection sucks; better do testing on locally running database servers.==
 
 ***
 

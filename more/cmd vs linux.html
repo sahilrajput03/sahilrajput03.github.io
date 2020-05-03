@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Renaming extensions of multiple files:</title>
+    <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><h2 id="renaming-extensions-of-multiple-files:"><a class="header-link" href="#renaming-extensions-of-multiple-files:"></a>Renaming extensions of multiple files:</h2>
+<p><a href="https://unix.stackexchange.com/questions/19654/how-do-i-change-the-extension-of-multiple-files">https://unix.stackexchange.com/questions/19654/how-do-i-change-the-extension-of-multiple-files</a></p>
+<hr>
+<h2 id="converting-multiple-file-with-pandocto-html,-pandoc"><a class="header-link" href="#converting-multiple-file-with-pandocto-html,-pandoc"></a>Converting multiple file with pandocto html, pandoc</h2>
+<pre class="hljs"><code><span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> *.md ; <span class="hljs-keyword">do</span> pandoc <span class="hljs-variable">${f}</span> <span class="hljs-_">-f</span> markdown -t html <span class="hljs-_">-s</span> -o <span class="hljs-variable">${f%.md}</span>.html  ; <span class="hljs-keyword">done</span>
+
+___
+<span class="hljs-comment">#assigns appropriate metadat for all files</span>
+<span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> *.md ; <span class="hljs-keyword">do</span> pandoc <span class="hljs-string">"<span class="hljs-variable">${f}</span>"</span> <span class="hljs-_">-f</span> markdown -t html <span class="hljs-_">-s</span> -o <span class="hljs-string">"<span class="hljs-variable">${f%.md}</span>.html"</span> --metadata title=<span class="hljs-string">"<span class="hljs-variable">${f%.md}</span>"</span>  ; <span class="hljs-keyword">done</span>
+
+___
+<span class="hljs-comment"># to folder html in current folder</span>
+<span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> *.md ; <span class="hljs-keyword">do</span> pandoc <span class="hljs-string">"<span class="hljs-variable">${f}</span>"</span> <span class="hljs-_">-f</span> markdown -t html <span class="hljs-_">-s</span> -o html/<span class="hljs-string">"<span class="hljs-variable">${f%.md}</span>.html"</span> --metadata title=<span class="hljs-string">"<span class="hljs-variable">${f%.md}</span>"</span>  ; <span class="hljs-keyword">done</span></code></pre><hr>
+<p><a href="https://devhints.io/bash">https://devhints.io/bash</a> - bash cheatsheet.</p>
+<hr>
+<h2 id="#moving-in-teminal-#bash,-#moving-in-cmd,-#moving-cmd,#move-all-files,-#-move-everything,-#move-files,-#move-all-files,-#-move-hidden-files"><a class="header-link" href="##moving-in-teminal-#bash,-#moving-in-cmd,-#moving-cmd,#move-all-files,-#-move-everything,-#move-files,-#move-all-files,-#-move-hidden-files"></a>#Moving in teminal #Bash, #moving in cmd, #moving cmd,#move all files, # move everything, #move files, #move all files, # move hidden files</h2>
+<pre class="hljs"><code>Syntax:
+$ mv [file/files] [directory]
+
+$ mv package/* . <span class="hljs-comment"># this will move all the files from the package to the current directory(except the files starting with .)</span>
+
+$ mv package/.* . <span class="hljs-comment"># this will move all the files from the package to the current directory(only the files starting with .)</span>
+
+$ mv package/.* package/* . <span class="hljs-comment"># this will move all the files from the package to the current directory (includes ALL FILES).</span>
+<span class="hljs-comment"># All in addition to the moving you'll get the acceptable errors i.e.,</span>
+<span class="hljs-comment"># 1. mv: cannot move ‘from/.’ to ‘to/.’: Device or resource busy</span>
+<span class="hljs-comment"># 2. mv: cannot remove ‘from/..’: s  directory</span></code></pre><hr>
+<h2 id="download-something-with-wget:"><a class="header-link" href="#download-something-with-wget:"></a>Download something with wget:</h2>
+<pre class="hljs"><code>wget &lt;link to anything&gt;</code></pre><hr>
+<pre class="hljs"><code><span class="hljs-built_in">cd</span> %userprofile%
+will open the current user<span class="hljs-string">'s directory, additionally you may open via cd /users/chetan</span></code></pre><hr>
+<p>In windows, directory system is case insensitive, so Car and car can not exist in the same folder.</p>
+<p>Similary, when you cd /users/chetan or cd /Users/Chetan will result in same things(it would not give sideeffect).</p>
+<pre class="hljs"><code>dir /p
+will <span class="hljs-built_in">print</span> directory content to the screen but will stop when the screen is filled.</code></pre><hr>
+<h2 id="enable-pasting-with-right-click-of-mouse:"><a class="header-link" href="#enable-pasting-with-right-click-of-mouse:"></a>Enable pasting with right click of mouse:</h2>
+<p>If you enable &quot;Quick edit mode&quot; then you can paste by right clicking with the mouse anywhere in the window - its not as quick as a shortcut key, but its quicker than the context menu.</p>
+<p>To enable quick edit mode right click on the window border and select properties, on the resulting properties dialog make sure that &quot;<strong>Quick edit mode</strong>&quot; is selected and press OK:</p>
+<p class="img-container"><img src="ft1L6.png" alt="Screenshot of the properties dialog"></p>
+<hr>
+<h1 id="command-prompt:"><a class="header-link" href="#command-prompt:"></a>COMMAND PROMPT:</h1>
+<p>COPY: <code>xcopy src dest /e /i {insides of src folder into dest folder}</code>
+CREATE FILE: <code>echo ## &gt;&gt; newemptyfile1</code>
+DELETE FILE/S: <code>del &lt;file/files/*&gt; (removes files, not folders)</code>
+DELETE FOLDER/S: <code>rmdir /q /s &lt;folder/folders/&lt; * not supported&gt;</code>
+create folder: <code>mkdir &lt;folder-name&gt;</code>
+PAUSE BATCH FILE AFTER EXECUTION: <code>&lt;code&gt; &amp;&amp; @pause</code>
+ECHO NEXT LINE CHARACTER: <code>echo ..... &amp;&amp; echo.This comes as new line.</code>
+RENAME: <code>ren dotenv_win .env</code>
+EDIT FILE: <code>notepad &lt;file&gt;</code></p>
+<p>EXAMPLES: 
+cd jekyll-jinn/_site/ &amp;&amp; xcopy . &quot;../..&quot; /e /i {&quot; Quotes are important, otherwise cmd interpret them as option rather parameters}</p>
+<hr>
+<p>You may recover the premission of a folder via using this article: <a href="https://answers.microsoft.com/en-us/windows/forum/windows_8-files/you-dont-currently-have-permission-to-access-this/2cc4abe2-41ea-4023-b594-104c3b9e9f4d?auth=1">Links</a> . Although, what actually solved the harsh problem is below command:</p>
+<pre class="hljs"><code>TAKEOWN /F &lt;DIRECTORY&gt; /R /D Y</code></pre><hr>
+<p>You may set the low battery action and critical battery action to hibernate. And set the respective percentage to 20% and 12%. So than even when you have hibernated while doing work you  could boot again the last time and you know that you are risking the failure of power for the system this time. Its very important. You must set the reserve battery level below the critical battery level so that when you are risking power failure you could have some benefit of power. You must set it to 7%, so that when you start up pc after hibernating twice it could take the action to get the reserve battery when the battery reaches 7% after some time.</p>
+<hr>
+<h2 id="create-folder:-md-or-mkdir"><a class="header-link" href="#create-folder:-md-or-mkdir"></a>Create folder: md or mkdir</h2>
+<hr>
+<p>=&gt;bat file example contents:-</p>
+<p>echo &quot;sahil&quot;
+echo &quot;mohit&quot;
+@pause</p>
+<p>{bat executables are like each line contains one command, and any command including multiple &amp;&amp; , is considered single command}</p>
+<hr>
+<h1 id="linux:"><a class="header-link" href="#linux:"></a>LINUX:</h1>
+<p>copy: cp -r src dest
+create: touch newemptyfile1
+delete: rm -rf &lt;file/folder&gt;
+pause in linux: read -p &quot;The command has been completed. Press Enter  key to continue...&quot;
+ mv dotenv_unix .env 
+Edit FIle: <code>vi &lt;file&gt;</code></p>
+<hr>
+<h2 id="installing-chocolatey:"><a class="header-link" href="#installing-chocolatey:"></a>Installing chocolatey:</h2>
+<p>Open powershell with admin.</p>
+<ol class="list">
+<li>Run </li>
+</ol>
+<pre class="hljs"><code>Get-ExecutionPolicy</code></pre><ol start="2">
+<li>If it returns Restricted, then run </li>
+</ol>
+<pre class="hljs"><code>Set-ExecutionPolicy AllSigned or 
+Set-ExecutionPolicy Bypass -Scope Process.</code></pre><ol start="3">
+<li><p>Run the script:</p>
+<pre class="hljs"><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(<span class="hljs-string">'https://chocolatey.org/install.ps1'</span>))</code></pre><ol start="4">
+<li><p>Wait a few seconds for the command to complete</p>
+</li>
+<li><p>If you don&#39;t see any errors, you are ready to use Chocolatey! </p>
+<pre class="hljs"><code><span class="hljs-attribute">choco</span>
+choco -?</code></pre><pre class="hljs"><code>PS C:\Windows\system32&gt; choco
+Chocolatey v0.10.15
+Please run <span class="hljs-string">'choco -?'</span> or <span class="hljs-string">'choco &lt;command&gt; -?'</span> <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span> menu.
+PS C:\Windows\system32&gt;</code></pre></li>
+</ol>
+</li>
+</ol>
+<hr>
+    </article>
+  </body>
+</html>

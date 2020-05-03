@@ -3072,3 +3072,47 @@ Right click a tab, and press S.
 
 ***
 
+# Best extension to convert masses of md to html files.
+
+https://github.com/mixu/markdown-styles (1.5k stars)
+
+```bash
+For nowo above software is working amazingly.
+with command:-
+generate-md --layout github --input ./input --output ./output
+```
+
+https://github.com/sindresorhus/github-markdown-css (4.6k stars)
+
+```bash
+this one require more settings for settin the desired css for the conversion
+```
+
+https://github.com/KrauseFx/markdown-to-html-github-style (table support)(77 stars)
+
+***
+
+## Making list of html files in index file automated
+
+```bash
+In cmd (will replace contents of the index.html already there)
+dir /B *.html > FILELIST.html
+# (this is important, as when you would copy the file names from html, newline would be replaced by single spaces )
+
+In node:
+let string1 = [paste the content in txt file]
+let fileNames = string1.split('.html ')
+let anchorTags = fileNames.map(t => `<a href='${t}.html'>${t}</a><br>`)
+let htmlGenerated = anchorTags.join('\n')
+console.log(htmlGenerated)
+
+```
+
+***
+
+# Accessing file in node
+
+simple code @ [medium article (amaz..)](https://medium.com/stackfame/get-list-of-all-files-in-a-directory-in-node-js-befd31677ec5)
+
+***
+

@@ -58,7 +58,7 @@ console.log('err.message:',err.message)
 
 
 
-## Deal with specific error:
+# Deal with specific error:
 
 ```js
 try{
