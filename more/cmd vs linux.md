@@ -94,15 +94,40 @@ To enable quick edit mode right click on the window border and select properties
 
 # COMMAND PROMPT:
 
-COPY: `xcopy src dest /e /i {insides of src folder into dest folder}`
-CREATE FILE: `echo ## >> newemptyfile1`
-DELETE FILE/S: `del <file/files/*> (removes files, not folders)`
-DELETE FOLDER/S: `rmdir /q /s <folder/folders/< * not supported>`
-create folder: `mkdir <folder-name>`
-PAUSE BATCH FILE AFTER EXECUTION: `<code> && @pause`
-ECHO NEXT LINE CHARACTER: `echo ..... && echo.This comes as new line.`
-RENAME: `ren dotenv_win .env `
-EDIT FILE: `notepad <file>`
+```bash
+COPY: 
+xcopy src dest /e /i  #copies insides of src folder into dest folder
+# /e is for copying directories, empty and non-empty including both types of directories.
+# /I - If destination does not exist and copying more than one file, assumes that destination must be a directory.
+# To overwrite while copying to the destination use /Y switch like below:
+xcopy "./source" "./destination" /h /y
+# /y Suppresses prompting to confirm you want to overwrite an existing destination file.
+# /h is a switch for copying hidden and system files too.
+
+CREATE FILE:
+echo ## >> newemptyfile1
+
+DELETE FILE/S:
+del <file/files/*> (removes files, not folders)
+
+DELETE FOLDER/S: 
+rmdir /q /s <folder/folders/		# {* not supported}
+
+create folder:
+mkdir <folder-name>
+
+PAUSE BATCH FILE AFTER EXECUTION:
+<code> && @pause
+
+ECHO NEXT LINE CHARACTER:
+echo ..... && echo.This comes as new line.
+
+RENAME:
+ren dotenv_win .env
+
+EDIT FILE:
+notepad <file>
+```
 
 EXAMPLES: 
 cd jekyll-jinn/_site/ && xcopy . "../.." /e /i {" Quotes are important, otherwise cmd interpret them as option rather parameters}

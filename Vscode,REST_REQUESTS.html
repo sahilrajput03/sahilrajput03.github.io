@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Know your architecture of windows:</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><pre class="hljs"><code>#create note <span class="hljs-keyword">with</span> authorization
+post http:<span class="hljs-comment">//localhost:3003/api/notes</span>
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1a3UiLCJpZCI6IjVlN2Y0NTM2YmU3NGI4NTIyNDRlZjJmOSIsImlhdCI6MTU4NTM5OTExOH0.NLGlyS2naCpso_0qSe4AYCuWWXZC6X-uiD2JKhoxOJg
+
+{
+  <span class="hljs-string">"content"</span>: <span class="hljs-string">"Single Page Apps use token authentication"</span>,
+  <span class="hljs-string">"important"</span>: <span class="hljs-literal">false</span>
+}</code></pre><pre class="hljs"><code>#create-user
+post http:<span class="hljs-comment">//localhost:3003/api/users</span>
+Content-Type: application/json
+
+{
+  <span class="hljs-string">"username"</span>: <span class="hljs-string">"kuku"</span>,
+  <span class="hljs-string">"password"</span>: <span class="hljs-string">"password123"</span>
+}</code></pre><pre class="hljs"><code>#simple get request
+get http:<span class="hljs-comment">//localhost:3001/notes</span>
+<span class="hljs-comment">// when using locahost, you should always use http not https, bcoz you to use https you need to configure you node server for that.</span></code></pre><pre class="hljs"><code>#login
+post http:<span class="hljs-comment">//localhost:3003/api/login</span>
+Content-Type: application/json
+
+{
+  <span class="hljs-string">"username"</span>: <span class="hljs-string">"kuku"</span>,
+  <span class="hljs-string">"password"</span>: <span class="hljs-string">"password123"</span>
+}
+</code></pre><pre class="hljs"><code>#put
+put  http:<span class="hljs-comment">//localhost:3003/api/blogs/5e88bc06cf0e942188515fd1</span>
+Content-Type: application/json
+
+{
+    <span class="hljs-string">"likes"</span>: <span class="hljs-number">30</span>
+}
+#You have to sent what all you need at that url(<span class="hljs-keyword">let</span> say you forget to send the content then it will be removed what was already there), you can skip id(atleast <span class="hljs-keyword">with</span> json-server). And <span class="hljs-keyword">if</span> </code></pre><hr>
+<h2 id="know-your-architecture-of-windows:"><a class="header-link" href="#know-your-architecture-of-windows:"></a>Know your architecture of windows:</h2>
+<pre class="hljs"><code>wmic os get osarchitecture</code></pre><hr>
+<h2 id="the-motive-of-the-desired-code-is-to-ensure-the-variable-to-be-'undefined',-find-if-the-variable-is-undefined"><a class="header-link" href="#the-motive-of-the-desired-code-is-to-ensure-the-variable-to-be-'undefined',-find-if-the-variable-is-undefined"></a>THE MOTIVE OF THE DESIRED CODE IS TO ENSURE THE VARIABLE TO BE &#39;undefined&#39;, find if the variable is undefined</h2>
+<h2 id="check-if-the-variable-is-undefined"><a class="header-link" href="#check-if-the-variable-is-undefined"></a>Check if the variable is undefined</h2>
+<pre class="hljs"><code>#somethings that works amaz...
+if(<span class="hljs-keyword">typeof</span> tutu ===<span class="hljs-string">"undefined"</span>){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'its okay you are undefined'</span>)
+}
+<span class="hljs-comment">//above example prints when tutu is undefined.</span>
+
+
+#But..
+if(<span class="hljs-keyword">typeof</span> tutu){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'its not okay, I\'m getting printed even when you do exist, as string \'undefined\' evaluates as truthy value.'</span>)
+}
+
+
+#Also..
+if(!tutu){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'its not okay, this piece of code throws error: Reference Error, tutu is not defined.'</span>)
+}</code></pre><hr>
+<pre class="hljs"><code>#Deleting
+DELETE http:<span class="hljs-comment">//localhost:3001/api/notes/5dbfeba6117b9f1ecc3fb2b6</span>
+###
+DELETE http:<span class="hljs-comment">//localhost:3001/api/notes/5dbfebdd9edc4017dce88838</span></code></pre><hr>
+    </article>
+  </body>
+</html>
