@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><pre class="hljs"><code><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">"path"</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>);</code></pre><pre class="hljs"><code><span class="hljs-keyword">const</span> directoryPath = path.join(__dirname, <span class="hljs-string">""</span>);
+<span class="hljs-comment">// you can apped any additional directory names form right, and it would make a complete directory location like, path.join(_dirname,"rome","italy","spain/india") would make the directoryPath to be resolved to "current_directory/rome/italy/spain/india"</span></code></pre><pre class="hljs"><code>fs.writeFile(filePath, <span class="hljs-string">""</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"done"</span>);
+  });
+<span class="hljs-comment">//this statement will empty the file you provide in the filePath, say </span>
+<span class="hljs-keyword">const</span> filePath = <span class="hljs-string">"index2.html"</span>; <span class="hljs-comment">// will be the index2.html in the current directory.</span>
+<span class="hljs-comment">//Look for example at the file below:-</span></code></pre><pre class="hljs"><code><span class="hljs-comment">//requiring path and fs modules</span>
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">"path"</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>);
+<span class="hljs-comment">//joining path of directory</span>
+<span class="hljs-keyword">const</span> directoryPath = path.join(__dirname, <span class="hljs-string">""</span>);
+<span class="hljs-built_in">console</span>.log(directoryPath);
+<span class="hljs-keyword">const</span> filePath = <span class="hljs-string">"index2.html"</span>;
+<span class="hljs-comment">//passsing directoryPath and callback function</span>
+fs.readdir(directoryPath, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, files</span>) </span>{
+  <span class="hljs-comment">//handling error</span>
+  <span class="hljs-keyword">if</span> (err) {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Unable to scan directory: "</span> + err);
+  }
+  <span class="hljs-keyword">let</span> htmlelements = [];
+  <span class="hljs-comment">//listing all files.html using forEach</span>
+
+  <span class="hljs-comment">//DELETE ALL CONTENT</span>
+  fs.writeFile(filePath, <span class="hljs-string">""</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"done"</span>);
+  });
+
+  files.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">file</span>) </span>{
+    <span class="hljs-comment">// Do whatever you want to do with the file</span>
+    <span class="hljs-keyword">if</span> (file.includes(<span class="hljs-string">".html"</span>)) {
+      file = file.substring(<span class="hljs-number">0</span>, file.length - <span class="hljs-number">3</span>);
+      htmlelements.push(<span class="hljs-string">`&lt;a href="<span class="hljs-subst">${file}</span>.html"&gt;<span class="hljs-subst">${file}</span>&lt;/a&gt;&lt;br&gt;`</span>);
+    }
+    <span class="hljs-comment">// console.log(htmlelements);</span>
+  });
+  <span class="hljs-built_in">console</span>.log(htmlelements.join(<span class="hljs-string">""</span>));
+  fs.appendFile(filePath, htmlelements.join(<span class="hljs-string">""</span>), <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+    <span class="hljs-keyword">if</span> (err) {
+      <span class="hljs-comment">// append failed</span>
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">// done</span>
+      <span class="hljs-comment">// htmlelements</span>
+    }
+  });
+});
+</code></pre><p>Take a look at this article for referencing the current path in which the file is executing:-</p>
+<p><a href="https://flaviocopes.com/node-get-current-folder/">https://flaviocopes.com/node-get-current-folder/</a></p>
+    </article>
+  </body>
+</html>
