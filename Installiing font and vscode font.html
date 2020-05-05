@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Other considerations</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><h1 id="other-considerations"><a class="header-link" href="#other-considerations"></a>Other considerations</h1>
+<p>In order for your <em>italics</em> to look different than your normal text, you need to be using a font whose italics, look different. Such a font is OperatorMono (paid), or <a href="https://github.com/kencrocken/FiraCodeiScript">FiraCodeiScript</a> [INSTALL, all three font files i.e., regular, italics, and bo] (free), or <a href="https://github.com/kosimst/FiraFlott">FiraFlott</a> (free). I personally prefer FiraCodeiScript.</p>
+<p>To make the italic characters linked, (not have spacing between them), like writing cursive, you need to enable font ligatures:</p>
+<p><a href="https://i.stack.imgur.com/KG1PI.png"><img src="KG1PI.png" alt="Ligature Example"></a></p>
+<p>To do the above, make sure that your settings.json has the following:</p>
+<pre class="hljs"><code>{
+  <span class="hljs-attr">"editor.fontLigatures"</span>: <span class="hljs-literal">true</span>, 
+  <span class="hljs-attr">"editor.fontFamily"</span>: <span class="hljs-string">"'Fira Code iScript', Consolas, 'Courier New', monospace"</span>
+}</code></pre><p><em>The rest of the fonts are not needed, but they are fallback fonts in case that you are missing the first. Fonts with spaces in their names, usually need single quotes<code>&#39;</code>. Also, you might <strong>need to restart VS Code</strong>.</em></p>
+    </article>
+  </body>
+</html>
