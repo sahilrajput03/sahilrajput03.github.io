@@ -1334,6 +1334,7 @@ fetch('google.com').then((d)=>console.log(d)).catch(err=> console.log(err)).fina
 ## Asynchronous Task in Serial Order**(or in sequential order)**:-
 
 In other words another asynchronous task starts only when previous is resolved.
+**example:**
 
 ```js
 //Simple promise call:-
@@ -1344,9 +1345,30 @@ new Promise((resolve) => {
 //Simple promise callback function:-
 let fun = () =>
   new Promise((resolve) => {
-    setTimeout(() => console.log("tik-tick"), 1_000);
+    setTimeout(() => {
+      console.log("tik-tick");
+      console.log("processing-some-inside-operations");
+      resolve("continuee");
+    }, 1_000);
   });
-fun();
+
+fun().then((returned) => console.log("FINALLY AFTER 1 SEC, WE HAVE RECEIVED:",returned));
+```
+
+***
+
+## Another e.g.
+
+```js
+//Promise with some parameter:-
+let fun = (secs) =>
+  new Promise((resolve) => {
+	if(!secs) secs = 1
+      setTimeout(() => {
+      console.log("TIK-TICK:","minute:seconds",new Date().getMinutes(),":",new Date().getSeconds());
+      resolve("continuee");
+    }, 1_000*secs);
+  });
 
 //Promise resolving(Asynchronous Calling) in sequence/serially:-
 fun().then((t) => {
@@ -1376,14 +1398,20 @@ fun().then((t) => {
 });
 ```
 
-**Pictorial form of above function:**![funcalling_img](funcalling_img.png)
+**Pictorial form of above function:**![](funcalling_img.png)
 
 ***
+
+## Simple resolving and chaining process:
 
 ```js
 new Promise(resolve => {setTimeout(() => resolve(3), 2000)})
         .then(d => (d*d)).then((ee)=> console.log(ee)) // first resolve returns whats inside it.
 ```
+
+***
+
+## Expertise in promises:
 
 ```js
 //EXECUTE THE CODE IN ONCE IN CHROME CONSOLE.
@@ -1415,7 +1443,7 @@ console.log('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFollow the confir
 ***
 
 ```
-The reason above code works without even declaring the flag, (as let flag; flag = false/true), is that if you don't declare they become become global variables. YES THEY DOOO.. ITS JS.
+*The reason above code works without even declaring the flag, (as let flag; flag = false/true), is that if you don't declare they become become global variables. YES THEY DOOO.. ITS JS.
 pLEASE READ: BELOW ARTICLE FOR JS PRACTISES.
 ```
 
