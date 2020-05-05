@@ -6,6 +6,8 @@ https://unix.stackexchange.com/questions/19654/how-do-i-change-the-extension-of-
 
 ## Converting multiple file with pandocto html, pandoc
 
+(designing problem with pandoc, so avoiding for a while)
+
 ```bash
 for f in *.md ; do pandoc ${f} -f markdown -t html -s -o ${f%.md}.html  ; done
 

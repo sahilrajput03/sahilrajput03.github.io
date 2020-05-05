@@ -3,13 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Github pages jekyll error build erro:</title>
+    <title>Making use of collaborations on github</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="github-pages-jekyll-error-build-erro:"><a class="header-link" href="#github-pages-jekyll-error-build-erro:"></a>Github pages jekyll error build erro:</h2>
+    <article class="markdown-body"><h1 id="making-use-of-collaborations-on-github"><a class="header-link" href="#making-use-of-collaborations-on-github"></a>Making use of collaborations on github</h1>
+<p>The first techniuque is, make a fork of someone&#39;s repo (repo-original)(this will make of copy of the repo in your github account, say repo-copy) and then make changed to your copy of the repo(repo-copy). And push the code to your repo-copy in github(via git push). So, when you are ready with your changes, make a pull request from your repo-copy. Like :</p>
+<p class="img-container"><img src="image-20200504172905367.png" alt="image-20200504172905367"></p>
+<p>and this will ask you the TARGET repo to which you want to make a request. And the actual user of the repo has to merge the pull request to the repository(he/she gets the link for that in the associated email). Or he/she can do it via visiting the repository and clicking the available pull request like belo:w-</p>
+<p><img src="image-20200504174144199.png" alt="image-20200504174144199">. And merging it to the repo with a single click.</p>
+<h2 id="better-way:-"><a class="header-link" href="#better-way:-"></a>Better way:-</h2>
+<blockquote>
+<p>The <strong>second method</strong> is to add the other person as collaborator in the original repository, in which we are supposed to work collaboratively. This can be done, via visiting the settings of the repository and going to <strong>Manage Access</strong> and clicking <strong>Invite a collaborator</strong>. Doing this will send a link to email to the other user for the inviation and once the user accepts that, it gets the direct push access to the entire repository. This is the <strong>best</strong> way to collaborate as the the other uses then gets the direct push access to the repository without any forked copy of other thing.</p>
+</blockquote>
+<h2 id="github-pages-jekyll-error-build-erro:"><a class="header-link" href="#github-pages-jekyll-error-build-erro:"></a>Github pages jekyll error build erro:</h2>
 <p><a href="https://stackoverflow.com/questions/25262183/github-page-build-failure">https://stackoverflow.com/questions/25262183/github-page-build-failure</a></p>
 <hr>
 <h2 id="how-contributing-works"><a class="header-link" href="#how-contributing-works"></a>How contributing works</h2>
@@ -48,9 +57,9 @@ And the latter one (<strong>git branch -a</strong>) shows branches which you hav
 <hr>
 <h2 id="clone-a-single-branch-only:"><a class="header-link" href="#clone-a-single-branch-only:"></a>Clone a single branch only:</h2>
 <p>Below command only clones the the desired branch:</p>
-<pre class="hljs"><code>$ git <span class="hljs-built_in">clone</span> --single-branch --branch &lt;branchname&gt; &lt;remote-repo&gt;</code></pre><p>__
+<pre class="hljs"><code>git <span class="hljs-built_in">clone</span> --single-branch --branch &lt;branchname&gt; &lt;remote-repo&gt;</code></pre><p>__
 But if you want all remote branches, but checkout the one you desired:</p>
-<pre class="hljs"><code>$ git <span class="hljs-built_in">clone</span> --branch &lt;branchname&gt; url</code></pre><hr>
+<pre class="hljs"><code>git <span class="hljs-built_in">clone</span> --branch &lt;branchname&gt; url</code></pre><hr>
 <h2 id="work-with-same-branch-in-gitbhub-with-different-local-repositories-and-push-them:"><a class="header-link" href="#work-with-same-branch-in-gitbhub-with-different-local-repositories-and-push-them:"></a>Work with same branch in gitbhub with different local repositories and push them:</h2>
 <h3 id="the-best-of-all-tools:"><a class="header-link" href="#the-best-of-all-tools:"></a>The best of all tools:</h3>
 <p><strong>Initialize local repository, and then add a remote, and then set default remote for the checkedout branch and simultaneously push to the same remote.</strong></p>
@@ -538,6 +547,74 @@ $(You can easily reverse a git commit and view everything correctly.)</code></pr
 <pre class="hljs"><code>Step1: $ ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">"your_email@example.com"</span> 
 //Use your own email address.
 Step2: Copy the content of .pub file(C:\Users\chetan\.ssh\something.pub) and paste it <span class="hljs-keyword">in</span> Github&gt;Settings&gt;Ssh and Cpg keys&gt;New Ssh key.</code></pre><hr>
+<pre class="hljs"><code><span class="hljs-built_in">clone</span> from original repo, make changes and make commits, and <span class="hljs-keyword">then</span> <span class="hljs-keyword">do</span>:-
+$ hub pull-request
+Aborted: the current branch seems not yet pushed to a remote
+(use `-p` to push the branch or `<span class="hljs-_">-f</span>` to skip this check)
+$ hub pull-request <span class="hljs-_">-f</span> (this is the needed <span class="hljs-built_in">command</span>)
+***
+$ hub pull-request <span class="hljs-_">-f</span>
+error using text editor <span class="hljs-keyword">for</span> pull request message
+***</code></pre><pre class="hljs"><code>$ hub pull-request -h // shows <span class="hljs-built_in">help</span> about the <span class="hljs-built_in">command</span>:
+<span class="hljs-comment"># while on a topic branch called "feature":</span>
+$ hub pull-request
+[ opens text editor to edit title &amp; body <span class="hljs-keyword">for</span> the request ]
+[ opened pull request on GitHub <span class="hljs-keyword">for</span> <span class="hljs-string">"YOUR_USER:feature"</span> ]
+
+<span class="hljs-comment"># explicit title, pull base &amp; head:</span>
+$ hub pull-request -m <span class="hljs-string">"Implemented feature X"</span> -b defunkt:master -h mislav:feature</code></pre><h3 id="final-resultant-of-all-research>>:"><a class="header-link" href="#final-resultant-of-all-research>>:"></a>FINAL RESULTANT OF ALL research&gt;&gt;:</h3>
+<p>favourite command to make pull request,(fork a copy, make a local copy of the forked via git clone <url>), then make pull requests via:-
+(you just commit changes and make pull request via this command{no need to push to your forked your copy of the repository, as this command this automatically.})</p>
+<p>Example 1.</p>
+<pre class="hljs"><code>$ hub pull-request -m <span class="hljs-string">"MessgForPullRequest"</span> -p mylocalbranch -b chetanmishra8660:master -h mylocalbranch -c <span class="hljs-_">-f</span></code></pre><p>Example 2.</p>
+<pre class="hljs"><code>$ hub pull-request -m <span class="hljs-string">"Just added comments in backendBranch"</span> -b nirmal201:backendBranch -h backendBranch -c <span class="hljs-_">-f</span></code></pre><p>(^^YOU HAVE TO EXECUTE THIS INSIDE GIT REPO &gt;&gt;)</p>
+<pre class="hljs"><code>_
+Make a fork of the repo <span class="hljs-keyword">in</span> your github, and <span class="hljs-built_in">clone</span> that forked repo locally and make changes to the appropriate branch. And make a pull-request via:-
+
+$ hub pull-request -m <span class="hljs-string">"Some message for pull-request"</span> -b chetanmishra8660:master -h sahilrajput03:master
+<span class="hljs-comment"># -b is the switch for &lt;username-to-request-to&gt;:&lt;branch-to-be-pushed-to&gt;</span>
+<span class="hljs-comment"># -h is the switch for &lt;my-username&gt;:&lt;my-branch-name-to-make pull-request-for&gt;</span>
+____________________
+Additionally:
+-c, --copy
+&gt;&gt;Put the URL of the new pull request to clipboard instead of printing it.
+making use of this would be like:
+-p, --push (this is not working to the way we expect, so better no to use it at all.)
+&gt;&gt;Push the current branch to HEAD before creating the pull request.
+__
+$ hub pull-request -m <span class="hljs-string">"Some message for pull-request"</span> -b chetanmishra8660:master -h sahilrajput03:master -c
+$ hub pull-request -m <span class="hljs-string">"Some message for pull-request"</span> -b chetanmishra8660:master -h master -c
+$ hub pull-request -m <span class="hljs-string">"Some message for pull-request"</span> -b chetanmishra8660:master -h mylocalbranch -c
+$ hub pull-request -m <span class="hljs-string">"Some message for pull-request"</span> -p master -b chetanmishra8660:master -h mylocalbranch -c <span class="hljs-_">-f</span>
+NOTE: <span class="hljs-_">-f</span> (this flag is really good, as you can omit the git push <span class="hljs-built_in">command</span> before making the pull-request <span class="hljs-built_in">command</span>, as this <span class="hljs-built_in">command</span> does this inclusively before making the pull-request.
+But <span class="hljs-keyword">for</span> THIS TO WORK, you need to specify, -p &lt;branch&gt; to be pushed to you forked-remote-repository, like <span class="hljs-keyword">in</span> the above <span class="hljs-built_in">command</span> we are specifying <span class="hljs-built_in">local</span> master brach to be pushed to its default upstream.     AWESOME.)
+$ hub pull-request -m <span class="hljs-string">"Some message for pull-request"</span> -b chetanmishra8660:master -c
+
+ALL ABOVE COMMANDS WORK FINE, i.e., copies the url of the pull-request to clipboard.
+You can close a pull-request via visiting the pull-request-url and clicking [Close pull request] button. (The owner of the actual repo, can <span class="hljs-keyword">do</span> this, or you can <span class="hljs-keyword">do</span> this too.)
+YOu cannot edit/update the pull-request you have made from the terminal(hub cli). 
+If the terminal is saying
+<span class="hljs-string">"A pull request already exists for sahilrajput03:master."</span> 
+(additionalyy you can make more pull-request from a new-branch or making pull-request from the same-branch only by deleting the old pull request yourself.)
+Then you should go the github.com and click <span class="hljs-string">"Pull requests"</span> at the top of the page.
+ALTERNATELY: You can go to the owner\<span class="hljs-string">'s repository and view you pull request there.
+___
+</span></code></pre><p>Cheatsheet about hub:- <a href="https://kapeli.com/cheat_sheets/Hub.docset/Contents/Resources/Documents/index">Kapeli.com/cheatsheet####</a>
+Help link from official hub page: <a href="https://hub.github.com/hub-pull-request.1.html">Link</a> <a href="https://hub.github.com/">Link2</a></p>
+<h2 id="you-can-see-all-your-pull-request-you-have-made-via:"><a class="header-link" href="#you-can-see-all-your-pull-request-you-have-made-via:"></a>You can see all your pull-request you have made via:</h2>
+<p class="img-container"><img src="image-20200504192007114.png" alt="image-20200504192007114"></p>
+<hr>
+<p>You can view your pull request at the repository to which you have made the request to like below:-</p>
+<p class="img-container"><img src="image-20200504192315575.png" alt="image-20200504192315575"></p>
+<p>and then opening the desired pull request by clicking in the area:-</p>
+<p class="img-container"><img src="image-20200504192448680.png" alt="image-20200504192448680"></p>
+<p>and then clicking the button:-</p>
+<p class="img-container"><img src="image-20200504192523056.png" alt="image-20200504192523056"></p>
+<p>and you don&#39;t need to add any comment. That is an optional thing.</p>
+<hr>
+<h2 id="meging-pull-request"><a class="header-link" href="#meging-pull-request"></a>Meging pull request</h2>
+<p>Click <strong>Merge pull request</strong>, and then click <strong>Confirm Merge</strong>.</p>
+<hr>
     </article>
   </body>
 </html>

@@ -1,3 +1,17 @@
+# Making use of collaborations on github
+
+The first techniuque is, make a fork of someone's repo (repo-original)(this will make of copy of the repo in your github account, say repo-copy) and then make changed to your copy of the repo(repo-copy). And push the code to your repo-copy in github(via git push). So, when you are ready with your changes, make a pull request from your repo-copy. Like :
+
+![image-20200504172905367](image-20200504172905367.png) 
+
+and this will ask you the TARGET repo to which you want to make a request. And the actual user of the repo has to merge the pull request to the repository(he/she gets the link for that in the associated email). Or he/she can do it via visiting the repository and clicking the available pull request like belo:w-
+
+![image-20200504174144199](image-20200504174144199.png). And merging it to the repo with a single click.
+
+## Better way:-
+
+> The **second method** is to add the other person as collaborator in the original repository, in which we are supposed to work collaboratively. This can be done, via visiting the settings of the repository and going to **Manage Access** and clicking **Invite a collaborator**. Doing this will send a link to email to the other user for the inviation and once the user accepts that, it gets the direct push access to the entire repository. This is the **best** way to collaborate as the the other uses then gets the direct push access to the repository without any forked copy of other thing.
+
 ## Github pages jekyll error build erro:
 
 https://stackoverflow.com/questions/25262183/github-page-build-failure
@@ -117,14 +131,14 @@ And the latter one (**git branch -a**) shows branches which you have **checkedou
 Below command only clones the the desired branch:
 
 ```bash
-$ git clone --single-branch --branch <branchname> <remote-repo>
+git clone --single-branch --branch <branchname> <remote-repo>
 ```
 
 __
 But if you want all remote branches, but checkout the one you desired:
 
 ```bash
-$ git clone --branch <branchname> url
+git clone --branch <branchname> url
 ```
 
 ***
@@ -1068,6 +1082,116 @@ Step1: $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 //Use your own email address.
 Step2: Copy the content of .pub file(C:\Users\chetan\.ssh\something.pub) and paste it in Github>Settings>Ssh and Cpg keys>New Ssh key.
 ```
+
+***
+
+```bash
+clone from original repo, make changes and make commits, and then do:-
+$ hub pull-request
+Aborted: the current branch seems not yet pushed to a remote
+(use `-p` to push the branch or `-f` to skip this check)
+$ hub pull-request -f (this is the needed command)
+***
+$ hub pull-request -f
+error using text editor for pull request message
+***
+```
+
+```bash
+$ hub pull-request -h // shows help about the command:
+# while on a topic branch called "feature":
+$ hub pull-request
+[ opens text editor to edit title & body for the request ]
+[ opened pull request on GitHub for "YOUR_USER:feature" ]
+
+# explicit title, pull base & head:
+$ hub pull-request -m "Implemented feature X" -b defunkt:master -h mislav:feature
+```
+
+### FINAL RESULTANT OF ALL research>>:
+
+favourite command to make pull request,(fork a copy, make a local copy of the forked via git clone <url>), then make pull requests via:-
+(you just commit changes and make pull request via this command{no need to push to your forked your copy of the repository, as this command this automatically.})
+
+Example 1.
+
+```bash
+$ hub pull-request -m "MessgForPullRequest" -p mylocalbranch -b chetanmishra8660:master -h mylocalbranch -c -f
+```
+
+Example 2.
+
+```bash
+$ hub pull-request -m "Just added comments in backendBranch" -b nirmal201:backendBranch -h backendBranch -c -f
+```
+
+(^^YOU HAVE TO EXECUTE THIS INSIDE GIT REPO >>)
+
+```bash
+_
+Make a fork of the repo in your github, and clone that forked repo locally and make changes to the appropriate branch. And make a pull-request via:-
+
+$ hub pull-request -m "Some message for pull-request" -b chetanmishra8660:master -h sahilrajput03:master
+# -b is the switch for <username-to-request-to>:<branch-to-be-pushed-to>
+# -h is the switch for <my-username>:<my-branch-name-to-make pull-request-for>
+____________________
+Additionally:
+-c, --copy
+>>Put the URL of the new pull request to clipboard instead of printing it.
+making use of this would be like:
+-p, --push (this is not working to the way we expect, so better no to use it at all.)
+>>Push the current branch to HEAD before creating the pull request.
+__
+$ hub pull-request -m "Some message for pull-request" -b chetanmishra8660:master -h sahilrajput03:master -c
+$ hub pull-request -m "Some message for pull-request" -b chetanmishra8660:master -h master -c
+$ hub pull-request -m "Some message for pull-request" -b chetanmishra8660:master -h mylocalbranch -c
+$ hub pull-request -m "Some message for pull-request" -p master -b chetanmishra8660:master -h mylocalbranch -c -f
+NOTE: -f (this flag is really good, as you can omit the git push command before making the pull-request command, as this command does this inclusively before making the pull-request.
+But for THIS TO WORK, you need to specify, -p <branch> to be pushed to you forked-remote-repository, like in the above command we are specifying local master brach to be pushed to its default upstream. 	AWESOME.)
+$ hub pull-request -m "Some message for pull-request" -b chetanmishra8660:master -c
+
+ALL ABOVE COMMANDS WORK FINE, i.e., copies the url of the pull-request to clipboard.
+You can close a pull-request via visiting the pull-request-url and clicking [Close pull request] button. (The owner of the actual repo, can do this, or you can do this too.)
+YOu cannot edit/update the pull-request you have made from the terminal(hub cli). 
+If the terminal is saying
+"A pull request already exists for sahilrajput03:master." 
+(additionalyy you can make more pull-request from a new-branch or making pull-request from the same-branch only by deleting the old pull request yourself.)
+Then you should go the github.com and click "Pull requests" at the top of the page.
+ALTERNATELY: You can go to the owner\'s repository and view you pull request there.
+___
+
+```
+
+Cheatsheet about hub:- [Kapeli.com/cheatsheet####](https://kapeli.com/cheat_sheets/Hub.docset/Contents/Resources/Documents/index)
+Help link from official hub page: [Link](https://hub.github.com/hub-pull-request.1.html) [Link2](https://hub.github.com/)
+
+
+
+## You can see all your pull-request you have made via:
+
+![image-20200504192007114](image-20200504192007114.png)
+
+***
+
+You can view your pull request at the repository to which you have made the request to like below:-
+
+![image-20200504192315575](image-20200504192315575.png) 
+
+and then opening the desired pull request by clicking in the area:-
+
+![image-20200504192448680](image-20200504192448680.png)
+
+and then clicking the button:-
+
+![image-20200504192523056](image-20200504192523056.png) 
+
+and you don't need to add any comment. That is an optional thing.
+
+***
+
+## Meging pull request
+
+Click **Merge pull request**, and then click **Confirm Merge**.
 
 ***
 

@@ -1329,48 +1329,61 @@ fetch('google.com').then((d)=>console.log(d)).catch(err=> console.log(err)).fina
 // also you might see the cors error.. has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled//
 ```
 
-```js
-fun = () => new Promise(resolve => {
-setTimeout(()=>console.log('tik-tick'),1_000)
-})
-fun() //simple promise
-```
+***
+
+## Asynchronous Task in Serial Order**(or in sequential order)**:-
+
+In other words another asynchronous task starts only when previous is resolved.
 
 ```js
-//promise resolving/asynchronous calling in sequence/serially.
-fun().then((t)=>{
-if(t==='continuee'){
-    fun(1).then((t)=>{
-if(t==='continuee'){
-    fun(2).then((t)=>{
-if(t==='continuee'){
-    fun(3).then((t)=>{
-if(t==='continuee'){
-    fun(4).then((t)=>{
-if(t==='continuee'){
-    fun(5).then((t)=>{
-if(t==='continuee'){
-    fun(6)
-}
-})
-}
-})
-}
-})
-}
-})
-}
-})
-}
-})
+//Simple promise call:-
+new Promise((resolve) => {
+  setTimeout(() => console.log("tik-tick"), 1_000);
+});
+
+//Simple promise callback function:-
+let fun = () =>
+  new Promise((resolve) => {
+    setTimeout(() => console.log("tik-tick"), 1_000);
+  });
+fun();
+
+//Promise resolving(Asynchronous Calling) in sequence/serially:-
+fun().then((t) => {
+  if (t === "continuee") {
+    fun(1).then((t) => {
+      if (t === "continuee") {
+        fun(2).then((t) => {
+          if (t === "continuee") {
+            fun(3).then((t) => {
+              if (t === "continuee") {
+                fun(4).then((t) => {
+                  if (t === "continuee") {
+                    fun(5).then((t) => {
+                      if (t === "continuee") {
+                        fun(6);
+                      }
+                    });
+                  }
+                });
+              }
+            });
+          }
+        });
+      }
+    });
+  }
+});
 ```
+
+**Pictorial form of above function:**![funcalling_img](funcalling_img.png)
+
+***
 
 ```js
 new Promise(resolve => {setTimeout(() => resolve(3), 2000)})
         .then(d => (d*d)).then((ee)=> console.log(ee)) // first resolve returns whats inside it.
 ```
-
-
 
 ```js
 //EXECUTE THE CODE IN ONCE IN CHROME CONSOLE.
@@ -3077,9 +3090,13 @@ Right click a tab, and press S.
 https://github.com/mixu/markdown-styles (1.5k stars)
 
 ```bash
-For nowo above software is working amazingly.
-with command:-
 generate-md --layout github --input ./input --output ./output
+```
+
+Above command generates html files into output folder from the .md files available in input folder.
+
+```
+generate-md --layout github --input ./ --output ./
 ```
 
 https://github.com/sindresorhus/github-markdown-css (4.6k stars)
