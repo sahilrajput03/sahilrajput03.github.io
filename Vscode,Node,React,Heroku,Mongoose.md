@@ -1323,14 +1323,29 @@ let reducedValue = popo.reduce((acc,cur)=>acc+cur.likes,0)
 # **How promises work:**
 
 ```js
-SIMPLEST PROMISE EVER:
-fetch("url");
-fetch("google.com")
-  .then((d) => console.log(d))
-  .catch((err) => console.log(err))
-  .finally(() => console.log("Bulbul"));
+Simplest Promise Ever:
+// Syntax fetch api, it is an asynchronous task
+//it creats promise and we know we can receive vale from promises
+// with the help of .then method, so :-
+fetch("ANY-URL-HERE");
 
-// also you might see the cors error.. has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled//
+//Visit to google.com and execute this, and do another time go to yahoo.com and execute the same,
+// see what is the difference:
+fetch("https://www.google.com")
+  .then((val) =>
+    console.log(
+      "Promise is RESOLVED, and we have received",
+      val,
+      ",with status value",
+      val.status,
+      "+ Asynchronous task resolved."
+    )
+  )
+  .catch((err) => console.log("Promise is REJECTED and promise has returned the err:", err))
+  .finally(() => console.log("So, Promise is SETTLED."));
+//here settled means the promise is either resolved or rejected.
+
+// ALSO you might see the cors error.. has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled//
 ```
 
 ***
