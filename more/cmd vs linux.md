@@ -110,9 +110,11 @@ echo ## >> newemptyfile1
 DELETE FILE/S:
 del <file/files/*> (removes files, not folders)
 
-DELETE FOLDER/S: 
+DELETE FOLDER/S, empty folder: 
 rmdir /q /s <folder/folders/		# {* not supported}
 rmdir /q /s . # deletes everything in the current directory.
+NOTE: You must use it in the way below, and notice the || in the end to follow any command further, as && doesn\'t work for this command to write any follow-up command.
+cd temp-generatemd-dontdelete && rmdir /q /s . ||
 
 create folder:
 mkdir <folder-name>

@@ -1,0 +1,561 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Week 1 assignments</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><h1 id="week-1-assignments"><a class="header-link" href="#week-1-assignments"></a>Week 1 assignments</h1>
+<p>The tasks are to be done either in the workshop or on their own. The deadline for returning assignments is Tuesday, March 19 at 11:59 p.m.</p>
+<p>Assignments are returned using Github and Labtool. More on the return later. Some of the tasks do not appear in the return in any way. Failure to do so will result in a lack of expertise and may cause inconvenience later on.</p>
+<p>2 points are available for weekly returns. Scoring is assessed based on the quality of the return.</p>
+<p>Be sure to push the tasks into GitHub before the weekdeadline. Late returns will not earn points.</p>
+<h2 id="command-line-training"><a class="header-link" href="#command-line-training"></a>Command line training</h2>
+<p>Despite the existence of graphical user interfaces, it is still very important in the software industry to control the use of the command line, or terminal.</p>
+<h2 id="part-1"><a class="header-link" href="#part-1"></a>part 1</h2>
+<p>Learn to use the &quot;sufficient&quot; command line (see list below). Learning may be easiest by doing the first two parts of the online course at <a href="https://www.codecademy.com/learn/learn-the-command-line">https://www.codecademy.com/learn/learn-the-command-line </a><em>Navigating the File System</em> and <em>Viewing and Changing the File System</em> (paid pro-episodes are not to be missed) .</p>
+<p><strong>NOTE. Codecademy requires login with Facebook, Google or GitHub. The course uses GitHub anyway, so that ID should at least exist for everyone to be able to log in.</strong></p>
+<p>After this task, you should master the following:</p>
+<ul class="list">
+<li>concepts</li>
+<li>root directory</li>
+<li>home directory</li>
+<li>parent directory</li>
+<li>child directory</li>
+<li>working directory</li>
+<li>.. and *</li>
+<li>and know how to use commands</li>
+<li>pwd</li>
+<li>CD</li>
+<li>ls, ls -a, ls -l, ls -t</li>
+<li>mkdir</li>
+<li>touch</li>
+<li>cp</li>
+<li>rm, rm -r</li>
+<li>mv</li>
+</ul>
+<p>You will need command line skills in this course and in your studies anyway.</p>
+<h2 id="part-2"><a class="header-link" href="#part-2"></a>part 2</h2>
+<p>Contact ssh connection to linux server <em>melkki.cs.helsinki.fi</em> , <em>melkinpaasi.cs.helsinki.fi</em> or <em>melkinkari.cs.helsinki.fi</em> . On Linux and Mac, the connection is made from the command line with the command <em>ssh username @ server address</em> . Windows and SSH to connect to your successful example <a href="http://www.putty.org/">putty has</a> .</p>
+<p>After logging in to the plant server, perform the following steps:</p>
+<ul class="list">
+<li>create your home directory index <em>courses</em></li>
+<li><strong>HUOM</strong> joidenkin kohdalla melkillä on ollut ongelmia kotihakemiston asetuksissa ja esim. hakemiston luomisen seurauksena on virhe &#39;permission denied&#39;. Jos törmäät ongelmaan, lähetä viesti osoitteeseen <a href="mailto:*it-support@cs.helsinki.fi">*it-support@cs.helsinki.fi</a>* ja raportoi ongelmaksi &quot;ei oikeuksia kotihakemistoon melkillä&quot;</li>
+<li>kokeile myös jos kirjaantuminen toiselle koneelle, esim. <em>melkinpaasi.cs.helsinki.fi</em> tuottaisi paremman tuloksen</li>
+<li>luo hakemistolle <em>kurssit</em> alihakemisto <em>ot2019</em></li>
+<li>ja luomallesi hakemistolle alihakemisto <em>viikko1</em></li>
+<li>mene kotihakemistoosi ja luo sen alle hakemisto <em>temp</em></li>
+<li>mene hakemistoon <em>temp</em></li>
+<li>hae osoitteessa <em><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/misc/Unicafe.zip">https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/misc/Unicafe.zip</a></em> oleva tiedosto <a href="https://en.wikipedia.org/wiki/Wget">wget</a>-ohjelmalla</li>
+<li>wget toimii siten, että sille annetaan ladattava tiedosto parametriksi</li>
+<li>haettu tiedosto on <em>zip-paketti</em>, pura se <em>unzip</em>-ohjelmalla</li>
+<li>myös unzip toimii siten, että sille annetaan purettava tiedosto parametriksi</li>
+<li>komennon suorittamisen jälkeen hakemistoon on ilmestynyt hakemisto <em>Unicafe</em></li>
+<li>siirrä hakemisto hakemiston <em>kurssit/ot2019/viikko1</em> alihakemistoksi</li>
+<li>poista zip-paketti</li>
+<li>poista hakemisto <em>temp</em></li>
+<li>mene nyt uudessa paikassa olevaan hakemistoon <em>Unicafe</em></li>
+<li>suorita komento <em>mvn clean</em></li>
+<li>jos näet rivien joukossa ilmoituksen <em>BUILD SUCCESS</em> on tehtävä tehty</li>
+</ul>
+<p><strong>Mene tämän jälkeen *kotihakemistoon* ja anna komento *tree kurssit*. Copypastea komennon tulostus talteen, tarvitset sitä myöhemmin.</strong></p>
+<h2 id="tab-complete"><a class="header-link" href="#tab-complete"></a>tab complete</h2>
+<p>Komentoriviä käyttäessä kannattaa ehdottomasti totutella <em>tab-completen</em> käyttöön. <em>Tab</em> on näppäin, joka näyttää suunnilleen seuraavalta</p>
+<p class="img-container"><img src="https://github.com/mluukkai/otm2016/raw/master/img/tab.jpg" alt="img"></p>
+<p>Tab:ia painamalla voit komentorivillä täydentää kirjoittamasi komennon nimen tai parametrin. Esim. jos olet siirtymässä hakemistoon nimeltään <em>ohjelmistotekniikka-kevat-2019</em>, riittää, että kirjoitat <code>cd oh</code> ja painat tabia. Jos hakemistossasi ei ole muita tiedostoja tai hakemistoja, jotka alkavat merkeillä <em>oh</em>, nimi täydentyy. Jos on, niin voit joutua kirjoittamaan merkin tai kaksi lisää. Jos tiedostoja on useampia etkä ole varma oikeasta nimestä, painamalla tabia useamman kerran näet mahdolliset vaihtoehdot.</p>
+<p>Myös komentojen nimet voi täydentää tab-completella. Esim. haluat avat <em>chromium-browser</em> web-selaimen komentoriviltä, riittää että kirjoitat <code>chro</code> ja painat tabia. Komennon nimi täydentyy.</p>
+<p>Ei pidä myöskään unohtaa <em>nuolta ylöspäin</em>. Sen avulla voit selata aiemmin kirjoittamiasi komentoja.</p>
+<h2 id="yhtäaikaiset-terminaalit-/-terminaalin-tabit"><a class="header-link" href="#yhtäaikaiset-terminaalit-/-terminaalin-tabit"></a>yhtäaikaiset terminaalit / terminaalin tabit</h2>
+<p>Aloitteleva komentorivin käyttäjä pitää usein ainoastaan yhtä terminaali-ikkunaa kerrallaan auki. Useimmissa tilanteissa työtehosi moninkertaistuu, jos avaat useita terminaaleja näytöllä tai avaat yhteen terminaaliin useita &quot;tabeja&quot; eli välilehtiä. Uuden tabin saat avautumaan painamalla yhtä aikaa <em>ctrl</em>, <em>shift</em> ja <em>t</em> tai sovelluksen valikosta (joka laitoksen Linuxeissa sijaitsee ruudun yläreunassa).</p>
+<h2 id="versionhallinta"><a class="header-link" href="#versionhallinta"></a>Versionhallinta</h2>
+<p>Tutustumme seuraavaksi versionhallintaan.</p>
+<p>Mitä tarkoitetaan versionhallinnalla? Lainaus sivulta <a href="https://www.atlassian.com/git/tutorials">https://www.atlassian.com/git/tutorials</a></p>
+<blockquote>
+<p>Version control systems are a category of software tools that help a software team manage changes to source code over time. Version control software keeps track of every modification to the code in a special kind of database. If a mistake is made, developers can turn back the clock and compare earlier versions of the code to help fix the mistake while minimizing disruption to all team members.</p>
+</blockquote>
+<p>Vaikka ylläoleva puhuu versionhallinnasta ohjelmistotiimien yhteydessä, kannattaa versionhallintaa käyttää oikeastaan yhdenkin hengen projekteissa ja muunkinlaisen materiaalin, kuin koodin hallinnoimiseen. Esim. tämän kurssin kaikki materiaali on talletettu versionhallintaan.</p>
+<p>Nykyään suosituin versionhallintaohjelmisto on <a href="https://git-scm.com/">git</a>. Tutustumme tänään gitin alkeisiin.</p>
+<p><strong>HUOM</strong> tämä tehtävä tulee tehdä Linuxilla tai Macilla, jolle on asennettu Git. Helpointa lienee tehdä tehtävä laitoksen koneella. Git kannattaa joka tapauksessa asentaa omalle koneelle. Gitin voi asentaa myös Windowsille.</p>
+<h2 id="gitin-alkeet"><a class="header-link" href="#gitin-alkeet"></a>Gitin alkeet</h2>
+<h3 id="konfiguraatioita"><a class="header-link" href="#konfiguraatioita"></a>konfiguraatioita</h3>
+<p>Avaa terminaali omalla koneellasi. <strong>Seuraavat tehtävät tehdään siis paikallisesti, ei melkillä!</strong></p>
+<p>Määrittele gitille <strong>oma nimesi</strong> sekä <strong>käyttämäsi email-osoite</strong> antamalla komennot:</p>
+<pre class="hljs"><code> git config --global user<span class="hljs-selector-class">.name</span> <span class="hljs-string">"Your Name"</span>
+ git config --global user<span class="hljs-selector-class">.email</span> you@example.com</code></pre><p>Varmista komennolla <code>git config -l</code>, että määrittelyt menivät oikein.</p>
+<p>Määritellään vielä git käyttämään sopivia värejä komennolla <code>git config --global color.ui</code> ja <strong>vaihdetaan gitin käyttämäksi oletuseditoriksi</strong> <em>nano</em> komennolla <code>git config --global core.editor nano</code></p>
+<ul class="list">
+<li>jos käytät vimiä, voit jättää oletuseditorin muuttamatta</li>
+</ul>
+<p>Tee vielä seuraava konfiguraatio</p>
+<pre class="hljs"><code>git <span class="hljs-built_in">config</span> --global push.<span class="hljs-built_in">default</span> matching</code></pre><p>Tämä liittyy <em>git push</em> -komennon oletusarvoiseen toiminnallisuuteen. Komennosta lisää myöhemmin.</p>
+<h3 id="repositorio"><a class="header-link" href="#repositorio"></a>repositorio</h3>
+<p>Tee nyt sopiva hakemisto gitin harjoittelua varten ja mene hakemistoon, eli anna esim. komennot:</p>
+<ul class="list">
+<li>mkdir ot_viikko1</li>
+<li>cd ot_viikko1</li>
+</ul>
+<p><strong>HUOM:</strong> varmista nyt että olet luomassasi hakemistossa, eli jos suoritat komennon <em>ls</em>, ei hakemistossa pitäisi olla mitään.</p>
+<p>Luodaan hakemistosta paikallinen <em>git-repositorio</em> antamalla komento <code>git init</code></p>
+<p>Git ilmoittaa alustaneensa repositorion:</p>
+<pre class="hljs"><code>mluukkai<span class="hljs-meta">@melkinpaasi</span>:~/ot_viikko1$ git init
+Initialised empty Git repository <span class="hljs-keyword">in</span> <span class="hljs-regexp">/home/</span>ad<span class="hljs-regexp">/fshome4/</span>u4<span class="hljs-regexp">/m/</span>mluukkai<span class="hljs-regexp">/Linux/</span>ot_viikko1<span class="hljs-regexp">/.git/</span></code></pre><p>Jos katsot hakemiston sisältöä komennolla <code>ls -la</code> huomaat, että hakemiston sisälle on ilmestynyt hakemisto <code>.git</code>. Git käyttää luotua hakemistoa pitääkseen kirjaa repositorioon talletetuista tiedostoista.</p>
+<p><strong>HUOM</strong> koska hakemiston nimi (<em>.git</em>) alkaa pisteellä, ei komento <em>ls</em> näytä sitä oletusarvoisesti. Parametri <em>a</em> näyttää myös pisteellä alkavat tiedostot ja hakemistot. Kokeile, miten <em>ls -a</em> ja <em>ls -la</em> eroavat toisistaan!</p>
+<p>Pysy edelleen repositorion sisältävässä hakemistossasi <em>ot_viikko1</em>.</p>
+<p>Luo hakemistoon tiedosto nimeltään <em>tiedosto.txt</em>, esim. komennolla <code>touch</code>. Luotuasi tiedoston, suorita komento <code>git status</code>:</p>
+<pre class="hljs"><code>mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span><span class="hljs-variable">$ </span>touch tiedosto.txt
+mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span><span class="hljs-variable">$ </span>git status
+On branch master
+
+No commits yet
+
+Untracked <span class="hljs-symbol">files:</span>
+  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git add ..."</span> to <span class="hljs-keyword">include</span> <span class="hljs-keyword">in</span> what will be committed)
+
+    tiedosto.txt
+
+nothing added to commit but untracked files present (<span class="hljs-keyword">use</span> <span class="hljs-string">"git add"</span> to track)
+mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span>$</code></pre><p>Git ilmoittaa, että on olemassa tiedosto, joka on tilassa <em>untracked</em>, eli tiedostoa ei ole lisätty versionhallinnan pariin.</p>
+<p>Kuten komennon tuloste kertoo, tiedoston lisääminen gitin alaisuuteen (...to include in what will be committed) tapahtuu komennolla <code>git add tiedosto.txt</code></p>
+<p>Suorita lisäys ja sen jälkeen komento <code>git status</code>:</p>
+<pre class="hljs"><code>mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span><span class="hljs-variable">$ </span>git add tiedosto.txt
+mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span><span class="hljs-variable">$ </span>git status
+On branch master
+
+No commits yet
+
+Changes to be <span class="hljs-symbol">committed:</span>
+  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git rm --cached ..."</span> to unstage)
+
+    new <span class="hljs-symbol">file:</span>   tiedosto.txt</code></pre><p>Git kertoo nyt, että <em>tiedosto.txt</em> on niiden muutosten joukossa, jotka voidaan <em>commitoida</em>.</p>
+<h3 id="commit"><a class="header-link" href="#commit"></a>commit</h3>
+<p>Commitoimisella tarkoitetaan tiedostojen ja hakemistojen sekä niihin liittyvien muutosten tallentamista <em>git-repositorioon</em>.</p>
+<p>Suoritetaan commitointi antamalla komento <code>git commit -m &quot;tiedosto.txt luotu&quot;</code></p>
+<pre class="hljs"><code>mluukkai@melkinpaasi:~/ot_viikko1$ git <span class="hljs-keyword">commit</span> -m <span class="hljs-string">"tiedosto.txt luotu"</span>
+[<span class="hljs-keyword">master</span> (root-<span class="hljs-keyword">commit</span>) <span class="hljs-number">0e12</span>cfa] tiedosto.txt luotu
+ <span class="hljs-number">1</span> <span class="hljs-keyword">file</span> <span class="hljs-keyword">changed</span>, <span class="hljs-number">0</span> insertions(+), <span class="hljs-number">0</span> deletions(-)
+ <span class="hljs-keyword">create</span> <span class="hljs-keyword">mode</span> <span class="hljs-number">100644</span> tiedosto.txt</code></pre><p>Suorita jälleen komento <code>git status</code></p>
+<pre class="hljs"><code>mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span><span class="hljs-variable">$ </span>git status
+On branch master
+nothing to commit, working directory clean</code></pre><p>Git ilmoittaa, että <em>working directory clean</em>, eli hakemistosi on samassa tilassa kuin git-repositorio.</p>
+<h3 id="working-directory,-index/staging,-repository"><a class="header-link" href="#working-directory,-index/staging,-repository"></a>working directory, index/staging, repository</h3>
+<p><strong>Muista käyttää tab-completea tehtäviä tehdessäsi!</strong></p>
+<p>Kun teet muutoksia hakemistosi alla oleviin tiedostoihin (tai hakemistoihin), kohdistuvat muutokset <em>working directoryyn</em> eli työhakemistoon.</p>
+<ul class="list">
+<li>Tee jokin muutos tiedostoon tiedosto.txt</li>
+<li>käytä tiedostojen editointiin <em>nano</em>-editoria. Editori käynnistyy komentoriviltä komennolla <em>nano tiedosto.txt</em></li>
+<li>saat tallennettua nanossa tiedoston painamalla yhtä aikaa <em>ctrl</em> ja <em>o</em></li>
+<li>editori sulkeutuu painamalla <em>ctrl</em> ja <em>x</em></li>
+<li>Luo hakemistoon uusi tiedosto, nimeltään <em>toinen.txt</em></li>
+</ul>
+<p>Suorita jälleen <code>git status</code></p>
+<pre class="hljs"><code>mluukkai@melkinpaasi:~/ot_viikko1$ git status
+On branch master
+Changes not staged for <span class="hljs-keyword">commit</span>:
+  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git add ..."</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">update</span> what will be committed)
+  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git checkout -- ..."</span> <span class="hljs-keyword">to</span> discard changes <span class="hljs-keyword">in</span> working <span class="hljs-keyword">directory</span>)
+
+    modified:   tiedosto.txt
+
+Untracked files:
+  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git add ..."</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">include</span> <span class="hljs-keyword">in</span> what will be committed)
+
+    toinen.txt
+
+<span class="hljs-keyword">no</span> changes added <span class="hljs-keyword">to</span> <span class="hljs-keyword">commit</span> (<span class="hljs-keyword">use</span> <span class="hljs-string">"git add"</span> <span class="hljs-keyword">and</span>/<span class="hljs-keyword">or</span> <span class="hljs-string">"git commit -a"</span>)</code></pre><p>Git ilmoittaa nyt, että uusi tiedosto on <em>untracked</em> ja että aiemmassa tiedostossa on muutoksia, jotka eivät ole <em>staged for commit</em>.</p>
+<p>Toimitaan ohjeen mukaan eli lisätään muutokset ja uusi tiedosto commitoitavien joukkoon. Molempien tiedostojen yhtäaikainen &quot;addaaminen&quot; onnistuu komennolla <code>git add .</code></p>
+<p>Tarkistetaan taas tilanne komennolla <code>git status</code></p>
+<pre class="hljs"><code>mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span><span class="hljs-variable">$ </span>git status
+On branch master
+Changes to be <span class="hljs-symbol">committed:</span>
+  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git reset HEAD ..."</span> to unstage)
+
+    <span class="hljs-symbol">modified:</span>   tiedosto.txt
+    new <span class="hljs-symbol">file:</span>   toinen.txt</code></pre><p>Sekä muutos että uusi tiedosto ovat nyt valmiina committoitavaksi.</p>
+<p>Committointi onnistuu komennolla <em>git commit</em>. Kuten edelliselläkin kerralla, annetaan komennolle parametrina <em>commit-viesti</em>, eli merkkijono, joka kuvaa mitä muutoksia uusi commit tuo edelliseen nähden:</p>
+<pre class="hljs"><code><span class="hljs-attribute">git</span> commit -m<span class="hljs-string">"muutos ja lisäys"</span></code></pre><p>Tarkasta committoinnin jälkeen jälleen tilanne komennolla <em>git status</em>.</p>
+<p><strong>HUOM</strong> jos suoritat commitoinnin vahingossa ilman commit-viestiä, eli parametria <em>-m</em>, avaa git tekstieditorin ja olettaa että haluat kirjoittaa commit-viestin editoriin. Jos et määritellyt alun ohjeen mukaan gitille editoriksi nanoa, avautuu oletusarvoinen editori <em>vim</em> ja joudut kenties googlaamaan, miten pääset pois editorista.</p>
+<p>Tiedostot ja niihin tehdyt muutokset voivat siis olla gitin suhteen <em>kolmessa eri tilassa</em>.</p>
+<ul class="list">
+<li>Aluksi tiedostot (tai niihin tehdyt muutokset) ovat vain <em>working directoryssä</em> ja git ei noteeraa niitä ennen kuin ne lisätään komennolla <code>git add</code></li>
+<li>Tämän jälkeen tiedostot ovat valmiina commitoitavaksi. Gitin terminologian mukaan valmiina committoitavaksi olevat tiedostot ovat <em>staging</em>-alueella</li>
+<li>Komento <code>git commit</code> siirtää stagingissa olevat muutokset repositorioon eli luo uuden <em>commitin</em></li>
+</ul>
+<p>Seuraava kuva havainnollistaa sitä, miten tiedoston <em>tila</em> vaihtuu git-komentoja tekemällä.</p>
+<p class="img-container"><img src="https://github.com/mluukkai/otm2016/raw/master/img/lh3-2.png" alt="img"></p>
+<p>Kun tiedosto luodaan, menee se gitin <em>working directoryyn</em>. Komennolla <em>git add</em> tiedosto siirtyy <em>staging</em>-alueelle, eli valmiiksi committointia varten. Stagingissa oleva tiedosto viedään (eli &quot;commitoidaan&quot;) repositorioon komennolla <em>git commit</em>. Kun committoitua tiedostoa taas editoidaan, menevät muutokset jälleen <em>working directoryyn</em>.</p>
+<h2 id="git-commit"><a class="header-link" href="#git-commit"></a>git commit</h2>
+<p>Jokainen komennon <em>git commit</em> suorittaminen siis synnyttää repositorioon uuden commitin, eli uuden &quot;tilan&quot;. Komennolla <code>git log</code> on mahdollista nähdä, mitä committeja repositorio sisältää:</p>
+<pre class="hljs"><code>mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span><span class="hljs-variable">$ </span>git log
+commit <span class="hljs-number">6</span>aff75ab51d14d7cb9a72867ba13d9782d06c7ff (HEAD -&gt; master)
+<span class="hljs-symbol">Author:</span> Matti Luukkainen 
+<span class="hljs-symbol">Date:</span>   Sun Oct <span class="hljs-number">7</span> <span class="hljs-number">19</span><span class="hljs-symbol">:</span><span class="hljs-number">33</span><span class="hljs-symbol">:</span><span class="hljs-number">32</span> <span class="hljs-number">2018</span> +<span class="hljs-number">0300</span>
+
+    muutos ja lisäys
+
+commit <span class="hljs-number">9</span>e6a83d058c9564e8a390f8766845d45b365f36<span class="hljs-number">0</span>
+<span class="hljs-symbol">Author:</span> Matti Luukkainen 
+<span class="hljs-symbol">Date:</span>   Sun Oct <span class="hljs-number">7</span> <span class="hljs-number">19</span><span class="hljs-symbol">:</span><span class="hljs-number">32</span><span class="hljs-symbol">:</span><span class="hljs-number">12</span> <span class="hljs-number">2018</span> +<span class="hljs-number">0300</span>
+
+    tiedosto.txt luotu
+mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span>$</code></pre><p>Gitin logi kertoo jokaisen commitin ajan, tekijän, viestin ja <em>tunnisteen</em>. Tunnisteita käytetään, jos on esim. tarvetta palata johonkin vanhan commitin tilaan.</p>
+<p>Voit selata logia nuolinäppäimillä. Pääset ulos <em>git log</em>:ista painamalla <em>q</em>.</p>
+<h2 id="lisää-harjoittelua"><a class="header-link" href="#lisää-harjoittelua"></a>lisää harjoittelua</h2>
+<p>Muista käyttää komentoa <em>git status</em> mahdollisimman usein. Älä myöskään unohda tab-completea!</p>
+<ul class="list">
+<li>Luo tiedosto <em>kolmas.txt</em></li>
+<li>Lisää se commitoitavaksi ja commitoi</li>
+<li>Muuta tiedostojen <em>toinen.txt</em> ja <em>kolmas.txt</em> sisältöä ja commitoi muutokset</li>
+<li>Luo hakemisto <em>stuff</em> ja sen sisälle jokin tiedosto</li>
+<li>Lisää muutokset committoitavaksi ja committoi</li>
+<li>Huomaa, että hakemiston lisääminen riittää, sen sisältämät tiedostot tulevat automaattisesti lisätyksi</li>
+<li>Katso miltä git-logi näyttää</li>
+</ul>
+<h2 id="gitk"><a class="header-link" href="#gitk"></a>gitk</h2>
+<p>Gitin committeja voi tarkastella myös graafisella <em>gitk</em>-komennolla (OSX:lle ja Windowsille vastaava työkalu on <a href="https://www.sourcetreeapp.com/">Sourcetree</a>). Suorita komento repositoriossa:</p>
+<p class="img-container"><img src="https://github.com/mluukkai/otm2016/raw/master/img/lh3-1.png" alt="img"></p>
+<p>Vasemmalla yläkulmassa näet kaikki commitit. Uusin tilanne ylimpänä. Uusimman commitin nimi on <em>master</em>. Klikkaamalla commitia, näet muissa ikkunoissa commitiin liittyviä tietoja. Oikealla alakulmassa näet ne tiedostot, jotka ovat muuttuneet commitissa (jos valinta on <em>patch</em>) tai ne tiedostot, joita repositoriossa oli olemassa commitin aikana (jos valinta on <em>tree</em>). Vasemmassa alakulmassa pystyt tarkastelemaan commitin tiedostoihin tekemiä muutoksia tai tiedostojen tilaa commitin aikana. Valinnat ovat hieman hämäävät, sillä ne toimivat eri tavoin riippuen oikean puolen moodista.</p>
+<p>Vastaava näkymä OSX:n <a href="https://www.sourcetreeapp.com/">Sourcetree</a>-ohjelmalla tarkasteltaessa:</p>
+<p class="img-container"><img src="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/web/images/lh1-1a.png" alt="img"></p>
+<p>Seuraavaa tehtävää tekiessäsi kannattaa terminaaliin avata uusi välilehti, jotta voit pitää gitk:ta käynnissä.</p>
+<ul class="list">
+<li>Kopioi tiedostoon <em>tiedosto.txt</em> jostain paljon tekstiä ja commitoi tiedosto</li>
+<li>Poista nyt osa tiedoston tekstistä ja lisää tiedostoon hieman lisää tekstiä</li>
+<li>commitoi muutosten jälkeen</li>
+<li>Päivitä gitk:n näkymä (file/update) ja katso miten muutokset näkyvät (tarkastele kahta ylintä committia)</li>
+<li>valitse oikeasta alakulmasta <em>patch</em> ja vasemmasta <em>diff</em></li>
+<li>näin näet commitin aiheuttamat muutokset <a href="https://fi.wikipedia.org/wiki/Diff">diff</a>-muodossa</li>
+<li>jos oikealta on valittuna <em>tree</em>, näkyy vasemmalla puolella (valinnasta riippumatta) tiedostojen commitin aikainen tilanne</li>
+<li>Jos käytät sourcetreetä, sen pitäisi päivittyä automaattisesti ja näyttää muutos <em>diff</em>-muodossa</li>
+</ul>
+<h2 id="tiedoston-poistaminen-ja-uudelleennimentä"><a class="header-link" href="#tiedoston-poistaminen-ja-uudelleennimentä"></a>tiedoston poistaminen ja uudelleennimentä</h2>
+<ul class="list">
+<li>Poista tiedosto <em>toinen.txt</em></li>
+<li>suorita <em>git status</em></li>
+<li>commitoi muutos</li>
+<li>poista ensin tiedosto gitin alaisuudesta komennolla <em>git rm</em></li>
+<li>varmista komennolla <em>git status</em>, että kaikki on niinkuin kuuluukin</li>
+<li>muuta tiedoston <em>tiedosto.txt</em> nimeksi <em>eka.txt</em></li>
+<li>uudelleennimentä tapahtuu komennolla <em>mv</em></li>
+<li>suorita <em>git status</em></li>
+<li>miten git käsittelee uudelleennimennän?</li>
+<li>commitoi muutos</li>
+</ul>
+<h2 id="git-add--p"><a class="header-link" href="#git-add--p"></a>git add -p</h2>
+<ul class="list">
+<li>Tee jotain muutoksia tiedostoihin <em>eka.txt</em> ja <em>kolmas.txt</em></li>
+<li>tee sekä lisäyksiä että poistoja</li>
+<li>lisää ne commitoitavaksi komennolla <em>git add -p</em></li>
+<li>git näyttää nyt jokaisen tekemäsi muutoksen <em>patch</em>-muodossa ja pyytää varmistamaan lisätäänkö muutos commitoivaksi</li>
+<li>hyväksy painamalla <em>y</em> ja enter</li>
+<li>commitoi muutokset</li>
+<li>tee tiedostoihin tehtyjen muutosten commitoitavaksi lisääminen <em>aina</em> komennolla <em>git add -p</em>, näin pääset tarkastamaan, että muutokset ovat juuri ne mitä oletat olevasi lisäämässä</li>
+<li>Huomaa, että kokonaan uudet tiedostot eivät siirry committoitavaksi komennolla <em>git add -p</em></li>
+</ul>
+<h2 id="muutosten-peruminen"><a class="header-link" href="#muutosten-peruminen"></a>muutosten peruminen</h2>
+<p>Joskus tiedostoihin tulee tehtyä muutoksia, jotka on tarpeen perua</p>
+<ul class="list">
+<li>tee nyt joku muutos tiedostoon <em>eka.txt</em>, <strong>älä</strong> lisää tiedostoa committoitavaksi</li>
+<li>suorita komento <em>git status</em></li>
+</ul>
+<pre class="hljs"><code>mluukkai@melkinpaasi:~/ot_viikko1$ git status
+On branch master
+Changes not staged <span class="hljs-keyword">for</span> commit:
+  (use <span class="hljs-string">"git add &lt;file&gt;..."</span> to update what will be committed)
+  (use <span class="hljs-string">"git checkout -- &lt;file&gt;..."</span> to discard changes <span class="hljs-keyword">in</span> working directory)
+
+    modified:   eka.txt
+
+no changes added to commit (use <span class="hljs-string">"git add"</span> and/or <span class="hljs-string">"git commit -a"</span>)</code></pre><p>Kuten oletettua, git kertoo että olemme tehneet muutoksia, jotka eivät ole &quot;staged for commit&quot;, eli lisättyjä commitoitavaksi.</p>
+<ul class="list">
+<li>Päätetäänkin perua muutokset. Se onnistuu komennolla <code>git checkout -- eka.txt</code></li>
+<li>Kun suoritat uudelleen komennon <em>git status</em> huomaat, että working directory ei enää sisällä muutoksia:</li>
+</ul>
+<pre class="hljs"><code>mluukkai@melkinpaasi:~/ot_viikko1$ git checkout -- eka.txt
+mluukkai@melkinpaasi:~/ot_viikko1$ git status
+On branch master
+nothing to commit, working directory clean</code></pre><ul class="list">
+<li>Varmista vielä, että tiedoston sisältö on sama kuin ennen muutoksia</li>
+</ul>
+<p>Myös stagingiin viety eli valmiina committoitavaksi oleva muutos voidaan perua.</p>
+<ul class="list">
+<li>Tee muutoksia tiedostoon <em>kolmas.txt</em> ja lisää se committoitavaksi. <strong>Älä</strong> kuitenkaan committoi.</li>
+<li>git statuksen pitäisi näyttää seuraavalta</li>
+</ul>
+<pre class="hljs"><code>mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span><span class="hljs-variable">$ </span>git status
+On branch master
+Changes to be <span class="hljs-symbol">committed:</span>
+  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git reset HEAD &lt;file&gt;..."</span> to unstage)
+
+    <span class="hljs-symbol">modified:</span>   kolmas.txt
+
+mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span>$</code></pre><p>Ohje muutoksen perumiseen löytyy git statuksen tulosteesta.</p>
+<ul class="list">
+<li>suorita muutokset peruva komento <code>git reset HEAD kolmas.txt</code></li>
+<li>katsotaan jälleen <em>git status</em></li>
+</ul>
+<pre class="hljs"><code>mluukkai@melkinpaasi:~/ot_viikko1$ git status
+On branch master
+Changes not staged for <span class="hljs-keyword">commit</span>:
+  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git add &lt;file&gt;..."</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">update</span> what will be committed)
+  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git checkout -- &lt;file&gt;..."</span> <span class="hljs-keyword">to</span> discard changes <span class="hljs-keyword">in</span> working <span class="hljs-keyword">directory</span>)
+
+    modified:   kolmas.txt
+
+<span class="hljs-keyword">no</span> changes added <span class="hljs-keyword">to</span> <span class="hljs-keyword">commit</span> (<span class="hljs-keyword">use</span> <span class="hljs-string">"git add"</span> <span class="hljs-keyword">and</span>/<span class="hljs-keyword">or</span> <span class="hljs-string">"git commit -a"</span>)</code></pre><p>Tiedosto ei siis enää ole <em>staged</em>-tilassa, muutokset ovat kuitenkin <em>working directoryssä</em>, eli jos katsot tiedoston sisällön, muutokset ovat vielä olemassa</p>
+<ul class="list">
+<li>pääset perumaan muutokset kokonaan antamalla komennon <code>git checkout -- kolmas.txt</code></li>
+<li>varmista, että tiedosto on palannut muutoksia edeltävään tilaan</li>
+</ul>
+<p>Seuraavassa tiedoston tilaa kuvaava kaavio täydennettynä, eli jos tiedosto on lisätty committoitavaksi, eli se on <em>staged</em>, voidaan muutos perua komennolla <em>git reset HEAD</em>. Tällöin muutokset kuitenkin vielä jäävät tiedostoon, eli ovat <em>working directoryssä</em>. Tiedosto saadaan palautettua repositoriossa olevaan edellisen commitin tilaan komennolla <em>git checkout</em>.</p>
+<p class="img-container"><img src="https://github.com/mluukkai/otm2016/raw/master/img/lh3-3.png" alt="img"></p>
+<h2 id="harjoittelua"><a class="header-link" href="#harjoittelua"></a>Harjoittelua</h2>
+<ul class="list">
+<li>luo repositiosi sisälle hakemisto <em>tiedostoja</em> ja hakemiston sisälle tiedostot <em>file1</em>, <em>file2</em> ja <em>file3</em></li>
+<li>commitoi muutokset</li>
+<li>muista miten pystyt lisäämään kokonaisen hakemiston sisällön committoitavaksi yhdellä komennolla</li>
+<li>muuta tiedoston <em>file1</em> sisältöä ja poista tiedosto <em>file2</em></li>
+<li>peru muutokset!</li>
+<li>muuta tiedoston <em>file3</em> sisältöä, lisää commitoitavaksi</li>
+<li>peru muutokset!</li>
+<li>poista tiedosto <em>file1</em> ja uudelleennimeä tiedosto <em>file2</em> tiedostoksi <em>file22</em></li>
+<li>committoi</li>
+</ul>
+<p>Suorita repositoriossa komento <em>git log --stat | cat</em> ja <strong>ota komennon tulos talteen</strong>, tulet tarvitsemaan sitä myöhemmin!</p>
+<h2 id="github"><a class="header-link" href="#github"></a>GitHub</h2>
+<p>Gitin käytöstä on toki hyötyä jo harjoittelemallammekin tavalla, eli muodostamalla paikallisen koneen hakemistosta repositorio. Pääsemme kuitenkin nauttimaan kertaluokkaa suuremmista hyödyistä liittämällä repositoriomme internetissä olevaan <em>etärepositorioon</em>. Etärepositorion kautta repositorion tiedostot on helppo jakaa useiden koneiden tai/ja useiden käyttäjien kesken.</p>
+<p>Internetin johtava paikka etärepositorioiden tallettamiseen on <a href="https://github.com/">GitHub</a></p>
+<p>Ennen GitHubin käytöönottoa, tee uusi git-repositorio paikalliselle koneelle, seuraavassa oletetaan että hakemiston nimi on <em>ot-harjoitustyo</em>.</p>
+<p><strong>HUOM: älä luo uutta repositoriota aiemmin tekemäsi harjoitusrepositorion sisälle!</strong></p>
+<p>Esim. seuraavat komennot siirtyvät kotihakemistoon, luovat sen alle hakemiston <em>ot-harjoitustyo</em>, siirtyvät hakemistoon, alustavat sen git-repositorioksi sekä lisäävät ja commitoivat yhden tiedoston repositorioon:</p>
+<pre class="hljs"><code><span class="hljs-keyword">cd</span> 
+<span class="hljs-built_in">mkdir</span> ot-harjoitustyo
+<span class="hljs-keyword">cd</span> ot-harjoitustyo
+git init
+touch README.md
+git <span class="hljs-built_in">add</span> .
+git commit -<span class="hljs-keyword">m</span><span class="hljs-string">"initial commit"</span></code></pre><p>Siirrytään sitten GitHubin käyttöön</p>
+<ul class="list">
+<li>Luo itsellesi tunnus GitHubiin (ellei sinulla jo ole tunnusta)</li>
+<li>Luo uusi repositorio</li>
+<li>uuden repositorion luomistoiminto löytyy vasemman ylänurkan plus-symboolin alta</li>
+<li><strong>Älä laita rastia</strong> kohtaan <em>Initialize this repository with a README</em></li>
+</ul>
+<p class="img-container"><img src="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/web/images/lh1-2a.png" alt="img"></p>
+<ul class="list">
+<li>luo repositorio painamalla vihreää <em>Create repository</em> -nappia</li>
+</ul>
+<p>Seuraavaksi haluamme liittää GitHubiin luodun repositorion juuri luodun paikallisen koneen repositorion <em>ot-harjoitustyo</em> etärepositorioksi.</p>
+<ul class="list">
+<li>etärepositorion lisääminen onnistuu GitHubiin avautuvan näkymän ohjeiden mukaan</li>
+<li>varmista, että kohdasta &quot;Quick setup...&quot; on valittu <strong>SSH</strong></li>
+</ul>
+<p class="img-container"><img src="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/web/images/lh1-3a.png" alt="img"></p>
+<ul class="list">
+<li>kopioi ylempi rivi kohdasta <em>...or push an existing repository from the command line</em></li>
+<li>omassa esimerkissäni rivi on</li>
+</ul>
+<pre class="hljs"><code>git remote <span class="hljs-keyword">add</span><span class="bash"> origin git@github.com:mluukkai/ot-harjoitustyo.git</span></code></pre><ul class="list">
+<li>pastea rivi komentoriville ja suorita komento painamalla enter</li>
+<li>suorita komento <em>git remote -v</em></li>
+<li>tulostus kertoo, että githubin etärepositorio on liitetty paikalliseen repositorioosi nimellä <em>origin</em></li>
+</ul>
+<pre class="hljs"><code>mluukkai@melkki:~/ot-harjoitustyo$ git remote  -v
+origin    git@github.com:mluukkai/ot-harjoitustyo.git (fetch)
+origin    git@github.com:mluukkai/ot-harjoitustyo.git (push)</code></pre><ul class="list">
+<li><em>origin</em> on etärepositorion oletusarvoinen nimi. Nimi voi olla mikä tahansa ja etärepositorioitakin voi olla useita</li>
+<li>voimme siirtää paikallisen repositoriomme tilan etärepositorioon komennolla <em>git push</em></li>
+<li>saatat joutua tekemään ensimmäisen pushin pidemmässä muodossa <em>--set-upstream origin master</em></li>
+<li>kokeillaan</li>
+</ul>
+<pre class="hljs"><code>mluukkai@melkki:~/ot-harjoitustyo$ git push --set-upstream origin master
+Warning: Permanently added the RSA host key <span class="hljs-keyword">for</span> IP address <span class="hljs-string">'192.30.253.112'</span> to the list of known hosts.
+Permission denied (publickey).
+fatal: Could not <span class="hljs-built_in">read</span> from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.</code></pre><h2 id="julkinen-avain"><a class="header-link" href="#julkinen-avain"></a>Julkinen avain</h2>
+<p>Jos olet jo asettanut julkisen avaimen esim. Tietokantojen perusteissa, pushauksen pitäisi toimia ja voit siirtyä <a href="https://github.com/mluukkai/ohjelmistotekniikka-kevat2019/blob/master/tehtavat/viikko1.md#kertausta">seuraavaan kohtaan</a>.</p>
+<p>Pushaus ei toimi. Nyt kyse on siitä, että git haluaisi suorittaa <a href="https://the.earth.li/~sgtatham/putty/0.55/htmldoc/Chapter8.html">julkisen avaimen</a> autentikoinnin. Se ei kuitenkaan onnistu koska emme ole kertoneet gitille julkista salausavaintamme.</p>
+<ul class="list">
+<li>luo salausavain antamalla komentoriviltä komento <em>ssh-keygen</em></li>
+<li>voit vastata kaikkiin kysymyksiin enterillä</li>
+<li>syntyy kaksi salausavainta, salainen ja julkinen. Ne sijoitetaan kotihakemistosi alla olevaan hakemistoon <em>.ssh</em></li>
+<li>mene hakemistoon ja katso hakemiston sisältöä</li>
+<li>tiedosto <em>id_rsa.pub</em> sisältää julkisen avaimen, se on tarkoitus kopioida githubiin jotta avaimeen perustuva kirjautuminen onnistuisi</li>
+<li>näet tiedoston sisällön komennolla <em>cat id_rsa.pub</em></li>
+<li>anna komentoriviltä komento <em>ssh-add</em></li>
+<li>mene GitHubin asetussivulle klikkaamalla oikean yläkulman symbolista ja valitsemalla <em>settings</em></li>
+<li>valitse settingseistä <em>SSH and GPG keys</em></li>
+<li>luo uusi <em>SSH-avain</em></li>
+<li>anna avaimelle joku <em>title</em> (esim. laitos) ja kopioi tiedoston id_rsa.pub sisältö kohtaan <em>key</em></li>
+<li>Suorita uudelleen push:</li>
+</ul>
+<pre class="hljs"><code>mluukkai@melkki:~/ot-harjoitustyo$ git push
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 213 bytes | 106.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote:
+remote: <span class="hljs-keyword">Create</span> a pull request <span class="hljs-keyword">for</span> <span class="hljs-string">'master'</span> <span class="hljs-keyword">on</span> GitHub <span class="hljs-keyword">by</span> visiting:
+remote:      https://github.com/mluukkai/ot-harjoitustyo/pull/<span class="hljs-keyword">new</span>/<span class="hljs-keyword">master</span>
+remote:
+<span class="hljs-keyword">To</span> github.com:mluukkai/ot-harjoitustyo.git
+ * [<span class="hljs-keyword">new</span> branch]      <span class="hljs-keyword">master</span> -&gt; <span class="hljs-keyword">master</span>
+Branch <span class="hljs-keyword">master</span> <span class="hljs-keyword">set</span> up <span class="hljs-keyword">to</span> track remote branch <span class="hljs-keyword">master</span> <span class="hljs-keyword">from</span> origin.</code></pre><ul class="list">
+<li>nyt kaikki näyttää toimivan</li>
+</ul>
+<h2 id="lisää-tiedostoja"><a class="header-link" href="#lisää-tiedostoja"></a>Lisää tiedostoja</h2>
+<ul class="list">
+<li>tee juuri luodun repositorion sisälle hakemisto <em>laskarit</em></li>
+<li>ja sen sisälle hakemisto <em>viikko1</em></li>
+<li>Komentorivitehtävien lopussa oli kehotus: Mene tämän jälkeen kotihakemistoon ja anna komento tree kurssit. <em>Copypastea komennon tulostus talteen, tarvitset sitä myöhemmin</em></li>
+<li>Tee hakemiston <em>laskarit/viikko1</em> sisälle tiedosto <em>komentorivi.txt</em> ja kopioi sinne komennon <em>tree</em> tulos</li>
+<li>Edellisen tehtäväsarjan lopussa kehoitettiin tallentamaan harjoitusrepositoriossa annetun komennon <em>git log --stat | cat</em> tulos</li>
+<li>Tee hakemiston <em>laskarit/viikko1</em> sisälle tiedosto <em>gitlog.txt</em> ja kopioi sinne githarjoittelun tulos</li>
+<li>Kirjoita jotain tekstiä hakemiston juuressa olevaan tiedostoon README.md</li>
+<li>muotoile tekstisi <a href="https://guides.github.com/features/mastering-markdown/">markdown-notaatiota</a> käyttäen</li>
+<li>tee tiedostoon esim. jokin otsikko, tavallista tekstiä, joka sisältää lihavoituja ja kursivoituja osuuksia</li>
+<li>näemme pian tekstin ruudulla muotoiltuna</li>
+<li>commitoi muutokset</li>
+<li>muista aina commitoinnin yhteydessä <em>lisätä</em> tiedosto/muutokset commitoitavaksi</li>
+<li>pushaa koodi githubiin komennolla <em>git push</em></li>
+</ul>
+<h2 id="tiedostot-githubissa"><a class="header-link" href="#tiedostot-githubissa"></a>Tiedostot GitHubissa</h2>
+<ul class="list">
+<li>mene GitHub-repositoriosi sivulle</li>
+<li>käytännössä tämä tapahtuu uudelleenlataamalla repositorion luomisen jälkeen avautunut sivu</li>
+<li>huomaat että tiedostot näkyvät nyt repositorion sivulla. Sivulle renderöityy repositorion juuressa olevan README.md:n sisältö markdown-muotoiltuna</li>
+<li>voit editoida repositoriossa olevia tiedostoja suoraan GitHubin editorilla menemällä tiedoston sivulle ja painamalla kynäsymbolia</li>
+<li>tee README.md:hen linkit repositorion hakemistossa <em>laskarit/viikko1/</em> oleviin tiedostoihin <em>komentorivi.txt</em> ja <em>gitlog.txt</em></li>
+<li>ohje linkin muodostamiseen löytyy <a href="https://guides.github.com/features/mastering-markdown/">täältä</a></li>
+<li>tiedostojen urlin saat navigoimalla GitHubissa tiedostoon ja kopioimalla osoitteen selaimen osoiteriviltä</li>
+<li>Repositoriosi tulee näyttää suunnilleen seuraavalta</li>
+</ul>
+<p class="img-container"><img src="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/web/images/lh1-4a.png" alt="img"></p>
+<ul class="list">
+<li>jos teit kaiken oikein, pääset README.md:ssä olevia linkkejä klikkaamalla näkemään linkitettyjen tiedostojen sisällön</li>
+</ul>
+<h2 id="paikallisen-repositorion-ajantasaistaminen"><a class="header-link" href="#paikallisen-repositorion-ajantasaistaminen"></a>Paikallisen repositorion ajantasaistaminen</h2>
+<ul class="list">
+<li>GitHubissa tekemämme muutokset ovat tehneet etärepositorioon uuden commitin</li>
+<li>Etärepositorio on nyt <em>edellä</em> paikallista repositorioamme</li>
+<li>Saamme tuotua muutokset paikalliselle koneelle komennolla <em>git pull</em></li>
+<li>Kokeile komentoa ja varmista, että muuttunut sisältö on nyt paikallisessa repositoriossa</li>
+</ul>
+<h2 id="lisää-githubia"><a class="header-link" href="#lisää-githubia"></a>Lisää githubia</h2>
+<ul class="list">
+<li>Tee paikallisella koneella jokin muutos esim. tiedostoon README.md</li>
+<li>Lisää ja committaa muutos</li>
+<li>Vie muutokset GitHubiin komennolla <em>git push</em></li>
+<li>Varmista GitHubista että muutokset näkyvät</li>
+<li>Paikallinen repositoriosi ja GitHubin etärepositorio ovat jälleen samassa tilassa.</li>
+</ul>
+<h2 id="paikallisen-ja-etärepositorion-epäsynkrooni"><a class="header-link" href="#paikallisen-ja-etärepositorion-epäsynkrooni"></a>Paikallisen ja etärepositorion epäsynkrooni</h2>
+<ul class="list">
+<li>joskus käy niin, että paikallinen ja etärepositorio menevät epäsynkroniin, siten että molempiin tehdään yhtäaikaa uusi commit</li>
+<li>luodaan tälläinen tilanne</li>
+<li>tee paikalliseen repositorioon muutos tiedostoon <em>README.md</em>, lisää ja committoi muutos</li>
+<li><strong>älä</strong> pushaa muutosta GitHubiin</li>
+<li>tee GitHubiin muutos <strong>johonkin muualle</strong> kuin README.md-tiedostoon</li>
+<li>editoi siis esim. tiedostoa <em>gitlog.txt</em> hieman suoraan GitHubissa</li>
+<li>yritä nyt pushata paikallisen repositorion muutokset githubiin</li>
+<li>seurauksena on virheilmoitus</li>
+</ul>
+<pre class="hljs"><code>mluukkai<span class="hljs-variable">@melkki</span><span class="hljs-symbol">:~/ot-harjoitustyo</span><span class="hljs-variable">$ </span>git push
+To git<span class="hljs-variable">@github</span>.<span class="hljs-symbol">com:</span>mluukkai/ot-harjoitustyo.git
+ ! [rejected]        master -&gt; master (fetch first)
+<span class="hljs-symbol">error:</span> failed to push some refs to <span class="hljs-string">'git@github.com:mluukkai/ot-harjoitustyo.git'</span>
+<span class="hljs-symbol">hint:</span> Updates were rejected because the remote contains work that you <span class="hljs-keyword">do</span>
+<span class="hljs-symbol">hint:</span> <span class="hljs-keyword">not</span> have locally. This is usually caused by another repository pushing
+<span class="hljs-symbol">hint:</span> to the same ref. You may want to first integrate the remote changes
+<span class="hljs-symbol">hint:</span> (e.g., <span class="hljs-string">'git pull ...'</span>) before pushing again.
+<span class="hljs-symbol">hint:</span> See the <span class="hljs-string">'Note about fast-forwards'</span> <span class="hljs-keyword">in</span> <span class="hljs-string">'git push --help'</span> <span class="hljs-keyword">for</span> details.
+mluukkai<span class="hljs-variable">@melkki</span><span class="hljs-symbol">:~/ot-harjoitustyo</span>$</code></pre><ul class="list">
+<li>Tulet törmäämään tähän varmaan useasti jatkossakin.</li>
+<li>Ongelma ei ole paha. Koska paikalliset ja GitHubin muutokset ovat kohdistuneet <strong>eri tiedostoihin</strong>, selviämme helpolla</li>
+<li>ensin pullaamme muutokset paikalliseen repositorioon komennolla <em>git pull</em></li>
+<li>pullaaminen synnyttää ns. merge commitin, jolle joudumme määrittelemään commit-viestin avautuvaan editoriin</li>
+<li>oletusarvoinen viesti käy, eli riittää että poistut editorista tallentaen muutokset</li>
+<li>ja pushaamme ne uudelleen githubiin</li>
+<li>nyt paikallinen ja etärepositorio ovat taas synkroonissa</li>
+<li>katso repositorion tilaa nyt komennolla <em>gitk</em></li>
+<li>näet, että repositorion uusimmalla commitilla on nyt kaksi edeltäjää, paikallinen commit ja etärepositorion commit</li>
+</ul>
+<p class="img-container"><img src="https://github.com/mluukkai/otm2016/raw/master/img/lh5-3.png" alt="alt text"></p>
+<p>Jos muutokset olisivat kohdistuneet samaan tiedostoon, olisi syntynyt hieman vakavampi tilanne, eli <em>merge-konflikti</em>. Konfliktit on pakko selvittää itse editorin avulla. On toki olemassa työkaluja, mergetooleja, jotka auttavat konfliktin selvittämisessä. Emme kuitenkaan mene tällä kurssilla merge-konflikteihin.</p>
+<p>Nyrkkisääntönä kannattaa pitää aina sitä, että kun rupeat työskentelemään paikallisessa repositoriossa, pullaa ensin kaikki muutokset etärepositoriosta. Ja kun lopetat työskentelyn, pushaa muutokset etärepositorioon. Näin konflikteja ei yhden ihmisen työskentelyssä todennäköisesti tule.</p>
+<h2 id="labtool"><a class="header-link" href="#labtool"></a>Labtool</h2>
+<p>Now register your own data and the repository you created in <a href="https://studies.cs.helsinki.fi/labtool/courses/TKT20002.2019.K.K.1">Labtool</a> . Choose <em>Software Engineering as the</em> course if you have to make a choice.</p>
+<p>Labtool will also ask about the topic of the assignment, if you are not sure about your topic yet you can change the name of the topic later.</p>
+<h2 id="more-gits"><a class="header-link" href="#more-gits"></a>More gits</h2>
+<p>The basic use of Git will definitely become familiar during the course. Of course, it is worth continuing to study the more advanced features of Git on your own. There are a large number of more or less good tutorials on the Internet. Here are a few links</p>
+<ul class="list">
+<li><a href="https://www.atlassian.com/git/tutorials/">https://www.atlassian.com/git/tutorials/</a></li>
+<li><a href="http://learngitbranching.js.org/">http://learngitbranching.js.org</a></li>
+<li><p><a href="http://ohshitgit.com/">http://ohshitgit.com</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#0">Week 1 assignments</a></p>
+</li>
+<li><ul class="list">
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#1">Command line training</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#2">part 1</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#3">part 2</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#4">tab complete</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#5">simultaneous terminals / terminal tabs</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#6">version control</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#7">The beginnings of Git</a></p>
+</li>
+<li><ul class="list">
+<li><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#8">configurations</a></li>
+<li><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#9">repositorio</a></li>
+<li><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#10">commit</a></li>
+<li><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#11">working directory, index / staging, repository</a></li>
+</ul>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#12">git commit</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#13">more practice</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#14">gitk</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#15">file deletion and renaming</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#16">git add -p</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#17">revocation of changes</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#18">training</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#19">GitHub</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#20">Public key</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#21">More files</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#22">Files on GitHub</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#23">Updating the local repository</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#24">More githubia</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#25">Asynchronous local and remote repository</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#26">Labtool</a></p>
+</li>
+<li><p><a href="https://raw.githubusercontent.com/mluukkai/ohjelmistotekniikka-kevat2019/master/tehtavat/viikko1.md#27">More gits</a></p>
+</li>
+</ul>
+</li>
+</ul>
+    </article>
+  </body>
+</html>

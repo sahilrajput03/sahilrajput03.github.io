@@ -66,9 +66,11 @@ CREATE FILE:
 DELETE FILE/S:
 del &lt;file/files/*&gt; (removes files, not folders)
 
-DELETE FOLDER/S: 
+DELETE FOLDER/S, empty folder: 
 rmdir /q /s &lt;folder/folders/        <span class="hljs-comment"># {* not supported}</span>
 rmdir /q /s . <span class="hljs-comment"># deletes everything in the current directory.</span>
+NOTE: You must use it <span class="hljs-keyword">in</span> the way below, and notice the || <span class="hljs-keyword">in</span> the end to follow any <span class="hljs-built_in">command</span> further, as &amp;&amp; doesn\<span class="hljs-string">'t work for this command to write any follow-up command.
+cd temp-generatemd-dontdelete &amp;&amp; rmdir /q /s . ||
 
 create folder:
 mkdir &lt;folder-name&gt;
@@ -77,13 +79,13 @@ PAUSE BATCH FILE AFTER EXECUTION:
 &lt;code&gt; &amp;&amp; @pause
 
 ECHO NEXT LINE CHARACTER:
-<span class="hljs-built_in">echo</span> ..... &amp;&amp; echo.This comes as new line.
+echo ..... &amp;&amp; echo.This comes as new line.
 
 RENAME:
 ren dotenv_win .env
 
 EDIT FILE:
-notepad &lt;file&gt;</code></pre><p>EXAMPLES: 
+notepad &lt;file&gt;</span></code></pre><p>EXAMPLES: 
 cd jekyll-jinn/_site/ &amp;&amp; xcopy . &quot;../..&quot; /e /i {&quot; Quotes are important, otherwise cmd interpret them as option rather parameters}</p>
 <hr>
 <p>You may recover the premission of a folder via using this article: <a href="https://answers.microsoft.com/en-us/windows/forum/windows_8-files/you-dont-currently-have-permission-to-access-this/2cc4abe2-41ea-4023-b594-104c3b9e9f4d?auth=1">Links</a> . Although, what actually solved the harsh problem is below command:</p>
