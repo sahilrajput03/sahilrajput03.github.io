@@ -112,6 +112,7 @@ del <file/files/*> (removes files, not folders)
 
 DELETE FOLDER/S: 
 rmdir /q /s <folder/folders/		# {* not supported}
+rmdir /q /s . # deletes everything in the current directory.
 
 create folder:
 mkdir <folder-name>
