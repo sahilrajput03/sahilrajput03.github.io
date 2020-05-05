@@ -1324,8 +1324,12 @@ let reducedValue = popo.reduce((acc,cur)=>acc+cur.likes,0)
 
 ```js
 SIMPLEST PROMISE EVER:
-fetch('url')
-fetch('google.com').then((d)=>console.log(d)).catch(err=> console.log(err)).finally(()=>console.log('Bulbul'))
+fetch("url");
+fetch("google.com")
+  .then((d) => console.log(d))
+  .catch((err) => console.log(err))
+  .finally(() => console.log("Bulbul"));
+
 // also you might see the cors error.. has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled//
 ```
 
