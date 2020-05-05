@@ -1,34 +1,34 @@
-Better Comments - Aaron Bond
+**Better Comments - Aaron Bond**
 
-Bracket Pair Colonizer - CoenraadS
+**Bracket Pair Colonizer - CoenraadS**
 
-Code Time - Software
+**Code Time - Software**
 
-Color Highligh - Sergii Naumov
+**Color Highligh - Sergii Naumov**
 
-Error Lens - Alexander
+**Error Lens - Alexander**
 
-Git History - Don Jayamanne
+**Git History - Don Jayamanne**
 
-GitLens -- Git supercharge - Eric Amodio
+**GitLens -- Git supercharge - Eric Amodio**
 
-Image preview - Kiss Tamas
+**Image preview - Kiss Tamas**
 
-Live Sass Compiler - Ritwick Dey
+**Live Sass Compiler - Ritwick Dey**
 
-Live Server - Ritwick Dey
+**Live Server - Ritwick Dey**
 
-Paste JSON as Code - quicktype
+**Paste JSON as Code - quicktype**
 
-Prettier - Code formatter - Esben Petersen
+**Prettier - Code formatter - Esben Petersen**
 
-REST Client  - Huachao Mao
+**REST Client  - Huachao Mao**
 
-Stackoverflow Instant Search - Alexey-Strakh
+**Stackoverflow Instant Search - Alexey-Strakh**
 
-Tokyo Night - enia
+**Tokyo Night - enia - theme..**
 
-vscode-faker - Budi Irawan
+**vscode-faker - Budi Irawan**
 
 
 
@@ -48,7 +48,9 @@ By: Microsoft. Helps you write code with friends like google docs way of writing
 
 ![image-20200425164751653](image-20200425164751653.png)
 
-and it will appear as : ![image-20200425165203925](image-20200425165203925.png)  ![image-20200425165438856](image-20200425165438856.png)
+and it will appear as : ![image-20200425165203925](image-20200425165203925.png)  
+
+![image-20200425165438856](image-20200425165438856.png)
 
 ***
 
