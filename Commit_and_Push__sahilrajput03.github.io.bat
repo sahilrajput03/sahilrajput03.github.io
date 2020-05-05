@@ -1,0 +1,1 @@
+generate-md --layout github --input ./sahilrajput03 --output ./temp-generatemd-dontdelete && xcopy temp-generatemd-dontdelete sahilrajput03 /e /i /y && cd sahilrajput03 && node nodescript.js && git add . && git commit -m "Commiting from automated cmd-bat file" && git push && @pause
