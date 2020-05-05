@@ -855,11 +855,16 @@ arr.pop()
 <span class="hljs-keyword">let</span> reducedValue = popo.reduce(<span class="hljs-function">(<span class="hljs-params">acc,cur</span>)=&gt;</span>acc+cur.likes,<span class="hljs-number">0</span>)</code></pre><hr>
 <h1 id="**how-promises-work:**"><a class="header-link" href="#**how-promises-work:**"></a><strong>How promises work:</strong></h1>
 <pre class="hljs"><code>SIMPLEST PROMISE EVER:
-fetch(<span class="hljs-string">'url'</span>)
-fetch(<span class="hljs-string">'google.com'</span>).then(<span class="hljs-function">(<span class="hljs-params">d</span>)=&gt;</span><span class="hljs-built_in">console</span>.log(d)).catch(<span class="hljs-function"><span class="hljs-params">err</span>=&gt;</span> <span class="hljs-built_in">console</span>.log(err)).finally(<span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Bulbul'</span>))
+fetch(<span class="hljs-string">"url"</span>);
+fetch(<span class="hljs-string">"google.com"</span>)
+  .then(<span class="hljs-function">(<span class="hljs-params">d</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(d))
+  .catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(err))
+  .finally(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Bulbul"</span>));
+
 <span class="hljs-comment">// also you might see the cors error.. has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled//</span></code></pre><hr>
 <h2 id="asynchronous-task-in-serial-order**(or-in-sequential-order)**:-"><a class="header-link" href="#asynchronous-task-in-serial-order**(or-in-sequential-order)**:-"></a>Asynchronous Task in Serial Order<strong>(or in sequential order)</strong>:-</h2>
-<p>In other words another asynchronous task starts only when previous is resolved.</p>
+<p>In other words another asynchronous task starts only when previous is resolved.
+<strong>example:</strong></p>
 <pre class="hljs"><code><span class="hljs-comment">//Simple promise call:-</span>
 <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> {
   setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"tik-tick"</span>), <span class="hljs-number">1</span>_000);
@@ -868,9 +873,24 @@ fetch(<span class="hljs-string">'google.com'</span>).then(<span class="hljs-func
 <span class="hljs-comment">//Simple promise callback function:-</span>
 <span class="hljs-keyword">let</span> fun = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span>
   <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> {
-    setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"tik-tick"</span>), <span class="hljs-number">1</span>_000);
+    setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"tik-tick"</span>);
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"processing-some-inside-operations"</span>);
+      resolve(<span class="hljs-string">"continuee"</span>);
+    }, <span class="hljs-number">1</span>_000);
   });
-fun();
+
+fun().then(<span class="hljs-function">(<span class="hljs-params">returned</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"FINALLY AFTER 1 SEC, WE HAVE RECEIVED:"</span>,returned));</code></pre><hr>
+<h2 id="another-e.g."><a class="header-link" href="#another-e.g."></a>Another e.g.</h2>
+<pre class="hljs"><code><span class="hljs-comment">//Promise with some parameter:-</span>
+<span class="hljs-keyword">let</span> fun = <span class="hljs-function">(<span class="hljs-params">secs</span>) =&gt;</span>
+  <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span>(!secs) secs = <span class="hljs-number">1</span>
+      setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"TIK-TICK:"</span>,<span class="hljs-string">"minute:seconds"</span>,<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getMinutes(),<span class="hljs-string">":"</span>,<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getSeconds());
+      resolve(<span class="hljs-string">"continuee"</span>);
+    }, <span class="hljs-number">1</span>_000*secs);
+  });
 
 <span class="hljs-comment">//Promise resolving(Asynchronous Calling) in sequence/serially:-</span>
 fun().then(<span class="hljs-function">(<span class="hljs-params">t</span>) =&gt;</span> {
@@ -897,10 +917,13 @@ fun().then(<span class="hljs-function">(<span class="hljs-params">t</span>) =&gt
       }
     });
   }
-});</code></pre><p><strong>Pictorial form of above function:</strong><img src="funcalling_img.png" alt="funcalling_img"></p>
+});</code></pre><p><strong>Pictorial form of above function:</strong><img src="funcalling_img.png" alt=""></p>
 <hr>
+<h2 id="simple-resolving-and-chaining-process:"><a class="header-link" href="#simple-resolving-and-chaining-process:"></a>Simple resolving and chaining process:</h2>
 <pre class="hljs"><code><span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> {setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> resolve(<span class="hljs-number">3</span>), <span class="hljs-number">2000</span>)})
-        .then(<span class="hljs-function"><span class="hljs-params">d</span> =&gt;</span> (d*d)).then(<span class="hljs-function">(<span class="hljs-params">ee</span>)=&gt;</span> <span class="hljs-built_in">console</span>.log(ee)) <span class="hljs-comment">// first resolve returns whats inside it.</span></code></pre><pre class="hljs"><code><span class="hljs-comment">//EXECUTE THE CODE IN ONCE IN CHROME CONSOLE.</span>
+        .then(<span class="hljs-function"><span class="hljs-params">d</span> =&gt;</span> (d*d)).then(<span class="hljs-function">(<span class="hljs-params">ee</span>)=&gt;</span> <span class="hljs-built_in">console</span>.log(ee)) <span class="hljs-comment">// first resolve returns whats inside it.</span></code></pre><hr>
+<h2 id="expertise-in-promises:"><a class="header-link" href="#expertise-in-promises:"></a>Expertise in promises:</h2>
+<pre class="hljs"><code><span class="hljs-comment">//EXECUTE THE CODE IN ONCE IN CHROME CONSOLE.</span>
 flag = confirm(<span class="hljs-string">'Press OK to resolve promise, Cancel to reject promise'</span>)
                                                 <span class="hljs-comment">//or manually assign true/false</span>
 <span class="hljs-keyword">let</span> timeOutCountdown = <span class="hljs-number">2</span>
@@ -924,7 +947,7 @@ timeOut(timeOutCountdown)
 rideHospital.then(<span class="hljs-function">(<span class="hljs-params">value</span>)=&gt;</span><span class="hljs-built_in">console</span>.log(value)).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(err))
                                     <span class="hljs-comment">//    err.name and err.message yield undefined.</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFollow the confirm box:'</span>)</code></pre><hr>
-<pre class="hljs"><code>The reason <span class="hljs-keyword">above</span> code works <span class="hljs-keyword">without</span> even declaring <span class="hljs-keyword">the</span> flag, (<span class="hljs-keyword">as</span> let flag; flag = <span class="hljs-literal">false</span>/<span class="hljs-literal">true</span>), <span class="hljs-keyword">is</span> <span class="hljs-keyword">that</span> <span class="hljs-keyword">if</span> you don't declare they become become <span class="hljs-keyword">global</span> variables. YES THEY DOOO.. ITS JS.
+<pre class="hljs"><code>*The reason <span class="hljs-keyword">above</span> code works <span class="hljs-keyword">without</span> even declaring <span class="hljs-keyword">the</span> flag, (<span class="hljs-keyword">as</span> let flag; flag = <span class="hljs-literal">false</span>/<span class="hljs-literal">true</span>), <span class="hljs-keyword">is</span> <span class="hljs-keyword">that</span> <span class="hljs-keyword">if</span> you don't declare they become become <span class="hljs-keyword">global</span> variables. YES THEY DOOO.. ITS JS.
 pLEASE READ: BELOW ARTICLE FOR JS PRACTISES.</code></pre><p><a href="https://www.w3schools.com/js/js_best_practices.asp">Javascript best practises, a must guide for every js developer. @ W3SCHOOLS.COM</a></p>
 <pre class="hljs"><code>
 <span class="hljs-keyword">let</span>  rideHospital = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve,reject</span>)=&gt;</span>{ ..<span class="hljs-comment">// here rideHospital is creator</span>
