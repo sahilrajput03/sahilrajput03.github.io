@@ -3180,3 +3180,9 @@ simple code @ [medium article (amaz..)](https://medium.com/stackfame/get-list-of
 
 ***
 
+## Always prefer ctrl+f4 (as it closes Editor only)over ctrl+w to close files, as ctrl+w will close the editor if there are no files to close. Also:
+
+![image-20200505185851008](image-20200505185851008.png)
+
+***
+
