@@ -22,7 +22,7 @@ fs.readdir(directoryPath, function (err, files) {
   files.forEach(function (file) {
     // Do whatever you want to do with the file
     if (file.includes(".html")) {
-      file = file.substring(0, file.length - 3);
+      file = file.substring(0, file.length - 5);
       htmlelements.push(`<a href="${file}.html">${file}</a><br>`);
     }
     // console.log(htmlelements);
