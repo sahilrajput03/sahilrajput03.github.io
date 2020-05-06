@@ -3,13 +3,34 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Renaming extensions of multiple files:</title>
+    <title>Copy something to clipboard</title>
     <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="renaming-extensions-of-multiple-files:"><a class="header-link" href="#renaming-extensions-of-multiple-files:"></a>Renaming extensions of multiple files:</h2>
+    <article class="markdown-body"><h2 id="copy-something-to-clipboard"><a class="header-link" href="#copy-something-to-clipboard"></a>Copy something to clipboard</h2>
+<pre class="hljs"><code>ping 192.168.1.1 | clip <span class="hljs-comment">#copies to clipboard</span>
+<span class="hljs-built_in">help</span> | clip    <span class="hljs-comment">#copies to cilpboard</span></code></pre><h3 id="using->-and->>-to-write-in-files-in-command-prompt(windows)-and-bash-(linux)"><a class="header-link" href="#using->-and->>-to-write-in-files-in-command-prompt(windows)-and-bash-(linux)"></a>Using &gt; and &gt;&gt; to write in files in command prompt(windows) and bash (linux)</h3>
+<pre class="hljs"><code><span class="hljs-built_in">help</span> &gt; c.txt <span class="hljs-comment">#overwrite completely old content</span>
+<span class="hljs-built_in">help</span> &gt;&gt; c.txt <span class="hljs-comment">#adds content</span>
+git &gt; help.txt
+
+NOTE:
+Double pipe (||), represents the <span class="hljs-string">"or"</span> operator <span class="hljs-keyword">in</span> scripting too.</code></pre><h3 id="using-findstr(windows)"><a class="header-link" href="#using-findstr(windows)"></a>Using findstr(windows)</h3>
+<pre class="hljs"><code><span class="hljs-comment"># using findstr(windows), works in both cmd and bash</span>
+<span class="hljs-built_in">help</span> | findstr <span class="hljs-string">"extension"</span>
+git | findstr overview <span class="hljs-comment">#both cmd,bash</span>
+git <span class="hljs-built_in">help</span> | findstr pull <span class="hljs-comment">#both cmd,bash</span>
+git commit | findstr will
+<span class="hljs-comment"># important:</span>
+git add -h 2| findstr dry <span class="hljs-comment">#operator that supplies stderr to the findstr command</span>
+git commit -h 2| findstr dry <span class="hljs-comment">#operator that supplies stderr to the findstr command</span>
+</code></pre><h3 id="using-grep:"><a class="header-link" href="#using-grep:"></a>Using grep:</h3>
+<pre class="hljs"><code><span class="hljs-comment"># using grep to find(bash, linux)</span>
+git add -h 2| grep dry <span class="hljs-comment"># 2| operator is needed when there are switches in the command i.e., -h here.</span>
+<span class="hljs-built_in">help</span> | grep <span class="hljs-keyword">done</span></code></pre><hr>
+<h2 id="renaming-extensions-of-multiple-files:"><a class="header-link" href="#renaming-extensions-of-multiple-files:"></a>Renaming extensions of multiple files:</h2>
 <p><a href="https://unix.stackexchange.com/questions/19654/how-do-i-change-the-extension-of-multiple-files">https://unix.stackexchange.com/questions/19654/how-do-i-change-the-extension-of-multiple-files</a></p>
 <hr>
 <h2 id="converting-multiple-file-with-pandocto-html,-pandoc"><a class="header-link" href="#converting-multiple-file-with-pandocto-html,-pandoc"></a>Converting multiple file with pandocto html, pandoc</h2>

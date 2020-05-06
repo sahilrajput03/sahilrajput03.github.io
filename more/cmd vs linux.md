@@ -1,3 +1,47 @@
+## Copy something to clipboard
+
+```bash
+ping 192.168.1.1 | clip #copies to clipboard
+help | clip	#copies to cilpboard
+```
+
+### Using > and >> to write in files in command prompt(windows) and bash (linux)
+
+```bash
+help > c.txt #overwrite completely old content
+help >> c.txt #adds content
+git > help.txt
+
+NOTE:
+Double pipe (||), represents the "or" operator in scripting too.
+```
+
+### Using findstr(windows)
+
+```bash
+# using findstr(windows), works in both cmd and bash
+help | findstr "extension"
+git | findstr overview #both cmd,bash
+git help | findstr pull #both cmd,bash
+git commit | findstr will
+# important:
+git add -h 2| findstr dry #operator that supplies stderr to the findstr command
+git commit -h 2| findstr dry #operator that supplies stderr to the findstr command
+
+```
+
+### Using grep:
+
+```bash
+# using grep to find(bash, linux)
+git add -h 2| grep dry # 2| operator is needed when there are switches in the command i.e., -h here.
+help | grep done
+```
+
+
+
+***
+
 ## Renaming extensions of multiple files:
 
 https://unix.stackexchange.com/questions/19654/how-do-i-change-the-extension-of-multiple-files

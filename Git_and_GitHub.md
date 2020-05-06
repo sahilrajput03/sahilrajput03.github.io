@@ -1,3 +1,42 @@
+
+
+***
+
+## Change the name last commit
+
+```bash
+git commit --amend
+```
+
+***
+
+```bash
+git commit -am "firstCommit"
+git commit -am "secondCommit"
+git commit -am "thirdCommit"
+```
+
+
+
+***
+
+## Git commit help
+
+```bash
+git commit -h
+git add -h
+```
+
+```bash
+git add -A (adds all tracked and untracked files)
+git add . (does same)
+git add * (does same but excludes hidden files)
+```
+
+
+
+***
+
 ## Move branch on a previous commit(commonly needed):
 
 ![image-20200505211531257](image-20200505211531257.png)
@@ -25,7 +64,13 @@ git branch -h #shows help pages for git branch. And outputs the infomation for -
 
 ## Moving upward in a git repository
 
-So to move up a single commit: simply do $ git checkout HEAD^
+So to move up a single commit: simply do 
+
+```bash
+git checkout HEAD^
+```
+
+`git checkout HEAD^`
 
 ![image-20200505204028342](image-20200505204028342.png)
 

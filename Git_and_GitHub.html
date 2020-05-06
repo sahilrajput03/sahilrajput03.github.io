@@ -3,13 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Move branch on a previous commit(commonly needed):</title>
+    <title>Change the name last commit</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="move-branch-on-a-previous-commit(commonly-needed):"><a class="header-link" href="#move-branch-on-a-previous-commit(commonly-needed):"></a>Move branch on a previous commit(commonly needed):</h2>
+    <article class="markdown-body"><hr>
+<h2 id="change-the-name-last-commit"><a class="header-link" href="#change-the-name-last-commit"></a>Change the name last commit</h2>
+<pre class="hljs"><code>git commit --amend</code></pre><hr>
+<pre class="hljs"><code>git commit -am <span class="hljs-string">"firstCommit"</span>
+git commit -am <span class="hljs-string">"secondCommit"</span>
+git commit -am <span class="hljs-string">"thirdCommit"</span></code></pre><hr>
+<h2 id="git-commit-help"><a class="header-link" href="#git-commit-help"></a>Git commit help</h2>
+<pre class="hljs"><code>git commit -h
+git add -h</code></pre><pre class="hljs"><code>git add -A (adds all tracked and untracked files)
+git add . (does same)
+git add * (does same but excludes hidden files)</code></pre><hr>
+<h2 id="move-branch-on-a-previous-commit(commonly-needed):"><a class="header-link" href="#move-branch-on-a-previous-commit(commonly-needed):"></a>Move branch on a previous commit(commonly needed):</h2>
 <p class="img-container"><img src="image-20200505211531257.png" alt="image-20200505211531257"></p>
 <pre class="hljs"><code>git branch -h <span class="hljs-comment">#shows help pages for git branch. And outputs the infomation for -f switch</span>
 <span class="hljs-_">-f</span>, --force           force creation, move/rename, deletion</code></pre><p class="img-container"><img src="image-20200505211855009.png" alt="image-20200505211855009"></p>
@@ -21,7 +32,8 @@
 <p class="img-container"><img src="image-20200505211317305.png" alt="image-20200505211317305"></p>
 <hr>
 <h2 id="moving-upward-in-a-git-repository"><a class="header-link" href="#moving-upward-in-a-git-repository"></a>Moving upward in a git repository</h2>
-<p>So to move up a single commit: simply do $ git checkout HEAD^</p>
+<p>So to move up a single commit: simply do </p>
+<pre class="hljs"><code>git checkout HEAD^</code></pre><p><code>git checkout HEAD^</code></p>
 <p class="img-container"><img src="image-20200505204028342.png" alt="image-20200505204028342"></p>
 <hr>
 <h2 id="what-the-hell-is-head?"><a class="header-link" href="#what-the-hell-is-head?"></a>What the hell is HEAD?</h2>
