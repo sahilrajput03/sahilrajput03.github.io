@@ -1,4 +1,6 @@
-# Fastest way to creapte node project:-
+[TOC]
+
+# Fastest way to create node project:-
 
 ```bash
 npm init --yes
@@ -3180,9 +3182,12 @@ simple code @ [medium article (amaz..)](https://medium.com/stackfame/get-list-of
 
 ***
 
-## Always prefer ctrl+f4 (as it closes Editor only)over ctrl+w to close files, as ctrl+w will close the editor if there are no files to close. Also:
+## Always prefer ctrl+f4 (as it closes Editor only)over ctrl+w to close files, as ctrl+w will close the editor if there are no files to close. And you don't want to close and reopen your editor frequently. Also:
 
 ![image-20200505185851008](image-20200505185851008.png)
 
 ***
 
+# https://learngitbranching.js.org/
+
+***

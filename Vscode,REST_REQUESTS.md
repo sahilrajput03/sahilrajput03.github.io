@@ -97,3 +97,62 @@ DELETE http://localhost:3001/api/notes/5dbfebdd9edc4017dce88838
 
 ***
 
+## Responses Exapmles:-
+
+when we do:
+
+```js
+blogsRouter.post("/comment", async (request, response) => {
+  console.log("$request.body:-", request.body);
+  response.send("I reveive that:-"+JSON.stringify(request.body))
+});
+```
+
+```bash
+post http://localhost:3003/api/blogs/comment
+Content-Type: application/json
+
+{
+  "title": "Tuntunaa99",
+  "author": "Pagal Tipu Sultan",
+  "url": "Bablitera-mera.com",
+  "likes": 90
+}
+```
+
+```bash
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: text/html; charset=utf-8
+Content-Length: 105
+ETag: W/"69-q6ixFC158sbfSYtjVqmNTJzlAvE"
+Date: Wed, 06 May 2020 07:56:43 GMT
+Connection: close
+
+I reveive that:-{"title":"Tuntunaa99","author":"Pagal Tipu Sultan","url":"Bablitera-mera.com","likes":90}
+```
+
+***
+
+and when we do:(json is the type we are sending in exchange or the request)
+
+```js
+  response.json("I reveive that:-"+JSON.stringify(request.body))
+```
+
+```
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 121
+ETag: W/"79-ORXKBxto7dVwMMuMVcyyHxMrJCY"
+Date: Wed, 06 May 2020 08:00:16 GMT
+Connection: close
+
+"I reveive that:-{\"title\":\"Tuntunaa99\",\"author\":\"Pagal Tipu Sultan\",\"url\":\"Bablitera-mera.com\",\"likes\":90}"
+```
+
+***
+

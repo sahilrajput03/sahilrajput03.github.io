@@ -3,13 +3,33 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Making use of collaborations on github</title>
+    <title>Move branch on a previous commit(commonly needed):</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><h1 id="making-use-of-collaborations-on-github"><a class="header-link" href="#making-use-of-collaborations-on-github"></a>Making use of collaborations on github</h1>
+    <article class="markdown-body"><h2 id="move-branch-on-a-previous-commit(commonly-needed):"><a class="header-link" href="#move-branch-on-a-previous-commit(commonly-needed):"></a>Move branch on a previous commit(commonly needed):</h2>
+<p class="img-container"><img src="image-20200505211531257.png" alt="image-20200505211531257"></p>
+<pre class="hljs"><code>git branch -h <span class="hljs-comment">#shows help pages for git branch. And outputs the infomation for -f switch</span>
+<span class="hljs-_">-f</span>, --force           force creation, move/rename, deletion</code></pre><p class="img-container"><img src="image-20200505211855009.png" alt="image-20200505211855009"></p>
+<p class="img-container"><img src="image-20200505211908626.png" alt="image-20200505211908626"></p>
+<hr>
+<h2 id="the-asterisk-operator-in-github"><a class="header-link" href="#the-asterisk-operator-in-github"></a>The asterisk operator in github</h2>
+<p class="img-container"><img src="image-20200505211128849.png" alt="image-20200505211128849"></p>
+<p class="img-container"><img src="image-20200505211248016.png" alt="image-20200505211248016"></p>
+<p class="img-container"><img src="image-20200505211317305.png" alt="image-20200505211317305"></p>
+<hr>
+<h2 id="moving-upward-in-a-git-repository"><a class="header-link" href="#moving-upward-in-a-git-repository"></a>Moving upward in a git repository</h2>
+<p>So to move up a single commit: simply do $ git checkout HEAD^</p>
+<p class="img-container"><img src="image-20200505204028342.png" alt="image-20200505204028342"></p>
+<hr>
+<h2 id="what-the-hell-is-head?"><a class="header-link" href="#what-the-hell-is-head?"></a>What the hell is HEAD?</h2>
+<p class="img-container"><img src="image-20200505202921231.png" alt="image-20200505202921231"></p>
+<hr>
+<h3 id="https://learngitbranching.js.org/"><a class="header-link" href="#https://learngitbranching.js.org/"></a><a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></h3>
+<hr>
+<h1 id="making-use-of-collaborations-on-github"><a class="header-link" href="#making-use-of-collaborations-on-github"></a>Making use of collaborations on github</h1>
 <p>The first techniuque is, make a fork of someone&#39;s repo (repo-original)(this will make of copy of the repo in your github account, say repo-copy) and then make changed to your copy of the repo(repo-copy). And push the code to your repo-copy in github(via git push). So, when you are ready with your changes, make a pull request from your repo-copy. Like :</p>
 <p class="img-container"><img src="image-20200504172905367.png" alt="image-20200504172905367"></p>
 <p>and this will ask you the TARGET repo to which you want to make a request. And the actual user of the repo has to merge the pull request to the repository(he/she gets the link for that in the associated email). Or he/she can do it via visiting the repository and clicking the available pull request like belo:w-</p>
@@ -328,7 +348,7 @@ _
 Delete Local Branch
 $ git branch <span class="hljs-_">-d</span> branch_name
 $ git branch -D branch_name
-<span class="hljs-comment"># <span class="hljs-doctag">Note:</span> The -d option is an alias for --delete, which only deletes the branch if it has already been fully merged in its upstream branch. </span>
+<span class="hljs-comment"># Note: The -d option is an alias for --delete, which only deletes the branch if it has already been fully merged in its upstream branch. </span>
 <span class="hljs-comment"># You could also use -D, which is an alias for --delete --force, which deletes the branch "irrespective of its merged status." [Source: man git-branch]</span>
 
 _

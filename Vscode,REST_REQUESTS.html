@@ -67,6 +67,40 @@ if(!tutu){
 DELETE http:<span class="hljs-comment">//localhost:3001/api/notes/5dbfeba6117b9f1ecc3fb2b6</span>
 ###
 DELETE http:<span class="hljs-comment">//localhost:3001/api/notes/5dbfebdd9edc4017dce88838</span></code></pre><hr>
+<h2 id="responses-exapmles:-"><a class="header-link" href="#responses-exapmles:-"></a>Responses Exapmles:-</h2>
+<p>when we do:</p>
+<pre class="hljs"><code>blogsRouter.post(<span class="hljs-string">"/comment"</span>, <span class="hljs-keyword">async</span> (request, response) =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"$request.body:-"</span>, request.body);
+  response.send(<span class="hljs-string">"I reveive that:-"</span>+<span class="hljs-built_in">JSON</span>.stringify(request.body))
+});</code></pre><pre class="hljs"><code>post http://localhost:3003/api/blogs/comment
+Content-Type: application/json
+
+{
+  <span class="hljs-string">"title"</span>: <span class="hljs-string">"Tuntunaa99"</span>,
+  <span class="hljs-string">"author"</span>: <span class="hljs-string">"Pagal Tipu Sultan"</span>,
+  <span class="hljs-string">"url"</span>: <span class="hljs-string">"Bablitera-mera.com"</span>,
+  <span class="hljs-string">"likes"</span>: 90
+}</code></pre><pre class="hljs"><code>HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: text/html; charset=utf-8
+Content-Length: 105
+ETag: W/<span class="hljs-string">"69-q6ixFC158sbfSYtjVqmNTJzlAvE"</span>
+Date: Wed, 06 May 2020 07:56:43 GMT
+Connection: close
+
+I reveive that:-{<span class="hljs-string">"title"</span>:<span class="hljs-string">"Tuntunaa99"</span>,<span class="hljs-string">"author"</span>:<span class="hljs-string">"Pagal Tipu Sultan"</span>,<span class="hljs-string">"url"</span>:<span class="hljs-string">"Bablitera-mera.com"</span>,<span class="hljs-string">"likes"</span>:90}</code></pre><hr>
+<p>and when we do:(json is the type we are sending in exchange or the request)</p>
+<pre class="hljs"><code>  response.json(<span class="hljs-string">"I reveive that:-"</span>+<span class="hljs-built_in">JSON</span>.stringify(request.body))</code></pre><pre class="hljs"><code>HTTP/1.1 <span class="hljs-number">200</span> OK
+<span class="hljs-attribute">X-Powered-By</span>: Express
+<span class="hljs-attribute">Access-Control-Allow-Origin</span>: *
+<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
+<span class="hljs-attribute">Content-Length</span>: 121
+<span class="hljs-attribute">ETag</span>: W/"79-ORXKBxto7dVwMMuMVcyyHxMrJCY"
+<span class="hljs-attribute">Date</span>: Wed, 06 May 2020 08:00:16 GMT
+<span class="hljs-attribute">Connection</span>: close
+
+<span class="lsl"><span class="hljs-string">"I reveive that:-{<span class="hljs-subst">\"</span>title<span class="hljs-subst">\"</span>:<span class="hljs-subst">\"</span>Tuntunaa99<span class="hljs-subst">\"</span>,<span class="hljs-subst">\"</span>author<span class="hljs-subst">\"</span>:<span class="hljs-subst">\"</span>Pagal Tipu Sultan<span class="hljs-subst">\"</span>,<span class="hljs-subst">\"</span>url<span class="hljs-subst">\"</span>:<span class="hljs-subst">\"</span>Bablitera-mera.com<span class="hljs-subst">\"</span>,<span class="hljs-subst">\"</span>likes<span class="hljs-subst">\"</span>:90}"</span></span></code></pre><hr>
     </article>
   </body>
 </html>

@@ -1,3 +1,46 @@
+## Move branch on a previous commit(commonly needed):
+
+![image-20200505211531257](image-20200505211531257.png)
+
+```bash
+git branch -h #shows help pages for git branch. And outputs the infomation for -f switch
+-f, --force           force creation, move/rename, deletion
+```
+
+![image-20200505211855009](image-20200505211855009.png)
+
+![image-20200505211908626](image-20200505211908626.png)
+
+***
+
+## The asterisk operator in github
+
+![image-20200505211128849](image-20200505211128849.png)
+
+![image-20200505211248016](image-20200505211248016.png)
+
+![image-20200505211317305](image-20200505211317305.png)
+
+***
+
+## Moving upward in a git repository
+
+So to move up a single commit: simply do $ git checkout HEAD^
+
+![image-20200505204028342](image-20200505204028342.png)
+
+***
+
+## What the hell is HEAD?
+
+![image-20200505202921231](image-20200505202921231.png)
+
+***
+
+### https://learngitbranching.js.org/
+
+***
+
 # Making use of collaborations on github
 
 The first techniuque is, make a fork of someone's repo (repo-original)(this will make of copy of the repo in your github account, say repo-copy) and then make changed to your copy of the repo(repo-copy). And push the code to your repo-copy in github(via git push). So, when you are ready with your changes, make a pull request from your repo-copy. Like :
