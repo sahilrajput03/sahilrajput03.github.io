@@ -101,6 +101,21 @@ I reveive that:-{<span class="hljs-string">"title"</span>:<span class="hljs-stri
 <span class="hljs-attribute">Connection</span>: close
 
 <span class="lsl"><span class="hljs-string">"I reveive that:-{<span class="hljs-subst">\"</span>title<span class="hljs-subst">\"</span>:<span class="hljs-subst">\"</span>Tuntunaa99<span class="hljs-subst">\"</span>,<span class="hljs-subst">\"</span>author<span class="hljs-subst">\"</span>:<span class="hljs-subst">\"</span>Pagal Tipu Sultan<span class="hljs-subst">\"</span>,<span class="hljs-subst">\"</span>url<span class="hljs-subst">\"</span>:<span class="hljs-subst">\"</span>Bablitera-mera.com<span class="hljs-subst">\"</span>,<span class="hljs-subst">\"</span>likes<span class="hljs-subst">\"</span>:90}"</span></span></code></pre><hr>
-    </article>
+<h2 id="use-intellisense-in-vscode-rest-to-create-request,-for-e.g.,"><a class="header-link" href="#use-intellisense-in-vscode-rest-to-create-request,-for-e.g.,"></a>use intellisense in vscode rest to create request, for e.g.,</h2>
+<p>type get/post/put whatever you want.
+then press CTRL + SPACE. and select the suggestion.
+then navigate and type &quot;type&quot; in place of &quot;header name&quot; and select Content-Type
+then navigate to &quot;header value &quot; and type &quot;json&quot; and press CTRL + SPACE and select application/json from the suggestion. 
+then navigate to content, and type the body, i.e., { .. what ever you want to send in the body}</p>
+<hr>
+<pre class="hljs"><code><span class="hljs-keyword">POST</span> <span class="hljs-string">http://localhost:4000/graphql</span> HTTP/1.1
+<span class="hljs-attribute">Content-Type</span>: application/json
+
+<span class="clean">{
+    <span class="hljs-string">"query"</span>: <span class="hljs-string">"query{ allPersons{ name , phone } }"</span>
+}
+
+###
+</span></code></pre>    </article>
   </body>
 </html>

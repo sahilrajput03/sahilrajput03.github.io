@@ -161,24 +161,32 @@ iuo = sd.concat(<span class="hljs-number">888</span>,<span class="hljs-number">8
 <hr>
 <hr>
 <h6 id="objects-some-concepts-:-source:-[link](https://developer.mozilla.org/en-us/docs/web/javascript/reference/global_objects/object/assign)"><a class="header-link" href="#objects-some-concepts-:-source:-[link](https://developer.mozilla.org/en-us/docs/web/javascript/reference/global_objects/object/assign)"></a>Objects Some Concepts : source: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">Link</a></h6>
-<h4 id="object.assign()"><a class="header-link" href="#object.assign()"></a>Object.assign()</h4>
+<h4 id="object.assign()-//-creates-shallow-copy(1-level-copy-only,-if-objects-are-referenced-in-properties,-this-is-useless)"><a class="header-link" href="#object.assign()-//-creates-shallow-copy(1-level-copy-only,-if-objects-are-referenced-in-properties,-this-is-useless)"></a>Object.assign() // creates shallow copy(1 level copy only, if objects are referenced in properties, this is useless)</h4>
 <h5 id="cloning-object:(shallow-copy)"><a class="header-link" href="#cloning-object:(shallow-copy)"></a>Cloning Object:(Shallow Copy)</h5>
 <pre class="hljs"><code><span class="hljs-keyword">var</span> obj = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span> };
 <span class="hljs-keyword">var</span> copy = <span class="hljs-built_in">Object</span>.assign({}, obj);
 
 <span class="hljs-built_in">console</span>.log(copy); <span class="hljs-comment">// { a: 1 }</span></code></pre><hr>
-<h5 id="deep-cloning-an-object:(deep-copy)"><a class="header-link" href="#deep-cloning-an-object:(deep-copy)"></a>Deep Cloning an Object:(Deep Copy)</h5>
-<pre class="hljs"><code><span class="hljs-keyword">var</span> obj1 = { <span class="hljs-attr">a</span>: <span class="hljs-number">0</span> , <span class="hljs-attr">b</span>: { <span class="hljs-attr">c</span>: <span class="hljs-number">0</span>}};
+<h2 id="deep-cloning-an-object:(deep-copy)"><a class="header-link" href="#deep-cloning-an-object:(deep-copy)"></a>Deep Cloning an Object:(Deep Copy)</h2>
+<p><a href="https://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-deep-clone-an-object-in-javascript/10916838#10916838">helpful link (question/answers) @ stackoverflow</a></p>
+<p><a href="https://medium.com/javascript-in-plain-english/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089">helpfule link (amazing article)@ medium.com</a> - this brings us to the conclusion of using rfdc(really fast deep clone) everytime so as to be protective from the negative effects of deep clone via the JSON.parse(JSON.stringify(obj)) method. i.e., </p>
+<pre class="hljs"><code>“If you <span class="hljs-keyword">do</span> not use Dates, <span class="hljs-built_in">functions</span>, undefined, Infinity, [NaN], RegExps, Maps, Sets, Blobs, FileLists, ImageDatas, sparse Arrays, Typed Arrays or other complex types within your object, a very simple one liner to deep <span class="hljs-built_in">clone</span> an object is: JSON.parse(JSON.stringify(object))” — Dan Dascalescu <span class="hljs-keyword">in</span> his StackOverflow answer</code></pre><h2 id="preffered-way-to-deep-copy:-"><a class="header-link" href="#preffered-way-to-deep-copy:-"></a>PREFFERED WAY TO DEEP COPY:-</h2>
+<pre class="hljs"><code># best DEEP COPY
+<span class="hljs-keyword">const</span> clone = <span class="hljs-built_in">require</span>(<span class="hljs-string">'rfdc'</span>)() <span class="hljs-comment">// Returns the deep copy function</span>
+clone({<span class="hljs-attr">a</span>: <span class="hljs-number">37</span>, <span class="hljs-attr">b</span>: {<span class="hljs-attr">c</span>: <span class="hljs-number">3700</span>}}) <span class="hljs-comment">// {a: 37, b: {c: 3700}} // deep clones while preserving all the special data types discussed in above box.</span></code></pre><pre class="hljs"><code># DEEP COPY
+<span class="hljs-keyword">var</span> obj1 = { <span class="hljs-attr">a</span>: <span class="hljs-number">0</span> , <span class="hljs-attr">b</span>: { <span class="hljs-attr">c</span>: <span class="hljs-number">0</span>}};
 <span class="hljs-keyword">let</span> obj3 = <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-built_in">JSON</span>.stringify(obj1));
 <span class="hljs-keyword">let</span> obj3
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(obj3)); <span class="hljs-comment">// { a: 0, b: { c: 0}}</span></code></pre><hr>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(obj3)); <span class="hljs-comment">// { a: 0, b: { c: 0}}</span>
+
+<span class="hljs-comment">// This deep clone method has a side effect that some native objects would be converted to strings. for e.g., Date object will be converted to string, and further operations via the date methods cannot be implemented on them after that.</span></code></pre><hr>
 <h5 id="shallow-copy-vs.-deep-copy"><a class="header-link" href="#shallow-copy-vs.-deep-copy"></a>Shallow Copy VS. Deep Copy</h5>
 <pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) </span>{
 <span class="hljs-meta">  'use strict'</span>;
 
   <span class="hljs-keyword">let</span> obj1 = { <span class="hljs-attr">a</span>: <span class="hljs-number">0</span> , <span class="hljs-attr">b</span>: { <span class="hljs-attr">c</span>: <span class="hljs-number">0</span>}};
-  <span class="hljs-keyword">let</span> obj2 = <span class="hljs-built_in">Object</span>.assign({}, obj1);
+  <span class="hljs-keyword">let</span> obj2 = <span class="hljs-built_in">Object</span>.assign({}, obj1); <span class="hljs-comment">// Creates shallow copy(1 level copy).</span>
   <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(obj2)); <span class="hljs-comment">// { a: 0, b: { c: 0}}</span>
 
   obj1.a = <span class="hljs-number">1</span>;
@@ -543,7 +551,7 @@ Earlier, while serving the <code>data.json</code> was containing an object which
 <hr>
 <p>Non-existent Files -  <a href="https://superuser.com/questions/1060888/non-existent-files-in-windows-documents-folder">https://superuser.com/questions/1060888/non-existent-files-in-windows-documents-folder</a> </p>
 <hr>
-<p>Download a file with Curl: (usually github)</p>
+<h2 id="download-a-file-with-curl:-(usually-github)"><a class="header-link" href="#download-a-file-with-curl:-(usually-github)"></a>Download a file with Curl: (usually github)</h2>
 <pre class="hljs"><code>curl -LO https://github.com/github/gitignore/raw/master/Node.gitignore
 //here -L option provide the service of redirection.
 //here -O(uppercase) options tells curl to save with name of original file

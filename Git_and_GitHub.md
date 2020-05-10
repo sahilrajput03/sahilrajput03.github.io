@@ -1,8 +1,47 @@
+### When adding files/folder in .gitignore doesn't work, you need to do this...
+
+![image-20200507182811898](image-20200507182811898.png)
+
+***
+
+```bash
+$ git commit -m file\ m\ and\ and\ ss\ are\ adeed. # works too.
+```
+
 
 
 ***
 
-## Change the name last commit
+## Make a branch at an earlier commit in current branch:
+
+```bash
+git checkout HEAD^ or git checkout <commit-hash> or git checkout HEAD~3 (3 commits back from now)
+git checkout -b myDesiredBranchYikes
+# Hint: when you have checked out at an earlier commit, you can view the commit history via git log, to see what are the earlier commits to this HEAD.
+```
+
+Or a simple single command:-
+
+```bash
+git checkout -b old-state 0d1d7fc32
+```
+
+
+
+***
+
+## Edit the last commit:
+
+```bash
+git add . # or add individual files
+git commit --amend --no-edit
+```
+
+Source: [ohshitgit.com](https://ohshitgit.com/#change-last-commit) - amazing must read website..
+
+***
+
+## Change the message of last commit
 
 ```bash
 git commit --amend
@@ -10,10 +49,20 @@ git commit --amend
 
 ***
 
+## Commit simply, live with git simply:
+
 ```bash
 git commit -am "firstCommit"
 git commit -am "secondCommit"
 git commit -am "thirdCommit"
+```
+
+***
+
+## Detach Head(move to previous commit)
+
+```bash
+git checkout HEAD^
 ```
 
 
@@ -52,27 +101,67 @@ git branch -h #shows help pages for git branch. And outputs the infomation for -
 
 ***
 
-## The asterisk operator in github
+## Delete last commit
 
-![image-20200505211128849](image-20200505211128849.png)
+```bash
+git reset HEAD^ --hard 
+# using --hard will remove the changes, files you have added after that commit.
+#In git log,the last commit is no longer there.
 
-![image-20200505211248016](image-20200505211248016.png)
+__
+git reset HEAD^
+# this command will just remove the last commit from the history, but will keep the files, changes as it is.(Doesn't alter any change in the current state of the repository.)
+#In git log,the last commit is no longer there.
+```
 
-![image-20200505211317305](image-20200505211317305.png)
+Also: 
+
+```bash
+git reset --hard 0d1d7fc32
+# works like above but, this will move your repository to the commit specified.
+
+__
+git stash
+git reset --hard 0d1d7fc32
+git stash pop
+# do these if you want to save the current un
+```
+
+
 
 ***
 
-## Moving upward in a git repository
+## Checkout at particular commit
 
-So to move up a single commit: simply do 
+```
+git checkout 0d1d7fc32 # move to any previous commit temporarily
+git checkout 0d1d # would work too, NOTE: atleast 4 characters are needed to work.
+```
+
+***
+
+## The tidle operator in github
+
+```bash
+git checkout HEAD~3
+#so now you have got to 3 levels up in commit history.
+```
+
+***
+
+## Moving upward(^ caret symbol) in a git repository
+
+```bash
+git checkout HEAD^ 
+# move up a single commit (unless you have a single commit in your history.)
+```
 
 ```bash
 git checkout HEAD^
+git checkout HEAD^
+git checkout HEAD^
+#so now you have got to 3 levels up in commit history.
 ```
-
-`git checkout HEAD^`
-
-![image-20200505204028342](image-20200505204028342.png)
 
 ***
 
@@ -985,23 +1074,44 @@ Good One: You may download: https://egghead.io/courses/practical-git-for-everyda
 # Git STASH:
 
 ```bash
-//stash meaning: store something safely in a hidden/secret place.
+# stash meaning: store something safely in a hidden/secret place.
+# git stash
 
-git stash save 'message-about-the-changes-to-be-stashed' // you may make as many stashes with approprite 
-												message and clears the recent changes from the local 												branch and save them to secret place 'message....•'
-			
-git stash list // shows all the stashes you have made
+__
+git stash
+# Saves the index changes in a safe place, whenever you want those changes back, you can perform 
+# git stash pop
 
-git stash pop  // will pop out the last stash you have made || you may use `git stash apply` <= this also works good.
+__
+git stash save 'message-about-the-changes-to-be-stashed'
+# You may make as many stashes with approprite message and clears the recent changes from the local branch and save them to secret place 'message....•'
 
-git stash clear // will clear the list of the stashes.
-	awesome-video@https://www.youtube.com/watch?v=KLEDKgMmbBI
+__
+git stash list # Shows all the stashes you have made so far like below.
+stash@{0}: On fileAABB: messg2 #fileAABB is the brach name, you have made it on, messg2 is message
+stash@{1}: On fileAABB: MESSG #fileAABB is the brach name, you have made it on, MESSG is message
+
+__
+git stash apply stash@{0} 
+# You may change the index value in the curly braces to point to specific stash.
+#Applies the stash what you want.
+
+__
+git stash pop
+# Will pop out the last stash you have made || you may use `git stash apply` <= this also works good.
+
+__
+git stash clear
+# Will clear the list of the stashes.
+awesome-video@https://www.youtube.com/watch?v=KLEDKgMmbBI
 ```
 
 ***
 
-```
+```bash
 $ git commit -a
+#from git commit -h
+# -a, --all             commit all changed files.
 ```
 
 which will automatically notice any modified (but not new) files, add them to the index, and commit, all in one step.

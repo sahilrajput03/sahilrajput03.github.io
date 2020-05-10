@@ -1,4 +1,7 @@
-cars
+<section>
+ <h2>WWF</h2>
+ <p>The World Wide Fund for Nature (WWF) is....</p>
+</section>
 
 ***
 
@@ -23,6 +26,28 @@ cars
 
 ## List of block level elements/ #block elements
 
+Any of the below elements can be transformed to inline, block or inline-block element type with the help of css. i.e., assigning a property all or a particular of p,h1,ol,pre,etc for e.g.,
+
+```html
+ <p class="ex1">HELLO WORLD!</p>
+<p class="ex2">HELLO WORLD!</p>
+<p class="ex3">HELLO WORLD!</p>
+<p class="ex4">HELLO WORLD!</p> 
+```
+
+```css
+<style>
+p {color: red;}
+p.ex1 {display: none;} # this will hide the paragraph element with class ex1
+p.ex2 {display: inline;} # this will convert the paragraph element to inline element
+p.ex3 {display: block;} # wont do anything
+p.ex4 {display: inline-block;}
+</style>
+```
+
+for the above detailed discussion - w3school example - [link](https://www.w3schools.com/cssref/tryit.asp?filename=trycss_display)
+
+```
 - p
 - h1, h2, h3, h4, h5, h6
 - ol, ul
@@ -36,6 +61,9 @@ cars
 - hr
 - noscript
 - table
+```
+
+
 
 ***
 

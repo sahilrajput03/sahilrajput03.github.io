@@ -3,18 +3,33 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Change the name last commit</title>
+    <title>When adding files/folder in .gitignore doesn&#x27;t work, you need to do this...</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><hr>
-<h2 id="change-the-name-last-commit"><a class="header-link" href="#change-the-name-last-commit"></a>Change the name last commit</h2>
+    <article class="markdown-body"><h3 id="when-adding-files/folder-in-.gitignore-doesn't-work,-you-need-to-do-this..."><a class="header-link" href="#when-adding-files/folder-in-.gitignore-doesn't-work,-you-need-to-do-this..."></a>When adding files/folder in .gitignore doesn&#39;t work, you need to do this...</h3>
+<p class="img-container"><img src="image-20200507182811898.png" alt="image-20200507182811898"></p>
+<hr>
+<pre class="hljs"><code>$ git commit -m file\ m\ and\ and\ ss\ are\ adeed. <span class="hljs-comment"># works too.</span></code></pre><hr>
+<h2 id="make-a-branch-at-an-earlier-commit-in-current-branch:"><a class="header-link" href="#make-a-branch-at-an-earlier-commit-in-current-branch:"></a>Make a branch at an earlier commit in current branch:</h2>
+<pre class="hljs"><code>git checkout HEAD^ or git checkout &lt;commit-hash&gt; or git checkout HEAD~3 (3 commits back from now)
+git checkout -b myDesiredBranchYikes
+<span class="hljs-comment"># Hint: when you have checked out at an earlier commit, you can view the commit history via git log, to see what are the earlier commits to this HEAD.</span></code></pre><p>Or a simple single command:-</p>
+<pre class="hljs"><code>git checkout -b old-state 0d1d7<span class="hljs-built_in">fc</span>32</code></pre><hr>
+<h2 id="edit-the-last-commit:"><a class="header-link" href="#edit-the-last-commit:"></a>Edit the last commit:</h2>
+<pre class="hljs"><code>git add . <span class="hljs-comment"># or add individual files</span>
+git commit --amend --no-edit</code></pre><p>Source: <a href="https://ohshitgit.com/#change-last-commit">ohshitgit.com</a> - amazing must read website..</p>
+<hr>
+<h2 id="change-the-message-of-last-commit"><a class="header-link" href="#change-the-message-of-last-commit"></a>Change the message of last commit</h2>
 <pre class="hljs"><code>git commit --amend</code></pre><hr>
+<h2 id="commit-simply,-live-with-git-simply:"><a class="header-link" href="#commit-simply,-live-with-git-simply:"></a>Commit simply, live with git simply:</h2>
 <pre class="hljs"><code>git commit -am <span class="hljs-string">"firstCommit"</span>
 git commit -am <span class="hljs-string">"secondCommit"</span>
 git commit -am <span class="hljs-string">"thirdCommit"</span></code></pre><hr>
+<h2 id="detach-head(move-to-previous-commit)"><a class="header-link" href="#detach-head(move-to-previous-commit)"></a>Detach Head(move to previous commit)</h2>
+<pre class="hljs"><code>git checkout HEAD^</code></pre><hr>
 <h2 id="git-commit-help"><a class="header-link" href="#git-commit-help"></a>Git commit help</h2>
 <pre class="hljs"><code>git commit -h
 git add -h</code></pre><pre class="hljs"><code>git add -A (adds all tracked and untracked files)
@@ -26,16 +41,35 @@ git add * (does same but excludes hidden files)</code></pre><hr>
 <span class="hljs-_">-f</span>, --force           force creation, move/rename, deletion</code></pre><p class="img-container"><img src="image-20200505211855009.png" alt="image-20200505211855009"></p>
 <p class="img-container"><img src="image-20200505211908626.png" alt="image-20200505211908626"></p>
 <hr>
-<h2 id="the-asterisk-operator-in-github"><a class="header-link" href="#the-asterisk-operator-in-github"></a>The asterisk operator in github</h2>
-<p class="img-container"><img src="image-20200505211128849.png" alt="image-20200505211128849"></p>
-<p class="img-container"><img src="image-20200505211248016.png" alt="image-20200505211248016"></p>
-<p class="img-container"><img src="image-20200505211317305.png" alt="image-20200505211317305"></p>
-<hr>
-<h2 id="moving-upward-in-a-git-repository"><a class="header-link" href="#moving-upward-in-a-git-repository"></a>Moving upward in a git repository</h2>
-<p>So to move up a single commit: simply do </p>
-<pre class="hljs"><code>git checkout HEAD^</code></pre><p><code>git checkout HEAD^</code></p>
-<p class="img-container"><img src="image-20200505204028342.png" alt="image-20200505204028342"></p>
-<hr>
+<h2 id="delete-last-commit"><a class="header-link" href="#delete-last-commit"></a>Delete last commit</h2>
+<pre class="hljs"><code>git reset HEAD^ --hard 
+<span class="hljs-comment"># using --hard will remove the changes, files you have added after that commit.</span>
+<span class="hljs-comment">#In git log,the last commit is no longer there.</span>
+
+__
+git reset HEAD^
+<span class="hljs-comment"># this command will just remove the last commit from the history, but will keep the files, changes as it is.(Doesn't alter any change in the current state of the repository.)</span>
+<span class="hljs-comment">#In git log,the last commit is no longer there.</span></code></pre><p>Also: </p>
+<pre class="hljs"><code>git reset --hard 0d1d7<span class="hljs-built_in">fc</span>32
+<span class="hljs-comment"># works like above but, this will move your repository to the commit specified.</span>
+
+__
+git stash
+git reset --hard 0d1d7<span class="hljs-built_in">fc</span>32
+git stash pop
+<span class="hljs-comment"># do these if you want to save the current un</span></code></pre><hr>
+<h2 id="checkout-at-particular-commit"><a class="header-link" href="#checkout-at-particular-commit"></a>Checkout at particular commit</h2>
+<pre class="hljs"><code>git checkout 0d1d7<span class="hljs-built_in">fc</span>32 <span class="hljs-comment"># move to any previous commit temporarily</span>
+git checkout 0d1d <span class="hljs-comment"># would work too, <span class="hljs-doctag">NOTE:</span> atleast 4 characters are needed to work.</span></code></pre><hr>
+<h2 id="the-tidle-operator-in-github"><a class="header-link" href="#the-tidle-operator-in-github"></a>The tidle operator in github</h2>
+<pre class="hljs"><code>git checkout HEAD~3
+<span class="hljs-comment">#so now you have got to 3 levels up in commit history.</span></code></pre><hr>
+<h2 id="moving-upward(^-caret-symbol)-in-a-git-repository"><a class="header-link" href="#moving-upward(^-caret-symbol)-in-a-git-repository"></a>Moving upward(^ caret symbol) in a git repository</h2>
+<pre class="hljs"><code>git checkout HEAD^ 
+<span class="hljs-comment"># move up a single commit (unless you have a single commit in your history.)</span></code></pre><pre class="hljs"><code>git checkout HEAD^
+git checkout HEAD^
+git checkout HEAD^
+<span class="hljs-comment">#so now you have got to 3 levels up in commit history.</span></code></pre><hr>
 <h2 id="what-the-hell-is-head?"><a class="header-link" href="#what-the-hell-is-head?"></a>What the hell is HEAD?</h2>
 <p class="img-container"><img src="image-20200505202921231.png" alt="image-20200505202921231"></p>
 <hr>
@@ -490,18 +524,39 @@ git <span class="hljs-built_in">clone</span> --branch &lt;branch-name&gt; &lt;re
 <p> <a href="https://egghead.io/courses/productive-git-for-developers">https://egghead.io/courses/productive-git-for-developers</a> </p>
 <hr>
 <h1 id="git-stash:"><a class="header-link" href="#git-stash:"></a>Git STASH:</h1>
-<pre class="hljs"><code>//stash meaning: store something safely <span class="hljs-keyword">in</span> a hidden/secret place.
+<pre class="hljs"><code><span class="hljs-comment"># stash meaning: store something safely in a hidden/secret place.</span>
+<span class="hljs-comment"># git stash</span>
 
-git stash save <span class="hljs-string">'message-about-the-changes-to-be-stashed'</span> // you may make as many stashes with approprite 
-                                                message and clears the recent changes from the <span class="hljs-built_in">local</span>                                                 branch and save them to secret place <span class="hljs-string">'message....•'</span>
+__
+git stash
+<span class="hljs-comment"># Saves the index changes in a safe place, whenever you want those changes back, you can perform </span>
+<span class="hljs-comment"># git stash pop</span>
 
-git stash list // shows all the stashes you have made
+__
+git stash save <span class="hljs-string">'message-about-the-changes-to-be-stashed'</span>
+<span class="hljs-comment"># You may make as many stashes with approprite message and clears the recent changes from the local branch and save them to secret place 'message....•'</span>
 
-git stash pop  // will pop out the last stash you have made || you may use `git stash apply` &lt;= this also works good.
+__
+git stash list <span class="hljs-comment"># Shows all the stashes you have made so far like below.</span>
+stash@{0}: On fileAABB: messg2 <span class="hljs-comment">#fileAABB is the brach name, you have made it on, messg2 is message</span>
+stash@{1}: On fileAABB: MESSG <span class="hljs-comment">#fileAABB is the brach name, you have made it on, MESSG is message</span>
 
-git stash clear // will clear the list of the stashes.
-    awesome-video@https://www.youtube.com/watch?v=KLEDKgMmbBI</code></pre><hr>
-<pre class="hljs"><code>$ git commit <span class="hljs-_">-a</span></code></pre><p>which will automatically notice any modified (but not new) files, add them to the index, and commit, all in one step.</p>
+__
+git stash apply stash@{0} 
+<span class="hljs-comment"># You may change the index value in the curly braces to point to specific stash.</span>
+<span class="hljs-comment">#Applies the stash what you want.</span>
+
+__
+git stash pop
+<span class="hljs-comment"># Will pop out the last stash you have made || you may use `git stash apply` &lt;= this also works good.</span>
+
+__
+git stash clear
+<span class="hljs-comment"># Will clear the list of the stashes.</span>
+awesome-video@https://www.youtube.com/watch?v=KLEDKgMmbBI</code></pre><hr>
+<pre class="hljs"><code>$ git commit <span class="hljs-_">-a</span>
+<span class="hljs-comment">#from git commit -h</span>
+<span class="hljs-comment"># -a, --all             commit all changed files.</span></code></pre><p>which will automatically notice any modified (but not new) files, add them to the index, and commit, all in one step.</p>
 <hr>
 <p>Opening git guides, </p>
 <pre class="hljs"><code>git <span class="hljs-built_in">help</span> // shows all related info about the below ones.

@@ -5,12 +5,21 @@ ping 192.168.1.1 | clip #copies to clipboard
 help | clip	#copies to cilpboard
 ```
 
+```bash
+|&
+&>
+```
+
+
+
 ### Using > and >> to write in files in command prompt(windows) and bash (linux)
 
 ```bash
 help > c.txt #overwrite completely old content
 help >> c.txt #adds content
 git > help.txt
+git commit -h 2> help.txt # OPTION 1
+git commit -h &> help.txt # OPTION 2
 
 NOTE:
 Double pipe (||), represents the "or" operator in scripting too.
@@ -25,7 +34,8 @@ git | findstr overview #both cmd,bash
 git help | findstr pull #both cmd,bash
 git commit | findstr will
 # important:
-git add -h 2| findstr dry #operator that supplies stderr to the findstr command
+git add -h 2| findstr dry #operator that supplies stderr to the findstr command, OPTION1
+git add -h |& findstr dry #operator that supplies stderr to the findstr command, OPTION2
 git commit -h 2| findstr dry #operator that supplies stderr to the findstr command
 
 ```

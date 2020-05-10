@@ -11,10 +11,13 @@
   <body>
     <article class="markdown-body"><h2 id="copy-something-to-clipboard"><a class="header-link" href="#copy-something-to-clipboard"></a>Copy something to clipboard</h2>
 <pre class="hljs"><code>ping 192.168.1.1 | clip <span class="hljs-comment">#copies to clipboard</span>
-<span class="hljs-built_in">help</span> | clip    <span class="hljs-comment">#copies to cilpboard</span></code></pre><h3 id="using->-and->>-to-write-in-files-in-command-prompt(windows)-and-bash-(linux)"><a class="header-link" href="#using->-and->>-to-write-in-files-in-command-prompt(windows)-and-bash-(linux)"></a>Using &gt; and &gt;&gt; to write in files in command prompt(windows) and bash (linux)</h3>
+<span class="hljs-built_in">help</span> | clip    <span class="hljs-comment">#copies to cilpboard</span></code></pre><pre class="hljs"><code>|&amp;
+&amp;&gt;</code></pre><h3 id="using->-and->>-to-write-in-files-in-command-prompt(windows)-and-bash-(linux)"><a class="header-link" href="#using->-and->>-to-write-in-files-in-command-prompt(windows)-and-bash-(linux)"></a>Using &gt; and &gt;&gt; to write in files in command prompt(windows) and bash (linux)</h3>
 <pre class="hljs"><code><span class="hljs-built_in">help</span> &gt; c.txt <span class="hljs-comment">#overwrite completely old content</span>
 <span class="hljs-built_in">help</span> &gt;&gt; c.txt <span class="hljs-comment">#adds content</span>
 git &gt; help.txt
+git commit -h 2&gt; help.txt <span class="hljs-comment"># OPTION 1</span>
+git commit -h &amp;&gt; help.txt <span class="hljs-comment"># OPTION 2</span>
 
 NOTE:
 Double pipe (||), represents the <span class="hljs-string">"or"</span> operator <span class="hljs-keyword">in</span> scripting too.</code></pre><h3 id="using-findstr(windows)"><a class="header-link" href="#using-findstr(windows)"></a>Using findstr(windows)</h3>
@@ -24,7 +27,8 @@ git | findstr overview <span class="hljs-comment">#both cmd,bash</span>
 git <span class="hljs-built_in">help</span> | findstr pull <span class="hljs-comment">#both cmd,bash</span>
 git commit | findstr will
 <span class="hljs-comment"># important:</span>
-git add -h 2| findstr dry <span class="hljs-comment">#operator that supplies stderr to the findstr command</span>
+git add -h 2| findstr dry <span class="hljs-comment">#operator that supplies stderr to the findstr command, OPTION1</span>
+git add -h |&amp; findstr dry <span class="hljs-comment">#operator that supplies stderr to the findstr command, OPTION2</span>
 git commit -h 2| findstr dry <span class="hljs-comment">#operator that supplies stderr to the findstr command</span>
 </code></pre><h3 id="using-grep:"><a class="header-link" href="#using-grep:"></a>Using grep:</h3>
 <pre class="hljs"><code><span class="hljs-comment"># using grep to find(bash, linux)</span>

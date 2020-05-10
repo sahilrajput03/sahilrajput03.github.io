@@ -156,3 +156,25 @@ Connection: close
 
 ***
 
+## use intellisense in vscode rest to create request, for e.g.,
+
+type get/post/put whatever you want.
+then press CTRL + SPACE. and select the suggestion.
+then navigate and type "type" in place of "header name" and select Content-Type
+then navigate to "header value " and type "json" and press CTRL + SPACE and select application/json from the suggestion. 
+then navigate to content, and type the body, i.e., { .. what ever you want to send in the body}
+
+***
+
+```rest
+POST http://localhost:4000/graphql HTTP/1.1
+Content-Type: application/json
+
+{
+    "query": "query{ allPersons{ name , phone } }"
+}
+
+###
+
+```
+

@@ -257,7 +257,7 @@ W3schools.com - [JavaScript Function Apply](https://www.w3schools.com/js/js_func
 
 ###### Objects Some Concepts : source: [Link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) 
 
-#### Object.assign()
+#### Object.assign() // creates shallow copy(1 level copy only, if objects are referenced in properties, this is useless)
 
 ##### Cloning Object:(Shallow Copy)
 
@@ -270,14 +270,35 @@ console.log(copy); // { a: 1 }
 
 ***
 
-##### Deep Cloning an Object:(Deep Copy)
+## Deep Cloning an Object:(Deep Copy)
+
+[helpful link (question/answers) @ stackoverflow](https://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-deep-clone-an-object-in-javascript/10916838#10916838)
+
+[helpfule link (amazing article)@ medium.com](https://medium.com/javascript-in-plain-english/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089) - this brings us to the conclusion of using rfdc(really fast deep clone) everytime so as to be protective from the negative effects of deep clone via the JSON.parse(JSON.stringify(obj)) method. i.e., 
+
+```bash
+“If you do not use Dates, functions, undefined, Infinity, [NaN], RegExps, Maps, Sets, Blobs, FileLists, ImageDatas, sparse Arrays, Typed Arrays or other complex types within your object, a very simple one liner to deep clone an object is: JSON.parse(JSON.stringify(object))” — Dan Dascalescu in his StackOverflow answer
+```
+
+## PREFFERED WAY TO DEEP COPY:-
+
+```js
+# best DEEP COPY
+const clone = require('rfdc')() // Returns the deep copy function
+clone({a: 37, b: {c: 3700}}) // {a: 37, b: {c: 3700}} // deep clones while preserving all the special data types discussed in above box.
+```
+
+
 
 ```javascript
+# DEEP COPY
 var obj1 = { a: 0 , b: { c: 0}};
 let obj3 = JSON.parse(JSON.stringify(obj1));
 let obj3
 
 console.log(JSON.stringify(obj3)); // { a: 0, b: { c: 0}}
+
+// This deep clone method has a side effect that some native objects would be converted to strings. for e.g., Date object will be converted to string, and further operations via the date methods cannot be implemented on them after that.
 ```
 
 ***
@@ -289,7 +310,7 @@ function test() {
   'use strict';
 
   let obj1 = { a: 0 , b: { c: 0}};
-  let obj2 = Object.assign({}, obj1);
+  let obj2 = Object.assign({}, obj1); // Creates shallow copy(1 level copy).
   console.log(JSON.stringify(obj2)); // { a: 0, b: { c: 0}}
   
   obj1.a = 1;
@@ -920,7 +941,7 @@ Non-existent Files -  https://superuser.com/questions/1060888/non-existent-files
 
 ***
 
-Download a file with Curl: (usually github)
+## Download a file with Curl: (usually github)
 
 ```bash
 curl -LO https://github.com/github/gitignore/raw/master/Node.gitignore

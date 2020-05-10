@@ -1,3 +1,22 @@
+```css
+p {color: red;}
+p.ex1 {display: none;}
+p.ex2 {display: inline;}
+p.ex3 {display: block;}
+p.ex4 {display: inline-block;}
+```
+
+```html
+<p class="ex1">HELLO WORLD!</p>
+ <p class="ex2">HELLO WORLD!</p>
+<p class="ex3">HELLO WORLD!</p>
+ <p class="ex4">HELLO WORLD!</p>
+```
+
+
+
+***
+
 [CSS Reference](https://www.w3schools.com/cssref/default.asp) -
 
 #### Padding -

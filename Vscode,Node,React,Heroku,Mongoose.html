@@ -9,7 +9,10 @@
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><p>[TOC]</p>
+    <article class="markdown-body"><pre class="hljs"><code>({<span class="hljs-attr">a</span>:<span class="hljs-number">23</span>}).a
+<span class="hljs-comment">// 23</span>
+({<span class="hljs-attr">a</span>: <span class="hljs-number">23</span>})[<span class="hljs-string">'a'</span>] <span class="hljs-comment">// " double quotes would have worked the same way.</span>
+<span class="hljs-comment">// 23</span></code></pre><hr>
 <h1 id="fastest-way-to-create-node-project:-"><a class="header-link" href="#fastest-way-to-create-node-project:-"></a>Fastest way to create node project:-</h1>
 <pre class="hljs"><code>npm init --yes</code></pre><hr>
 <p>Link - <a href="https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/">Beginner&#39;s Article, though good things.</a></p>
@@ -1949,6 +1952,70 @@ console.log(htmlGenerated)
 <hr>
 <h1 id="https://learngitbranching.js.org/"><a class="header-link" href="#https://learngitbranching.js.org/"></a><a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></h1>
 <hr>
-    </article>
+<h2 id="create-npm-project-form-vscode-only"><a class="header-link" href="#create-npm-project-form-vscode-only"></a>Create npm project form vscode only</h2>
+<pre class="hljs"><code>open vscode, Goto File&gt; Open Folder&gt; open the directory and create new folder there, and select that folder to open.
+Now with terminal <span class="hljs-keyword">in</span> vscode, <span class="hljs-keyword">do</span> npm init -y
+You are done.</code></pre><hr>
+<h2 id="destructuing-the-variable-as-different-name:"><a class="header-link" href="#destructuing-the-variable-as-different-name:"></a>Destructuing the variable as different name:</h2>
+<pre class="hljs"><code><span class="hljs-keyword">let</span> { <span class="hljs-attr">v1</span>: rassu } = {<span class="hljs-attr">v1</span>:{<span class="hljs-attr">uuidd</span>:<span class="hljs-number">23</span>,<span class="hljs-attr">mid</span>:<span class="hljs-number">24</span>}}</code></pre><hr>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> { <span class="hljs-attr">v1</span>: uuid } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"uuid"</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"$uuid()"</span>, uuid());
+<span class="hljs-comment">//output $uuid() 59d9cdc0-9049-11ea-87eb-8b2cefafa0ad</span></code></pre><hr>
+<h2 id="css-framework:"><a class="header-link" href="#css-framework:"></a>Css framework:</h2>
+<p><a href="https://github.com/jgthms/bulma">Bulma @ github.com</a>   - 40k stars on github</p>
+<p><a href="https://bulma.io/">https://bulma.io/</a></p>
+<hr>
+<h2 id="date-object"><a class="header-link" href="#date-object"></a>Date Object</h2>
+<pre class="hljs"><code><span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()
+<span class="hljs-comment">// Output(date object): Thu May 07 2020 20:10:06 GMT+0530 (India Standard Time)</span>
+
+<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toString()
+<span class="hljs-comment">// Output(string): "Thu May 07 2020 20:09:28 GMT+0530 (India Standard Time)"</span></code></pre><hr>
+<h2 id="if-else-if:"><a class="header-link" href="#if-else-if:"></a>if else if:</h2>
+<pre class="hljs"><code><span class="hljs-keyword">if</span> (condition1) {
+  //  <span class="hljs-keyword">block</span> <span class="hljs-keyword">of</span> code to be executed <span class="hljs-keyword">if</span> condition1 <span class="hljs-keyword">is</span> <span class="hljs-literal">true</span>
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (condition2) {
+  //  <span class="hljs-keyword">block</span> <span class="hljs-keyword">of</span> code to be executed <span class="hljs-keyword">if</span> the condition1 <span class="hljs-keyword">is</span> <span class="hljs-literal">false</span> <span class="hljs-keyword">and</span> condition2 <span class="hljs-keyword">is</span> <span class="hljs-literal">true</span>
+} <span class="hljs-keyword">else</span> {
+  //  <span class="hljs-keyword">block</span> <span class="hljs-keyword">of</span> code to be executed <span class="hljs-keyword">if</span> the condition1 <span class="hljs-keyword">is</span> <span class="hljs-literal">false</span> <span class="hljs-keyword">and</span> condition2 <span class="hljs-keyword">is</span> <span class="hljs-literal">false</span>
+}</code></pre><hr>
+<h2 id="includes-in-array"><a class="header-link" href="#includes-in-array"></a>includes in array</h2>
+<pre class="hljs"><code>[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>].include(<span class="hljs-number">3</span>)
+<span class="hljs-comment">// true</span>
+[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>].include(<span class="hljs-number">7</span>)
+<span class="hljs-comment">// false</span></code></pre><hr>
+<h2 id="create-file-with-keyboard-in-vscode:"><a class="header-link" href="#create-file-with-keyboard-in-vscode:"></a>Create file with keyboard in vscode:</h2>
+<p>Press <strong>Ctrl + shift + E</strong> =&gt; then press Shift + tab, then press tab once. That&#39;s it.</p>
+<hr>
+<h2 id="install-tar-for-windows-via-npm-:"><a class="header-link" href="#install-tar-for-windows-via-npm-:"></a>Install tar for windows via npm :</h2>
+<pre class="hljs"><code>find <span class="hljs-keyword">the</span> way <span class="hljs-keyword">and</span> install <span class="hljs-keyword">it</span>, still anonomous <span class="hljs-built_in">to</span> find..<span class="hljs-comment">.// booo</span></code></pre><hr>
+<h2 id="tagged-templated-/-tag-functions:"><a class="header-link" href="#tagged-templated-/-tag-functions:"></a>Tagged Templated / Tag functions:</h2>
+<pre class="hljs"><code><span class="hljs-keyword">let</span> person = <span class="hljs-string">'Mike'</span>;
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">28</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myTag</span>(<span class="hljs-params">strings, personExp, ageExp</span>) </span>{
+  <span class="hljs-keyword">let</span> str0 = strings[<span class="hljs-number">0</span>]; <span class="hljs-comment">// "That "</span>
+  <span class="hljs-keyword">let</span> str1 = strings[<span class="hljs-number">1</span>]; <span class="hljs-comment">// " is a "</span>
+
+  <span class="hljs-comment">// There is technically a string after</span>
+  <span class="hljs-comment">// the final expression (in our example),</span>
+  <span class="hljs-comment">// but it is empty (""), so disregard.</span>
+  <span class="hljs-comment">// let str2 = strings[2];</span>
+
+  <span class="hljs-keyword">let</span> ageStr;
+  <span class="hljs-keyword">if</span> (ageExp &gt; <span class="hljs-number">99</span>){
+    ageStr = <span class="hljs-string">'centenarian'</span>;
+  } <span class="hljs-keyword">else</span> {
+    ageStr = <span class="hljs-string">'youngster'</span>;
+  }
+
+  <span class="hljs-comment">// We can even return a string built using a template literal</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${str0}</span><span class="hljs-subst">${personExp}</span><span class="hljs-subst">${str1}</span><span class="hljs-subst">${ageStr}</span>`</span>;
+}
+
+<span class="hljs-keyword">let</span> output = myTag<span class="hljs-string">`That <span class="hljs-subst">${ person }</span> is a <span class="hljs-subst">${ age }</span>`</span>;
+
+<span class="hljs-built_in">console</span>.log(output);
+<span class="hljs-comment">// That Mike is a youngster</span></code></pre>    </article>
   </body>
 </html>

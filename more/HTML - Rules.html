@@ -9,7 +9,11 @@
     <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><p>cars</p>
+    <article class="markdown-body"><section>
+ <h2>WWF</h2>
+ <p>The World Wide Fund for Nature (WWF) is....</p>
+</section>
+
 <hr>
 <h2 id="html-inline-elements"><a class="header-link" href="#html-inline-elements"></a>HTML inline elements</h2>
 <p>\1. <strong>HTML inline level elements</strong> can appear in the body of an HTML page.</p>
@@ -25,22 +29,30 @@
 </ul>
 <hr>
 <h2 id="list-of-block-level-elements/-#block-elements"><a class="header-link" href="#list-of-block-level-elements/-#block-elements"></a>List of block level elements/ #block elements</h2>
-<ul class="list">
-<li>p</li>
-<li>h1, h2, h3, h4, h5, h6</li>
-<li>ol, ul</li>
-<li>pre</li>
-<li>address</li>
-<li>blockquote</li>
-<li>dl</li>
-<li>div</li>
-<li>fieldset</li>
-<li>form</li>
-<li>hr</li>
-<li>noscript</li>
-<li>table</li>
-</ul>
-<hr>
+<p>Any of the below elements can be transformed to inline, block or inline-block element type with the help of css. i.e., assigning a property all or a particular of p,h1,ol,pre,etc for e.g.,</p>
+<pre class="hljs"><code> <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ex1"</span>&gt;</span>HELLO WORLD!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ex2"</span>&gt;</span>HELLO WORLD!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ex3"</span>&gt;</span>HELLO WORLD!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ex4"</span>&gt;</span>HELLO WORLD!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span> </code></pre><pre class="hljs"><code>&lt;<span class="hljs-selector-tag">style</span>&gt;
+<span class="hljs-selector-tag">p</span> {<span class="hljs-attribute">color</span>: red;}
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.ex1</span> {<span class="hljs-attribute">display</span>: none;} # <span class="hljs-selector-tag">this</span> <span class="hljs-selector-tag">will</span> <span class="hljs-selector-tag">hide</span> <span class="hljs-selector-tag">the</span> <span class="hljs-selector-tag">paragraph</span> <span class="hljs-selector-tag">element</span> <span class="hljs-selector-tag">with</span> <span class="hljs-selector-tag">class</span> <span class="hljs-selector-tag">ex1</span>
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.ex2</span> {<span class="hljs-attribute">display</span>: inline;} # <span class="hljs-selector-tag">this</span> <span class="hljs-selector-tag">will</span> <span class="hljs-selector-tag">convert</span> <span class="hljs-selector-tag">the</span> <span class="hljs-selector-tag">paragraph</span> <span class="hljs-selector-tag">element</span> <span class="hljs-selector-tag">to</span> <span class="hljs-selector-tag">inline</span> <span class="hljs-selector-tag">element</span>
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.ex3</span> {<span class="hljs-attribute">display</span>: block;} # <span class="hljs-selector-tag">wont</span> <span class="hljs-selector-tag">do</span> <span class="hljs-selector-tag">anything</span>
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.ex4</span> {<span class="hljs-attribute">display</span>: inline-block;}
+&lt;/<span class="hljs-selector-tag">style</span>&gt;</code></pre><p>for the above detailed discussion - w3school example - <a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss_display">link</a></p>
+<pre class="hljs"><code>- <span class="hljs-selector-tag">p</span>
+- <span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-tag">h4</span>, <span class="hljs-selector-tag">h5</span>, <span class="hljs-selector-tag">h6</span>
+- <span class="hljs-selector-tag">ol</span>, <span class="hljs-selector-tag">ul</span>
+- pre
+- <span class="hljs-selector-tag">address</span>
+- <span class="hljs-selector-tag">blockquote</span>
+- <span class="hljs-selector-tag">dl</span>
+- <span class="hljs-selector-tag">div</span>
+- <span class="hljs-selector-tag">fieldset</span>
+- <span class="hljs-selector-tag">form</span>
+- hr
+- noscript
+- table</code></pre><hr>
 <h3 id="html---rules"><a class="header-link" href="#html---rules"></a>HTML - Rules</h3>
 <p>Below Code prints as it is in html with the give newline and defined number of spaces.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span>Text in a pre element

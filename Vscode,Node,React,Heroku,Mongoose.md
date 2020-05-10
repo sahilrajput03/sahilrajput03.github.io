@@ -1,4 +1,11 @@
-[TOC]
+```js
+({a:23}).a
+// 23
+({a: 23})['a'] // " double quotes would have worked the same way.
+// 23
+```
+
+***
 
 # Fastest way to create node project:-
 
@@ -3191,3 +3198,123 @@ simple code @ [medium article (amaz..)](https://medium.com/stackfame/get-list-of
 # https://learngitbranching.js.org/
 
 ***
+
+## Create npm project form vscode only
+
+```bash
+open vscode, Goto File> Open Folder> open the directory and create new folder there, and select that folder to open.
+Now with terminal in vscode, do npm init -y
+You are done.
+```
+
+***
+
+## Destructuing the variable as different name:
+
+```js
+let { v1: rassu } = {v1:{uuidd:23,mid:24}}
+```
+
+***
+
+```js
+const { v1: uuid } = require("uuid");
+console.log("$uuid()", uuid());
+//output $uuid() 59d9cdc0-9049-11ea-87eb-8b2cefafa0ad
+```
+
+***
+
+## Css framework:
+
+[Bulma @ github.com](https://github.com/jgthms/bulma)   - 40k stars on github
+
+https://bulma.io/
+
+
+
+***
+
+## Date Object
+
+```js
+new Date()
+// Output(date object): Thu May 07 2020 20:10:06 GMT+0530 (India Standard Time)
+
+new Date().toString()
+// Output(string): "Thu May 07 2020 20:09:28 GMT+0530 (India Standard Time)"
+```
+
+***
+
+## if else if:
+
+```
+if (condition1) {
+  //  block of code to be executed if condition1 is true
+} else if (condition2) {
+  //  block of code to be executed if the condition1 is false and condition2 is true
+} else {
+  //  block of code to be executed if the condition1 is false and condition2 is false
+}
+```
+
+***
+
+## includes in array
+
+```
+[1,2,3].include(3)
+// true
+[1,2,3].include(7)
+// false
+```
+
+***
+
+## Create file with keyboard in vscode:
+
+Press **Ctrl + shift + E** => then press Shift + tab, then press tab once. That's it.
+
+***
+
+## Install tar for windows via npm :
+
+```
+find the way and install it, still anonomous to find...// booo
+```
+
+***
+
+## Tagged Templated / Tag functions:
+
+```js
+let person = 'Mike';
+let age = 28;
+
+function myTag(strings, personExp, ageExp) {
+  let str0 = strings[0]; // "That "
+  let str1 = strings[1]; // " is a "
+
+  // There is technically a string after
+  // the final expression (in our example),
+  // but it is empty (""), so disregard.
+  // let str2 = strings[2];
+
+  let ageStr;
+  if (ageExp > 99){
+    ageStr = 'centenarian';
+  } else {
+    ageStr = 'youngster';
+  }
+
+  // We can even return a string built using a template literal
+  return `${str0}${personExp}${str1}${ageStr}`;
+}
+
+let output = myTag`That ${ person } is a ${ age }`;
+
+console.log(output);
+// That Mike is a youngster
+```
+
