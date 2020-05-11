@@ -4,7 +4,7 @@ Tip**: [Chrome Sheets - Template Category - Checkuout Sight](https://docs.google
 
 1 Chrome Audio Capture 
 2 uBlock Origin Check these google docs templates out - 
-3 Medium Unlimited: Read paid content for free! 
+3 Medium Unlimited: Read paid content for free! (its downloaded locally(in the Downloads folder, search for Medium Unlimiter, you'll get it.), you must load unpacked extensions and select that folder to use it. Additionally: [link](https://manojvivek.github.io/medium-unlimited/download/))
 4 Clutter Free - Prevent duplicate tabs 
 5 CrxMouse Chrome™ Gestures 
 6 EditThisCookie 

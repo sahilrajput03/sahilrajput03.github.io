@@ -1,8 +1,32 @@
-Table of Contents:-
 
-[TOC]
+
+***
+
+# React.js: 5 awesome packages you need to try out
+
+https://medium.com/javascript-in-plain-english/5-awesome-react-packages-you-need-to-try-out-20a156d3d73e
+
+***
+
+### When you use <> and </> to wrap some JSX element in react, when parsed in html it gets vanished, you won't these empty braces in html in browser or the code that is produced by that component.
+
+```js
+      <>
+        <tr>
+          <td>{props.text}</td>
+          <td>{props.filter}</td>
+        </tr>
+      </>
+
+```
+
+
+
+***
 
 ## Another importantreact patterns : https://dev.to/codeartistryio/the-react-cheatsheet-for-2020-real-world-examples-4hgg << this one looks damm pretty.
+
+Another article on read states: [Link](https://medium.com/hackernoon/a-different-way-to-manage-state-in-react-2d21dfb94482)
 
 ## Another important react patterns :- https://vasanthk.gitbooks.io/react-bits/
 

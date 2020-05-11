@@ -2651,7 +2651,17 @@ car ={}
 
 ```js
 Math.floor(22.342)
-//22
+//Output: 22
+
+_
+let num = 5.56789;
+let n = num.toFixed(2); // Roundoff after two decimals
+//Output: 5.57
+
+_
+let a = 10
+a.toFixed(2) // Number(10).toFixed(2) // would be equally equivalent.
+"10.00"
 ```
 
 ***
@@ -3317,4 +3327,44 @@ let output = myTag`That ${ person } is a ${ age }`;
 console.log(output);
 // That Mike is a youngster
 ```
+
+***
+
+## Mocha testing library:
+
+```
+npm install -g mocha
+```
+
+Then from the root of the project, you can just call 
+
+```
+mocha
+```
+
+***
+
+
+
+## Install ramada.js
+
+```
+npm install ramda
+```
+
+Import it in node/react, via
+
+```js
+const R = require('ramda');
+or
+import * as R from 'ramda';
+```
+
+```js
+import only the required functions via import { functionName } from 'ramda';
+```
+
+Cook Book - All helpful code snippets at one place - [official_github_wiki_link_itself_in_reposiotry](https://github.com/ramda/ramda/wiki/Cookbook#pick-values-a-from-list-by-indexes)
+
+***
 

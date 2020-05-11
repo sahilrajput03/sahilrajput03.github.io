@@ -1668,7 +1668,17 @@ foo.m.n = <span class="hljs-number">10</span> <span class="hljs-comment">//succe
 <p>car ={}</p>
 <hr>
 <pre class="hljs"><code><span class="hljs-built_in">Math</span>.floor(<span class="hljs-number">22.342</span>)
-<span class="hljs-comment">//22</span></code></pre><hr>
+<span class="hljs-comment">//Output: 22</span>
+
+_
+<span class="hljs-keyword">let</span> num = <span class="hljs-number">5.56789</span>;
+<span class="hljs-keyword">let</span> n = num.toFixed(<span class="hljs-number">2</span>); <span class="hljs-comment">// Roundoff after two decimals</span>
+<span class="hljs-comment">//Output: 5.57</span>
+
+_
+<span class="hljs-keyword">let</span> a = <span class="hljs-number">10</span>
+a.toFixed(<span class="hljs-number">2</span>) <span class="hljs-comment">// Number(10).toFixed(2) // would be equally equivalent.</span>
+<span class="hljs-string">"10.00"</span></code></pre><hr>
 <h2 id="lodash"><a class="header-link" href="#lodash"></a>Lodash</h2>
 <pre class="hljs"><code><span class="hljs-built_in">console</span>.log(<span class="hljs-string">"###"</span>, _.countBy([<span class="hljs-string">"foo"</span>, <span class="hljs-string">"man"</span>, <span class="hljs-string">"chew"</span>, <span class="hljs-string">"bar"</span>, <span class="hljs-string">"bar"</span>], (t) =&gt; t));
 <span class="hljs-comment">//Output:   ### { foo: 1, man: 1, chew: 1, bar: 2 }</span></code></pre><pre class="hljs"><code><span class="hljs-keyword">const</span> desiredAuthor = _.head(_(authors).countBy().entries().maxBy(_.last)); 
@@ -2016,6 +2026,16 @@ You are done.</code></pre><hr>
 <span class="hljs-keyword">let</span> output = myTag<span class="hljs-string">`That <span class="hljs-subst">${ person }</span> is a <span class="hljs-subst">${ age }</span>`</span>;
 
 <span class="hljs-built_in">console</span>.log(output);
-<span class="hljs-comment">// That Mike is a youngster</span></code></pre>    </article>
+<span class="hljs-comment">// That Mike is a youngster</span></code></pre><hr>
+<h2 id="mocha-testing-library:"><a class="header-link" href="#mocha-testing-library:"></a>Mocha testing library:</h2>
+<pre class="hljs"><code>npm <span class="hljs-keyword">install</span> -g mocha</code></pre><p>Then from the root of the project, you can just call </p>
+<pre class="hljs"><code><span class="hljs-attribute">mocha</span></code></pre><hr>
+<h2 id="install-ramada.js"><a class="header-link" href="#install-ramada.js"></a>Install ramada.js</h2>
+<pre class="hljs"><code>npm <span class="hljs-keyword">install</span> ramda</code></pre><p>Import it in node/react, via</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> R = <span class="hljs-built_in">require</span>(<span class="hljs-string">'ramda'</span>);
+or
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> R <span class="hljs-keyword">from</span> <span class="hljs-string">'ramda'</span>;</code></pre><pre class="hljs"><code><span class="hljs-keyword">import</span> only the required functions via <span class="hljs-keyword">import</span> { functionName } <span class="hljs-keyword">from</span> <span class="hljs-string">'ramda'</span>;</code></pre><p>Cook Book - All helpful code snippets at one place - <a href="https://github.com/ramda/ramda/wiki/Cookbook#pick-values-a-from-list-by-indexes">official_github_wiki_link_itself_in_reposiotry</a></p>
+<hr>
+    </article>
   </body>
 </html>

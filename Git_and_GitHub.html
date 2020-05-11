@@ -108,10 +108,10 @@ $ hub gist create -v &lt;file1&gt; &lt;file2&gt; &lt;file3&gt; &lt;as many you w
 <p>__</p>
 <p>Open the current repo in browser:</p>
 <pre class="hljs"><code>$ hub browse</code></pre><p>__</p>
-<p>Create new branch from local repositories:</p>
-<pre class="hljs"><code>$ hub create</code></pre><p>Above command will create the repository with the name of the folder in which the local repository is contained. If the folder is name is like, Part 1, then the repository name will be :- Part-1. Hyphen(dash) is added inplace of spaces.</p>
-<p>__
-Deleting branch with hub:</p>
+<h3 id="create-new-repositoryfrom-local-repositories:"><a class="header-link" href="#create-new-repositoryfrom-local-repositories:"></a>Create new repositoryfrom local repositories:</h3>
+<pre class="hljs"><code>$ hub create</code></pre><pre class="hljs"><code>$ git push -u origin master <span class="hljs-comment">#you need to do it manually, and now onwards you can do just git push.</span></code></pre><p>Above command will create the repository with the name of the folder in which the local repository is contained. If the folder is name is like, Part 1, then the repository name will be :- Part-1. Hyphen(dash) is added inplace of spaces.</p>
+<p>__</p>
+<h3 id="deleting-branch-with-hub:"><a class="header-link" href="#deleting-branch-with-hub:"></a>Deleting branch with hub:</h3>
 <p>You need to enable token for deleting repositories via visiting <a href="https://github.com/settings/tokens/">https://github.com/settings/tokens/</a> and opening hub for your pc. And then enable token for <strong>delete_repo</strong> and click <strong>Update token</strong> button. That&#39;s all.</p>
 <pre class="hljs"><code>$ hub delete &lt;repo-name&gt;</code></pre><p>View repository: <a href="https://github.com/github/hub">https://github.com/github/hub</a> to learn more about hub commandline.</p>
 <hr>
@@ -629,6 +629,8 @@ git rm --cached &lt;fielname&gt; //<span class="hljs-keyword">for</span> individ
 <pre class="hljs"><code>gitk 
 <span class="hljs-comment"># In a git repository.</span>
 $(You can easily reverse a git commit and view everything correctly.)</code></pre><hr>
+<h2 id="why-to-use-ssh-public-private-keys-in-local-git-bash-??"><a class="header-link" href="#why-to-use-ssh-public-private-keys-in-local-git-bash-??"></a>Why to use ssh public-private keys in local git-bash ??</h2>
+<p>When working with a GitHub repository, you&#39;ll often need to identify yourself to GitHub using your username and password. An SSH key is an alternate way to identify yourself that doesn&#39;t require you to enter you username and password every time. Read more @ <a href="https://jdblischak.github.io/2014-09-18-chicago/novice/git/05-sshkeys.html">link</a></p>
 <h2 id="generate-a-new-ssh-key:"><a class="header-link" href="#generate-a-new-ssh-key:"></a>Generate a new ssh key:</h2>
 <p>Basically this features adds a ssh encrytion on your side(machine), and it bind the passphrase to the repository to the local pc and authenticated changes would be made only who has the encryted private key. Public key is stored on the github settings.</p>
 <pre class="hljs"><code>Step1: $ ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">"your_email@example.com"</span> 

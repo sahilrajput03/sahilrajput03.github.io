@@ -268,16 +268,21 @@ $ hub browse
 
 __
 
-Create new branch from local repositories:
+### Create new repositoryfrom local repositories:
 
 ```bash
 $ hub create
 ```
 
+```bash
+$ git push -u origin master #you need to do it manually, and now onwards you can do just git push.
+```
+
 Above command will create the repository with the name of the folder in which the local repository is contained. If the folder is name is like, Part 1, then the repository name will be :- Part-1. Hyphen(dash) is added inplace of spaces.
 
 __
-Deleting branch with hub:
+
+### Deleting branch with hub:
 
 You need to enable token for deleting repositories via visiting https://github.com/settings/tokens/ and opening hub for your pc. And then enable token for **delete_repo** and click **Update token** button. That's all.
 
@@ -1270,6 +1275,10 @@ $(You can easily reverse a git commit and view everything correctly.)
 ```
 
 ***
+
+## Why to use ssh public-private keys in local git-bash ??
+
+When working with a GitHub repository, you'll often need to identify yourself to GitHub using your username and password. An SSH key is an alternate way to identify yourself that doesn't require you to enter you username and password every time. Read more @ [link](https://jdblischak.github.io/2014-09-18-chicago/novice/git/05-sshkeys.html)
 
 ## Generate a new ssh key:
 

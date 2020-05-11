@@ -1130,6 +1130,8 @@ throw "message";
 
 ### Create your own custom error:
 
+Read this amazing article on medium, to find out more about logging errors in a good way. [Link](https://medium.com/@iaincollins/error-handling-in-javascript-a6172ccdf9af)
+
 ```js
 function MyError(message){
     this.message = message; //you may specify more things here....according to need...
