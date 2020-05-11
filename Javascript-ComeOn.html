@@ -170,7 +170,30 @@ iuo = sd.concat(<span class="hljs-number">888</span>,<span class="hljs-number">8
 <h2 id="deep-cloning-an-object:(deep-copy)"><a class="header-link" href="#deep-cloning-an-object:(deep-copy)"></a>Deep Cloning an Object:(Deep Copy)</h2>
 <p><a href="https://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-deep-clone-an-object-in-javascript/10916838#10916838">helpful link (question/answers) @ stackoverflow</a></p>
 <p><a href="https://medium.com/javascript-in-plain-english/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089">helpfule link (amazing article)@ medium.com</a> - this brings us to the conclusion of using rfdc(really fast deep clone) everytime so as to be protective from the negative effects of deep clone via the JSON.parse(JSON.stringify(obj)) method. i.e., </p>
-<pre class="hljs"><code>“If you <span class="hljs-keyword">do</span> not use Dates, <span class="hljs-built_in">functions</span>, undefined, Infinity, [NaN], RegExps, Maps, Sets, Blobs, FileLists, ImageDatas, sparse Arrays, Typed Arrays or other complex types within your object, a very simple one liner to deep <span class="hljs-built_in">clone</span> an object is: JSON.parse(JSON.stringify(object))” — Dan Dascalescu <span class="hljs-keyword">in</span> his StackOverflow answer</code></pre><h2 id="preffered-way-to-deep-copy:-"><a class="header-link" href="#preffered-way-to-deep-copy:-"></a>PREFFERED WAY TO DEEP COPY:-</h2>
+<pre class="hljs"><code>“If you <span class="hljs-keyword">do</span> not use Dates, <span class="hljs-built_in">functions</span>, undefined, Infinity, [NaN], RegExps, Maps, Sets, Blobs, FileLists, ImageDatas, sparse Arrays, Typed Arrays or other complex types within your object, a very simple one liner to deep <span class="hljs-built_in">clone</span> an object is: JSON.parse(JSON.stringify(object))” — Dan Dascalescu <span class="hljs-keyword">in</span> his StackOverflow answer</code></pre><h2 id="joni's-recommendations-of-deep-clone-needs-for-redux-states:-"><a class="header-link" href="#joni's-recommendations-of-deep-clone-needs-for-redux-states:-"></a>Joni&#39;s Recommendations of deep clone needs for redux states:-</h2>
+<p>Immer:- <a href="https://immerjs.github.io/immer/docs/introduction">https://immerjs.github.io/immer/docs/introduction</a>
+Quick Example from the above link:-
+immer at egghead.io - <a href="https://egghead.io/courses/immutable-javascript-data-structures-with-immer">link</a>
+read on medium about immer (haven&#39;t read yet): - <a href="https://medium.com/hackernoon/introducing-immer-immutability-the-easy-way-9d73d8f71cb3">link</a>
+immer at github - <a href="https://github.com/immerjs/immer">https://github.com/immerjs/immer</a>
+immer at github.io - <a href="https://immerjs.github.io/immer/docs/introduction">https://immerjs.github.io/immer/docs/introduction</a></p>
+<pre class="hljs"><code><span class="hljs-keyword">import</span> produce <span class="hljs-keyword">from</span> <span class="hljs-string">"immer"</span>
+
+<span class="hljs-keyword">const</span> baseState = [
+    {
+        <span class="hljs-attr">todo</span>: <span class="hljs-string">"Learn typescript"</span>,
+        <span class="hljs-attr">done</span>: <span class="hljs-literal">true</span>
+    },
+    {
+        <span class="hljs-attr">todo</span>: <span class="hljs-string">"Try immer"</span>,
+        <span class="hljs-attr">done</span>: <span class="hljs-literal">false</span>
+    }
+]
+
+<span class="hljs-keyword">const</span> nextState = produce(baseState, draftState =&gt; {
+    draftState.push({<span class="hljs-attr">todo</span>: <span class="hljs-string">"Tweet about it"</span>})
+    draftState[<span class="hljs-number">1</span>].done = <span class="hljs-literal">true</span>
+})</code></pre><h2 id="preffered-way-to-deep-copy:--(rfdc-has-only-196-stars-on-github)"><a class="header-link" href="#preffered-way-to-deep-copy:--(rfdc-has-only-196-stars-on-github)"></a>PREFFERED WAY TO DEEP COPY:- (rfdc has only 196 stars on github)</h2>
 <pre class="hljs"><code># best DEEP COPY
 <span class="hljs-keyword">const</span> clone = <span class="hljs-built_in">require</span>(<span class="hljs-string">'rfdc'</span>)() <span class="hljs-comment">// Returns the deep copy function</span>
 clone({<span class="hljs-attr">a</span>: <span class="hljs-number">37</span>, <span class="hljs-attr">b</span>: {<span class="hljs-attr">c</span>: <span class="hljs-number">3700</span>}}) <span class="hljs-comment">// {a: 37, b: {c: 3700}} // deep clones while preserving all the special data types discussed in above box.</span></code></pre><pre class="hljs"><code># DEEP COPY

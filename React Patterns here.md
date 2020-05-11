@@ -2,7 +2,7 @@ Table of Contents:-
 
 [TOC]
 
-
+## Another importantreact patterns : https://dev.to/codeartistryio/the-react-cheatsheet-for-2020-real-world-examples-4hgg << this one looks damm pretty.
 
 ## Another important react patterns :- https://vasanthk.gitbooks.io/react-bits/
 

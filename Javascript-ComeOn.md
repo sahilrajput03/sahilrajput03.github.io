@@ -280,7 +280,38 @@ console.log(copy); // { a: 1 }
 “If you do not use Dates, functions, undefined, Infinity, [NaN], RegExps, Maps, Sets, Blobs, FileLists, ImageDatas, sparse Arrays, Typed Arrays or other complex types within your object, a very simple one liner to deep clone an object is: JSON.parse(JSON.stringify(object))” — Dan Dascalescu in his StackOverflow answer
 ```
 
-## PREFFERED WAY TO DEEP COPY:-
+## Joni's Recommendations of deep clone needs for redux states:-
+
+Immer:- https://immerjs.github.io/immer/docs/introduction
+Quick Example from the above link:-
+immer at egghead.io - [link](https://egghead.io/courses/immutable-javascript-data-structures-with-immer)
+read on medium about immer (haven't read yet): - [link](https://medium.com/hackernoon/introducing-immer-immutability-the-easy-way-9d73d8f71cb3)
+immer at github - https://github.com/immerjs/immer
+immer at github.io - https://immerjs.github.io/immer/docs/introduction
+
+```js
+import produce from "immer"
+
+const baseState = [
+    {
+        todo: "Learn typescript",
+        done: true
+    },
+    {
+        todo: "Try immer",
+        done: false
+    }
+]
+
+const nextState = produce(baseState, draftState => {
+    draftState.push({todo: "Tweet about it"})
+    draftState[1].done = true
+})
+```
+
+
+
+## PREFFERED WAY TO DEEP COPY:- (rfdc has only 196 stars on github)
 
 ```js
 # best DEEP COPY
