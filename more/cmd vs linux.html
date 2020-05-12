@@ -86,44 +86,51 @@ xcopy <span class="hljs-string">"./source"</span> <span class="hljs-string">"./d
 <span class="hljs-comment"># /h is a switch for copying hidden and system files too.</span>
 
 CREATE FILE:
-<span class="hljs-built_in">echo</span> <span class="hljs-comment">## &gt;&gt; newemptyfile1</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-comment">## &gt;&gt; newemptyfile1</span>
 
 DELETE FILE/S:
-del &lt;file/files/*&gt; (removes files, not folders)
+$ del &lt;file/files/*&gt; (removes files, not folders)
 
 DELETE FOLDER/S, empty folder: 
-rmdir /q /s &lt;folder/folders/        <span class="hljs-comment"># {* not supported}</span>
-rmdir /q /s . <span class="hljs-comment"># deletes everything in the current directory.</span>
-NOTE: You must use it <span class="hljs-keyword">in</span> the way below, and notice the || <span class="hljs-keyword">in</span> the end to follow any <span class="hljs-built_in">command</span> further, as &amp;&amp; doesn\<span class="hljs-string">'t work for this command to write any follow-up command.
-cd temp-generatemd-dontdelete &amp;&amp; rmdir /q /s . ||
+$ rmdir /q /s &lt;folder/folders/ 
+<span class="hljs-comment"># deletes the folder that is passed(including its content completely)</span>
+<span class="hljs-comment">## {* not supported}</span>
+<span class="hljs-comment">### /s =&gt; /S      Removes all directories and files in the specified directory in addition to the directory itself.  Used to remove a directory tree.</span>
+<span class="hljs-comment">#### /q =&gt; Quiet mode, do not ask if ok to remove a directory tree with /s</span>
 
-create folder:
+$ rmdir /q /s . 
+<span class="hljs-comment"># Deletes everything in the current directory.</span>
+<span class="hljs-comment"># <span class="hljs-doctag">NOTE:</span> You can also use it in the way below, and notice the || in the end to follow any command further, as &amp;&amp; doesn\'t work for this command to write any follow-up command.</span>
+$ <span class="hljs-built_in">cd</span> temp-generatemd-dontdelete &amp;&amp; rmdir /q /s . ||
+
+_
+CREATE FOLDER:
 mkdir &lt;folder-name&gt;
 
 PAUSE BATCH FILE AFTER EXECUTION:
 &lt;code&gt; &amp;&amp; @pause
 
 ECHO NEXT LINE CHARACTER:
-echo ..... &amp;&amp; echo.This comes as new line.
+<span class="hljs-built_in">echo</span> ..... &amp;&amp; echo.This comes as new line.
 
 RENAME:
 ren dotenv_win .env
 
 EDIT FILE:
-notepad &lt;file&gt;</span></code></pre><p>EXAMPLES: 
+notepad &lt;file&gt;</code></pre><p><strong>EXAMPLES</strong>: 
 cd jekyll-jinn/_site/ &amp;&amp; xcopy . &quot;../..&quot; /e /i {&quot; Quotes are important, otherwise cmd interpret them as option rather parameters}</p>
 <hr>
-<p>You may recover the premission of a folder via using this article: <a href="https://answers.microsoft.com/en-us/windows/forum/windows_8-files/you-dont-currently-have-permission-to-access-this/2cc4abe2-41ea-4023-b594-104c3b9e9f4d?auth=1">Links</a> . Although, what actually solved the harsh problem is below command:</p>
+<h4 id="you-may-recover-the-premission-of-a-folder-via-using-this-article:-[links](https://answers.microsoft.com/en-us/windows/forum/windows_8-files/you-dont-currently-have-permission-to-access-this/2cc4abe2-41ea-4023-b594-104c3b9e9f4d?auth=1)-.-although,-what-actually-solved-the-harsh-problem-is-below-command:"><a class="header-link" href="#you-may-recover-the-premission-of-a-folder-via-using-this-article:-[links](https://answers.microsoft.com/en-us/windows/forum/windows_8-files/you-dont-currently-have-permission-to-access-this/2cc4abe2-41ea-4023-b594-104c3b9e9f4d?auth=1)-.-although,-what-actually-solved-the-harsh-problem-is-below-command:"></a>You may recover the premission of a folder via using this article: <a href="https://answers.microsoft.com/en-us/windows/forum/windows_8-files/you-dont-currently-have-permission-to-access-this/2cc4abe2-41ea-4023-b594-104c3b9e9f4d?auth=1">Links</a> . Although, what actually solved the harsh problem is below command:</h4>
 <pre class="hljs"><code>TAKEOWN /F &lt;DIRECTORY&gt; /R /D Y</code></pre><hr>
 <p>You may set the low battery action and critical battery action to hibernate. And set the respective percentage to 20% and 12%. So than even when you have hibernated while doing work you  could boot again the last time and you know that you are risking the failure of power for the system this time. Its very important. You must set the reserve battery level below the critical battery level so that when you are risking power failure you could have some benefit of power. You must set it to 7%, so that when you start up pc after hibernating twice it could take the action to get the reserve battery when the battery reaches 7% after some time.</p>
 <hr>
 <h2 id="create-folder:-md-or-mkdir"><a class="header-link" href="#create-folder:-md-or-mkdir"></a>Create folder: md or mkdir</h2>
-<hr>
-<p>=&gt;bat file example contents:-</p>
-<p>echo &quot;sahil&quot;
-echo &quot;mohit&quot;
-@pause</p>
-<p>{bat executables are like each line contains one command, and any command including multiple &amp;&amp; , is considered single command}</p>
+<pre class="hljs"><code>md<span class="hljs-built_in"> new-folder-name
+</span>mkdir new-folder-name2</code></pre><hr>
+<h2 id="bat-file-example-contents:-"><a class="header-link" href="#bat-file-example-contents:-"></a>Bat file example contents:-</h2>
+<pre class="hljs"><code><span class="hljs-built_in">echo</span> <span class="hljs-string">"sahil"</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">"mohit"</span>
+@pause</code></pre><p>{bat executables are like each line contains one command, and any command including multiple &amp;&amp; , is considered single command}</p>
 <hr>
 <h1 id="linux:"><a class="header-link" href="#linux:"></a>LINUX:</h1>
 <p>copy: cp -r src dest
@@ -133,7 +140,8 @@ pause in linux: read -p &quot;The command has been completed. Press Enter  key t
  mv dotenv_unix .env 
 Edit FIle: <code>vi &lt;file&gt;</code></p>
 <hr>
-<h2 id="installing-chocolatey:"><a class="header-link" href="#installing-chocolatey:"></a>Installing chocolatey:</h2>
+<h1 id="chocolatey---a-windows-package-manager."><a class="header-link" href="#chocolatey---a-windows-package-manager."></a>Chocolatey - A windows package manager.</h1>
+<h2 id="installing-chocolatey-in-windows:"><a class="header-link" href="#installing-chocolatey-in-windows:"></a>Installing chocolatey in windows:</h2>
 <p>Open powershell with admin.</p>
 <ol class="list">
 <li>Run </li>

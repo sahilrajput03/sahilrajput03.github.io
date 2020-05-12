@@ -2847,15 +2847,28 @@ and now you can paste the above json, via paste json as code in any file.
 
 It is the best thing, **use debugger as pressing F5** (**fn+F5** will actually work). It will pause at break points, to start again, press F5(fn+F5 will work actually), and will pause at break point, to start again press F5(fn+F5 will work actually). 
 
+## Run without debugging:
+
+#### Ctrl + F5
+
+-
+
+To Set the default testing environment, you need to create the testing laungh.json file that includes all the necessary details regarding the debugging. This can be done easily with the help of menu, under debug in Activity Bar. Or press : **Ctrl + Shift + D (to open the debug menu in the Activity bar)**. And then you create the launch.json file for the debugging easiness. Like below(the second blue link):-
+
+![image-20200512235140109](image-20200512235140109.png)
+
 To any time **stop the debugger**: press **shif+F5** (without fn key will work.)
 
-ALSO: you can type the variable names to their value evaluated at the time.
+### ALSO: you can type the variable names to their value evaluated at the time.
 
 ALSO: when the line is encountered i.e., the line is highlighted(when paused at break point), debugger has stopped at the start of the line. So, you can access all the data before that line via variables.
 
-**Remove breakpoints: Alt, R, A** >> will remove all the breakpoints.
+**Remove all breakpoints: Alt, R, A**
 
-**Toggle many Breakpoints at once**: Place cursors at desired places via pressing and holding Alt key(will enable multiple cursors) and then **press F9 (fn + F9 will work actually)**.
+To **add a single** breakpoint: just press **F9.**
+To **remove a single  breakpoint**: just press **F9**.
+
+**Making many Breakpoints at once**: Place cursors at desired places via pressing and holding Alt key(will enable multiple cursors) and then **press F9 (fn + F9 will work actually)**.
 
 You may use chrome debugger as environment for the debugger to debug inside the chrome browser.
 
@@ -3368,3 +3381,26 @@ Cook Book - All helpful code snippets at one place - [official_github_wiki_link_
 
 ***
 
+## Press windows button
+
+And then press, Ctrl + Tab (to open the all the installed apps window) and press Ctrl + Tab to switch back to default mode.
+
+***
+
+### Prettier Line Maximum length Setting to fold - maximum limi
+
+![image-20200512210446321](image-20200512210446321.png)
+
+***
+
+## Open Debugging Console in Vscode:
+
+```
+Press: Ctrl + Shift + Y
+```
+
+***
+
+
+
+***

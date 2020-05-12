@@ -159,18 +159,25 @@ xcopy "./source" "./destination" /h /y
 # /h is a switch for copying hidden and system files too.
 
 CREATE FILE:
-echo ## >> newemptyfile1
+$ echo ## >> newemptyfile1
 
 DELETE FILE/S:
-del <file/files/*> (removes files, not folders)
+$ del <file/files/*> (removes files, not folders)
 
 DELETE FOLDER/S, empty folder: 
-rmdir /q /s <folder/folders/		# {* not supported}
-rmdir /q /s . # deletes everything in the current directory.
-NOTE: You must use it in the way below, and notice the || in the end to follow any command further, as && doesn\'t work for this command to write any follow-up command.
-cd temp-generatemd-dontdelete && rmdir /q /s . ||
+$ rmdir /q /s <folder/folders/ 
+# deletes the folder that is passed(including its content completely)
+## {* not supported}
+### /s => /S      Removes all directories and files in the specified directory in addition to the directory itself.  Used to remove a directory tree.
+#### /q => Quiet mode, do not ask if ok to remove a directory tree with /s
 
-create folder:
+$ rmdir /q /s . 
+# Deletes everything in the current directory.
+# NOTE: You can also use it in the way below, and notice the || in the end to follow any command further, as && doesn\'t work for this command to write any follow-up command.
+$ cd temp-generatemd-dontdelete && rmdir /q /s . ||
+
+_
+CREATE FOLDER:
 mkdir <folder-name>
 
 PAUSE BATCH FILE AFTER EXECUTION:
@@ -186,12 +193,12 @@ EDIT FILE:
 notepad <file>
 ```
 
-EXAMPLES: 
+**EXAMPLES**: 
 cd jekyll-jinn/_site/ && xcopy . "../.." /e /i {" Quotes are important, otherwise cmd interpret them as option rather parameters}
 
 ***
 
-You may recover the premission of a folder via using this article: [Links](https://answers.microsoft.com/en-us/windows/forum/windows_8-files/you-dont-currently-have-permission-to-access-this/2cc4abe2-41ea-4023-b594-104c3b9e9f4d?auth=1) . Although, what actually solved the harsh problem is below command:
+#### You may recover the premission of a folder via using this article: [Links](https://answers.microsoft.com/en-us/windows/forum/windows_8-files/you-dont-currently-have-permission-to-access-this/2cc4abe2-41ea-4023-b594-104c3b9e9f4d?auth=1) . Although, what actually solved the harsh problem is below command:
 
 ```bash
 TAKEOWN /F <DIRECTORY> /R /D Y
@@ -205,13 +212,22 @@ You may set the low battery action and critical battery action to hibernate. And
 
 ## Create folder: md or mkdir
 
+```
+md new-folder-name
+mkdir new-folder-name2
+```
+
+
+
 ***
 
-=>bat file example contents:-
+## Bat file example contents:-
 
+```bash
 echo "sahil"
 echo "mohit"
 @pause
+```
 
 {bat executables are like each line contains one command, and any command including multiple && , is considered single command}
 
@@ -227,7 +243,9 @@ Edit FIle: `vi <file>`
 
 ***
 
-## Installing chocolatey:
+# Chocolatey - A windows package manager.
+
+## Installing chocolatey in windows:
 
 Open powershell with admin.
 
