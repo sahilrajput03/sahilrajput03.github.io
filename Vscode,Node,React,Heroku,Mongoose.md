@@ -1968,6 +1968,7 @@ var num = 5.56789;
 var n = num.toFixed(2);
 //output: "5.57"
 var p = num.toFixed() OR num.toFixed(0) // assign the number of decimal digits
+//The parameter is optional(if absent means 0) and can take value upto from 0 to 20(both including).
 //output: "5"
 Number("23445")
 //output: 23445 // its number, whats suppied was string.
@@ -1981,12 +1982,35 @@ Number(car.toFixed(2))
 let car = 2345252.234
 Number(car.toFixed(2))
 //output: 2345252.23
+-2.34.toFixed(1)       
+// Returns -2.3 (due to operator precedence, negative number literals don't return a string...)
+(-2.34).toFixed(1)     
+// Returns '-2.3' 
+
+_
 Number(232525)
 232525
 Number(232525.00000000)
 232525
 Number(232525.000000001)
 232525.000000001
+
+_
+function circumference(r) {
+  return parseFloat(r) * 2.0 * Math.PI;
+}
+
+console.log(circumference(4.567));
+// expected output: 28.695307297889173
+
+console.log(circumference('4.567abcdefgh'));
+// expected output: 28.695307297889173
+
+console.log(circumference('abcdefgh'));
+// expected output: NaN
+
+parseFloat(23.99999999999990001).toFixed(13)
+//Output: "23.9999999999999"
 that'S ENOUGH PLAYING WITH Number()
 ```
 
@@ -3403,4 +3427,38 @@ Press: Ctrl + Shift + Y
 
 
 
-***
+## Console.log
+
+```js
+let foo = 23
+let bar = 24
+console.warn
+console.log(false, 'user is not logged in') // this will come up with an error appearance.
+console.log(true, 'user is not logged in')  // this will come up with an verbose appearance.
+
+console.log({foo, bar}) // prints values with name of the variables.
+console.log(obj/arrayobj) 
+// This is becoz an object can be passed to the console.log directly to output it.
+console.table(obj/arrayobj) // prints in a table.
+console.trace('who called me') 
+// this will show the call stack and the appropritae one on the top of all.
+console.count('anything1')
+console.count('anything1')
+console.count('anything1')
+// this will display the counting for each as 1,2,3. for each statement.
+```
+
+```js
+/ execute all of this to know how grouping works in js console.:
+console.log("This is the outer level");
+console.group();
+console.log("Level 2");
+console.group();
+console.log("Level 3");
+console.warn("More of level 3");
+console.groupEnd();
+console.log("Back to level 2");
+console.groupEnd();
+console.log("Back to the outer level");
+```
+

@@ -1255,6 +1255,7 @@ OR use braces to encode the code:
 <span class="hljs-keyword">var</span> n = num.toFixed(<span class="hljs-number">2</span>);
 <span class="hljs-comment">//output: "5.57"</span>
 <span class="hljs-keyword">var</span> p = num.toFixed() OR num.toFixed(<span class="hljs-number">0</span>) <span class="hljs-comment">// assign the number of decimal digits</span>
+<span class="hljs-comment">//The parameter is optional(if absent means 0) and can take value upto from 0 to 20(both including).</span>
 <span class="hljs-comment">//output: "5"</span>
 <span class="hljs-built_in">Number</span>(<span class="hljs-string">"23445"</span>)
 <span class="hljs-comment">//output: 23445 // its number, whats suppied was string.</span>
@@ -1268,12 +1269,35 @@ car.toFixed(<span class="hljs-number">2</span>)
 <span class="hljs-keyword">let</span> car = <span class="hljs-number">2345252.234</span>
 <span class="hljs-built_in">Number</span>(car.toFixed(<span class="hljs-number">2</span>))
 <span class="hljs-comment">//output: 2345252.23</span>
+<span class="hljs-number">-2.34</span>.toFixed(<span class="hljs-number">1</span>)       
+<span class="hljs-comment">// Returns -2.3 (due to operator precedence, negative number literals don't return a string...)</span>
+(<span class="hljs-number">-2.34</span>).toFixed(<span class="hljs-number">1</span>)     
+<span class="hljs-comment">// Returns '-2.3' </span>
+
+_
 <span class="hljs-built_in">Number</span>(<span class="hljs-number">232525</span>)
 <span class="hljs-number">232525</span>
 <span class="hljs-built_in">Number</span>(<span class="hljs-number">232525.00000000</span>)
 <span class="hljs-number">232525</span>
 <span class="hljs-built_in">Number</span>(<span class="hljs-number">232525.000000001</span>)
 <span class="hljs-number">232525.000000001</span>
+
+_
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">circumference</span>(<span class="hljs-params">r</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>(r) * <span class="hljs-number">2.0</span> * <span class="hljs-built_in">Math</span>.PI;
+}
+
+<span class="hljs-built_in">console</span>.log(circumference(<span class="hljs-number">4.567</span>));
+<span class="hljs-comment">// expected output: 28.695307297889173</span>
+
+<span class="hljs-built_in">console</span>.log(circumference(<span class="hljs-string">'4.567abcdefgh'</span>));
+<span class="hljs-comment">// expected output: 28.695307297889173</span>
+
+<span class="hljs-built_in">console</span>.log(circumference(<span class="hljs-string">'abcdefgh'</span>));
+<span class="hljs-comment">// expected output: NaN</span>
+
+<span class="hljs-built_in">parseFloat</span>(<span class="hljs-number">23.99999999999990001</span>).toFixed(<span class="hljs-number">13</span>)
+<span class="hljs-comment">//Output: "23.9999999999999"</span>
 that<span class="hljs-string">'S ENOUGH PLAYING WITH Number()</span></code></pre><hr>
 <h1 id="favourite-theme:"><a class="header-link" href="#favourite-theme:"></a>Favourite Theme:</h1>
 <p>SWITCH THEMES INSTANTLY VIA, </p>
@@ -2051,7 +2075,32 @@ or
 <hr>
 <h2 id="open-debugging-console-in-vscode:"><a class="header-link" href="#open-debugging-console-in-vscode:"></a>Open Debugging Console in Vscode:</h2>
 <pre class="hljs"><code><span class="hljs-symbol">Press:</span> Ctrl + Shift + <span class="hljs-built_in">Y</span></code></pre><hr>
-<hr>
-    </article>
+<h2 id="console.log"><a class="header-link" href="#console.log"></a>Console.log</h2>
+<pre class="hljs"><code><span class="hljs-keyword">let</span> foo = <span class="hljs-number">23</span>
+<span class="hljs-keyword">let</span> bar = <span class="hljs-number">24</span>
+<span class="hljs-built_in">console</span>.warn
+<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">false</span>, <span class="hljs-string">'user is not logged in'</span>) <span class="hljs-comment">// this will come up with an error appearance.</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">true</span>, <span class="hljs-string">'user is not logged in'</span>)  <span class="hljs-comment">// this will come up with an verbose appearance.</span>
+
+<span class="hljs-built_in">console</span>.log({foo, bar}) <span class="hljs-comment">// prints values with name of the variables.</span>
+<span class="hljs-built_in">console</span>.log(obj/arrayobj) 
+<span class="hljs-comment">// This is becoz an object can be passed to the console.log directly to output it.</span>
+<span class="hljs-built_in">console</span>.table(obj/arrayobj) <span class="hljs-comment">// prints in a table.</span>
+<span class="hljs-built_in">console</span>.trace(<span class="hljs-string">'who called me'</span>) 
+<span class="hljs-comment">// this will show the call stack and the appropritae one on the top of all.</span>
+<span class="hljs-built_in">console</span>.count(<span class="hljs-string">'anything1'</span>)
+<span class="hljs-built_in">console</span>.count(<span class="hljs-string">'anything1'</span>)
+<span class="hljs-built_in">console</span>.count(<span class="hljs-string">'anything1'</span>)
+<span class="hljs-comment">// this will display the counting for each as 1,2,3. for each statement.</span></code></pre><pre class="hljs"><code>/ execute all <span class="hljs-keyword">of</span> <span class="hljs-keyword">this</span> to know how grouping works <span class="hljs-keyword">in</span> js <span class="hljs-built_in">console</span>.:
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"This is the outer level"</span>);
+<span class="hljs-built_in">console</span>.group();
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Level 2"</span>);
+<span class="hljs-built_in">console</span>.group();
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Level 3"</span>);
+<span class="hljs-built_in">console</span>.warn(<span class="hljs-string">"More of level 3"</span>);
+<span class="hljs-built_in">console</span>.groupEnd();
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Back to level 2"</span>);
+<span class="hljs-built_in">console</span>.groupEnd();
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Back to the outer level"</span>);</code></pre>    </article>
   </body>
 </html>

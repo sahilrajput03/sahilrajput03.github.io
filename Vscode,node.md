@@ -63,3 +63,15 @@ fs.readdir(directoryPath, function (err, files) {
 Take a look at this article for referencing the current path in which the file is executing:-
 
 https://flaviocopes.com/node-get-current-folder/
+
+***
+
+![image-20200513213226812](image-20200513213226812.png)
+
+![image-20200513213255407](image-20200513213255407.png)
+
+wifi properties via powershell
+
+***
+
+**Ideas are cheap, execution is everything.**
