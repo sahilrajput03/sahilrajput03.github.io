@@ -1,3 +1,9 @@
+# Table of Contents:-
+
+[TOC]
+
+***
+
 ```js
 ({a:23}).a
 // 23
