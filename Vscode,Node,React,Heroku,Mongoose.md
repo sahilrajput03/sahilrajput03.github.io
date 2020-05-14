@@ -1,7 +1,4 @@
-# Table of Contents:-
-
-[TOC]
-{{~> toc}}
+## Vscode, Node, React, Mogoose
 
 ***
 
