@@ -1970,8 +1970,15 @@ app.get(<span class="hljs-string">'/'</span>,<span class="hljs-function"><span c
 <h1 id="best-extension-to-convert-masses-of-md-to-html-files."><a class="header-link" href="#best-extension-to-convert-masses-of-md-to-html-files."></a>Best extension to convert masses of md to html files.</h1>
 <p><a href="https://github.com/mixu/markdown-styles">https://github.com/mixu/markdown-styles</a> (1.5k stars)</p>
 <pre class="hljs"><code>generate-md --layout github --input ./input --output ./output</code></pre><p>Above command generates html files into output folder from the .md files available in input folder.</p>
-<pre class="hljs"><code><span class="hljs-keyword">generate</span>-md --layout github --<span class="hljs-keyword">input</span> ./ --<span class="hljs-keyword">output</span> ./</code></pre><p><a href="https://github.com/sindresorhus/github-markdown-css">https://github.com/sindresorhus/github-markdown-css</a> (4.6k stars)</p>
-<pre class="hljs"><code>this one require more settings <span class="hljs-keyword">for</span> settin the desired css <span class="hljs-keyword">for</span> the conversion</code></pre><p><a href="https://github.com/KrauseFx/markdown-to-html-github-style">https://github.com/KrauseFx/markdown-to-html-github-style</a> (table support)(77 stars)</p>
+<pre class="hljs"><code><span class="hljs-selector-tag">Edit</span> <span class="hljs-selector-tag">below</span> <span class="hljs-selector-tag">property</span> <span class="hljs-selector-tag">in</span> <span class="hljs-selector-tag">pilcrow</span><span class="hljs-selector-class">.css</span> <span class="hljs-selector-tag">in</span> <span class="hljs-selector-tag">github</span> <span class="hljs-selector-tag">theme</span>:
+<span class="hljs-selector-tag">You</span> <span class="hljs-selector-tag">can</span> <span class="hljs-selector-tag">find</span> <span class="hljs-selector-tag">this</span> <span class="hljs-selector-tag">file</span> @ location below
+C:\Users\chetan\AppData\Roaming\npm\node_modules\markdown-styles\layouts\github\assets\css</code></pre><pre class="hljs"><code><span class="hljs-selector-class">.markdown-body</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">24px</span>;
+}
+<span class="hljs-selector-id">#This</span> <span class="hljs-selector-tag">is</span> <span class="hljs-selector-tag">required</span> <span class="hljs-selector-tag">as</span> <span class="hljs-selector-tag">in</span> <span class="hljs-selector-tag">mobile-view</span>, <span class="hljs-selector-tag">the</span> <span class="hljs-selector-tag">paddind</span> <span class="hljs-selector-tag">from</span> <span class="hljs-selector-tag">left</span> <span class="hljs-selector-tag">is</span> <span class="hljs-selector-tag">only</span> <span class="hljs-selector-tag">taken</span> <span class="hljs-selector-tag">into</span> <span class="hljs-selector-tag">cosideration</span>, <span class="hljs-selector-tag">not</span> <span class="hljs-selector-tag">from</span> <span class="hljs-selector-tag">right</span>, <span class="hljs-selector-tag">and</span> <span class="hljs-selector-tag">that</span> <span class="hljs-selector-tag">makes</span> <span class="hljs-selector-tag">the</span> <span class="hljs-selector-tag">design</span> <span class="hljs-selector-tag">bad</span> <span class="hljs-selector-tag">of</span> <span class="hljs-selector-tag">the</span> <span class="hljs-selector-tag">webpage</span>.</code></pre><p>**</p>
+<p><a href="https://github.com/sindresorhus/github-markdown-css">https://github.com/sindresorhus/github-markdown-css</a> (4.6k stars)</p>
+<pre class="hljs"><code>This one require more settings <span class="hljs-keyword">for</span> setting the desired css <span class="hljs-keyword">for</span> the conversion, so just leaving <span class="hljs-keyword">for</span> now, to be try sometime <span class="hljs-keyword">in</span> future.</code></pre><p>**</p>
+<p><a href="https://github.com/KrauseFx/markdown-to-html-github-style">https://github.com/KrauseFx/markdown-to-html-github-style</a> (table support)(77 stars)</p>
 <hr>
 <h2 id="making-list-of-html-files-in-index-file-automated"><a class="header-link" href="#making-list-of-html-files-in-index-file-automated"></a>Making list of html files in index file automated</h2>
 <pre class="hljs"><code>In cmd (will replace contents of the index.html already there)
@@ -2101,6 +2108,46 @@ or
 <span class="hljs-built_in">console</span>.groupEnd();
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Back to level 2"</span>);
 <span class="hljs-built_in">console</span>.groupEnd();
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Back to the outer level"</span>);</code></pre>    </article>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Back to the outer level"</span>);</code></pre><hr>
+<h2 id="json-api-fetch:"><a class="header-link" href="#json-api-fetch:"></a>Json api fetch:</h2>
+<pre class="hljs"><code><span class="hljs-comment">//fetch is available in browser only</span>
+fetch(<span class="hljs-string">'https://api.github.com/users/github'</span>)
+    .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> res.json())
+    .then(<span class="hljs-function"><span class="hljs-params">json</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(json));
+<span class="hljs-comment">//below one is to fetch the html of webpage</span>
+fetch(<span class="hljs-string">'https://npm.runkit.com'</span>)
+    .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> res.text())
+    .then(<span class="hljs-function"><span class="hljs-params">body</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(body));</code></pre><p>As an alternate to fetch, in node you can use package : <em>node-fetch</em> and uses the same above mode to get wepage and json with same methods as above(i.e., as fetch behaves in any browser.) You can install it via </p>
+<pre class="hljs"><code>npm i node-fetch</code></pre><p>_</p>
+<p>Similar, axios approach to get html and json from a webpage:-</p>
+<pre class="hljs"><code>axios.get(<span class="hljs-string">"http://api.github.com/users/github"</span>).then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(res.data));
+<span class="hljs-comment">//json is received</span>
+axios.get(<span class="hljs-string">"http://www.google.com"</span>).then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(res.data)); 
+<span class="hljs-comment">// html webpage is received.</span></code></pre><hr>
+<h2 id="invalid-javascript-identifier-as-a-property-name"><a class="header-link" href="#invalid-javascript-identifier-as-a-property-name"></a>Invalid JavaScript identifier as a property name</h2>
+<p>Destructuring can be used with property names that are not valid JavaScript <a href="https://developer.mozilla.org/en-US/docs/Glossary/Identifier">identifiers</a> by providing an alternative identifier that is valid.</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> foo = { <span class="hljs-string">'fizz-buzz'</span>: <span class="hljs-literal">true</span> };
+<span class="hljs-keyword">const</span> { <span class="hljs-string">'fizz-buzz'</span>: fizzBuzz } = foo;
+
+<span class="hljs-built_in">console</span>.log(fizzBuzz); <span class="hljs-comment">// "true"</span></code></pre><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">link</a></p>
+<hr>
+<h2 id="assigning-to-new-variable-names"><a class="header-link" href="#assigning-to-new-variable-names"></a>Assigning to new variable names</h2>
+<p>A property can be unpacked from an object and assigned to a variable with a different name than the object property.</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> o = {<span class="hljs-attr">p</span>: <span class="hljs-number">42</span>, <span class="hljs-attr">q</span>: <span class="hljs-literal">true</span>};
+<span class="hljs-keyword">const</span> {<span class="hljs-attr">p</span>: foo, <span class="hljs-attr">q</span>: bar} = o;
+
+<span class="hljs-built_in">console</span>.log(foo); <span class="hljs-comment">// 42 </span>
+<span class="hljs-built_in">console</span>.log(bar); <span class="hljs-comment">// true</span></code></pre><hr>
+<h2 id="default-values-in-destructuring:-"><a class="header-link" href="#default-values-in-destructuring:-"></a>Default values in destructuring:-</h2>
+<p>A variable can be assigned a default, in the case that the value unpacked from the object is <code>undefined</code>.</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> {a = <span class="hljs-number">10</span>, b = <span class="hljs-number">5</span>} = {<span class="hljs-attr">a</span>: <span class="hljs-number">3</span>};
+
+<span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// 3</span>
+<span class="hljs-built_in">console</span>.log(b); <span class="hljs-comment">// 5</span></code></pre><hr>
+<h2 id="assignment-without-declaration"><a class="header-link" href="#assignment-without-declaration"></a>Assignment without declaration</h2>
+<p>A variable can be assigned its value with destructuring separate from its declaration.</p>
+<pre class="hljs"><code><span class="hljs-keyword">let</span> a, b;
+
+({a, b} = {<span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">2</span>});</code></pre>    </article>
   </body>
 </html>

@@ -3198,15 +3198,28 @@ generate-md --layout github --input ./input --output ./output
 
 Above command generates html files into output folder from the .md files available in input folder.
 
+```css
+Edit below property in pilcrow.css in github theme:
+You can find this file @ location below
+C:\Users\chetan\AppData\Roaming\npm\node_modules\markdown-styles\layouts\github\assets\css
 ```
-generate-md --layout github --input ./ --output ./
+
+```css
+.markdown-body {
+  padding: 24px;
+}
+#This is required as in mobile-view, the paddind from left is only taken into cosideration, not from right, and that makes the design bad of the webpage.
 ```
+
+**
 
 https://github.com/sindresorhus/github-markdown-css (4.6k stars)
 
 ```bash
-this one require more settings for settin the desired css for the conversion
+This one require more settings for setting the desired css for the conversion, so just leaving for now, to be try sometime in future.
 ```
+
+**
 
 https://github.com/KrauseFx/markdown-to-html-github-style (table support)(77 stars)
 
@@ -3460,5 +3473,93 @@ console.groupEnd();
 console.log("Back to level 2");
 console.groupEnd();
 console.log("Back to the outer level");
+```
+
+***
+
+## Json api fetch:
+
+```js
+//fetch is available in browser only
+fetch('https://api.github.com/users/github')
+    .then(res => res.json())
+    .then(json => console.log(json));
+//below one is to fetch the html of webpage
+fetch('https://npm.runkit.com')
+    .then(res => res.text())
+    .then(body => console.log(body));
+```
+
+As an alternate to fetch, in node you can use package : *node-fetch* and uses the same above mode to get wepage and json with same methods as above(i.e., as fetch behaves in any browser.) You can install it via 
+
+```js
+npm i node-fetch
+```
+
+
+
+_
+
+Similar, axios approach to get html and json from a webpage:-
+
+```js
+axios.get("http://api.github.com/users/github").then((res) => console.log(res.data));
+//json is received
+axios.get("http://www.google.com").then((res) => console.log(res.data)); 
+// html webpage is received.
+```
+
+***
+
+## Invalid JavaScript identifier as a property name
+
+Destructuring can be used with property names that are not valid JavaScript [identifiers](https://developer.mozilla.org/en-US/docs/Glossary/Identifier) by providing an alternative identifier that is valid.
+
+```js
+const foo = { 'fizz-buzz': true };
+const { 'fizz-buzz': fizzBuzz } = foo;
+
+console.log(fizzBuzz); // "true"
+```
+
+[link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+
+***
+
+## Assigning to new variable names	
+
+A property can be unpacked from an object and assigned to a variable with a different name than the object property.
+
+```js
+const o = {p: 42, q: true};
+const {p: foo, q: bar} = o;
+ 
+console.log(foo); // 42 
+console.log(bar); // true
+```
+
+***
+
+## Default values in destructuring:-
+
+A variable can be assigned a default, in the case that the value unpacked from the object is `undefined`.
+
+```js
+const {a = 10, b = 5} = {a: 3};
+
+console.log(a); // 3
+console.log(b); // 5
+```
+
+***
+
+## Assignment without declaration
+
+A variable can be assigned its value with destructuring separate from its declaration.
+
+```js
+let a, b;
+
+({a, b} = {a: 1, b: 2});
 ```
 
