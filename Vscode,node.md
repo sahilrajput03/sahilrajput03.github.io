@@ -75,3 +75,10 @@ wifi properties via powershell
 ***
 
 **Ideas are cheap, execution is everything.**
+
+### Try the other alternate of exrpess server i.e., nginx for load balancing
+
+[link](https://www.nginx.com/)
+
+***
+

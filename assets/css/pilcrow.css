@@ -18,9 +18,9 @@
 .markdown-body h4:hover .header-link:before,
 .markdown-body h5:hover .header-link:before,
 .markdown-body h6:hover .header-link:before {
-  content: "\00B6"; /* pilcrow */
-  color: #888;
-  font-size: smaller;
+    content: "\00B6";/* pilcrow */
+    color: #888;
+    font-size: smaller;
 }
 
 .markdown-body .header-link {

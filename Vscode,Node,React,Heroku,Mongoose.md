@@ -2799,7 +2799,7 @@ https://npm.runkit.com/
 
 **Directory Listings support:** live-server, http-server,  No-> static-server, No -> lite-server
 
-**Hotreload Support:** lite-server, liver-server, NO -> static-server(but manual refresh does work), NO ->http-server(but manual refresh does work)
+**Hotreload Support:** live-server(works on mobile browsers too(**tested - redmi note 5**)), lite-server(*[this tool shows  Browser Sync connected everytime the page is refreshed, so could be a little annoying]works on mobile browsers too(**tested - redmi note 5**)), NO -> static-server(but manual refresh does work), NO ->http-server(but manual refresh does work)
 
 ```bash
 1. npx static-server # npm i -g lite-server (doesnt support directory listings)
@@ -3566,4 +3566,76 @@ let a, b;
 
 ({a, b} = {a: 1, b: 2});
 ```
+
+***
+
+### Mongodb transactions an other look to look:
+
+[link](https://hackernoon.com/mongodb-transactions-5654cdb8fd24)
+
+***
+
+## Find elements in a common particular tags and double click them with javascript:
+
+```js
+var aTags = document.getElementsByTagName("span");
+var searchText = "Double-click on this paragraph";
+var found;
+
+for (var i = 0; i < aTags.length; i++) {
+	console.log(aTags[i].textContent)
+    if (aTags[i].textContent == searchText) {
+    found = aTags[i];
+    break;
+  }
+}
+//Below code is to double click the found element.
+var dblclickEvt = document.createEvent("MouseEvents");
+dblclickEvt.initEvent("dblclick");
+found.dispatchEvent(dblclickEvt);
+```
+
+You can test the above code at wepage - w3school-[tryit](https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_dblclick) ; w3school more @ [link](https://www.w3schools.com/jquery/event_dblclick.asp).
+
+Stack overflow [link](https://stackoverflow.com/questions/3813294/how-to-get-element-by-innertext) , [link2](https://stackoverflow.com/questions/11616189/how-to-dispatch-a-double-click-event-on-an-element) 
+
+***
+
+### Know if there are running tasks:
+
+(below image shows two tasks are running.)
+
+![123314](123314.png)***
+
+***
+
+## Hoisting Concept in Javascript
+
+```js
+sayName()
+function sayName() {
+	console.log('Hello there..')
+}
+var sayAge = function () {
+	console.log('My age is 25 oh no')
+}
+sayAge()
+```
+
+The functions works greaty with no error. But the below one blews:
+
+```js
+sayName()
+sayAge() // blows here..
+function sayName() {
+	console.log('Hello there..')
+}
+var sayAge = function () {
+	console.log('My age is 25 oh no')
+}
+```
+
+The error says, --sayAge is not a function--, which is ridiculously wrong as per our understanding, but what we are doing is not semantic( i.e., logically correct according to the language).  So the learning here is that var sayAge is not a function but actually a variable declaration according to the language compiler. To be able to get the benefits of function hoisting in such cases we need to declare them with the older correct way of using functions i.e.,  like we have done with the sayName function in the same program.
+
+***
 

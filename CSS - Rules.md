@@ -1,3 +1,25 @@
+### Normalize CSS or CSS Reset?
+
+https://medium.com/@elad/normalize-css-or-css-reset-9d75175c5d1e
+
+***
+
+## Popular CSS Libraries
+
+https://cssdb.co/
+
+***
+
+## CSS reset (OR Reset CSS)
+
+[Link to the reset.css file](https://meyerweb.com/eric/tools/css/reset/reset.css)
+
+## Normalize:(Is is far more popular than reset.css)
+
+[Link to the normalize.css file](https://necolas.github.io/normalize.css/8.0.1/normalize.css)
+
+***
+
 ```css
 p {color: red;}
 p.ex1 {display: none;}

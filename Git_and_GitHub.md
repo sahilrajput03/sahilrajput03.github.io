@@ -1,3 +1,80 @@
+
+
+***
+
+https://learngitbranching.js.org/ :-> In terminal you can write, 
+**reset** to reset the level.
+**levels** to show all the levels
+**undo** to undo the last step
+**goal** to show the goals for the exercise
+**hide goal** to hide the goals.
+
+***
+
+## Git rebase:
+
+![image-20200514190110995](image-20200514190110995.png)
+
+![image-20200514190140425](image-20200514190140425.png)
+
+![image-20200514190740574](image-20200514190740574.png)
+
+***
+
+## Git Cherry-pick
+
+
+
+![image-20200514185653991](image-20200514185653991.png)
+
+![image-20200514185810201](image-20200514185810201.png)
+
+***
+
+## Git Revert
+
+While resetting works great for local branches on your own machine, its method of "rewriting history" doesn't work for remote branches that others are using.
+
+In order to reverse changes and *share* those reversed changes with others, we need to use `git revert`. Let's see it in action.
+
+```
+git revert HEAD
+```
+
+![image-20200514183155902](image-20200514183155902.png)
+
+***
+
+## Git Reset
+
+`git reset` reverts changes by moving a branch reference backwards in time to an older commit. In this sense you can think of it as "rewriting history;" `git reset` will move a branch backwards as if the commit had never been made in the first place.(this is actually bad for people on remote repositories)
+
+In order to reverse changes and *share* those reversed changes with others, we need to use `git revert`. Let's see it in action.
+
+Let's see what that looks like:
+
+```
+git reset HEAD~1
+```
+
+
+
+***
+
+## Relative refs
+
+One of the most common ways I use relative refs is to **move branches around**. You can **directly reassign a branch to a commit with the `-f` option**. So something like:
+
+```bash
+git branch -f master HEAD~3
+```
+
+moves (by force) the master branch to three parents behind HEAD.
+
+![image-20200514175822230](image-20200514175822230.png)
+
+***
+
 ### When adding files/folder in .gitignore doesn't work, you need to do this...
 
 ![image-20200507182811898](image-20200507182811898.png)
@@ -30,7 +107,29 @@ git checkout -b old-state 0d1d7fc32
 
 ***
 
-## Edit the last commit:
+## Edit CONTENT AND NAME BOTH of last commit:
+
+```bash
+git add . # or add individual files*(git add -A will does exactly same)
+# IMPORTANT: If you haven't added any files, that means you have just changed some files only, then you must prefer(#2 ADDITIONALLY) that as that is one liner.
+git commit --amend
+#hence you'll be prompted to change the name of the commit, with new changes included.
+```
+
+### #2 ADDITIONALLY
+
+It could be done in one line too-
+
+```bash
+git commit -a --amend
+#this will prompt for name change as well as add the older tracking files to the tracking too before making the commit.
+```
+
+
+
+***
+
+## Edit the CONTENT ONLY of last commit:
 
 ```bash
 git add . # or add individual files
@@ -41,7 +140,7 @@ Source: [ohshitgit.com](https://ohshitgit.com/#change-last-commit) - amazing mus
 
 ***
 
-## Change the message of last commit
+## Change the MESSAGE ONLY of last commit
 
 ```bash
 git commit --amend
@@ -91,8 +190,9 @@ git add * (does same but excludes hidden files)
 ![image-20200505211531257](image-20200505211531257.png)
 
 ```bash
-git branch -h #shows help pages for git branch. And outputs the infomation for -f switch
--f, --force           force creation, move/rename, deletion
+git branch -h 
+#shows help pages for git branch. And outputs the infomation for -f switch
+# -f, --force           force creation, move/rename, deletion
 ```
 
 ![image-20200505211855009](image-20200505211855009.png)
