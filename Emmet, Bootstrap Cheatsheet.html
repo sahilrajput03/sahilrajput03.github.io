@@ -42,6 +42,43 @@
 <p>The <strong>width=device-width</strong> part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).</p>
 <p>The <strong>initial-scale=1.0</strong> part sets the initial zoom level when the page is first loaded by the browser.</p>
 <hr>
-    </article>
+<h2 id="embed-youtube-video-(with-responsiveness)"><a class="header-link" href="#embed-youtube-video-(with-responsiveness)"></a>Embed youtube video (with responsiveness)</h2>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"embed-responsive embed-responsive-16by9"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"embed-responsive-item"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"//www.youtube.com/embed/48OJbbI0DfE"</span> <span class="hljs-attr">allowfullscreen</span>=<span class="hljs-string">""</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><p>src: <a href="https://hackerthemes.com/bootstrap-cheatsheet/#embed-responsive">https://hackerthemes.com/bootstrap-cheatsheet/#embed-responsive</a></p>
+<hr>
+<h2 id="simply-setting-marging-with-class"><a class="header-link" href="#simply-setting-marging-with-class"></a>Simply setting marging with class</h2>
+<pre class="hljs"><code>m-<span class="hljs-built_in">VALUE</span>
+mt-<span class="hljs-built_in">VALUE</span>
+mr-<span class="hljs-built_in">VALUE</span>
+mb-<span class="hljs-built_in">VALUE</span>
+ml-<span class="hljs-built_in">VALUE</span>
+mx-<span class="hljs-built_in">VALUE</span>
+my-<span class="hljs-built_in">VALUE</span> 
+mx-<span class="hljs-built_in">VALUE</span>
+* <span class="hljs-built_in">VALUE</span> COULD BE <span class="hljs-symbol">:</span>- <span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>.</code></pre><p>Above mentioned are the <strong>class names</strong>, <strong>m</strong> sets for <strong>all edges</strong>, <strong>mt</strong> sets for <strong>top</strong> edge, <strong>mr</strong> sets for <strong>right</strong> edge, <strong>mb</strong> sets for <strong>bottom</strong> edge, <strong>ml</strong> sets for <strong>left</strong> edge, <strong>mx</strong> sets for <strong>both right and left</strong> and <strong>my</strong> sets for both <strong>top and bottom</strong>. </p>
+<hr>
+<h2 id="responsive-breakpoints-@-bootstrap"><a class="header-link" href="#responsive-breakpoints-@-bootstrap"></a>Responsive breakpoints @ bootstrap</h2>
+<p><a href="https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints">original link</a></p>
+<p>Since Bootstrap is developed to be mobile first, we use a handful of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">media queries</a> to create sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.</p>
+<p>Bootstrap primarily uses the following media query ranges—or breakpoints—in our source Sass files for our layout, grid system, and components.</p>
+<p><strong>@media (min-width: 576px) { ... } =&gt; THIS SAYS, THAT MARGINS/PADDINGS/ETC WILL ONLY APPLY WHEN VIEWPORT IS 576PX IN width or maximum.</strong></p>
+<p>My laptop&#39;s width: 1536px</p>
+<p>My phone&#39;s width: 360px
+(google - check my browsers resolution, open any of the 1st,2nd,3rd site to get the width and height.)</p>
+<pre class="hljs"><code><span class="hljs-comment">// Extra small devices (portrait phones, less than 576px)</span>
+<span class="hljs-comment">// No media query since this is the default in Bootstrap</span>
+
+<span class="hljs-comment">// Small devices (landscape phones, 576px and up)</span>
+@media (<span class="hljs-keyword">min</span><span class="hljs-params">-width</span>: <span class="hljs-number">576</span>px) { <span class="hljs-params">...</span> } =&gt; THIS SAYS, THAT MARGINS/PADDINGS/ETC WILL ONLY APPLY WHEN VIEWPORT IS <span class="hljs-number">576</span>PX <span class="hljs-keyword">IN</span> width <span class="hljs-literal">or</span> maximum.
+
+<span class="hljs-comment">// Medium devices (tablets, 768px and up)</span>
+@media (<span class="hljs-keyword">min</span><span class="hljs-params">-width</span>: <span class="hljs-number">768</span>px) { <span class="hljs-params">...</span> }
+
+<span class="hljs-comment">// Large devices (desktops, 992px and up)</span>
+@media (<span class="hljs-keyword">min</span><span class="hljs-params">-width</span>: <span class="hljs-number">992</span>px) { <span class="hljs-params">...</span> }
+
+<span class="hljs-comment">// Extra large devices (large desktops, 1200px and up)</span>
+@media (<span class="hljs-keyword">min</span><span class="hljs-params">-width</span>: <span class="hljs-number">1200</span>px) { <span class="hljs-params">...</span> }</code></pre>    </article>
   </body>
 </html>

@@ -70,3 +70,64 @@ The **initial-scale=1.0** part sets the initial zoom level when the page is firs
 
 ***
 
+## Embed youtube video (with responsiveness)
+
+```html
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="//www.youtube.com/embed/48OJbbI0DfE" allowfullscreen=""></iframe>
+</div>
+```
+
+src: https://hackerthemes.com/bootstrap-cheatsheet/#embed-responsive
+
+***
+
+## Simply setting marging with class
+
+```
+m-VALUE
+mt-VALUE
+mr-VALUE
+mb-VALUE
+ml-VALUE
+mx-VALUE
+my-VALUE 
+mx-VALUE
+* VALUE COULD BE :- 0,1,2,3,4,5.
+```
+
+Above mentioned are the **class names**, **m** sets for **all edges**, **mt** sets for **top** edge, **mr** sets for **right** edge, **mb** sets for **bottom** edge, **ml** sets for **left** edge, **mx** sets for **both right and left** and **my** sets for both **top and bottom**. 
+
+***
+
+## Responsive breakpoints @ bootstrap
+
+[original link](https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints)
+
+Since Bootstrap is developed to be mobile first, we use a handful of [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) to create sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.
+
+Bootstrap primarily uses the following media query ranges—or breakpoints—in our source Sass files for our layout, grid system, and components.
+
+**@media (min-width: 576px) { ... } => THIS SAYS, THAT MARGINS/PADDINGS/ETC WILL ONLY APPLY WHEN VIEWPORT IS 576PX IN width or maximum.**
+
+My laptop's width: 1536px
+
+My phone's width: 360px
+(google - check my browsers resolution, open any of the 1st,2nd,3rd site to get the width and height.)
+
+```
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... } => THIS SAYS, THAT MARGINS/PADDINGS/ETC WILL ONLY APPLY WHEN VIEWPORT IS 576PX IN width or maximum.
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+```
