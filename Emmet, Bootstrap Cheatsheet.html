@@ -3,13 +3,73 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Text-transform:</title>
+    <title>html property:- width vs max-width</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
     <article class="markdown-body"><hr>
+<h2 id="html-property:--width-vs-max-width"><a class="header-link" href="#html-property:--width-vs-max-width"></a>html property:- width vs max-width</h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max-width">Link</a></p>
+<p class="img-container"><img src="image-20200517224016825.png" alt="image-20200517224016825"></p>
+<hr>
+<h3 id="redmi-note-5:-352px."><a class="header-link" href="#redmi-note-5:-352px."></a>Redmi Note 5: 352px.</h3>
+<hr>
+<h2 id="typography"><a class="header-link" href="#typography"></a>Typography</h2>
+<p>Want different sizes of text: refer link @ <a href="https://getbootstrap.com/docs/4.0/content/typography/">bootstrap.com</a></p>
+<hr>
+<h2 id="amazing-flexbox-usage:"><a class="header-link" href="#amazing-flexbox-usage:"></a>Amazing flexbox usage:</h2>
+<p><a href="https://getbootstrap.com/docs/4.0/utilities/flex/">Link@bootstrap.com</a>; 
+There are thousands of options for flex-box, you must look at the link. For general tasks.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex flex-row"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex justify-content-center"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"justify-content-center w-25"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img1/airplane.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"justify-content-center w-25"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img1/barbara.bmp"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"justify-content-center w-25"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"img1/baboon.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><hr>
+<h2 id="cards"><a class="header-link" href="#cards"></a>Cards</h2>
+<p>Refer an awesome guide:- <a href="https://www.w3schools.com/bootstrap4/bootstrap_cards.asp">link@w3schools</a>.
+use this try it @ <a href="https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_card_link&amp;stacked=h">w3schools.com</a>
+<strong>Good thing</strong>: For any image you want to use in card layout, just use the class card-img-top in the img tag and the image will fit magically. 
+<strong>FYI</strong>:- <strong>card-img-top</strong> class just sets the image width to 100%, i.e. style=&quot;width:100%&quot; or you may simply use the tag m-100 to set the width to 100%. This acually resizes the image to the width according to the device width, or incomparison to the device width.(i.e., w-75,w-50,w-25,)</p>
+<hr>
+<p>text-white =&gt; sets the text color to white.</p>
+<hr>
+<p> <kbd>ctrl + p</kbd></p>
+<pre class="hljs"><code> <span class="hljs-tag">&lt;<span class="hljs-name">kbd</span>&gt;</span>ctrl + p<span class="hljs-tag">&lt;/<span class="hljs-name">kbd</span>&gt;</span></code></pre><hr>
+<h3 id="border"><a class="header-link" href="#border"></a>Border</h3>
+<p>#there is no option for thick borders, no option for </p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"border"</span>&gt;</span>This will have border.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"border-0"</span>&gt;</span>This will have no border<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+For colors
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"border border-primary"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"border border-secondary"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"border border-success"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"border border-danger"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"border border-warning"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"border border-info"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"border border-light"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"border border-dark"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"border border-white"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre><h3 id="border-radius"><a class="header-link" href="#border-radius"></a>Border Radius</h3>
+<p class="img-container"><img src="image-20200517185214030.png" alt="image-20200517185214030"></p>
+<hr>
+<h2 id="bootstrap-4-default-settings"><a class="header-link" href="#bootstrap-4-default-settings"></a>Bootstrap 4 Default Settings</h2>
+<p>Bootstrap 4 uses a default <code>font-size</code> of 16px(i.e., 1rem bcoz 16px = 1rem),
+ and its <code>line-height</code> is 1.5.</p>
+<p>The default <code>font-family</code> is &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif.</p>
+<p>In addition, all <code></code> elements have <code>margin-top: 0</code> and <code>margin-bottom: 1rem</code> (16px by default).</p>
+<p>source: link@<a href="https://www.w3schools.com/bootstrap4/bootstrap_typography.asp">w3schools</a></p>
+<hr>
+<h1 id="h1-bootstrap-heading-(2.5rem-=-40px)"><a class="header-link" href="#h1-bootstrap-heading-(2.5rem-=-40px)"></a>h1 Bootstrap heading (2.5rem = 40px)</h1>
+<h2 id="h2-bootstrap-heading-(2rem-=-32px)"><a class="header-link" href="#h2-bootstrap-heading-(2rem-=-32px)"></a>h2 Bootstrap heading (2rem = 32px)</h2>
+<h3 id="h3-bootstrap-heading-(1.75rem-=-28px)"><a class="header-link" href="#h3-bootstrap-heading-(1.75rem-=-28px)"></a>h3 Bootstrap heading (1.75rem = 28px)</h3>
+<h4 id="h4-bootstrap-heading-(1.5rem-=-24px)"><a class="header-link" href="#h4-bootstrap-heading-(1.5rem-=-24px)"></a>h4 Bootstrap heading (1.5rem = 24px)</h4>
+<h5 id="h5-bootstrap-heading-(1.25rem-=-20px)"><a class="header-link" href="#h5-bootstrap-heading-(1.25rem-=-20px)"></a>h5 Bootstrap heading (1.25rem = 20px)</h5>
+<h6 id="h6-bootstrap-heading-(1rem-=-16px)"><a class="header-link" href="#h6-bootstrap-heading-(1rem-=-16px)"></a>h6 Bootstrap heading (1rem = 16px)</h6>
+<p>Source: link@<a href="https://www.w3schools.com/bootstrap4/bootstrap_typography.asp">w3schools</a></p>
+<hr>
 <h2 id="text-transform:"><a class="header-link" href="#text-transform:"></a>Text-transform:</h2>
 <p><a href="https://getbootstrap.com/docs/4.5/utilities/text/#text-transform">link</a>&#39;</p>
 <pre class="hljs"><code>Output:
@@ -31,6 +91,9 @@ Note how .text-capitalize only changes the first letter of each word, leaving th
 #Happy links</code></pre><hr>
 <h2 id="font-weight-and-italics-@-bootstrap(same-title)"><a class="header-link" href="#font-weight-and-italics-@-bootstrap(same-title)"></a>Font weight and italics @ Bootstrap(same title)</h2>
 <p>@<a href="https://getbootstrap.com/docs/4.5/utilities/text/#font-weight-and-italics">link</a></p>
+<p>bold and bolder look same on both desktop and mobile.
+light, and lighter look same on desktop, but vary significantly on mobile device. i.e.
+<img src="image-20200517190032249.png" alt="image-20200517190032249" style="zoom:30%;" /></p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"font-weight-bold"</span>&gt;</span>Bold text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"font-weight-bolder"</span>&gt;</span>Bolder weight text (relative to the parent element).<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"font-weight-normal"</span>&gt;</span>Normal weight text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
@@ -97,9 +160,28 @@ mx-<span class="hljs-built_in">VALUE</span>
 <p>Since Bootstrap is developed to be mobile first, we use a handful of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">media queries</a> to create sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.</p>
 <p>Bootstrap primarily uses the following media query ranges—or breakpoints—in our source Sass files for our layout, grid system, and components.</p>
 <p><strong>@media (min-width: 576px) { ... } =&gt; THIS SAYS, THAT MARGINS/PADDINGS/ETC WILL ONLY APPLY WHEN VIEWPORT IS 576PX IN width or maximum.</strong></p>
-<p>My laptop&#39;s width: <strong>1536px</strong></p>
-<p>My phone&#39;s width: <strong>360px</strong> (sm/md/lg/xl margins/padding/etc will not work straightaway.)
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getWidth</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> ({
+    <span class="hljs-attr">a</span>:<span class="hljs-built_in">document</span>.body.scrollWidth,
+    <span class="hljs-attr">b</span>:<span class="hljs-built_in">document</span>.documentElement.scrollWidth,
+    <span class="hljs-attr">c</span>:<span class="hljs-built_in">document</span>.body.offsetWidth,
+    <span class="hljs-attr">d</span>:<span class="hljs-built_in">document</span>.documentElement.offsetWidth,
+    <span class="hljs-attr">e</span>:<span class="hljs-built_in">document</span>.documentElement.clientWidth
+  });
+}
+getWidth()
+*
+Executing we get:-
+{<span class="hljs-attr">a</span>: <span class="hljs-number">1519</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">1519</span>, <span class="hljs-attr">c</span>: <span class="hljs-number">1519</span>, <span class="hljs-attr">d</span>: <span class="hljs-number">1519</span>, <span class="hljs-attr">e</span>: <span class="hljs-number">1519</span>} <span class="hljs-keyword">in</span> chrome desktop browser.
+{<span class="hljs-attr">a</span>: <span class="hljs-number">360</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">368</span>, <span class="hljs-attr">c</span>: <span class="hljs-number">344</span>, <span class="hljs-attr">d</span>: <span class="hljs-number">360</span>, <span class="hljs-attr">e</span>: <span class="hljs-number">360</span>} <span class="hljs-keyword">in</span> mobile chrome browser. [REAL THAT WORKS =&gt; <span class="hljs-number">352</span>px]</code></pre><ul class="list">
+<li><p>My laptop&#39;s width: <strong>1536px</strong>
+[<strong>When calclulated with custom function(code can be found in same file), we get - 1519px</strong>]</p>
+</li>
+<li><p>My phone&#39;s width: [<strong>REAL THAT WORKS =&gt; 352px</strong>] <strong>360px</strong> (#Redmi note 5, #Redmi note5) (sm/md/lg/xl margins/padding/etc will not work straightaway.)</p>
+<p>[<strong>When calclulated with custom function(code can be found in same file), we get - 368px</strong>]
 (google - &quot;check my browsers resolution&quot;, open any of the 1st,2nd,3rd site to get the width and height.)</p>
+</li>
+</ul>
 <pre class="hljs"><code><span class="hljs-comment">// Extra small devices (portrait phones, less than 576px)</span>
 <span class="hljs-comment">// No media query since this is the default in Bootstrap</span>
 
@@ -118,6 +200,8 @@ mx-<span class="hljs-built_in">VALUE</span>
 <hr>
 <h3 id="padding-and-responsiveness-with-padding:"><a class="header-link" href="#padding-and-responsiveness-with-padding:"></a>Padding and responsiveness with padding:</h3>
 <p><a href="https://hackerthemes.com/bootstrap-cheatsheet/#p-1">link</a></p>
+<p>Note: p5=&gt; 3rem, p4=&gt; 1.5rem, p3=&gt; 1rem, p2=&gt; 0.5rem, p1=&gt; 0.25rem
+Same is for margins, i.e. m-5, m-4.. till m-1.</p>
 <pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-0 bg-primary d-inline-block"</span>&gt;</span>Padded Div<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-1 bg-primary d-inline-block"</span>&gt;</span>Padded Div<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 bg-primary d-inline-block"</span>&gt;</span>Padded Div<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -152,15 +236,16 @@ mx-<span class="hljs-built_in">VALUE</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre><hr>
 <h2 id="bold,-italics,-underline-with-bootstrap:"><a class="header-link" href="#bold,-italics,-underline-with-bootstrap:"></a>Bold, Italics, Underline with Bootstrap:</h2>
 <p>@ bootstrap @ <a href="https://getbootstrap.com/docs/4.5/utilities/text/">link</a></p>
-<pre class="hljs"><code>font-weight-bold<span class="hljs-comment"> // Makes text bold</span>
-&lt;p class=<span class="hljs-string">"text-left"</span>&gt;Left aligned <span class="hljs-keyword">text</span> <span class="hljs-keyword">on</span> <span class="hljs-title">all</span> <span class="hljs-title">viewport</span> <span class="hljs-title">sizes</span>.&lt;/<span class="hljs-title">p</span>&gt;
-&lt;p class=<span class="hljs-string">"text-center"</span>&gt;Center aligned <span class="hljs-keyword">text</span> <span class="hljs-keyword">on</span> <span class="hljs-title">all</span> <span class="hljs-title">viewport</span> <span class="hljs-title">sizes</span>.&lt;/<span class="hljs-title">p</span>&gt;
-&lt;p class=<span class="hljs-string">"text-right"</span>&gt;Right aligned <span class="hljs-keyword">text</span> <span class="hljs-keyword">on</span> <span class="hljs-title">all</span> <span class="hljs-title">viewport</span> <span class="hljs-title">sizes</span>.&lt;/<span class="hljs-title">p</span>&gt;
+<h4 id="text-alignment:-classes:--text-center,-text-right,-text-left,-text-justify."><a class="header-link" href="#text-alignment:-classes:--text-center,-text-right,-text-left,-text-justify."></a>Text alignment: Classes:- text-center, text-right, text-left, text-justify.</h4>
+<p><strong>Makes text bold:- font-weight-bold</strong></p>
+<pre class="hljs"><code>&lt;p <span class="hljs-built_in">class</span>=<span class="hljs-string">"text-left"</span>&gt;Left aligned <span class="hljs-built_in">text</span> <span class="hljs-keyword">on</span> all viewport sizes.&lt;/p&gt;
+&lt;p <span class="hljs-built_in">class</span>=<span class="hljs-string">"text-center"</span>&gt;Center aligned <span class="hljs-built_in">text</span> <span class="hljs-keyword">on</span> all viewport sizes.&lt;/p&gt;
+&lt;p <span class="hljs-built_in">class</span>=<span class="hljs-string">"text-right"</span>&gt;Right aligned <span class="hljs-built_in">text</span> <span class="hljs-keyword">on</span> all viewport sizes.&lt;/p&gt;
 
-&lt;p class=<span class="hljs-string">"text-sm-left"</span>&gt;Left aligned <span class="hljs-keyword">text</span> <span class="hljs-keyword">on</span> <span class="hljs-title">viewports</span> <span class="hljs-title">sized</span> <span class="hljs-title">SM</span> (<span class="hljs-title">small</span>) <span class="hljs-title">or</span> <span class="hljs-title">wider</span>.&lt;/<span class="hljs-title">p</span>&gt;
-&lt;p class=<span class="hljs-string">"text-md-left"</span>&gt;Left aligned <span class="hljs-keyword">text</span> <span class="hljs-keyword">on</span> <span class="hljs-title">viewports</span> <span class="hljs-title">sized</span> <span class="hljs-title">MD</span> (<span class="hljs-title">medium</span>) <span class="hljs-title">or</span> <span class="hljs-title">wider</span>.&lt;/<span class="hljs-title">p</span>&gt;
-&lt;p class=<span class="hljs-string">"text-lg-left"</span>&gt;Left aligned <span class="hljs-keyword">text</span> <span class="hljs-keyword">on</span> <span class="hljs-title">viewports</span> <span class="hljs-title">sized</span> <span class="hljs-title">LG</span> (<span class="hljs-title">large</span>) <span class="hljs-title">or</span> <span class="hljs-title">wider</span>.&lt;/<span class="hljs-title">p</span>&gt;
-&lt;p class=<span class="hljs-string">"text-xl-left"</span>&gt;Left aligned <span class="hljs-keyword">text</span> <span class="hljs-keyword">on</span> <span class="hljs-title">viewports</span> <span class="hljs-title">sized</span> <span class="hljs-title">XL</span> (<span class="hljs-title">extra-large</span>) <span class="hljs-title">or</span> <span class="hljs-title">wider</span>.&lt;/<span class="hljs-title">p</span>&gt;
+&lt;p <span class="hljs-built_in">class</span>=<span class="hljs-string">"text-sm-left"</span>&gt;Left aligned <span class="hljs-built_in">text</span> <span class="hljs-keyword">on</span> viewports sized SM (small) <span class="hljs-keyword">or</span> wider.&lt;/p&gt;
+&lt;p <span class="hljs-built_in">class</span>=<span class="hljs-string">"text-md-left"</span>&gt;Left aligned <span class="hljs-built_in">text</span> <span class="hljs-keyword">on</span> viewports sized MD (medium) <span class="hljs-keyword">or</span> wider.&lt;/p&gt;
+&lt;p <span class="hljs-built_in">class</span>=<span class="hljs-string">"text-lg-left"</span>&gt;Left aligned <span class="hljs-built_in">text</span> <span class="hljs-keyword">on</span> viewports sized LG (large) <span class="hljs-keyword">or</span> wider.&lt;/p&gt;
+&lt;p <span class="hljs-built_in">class</span>=<span class="hljs-string">"text-xl-left"</span>&gt;Left aligned <span class="hljs-built_in">text</span> <span class="hljs-keyword">on</span> viewports sized XL (extra-large) <span class="hljs-keyword">or</span> wider.&lt;/p&gt;
 </code></pre><hr>
 <h3 id="text-wrapping-and-overflow"><a class="header-link" href="#text-wrapping-and-overflow"></a>Text wrapping and overflow</h3>
 <p>@ bootstrap @ <a href="https://getbootstrap.com/docs/4.5/utilities/text/#text-wrapping-and-overflow">link</a></p>

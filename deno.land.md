@@ -9,3 +9,6 @@ DENO is build with rust. (earlier it was written in go, but got problems with it
 
 ***
 
+From the video "10 Things I Regret About Node.js - Ryan Dahl - JSConf EU", 
+
+- When you specify the any url anywhere inside the files, deno will fetch out the code from the url and saves it somewhere, and never downloads it again from the website. If you ever want to refresh the resource form the url, you can specify --reload switch along with the command to execute the with deno. This is similar to Ctrl+F5 in the browser to refresh the resources from the website. Hell YEAH!!.

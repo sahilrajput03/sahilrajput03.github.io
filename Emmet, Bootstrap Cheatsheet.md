@@ -1,6 +1,120 @@
 
 
+***
 
+## html property:- width vs max-width
+
+[Link](https://developer.mozilla.org/en-US/docs/Web/CSS/max-width)
+
+![image-20200517224016825](image-20200517224016825.png)
+
+***
+
+### Redmi Note 5: 352px.
+
+***
+
+## Typography
+
+Want different sizes of text: refer link @ [bootstrap.com](https://getbootstrap.com/docs/4.0/content/typography/)
+
+***
+
+## Amazing flexbox usage:
+
+[Link@bootstrap.com](https://getbootstrap.com/docs/4.0/utilities/flex/); 
+There are thousands of options for flex-box, you must look at the link. For general tasks.
+
+```html
+<div class="d-flex flex-row">
+      <div class="d-flex justify-content-center">
+        <img class="justify-content-center w-25" src="img1/airplane.png" alt="" />
+        <img class="justify-content-center w-25" src="img1/barbara.bmp" alt="" />
+        <img class="justify-content-center w-25" src="img1/baboon.png" alt="" />
+      </div>
+</div>
+```
+
+
+
+***
+
+## Cards
+
+Refer an awesome guide:- [link@w3schools](https://www.w3schools.com/bootstrap4/bootstrap_cards.asp).
+use this try it @ [w3schools.com](https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_card_link&stacked=h)
+**Good thing**: For any image you want to use in card layout, just use the class card-img-top in the img tag and the image will fit magically. 
+**FYI**:- **card-img-top** class just sets the image width to 100%, i.e. style="width:100%" or you may simply use the tag m-100 to set the width to 100%. This acually resizes the image to the width according to the device width, or incomparison to the device width.(i.e., w-75,w-50,w-25,)
+
+***
+
+text-white => sets the text color to white.
+
+***
+
+ <kbd>ctrl + p</kbd>
+
+```html
+ <kbd>ctrl + p</kbd>
+```
+
+
+
+***
+
+### Border
+
+#there is no option for thick borders, no option for 
+
+```html
+<span class="border">This will have border.</span>
+<span class="border-0">This will have no border</span>
+For colors
+<span class="border border-primary"></span>
+<span class="border border-secondary"></span>
+<span class="border border-success"></span>
+<span class="border border-danger"></span>
+<span class="border border-warning"></span>
+<span class="border border-info"></span>
+<span class="border border-light"></span>
+<span class="border border-dark"></span>
+<span class="border border-white"></span>
+```
+
+### Border Radius
+
+![image-20200517185214030](image-20200517185214030.png)
+
+***
+
+## Bootstrap 4 Default Settings
+
+Bootstrap 4 uses a default `font-size` of 16px(i.e., 1rem bcoz 16px = 1rem),
+ and its `line-height` is 1.5.
+
+The default `font-family` is "Helvetica Neue", Helvetica, Arial, sans-serif.
+
+In addition, all `` elements have `margin-top: 0` and `margin-bottom: 1rem` (16px by default).
+
+source: link@[w3schools](https://www.w3schools.com/bootstrap4/bootstrap_typography.asp)
+
+***
+
+
+
+# h1 Bootstrap heading (2.5rem = 40px)
+
+## h2 Bootstrap heading (2rem = 32px)
+
+### h3 Bootstrap heading (1.75rem = 28px)
+
+#### h4 Bootstrap heading (1.5rem = 24px)
+
+##### h5 Bootstrap heading (1.25rem = 20px)
+
+###### h6 Bootstrap heading (1rem = 16px)
+
+Source: link@[w3schools](https://www.w3schools.com/bootstrap4/bootstrap_typography.asp)
 
 ***
 
@@ -45,6 +159,10 @@ Note how .text-capitalize only changes the first letter of each word, leaving th
 ## Font weight and italics @ Bootstrap(same title)
 
 @[link](https://getbootstrap.com/docs/4.5/utilities/text/#font-weight-and-italics)
+
+bold and bolder look same on both desktop and mobile.
+light, and lighter look same on desktop, but vary significantly on mobile device. i.e.
+<img src="image-20200517190032249.png" alt="image-20200517190032249" style="zoom:30%;" />
 
 ```html
 <p class="font-weight-bold">Bold text.</p>
@@ -181,10 +299,32 @@ Bootstrap primarily uses the following media query ranges—or breakpoints—in 
 
 **@media (min-width: 576px) { ... } => THIS SAYS, THAT MARGINS/PADDINGS/ETC WILL ONLY APPLY WHEN VIEWPORT IS 576PX IN width or maximum.**
 
-My laptop's width: **1536px**
+```js
+function getWidth() {
+  return ({
+    a:document.body.scrollWidth,
+    b:document.documentElement.scrollWidth,
+    c:document.body.offsetWidth,
+    d:document.documentElement.offsetWidth,
+    e:document.documentElement.clientWidth
+  });
+}
+getWidth()
+*
+Executing we get:-
+{a: 1519, b: 1519, c: 1519, d: 1519, e: 1519} in chrome desktop browser.
+{a: 360, b: 368, c: 344, d: 360, e: 360} in mobile chrome browser. [REAL THAT WORKS => 352px]
+```
 
-My phone's width: **360px** (sm/md/lg/xl margins/padding/etc will not work straightaway.)
-(google - "check my browsers resolution", open any of the 1st,2nd,3rd site to get the width and height.)
+
+
+- My laptop's width: **1536px**
+  [**When calclulated with custom function(code can be found in same file), we get - 1519px**]
+
+- My phone's width: [**REAL THAT WORKS => 352px**] **360px** (#Redmi note 5, #Redmi note5) (sm/md/lg/xl margins/padding/etc will not work straightaway.)
+
+  [**When calclulated with custom function(code can be found in same file), we get - 368px**]
+  (google - "check my browsers resolution", open any of the 1st,2nd,3rd site to get the width and height.)
 
 ```
 // Extra small devices (portrait phones, less than 576px)
@@ -211,6 +351,9 @@ Also, you can alter all those values in bootstrap(you need to figure it out atle
 ### Padding and responsiveness with padding:
 
 [link](https://hackerthemes.com/bootstrap-cheatsheet/#p-1)
+
+Note: p5=> 3rem, p4=> 1.5rem, p3=> 1rem, p2=> 0.5rem, p1=> 0.25rem
+Same is for margins, i.e. m-5, m-4.. till m-1.
 
 ```html
 <div class="p-0 bg-primary d-inline-block">Padded Div</div>
@@ -266,8 +409,11 @@ Bootstrap requires the use of the HTML5 doctype. Without it, you’ll see some f
 
 @ bootstrap @ [link](https://getbootstrap.com/docs/4.5/utilities/text/)
 
+#### Text alignment: Classes:- text-center, text-right, text-left, text-justify.
+
+**Makes text bold:- font-weight-bold**
+
 ```
-font-weight-bold // Makes text bold
 <p class="text-left">Left aligned text on all viewport sizes.</p>
 <p class="text-center">Center aligned text on all viewport sizes.</p>
 <p class="text-right">Right aligned text on all viewport sizes.</p>

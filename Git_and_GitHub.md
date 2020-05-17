@@ -374,6 +374,8 @@ __
 $ hub create
 ```
 
+Note: Above command will just create the desired repository, but will not upload anything to any branch. You need to do it for the first time while specifying the default upstream remote.
+
 ```bash
 $ git push -u origin master #you need to do it manually, and now onwards you can do just git push.
 ```

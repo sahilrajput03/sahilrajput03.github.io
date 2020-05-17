@@ -150,7 +150,8 @@ $ hub gist create -v &lt;file1&gt; &lt;file2&gt; &lt;file3&gt; &lt;as many you w
 <p>Open the current repo in browser:</p>
 <pre class="hljs"><code>$ hub browse</code></pre><p>__</p>
 <h3 id="create-new-repositoryfrom-local-repositories:"><a class="header-link" href="#create-new-repositoryfrom-local-repositories:"></a>Create new repositoryfrom local repositories:</h3>
-<pre class="hljs"><code>$ hub create</code></pre><pre class="hljs"><code>$ git push -u origin master <span class="hljs-comment">#you need to do it manually, and now onwards you can do just git push.</span></code></pre><p>Above command will create the repository with the name of the folder in which the local repository is contained. If the folder is name is like, Part 1, then the repository name will be :- Part-1. Hyphen(dash) is added inplace of spaces.</p>
+<pre class="hljs"><code>$ hub create</code></pre><p>Note: Above command will just create the desired repository, but will not upload anything to any branch. You need to do it for the first time while specifying the default upstream remote.</p>
+<pre class="hljs"><code>$ git push -u origin master <span class="hljs-comment">#you need to do it manually, and now onwards you can do just git push.</span></code></pre><p>Above command will create the repository with the name of the folder in which the local repository is contained. If the folder is name is like, Part 1, then the repository name will be :- Part-1. Hyphen(dash) is added inplace of spaces.</p>
 <p>__</p>
 <h3 id="deleting-branch-with-hub:"><a class="header-link" href="#deleting-branch-with-hub:"></a>Deleting branch with hub:</h3>
 <p>You need to enable token for deleting repositories via visiting <a href="https://github.com/settings/tokens/">https://github.com/settings/tokens/</a> and opening hub for your pc. And then enable token for <strong>delete_repo</strong> and click <strong>Update token</strong> button. That&#39;s all.</p>
