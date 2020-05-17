@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
     <link rel="manifest" href="./manifest.webmanifest" />
   </head>
   <style>
@@ -42,9 +39,7 @@
     <b>Current Projects on GitHub</b><br /><br />
     <a href="/Government%20Stats.html">India - Political Bodies.html</a>
     <br /><br />
-    <a href="https://sahilrajput03.github.io/chirag-sahni/">
-      Chirag Sahni's Project</a
-    >
+    <a href="https://sahilrajput03.github.io/chirag-sahni/"> Chirag Sahni's Project</a>
     <br /><br />
     <a href="/md-docs/CSS%20-%20Rules.md">CSS.md</a> &nbsp;&nbsp;
     <a class="blue-line__buses" href="/md-docs/CSS%20-%20Rules.html">(html)</a>
@@ -60,19 +55,16 @@
     <br /><br />
     <a href="index2.html">List all markdowns</a><br /><br />
     <a href="more/index2">List more markdowns</a><br /><br />
+    <a href="learningBootstrap">learningBootstrap (github-repo)</a><br /><br />
     <hr />
     <br />
-    <a href="/md-docs/Javascript%20ES6%20-%20Rules.md"
-      >Javascript ES6 - Rules.md</a
-    >
+    <a href="/md-docs/Javascript%20ES6%20-%20Rules.md">Javascript ES6 - Rules.md</a>
     <br /><br />
     <a class="blue-line__buses" href="/Targets.md">Target Area@.md</a>
     <br /><br />
     <a href="http://mynameismosh.com/">mynameismosh.com</a> <br /><br />
     <a href="//jaadujinn.ml">JaaduJinn.ml</a> <br /><br />
-    <a class="blue-line__buses" href="/Targets.html"
-      >`( ) => Thing Unites Here.html`</a
-    >
+    <a class="blue-line__buses" href="/Targets.html">`( ) => Thing Unites Here.html`</a>
     <br /><br />
     <hr />
     <a href="https://www.wikimedia.org">Wikimedia</a> <br /><br />
@@ -82,9 +74,7 @@
     <br /><br />
     <a href="http://www.bbc.co.uk/learningenglish/">BBC - LearnEnglish</a>
     &nbsp;&nbsp;
-    <a href="https://fsymbols.com/keyboard/windows/alt-codes/list/shortcuts/"
-      >ALT Symbolsc</a
-    >
+    <a href="https://fsymbols.com/keyboard/windows/alt-codes/list/shortcuts/">ALT Symbolsc</a>
 
     <hr />
     <hr />
