@@ -2797,6 +2797,8 @@ https://npm.runkit.com/
 
 ## => Always prefer: live-server
 
+live-server - It **opens the url** at which the folder is server when **you execute the live-server command** in a folder automatically.[command - $live-server]
+
 **Directory Listings support:** live-server, http-server,  No-> static-server, No -> lite-server
 
 **Hotreload Support:** live-server(works on mobile browsers too(**tested - redmi note 5**)), lite-server(*[this tool shows  Browser Sync connected everytime the page is refreshed, so could be a little annoying]works on mobile browsers too(**tested - redmi note 5**)), NO -> static-server(but manual refresh does work), NO ->http-server(but manual refresh does work)
@@ -3214,6 +3216,10 @@ C:\Users\chetan\AppData\Roaming\npm\node_modules\markdown-styles\layouts\github\
 }
 #This is required as in mobile-view, the paddind from left is only taken into cosideration, not from right, and that makes the design bad of the webpage.
 ```
+
+*
+
+Also for the need to convert to convert to single html document from all the md docs, you can use pandoc and you need to find for the options that you need to convert to one file, you may search for the already learned tactics in pandoc command line via searching typora "pandoc".
 
 **
 
@@ -3639,3 +3645,12 @@ The error says, --sayAge is not a function--, which is ridiculously wrong as per
 
 ***
 
+Below command console, debug console, and other things are contained in panel. You can move the panel like., 
+
+![image-20200517150411093](image-20200517150411093.png)
+
+***
+
+The next.js library that [ React Fast Refresh, Incremental Static Regeneration, New Environment Support, Built-in Fetch, and more!](https://nextjs.org/blog/next-9-4).![image-20200517150344687](image-20200517150344687.png)
+
+Help link for next.js @ [link](https://www.freecodecamp.org/news/the-next-js-handbook/). Official Documentation: [link](https://nextjs.org/docs). 

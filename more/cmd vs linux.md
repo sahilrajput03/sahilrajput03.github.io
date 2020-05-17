@@ -5,9 +5,18 @@ ping 192.168.1.1 | clip #copies to clipboard
 help | clip	#copies to cilpboard
 ```
 
+
+
 ```bash
+WHEN YOU NEED STDERR OUTUPUT TO SUPPLY TO OTHER THING, LIKE FINDSTR OR GREP:-
+2|
 |&
+```
+
+```
+WHEN YOU NEED STDERR OUTUPUT TO A FILE:- 
 &>
+2>
 ```
 
 
@@ -58,7 +67,7 @@ https://unix.stackexchange.com/questions/19654/how-do-i-change-the-extension-of-
 
 ***
 
-## Converting multiple file with pandocto html, pandoc
+## Converting multiple file with pandoc to html, pandoc
 
 (designing problem with pandoc, so avoiding for a while)
 

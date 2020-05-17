@@ -1,0 +1,1 @@
+[![deno doc](badge.svg)](https://doc.deno.land/https/deno.land/std/fs/mod.ts)
