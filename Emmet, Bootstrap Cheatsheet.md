@@ -4,7 +4,7 @@
 
 ## html property:- width vs max-width
 
-[Link](https://developer.mozilla.org/en-US/docs/Web/CSS/max-width)
+[Link@MDN Everything you need to know.](https://developer.mozilla.org/en-US/docs/Web/CSS/max-width)
 
 ![image-20200517224016825](image-20200517224016825.png)
 
