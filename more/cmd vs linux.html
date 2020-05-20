@@ -3,13 +3,60 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Copy something to clipboard</title>
+    <title>Moving around in vi</title>
     <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="copy-something-to-clipboard"><a class="header-link" href="#copy-something-to-clipboard"></a>Copy something to clipboard</h2>
+    <article class="markdown-body"><h2 id="moving-around-in-vi"><a class="header-link" href="#moving-around-in-vi"></a>Moving around in vi</h2>
+<pre class="hljs"><code>$ vi
+$ vim
+<span class="hljs-comment"># Above two commands link to same file. Below one is an alias for the above. It was need earlier so as to distinguish between two programs, but now they are same, as older vi is no-more there. Also, vim stands for vi iMproved. Also, vi --version and vim --version outputs same version of vim.</span></code></pre><pre class="hljs"><code><span class="hljs-comment"># All these bindings work in edit mode, not in insert mode, you can get in edit mode via pressing Esc anytime.</span>
+u : get the last saved changes of the file, reget the file(get rid of current changes)
+j : downline
+k : upline
+l : cursor right
+h : cursor left
+Ctrl + W : Deletes word to the left(Like, Ctrl + backspace <span class="hljs-keyword">in</span> windows)
+v : select and hold, now the youcan select the text,Yipeee with Right/Down/Up/Right, or with H,J,K,L.
+b : Move cursor to the start of the word before the cursor.
+Ctrl + E : Deletes the first line <span class="hljs-keyword">in</span> the file.
+<span class="hljs-comment">#Works in bash too, deleting word with Ctrl+W.</span>
+dd : would delete the line
+Home Key: Move to start of line.(Also works <span class="hljs-keyword">in</span> bash cli)
+End Key: Move to end of line. (Also works <span class="hljs-keyword">in</span> bash cli)
+BAsh cli: 
+Ctrl+ P: Up Arrow(get last <span class="hljs-built_in">command</span>)
+Ctrl+ N: Down Arrow(vice-versa)
+Home key, Ctrl + K : Deletes the <span class="hljs-built_in">command</span> typed.
+Ctrl + T : Transpose the left and right to the cursor (FIXING TYPO :D)
+<span class="hljs-comment"># Understanding for block cursor: Transposes the character before the cursor with the character under the cursor.</span></code></pre><h3 id="saving-file"><a class="header-link" href="#saving-file"></a>Saving file</h3>
+<pre class="hljs"><code>$ vi <span class="hljs-comment"># Creates a empty file.</span>
+:wq &lt;filename.txt&gt;
+<span class="hljs-comment">#Edit the file, and save and exit.</span></code></pre><pre class="hljs"><code>$ vi &lt;filename&gt; <span class="hljs-comment">#Opens the given file</span></code></pre><pre class="hljs"><code>$ vi file1.txt
+<span class="hljs-comment"># Let say we made some changes, and need to save the file to newfile with name file2.txt and exit.</span>
+$ :wq! file2.txt <span class="hljs-comment"># We need ! (coz cache of the file1.txt is modified, and we need to get rid of it)</span>
+<span class="hljs-comment"># So, we are having what we desired :D.</span></code></pre><h3 id="to-read-a-file"><a class="header-link" href="#to-read-a-file"></a>To Read a file</h3>
+<pre class="hljs"><code>$ cat &lt;filename&gt;</code></pre><hr>
+<h3 id="hahah!!"><a class="header-link" href="#hahah!!"></a>Hahah!!</h3>
+<pre class="hljs"><code>Transpose Text or Change Case on the Command Line
+These shortcuts will transpose or change the <span class="hljs-keyword">case</span> of letters or words on the <span class="hljs-built_in">command</span> line:
+
+Ctrl+T – transposes the character before the cursor with the character under the cursor.
+Esc and <span class="hljs-keyword">then</span> T – transposes the two words immediately before (or under) the cursor.
+Esc and <span class="hljs-keyword">then</span> U – transforms the text from the cursor to the end of the word to uppercase.
+Esc and <span class="hljs-keyword">then</span> L – transforms the text from the cursor to the end of the word to lowercase.
+Esc and <span class="hljs-keyword">then</span> C – changes the letter under the cursor (or the first letter of the next word) to uppercase, leaving the rest of the word unchanged.
+</code></pre><pre class="hljs"><code>Ctrl + A: Move to start of the line
+Ctrl + E: Move to the end of line.</code></pre><h2 id="deleting-things-on-cli:"><a class="header-link" href="#deleting-things-on-cli:"></a>Deleting things on cli:</h2>
+<pre class="hljs"><code>Delete Text on the Command Line
+The following shortcuts are used <span class="hljs-keyword">for</span> deleting text on the <span class="hljs-built_in">command</span> line:
+
+Ctrl+D or Delete – remove or deletes the character under the cursor.
+Ctrl+K – removes all text from the cursor to the end of the line.
+Ctrl+X and <span class="hljs-keyword">then</span> Backspace – removes all the text from the cursor to the beginning of the line.</code></pre><hr>
+<h2 id="copy-something-to-clipboard"><a class="header-link" href="#copy-something-to-clipboard"></a>Copy something to clipboard</h2>
 <pre class="hljs"><code>ping 192.168.1.1 | clip <span class="hljs-comment">#copies to clipboard</span>
 <span class="hljs-built_in">help</span> | clip    <span class="hljs-comment">#copies to cilpboard</span></code></pre><pre class="hljs"><code>WHEN YOU NEED STDERR OUTUPUT TO SUPPLY TO OTHER THING, LIKE FINDSTR OR GREP:-
 2|
@@ -33,10 +80,13 @@ git commit | findstr will
 git add -h 2| findstr dry <span class="hljs-comment">#operator that supplies stderr to the findstr command, OPTION1</span>
 git add -h |&amp; findstr dry <span class="hljs-comment">#operator that supplies stderr to the findstr command, OPTION2</span>
 git commit -h 2| findstr dry <span class="hljs-comment">#operator that supplies stderr to the findstr command</span>
-</code></pre><h3 id="using-grep:"><a class="header-link" href="#using-grep:"></a>Using grep:</h3>
+git | findstr git | findstr and 
+<span class="hljs-comment"># So findstr can be chained like this, such that outputs are transferred to next one using pipe</span></code></pre><h3 id="using-grep:"><a class="header-link" href="#using-grep:"></a>Using grep:</h3>
 <pre class="hljs"><code><span class="hljs-comment"># using grep to find(bash, linux)</span>
 git add -h 2| grep dry <span class="hljs-comment"># 2| operator is needed when there are switches in the command i.e., -h here.</span>
-<span class="hljs-built_in">help</span> | grep <span class="hljs-keyword">done</span></code></pre><hr>
+<span class="hljs-built_in">help</span> | grep <span class="hljs-keyword">done</span>
+git | grep git | grep and 
+<span class="hljs-comment"># So grep can be chained like this, such that outputs are transferred to next one using pipe</span></code></pre><hr>
 <h2 id="renaming-extensions-of-multiple-files:"><a class="header-link" href="#renaming-extensions-of-multiple-files:"></a>Renaming extensions of multiple files:</h2>
 <p><a href="https://unix.stackexchange.com/questions/19654/how-do-i-change-the-extension-of-multiple-files">https://unix.stackexchange.com/questions/19654/how-do-i-change-the-extension-of-multiple-files</a></p>
 <hr>

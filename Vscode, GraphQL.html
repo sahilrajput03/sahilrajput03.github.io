@@ -3,13 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Point to remeber</title>
+    <title>Running apollo server(graphql) on custom port:</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="point-to-remeber"><a class="header-link" href="#point-to-remeber"></a>Point to remeber</h2>
+    <article class="markdown-body"><h2 id="running-apollo-server(graphql)-on-custom-port:"><a class="header-link" href="#running-apollo-server(graphql)-on-custom-port:"></a>Running apollo server(graphql) on custom port:</h2>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> server = <span class="hljs-keyword">new</span> ApolloServer({
+  typeDefs,
+  resolvers,
+});
+
+server.listen({<span class="hljs-attr">port</span>: <span class="hljs-number">4001</span>}).then(<span class="hljs-function">(<span class="hljs-params">{ url }</span>) =&gt;</span> { <span class="hljs-comment">//This line is modified, port is supplied explicitly.</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Server ready at <span class="hljs-subst">${url}</span>`</span>);
+});
+</code></pre><hr>
+<h2 id="point-to-remeber"><a class="header-link" href="#point-to-remeber"></a>Point to remeber</h2>
 <ul class="list">
 <li>The type <em>YesNo</em> is GraphQL <a href="https://graphql.org/learn/schema/#enumeration-types">enum</a>, or an enumerable, with two possible values <em>YES</em> or <em>NO</em>.</li>
 <li>All below code snippets are for graphQL playground. Execute any of the below.</li>
@@ -111,10 +121,10 @@ query query2 {
 }
 
 query query3 {
-  allBooks {
-    title
-    author
-  }
+    allBooks {
+        title
+        author
+    }
 }
 
 query customGenre {

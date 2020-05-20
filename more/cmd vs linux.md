@@ -1,11 +1,107 @@
+## Moving around in vi
+
+```bash
+$ vi
+$ vim
+# Above two commands link to same file. Below one is an alias for the above. It was need earlier so as to distinguish between two programs, but now they are same, as older vi is no-more there. Also, vim stands for vi iMproved. Also, vi --version and vim --version outputs same version of vim.
+```
+
+
+
+```BASH
+# All these bindings work in edit mode, not in insert mode, you can get in edit mode via pressing Esc anytime.
+u : get the last saved changes of the file, reget the file(get rid of current changes)
+j : downline
+k : upline
+l : cursor right
+h : cursor left
+Ctrl + W : Deletes word to the left(Like, Ctrl + backspace in windows)
+v : select and hold, now the youcan select the text,Yipeee with Right/Down/Up/Right, or with H,J,K,L.
+b : Move cursor to the start of the word before the cursor.
+Ctrl + E : Deletes the first line in the file.
+#Works in bash too, deleting word with Ctrl+W.
+dd : would delete the line
+Home Key: Move to start of line.(Also works in bash cli)
+End Key: Move to end of line. (Also works in bash cli)
+BAsh cli: 
+Ctrl+ P: Up Arrow(get last command)
+Ctrl+ N: Down Arrow(vice-versa)
+Home key, Ctrl + K : Deletes the command typed.
+Ctrl + T : Transpose the left and right to the cursor (FIXING TYPO :D)
+# Understanding for block cursor: Transposes the character before the cursor with the character under the cursor.
+```
+
+### Saving file
+
+```bash
+$ vi # Creates a empty file.
+:wq <filename.txt>
+#Edit the file, and save and exit.
+```
+
+```bash
+$ vi <filename> #Opens the given file
+```
+
+```bash
+$ vi file1.txt
+# Let say we made some changes, and need to save the file to newfile with name file2.txt and exit.
+$ :wq! file2.txt # We need ! (coz cache of the file1.txt is modified, and we need to get rid of it)
+# So, we are having what we desired :D.
+```
+
+
+
+### To Read a file
+
+```bash
+$ cat <filename>
+```
+
+***
+
+### Hahah!!
+
+```bash
+Transpose Text or Change Case on the Command Line
+These shortcuts will transpose or change the case of letters or words on the command line:
+
+Ctrl+T – transposes the character before the cursor with the character under the cursor.
+Esc and then T – transposes the two words immediately before (or under) the cursor.
+Esc and then U – transforms the text from the cursor to the end of the word to uppercase.
+Esc and then L – transforms the text from the cursor to the end of the word to lowercase.
+Esc and then C – changes the letter under the cursor (or the first letter of the next word) to uppercase, leaving the rest of the word unchanged.
+
+```
+
+```bash
+Ctrl + A: Move to start of the line
+Ctrl + E: Move to the end of line.
+```
+
+
+
+## Deleting things on cli:
+
+```bash
+Delete Text on the Command Line
+The following shortcuts are used for deleting text on the command line:
+
+Ctrl+D or Delete – remove or deletes the character under the cursor.
+Ctrl+K – removes all text from the cursor to the end of the line.
+Ctrl+X and then Backspace – removes all the text from the cursor to the beginning of the line.
+```
+
+
+
+***
+
 ## Copy something to clipboard
 
 ```bash
 ping 192.168.1.1 | clip #copies to clipboard
 help | clip	#copies to cilpboard
 ```
-
-
 
 ```bash
 WHEN YOU NEED STDERR OUTUPUT TO SUPPLY TO OTHER THING, LIKE FINDSTR OR GREP:-
@@ -46,7 +142,8 @@ git commit | findstr will
 git add -h 2| findstr dry #operator that supplies stderr to the findstr command, OPTION1
 git add -h |& findstr dry #operator that supplies stderr to the findstr command, OPTION2
 git commit -h 2| findstr dry #operator that supplies stderr to the findstr command
-
+git | findstr git | findstr and 
+# So findstr can be chained like this, such that outputs are transferred to next one using pipe
 ```
 
 ### Using grep:
@@ -55,6 +152,8 @@ git commit -h 2| findstr dry #operator that supplies stderr to the findstr comma
 # using grep to find(bash, linux)
 git add -h 2| grep dry # 2| operator is needed when there are switches in the command i.e., -h here.
 help | grep done
+git | grep git | grep and 
+# So grep can be chained like this, such that outputs are transferred to next one using pipe
 ```
 
 

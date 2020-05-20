@@ -1,3 +1,23 @@
+
+
+## Running apollo server(graphql) on custom port:
+
+```js
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
+
+server.listen({port: 4001}).then(({ url }) => { //This line is modified, port is supplied explicitly.
+  console.log(`Server ready at ${url}`);
+});
+
+```
+
+
+
+***
+
 ## Point to remeber
 
 - The type *YesNo* is GraphQL [enum](https://graphql.org/learn/schema/#enumeration-types), or an enumerable, with two possible values *YES* or *NO*.
@@ -152,10 +172,10 @@ query query2 {
 }
 
 query query3 {
-  allBooks {
-    title
-    author
-  }
+    allBooks {
+        title
+        author
+    }
 }
 
 query customGenre {

@@ -1,6 +1,6 @@
 ## Info: 
 
-If the download is paused, you can do ctrl+c to refresh.(hacks)
+If the download is paused, you can do press **Enter key**  or **ctrl+c** to **refresh** the currently downloading video or playlist.(hacks)
 
 ***
 

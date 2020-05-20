@@ -3487,7 +3487,7 @@ console.log("Back to the outer level");
 
 ***
 
-## Json api fetch:
+## Webpage or Json api fetch:
 
 ```js
 //fetch is available in browser only
@@ -3654,3 +3654,20 @@ Below command console, debug console, and other things are contained in panel. Y
 The next.js library that [ React Fast Refresh, Incremental Static Regeneration, New Environment Support, Built-in Fetch, and more!](https://nextjs.org/blog/next-9-4).![image-20200517150344687](image-20200517150344687.png)
 
 Help link for next.js @ [link](https://www.freecodecamp.org/news/the-next-js-handbook/). Official Documentation: [link](https://nextjs.org/docs). 
+
+***
+
+```
+}, [result.data])  // eslint-disable-line 
+```
+
+
+
+***
+
+Using your **C** key, you can turn captions on or off.
+
+To increase the size of the captions, use the **+ (plus)** key. To decrease the size of the captions, use the **– (minus)** key.
+
+***
+

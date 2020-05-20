@@ -2,30 +2,62 @@
 
 ***
 
-### Deno Handbook Goodone:
+denon  - a watch mode tool for deno (third party modules, mentioned at https://deno.land/x/denon)
 
-@[freecodecamp.org](https://www.freecodecamp.org/news/the-deno-handbook/)
+Installation:
+
+```bash
+$ deno install -Af --unstable https://deno.land/x/denon/denon.ts
+```
+
+```bash
+# To get knowledge about install command in deno, you can do..
+$ deno help install #This is about deno, not denon.
+# Also, 
+# -A, --allow-all                    Allow all permissions
+# -f, --force                        Forcefully overwrite existing installation
+# --unstable                     	 Enable unstable APIs
+```
+
+```bash
+$ denon -h # this will print the help text for denon
+```
+
+
+
+### Usage:
+
+**To use denon simply** think of `denon` as an alternative to `deno run` which accepts all the same flags if no flags or configuration has been set.
+
+```markdown
+Usage:    denon [COMMANDS] [OPTIONS] [DENO_ARGS] [SCRIPT] [-- <SCRIPT_ARGS>]
+OPTIONS:    -c, --config <file>     A path to a config file, defaults to [default: .denon | .denon.json | .denonrc | .denonrc.json]    -d, --debug             Debugging mode for more verbose logging    -e, --extensions        List of extensions to look for separated by commas    -f, --fullscreen        Clears the screen each reload    -h, --help              Prints this    -i, --interval <ms>     The number of milliseconds between each check    -m, --match <glob>      Glob pattern for all the files to match    -q, --quiet             Turns off all logging    -s, --skip <glob>       Glob pattern for ignoring specific files or directories    -w, --watch             List of paths to watch separated by commas        --fmt               Adds a deno fmt executor        --test              Adds a deno test executor
+COMMANDS:    fmt                     Alias for flag --fmt    test                    Alias for flag --test
+DENO_ARGS: Arguments passed to Deno to run SCRIPT (like permisssions)
+```
 
 ***
 
-### Install the extension:
+### Deno Handbook Goodone:
+
+@[freecodecamp.org](https://www.freecodecamp.org/news/the-deno-handbook/)the extension:
 
 ![image-20200518141102778](image-20200518141102778.png)
 
 ***
 
-```
+```bash
 $ deno run --allow-net --allow-read http://deno.land/std/http/file_server.ts
 $ deno run -A <file/url.ts>
-both commands run fine, below one gives all needed permissions to the program automatically.
+# both commands run fine, below one gives all needed permissions to the program automatically.
 ```
 
 
 
 ***
 
-```
-deno info <any file/ program's url>
+```bash
+$ deno info <any file/ program's url>
 # above command will show the dependency tree of the dependencies included and other general information.
 ```
 
@@ -34,7 +66,7 @@ deno info <any file/ program's url>
 ***
 
 ```bash
-deno fmt <any js or ts file>
+$ deno fmt <any js or ts file>
 #This command will run prettier on the file.
 #JavaScript programmers are used to running Prettier, and deno fmt actually runs that under the hood.
 ```
@@ -49,8 +81,8 @@ Get and post request with deno program
 
 Run the below fine as 
 
-```
-deno run <this file>
+```bash
+$ deno run <this file>
 ```
 
 ```
@@ -71,8 +103,8 @@ console.log("Listening on http://localhost:5000/");
 
 ***
 
-```
-deno -A index.ts
+```bash
+$ deno -A index.ts
 ```
 
 '	-A flag provides all the necessary permission for your app to run on your machine*
@@ -97,7 +129,7 @@ The JavaScript APIs that we have invented to interact with the operating system 
 
 ### Program
 
-```
+```bash
 $ deno run --allow-net HelloDeno.ts
 ```
 
@@ -117,8 +149,8 @@ for await (const req of s) {
 
 ### Hello world program
 
-```js
-deno run https://deno.land/std/examples/welcome.ts
+```bash
+$ deno run https://deno.land/std/examples/welcome.ts
 ```
 
 
@@ -127,10 +159,10 @@ deno run https://deno.land/std/examples/welcome.ts
 
 ### Installing
 
-```
-choco install deno
-or
-iwr https://deno.land/x/install/install.ps1 -useb | iex
+```bash
+$ choco install deno
+# OR You can try with powershell too. With the below command - 
+$ iwr https://deno.land/x/install/install.ps1 -useb | iex
 (powershell)
 ```
 
@@ -138,9 +170,9 @@ iwr https://deno.land/x/install/install.ps1 -useb | iex
 
 ***
 
-[![deno doc](badge.svg)](https://doc.deno.land/https/deno.land/std/fs/mod.ts)
+[![deno doc](badge.svg)](https://doc.deno.land/https/deno.land/std/fs/mod.ts) <= **Deno Documentation Tag**
 
-A must read article on wikipedia @ [link](https://en.wikipedia.org/wiki/Deno_(software)) . Lists all general things you need to know.
+A must read article on wikipedia @ [link](https://en.wikipedia.org/wiki/Deno_software) . Lists all general things you need to know.
 
 ***
 

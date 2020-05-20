@@ -3,13 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Git rebase:</title>
+    <title>Git Organization</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><hr>
+    <article class="markdown-body"><h2 id="git-organization"><a class="header-link" href="#git-organization"></a>Git Organization</h2>
+<p>Assigning base permission to the organization, so that everone in the organization can push to the repositories. While if set to <strong>Read</strong>, they&#39;ll be able to see private repositories and create pull requests to them.</p>
+<p class="img-container"><img src="image-20200520150529975.png" alt="image-20200520150529975"></p>
+<hr>
 <p><a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a> :-&gt; In terminal you can write, 
 <strong>reset</strong> to reset the level.
 <strong>levels</strong> to show all the levels
@@ -51,16 +54,17 @@ git checkout -b myDesiredBranchYikes
 <span class="hljs-comment"># Hint: when you have checked out at an earlier commit, you can view the commit history via git log, to see what are the earlier commits to this HEAD.</span></code></pre><p>Or a simple single command:-</p>
 <pre class="hljs"><code>git checkout -b old-state 0d1d7<span class="hljs-built_in">fc</span>32</code></pre><hr>
 <h2 id="edit-content-and-name-both-of-last-commit:"><a class="header-link" href="#edit-content-and-name-both-of-last-commit:"></a>Edit CONTENT AND NAME BOTH of last commit:</h2>
-<pre class="hljs"><code>git add . <span class="hljs-comment"># or add individual files*(git add -A will does exactly same)</span>
+<pre class="hljs"><code>git add . <span class="hljs-comment"># or add individual files*(git add -A will does exactly same git add .)</span>
 <span class="hljs-comment"># IMPORTANT: If you haven't added any files, that means you have just changed some files only, then you must prefer(#2 ADDITIONALLY) that as that is one liner.</span>
 git commit --amend
-<span class="hljs-comment">#hence you'll be prompted to change the name of the commit, with new changes included.</span></code></pre><h3 id="#2-additionally"><a class="header-link" href="##2-additionally"></a>#2 ADDITIONALLY</h3>
+<span class="hljs-comment">#hence you'll be prompted to change the name of the commit, with new changes included.</span></code></pre><h3 id="#2-additionally(if-you-haven't-created-any-new-files,-managed-changes-to-old-files-only)"><a class="header-link" href="##2-additionally(if-you-haven't-created-any-new-files,-managed-changes-to-old-files-only)"></a>#2 ADDITIONALLY(if you haven&#39;t created any new files, managed changes to old files only)</h3>
 <p>It could be done in one line too-</p>
 <pre class="hljs"><code>git commit <span class="hljs-_">-a</span> --amend
-<span class="hljs-comment">#this will prompt for name change as well as add the older tracking files to the tracking too before making the commit.</span></code></pre><hr>
+<span class="hljs-comment">#This will prompt for NAME CHANGE as well as add the OLDER TRACKING FILES to the TRACKING too before making the commit.</span></code></pre><hr>
 <h2 id="edit-the-content-only-of-last-commit:"><a class="header-link" href="#edit-the-content-only-of-last-commit:"></a>Edit the CONTENT ONLY of last commit:</h2>
 <pre class="hljs"><code>git add . <span class="hljs-comment"># or add individual files</span>
-git commit --amend --no-edit</code></pre><p>Source: <a href="https://ohshitgit.com/#change-last-commit">ohshitgit.com</a> - amazing must read website..</p>
+git commit --amend --no-edit
+<span class="hljs-comment"># --no-edit: Specifies that we don't need to change the name of the commit.</span></code></pre><p>Source: <a href="https://ohshitgit.com/#change-last-commit">ohshitgit.com</a> - amazing must read website..</p>
 <hr>
 <h2 id="change-the-message-only-of-last-commit"><a class="header-link" href="#change-the-message-only-of-last-commit"></a>Change the MESSAGE ONLY of last commit</h2>
 <pre class="hljs"><code>git commit --amend</code></pre><hr>
@@ -141,18 +145,33 @@ They can <span class="hljs-keyword">then</span> ask you <span class="hljs-built_
 <h2 id="create-branch-name-with-a-slash"><a class="header-link" href="#create-branch-name-with-a-slash"></a>Create branch name with a slash</h2>
 <pre class="hljs"><code>$  git checkout -b hotfix/fixed-readme</code></pre><hr>
 <h2 id="install-hub-with-choco(to-manage-github-via-command-line)"><a class="header-link" href="#install-hub-with-choco(to-manage-github-via-command-line)"></a>Install hub with choco(to manage github via command line)</h2>
-<pre class="hljs"><code>$ choco install hub</code></pre><p>To get general info about hub command-line:</p>
+<pre class="hljs"><code>$ choco install hub</code></pre><p>To get general info about hub com</p>
+<p>mand-line:</p>
 <pre class="hljs"><code>$ hub</code></pre><p>Create new gist:</p>
 <pre class="hljs"><code>$ hub gist create -c &lt;file&gt; <span class="hljs-comment"># you could have used --public instead, but it would not copy the url to clipboard but echo the url on terminal.</span>
 $ hub gist create -v &lt;file1&gt; &lt;file2&gt; &lt;file3&gt; &lt;as many you want&gt;</code></pre><p>above command copies the url of the file on web to clipboard.</p>
 <pre class="hljs"><code>$ hub gist create -co &lt;file&gt;</code></pre><p>above command <strong>c</strong>opies the url, and <strong>o</strong>pens it in default browser.</p>
 <p>__</p>
 <p>Open the current repo in browser:</p>
-<pre class="hljs"><code>$ hub browse</code></pre><p>__</p>
+<pre class="hljs"><code>$ hub browse
+<span class="hljs-comment">#this will open the url in default browser.</span>
+Also, <span class="hljs-keyword">if</span> you want just get the url <span class="hljs-keyword">in</span> clipboard only, you must <span class="hljs-keyword">do</span> 
+$ hub browse -c</code></pre><hr>
 <h3 id="create-new-repositoryfrom-local-repositories:"><a class="header-link" href="#create-new-repositoryfrom-local-repositories:"></a>Create new repositoryfrom local repositories:</h3>
-<pre class="hljs"><code>$ hub create</code></pre><p>Note: Above command will just create the desired repository, but will not upload anything to any branch. You need to do it for the first time while specifying the default upstream remote.</p>
-<pre class="hljs"><code>$ git push -u origin master <span class="hljs-comment">#you need to do it manually, and now onwards you can do just git push.</span></code></pre><p>Above command will create the repository with the name of the folder in which the local repository is contained. If the folder is name is like, Part 1, then the repository name will be :- Part-1. Hyphen(dash) is added inplace of spaces.</p>
-<p>__</p>
+<pre class="hljs"><code>$ hub create
+$ hub create &lt;You can specify the name, <span class="hljs-keyword">if</span> not it will be the name of the folder(with spaces as dashes)&gt;</code></pre><pre class="hljs"><code>C:\Users\chetan&gt;hub create -h
+Usage: hub create [-poc] [<span class="hljs-_">-d</span> &lt;DESCRIPTION&gt;] [-h &lt;HOMEPAGE&gt;] [[&lt;ORGANIZATION&gt;/]&lt;NAME&gt;]
+<span class="hljs-comment"># -d for description of the repository, -h for setting the homepage, </span></code></pre><pre class="hljs"><code><span class="hljs-comment"># You can view the default upstreadm of all the branches via (default remote of all branches)</span>
+$ git branch -vv <span class="hljs-comment">#shows for all</span></code></pre><p>Note: Above command will just create the desired repository, but will not upload anything to any branch. You need to do 
+it for the first time while specifying the default upstream remote.</p>
+<pre class="hljs"><code>$ git push -u origin master <span class="hljs-comment">#you need to do it manually, and now onwards you can do just git push.</span>
+$ hub browse <span class="hljs-comment"># will open the repo in the browser.</span>
+Also, <span class="hljs-keyword">if</span> you want just get the url <span class="hljs-keyword">in</span> clipboard only, you must <span class="hljs-keyword">do</span> 
+$ hub browse -c</code></pre><p>Above command will create the repository with the name of the folder in which the local repository is contained. If the folder is name is like, Part 1, then the repository name will be :- Part-1. Hyphen(dash) is added inplace of spaces.</p>
+<pre class="hljs"><code><span class="hljs-comment"># Similarly,</span>
+$ hub delete &lt;repository-name&gt; 
+<span class="hljs-comment">#Above will prompt you fro confirmation. To bypass confirmation use switch -y.</span>
+$ hub delete &lt;repository-name&gt; -y <span class="hljs-comment">#This bypasss the deleting confirmation.</span></code></pre><hr>
 <h3 id="deleting-branch-with-hub:"><a class="header-link" href="#deleting-branch-with-hub:"></a>Deleting branch with hub:</h3>
 <p>You need to enable token for deleting repositories via visiting <a href="https://github.com/settings/tokens/">https://github.com/settings/tokens/</a> and opening hub for your pc. And then enable token for <strong>delete_repo</strong> and click <strong>Update token</strong> button. That&#39;s all.</p>
 <pre class="hljs"><code>$ hub delete &lt;repo-name&gt;</code></pre><p>View repository: <a href="https://github.com/github/hub">https://github.com/github/hub</a> to learn more about hub commandline.</p>
@@ -436,7 +455,7 @@ _
 Delete Local Branch
 $ git branch <span class="hljs-_">-d</span> branch_name
 $ git branch -D branch_name
-<span class="hljs-comment"># <span class="hljs-doctag">Note:</span> The -d option is an alias for --delete, which only deletes the branch if it has already been fully merged in its upstream branch. </span>
+<span class="hljs-comment"># Note: The -d option is an alias for --delete, which only deletes the branch if it has already been fully merged in its upstream branch. </span>
 <span class="hljs-comment"># You could also use -D, which is an alias for --delete --force, which deletes the branch "irrespective of its merged status." [Source: man git-branch]</span>
 
 _

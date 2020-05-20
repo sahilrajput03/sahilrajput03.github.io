@@ -1,4 +1,8 @@
+## Git Organization
 
+Assigning base permission to the organization, so that everone in the organization can push to the repositories. While if set to **Read**, they'll be able to see private repositories and create pull requests to them.
+
+![image-20200520150529975](image-20200520150529975.png)
 
 ***
 
@@ -110,19 +114,19 @@ git checkout -b old-state 0d1d7fc32
 ## Edit CONTENT AND NAME BOTH of last commit:
 
 ```bash
-git add . # or add individual files*(git add -A will does exactly same)
+git add . # or add individual files*(git add -A will does exactly same git add .)
 # IMPORTANT: If you haven't added any files, that means you have just changed some files only, then you must prefer(#2 ADDITIONALLY) that as that is one liner.
 git commit --amend
 #hence you'll be prompted to change the name of the commit, with new changes included.
 ```
 
-### #2 ADDITIONALLY
+### #2 ADDITIONALLY(if you haven't created any new files, managed changes to old files only)
 
 It could be done in one line too-
 
 ```bash
 git commit -a --amend
-#this will prompt for name change as well as add the older tracking files to the tracking too before making the commit.
+#This will prompt for NAME CHANGE as well as add the OLDER TRACKING FILES to the TRACKING too before making the commit.
 ```
 
 
@@ -134,6 +138,7 @@ git commit -a --amend
 ```bash
 git add . # or add individual files
 git commit --amend --no-edit
+# --no-edit: Specifies that we don't need to change the name of the commit.
 ```
 
 Source: [ohshitgit.com](https://ohshitgit.com/#change-last-commit) - amazing must read website..
@@ -337,7 +342,9 @@ $  git checkout -b hotfix/fixed-readme
 $ choco install hub
 ```
 
-To get general info about hub command-line:
+To get general info about hub com
+
+mand-line:
 
 ```bash
 $ hub
@@ -364,25 +371,54 @@ Open the current repo in browser:
 
 ```bash
 $ hub browse
+#this will open the url in default browser.
+Also, if you want just get the url in clipboard only, you must do 
+$ hub browse -c
 ```
 
-__
+***
 
 ### Create new repositoryfrom local repositories:
 
 ```bash
 $ hub create
+$ hub create <You can specify the name, if not it will be the name of the folder(with spaces as dashes)>
 ```
 
-Note: Above command will just create the desired repository, but will not upload anything to any branch. You need to do it for the first time while specifying the default upstream remote.
+```bash
+C:\Users\chetan>hub create -h
+Usage: hub create [-poc] [-d <DESCRIPTION>] [-h <HOMEPAGE>] [[<ORGANIZATION>/]<NAME>]
+# -d for description of the repository, -h for setting the homepage, 
+```
+
+```bash
+# You can view the default upstreadm of all the branches via (default remote of all branches)
+$ git branch -vv #shows for all
+```
+
+
+Note: Above command will just create the desired repository, but will not upload anything to any branch. You need to do 
+it for the first time while specifying the default upstream remote.
 
 ```bash
 $ git push -u origin master #you need to do it manually, and now onwards you can do just git push.
+$ hub browse # will open the repo in the browser.
+Also, if you want just get the url in clipboard only, you must do 
+$ hub browse -c
 ```
 
 Above command will create the repository with the name of the folder in which the local repository is contained. If the folder is name is like, Part 1, then the repository name will be :- Part-1. Hyphen(dash) is added inplace of spaces.
 
-__
+```bash
+# Similarly,
+$ hub delete <repository-name> 
+#Above will prompt you fro confirmation. To bypass confirmation use switch -y.
+$ hub delete <repository-name> -y #This bypasss the deleting confirmation.
+```
+
+
+
+***
 
 ### Deleting branch with hub:
 
