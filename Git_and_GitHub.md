@@ -976,7 +976,7 @@ src: [How do I delete a Git branch locally and remotely..?](https://stackoverflo
 
 ***
 
-## Rename branch on github:
+## Rename branch on github
 
 Tags: #delete branch github,delete branch on github,#delete master branch on Github, delete master branch Github, rename branch github.
 
