@@ -976,9 +976,11 @@ src: [How do I delete a Git branch locally and remotely..?](https://stackoverflo
 
 ***
 
-## Simply delete master branch on Github
+## Rename branch on github:
 
-This is needed so as to be able to add remote of this repository to some other repository, and push master branch on it.
+Tags: #delete branch github,delete branch on github,#delete master branch on Github, delete master branch Github, rename branch github.
+
+### This is needed so as to be able to add remote of this repository to some other repository, and push master branch on it.
 
 ![Image](DeletingMasterBranchOnGithub.gif)
 
