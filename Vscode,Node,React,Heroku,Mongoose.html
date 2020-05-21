@@ -1809,16 +1809,20 @@ failed-failed-failed-failed-failed-failed
 npm-pack-all // <span class="hljs-keyword">do</span> <span class="hljs-keyword">in</span> any project(should have package.json file)
 npm-pack-all --dev-deps // <span class="hljs-keyword">do</span> <span class="hljs-keyword">in</span> any projecgitt(should have package.json file)
 tar -xzf &lt;.tgz file&gt; // to extract the .tgz file
-  //<span class="hljs-keyword">if</span> the above one doesn<span class="hljs-string">'t work, use tar -xf &lt;.tgz file&gt;
+tar -xzf &lt;.tgz file&gt; -C &lt;desired directory to extract&gt;
+Getting urgent <span class="hljs-built_in">help</span>:-
+tar --help | grep <span class="hljs-string">"\-C"</span>
+HELP:  -C, --directory=DIR        change to directory DIR
+  //<span class="hljs-keyword">if</span> the above one doesnt work, use tar -xf &lt;.tgz file&gt;
 mv package &lt;the project name you want&gt;
-#ABOVE METHOD IS THE BEST(as it saves us from the installation time from the internet)
+<span class="hljs-comment">#ABOVE METHOD IS THE BEST(as it saves us from the installation time from the internet)</span>
 
 _
-#List all dependecy tree in node_modules folder
+<span class="hljs-comment">#List all dependecy tree in node_modules folder</span>
 npm ls
 
 _
-# NPM PACK (ignores the node_modules folder(thus doen'</span>t pack the dependent devps))
+<span class="hljs-comment"># NPM PACK (ignores the node_modules folder(thus doen't pack the dependent devps))</span>
 $ npm pack axios // will download the axios tarball(.tgz) to current folder.
 // (doesn<span class="hljs-string">'t pack the dependencies, so use for dependecies, but this is a good way to pack a personal project without dependencies)
 $ npm pack lodash // will download the axios tarball(.tgz) to current folder.
@@ -2207,6 +2211,28 @@ sayAge() <span class="hljs-comment">// blows here..</span>
 <p>Using your <strong>C</strong> key, you can turn captions on or off.</p>
 <p>To increase the size of the captions, use the <strong>+ (plus)</strong> key. To decrease the size of the captions, use the <strong>– (minus)</strong> key.</p>
 <hr>
-    </article>
+<h3 id="you-can-get-the-length-of-parameters-of-a-function-like"><a class="header-link" href="#you-can-get-the-length-of-parameters-of-a-function-like"></a>You can get the length of parameters of a function like</h3>
+<pre class="hljs"><code>(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">a, b, c</span>) </span>{
+  <span class="hljs-keyword">return</span> a + b
+}).length
+<span class="hljs-comment">//this will outut 3, bcoz parameters are 3.</span></code></pre><hr>
+<h2 id="adding-.env-file-to-webpack:"><a class="header-link" href="#adding-.env-file-to-webpack:"></a>Adding .env file to webpack:</h2>
+<p>Help link @ <a href="https://stackoverflow.com/a/46232148/10012446">stackoverflow</a></p>
+<p>You can use <code>dotenv</code> package for this purpose</p>
+<p>Reference: <a href="https://www.npmjs.com/package/dotenv">https://www.npmjs.com/package/dotenv</a> <a href="https://github.com/motdotla/dotenv">https://github.com/motdotla/dotenv</a></p>
+<p>At top of webpack config file, require dotenv as follows(set your .env path currectly)</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> dotenv = <span class="hljs-built_in">require</span>(<span class="hljs-string">'dotenv'</span>).config({<span class="hljs-attr">path</span>: __dirname + <span class="hljs-string">'/.env'</span>});</code></pre><p>in webpack config plugins section use</p>
+<pre class="hljs"><code><span class="hljs-keyword">new</span> webpack.DefinePlugin({
+            <span class="hljs-string">"process.env"</span>: dotenv.parsed
+        }),</code></pre><p>Now you can use the env variables throughout your app. try <code>console.log(process.env);</code> in you app code</p>
+<hr>
+<p>To get rid of error: Can&#39;t resolve &#39;fs&#39; while configuring .env file, you may do this...</p>
+<p class="img-container"><img src="image-20200521135201773.png" alt="image-20200521135201773"></p>
+<p class="img-container"><img src="image-20200521135256574.png" alt="image-20200521135256574"></p>
+<hr>
+<h2 id="import-path"><a class="header-link" href="#import-path"></a>Import path</h2>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>); </code></pre><hr>
+<h2 id="environment-variables-in-createreactapp:"><a class="header-link" href="#environment-variables-in-createreactapp:"></a>Environment Variables in CreateReactApp:</h2>
+<pre class="hljs"><code>There is also a built-<span class="hljs-keyword">in</span> environment variable called NODE_ENV. You can read it <span class="hljs-keyword">from</span> process.env.NODE_ENV. When you run npm start, it is always equal to <span class="hljs-string">'development'</span>, when you run npm test it is always equal to <span class="hljs-string">'test'</span>, and when you run npm run build to make a production bundle, it is always equal to <span class="hljs-string">'production'</span>. You cannot override NODE_ENV manually. This prevents developers <span class="hljs-keyword">from</span> accidentally deploying a slow development build to production.</code></pre>    </article>
   </body>
 </html>

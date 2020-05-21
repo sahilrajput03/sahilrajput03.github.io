@@ -1,9 +1,39 @@
+[Table of  keyboard shortcuts](https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts#Command_line_shortcuts)
+
+***
+
+### Deleting a word in cmd:
+
+```bash
+#CMD's F4 functionality: Prompts for a character and deletes up to that char. So, jump a word back with ctrl-Left, then F4 followed by Space, to delete up to a space. 
+
+# The only minor downsides are that (a) it flashes the prompt box briefly, and (b) repeated word erases leave a pile of spaces (harmless but a bit unattractive).
+```
+
+### Deleting line in cmd
+
+```
+Ctrl + homekey # deletes the line to the left
+Ctrl + endkey # deletes the line to the right
+Also, use homekey and endkey to navigate to the start or end of line.
+Also, use ctrl + left/right to navigate to the previous or next word in the line.
+```
+
+
+
+***
+
 ## Moving around in vi
 
 ```bash
 $ vi
 $ vim
 # Above two commands link to same file. Below one is an alias for the above. It was need earlier so as to distinguish between two programs, but now they are same, as older vi is no-more there. Also, vim stands for vi iMproved. Also, vi --version and vim --version outputs same version of vim.
+```
+
+```
+To enale edit mode use key => a or i
+*To fix a typo, you can use s to delete the character to the right of the cursor and enter edit mode directly.
 ```
 
 
@@ -15,12 +45,15 @@ j : downline
 k : upline
 l : cursor right
 h : cursor left
-Ctrl + W : Deletes word to the left(Like, Ctrl + backspace in windows)
+# Ctrl + w: Deletes word to the left ,You can also use Alt+Backspace for the same.(Like, Ctrl + backspace in windows)
 v : select and hold, now the youcan select the text,Yipeee with Right/Down/Up/Right, or with H,J,K,L.
 b : Move cursor to the start of the word before the cursor.
 Ctrl + E : Deletes the first line in the file.
 #Works in bash too, deleting word with Ctrl+W.
+Navigate to start of next word: w
 dd : would delete the line
+dw : Would DELETE THE WORD right to the cursor.
+Whereas : Ctrl + w : Would DELETE THE WORD to the left
 Home Key: Move to start of line.(Also works in bash cli)
 End Key: Move to end of line. (Also works in bash cli)
 BAsh cli: 

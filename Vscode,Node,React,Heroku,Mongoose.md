@@ -2915,7 +2915,11 @@ failed-failed-failed-failed-failed-failed
 npm-pack-all // do in any project(should have package.json file)
 npm-pack-all --dev-deps // do in any projecgitt(should have package.json file)
 tar -xzf <.tgz file> // to extract the .tgz file
-  //if the above one doesn't work, use tar -xf <.tgz file>
+tar -xzf <.tgz file> -C <desired directory to extract>
+Getting urgent help:-
+tar --help | grep "\-C"
+HELP:  -C, --directory=DIR        change to directory DIR
+  //if the above one doesnt work, use tar -xf <.tgz file>
 mv package <the project name you want>
 #ABOVE METHOD IS THE BEST(as it saves us from the installation time from the internet)
 
@@ -3670,4 +3674,63 @@ Using your **C** key, you can turn captions on or off.
 To increase the size of the captions, use the **+ (plus)** key. To decrease the size of the captions, use the **– (minus)** key.
 
 ***
+
+### You can get the length of parameters of a function like
+
+```js
+(function add(a, b, c) {
+  return a + b
+}).length
+//this will outut 3, bcoz parameters are 3.
+```
+
+***
+
+## Adding .env file to webpack:
+
+Help link @ [stackoverflow](https://stackoverflow.com/a/46232148/10012446)
+
+You can use `dotenv` package for this purpose
+
+Reference: https://www.npmjs.com/package/dotenv https://github.com/motdotla/dotenv
+
+At top of webpack config file, require dotenv as follows(set your .env path currectly)
+
+```js
+var dotenv = require('dotenv').config({path: __dirname + '/.env'});
+```
+
+in webpack config plugins section use
+
+```js
+new webpack.DefinePlugin({
+            "process.env": dotenv.parsed
+        }),
+```
+
+Now you can use the env variables throughout your app. try `console.log(process.env);` in you app code
+
+***
+
+To get rid of error: Can't resolve 'fs' while configuring .env file, you may do this...
+
+![image-20200521135201773](image-20200521135201773.png)
+
+![image-20200521135256574](image-20200521135256574.png)
+
+***
+
+## Import path 
+
+```js
+const path = require('path'); 
+```
+
+***
+
+## Environment Variables in CreateReactApp:
+
+```js
+There is also a built-in environment variable called NODE_ENV. You can read it from process.env.NODE_ENV. When you run npm start, it is always equal to 'development', when you run npm test it is always equal to 'test', and when you run npm run build to make a production bundle, it is always equal to 'production'. You cannot override NODE_ENV manually. This prevents developers from accidentally deploying a slow development build to production.
+```
 

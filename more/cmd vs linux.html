@@ -3,27 +3,41 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Moving around in vi</title>
+    <title>Deleting a word in cmd:</title>
     <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="moving-around-in-vi"><a class="header-link" href="#moving-around-in-vi"></a>Moving around in vi</h2>
+    <article class="markdown-body"><p><a href="https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts#Command_line_shortcuts">Table of  keyboard shortcuts</a></p>
+<hr>
+<h3 id="deleting-a-word-in-cmd:"><a class="header-link" href="#deleting-a-word-in-cmd:"></a>Deleting a word in cmd:</h3>
+<pre class="hljs"><code><span class="hljs-comment">#CMD's F4 functionality: Prompts for a character and deletes up to that char. So, jump a word back with ctrl-Left, then F4 followed by Space, to delete up to a space. </span>
+
+<span class="hljs-comment"># The only minor downsides are that (a) it flashes the prompt box briefly, and (b) repeated word erases leave a pile of spaces (harmless but a bit unattractive).</span></code></pre><h3 id="deleting-line-in-cmd"><a class="header-link" href="#deleting-line-in-cmd"></a>Deleting line in cmd</h3>
+<pre class="hljs"><code>Ctrl + homekey <span class="hljs-comment"># deletes the line to the left</span>
+Ctrl + endkey <span class="hljs-comment"># deletes the line to the right</span>
+Also, use homekey <span class="hljs-keyword">and</span> endkey <span class="hljs-built_in">to</span> navigate <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">start</span> <span class="hljs-keyword">or</span> <span class="hljs-function"><span class="hljs-keyword">end</span> <span class="hljs-title">of</span> <span class="hljs-title">line</span>.</span>
+Also, use ctrl + left/<span class="hljs-literal">right</span> <span class="hljs-built_in">to</span> navigate <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> previous <span class="hljs-keyword">or</span> next <span class="hljs-built_in">word</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">line</span>.</code></pre><hr>
+<h2 id="moving-around-in-vi"><a class="header-link" href="#moving-around-in-vi"></a>Moving around in vi</h2>
 <pre class="hljs"><code>$ vi
 $ vim
-<span class="hljs-comment"># Above two commands link to same file. Below one is an alias for the above. It was need earlier so as to distinguish between two programs, but now they are same, as older vi is no-more there. Also, vim stands for vi iMproved. Also, vi --version and vim --version outputs same version of vim.</span></code></pre><pre class="hljs"><code><span class="hljs-comment"># All these bindings work in edit mode, not in insert mode, you can get in edit mode via pressing Esc anytime.</span>
+<span class="hljs-comment"># Above two commands link to same file. Below one is an alias for the above. It was need earlier so as to distinguish between two programs, but now they are same, as older vi is no-more there. Also, vim stands for vi iMproved. Also, vi --version and vim --version outputs same version of vim.</span></code></pre><pre class="hljs"><code>To enale edit mode <span class="hljs-keyword">use</span> <span class="hljs-keyword">key</span> =&gt; a <span class="hljs-keyword">or</span> i
+*<span class="hljs-keyword">To</span> fix a typo, you can <span class="hljs-keyword">use</span> s <span class="hljs-keyword">to</span> <span class="hljs-keyword">delete</span> the <span class="hljs-built_in">character</span> <span class="hljs-keyword">to</span> the <span class="hljs-keyword">right</span> <span class="hljs-keyword">of</span> the <span class="hljs-keyword">cursor</span> <span class="hljs-keyword">and</span> enter edit <span class="hljs-keyword">mode</span> directly.</code></pre><pre class="hljs"><code><span class="hljs-comment"># All these bindings work in edit mode, not in insert mode, you can get in edit mode via pressing Esc anytime.</span>
 u : get the last saved changes of the file, reget the file(get rid of current changes)
 j : downline
 k : upline
 l : cursor right
 h : cursor left
-Ctrl + W : Deletes word to the left(Like, Ctrl + backspace <span class="hljs-keyword">in</span> windows)
+<span class="hljs-comment"># Ctrl + w: Deletes word to the left ,You can also use Alt+Backspace for the same.(Like, Ctrl + backspace in windows)</span>
 v : select and hold, now the youcan select the text,Yipeee with Right/Down/Up/Right, or with H,J,K,L.
 b : Move cursor to the start of the word before the cursor.
 Ctrl + E : Deletes the first line <span class="hljs-keyword">in</span> the file.
 <span class="hljs-comment">#Works in bash too, deleting word with Ctrl+W.</span>
+Navigate to start of next word: w
 dd : would delete the line
+dw : Would DELETE THE WORD right to the cursor.
+Whereas : Ctrl + w : Would DELETE THE WORD to the left
 Home Key: Move to start of line.(Also works <span class="hljs-keyword">in</span> bash cli)
 End Key: Move to end of line. (Also works <span class="hljs-keyword">in</span> bash cli)
 BAsh cli: 
