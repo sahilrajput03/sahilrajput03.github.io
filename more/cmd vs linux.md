@@ -1,3 +1,9 @@
+## Vscode default settings for -> End of line sequence
+
+It uses whats already good for windows, i.e., CRLF in new .js and .txt files.
+
+***
+
 ## There global savings of all mingw command-
 
 You can view them, via command 
