@@ -3,55 +3,138 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Deleting a word in cmd:</title>
+    <title>Setting the position for cmd</title>
     <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><p><a href="https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts#Command_line_shortcuts">Table of  keyboard shortcuts</a></p>
+    <article class="markdown-body"><h2 id="setting-the-position-for-cmd"><a class="header-link" href="#setting-the-position-for-cmd"></a>Setting the position for cmd</h2>
+<p class="img-container"><img src="image-20200525100607451.png" alt="image-20200525100607451"></p>
+<p>then do this, </p>
+<p class="img-container"><img src="image-20200525100629535.png" alt="image-20200525100629535"></p>
+<p>Note: Properties Settings for a cmd, is for the current cmd only, not for the cmd&#39;s that you open by typing cmd in explorer&#39;s current directory path, for that you&#39;ll need to do it for the Default settings the same thing i.e.,</p>
+<p class="img-container"><img src="image-20200525100723542.png" alt="image-20200525100723542"></p>
+<h5 id="now,-thats-all."><a class="header-link" href="#now,-thats-all."></a>Now, thats all.</h5>
+<hr>
+<h3 id="printing-date-in-cmd"><a class="header-link" href="#printing-date-in-cmd"></a>Printing Date in cmd</h3>
+<pre class="hljs"><code>$ date /t</code></pre><h3 id="print-some-text-in-cmd"><a class="header-link" href="#print-some-text-in-cmd"></a>Print some text in cmd</h3>
+<pre class="hljs"><code>$ <span class="hljs-built_in">echo</span> <span class="hljs-built_in">echo</span> turned off
+$ <span class="hljs-built_in">echo</span> Hey Buddy, how are you?</code></pre><hr>
+<h3 id="using-@echo-off-in-cmd"><a class="header-link" href="#using-@echo-off-in-cmd"></a>Using @echo off in cmd</h3>
+<pre class="hljs"><code><span class="hljs-comment">#Save below content in a .bat file and run.</span>
+@<span class="hljs-built_in">echo</span> off
+REM To skip the following Python commands, put <span class="hljs-string">"REM"</span> before them:
+python foo.py
+python bar.py</code></pre><p>So, using the above command will not show the commands for which it is showing the output(It hides the commnad, but shows all output.)</p>
+<p>You can use it without .bat file too, i.e.,</p>
+<pre class="hljs"><code>$ @<span class="hljs-built_in">echo</span> off</code></pre><p> Now the cmd is another taste, isn&#39;t it.
+NOTE: To exit now you need to do</p>
+<pre class="hljs"><code>$ <span class="hljs-built_in">exit</span></code></pre><hr>
+<h2 id="rem-(cmd-commenting)"><a class="header-link" href="#rem-(cmd-commenting)"></a>REM (cmd commenting)</h2>
+<p>REM is used to do commenting in cmd.</p>
+<pre class="hljs"><code>#Save below content <span class="hljs-keyword">in</span> a .bat file and run.
+@<span class="hljs-built_in">echo</span> off
+<span class="hljs-comment">REM To skip the following Python commands, put "REM" before them:</span>
+python foo.py
+python bar.py</code></pre><p>It can be used for inline commenting too, i.e., </p>
+<pre class="hljs"><code>$ dir &amp;&amp; REM blahBlahBlowingg....</code></pre><hr>
+<h2 id="installing-grep-in-windows:-"><a class="header-link" href="#installing-grep-in-windows:-"></a>Installing grep in windows:-</h2>
+<pre class="hljs"><code>$ choco install grep</code></pre><p>help <a href="https://chocolatey.org/packages?q=grep">link</a></p>
+<hr>
+<h2 id="cmd"><a class="header-link" href="#cmd"></a>Cmd</h2>
+<p>To refresh environment variables instantly, withought closing and opening cmd again(works in powershell too), you can use </p>
+<pre class="hljs"><code>$ refreshenv</code></pre><hr>
+<p>Table of  keyboard shortcuts](<a href="https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts#Command_line_shortcuts">https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts#Command_line_shortcuts</a>)</p>
 <hr>
 <h3 id="deleting-a-word-in-cmd:"><a class="header-link" href="#deleting-a-word-in-cmd:"></a>Deleting a word in cmd:</h3>
 <pre class="hljs"><code><span class="hljs-comment">#CMD's F4 functionality: Prompts for a character and deletes up to that char. So, jump a word back with ctrl-Left, then F4 followed by Space, to delete up to a space. </span>
 
-<span class="hljs-comment"># The only minor downsides are that (a) it flashes the prompt box briefly, and (b) repeated word erases leave a pile of spaces (harmless but a bit unattractive).</span></code></pre><h3 id="deleting-line-in-cmd"><a class="header-link" href="#deleting-line-in-cmd"></a>Deleting line in cmd</h3>
-<pre class="hljs"><code>Ctrl + homekey <span class="hljs-comment"># deletes the line to the left</span>
-Ctrl + endkey <span class="hljs-comment"># deletes the line to the right</span>
-Also, use homekey <span class="hljs-keyword">and</span> endkey <span class="hljs-built_in">to</span> navigate <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">start</span> <span class="hljs-keyword">or</span> <span class="hljs-function"><span class="hljs-keyword">end</span> <span class="hljs-title">of</span> <span class="hljs-title">line</span>.</span>
-Also, use ctrl + left/<span class="hljs-literal">right</span> <span class="hljs-built_in">to</span> navigate <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> previous <span class="hljs-keyword">or</span> next <span class="hljs-built_in">word</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">line</span>.</code></pre><hr>
-<h2 id="moving-around-in-vi"><a class="header-link" href="#moving-around-in-vi"></a>Moving around in vi</h2>
+<span class="hljs-comment"># The only minor downsides are that (a) it flashes the prompt box briefly, and (b) repeated word erases leave a pile of spaces (harmless but a bit unattractive).</span></code></pre><hr>
+<h1 id="**vi-shortcuts-**"><a class="header-link" href="#**vi-shortcuts-**"></a><strong>Vi shortcuts-</strong></h1>
+<h3 id="navigate-"><a class="header-link" href="#navigate-"></a>Navigate-</h3>
+<pre class="hljs"><code>e goes to the <span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> the <span class="hljs-keyword">next</span> word
+w goes <span class="hljs-keyword">to</span> the <span class="hljs-keyword">beginning</span> <span class="hljs-keyword">of</span> the <span class="hljs-keyword">next</span> word
+b goes <span class="hljs-keyword">to</span> the <span class="hljs-keyword">beginning</span> <span class="hljs-keyword">of</span> the previous word
+ge goes <span class="hljs-keyword">to</span> the <span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> the previous word
+
+Homekey/Endkey : <span class="hljs-keyword">Start</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> line.(Also works <span class="hljs-keyword">in</span> bash cli)
+Ctrl + <span class="hljs-keyword">left</span>/<span class="hljs-keyword">right</span> : Previous <span class="hljs-keyword">or</span> <span class="hljs-keyword">Next</span> word
+Ctrl + homekey/endkey: <span class="hljs-keyword">Start</span>/<span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> the file.
+
+u : <span class="hljs-keyword">get</span> the <span class="hljs-keyword">last</span> saved changes <span class="hljs-keyword">of</span> the <span class="hljs-keyword">file</span>, reget the <span class="hljs-keyword">file</span>(<span class="hljs-keyword">get</span> rid <span class="hljs-keyword">of</span> <span class="hljs-keyword">current</span> changes)
+
+j : downline
+k : upline
+l : <span class="hljs-keyword">cursor</span> <span class="hljs-keyword">right</span>
+h : <span class="hljs-keyword">cursor</span> <span class="hljs-keyword">left</span></code></pre><h3 id="add-tab-to-the-start-of-current-line"><a class="header-link" href="#add-tab-to-the-start-of-current-line"></a>Add tab to the start of current line</h3>
+<pre class="hljs"><code>ctrl + <span class="hljs-literal">t</span> (<span class="hljs-name">works</span> in Insert mode)</code></pre><h3 id="enter-insert-mode-"><a class="header-link" href="#enter-insert-mode-"></a>Enter Insert Mode-</h3>
+<pre class="hljs"><code># a : <span class="hljs-keyword">To</span> insert <span class="hljs-literal">text</span> <span class="hljs-keyword">to</span> the right <span class="hljs-keyword">of</span> the cursor
+# i : <span class="hljs-keyword">To</span> insert <span class="hljs-literal">text</span> <span class="hljs-keyword">to</span> the left <span class="hljs-keyword">of</span> the cursor
+
+# A <span class="hljs-keyword">to</span> add <span class="hljs-literal">text</span> <span class="hljs-keyword">to</span> the <span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> a <span class="hljs-literal">line</span>
+# I <span class="hljs-keyword">to</span> insert <span class="hljs-literal">text</span> at the beginning <span class="hljs-keyword">of</span> a <span class="hljs-literal">line</span>
+
+<span class="hljs-keyword">OPEN</span> <span class="hljs-literal">LINE</span>
+o <span class="hljs-keyword">to</span> <span class="hljs-keyword">open</span> a <span class="hljs-literal">line</span> below the current cursor position
+O <span class="hljs-keyword">to</span> <span class="hljs-keyword">open</span> a <span class="hljs-literal">line</span> above the current cursor position.
+
+MOVING <span class="hljs-keyword">TO</span> START <span class="hljs-keyword">OR</span> <span class="hljs-keyword">END</span> <span class="hljs-keyword">OF</span> THE <span class="hljs-literal">LINE</span>:-
+Press ^ <span class="hljs-keyword">to</span> move the cursor <span class="hljs-keyword">to</span> the start <span class="hljs-keyword">of</span> the current <span class="hljs-literal">line</span>.
+
+Press $ <span class="hljs-keyword">to</span> move the cursor <span class="hljs-keyword">to</span> the <span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> the current <span class="hljs-literal">line</span>.</code></pre><h3 id="exit-insert-mode"><a class="header-link" href="#exit-insert-mode"></a>Exit insert mode</h3>
+<pre class="hljs"><code>Ctrl + [
+Ctrl + <span class="hljs-keyword">c</span>
+Esc</code></pre><h3 id="text-selection-mode-"><a class="header-link" href="#text-selection-mode-"></a>Text selection mode-</h3>
+<pre class="hljs"><code>v : --<span class="hljs-keyword">visual</span>-- : (hjkl(respectively <span class="hljs-keyword">to</span> <span class="hljs-keyword">left</span>/down/<span class="hljs-keyword">up</span>/<span class="hljs-keyword">right</span>-arrowkey), <span class="hljs-keyword">w</span>(one word at <span class="hljs-keyword">a</span> time), <span class="hljs-keyword">left</span>/down/<span class="hljs-keyword">up</span>/<span class="hljs-keyword">right</span>-arrow. 
+V : --<span class="hljs-keyword">visual</span> <span class="hljs-built_in">line</span>-- : that means <span class="hljs-built_in">complete</span> <span class="hljs-built_in">line</span> <span class="hljs-keyword">is</span> selected at <span class="hljs-keyword">a</span> time, use <span class="hljs-keyword">up</span> down <span class="hljs-keyword">to</span> <span class="hljs-keyword">copy</span> more lines
+Ctrl + v : --<span class="hljs-keyword">visual</span> block <span class="hljs-keyword">mode</span> : that <span class="hljs-keyword">is</span> somewhat like multicursor selecting text.
+<span class="hljs-keyword">w</span> : select <span class="hljs-keyword">a</span> word <span class="hljs-keyword">a</span> time <span class="hljs-keyword">to</span> the <span class="hljs-keyword">right</span>.
+
+<span class="hljs-keyword">y</span> : <span class="hljs-keyword">to</span> <span class="hljs-keyword">copy</span> character under <span class="hljs-built_in">cursor</span> <span class="hljs-built_in">or</span> selected text</code></pre><h3 id="cut-"><a class="header-link" href="#cut-"></a>Cut-</h3>
+<pre class="hljs"><code>d : cut selected <span class="hljs-keyword">text</span>
+d : cut selected <span class="hljs-keyword">text</span>
+dd : cut <span class="hljs-keyword">the</span> current <span class="hljs-built_in">line</span>
+<span class="hljs-number">2</span>dd : will cut <span class="hljs-number">2</span> <span class="hljs-keyword">lines</span>
+<span class="hljs-number">3</span>dd : will cut <span class="hljs-number">3</span> <span class="hljs-keyword">lines</span>
+Hold d : <span class="hljs-built_in">to</span> <span class="hljs-built_in">delete</span> everything <span class="hljs-keyword">in</span> vi.</code></pre><h3 id="paste-"><a class="header-link" href="#paste-"></a>Paste-</h3>
+<pre class="hljs"><code><span class="hljs-keyword">p</span>(lowercase) : paste below current <span class="hljs-built_in">line</span> (Ctrl+Shift+v works too)
+<span class="hljs-keyword">P</span> : paste above current <span class="hljs-built_in">line</span> (shift bole <span class="hljs-keyword">to</span> uppar)
+<span class="hljs-keyword">p</span>(lowercase) : paste <span class="hljs-keyword">right</span> <span class="hljs-keyword">to</span> the <span class="hljs-built_in">cursor</span> (Ctrl+Shift+v works too)
+<span class="hljs-keyword">P</span> : paste <span class="hljs-keyword">left</span> <span class="hljs-keyword">to</span> the <span class="hljs-built_in">cursor</span> (shift bole <span class="hljs-keyword">to</span> uppar)</code></pre><h3 id="copy-"><a class="header-link" href="#copy-"></a>Copy-</h3>
+<pre class="hljs"><code>y stands <span class="hljs-keyword">for</span> yank, (pull <span class="hljs-keyword">with</span> <span class="hljs-keyword">a</span> jerk, <span class="hljs-keyword">a</span> sudden hard pull.)
+y - copies <span class="hljs-keyword">the</span> <span class="hljs-keyword">character</span> under <span class="hljs-keyword">the</span> cursor <span class="hljs-keyword">or</span> <span class="hljs-keyword">text</span> under <span class="hljs-keyword">the</span> selection <span class="hljs-keyword">and</span> <span class="hljs-keyword">the</span> cursor including.
+yy - Yank (copy) <span class="hljs-keyword">the</span> current <span class="hljs-built_in">line</span>, including <span class="hljs-keyword">the</span> newline <span class="hljs-keyword">character</span>.
+yw - Yank (copy) <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">start</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> next <span class="hljs-built_in">word</span>.
+yiw – Yank (copy) <span class="hljs-keyword">the</span> current <span class="hljs-built_in">word</span>.</code></pre><h3 id="delete-"><a class="header-link" href="#delete-"></a>Delete-</h3>
+<pre class="hljs"><code>Ctrl + E :(Edit Mode) Deletes <span class="hljs-keyword">the</span> <span class="hljs-keyword">first</span> <span class="hljs-built_in">line</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">file</span>.
+x:(Edit Mode) Deleting Character under <span class="hljs-keyword">the</span> cursor
+X:(Edit Mode) Delete Character left <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> cursor</code></pre><h3 id="undo"><a class="header-link" href="#undo"></a>Undo</h3>
+<pre class="hljs"><code>u : <span class="hljs-type">undo</span></code></pre><h2 id="moving-around-in-vi"><a class="header-link" href="#moving-around-in-vi"></a>Moving around in vi</h2>
 <pre class="hljs"><code>$ vi
 $ vim
 <span class="hljs-comment"># Above two commands link to same file. Below one is an alias for the above. It was need earlier so as to distinguish between two programs, but now they are same, as older vi is no-more there. Also, vim stands for vi iMproved. Also, vi --version and vim --version outputs same version of vim.</span></code></pre><pre class="hljs"><code>To enale edit mode <span class="hljs-keyword">use</span> <span class="hljs-keyword">key</span> =&gt; a <span class="hljs-keyword">or</span> i
-*<span class="hljs-keyword">To</span> fix a typo, you can <span class="hljs-keyword">use</span> s <span class="hljs-keyword">to</span> <span class="hljs-keyword">delete</span> the <span class="hljs-built_in">character</span> <span class="hljs-keyword">to</span> the <span class="hljs-keyword">right</span> <span class="hljs-keyword">of</span> the <span class="hljs-keyword">cursor</span> <span class="hljs-keyword">and</span> enter edit <span class="hljs-keyword">mode</span> directly.</code></pre><pre class="hljs"><code><span class="hljs-comment"># All these bindings work in edit mode, not in insert mode, you can get in edit mode via pressing Esc anytime.</span>
-u : get the last saved changes of the file, reget the file(get rid of current changes)
-j : downline
-k : upline
-l : cursor right
-h : cursor left
-<span class="hljs-comment"># Ctrl + w: Deletes word to the left ,You can also use Alt+Backspace for the same.(Like, Ctrl + backspace in windows)</span>
-v : select and hold, now the youcan select the text,Yipeee with Right/Down/Up/Right, or with H,J,K,L.
-b : Move cursor to the start of the word before the cursor.
-Ctrl + E : Deletes the first line <span class="hljs-keyword">in</span> the file.
-<span class="hljs-comment">#Works in bash too, deleting word with Ctrl+W.</span>
-Navigate to start of next word: w
+*<span class="hljs-keyword">To</span> fix a typo, you can <span class="hljs-keyword">use</span> s <span class="hljs-keyword">to</span> <span class="hljs-keyword">delete</span> the <span class="hljs-built_in">character</span> <span class="hljs-keyword">to</span> the <span class="hljs-keyword">right</span> <span class="hljs-keyword">of</span> the <span class="hljs-keyword">cursor</span> <span class="hljs-keyword">and</span> enter edit <span class="hljs-keyword">mode</span> directly.</code></pre><pre class="hljs"><code><span class="hljs-comment"># All these bindings work in edit mode, not in insert mode.</span>
+
 dd : would delete the line
 dw : Would DELETE THE WORD right to the cursor.
-Whereas : Ctrl + w : Would DELETE THE WORD to the left
-Home Key: Move to start of line.(Also works <span class="hljs-keyword">in</span> bash cli)
-End Key: Move to end of line. (Also works <span class="hljs-keyword">in</span> bash cli)
+Ctrl + w (Alt+Backspace) : Would DELETE THE WORD to the left
+
+_
 BAsh cli: 
-Ctrl+ P: Up Arrow(get last <span class="hljs-built_in">command</span>)
-Ctrl+ N: Down Arrow(vice-versa)
+Ctrl+W : Deleting word before cursor.
+Ctrl+ P/ Up Arrow : Previous <span class="hljs-built_in">command</span>
+Ctrl+ N/ Down Arrow : Next Command
 Home key, Ctrl + K : Deletes the <span class="hljs-built_in">command</span> typed.
 Ctrl + T : Transpose the left and right to the cursor (FIXING TYPO :D)
-<span class="hljs-comment"># Understanding for block cursor: Transposes the character before the cursor with the character under the cursor.</span></code></pre><h3 id="saving-file"><a class="header-link" href="#saving-file"></a>Saving file</h3>
+<span class="hljs-comment"># Understanding for block cursor: Transposes the character before the cursor with the character under the cursor.</span></code></pre><h3 id="creating-new-file-and-saving-"><a class="header-link" href="#creating-new-file-and-saving-"></a>Creating new file and saving-</h3>
 <pre class="hljs"><code>$ vi <span class="hljs-comment"># Creates a empty file.</span>
-:wq &lt;filename.txt&gt;
-<span class="hljs-comment">#Edit the file, and save and exit.</span></code></pre><pre class="hljs"><code>$ vi &lt;filename&gt; <span class="hljs-comment">#Opens the given file</span></code></pre><pre class="hljs"><code>$ vi file1.txt
+:wq &lt;filename.txt&gt;</code></pre><h3 id="opening-file"><a class="header-link" href="#opening-file"></a>Opening file</h3>
+<pre class="hljs"><code>$ vi &lt;filename&gt; <span class="hljs-comment">#Opens the given file</span></code></pre><h3 id="save-as"><a class="header-link" href="#save-as"></a>Save as</h3>
+<pre class="hljs"><code>$ vi file1.txt
 <span class="hljs-comment"># Let say we made some changes, and need to save the file to newfile with name file2.txt and exit.</span>
 $ :wq! file2.txt <span class="hljs-comment"># We need ! (coz cache of the file1.txt is modified, and we need to get rid of it)</span>
-<span class="hljs-comment"># So, we are having what we desired :D.</span></code></pre><h3 id="to-read-a-file"><a class="header-link" href="#to-read-a-file"></a>To Read a file</h3>
+<span class="hljs-comment"># So, we are having what we desired :D.</span></code></pre><h3 id="read-a-file"><a class="header-link" href="#read-a-file"></a>Read a file</h3>
 <pre class="hljs"><code>$ cat &lt;filename&gt;</code></pre><hr>
 <h3 id="hahah!!"><a class="header-link" href="#hahah!!"></a>Hahah!!</h3>
 <pre class="hljs"><code>Transpose Text or Change Case on the Command Line
@@ -91,16 +174,24 @@ git | findstr overview <span class="hljs-comment">#both cmd,bash</span>
 git <span class="hljs-built_in">help</span> | findstr pull <span class="hljs-comment">#both cmd,bash</span>
 git commit | findstr will
 <span class="hljs-comment"># important:</span>
+vi -h 2| findstr <span class="hljs-string">"\-a"</span>
 git add -h 2| findstr dry <span class="hljs-comment">#operator that supplies stderr to the findstr command, OPTION1</span>
 git add -h |&amp; findstr dry <span class="hljs-comment">#operator that supplies stderr to the findstr command, OPTION2</span>
 git commit -h 2| findstr dry <span class="hljs-comment">#operator that supplies stderr to the findstr command</span>
 git | findstr git | findstr and 
-<span class="hljs-comment"># So findstr can be chained like this, such that outputs are transferred to next one using pipe</span></code></pre><h3 id="using-grep:"><a class="header-link" href="#using-grep:"></a>Using grep:</h3>
+<span class="hljs-comment"># So findstr can be chained like this, such that outputs are transferred to next one using pipe</span></code></pre><h3 id="using-grep:(now-works-in-windows-and-linux-equally[atleast-expected,-installed-via-choco-in-windows])"><a class="header-link" href="#using-grep:(now-works-in-windows-and-linux-equally[atleast-expected,-installed-via-choco-in-windows])"></a>Using grep:(now works in windows and linux equally[atleast expected, installed via choco in windows])</h3>
 <pre class="hljs"><code><span class="hljs-comment"># using grep to find(bash, linux)</span>
+choco -h | grep <span class="hljs-string">"search"</span> <span class="hljs-comment">#works in cmd and bash now, installed grep via choco in windows.</span>
 git add -h 2| grep dry <span class="hljs-comment"># 2| operator is needed when there are switches in the command i.e., -h here.</span>
-<span class="hljs-built_in">help</span> | grep <span class="hljs-keyword">done</span>
-git | grep git | grep and 
-<span class="hljs-comment"># So grep can be chained like this, such that outputs are transferred to next one using pipe</span></code></pre><hr>
+<span class="hljs-built_in">help</span> | grep <span class="hljs-keyword">done</span> <span class="hljs-comment">#finds something in bash</span>
+<span class="hljs-built_in">help</span> | grep tree <span class="hljs-comment">#finds something in cmd</span>
+<span class="hljs-built_in">help</span> | grep <span class="hljs-keyword">while</span> <span class="hljs-comment">#finds something in bash</span>
+git | grep git | grep and <span class="hljs-comment">#finds something in bash and cmd too.</span>
+<span class="hljs-comment"># So grep can be chained like this, such that outputs are transferred to next one using pipe</span></code></pre><h3 id="cmd-comment]must-look[(special)"><a class="header-link" href="#cmd-comment]must-look[(special)"></a>Cmd  Comment]Must Look[(Special)</h3>
+<pre class="hljs"><code>choco -h | grep <span class="hljs-string">"search"</span> <span class="hljs-comment">#works in cmd and bash now, installed grep via choco in windows.</span>
+Above <span class="hljs-built_in">command</span> throws some errrors as <span class="hljs-string">"#works in cmd ..."</span> is interpreted as inside the <span class="hljs-built_in">command</span>, it is not considered as comment <span class="hljs-keyword">in</span> cmd, so we need to make use of REM <span class="hljs-built_in">which</span> is used to comment out a <span class="hljs-built_in">command</span> <span class="hljs-keyword">in</span> cmd. Like below one, does the work greatly, with interpreting it as comment.
+$ choco -h | grep <span class="hljs-string">"search"</span> &amp;&amp; REM <span class="hljs-comment">#works in cmd and bash now, installed grep via choco in windows.</span>
+Above <span class="hljs-built_in">command</span> will </code></pre><hr>
 <h2 id="renaming-extensions-of-multiple-files:"><a class="header-link" href="#renaming-extensions-of-multiple-files:"></a>Renaming extensions of multiple files:</h2>
 <p><a href="https://unix.stackexchange.com/questions/19654/how-do-i-change-the-extension-of-multiple-files">https://unix.stackexchange.com/questions/19654/how-do-i-change-the-extension-of-multiple-files</a></p>
 <hr>

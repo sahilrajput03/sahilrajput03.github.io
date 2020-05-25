@@ -1,3 +1,23 @@
+
+
+
+
+
+
+***
+
+Amazing Tags in github:
+
+![image-20200522084031669](image-20200522084031669.png)
+
+
+
+![image-20200522084048173](image-20200522084048173.png)
+
+##### Above image also describes about describe in git :D
+
+***
+
 ## Git Organization
 
 Assigning base permission to the organization, so that everone in the organization can push to the repositories. While if set to **Read**, they'll be able to see private repositories and create pull requests to them.
@@ -1547,6 +1567,10 @@ and you don't need to add any comment. That is an optional thing.
 ## Meging pull request
 
 Click **Merge pull request**, and then click **Confirm Merge**.
+
+***
+
+https://help.github.com/en/github/managing-files-in-a-repository/getting-permanent-links-to-files
 
 ***
 

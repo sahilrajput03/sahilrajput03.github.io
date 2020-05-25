@@ -9,7 +9,8 @@
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="vscode,-node,-react,-mogoose"><a class="header-link" href="#vscode,-node,-react,-mogoose"></a>Vscode, Node, React, Mogoose</h2>
+    <article class="markdown-body"><p>Note: Never use : at the end of heading in typora, as it will cause problems while sharing links with people when shared in messaging groups as : at the end of the url is not regarded as the part of html link. Happy Hackings! :D​</p>
+<h2 id="vscode,-node,-react,-mogoose"><a class="header-link" href="#vscode,-node,-react,-mogoose"></a>Vscode, Node, React, Mogoose</h2>
 <hr>
 <pre class="hljs"><code>({<span class="hljs-attr">a</span>:<span class="hljs-number">23</span>}).a
 <span class="hljs-comment">// 23</span>
@@ -2233,6 +2234,154 @@ sayAge() <span class="hljs-comment">// blows here..</span>
 <h2 id="import-path"><a class="header-link" href="#import-path"></a>Import path</h2>
 <pre class="hljs"><code><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>); </code></pre><hr>
 <h2 id="environment-variables-in-createreactapp:"><a class="header-link" href="#environment-variables-in-createreactapp:"></a>Environment Variables in CreateReactApp:</h2>
-<pre class="hljs"><code>There is also a built-<span class="hljs-keyword">in</span> environment variable called NODE_ENV. You can read it <span class="hljs-keyword">from</span> process.env.NODE_ENV. When you run npm start, it is always equal to <span class="hljs-string">'development'</span>, when you run npm test it is always equal to <span class="hljs-string">'test'</span>, and when you run npm run build to make a production bundle, it is always equal to <span class="hljs-string">'production'</span>. You cannot override NODE_ENV manually. This prevents developers <span class="hljs-keyword">from</span> accidentally deploying a slow development build to production.</code></pre>    </article>
+<pre class="hljs"><code>There is also a built-<span class="hljs-keyword">in</span> environment variable called NODE_ENV. You can read it <span class="hljs-keyword">from</span> process.env.NODE_ENV. When you run npm start, it is always equal to <span class="hljs-string">'development'</span>, when you run npm test it is always equal to <span class="hljs-string">'test'</span>, and when you run npm run build to make a production bundle, it is always equal to <span class="hljs-string">'production'</span>. You cannot override NODE_ENV manually. This prevents developers <span class="hljs-keyword">from</span> accidentally deploying a slow development build to production.</code></pre><hr>
+<h3 id="create-index.js-file-inside-a-folder,-and-you-can-run-it-via-just-node-.-command"><a class="header-link" href="#create-index.js-file-inside-a-folder,-and-you-can-run-it-via-just-node-.-command"></a>Create index.js file inside a folder, and you can run it via just node . command</h3>
+<hr>
+<ul class="list">
+<li><p>You can assign data to global object in node</p>
+</li>
+<li><p>process.platform will return the window/linux/max on appropriate system.</p>
+</li>
+<li>process.env.USER will return the user logged in current operating system.</li>
+</ul>
+<hr>
+<h2 id="node-program-can-work-in-blocking-and-non-blocking-way-"><a class="header-link" href="#node-program-can-work-in-blocking-and-non-blocking-way-"></a>Node program can work in blocking and non-blocking way-</h2>
+<h3 id="--in-blocking-way-"><a class="header-link" href="#--in-blocking-way-"></a>-    In blocking way-</h3>
+<p class="img-container"><img src="image-20200522154317470.png" alt="image-20200522154317470"></p>
+<h3 id="--in-non-blocking-way:-"><a class="header-link" href="#--in-non-blocking-way:-"></a>-    In non-blocking way:-</h3>
+<p class="img-container"><img src="image-20200522154404203.png" alt="image-20200522154404203"></p>
+<hr>
+<h2 id="promises-are-asynchronous-and-non-blocking"><a class="header-link" href="#promises-are-asynchronous-and-non-blocking"></a>Promises are asynchronous and non-blocking</h2>
+<hr>
+<h3 id="top-level-await"><a class="header-link" href="#top-level-await"></a>Top level await</h3>
+<p class="img-container"><img src="image-20200522154652448.png" alt="image-20200522154652448"></p>
+<p>*</p>
+<h4 id="general-way-of-using-await-to-read-the-file,-using-async/await-"><a class="header-link" href="#general-way-of-using-await-to-read-the-file,-using-async/await-"></a>General way of using await to read the file, using async/await-</h4>
+<p class="img-container"><img src="image-20200522154754052.png" alt="image-20200522154754052"></p>
+<hr>
+<h2 id="change-new-line-format"><a class="header-link" href="#change-new-line-format"></a>Change new line format</h2>
+<p class="img-container"><img src="image-20200522165148048.png" alt="image-20200522165148048"></p>
+<p>CRLF : CR + LF (windows format)
+LF : LF only.</p>
+<hr>
+<h2 id="another-syntax-for-immediately-invoked-function-"><a class="header-link" href="#another-syntax-for-immediately-invoked-function-"></a>Another syntax for Immediately  invoked function-</h2>
+<pre class="hljs"><code>(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"hello..."</span>);
+})();
+<span class="hljs-comment">//works in node</span></code></pre><hr>
+<h3 id="top-level-await-works-in-chrome,-as-v8-has-now-support-for-top-level-await(chrome-runs-on-v8)"><a class="header-link" href="#top-level-await-works-in-chrome,-as-v8-has-now-support-for-top-level-await(chrome-runs-on-v8)"></a>Top level await works in chrome, as v8 has now support for top level await(chrome runs on v8)</h3>
+<p>official v8 <a href="https://v8.dev/features/top-level-await">link</a></p>
+<pre class="hljs"><code><span class="hljs-keyword">await</span> setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Amazingg...."</span>), <span class="hljs-number">2000</span>)
+<span class="hljs-comment">//works in chrome(v8 engine).</span>
+
+<span class="hljs-keyword">try</span> {
+  jQuery = <span class="hljs-keyword">await</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'https://cdn-a.example.com/jQuery'</span>);
+} <span class="hljs-keyword">catch</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hello.., I can execute in chrome, as top level await is supported in v8 now.'</span>)
+}</code></pre><h3 id="dependency-fallbacks"><a class="header-link" href="#dependency-fallbacks"></a>Dependency fallbacks</h3>
+<p>The following example attempts to load a JavaScript library from CDN A, falling back to CDN B if that fails:</p>
+<pre class="hljs"><code><span class="hljs-keyword">let</span> jQuery;
+<span class="hljs-keyword">try</span> {
+  jQuery = <span class="hljs-keyword">await</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'https://cdn-a.example.com/jQuery'</span>);
+} <span class="hljs-keyword">catch</span> {
+  jQuery = <span class="hljs-keyword">await</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'https://cdn-b.example.com/jQuery'</span>);
+}</code></pre><p>info: <a href="https://flaviocopes.com/v8/">v8</a> recently introduced top-level <code>await</code> for ES modules. It’s a new proposed standard for ECMAScript, which has <a href="https://github.com/tc39/proposal-top-level-await">reached stage 3</a>.</p>
+<h2 id="isn’t-top-level-`await`-a-footgun?-[#](https://v8.dev/features/top-level-await#isn't-top-level-await-a-footgun%3f)"><a class="header-link" href="#isn’t-top-level-`await`-a-footgun?-[#](https://v8.dev/features/top-level-await#isn't-top-level-await-a-footgun%3f)"></a>Isn’t top-level <code>await</code> a footgun? <a href="https://v8.dev/features/top-level-await#isn&#39;t-top-level-await-a-footgun%3F">#</a></h2>
+<p><a href="https://v8.dev/features/top-level-await#isn%E2%80%99t-top-level-await-a-footgun%3F">link</a></p>
+<p>Any feature whose addition to a product results in the user shooting themselves in the foot.</p>
+<hr>
+<h3 id="any-gist-can-be-embedded-here-like-this:-"><a class="header-link" href="#any-gist-can-be-embedded-here-like-this:-"></a>Any gist can be embedded here like this:-</h3>
+<script src="https://gist.github.com/sahilrajput03/433dfeeafa9cc338cc91e4289422ab07.js"></script>
+
+<hr>
+<p>The difference between public and private gist is that, private gists are not crawlable by search engines and not visible on your <a href="gist.github.com/sahilrajput03">gist.github.com/sahilrajput03</a> profile. You can share private gists with the url with no disadvantage at all.</p>
+<p>Any private gist can be turned to public gist easily</p>
+<hr>
+<h2 id="to-simply-view-a-gist-on-cli"><a class="header-link" href="#to-simply-view-a-gist-on-cli"></a>To simply view a gist on cli</h2>
+<p><a href="https://hub.github.com/hub-gist.1.html">link</a></p>
+<pre class="hljs"><code>$ hub gist show &lt;file-id(not the url)&gt;
+<span class="hljs-comment">//above command works good, but if you have more than one file, it will show you the names of the files with extension. So you could view one file at a time, with the command below:-</span>
+$ hub gist show &lt;file-id(not the url)&gt; OnlyOneFileName.js</code></pre><h2 id="you-can-clone-any-gist-like-the-repository"><a class="header-link" href="#you-can-clone-any-gist-like-the-repository"></a>You can clone any gist like the repository</h2>
+<h3 id="imortant:-when-you-update-a-gist,-its-id-doen't-change."><a class="header-link" href="#imortant:-when-you-update-a-gist,-its-id-doen't-change."></a>IMORTANT: When you update a gist, its id doen&#39;t change.</h3>
+<pre class="hljs"><code>$ git <span class="hljs-built_in">clone</span> &lt;gist-url&gt;
+$ git <span class="hljs-built_in">clone</span> &lt;gist-url&gt; . <span class="hljs-comment"># this would result similar results that with the git-repository.</span>
+<span class="hljs-comment"># You need to have the current directory with no content, you could create a new directory with mkdir and use that too.</span>
+e.g., 
+$ git <span class="hljs-built_in">clone</span> https://gist.github.com/vkarpov15/dbac89019245b10b7fb78d3530a1fed3</code></pre><hr>
+<pre class="hljs"><code>$ node .
+<span class="hljs-comment"># Above command just executes index.js file in current folder.</span></code></pre><hr>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> fetch = <span class="hljs-built_in">require</span>(<span class="hljs-string">'node-fetch'</span>)
+
+fetch(<span class="hljs-string">'https://jsonplaceholder.typicode.com/posts/1'</span>)
+  .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> res.json())
+  .then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(data) )
+</code></pre><hr>
+<h2 id="important-when-tried-to-load-a-url-via-import-in-node-experimental-or-node-current-edition-"><a class="header-link" href="#important-when-tried-to-load-a-url-via-import-in-node-experimental-or-node-current-edition-"></a>Important when tried to load a url via import in node experimental or node current edition-</h2>
+<p>It throws this:</p>
+<pre class="hljs"><code>import ss from <span class="hljs-string">"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"</span>;
+=&gt;
+Error [ERR_UNSUPPORTED_ESM_URL_SCHEME]<span class="hljs-symbol">:</span> Only file <span class="hljs-built_in">and</span> data URLs are supported by the default ESM loader</code></pre><p>help @ <a href="https://stackoverflow.com/questions/34607252/es6-import-module-from-url">stackoverflow</a></p>
+<hr>
+<h3 id="let-say-a-gist-has-a-single-file---temp.js"><a class="header-link" href="#let-say-a-gist-has-a-single-file---temp.js"></a>Let say a gist has a single file - temp.js</h3>
+<p>At url : <a href="https://gist.github.com/sahilrajput03/e9dc0c6c58e403a1218fdfa81b887c22">https://gist.github.com/sahilrajput03/e9dc0c6c58e403a1218fdfa81b887c22</a>
+So, the latest raw file can be accessed by the below permalinks:-</p>
+<ul class="list">
+<li><a href="https://gist.githubusercontent.com/sahilrajput03/e9dc0c6c58e403a1218fdfa81b887c22/raw/temp.js">https://gist.githubusercontent.com/sahilrajput03/e9dc0c6c58e403a1218fdfa81b887c22/raw/temp.js</a></li>
+<li><a href="https://gist.githubusercontent.com/sahilrajput03/e9dc0c6c58e403a1218fdfa81b887c22/raw/">https://gist.githubusercontent.com/sahilrajput03/e9dc0c6c58e403a1218fdfa81b887c22/raw/</a></li>
+</ul>
+<hr>
+<h3 id="let-say-a-gist-has-multiple-files---class.js,-file2.js,-nodemon2.js"><a class="header-link" href="#let-say-a-gist-has-multiple-files---class.js,-file2.js,-nodemon2.js"></a>Let say a gist has multiple files - class.js, file2.js, nodemon2.js</h3>
+<p>At url : <a href="https://gist.github.com/sahilrajput03/28c54304104b1acdbf5c51271cc4105a">https://gist.github.com/sahilrajput03/28c54304104b1acdbf5c51271cc4105a</a>
+So, the latest raw file can be accessed by the below permalinks:-</p>
+<p>IT TAKES APPROXIMATELY 4 MINUTES TO GET THEM UPDATED ACTUALLY, while you can always switch to the raw commit specific version by getting it manually by visiting the gist and clicking the raw button. You can get the raw commit specific version of all the files in the gist individually.:D</p>
+<ul class="list">
+<li>​    <a href="https://gist.githubusercontent.com/sahilrajput03/28c54304104b1acdbf5c51271cc4105a/raw">https://gist.githubusercontent.com/sahilrajput03/28c54304104b1acdbf5c51271cc4105a/raw</a></li>
+<li><a href="https://gist.githubusercontent.com/sahilrajput03/28c54304104b1acdbf5c51271cc4105a/raw/class.js">https://gist.githubusercontent.com/sahilrajput03/28c54304104b1acdbf5c51271cc4105a/raw/class.js</a></li>
+<li><a href="https://gist.githubusercontent.com/sahilrajput03/28c54304104b1acdbf5c51271cc4105a/raw/file2.js">https://gist.githubusercontent.com/sahilrajput03/28c54304104b1acdbf5c51271cc4105a/raw/file2.js</a></li>
+<li><a href="https://gist.githubusercontent.com/sahilrajput03/28c54304104b1acdbf5c51271cc4105a/raw/nodemon2.js">https://gist.githubusercontent.com/sahilrajput03/28c54304104b1acdbf5c51271cc4105a/raw/nodemon2.js</a></li>
+<li>NOTE: with the parameter:- raw, only the first file added in the gist will be fetched, so its good to define fileName when multiple files are used in the gist.</li>
+</ul>
+<hr>
+<p>You can get the commit specific raw file as soon as you create them, by some mechanism to get the url by looking at the schema they use to build that raw file&#39;s url. Its easy and can be done by some node&#39;s mechanisms. PRETTY Challenge. </p>
+<hr>
+<h2 id="error-lens-setting-"><a class="header-link" href="#error-lens-setting-"></a>Error lens Setting-</h2>
+<pre class="hljs"><code><span class="hljs-string">"errorLens.exclude"</span>: [
+  <span class="hljs-string">"File is a CommonJS module; it may be converted to an ES6 module."</span>,
+  <span class="hljs-string">" is declared but its value is never read"</span>
+]</code></pre><hr>
+<h2 id="exec-example:"><a class="header-link" href="#exec-example:"></a>Exec example:</h2>
+<p><a href="https://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback">link</a></p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> util = <span class="hljs-built_in">require</span>(<span class="hljs-string">'util'</span>);
+<span class="hljs-keyword">const</span> exec = util.promisify(<span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>).exec);
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">lsExample</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> { stdout, stderr } = <span class="hljs-keyword">await</span> exec(<span class="hljs-string">'ls'</span>);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'stdout:'</span>, stdout);
+  <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'stderr:'</span>, stderr);
+}
+lsExample();</code></pre><hr>
+<h2 id="wget"><a class="header-link" href="#wget"></a>wget</h2>
+<pre class="hljs"><code>wget <span class="hljs-symbol">&lt;url&gt;</span>
+doing this multiple times, will create addiotional copies like.
+<span class="hljs-keyword">file</span>.js
+<span class="hljs-keyword">file</span>.js.<span class="hljs-number">1</span>
+<span class="hljs-keyword">file</span>.js.<span class="hljs-number">2</span>
+<span class="hljs-keyword">file</span>.js.<span class="hljs-number">3</span>
+***
+So, workaround this <span class="hljs-keyword">is</span> <span class="hljs-keyword">to</span> overwrite the original <span class="hljs-keyword">file</span> i.<span class="hljs-keyword">e</span>.,
+wget <span class="hljs-symbol">&lt;url&gt;</span> -<span class="hljs-keyword">o</span> <span class="hljs-symbol">&lt;desiredFileName&gt;</span></code></pre><hr>
+<h3 id="maximise-panel-in-vscode-"><a class="header-link" href="#maximise-panel-in-vscode-"></a>Maximise Panel in vscode-</h3>
+<p class="img-container"><img src="image-20200524082702589.png" alt="image-20200524082702589"></p>
+<pre class="hljs"><code>{
+  <span class="hljs-string">"key"</span>: <span class="hljs-string">"ctrl+alt+m"</span>,
+  <span class="hljs-string">"command"</span>: <span class="hljs-string">"workbench.action.toggleMaximizedPanel"</span>
+}</code></pre><hr>
+<p>Event Emitter Code @ repo - TestingArenJSNodemon.</p>
+<p class="img-container"><img src="image-20200524083752391.png" alt="image-20200524083752391"></p>
+<hr>
+<h2 id="nodejs-documentations-for-lts:-"><a class="header-link" href="#nodejs-documentations-for-lts:-"></a>Nodejs documentations for LTS:-</h2>
+<p><a href="https://nodejs.org/dist/latest-v12.x/docs/api/">https://nodejs.org/dist/latest-v12.x/docs/api/</a></p>
+<hr>
+    </article>
   </body>
 </html>

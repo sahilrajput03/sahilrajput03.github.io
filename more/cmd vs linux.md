@@ -1,4 +1,106 @@
-[Table of  keyboard shortcuts](https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts#Command_line_shortcuts)
+## Setting the position for cmd
+
+![image-20200525100607451](image-20200525100607451.png)
+
+then do this, 
+
+![image-20200525100629535](image-20200525100629535.png)
+
+Note: Properties Settings for a cmd, is for the current cmd only, not for the cmd's that you open by typing cmd in explorer's current directory path, for that you'll need to do it for the Default settings the same thing i.e.,
+
+![image-20200525100723542](image-20200525100723542.png)
+
+##### Now, thats all.
+
+***
+
+### Printing Date in cmd
+
+```bash
+$ date /t
+```
+
+### Print some text in cmd
+
+```bash
+$ echo echo turned off
+$ echo Hey Buddy, how are you?
+```
+
+
+
+***
+
+### Using @echo off in cmd 
+
+```bash
+#Save below content in a .bat file and run.
+@echo off
+REM To skip the following Python commands, put "REM" before them:
+python foo.py
+python bar.py
+```
+
+So, using the above command will not show the commands for which it is showing the output(It hides the commnad, but shows all output.)
+
+You can use it without .bat file too, i.e.,
+
+```bash
+$ @echo off
+```
+
+ Now the cmd is another taste, isn't it.
+NOTE: To exit now you need to do
+
+```bash
+$ exit
+```
+
+***
+
+## REM (cmd commenting)
+
+REM is used to do commenting in cmd.
+
+```
+#Save below content in a .bat file and run.
+@echo off
+REM To skip the following Python commands, put "REM" before them:
+python foo.py
+python bar.py
+```
+
+It can be used for inline commenting too, i.e., 
+
+```bash
+$ dir && REM blahBlahBlowingg....
+```
+
+
+
+***
+
+## Installing grep in windows:-
+
+```bash
+$ choco install grep
+```
+
+help [link](https://chocolatey.org/packages?q=grep)
+
+***
+
+## Cmd
+
+To refresh environment variables instantly, withought closing and opening cmd again(works in powershell too), you can use 
+
+```bash
+$ refreshenv
+```
+
+***
+
+Table of  keyboard shortcuts](https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts#Command_line_shortcuts)
 
 ***
 
@@ -10,18 +112,121 @@
 # The only minor downsides are that (a) it flashes the prompt box briefly, and (b) repeated word erases leave a pile of spaces (harmless but a bit unattractive).
 ```
 
-### Deleting line in cmd
-
-```
-Ctrl + homekey # deletes the line to the left
-Ctrl + endkey # deletes the line to the right
-Also, use homekey and endkey to navigate to the start or end of line.
-Also, use ctrl + left/right to navigate to the previous or next word in the line.
-```
-
-
-
 ***
+
+# **Vi shortcuts-**
+
+### Navigate-
+
+```
+e goes to the end of the next word
+w goes to the beginning of the next word
+b goes to the beginning of the previous word
+ge goes to the end of the previous word
+
+Homekey/Endkey : Start or end of line.(Also works in bash cli)
+Ctrl + left/right : Previous or Next word
+Ctrl + homekey/endkey: Start/end of the file.
+
+u : get the last saved changes of the file, reget the file(get rid of current changes)
+
+j : downline
+k : upline
+l : cursor right
+h : cursor left
+```
+
+### Add tab to the start of current line
+
+```
+ctrl + t (works in Insert mode)
+```
+
+
+
+### Enter Insert Mode-
+
+```
+# a : To insert text to the right of the cursor
+# i : To insert text to the left of the cursor
+
+# A to add text to the end of a line
+# I to insert text at the beginning of a line
+
+OPEN LINE
+o to open a line below the current cursor position
+O to open a line above the current cursor position.
+
+MOVING TO START OR END OF THE LINE:-
+Press ^ to move the cursor to the start of the current line.
+
+Press $ to move the cursor to the end of the current line.
+```
+
+### Exit insert mode
+
+```
+Ctrl + [
+Ctrl + c
+Esc
+```
+
+### Text selection mode-
+
+```
+v : --visual-- : (hjkl(respectively to left/down/up/right-arrowkey), w(one word at a time), left/down/up/right-arrow. 
+V : --visual line-- : that means complete line is selected at a time, use up down to copy more lines
+Ctrl + v : --visual block mode : that is somewhat like multicursor selecting text.
+w : select a word a time to the right.
+
+y : to copy character under cursor or selected text
+```
+
+### Cut-
+
+```
+d : cut selected text
+d : cut selected text
+dd : cut the current line
+2dd : will cut 2 lines
+3dd : will cut 3 lines
+Hold d : to delete everything in vi.
+```
+
+### Paste-
+
+```
+p(lowercase) : paste below current line (Ctrl+Shift+v works too)
+P : paste above current line (shift bole to uppar)
+p(lowercase) : paste right to the cursor (Ctrl+Shift+v works too)
+P : paste left to the cursor (shift bole to uppar)
+```
+
+### Copy-
+
+```
+y stands for yank, (pull with a jerk, a sudden hard pull.)
+y - copies the character under the cursor or text under the selection and the cursor including.
+yy - Yank (copy) the current line, including the newline character.
+yw - Yank (copy) to the start of the next word.
+yiw – Yank (copy) the current word.
+```
+
+### Delete-
+
+```
+Ctrl + E :(Edit Mode) Deletes the first line in the file.
+x:(Edit Mode) Deleting Character under the cursor
+X:(Edit Mode) Delete Character left to the cursor
+```
+
+### Undo
+
+```
+u : undo
+```
+
+
 
 ## Moving around in vi
 
@@ -39,42 +244,36 @@ To enale edit mode use key => a or i
 
 
 ```BASH
-# All these bindings work in edit mode, not in insert mode, you can get in edit mode via pressing Esc anytime.
-u : get the last saved changes of the file, reget the file(get rid of current changes)
-j : downline
-k : upline
-l : cursor right
-h : cursor left
-# Ctrl + w: Deletes word to the left ,You can also use Alt+Backspace for the same.(Like, Ctrl + backspace in windows)
-v : select and hold, now the youcan select the text,Yipeee with Right/Down/Up/Right, or with H,J,K,L.
-b : Move cursor to the start of the word before the cursor.
-Ctrl + E : Deletes the first line in the file.
-#Works in bash too, deleting word with Ctrl+W.
-Navigate to start of next word: w
+# All these bindings work in edit mode, not in insert mode.
+
 dd : would delete the line
 dw : Would DELETE THE WORD right to the cursor.
-Whereas : Ctrl + w : Would DELETE THE WORD to the left
-Home Key: Move to start of line.(Also works in bash cli)
-End Key: Move to end of line. (Also works in bash cli)
+Ctrl + w (Alt+Backspace) : Would DELETE THE WORD to the left
+
+_
 BAsh cli: 
-Ctrl+ P: Up Arrow(get last command)
-Ctrl+ N: Down Arrow(vice-versa)
+Ctrl+W : Deleting word before cursor.
+Ctrl+ P/ Up Arrow : Previous command
+Ctrl+ N/ Down Arrow : Next Command
 Home key, Ctrl + K : Deletes the command typed.
 Ctrl + T : Transpose the left and right to the cursor (FIXING TYPO :D)
 # Understanding for block cursor: Transposes the character before the cursor with the character under the cursor.
 ```
 
-### Saving file
+### Creating new file and saving-
 
 ```bash
 $ vi # Creates a empty file.
 :wq <filename.txt>
-#Edit the file, and save and exit.
 ```
+
+### Opening file
 
 ```bash
 $ vi <filename> #Opens the given file
 ```
+
+### Save as
 
 ```bash
 $ vi file1.txt
@@ -83,9 +282,7 @@ $ :wq! file2.txt # We need ! (coz cache of the file1.txt is modified, and we nee
 # So, we are having what we desired :D.
 ```
 
-
-
-### To Read a file
+### Read a file
 
 ```bash
 $ cat <filename>
@@ -172,6 +369,7 @@ git | findstr overview #both cmd,bash
 git help | findstr pull #both cmd,bash
 git commit | findstr will
 # important:
+vi -h 2| findstr "\-a"
 git add -h 2| findstr dry #operator that supplies stderr to the findstr command, OPTION1
 git add -h |& findstr dry #operator that supplies stderr to the findstr command, OPTION2
 git commit -h 2| findstr dry #operator that supplies stderr to the findstr command
@@ -179,14 +377,26 @@ git | findstr git | findstr and
 # So findstr can be chained like this, such that outputs are transferred to next one using pipe
 ```
 
-### Using grep:
+### Using grep:(now works in windows and linux equally[atleast expected, installed via choco in windows])
 
 ```bash
 # using grep to find(bash, linux)
+choco -h | grep "search" #works in cmd and bash now, installed grep via choco in windows.
 git add -h 2| grep dry # 2| operator is needed when there are switches in the command i.e., -h here.
-help | grep done
-git | grep git | grep and 
+help | grep done #finds something in bash
+help | grep tree #finds something in cmd
+help | grep while #finds something in bash
+git | grep git | grep and #finds something in bash and cmd too.
 # So grep can be chained like this, such that outputs are transferred to next one using pipe
+```
+
+### Cmd  Comment]Must Look[(Special)
+
+```bash
+choco -h | grep "search" #works in cmd and bash now, installed grep via choco in windows.
+Above command throws some errrors as "#works in cmd ..." is interpreted as inside the command, it is not considered as comment in cmd, so we need to make use of REM which is used to comment out a command in cmd. Like below one, does the work greatly, with interpreting it as comment.
+$ choco -h | grep "search" && REM #works in cmd and bash now, installed grep via choco in windows.
+Above command will 
 ```
 
 

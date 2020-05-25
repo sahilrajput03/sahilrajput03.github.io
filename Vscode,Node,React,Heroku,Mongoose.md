@@ -1,3 +1,5 @@
+Note: Never use : at the end of heading in typora, as it will cause problems while sharing links with people when shared in messaging groups as : at the end of the url is not regarded as the part of html link. Happy Hackings! :D​
+
 ## Vscode, Node, React, Mogoose
 
 ***
@@ -3733,4 +3735,272 @@ const path = require('path');
 ```js
 There is also a built-in environment variable called NODE_ENV. You can read it from process.env.NODE_ENV. When you run npm start, it is always equal to 'development', when you run npm test it is always equal to 'test', and when you run npm run build to make a production bundle, it is always equal to 'production'. You cannot override NODE_ENV manually. This prevents developers from accidentally deploying a slow development build to production.
 ```
+
+***
+
+### Create index.js file inside a folder, and you can run it via just node . command
+
+***
+
+- You can assign data to global object in node
+
+- process.platform will return the window/linux/max on appropriate system.
+- process.env.USER will return the user logged in current operating system.
+
+***
+
+## Node program can work in blocking and non-blocking way-
+
+### -	In blocking way-
+
+![image-20200522154317470](image-20200522154317470.png)
+
+### -	In non-blocking way:-
+
+![image-20200522154404203](image-20200522154404203.png)
+
+***
+
+## Promises are asynchronous and non-blocking
+
+***
+
+### Top level await
+
+![image-20200522154652448](image-20200522154652448.png)
+
+*
+
+#### General way of using await to read the file, using async/await-
+
+![image-20200522154754052](image-20200522154754052.png)
+
+***
+
+## Change new line format 
+
+![image-20200522165148048](image-20200522165148048.png)
+
+CRLF : CR + LF (windows format)
+LF : LF only.
+
+***
+
+## Another syntax for Immediately  invoked function-
+
+```js
+(() => {
+  console.log("hello...");
+})();
+//works in node
+```
+
+***
+
+### Top level await works in chrome, as v8 has now support for top level await(chrome runs on v8)
+
+official v8 [link](https://v8.dev/features/top-level-await)
+
+```js
+await setTimeout(() => console.log("Amazingg...."), 2000)
+//works in chrome(v8 engine).
+
+try {
+  jQuery = await import('https://cdn-a.example.com/jQuery');
+} catch {
+  console.log('Hello.., I can execute in chrome, as top level await is supported in v8 now.')
+}
+```
+
+### Dependency fallbacks
+
+The following example attempts to load a JavaScript library from CDN A, falling back to CDN B if that fails:
+
+```js
+let jQuery;
+try {
+  jQuery = await import('https://cdn-a.example.com/jQuery');
+} catch {
+  jQuery = await import('https://cdn-b.example.com/jQuery');
+}
+```
+
+info: [v8](https://flaviocopes.com/v8/) recently introduced top-level `await` for ES modules. It’s a new proposed standard for ECMAScript, which has [reached stage 3](https://github.com/tc39/proposal-top-level-await).
+
+## Isn’t top-level `await` a footgun? [#](https://v8.dev/features/top-level-await#isn't-top-level-await-a-footgun%3F)
+
+[link](https://v8.dev/features/top-level-await#isn%E2%80%99t-top-level-await-a-footgun%3F)
+
+Any feature whose addition to a product results in the user shooting themselves in the foot.
+
+***
+
+### Any gist can be embedded here like this:-
+
+<script src="https://gist.github.com/sahilrajput03/433dfeeafa9cc338cc91e4289422ab07.js"></script>
+
+***
+
+The difference between public and private gist is that, private gists are not crawlable by search engines and not visible on your [gist.github.com/sahilrajput03](gist.github.com/sahilrajput03) profile. You can share private gists with the url with no disadvantage at all.
+
+Any private gist can be turned to public gist easily
+
+***
+
+## To simply view a gist on cli
+
+[link](https://hub.github.com/hub-gist.1.html)
+
+```js
+$ hub gist show <file-id(not the url)>
+//above command works good, but if you have more than one file, it will show you the names of the files with extension. So you could view one file at a time, with the command below:-
+$ hub gist show <file-id(not the url)> OnlyOneFileName.js
+```
+
+
+
+## You can clone any gist like the repository
+
+### IMORTANT: When you update a gist, its id doen't change. 
+
+```bash
+$ git clone <gist-url>
+$ git clone <gist-url> . # this would result similar results that with the git-repository.
+# You need to have the current directory with no content, you could create a new directory with mkdir and use that too.
+e.g., 
+$ git clone https://gist.github.com/vkarpov15/dbac89019245b10b7fb78d3530a1fed3
+```
+
+***
+
+```bash
+$ node .
+# Above command just executes index.js file in current folder.
+```
+
+***
+
+```js
+const fetch = require('node-fetch')
+
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(res => res.json())
+  .then(data => console.log(data) )
+
+```
+
+***
+
+## Important when tried to load a url via import in node experimental or node current edition-
+
+It throws this:
+
+```
+import ss from "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css";
+=>
+Error [ERR_UNSUPPORTED_ESM_URL_SCHEME]: Only file and data URLs are supported by the default ESM loader
+```
+
+help @ [stackoverflow](https://stackoverflow.com/questions/34607252/es6-import-module-from-url)
+
+***
+
+### Let say a gist has a single file - temp.js
+
+At url : https://gist.github.com/sahilrajput03/e9dc0c6c58e403a1218fdfa81b887c22
+So, the latest raw file can be accessed by the below permalinks:-
+
+- https://gist.githubusercontent.com/sahilrajput03/e9dc0c6c58e403a1218fdfa81b887c22/raw/temp.js
+- https://gist.githubusercontent.com/sahilrajput03/e9dc0c6c58e403a1218fdfa81b887c22/raw/
+
+***
+
+### Let say a gist has multiple files - class.js, file2.js, nodemon2.js
+
+At url : https://gist.github.com/sahilrajput03/28c54304104b1acdbf5c51271cc4105a
+So, the latest raw file can be accessed by the below permalinks:-
+
+IT TAKES APPROXIMATELY 4 MINUTES TO GET THEM UPDATED ACTUALLY, while you can always switch to the raw commit specific version by getting it manually by visiting the gist and clicking the raw button. You can get the raw commit specific version of all the files in the gist individually.:D
+
+- ​	https://gist.githubusercontent.com/sahilrajput03/28c54304104b1acdbf5c51271cc4105a/raw
+- https://gist.githubusercontent.com/sahilrajput03/28c54304104b1acdbf5c51271cc4105a/raw/class.js
+- https://gist.githubusercontent.com/sahilrajput03/28c54304104b1acdbf5c51271cc4105a/raw/file2.js
+- https://gist.githubusercontent.com/sahilrajput03/28c54304104b1acdbf5c51271cc4105a/raw/nodemon2.js
+- NOTE: with the parameter:- raw, only the first file added in the gist will be fetched, so its good to define fileName when multiple files are used in the gist.
+
+***
+
+You can get the commit specific raw file as soon as you create them, by some mechanism to get the url by looking at the schema they use to build that raw file's url. Its easy and can be done by some node's mechanisms. PRETTY Challenge. 
+
+***
+
+## Error lens Setting-
+
+```js
+"errorLens.exclude": [
+  "File is a CommonJS module; it may be converted to an ES6 module.",
+  " is declared but its value is never read"
+]
+```
+
+***
+
+## Exec example:
+
+[link](https://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback)
+
+```js
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
+
+async function lsExample() {
+  const { stdout, stderr } = await exec('ls');
+  console.log('stdout:', stdout);
+  console.error('stderr:', stderr);
+}
+lsExample();
+```
+
+***
+
+## wget
+
+```
+wget <url>
+doing this multiple times, will create addiotional copies like.
+file.js
+file.js.1
+file.js.2
+file.js.3
+***
+So, workaround this is to overwrite the original file i.e.,
+wget <url> -o <desiredFileName>
+```
+
+***
+
+### Maximise Panel in vscode-
+
+![image-20200524082702589](image-20200524082702589.png)
+
+```js
+{
+  "key": "ctrl+alt+m",
+  "command": "workbench.action.toggleMaximizedPanel"
+}
+```
+
+***
+
+Event Emitter Code @ repo - TestingArenJSNodemon.
+
+![image-20200524083752391](image-20200524083752391.png)
+
+***
+
+## Nodejs documentations for LTS:-
+
+https://nodejs.org/dist/latest-v12.x/docs/api/
+
+***
 
