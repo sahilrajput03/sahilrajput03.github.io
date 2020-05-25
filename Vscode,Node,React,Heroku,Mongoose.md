@@ -4004,3 +4004,151 @@ https://nodejs.org/dist/latest-v12.x/docs/api/
 
 ***
 
+## Setting indentation to 2 spaces
+
+By default it is 4 spaces in vscode. But 2 is recommended.(Prettier uses 2 too, and then vscode detects).
+
+![image-20200525144342021](image-20200525144342021.png)
+
+***
+
+## Single quotes, double quotes, and backticks
+
+- ARticle @ medium- [link](https://medium.com/javascript-in-plain-english/the-real-difference-between-single-quotes-and-double-quotes-in-javascript-3d00bf720bcd)
+- Multiline strings with backticks
+
+```
+sst = `sahil\nRajput`
+//Output : "sahil
+Rajput"
+```
+
+- ```
+  const webAwareAI = `<div class="cloud">
+  <h1>Loading consciousness... It's loading...</h1>
+  </div>`
+  console.log(webAwareAI)
+  
+  /**
+   *  Output:
+   *  <div class="cloud">
+   *  <h1>Loading consciousness... It's loading...</h1>
+   *  </div>
+   */
+  ```
+
+  -Backtick literals are [**just as fast** as other string literals](https://medium.com/javascript-in-plain-english/are-backticks-slower-than-other-strings-in-javascript-ce4abf9b9fa), whether or not you [compile them using Babel](https://medium.com/coding-at-dawn/does-compiling-javascript-code-using-babel-make-backtick-literals-as-fast-as-regular-quotes-cd1f29906691). So why not use backticks ```` instead? 😊
+
+  # Don’t forget about JSON
+
+  JavaScript Object Notation [(JSON](https://www.json.org/)), the lightweight data storage format, only allows double quotes.
+
+  If I happen to be copying back-and-forth from JavaScript to JSON files, using just double quotes helps me stay consistent.
+
+  This is pretty rare — I just try to remember to not use single quotes in JSON.
+
+  When handling JSON files from within JavaScript, the [stringify() and parse()](https://medium.com/javascript-in-plain-english/how-to-use-stringify-and-parse-in-javascript-6b637b571a32) functions know about the double quotes already:
+
+  ```js
+  const greetings = JSON.stringify({hello: 'World!'})
+  console.log(greetings) // {"hello":"World!"}
+  console.log(JSON.parse(greetings)) // Object { hello: "World!" }
+  JSON.parse({'hello':'World!'}) // SyntaxError: JSON.parse: unexpected character at line 1 column 2 of the JSON data
+  view rawcareful-single-quotes-break-JSON.js hosted with ❤ by GitHub
+  ```
+
+  It comes down to personal preference, though many people lobby for picking one and using it consistently when creating JavaScript strings.
+
+  For example, [Airbnb’s style guide](https://github.com/airbnb/javascript#strings--quotes) prefers single quotes (‘ ’), avoids double quotes (“ ”), and uses backtick literals (` `) sparingly.
+
+  If anything, we should consistently pick backtick literals (` `) for their advantages around interpolation and multi-line strings.
+
+  ***
+
+  ### Immediately Invoked Function-
+
+  ```js
+  (function() {
+    alert("I am an IIFE!");
+  }());
+  
+  // Variation 2
+  (function() {
+    alert("I am an IIFE, too!");
+  })();
+  ```
+
+  ```js
+  (function IIFE_initGame() {
+      // Private variables that no one has access to outside this IIFE
+      var lives;
+      var weapons;
+      
+      init();
+  
+      // Private function that no one has access to outside this IIFE
+      function init() {
+          lives = 5;
+          weapons = 10;
+      }
+  }());
+  ```
+
+  ## IIFEs with a return value
+
+  If you don’t need a return value from an IIFE, then you could always use the first stylistic IIFE variation that we saw with unary operators like ***!\***, ***+\***, ***void\***, and etc.
+
+  ```
+  var result = (function() {
+      return "From IIFE";
+  }());
+  
+  alert(result); // alerts "From IIFE"
+  ```
+
+  ## IIFEs with parameters
+
+  Not only IIFEs can return values, but IIFEs can also take arguments while they are invoked. Let’s see a quick example.
+
+  ```js
+  (function IIFE(msg, times) {
+      for (var i = 1; i <= times; i++) {
+          console.log(msg);
+      }
+  }("Hello!", 5));
+  ```
+
+  ## When you can omit parentheses
+
+  Parentheses around the function expression basically force the function to become an expression instead of a statement.
+
+  But when it’s obvious to the JavaScript engine that it’s a function expression, we don’t technically need those surrounding parentheses as shown below.
+
+  ```js
+  var result = function() {
+      return "From IIFE!";
+  }();
+  ```
+
+  ***
+
+  **Use camelcase when naming variables and functions.**
+
+  ```js
+    function my_function () { }    // ✗ avoid
+    function myFunction () { }     // ✓ ok
+   
+    var my_var = 'hello'           // ✗ avoid
+    var myVar = 'hello'            // ✓ ok
+  ```
+
+  ***
+
+***
+
+## JavaScript Standard Style
+
+https://standardjs.com/rules.html#javascript-standard-style
+
+***
+
