@@ -10,7 +10,8 @@
   </head>
   <body>
     <article class="markdown-body"><h2 id="getting-rid-of-unnecessar-warning-for-doing-good-things-that-git-does-for-us"><a class="header-link" href="#getting-rid-of-unnecessar-warning-for-doing-good-things-that-git-does-for-us"></a>Getting rid of unnecessar warning for doing good things that git does for us</h2>
-<pre class="hljs"><code>$ git config --global core.safecrlf <span class="hljs-literal">false</span></code></pre><p>This will only turn off the warning, not the function itself.</p>
+<pre class="hljs"><code>$ git config --global core.safecrlf <span class="hljs-literal">false</span></code></pre><p>This will only turn off the warning, not the function itself. Answer found on stackoverlow @ <a href="https://stackoverflow.com/a/14640908/10012446">link</a> .
+You should never disable autocrlf, it&#39;s actually good for cross platform developers exeperience without messing with line endings ever.</p>
 <hr>
 <h2 id="vscode-default-settings-for-->-end-of-line-sequence"><a class="header-link" href="#vscode-default-settings-for-->-end-of-line-sequence"></a>Vscode default settings for -&gt; End of line sequence</h2>
 <p>It uses whats already good for windows, i.e., CRLF in new .js and .txt files.</p>
