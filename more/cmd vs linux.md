@@ -1,4 +1,59 @@
+## There global savings of all mingw command-
+
+You can view them, via command 
+
+```bash
+$ history
+```
+
+Note the history for currently opened bash (mingw) is only saved when its closed and new a new bash(mingw) is opened.
+
+Also, you can clear the history in mingw via:-
+
+```bash
+$ rm ~/.bash_history
+```
+
+In linux, its like 
+
+```bash
+$ history -c
+```
+
+
+
+***
+
+### [Is there a global, persistent CMD history?](https://serverfault.com/questions/95404/is-there-a-global-persistent-cmd-history)
+
+No, Windows command prompt history can't be saved when a session ends.
+
+***
+
+### Viewing history in cmd:-
+
+Press f7, to view the history of current cmd.
+
+***
+
+## Scroll the screen of mingw:-
+
+Hold shift key, and use arrow keys(up/down) and pg up/down keys. (Home/End keys are supported)
+
+***
+
+## Scroll the screen of cmd:-
+
+Press Alt+Space together, and then E, then L
+Then, you are free to use arrow keys or page up/down keys.(Home/End keys are not supported.)
+
+[link](https://www.howtogeek.com/howto/windows-vista/keyboard-ninja-scrolling-the-windows-command-prompt-with-only-the-keyboard/)
+
+***
+
 ## Setting the position for cmd
+
+
 
 ![image-20200525100607451](image-20200525100607451.png)
 
