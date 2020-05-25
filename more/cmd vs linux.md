@@ -1,3 +1,13 @@
+## Getting rid of unnecessar warning for doing good things that git does for us
+
+```bash
+$ git config --global core.safecrlf false
+```
+
+This will only turn off the warning, not the function itself.
+
+***
+
 ## Vscode default settings for -> End of line sequence
 
 It uses whats already good for windows, i.e., CRLF in new .js and .txt files.
