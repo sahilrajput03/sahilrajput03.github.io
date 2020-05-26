@@ -3,13 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Above image also describes about describe in git :D</title>
+    <title>Getting rid of unnecessar warning for doing good things that git does for us</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><hr>
+    <article class="markdown-body"><h2 id="getting-rid-of-unnecessar-warning-for-doing-good-things-that-git-does-for-us"><a class="header-link" href="#getting-rid-of-unnecessar-warning-for-doing-good-things-that-git-does-for-us"></a>Getting rid of unnecessar warning for doing good things that git does for us</h2>
+<pre class="hljs"><code>$ git config --global core.safecrlf <span class="hljs-literal">false</span></code></pre><p>This will only turn off the warning, not the function itself. Answer found on stackoverlow @ <a href="https://stackoverflow.com/a/14640908/10012446">link</a> .
+You should never disable autocrlf, it&#39;s actually good for cross platform developers exeperience without messing with line endings ever.</p>
+<hr>
 <p>Amazing Tags in github:</p>
 <p class="img-container"><img src="image-20200522084031669.png" alt="image-20200522084031669"></p>
 <p class="img-container"><img src="image-20200522084048173.png" alt="image-20200522084048173"></p>
@@ -184,10 +187,10 @@ $ hub delete &lt;repository-name&gt; -y <span class="hljs-comment">#This bypasss
 <hr>
 <h2 id="view-all-local-branches:"><a class="header-link" href="#view-all-local-branches:"></a>View all local branches:</h2>
 <p>The below command shows all local and all remote branches(irrespectively they have been checked out earlier or not).</p>
-<pre class="hljs"><code>git checkout &lt;press-tab&gt;&lt;press-tab&gt;</code></pre><p><strong>Note</strong>: we have git branch and git branch -a to get the list of branches present in the repository. 
+<pre class="hljs"><code>git checkout &lt;press-tab&gt;&lt;press-tab&gt;</code></pre><p><strong>Note</strong>: we have git branch and <strong>git branch -a</strong> to get the list of branches present in the repository. 
 But the former one (<strong>git branch</strong>) can show branches which you have <strong>checkedout earlier atleast once</strong>.
-And the latter one (<strong>git branch -a</strong>) shows branches which you have <strong>checkedout earlier atleast once</strong>(or more) and <strong>all remote branches</strong>.</p>
-<hr>
+And the latter one (<strong>git branch -a</strong>) shows branches which you have <strong>checkedout earlier atleast once</strong>(or more) and <strong>all remote branches too</strong>. But the best way is(although, locally branch copies of the remote branches are there, but they are not shown as it seems obvious to experienced developers), so it is </p>
+<pre class="hljs"><code>$ git checkout &lt;TAB&gt;&lt;TAB&gt;</code></pre><hr>
 <h2 id="clone-a-single-branch-only:"><a class="header-link" href="#clone-a-single-branch-only:"></a>Clone a single branch only:</h2>
 <p>Below command only clones the the desired branch:</p>
 <pre class="hljs"><code>git <span class="hljs-built_in">clone</span> --single-branch --branch &lt;branchname&gt; &lt;remote-repo&gt;</code></pre><p>__
@@ -449,13 +452,10 @@ Atlassian has <span class="hljs-keyword">some</span> excellent documentation <sp
 <h6 id="awesome-article-on-git-merge"><a class="header-link" href="#awesome-article-on-git-merge"></a>Awesome article on git merge</h6>
 <p><a href="https://stackabuse.com/git-merge-branch-into-master/">Git: Merge Branch into Master@StackAbuse.com</a></p>
 <hr>
-<h2 id="#about-deleting-branches-locally-and-on-remotes,#delete-branch,"><a class="header-link" href="##about-deleting-branches-locally-and-on-remotes,#delete-branch,"></a>#About deleting branches locally and on remotes,#delete branch,</h2>
+<h2 id="about-#delete-branch-#delete-branches-#delete-branch-on-remote-#deleting-branch-locally-and-#deleting-branches-on-remotes,#delete-branch,"><a class="header-link" href="#about-#delete-branch-#delete-branches-#delete-branch-on-remote-#deleting-branch-locally-and-#deleting-branches-on-remotes,#delete-branch,"></a>About #delete branch #Delete branches #delete branch on remote #deleting branch locally and #deleting branches on remotes,#delete branch,</h2>
 <p><em>You <strong>CANNOT</strong> delete a <strong>checked out</strong> branch.</em> 
 <em>You <strong>CANNOT</strong> delete <strong>default branch on github remote</strong> repository.</em></p>
-<pre class="hljs"><code>Executive Summary
-$ git push <span class="hljs-_">-d</span> &lt;remote_name&gt; &lt;branch_name&gt; <span class="hljs-comment">#doesn't deletes branch on local machine</span>
-$ git branch <span class="hljs-_">-d</span> &lt;branch_name&gt; <span class="hljs-comment">#doesn't deletes branch on remote.</span>
-<span class="hljs-comment"># Note that in most cases the remote name is origin.</span>
+<pre class="hljs"><code>$ git push <span class="hljs-_">-d</span> &lt;remote_name&gt; &lt;branch_name&gt; <span class="hljs-comment">#Deletes remote branch only,doesn't deletes local branch.</span></code></pre><pre class="hljs"><code>$ git branch <span class="hljs-_">-d</span> &lt;branch_name&gt; <span class="hljs-comment">#Deletes local branch only, doesn't deletes remote branch.</span></code></pre><pre class="hljs"><code><span class="hljs-comment"># Note that in most cases the remote name is origin.</span>
 
 _
 Delete Local Branch
@@ -476,7 +476,12 @@ $ git push &lt;remote_name&gt; :&lt;branch_name&gt; <span class="hljs-comment">#
 <p>Tags: #delete branch github,delete branch on github,#delete master branch on Github, delete master branch Github, rename branch github.</p>
 <h3 id="this-is-needed-so-as-to-be-able-to-add-remote-of-this-repository-to-some-other-repository,-and-push-master-branch-on-it."><a class="header-link" href="#this-is-needed-so-as-to-be-able-to-add-remote-of-this-repository-to-some-other-repository,-and-push-master-branch-on-it."></a>This is needed so as to be able to add remote of this repository to some other repository, and push master branch on it.</h3>
 <p class="img-container"><img src="DeletingMasterBranchOnGithub.gif" alt="Image"></p>
-<hr>
+<p>*</p>
+<p>You can do simililarly on git cli too,</p>
+<pre class="hljs"><code>$ git branch backup master
+$ git push origin backup
+$ git push <span class="hljs-_">-d</span> origin master <span class="hljs-comment">#This will only be allowed once you set default bracnh to backup in github repository.</span>
+$ git branch <span class="hljs-_">-d</span> master</code></pre><hr>
 <p><a href="https://gist.github.com/cmatskas/454e3369e6963a1c8c89">GitDeleteCommands.ps1</a></p>
 <hr>
 <p><a href="https://www.youtube.com/watch?v=CRlGDDprdOQ">Video on youtube about the merge vs. rebase</a></p>
@@ -493,7 +498,12 @@ $ git push &lt;remote_name&gt; :&lt;branch_name&gt; <span class="hljs-comment">#
 <pre class="hljs"><code>git reset --hard HEAD</code></pre><hr>
 <h6 id="reverse-a-particular-commit-//-this-is-not-a-commonly-used-command..so-try-not-to-use..(although-works-great)"><a class="header-link" href="#reverse-a-particular-commit-//-this-is-not-a-commonly-used-command..so-try-not-to-use..(although-works-great)"></a>Reverse a particular commit // This is not a commonly used command..so try not to use..(although works great)</h6>
 <pre class="hljs"><code>git revert &lt;commit-hash&gt;</code></pre><hr>
-<h2 id="create-branch-from-another-branch-and-change-to-new-branch:"><a class="header-link" href="#create-branch-from-another-branch-and-change-to-new-branch:"></a>Create branch from another branch and change to new branch:</h2>
+<h2 id="create-a-branch-even-if-the-branch-with-that-name-already-exists-"><a class="header-link" href="#create-a-branch-even-if-the-branch-with-that-name-already-exists-"></a>Create a branch even if the branch with that name already exists-</h2>
+<p>#copy branch forcibly</p>
+<pre class="hljs"><code>git branch -C branchHellYeah
+git branch -C master2 branchHellYeah <span class="hljs-comment">#This will create copy of branch master2 to branchHellYeah(forcibly)</span></code></pre><pre class="hljs"><code><span class="hljs-comment">#While, simply copying branch has different syntax i.e., </span>
+git branch branchHellYeah master3 <span class="hljs-comment">#Creates branch branchHellYeah from master2.</span>
+git branch master origin/master <span class="hljs-comment">#Create branch master from origin/master.</span></code></pre><h2 id="create-branch-from-another-branch-and-change-to-new-branch:"><a class="header-link" href="#create-branch-from-another-branch-and-change-to-new-branch:"></a>Create branch from another branch and change to new branch:</h2>
 <pre class="hljs"><code>git checkout -b myFeature dev</code></pre><hr>
 <h2 id="create-branch-from-current-branch-and-change-to-new-branch:"><a class="header-link" href="#create-branch-from-current-branch-and-change-to-new-branch:"></a>Create branch from current branch and change to new branch:</h2>
 <pre class="hljs"><code>git checkout -b myFeature</code></pre><pre class="hljs"><code>git <span class="hljs-built_in">log</span> --oneline
@@ -652,8 +662,6 @@ git <span class="hljs-built_in">help</span> -g // all git related guides &gt;&gt
 git fetch ; git fetch</code></pre><hr>
 <h3 id="git-cheatsheet-from-git-scm-:"><a class="header-link" href="#git-cheatsheet-from-git-scm-:"></a>git cheatsheet from git-scm :</h3>
 <p><a href="https://github.github.com/training-kit/downloads/github-git-cheat-sheet/">https://github.github.com/training-kit/downloads/github-git-cheat-sheet/</a> </p>
-<hr>
-<h2 id="delete-a-line-in-vi-editor,-use-shortcut:-dd"><a class="header-link" href="#delete-a-line-in-vi-editor,-use-shortcut:-dd"></a>Delete a line in vi editor, use shortcut: dd</h2>
 <hr>
 <h2 id=".gitignore-file-pattern,#adding-files-.gitignore,#folders-in-.gitignore,#forder-.gitignore:"><a class="header-link" href="#.gitignore-file-pattern,#adding-files-.gitignore,#folders-in-.gitignore,#forder-.gitignore:"></a>.gitignore file pattern,#adding files .gitignore,#folders in .gitignore,#forder .gitignore:</h2>
 <p><a href="https://linuxize.com/post/gitignore-ignoring-files-in-git/">https://linuxize.com/post/gitignore-ignoring-files-in-git/</a></p>

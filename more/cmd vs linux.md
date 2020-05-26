@@ -1,11 +1,8 @@
-## Getting rid of unnecessar warning for doing good things that git does for us
+## You can create a new bash from gitbash
 
-```bash
-$ git config --global core.safecrlf false
-```
+With shortcut-> Alt+f2
 
-This will only turn off the warning, not the function itself. Answer found on stackoverlow @ [link](https://stackoverflow.com/a/14640908/10012446) .
-You should never disable autocrlf, it's actually good for cross platform developers exeperience without messing with line endings ever.
+![image-20200527002414819](image-20200527002414819.png)
 
 ***
 

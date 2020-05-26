@@ -1,6 +1,11 @@
+## Getting rid of unnecessar warning for doing good things that git does for us
 
+```bash
+$ git config --global core.safecrlf false
+```
 
-
+This will only turn off the warning, not the function itself. Answer found on stackoverlow @ [link](https://stackoverflow.com/a/14640908/10012446) .
+You should never disable autocrlf, it's actually good for cross platform developers exeperience without messing with line endings ever.
 
 
 
@@ -460,9 +465,15 @@ The below command shows all local and all remote branches(irrespectively they ha
 git checkout <press-tab><press-tab>
 ```
 
-**Note**: we have git branch and git branch -a to get the list of branches present in the repository. 
+**Note**: we have git branch and **git branch -a** to get the list of branches present in the repository. 
 But the former one (**git branch**) can show branches which you have **checkedout earlier atleast once**.
-And the latter one (**git branch -a**) shows branches which you have **checkedout earlier atleast once**(or more) and **all remote branches**.
+And the latter one (**git branch -a**) shows branches which you have **checkedout earlier atleast once**(or more) and **all remote branches too**. But the best way is(although, locally branch copies of the remote branches are there, but they are not shown as it seems obvious to experienced developers), so it is 
+
+```bash
+$ git checkout <TAB><TAB>
+```
+
+
 
 ***
 
@@ -965,15 +976,20 @@ Atlassian has some excellent documentation on merging vs. rebasing.
 
 ***
 
-## #About deleting branches locally and on remotes,#delete branch,
+## About #delete branch #Delete branches #delete branch on remote #deleting branch locally and #deleting branches on remotes,#delete branch,
 
 *You **CANNOT** delete a **checked out** branch.* 
 *You **CANNOT** delete **default branch on github remote** repository.*
 
 ```bash
-Executive Summary
-$ git push -d <remote_name> <branch_name> #doesn't deletes branch on local machine
-$ git branch -d <branch_name> #doesn't deletes branch on remote.
+$ git push -d <remote_name> <branch_name> #Deletes remote branch only,doesn't deletes local branch.
+```
+
+```bash
+$ git branch -d <branch_name> #Deletes local branch only, doesn't deletes remote branch.
+```
+
+```bash
 # Note that in most cases the remote name is origin.
 
 _
@@ -1003,6 +1019,17 @@ Tags: #delete branch github,delete branch on github,#delete master branch on Git
 ### This is needed so as to be able to add remote of this repository to some other repository, and push master branch on it.
 
 ![Image](DeletingMasterBranchOnGithub.gif)
+
+*
+
+You can do simililarly on git cli too,
+
+```bash
+$ git branch backup master
+$ git push origin backup
+$ git push -d origin master #This will only be allowed once you set default bracnh to backup in github repository.
+$ git branch -d master
+```
 
 ***
 
@@ -1049,6 +1076,23 @@ git revert <commit-hash>
 ```
 
 ***
+
+## Create a branch even if the branch with that name already exists-
+
+#copy branch forcibly
+
+```bash
+git branch -C branchHellYeah
+git branch -C master2 branchHellYeah #This will create copy of branch master2 to branchHellYeah(forcibly)
+```
+
+```bash
+#While, simply copying branch has different syntax i.e., 
+git branch branchHellYeah master3 #Creates branch branchHellYeah from master2.
+git branch master origin/master #Create branch master from origin/master.
+```
+
+
 
 ## Create branch from another branch and change to new branch:
 
@@ -1336,10 +1380,6 @@ git fetch ; git fetch
 ### git cheatsheet from git-scm :  
 
 https://github.github.com/training-kit/downloads/github-git-cheat-sheet/ 
-
-***
-
-## Delete a line in vi editor, use shortcut: dd
 
 ***
 
