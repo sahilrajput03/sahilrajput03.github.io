@@ -1,3 +1,17 @@
+## REST Example with axios - Frontend and backend error handling collaboration example-
+
+- Frontend - deleteEventHandler 
+
+  ![image-20200527200019974](image-20200527200019974.png)
+
+- Backend - route handler
+
+  ![image-20200527200252780](image-20200527200252780.png)
+
+***
+
+
+
 ```js
 #create note with authorization
 post http://localhost:3003/api/notes
