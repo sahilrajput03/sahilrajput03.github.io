@@ -1,3 +1,42 @@
+## Setting default upstream without using git push -u origin <some-branch>
+
+```bash
+$ git branch <local-branch-name> --set-upstream-to=origin/backup
+# E.g 1.,
+$ git branch poma  --set-upstream-to=origin/backup
+# Output: Branch 'poma' set up to track remote branch 'backup' from 'origin'.
+# Note: Branch names could be different though, isn't amazing.
+# E.g 2.,
+$ git branch --set-upstream-to=origin/backup #Currently checkedout branch is backup.
+# Output: Branch 'backup' set up to track remote branch 'backup' from 'origin'.
+```
+
+### Get list of default upstreams for all branches-
+
+```bash
+$ git branch -vv
+# Output: 			|| These are corresponding set upstreams for each branch.
+* backup 9de0dc3 [origin/backup] fileadded
+  poma   9de0dc3 [origin/backup] fileadded
+  temp   9de0dc3 fileadded
+```
+
+### Removing  default upstreams of a branch-
+
+```bash
+$ git branch --unset-upstream #This will unset for currently checkedout branch.
+_
+$ git branch poma  --unset-upstream 
+#This will unset for the branch we have provided explicitly,i.e.poma
+```
+
+```bash
+# Check, if they are removed or not by
+$ git branch -vv 
+```
+
+***
+
 ## Getting rid of unnecessar warning for doing good things that git does for us
 
 ```bash
@@ -1022,13 +1061,15 @@ Tags: #delete branch github,delete branch on github,#delete master branch on Git
 
 *
 
-You can do simililarly on git cli too,
+## You can do simililarly on git-cli too,
 
 ```bash
-$ git branch backup master
-$ git push origin backup
-$ git push -d origin master #This will only be allowed once you set default bracnh to backup in github repository.
-$ git branch -d master
+$ git branch backup master #Syntax is => git branch <targetBranch> <sourceBranch>
+$ git push origin backup #We pushed the backup branch on github remote.
+$ git push -d origin master # Deletes master on remote.
+#This will only be allowed once you set default branch as backup by visiting repo on github.com/<user>/<repo-name>
+$ git checkout backup 
+$ git branch -d master # Deletes master on local copy of repo.
 ```
 
 ***

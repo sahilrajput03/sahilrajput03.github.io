@@ -1,8 +1,34 @@
+## Favourable window size setting in mintty/git-bash
+
+![image-20200527202235380](image-20200527202235380.png)
+
+
+
+***
+
+## Copying in git-bash(mintty) and cmd-
+
+- You can **copy** something in git-bash via just selecting something and pressing **c**. [no sideeffect] and paste something with **ctrl+shift+v** or **right-mouse-click**.
+
+- You can **copy**/**paste** something in cmd via just selecting something and pressing **righ-mouse-click**. [no sideeffect]
+
+***
+
 ## You can create a new bash from gitbash
 
 With shortcut-> Alt+f2
 
 ![image-20200527002414819](image-20200527002414819.png)
+
+
+
+## In cmd, you can do similarly by 
+
+```bash
+$ start cmd
+```
+
+
 
 ***
 

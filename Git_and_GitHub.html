@@ -3,13 +3,32 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Getting rid of unnecessar warning for doing good things that git does for us</title>
+    <title>Setting default upstream without using git push -u origin &lt;some-branch&gt;</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="getting-rid-of-unnecessar-warning-for-doing-good-things-that-git-does-for-us"><a class="header-link" href="#getting-rid-of-unnecessar-warning-for-doing-good-things-that-git-does-for-us"></a>Getting rid of unnecessar warning for doing good things that git does for us</h2>
+    <article class="markdown-body"><h2 id="setting-default-upstream-without-using-git-push--u-origin-<some-branch>"><a class="header-link" href="#setting-default-upstream-without-using-git-push--u-origin-<some-branch>"></a>Setting default upstream without using git push -u origin <some-branch></h2>
+<pre class="hljs"><code>$ git branch &lt;<span class="hljs-built_in">local</span>-branch-name&gt; --set-upstream-to=origin/backup
+<span class="hljs-comment"># E.g 1.,</span>
+$ git branch poma  --set-upstream-to=origin/backup
+<span class="hljs-comment"># Output: Branch 'poma' set up to track remote branch 'backup' from 'origin'.</span>
+<span class="hljs-comment"># Note: Branch names could be different though, isn't amazing.</span>
+<span class="hljs-comment"># E.g 2.,</span>
+$ git branch --set-upstream-to=origin/backup <span class="hljs-comment">#Currently checkedout branch is backup.</span>
+<span class="hljs-comment"># Output: Branch 'backup' set up to track remote branch 'backup' from 'origin'.</span></code></pre><h3 id="get-list-of-default-upstreams-for-all-branches-"><a class="header-link" href="#get-list-of-default-upstreams-for-all-branches-"></a>Get list of default upstreams for all branches-</h3>
+<pre class="hljs"><code>$ git branch -vv
+<span class="hljs-comment"># Output:             || These are corresponding set upstreams for each branch.</span>
+* backup 9de0dc3 [origin/backup] fileadded
+  poma   9de0dc3 [origin/backup] fileadded
+  temp   9de0dc3 fileadded</code></pre><h3 id="removing-default-upstreams-of-a-branch-"><a class="header-link" href="#removing-default-upstreams-of-a-branch-"></a>Removing  default upstreams of a branch-</h3>
+<pre class="hljs"><code>$ git branch --unset-upstream <span class="hljs-comment">#This will unset for currently checkedout branch.</span>
+_
+$ git branch poma  --unset-upstream 
+<span class="hljs-comment">#This will unset for the branch we have provided explicitly,i.e.poma</span></code></pre><pre class="hljs"><code><span class="hljs-comment"># Check, if they are removed or not by</span>
+$ git branch -vv </code></pre><hr>
+<h2 id="getting-rid-of-unnecessar-warning-for-doing-good-things-that-git-does-for-us"><a class="header-link" href="#getting-rid-of-unnecessar-warning-for-doing-good-things-that-git-does-for-us"></a>Getting rid of unnecessar warning for doing good things that git does for us</h2>
 <pre class="hljs"><code>$ git config --global core.safecrlf <span class="hljs-literal">false</span></code></pre><p>This will only turn off the warning, not the function itself. Answer found on stackoverlow @ <a href="https://stackoverflow.com/a/14640908/10012446">link</a> .
 You should never disable autocrlf, it&#39;s actually good for cross platform developers exeperience without messing with line endings ever.</p>
 <hr>
@@ -477,11 +496,13 @@ $ git push &lt;remote_name&gt; :&lt;branch_name&gt; <span class="hljs-comment">#
 <h3 id="this-is-needed-so-as-to-be-able-to-add-remote-of-this-repository-to-some-other-repository,-and-push-master-branch-on-it."><a class="header-link" href="#this-is-needed-so-as-to-be-able-to-add-remote-of-this-repository-to-some-other-repository,-and-push-master-branch-on-it."></a>This is needed so as to be able to add remote of this repository to some other repository, and push master branch on it.</h3>
 <p class="img-container"><img src="DeletingMasterBranchOnGithub.gif" alt="Image"></p>
 <p>*</p>
-<p>You can do simililarly on git cli too,</p>
-<pre class="hljs"><code>$ git branch backup master
-$ git push origin backup
-$ git push <span class="hljs-_">-d</span> origin master <span class="hljs-comment">#This will only be allowed once you set default bracnh to backup in github repository.</span>
-$ git branch <span class="hljs-_">-d</span> master</code></pre><hr>
+<h2 id="you-can-do-simililarly-on-git-cli-too,"><a class="header-link" href="#you-can-do-simililarly-on-git-cli-too,"></a>You can do simililarly on git-cli too,</h2>
+<pre class="hljs"><code>$ git branch backup master <span class="hljs-comment">#Syntax is =&gt; git branch &lt;targetBranch&gt; &lt;sourceBranch&gt;</span>
+$ git push origin backup <span class="hljs-comment">#We pushed the backup branch on github remote.</span>
+$ git push <span class="hljs-_">-d</span> origin master <span class="hljs-comment"># Deletes master on remote.</span>
+<span class="hljs-comment">#This will only be allowed once you set default branch as backup by visiting repo on github.com/&lt;user&gt;/&lt;repo-name&gt;</span>
+$ git checkout backup 
+$ git branch <span class="hljs-_">-d</span> master <span class="hljs-comment"># Deletes master on local copy of repo.</span></code></pre><hr>
 <p><a href="https://gist.github.com/cmatskas/454e3369e6963a1c8c89">GitDeleteCommands.ps1</a></p>
 <hr>
 <p><a href="https://www.youtube.com/watch?v=CRlGDDprdOQ">Video on youtube about the merge vs. rebase</a></p>
