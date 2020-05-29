@@ -4169,3 +4169,12 @@ https://github.com/immutable-js/immutable-js
 ***
 
 https://observablehq.com/@sahilrajput03, 
+
+***
+
+## Saving workspace with **Ctrl+Shift+P**
+
+![image-20200528183936870](image-20200528183936870.png)
+
+***
+

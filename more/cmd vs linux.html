@@ -3,13 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Favourable window size setting in mintty/git-bash</title>
+    <title>Make a bat file to delete temp files</title>
     <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="favourable-window-size-setting-in-mintty/git-bash"><a class="header-link" href="#favourable-window-size-setting-in-mintty/git-bash"></a>Favourable window size setting in mintty/git-bash</h2>
+    <article class="markdown-body"><h2 id="make-a-bat-file-to-delete-temp-files"><a class="header-link" href="#make-a-bat-file-to-delete-temp-files"></a>Make a bat file to delete temp files</h2>
+<pre class="hljs"><code><span class="hljs-built_in">cd</span> %temp%
+rmdir /q /s .
+<span class="hljs-comment">#@pause</span></code></pre><p>Save the file as DeleteTemp.bat</p>
+<hr>
+<h3 id="use-ctrl-+-p-to-go-to-previous-and-ctrl-+-n-to-go-to-next-command-in-bash.-use-ctrl-+-w-to-delete-word-to-the-left."><a class="header-link" href="#use-ctrl-+-p-to-go-to-previous-and-ctrl-+-n-to-go-to-next-command-in-bash.-use-ctrl-+-w-to-delete-word-to-the-left."></a>Use Ctrl + p to go to previous and Ctrl + n to go to next command in bash. Use Ctrl + w to delete word to the left.</h3>
+<hr>
+<h2 id="favourable-window-size-setting-in-mintty/git-bash"><a class="header-link" href="#favourable-window-size-setting-in-mintty/git-bash"></a>Favourable window size setting in mintty/git-bash</h2>
 <p class="img-container"><img src="image-20200527202235380.png" alt="image-20200527202235380"></p>
 <hr>
 <h2 id="copying-in-git-bash(mintty)-and-cmd-"><a class="header-link" href="#copying-in-git-bash(mintty)-and-cmd-"></a>Copying in git-bash(mintty) and cmd-</h2>
@@ -336,7 +343,10 @@ delete: rm -rf &lt;file/folder&gt;
 pause in linux: read -p &quot;The command has been completed. Press Enter  key to continue...&quot;
  mv dotenv_unix .env 
 Edit FIle: <code>vi &lt;file&gt;</code></p>
-<hr>
+<pre class="hljs"><code>rm -rf * *.* .*
+<span class="hljs-comment"># * will remove all the files with names without any dot</span>
+<span class="hljs-comment"># *.* will remote all the files with names with periods in between them (file.txt or some.js)</span>
+<span class="hljs-comment"># .* will delete all the file with names which start with . (.txt .js .folder-name)</span></code></pre><hr>
 <h1 id="chocolatey---a-windows-package-manager."><a class="header-link" href="#chocolatey---a-windows-package-manager."></a>Chocolatey - A windows package manager.</h1>
 <h2 id="installing-chocolatey-in-windows:"><a class="header-link" href="#installing-chocolatey-in-windows:"></a>Installing chocolatey in windows:</h2>
 <p>Open powershell with admin.</p>

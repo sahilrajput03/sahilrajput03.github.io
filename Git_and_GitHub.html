@@ -3,13 +3,72 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Setting default upstream without using git push -u origin &lt;some-branch&gt;</title>
+    <title>Clone and work in vscode</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="setting-default-upstream-without-using-git-push--u-origin-<some-branch>"><a class="header-link" href="#setting-default-upstream-without-using-git-push--u-origin-<some-branch>"></a>Setting default upstream without using git push -u origin <some-branch></h2>
+    <article class="markdown-body"><hr>
+<p>Experiement-what the hell this doo...</p>
+<pre class="hljs"><code>git pull &lt;url-of-the-repo&gt;</code></pre><hr>
+<h2 id="clone-and-work-in-vscode"><a class="header-link" href="#clone-and-work-in-vscode"></a>Clone and work in vscode</h2>
+<p class="img-container"><img src="image-20200528200127242.png" alt="image-20200528200127242"></p>
+<hr>
+<h2 id="git-merge---squash---git's-love"><a class="header-link" href="#git-merge---squash---git's-love"></a>Git merge - Squash  - Git&#39;s love</h2>
+<p>This command will merge the changes you have made in feature, into the currently checked out branch. (but will not add any new commits to the current branch (Beauty of git))</p>
+<pre class="hljs"><code>git merge feature --squash</code></pre><p>Now you can commit with a custom message to the current branch(to which the changes are ready to be commited) that includes all the description involved for all the changes you made to master interms of all the changes that different commits have in feature branch.</p>
+<pre class="hljs"><code>$ git commit -am <span class="hljs-string">"Merging the feature &lt;newline&gt;&lt;newline&gt; paragraph explaining all the changes added by this commit, and the whole description of the meging."</span></code></pre><hr>
+<h2 id="want-to-view-history-of-a-particular-branch-from-anywhere-"><a class="header-link" href="#want-to-view-history-of-a-particular-branch-from-anywhere-"></a>Want to view history of a particular branch from anywhere-</h2>
+<pre class="hljs"><code>$ git <span class="hljs-built_in">log</span> &lt;branch-name&gt;
+$ git <span class="hljs-built_in">log</span> --graph <span class="hljs-comment">#this shows in graph form(so called :(</span></code></pre><h2 id="git-merge"><a class="header-link" href="#git-merge"></a>Git merge</h2>
+<p>Merge commits are unique against other commits in the fact that they have two parent commits. When creating a merge commit Git will attempt to auto magically merge the separate histories for you. If Git encounters a piece of data that is changed in both histories it will be unable to automatically combine them. This scenario is a version control conflict and Git will need user intervention to continue.  Source: <a href="https://www.atlassian.com/git/tutorials/using-branches/git-merge">link</a></p>
+<pre class="hljs"><code><span class="hljs-comment">#Syntax</span>
+$ git merge feature <span class="hljs-comment"># this will merge to the currently checked out branch/Head</span>
+$ git merge feature feature2 feature3 <span class="hljs-comment"># This will merge all the branches specified to the current checked out branch. </span></code></pre><pre class="hljs"><code>$ git merge feature <span class="hljs-comment"># This will simply put all the newer commits made in feature branch to the current branch.</span>
+<span class="hljs-comment">#-no-ff just means that it facilitates you to add an additional message to put after the merge.</span>
+$ git merge --no-ff feature <span class="hljs-comment"># This will open vi editor to let you enter the closing commit message after the merge has finished. This will DO SAME AS ABOVE, but will ASK FOR COMMIT MESSAGE for the purpose of record keeping regarding the merge of the branch, and you can explain all about it there. </span></code></pre><p>This is verbose, and merge record keeping friendly while the former one doesn&#39;t write any commit message for the merging.
+You can also explicitly specify the message via -m switch shown below.</p>
+<pre class="hljs"><code>$ git merge feature --no-ff -m <span class="hljs-string">"Kuch Kuch hota haigit log!"</span>
+<span class="hljs-comment"># Both these commands are valid and do as expected</span>
+$ git merge --no-ff feature -m <span class="hljs-string">"Squashed from feature branch, yipee!!"</span></code></pre><p>src: <a href="https://git-scm.com/docs/git-merge">git-scm.com - link</a></p>
+<p>Another <strong>aspect</strong>-</p>
+<pre class="hljs"><code>$ git merge --no-ff --no-commit feature <span class="hljs-comment">#This will just merge the changes but will not commit. Hell, yeah, its the right thing to choose for reviewing the changes after the merge and you can get rid of the merge changes if you don't like them, with the git reset --hard command.</span></code></pre><p>**</p>
+<h2 id="struck-with-failed-merge??"><a class="header-link" href="#struck-with-failed-merge??"></a>Struck with failed merge??</h2>
+<pre class="hljs"><code>$ git merge --abort</code></pre><p>The second syntax (&quot;<code>git merge --abort</code>&quot;) can only be run after the merge has resulted in conflicts. <em>git merge --abort</em> will abort the merge process and try to reconstruct the pre-merge state. However, if there were uncommitted changes when the merge started (and especially if those changes were further modified after the merge was started), <em>git merge --abort</em> will in some cases be unable to reconstruct the original (pre-merge) changes. Therefore:
+<strong>Warning</strong>: Running <em>git merge</em> with non-trivial uncommitted changes is discouraged: while possible, it may leave you in a state that is hard to back out of in the case of a conflict.</p>
+<p>**</p>
+<h3 id="dealing-with-merge-conflict"><a class="header-link" href="#dealing-with-merge-conflict"></a>Dealing with merge conflict</h3>
+<p>Just remove the arrow heads and </p>
+<pre class="hljs"><code>$ git merge --continue
+$ git commit -am <span class="hljs-string">"Merging is done, So we have such such feature...now..!!"</span></code></pre><p>The third syntax (&quot;<code>git merge --continue</code>&quot;) can only be run after the merge has resulted in conflicts. </p>
+<pre class="hljs"><code>git <span class="hljs-keyword">merge</span> feature feature2 feature3 feature4
+//<span class="hljs-keyword">When</span> the above command fails that means shit has happened <span class="hljs-keyword">and</span> you need <span class="hljs-keyword">to</span> <span class="hljs-keyword">do</span> <span class="hljs-keyword">some</span> advance <span class="hljs-keyword">stuff</span> mentioned <span class="hljs-keyword">on</span> stackoverflow <span class="hljs-keyword">and</span> understand the terminologies <span class="hljs-keyword">like</span> -x</code></pre><p class="img-container"><img src="image-20200529115122093.png" alt="image-20200529115122093"></p>
+<hr>
+<h2 id="you-must-make-multiline-comments-on-git-commits"><a class="header-link" href="#you-must-make-multiline-comments-on-git-commits"></a>You must make multiline comments on git commits</h2>
+<p class="img-container"><img src="image-20200528191909511.png" alt="image-20200528191909511"></p>
+<hr>
+<h2 id="fireship.io"><a class="header-link" href="#fireship.io"></a>Fireship.io</h2>
+<p>Git lens is helpfuf in viewing changes in files in previous commits and all branches - </p>
+<p><a href="https://www.youtube.com/watch?v=HkdAHXoRtos">https://www.youtube.com/watch?v=HkdAHXoRtos</a></p>
+<hr>
+<h2 id="friends-with-stashes-in-git-"><a class="header-link" href="#friends-with-stashes-in-git-"></a>Friends with stashes in git-</h2>
+<p>What is the difference between <strong>git stash pop</strong> and <strong>git stash apply</strong>.</p>
+<p class="img-container"><img src="image-20200528190936591.png" alt="image-20200528190936591"></p>
+<p>So, now you must handle these with ease with vscode - </p>
+<p class="img-container"><img src="image-20200528191050164.png" alt="image-20200528191050164"></p>
+<p>Apply Latest Stash, Apply stash, Drop Stash, Pop Latest Stash, Pop Stash, Stash, Stash (include Untracked)</p>
+<hr>
+<h2 id="use-the-below-command-to-get-rid-of-all-the-changes-made-to-the-tracked-files,-and-it-ignores-all-files-which-are-not-under-tracking."><a class="header-link" href="#use-the-below-command-to-get-rid-of-all-the-changes-made-to-the-tracked-files,-and-it-ignores-all-files-which-are-not-under-tracking."></a>Use the below command to get rid of all the changes made to the tracked files, and it ignores all files which are not under tracking.</h2>
+<p>This will unstage and delete them forever.</p>
+<pre class="hljs"><code>$ git reset --hard</code></pre><hr>
+<h3 id="this-will-just-unstage-the-changes-made-"><a class="header-link" href="#this-will-just-unstage-the-changes-made-"></a>This will just unstage the changes made-</h3>
+<pre class="hljs"><code>$ git reset</code></pre><hr>
+<h2 id="use-dot-and-dashes-to-name-branches-"><a class="header-link" href="#use-dot-and-dashes-to-name-branches-"></a>Use Dot and dashes to name branches-</h2>
+<pre class="hljs"><code><span class="hljs-built_in">release</span>-v1<span class="hljs-number">.2</span></code></pre><hr>
+<h2 id="setting-default-upstream-without-using-git-push--u-origin-<some-branch>"><a class="header-link" href="#setting-default-upstream-without-using-git-push--u-origin-<some-branch>"></a>Setting default upstream without using git push -u origin <some-branch></h2>
+<p>The only problem with this approach is that the target branch must be present locally, i.e., origin/targetBranch.
+So, you cannot set a remote for a that you created at the instant, you can only set it via <code>git push -u origin master</code>. Its not safe</p>
 <pre class="hljs"><code>$ git branch &lt;<span class="hljs-built_in">local</span>-branch-name&gt; --set-upstream-to=origin/backup
 <span class="hljs-comment"># E.g 1.,</span>
 $ git branch poma  --set-upstream-to=origin/backup
@@ -62,11 +121,13 @@ You should never disable autocrlf, it&#39;s actually good for cross platform dev
 <p>In order to reverse changes and <em>share</em> those reversed changes with others, we need to use <code>git revert</code>. Let&#39;s see it in action.</p>
 <pre class="hljs"><code><span class="hljs-symbol">git</span> <span class="hljs-keyword">revert </span>HEAD</code></pre><p class="img-container"><img src="image-20200514183155902.png" alt="image-20200514183155902"></p>
 <hr>
-<h2 id="git-reset"><a class="header-link" href="#git-reset"></a>Git Reset</h2>
+<h2 id="git-reset---lets-reset-current-to-older-commit--"><a class="header-link" href="#git-reset---lets-reset-current-to-older-commit--"></a>Git Reset - Lets reset current to older commit -</h2>
 <p><code>git reset</code> reverts changes by moving a branch reference backwards in time to an older commit. In this sense you can think of it as &quot;rewriting history;&quot; <code>git reset</code> will move a branch backwards as if the commit had never been made in the first place.(this is actually bad for people on remote repositories)</p>
 <p>In order to reverse changes and <em>share</em> those reversed changes with others, we need to use <code>git revert</code>. Let&#39;s see it in action.</p>
 <p>Let&#39;s see what that looks like:</p>
-<pre class="hljs"><code>git <span class="hljs-keyword">reset</span> <span class="hljs-keyword">HEAD</span>~<span class="hljs-number">1</span></code></pre><hr>
+<pre class="hljs"><code>$ git reset HEAD~2 <span class="hljs-comment"># HEAD~2 represents two commit above in the commit history. </span>
+$ git reset --hard e735ddf0bdf7e122e08b9431a00a84f7ecfcba6b <span class="hljs-comment"># This is commit hash.</span>
+<span class="hljs-comment"># Notice: --hard flag is important as it actullay alters the working directory files and changes. This will actually make the current working directory to look like at the specified target(commit) the changes in working directory, while git reset just manages to move the commit head but do not make any changes in the working history.</span></code></pre><hr>
 <h2 id="relative-refs"><a class="header-link" href="#relative-refs"></a>Relative refs</h2>
 <p>One of the most common ways I use relative refs is to <strong>move branches around</strong>. You can <strong>directly reassign a branch to a commit with the <code>-f</code> option</strong>. So something like:</p>
 <pre class="hljs"><code>git branch <span class="hljs-_">-f</span> master HEAD~3</code></pre><p>moves (by force) the master branch to three parents behind HEAD.</p>
@@ -524,7 +585,13 @@ $ git branch <span class="hljs-_">-d</span> master <span class="hljs-comment"># 
 <pre class="hljs"><code>git branch -C branchHellYeah
 git branch -C master2 branchHellYeah <span class="hljs-comment">#This will create copy of branch master2 to branchHellYeah(forcibly)</span></code></pre><pre class="hljs"><code><span class="hljs-comment">#While, simply copying branch has different syntax i.e., </span>
 git branch branchHellYeah master3 <span class="hljs-comment">#Creates branch branchHellYeah from master2.</span>
-git branch master origin/master <span class="hljs-comment">#Create branch master from origin/master.</span></code></pre><h2 id="create-branch-from-another-branch-and-change-to-new-branch:"><a class="header-link" href="#create-branch-from-another-branch-and-change-to-new-branch:"></a>Create branch from another branch and change to new branch:</h2>
+git branch master origin/master <span class="hljs-comment">#Create branch master from origin/master.</span></code></pre><hr>
+<h2 id="create-branch-and-create-branch-by-explicitly-providing-branchsource-"><a class="header-link" href="#create-branch-and-create-branch-by-explicitly-providing-branchsource-"></a>Create branch and Create branch by explicitly providing branchSource-</h2>
+<pre class="hljs"><code>$ git branch newBranch <span class="hljs-comment">#Creates newBranch from currently checked out branch/HEAD</span>
+$ git branch newBranch master 
+<span class="hljs-comment">#Creates newBranch from the source you provide, it could be a commit-id too, like below-</span>
+$ git branch newBranch 143776 <span class="hljs-comment">#5 chars are sufficient</span></code></pre><hr>
+<h2 id="create-branch-from-another-branch-and-change-to-newly-created-branch:"><a class="header-link" href="#create-branch-from-another-branch-and-change-to-newly-created-branch:"></a>Create branch from another branch and change to newly created branch:</h2>
 <pre class="hljs"><code>git checkout -b myFeature dev</code></pre><hr>
 <h2 id="create-branch-from-current-branch-and-change-to-new-branch:"><a class="header-link" href="#create-branch-from-current-branch-and-change-to-new-branch:"></a>Create branch from current branch and change to new branch:</h2>
 <pre class="hljs"><code>git checkout -b myFeature</code></pre><pre class="hljs"><code>git <span class="hljs-built_in">log</span> --oneline

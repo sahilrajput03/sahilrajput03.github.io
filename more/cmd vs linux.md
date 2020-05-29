@@ -1,3 +1,19 @@
+## Make a bat file to delete temp files
+
+```bash
+cd %temp%
+rmdir /q /s .
+#@pause
+```
+
+Save the file as DeleteTemp.bat
+
+***
+
+### Use Ctrl + p to go to previous and Ctrl + n to go to next command in bash. Use Ctrl + w to delete word to the left.
+
+***
+
 ## Favourable window size setting in mintty/git-bash
 
 ![image-20200527202235380](image-20200527202235380.png)
@@ -686,6 +702,15 @@ delete: rm -rf <file/folder>
 pause in linux: read -p "The command has been completed. Press Enter  key to continue..."
  mv dotenv_unix .env 
 Edit FIle: `vi <file>`
+
+```bash
+rm -rf * *.* .*
+# * will remove all the files with names without any dot
+# *.* will remote all the files with names with periods in between them (file.txt or some.js)
+# .* will delete all the file with names which start with . (.txt .js .folder-name)
+```
+
+
 
 ***
 

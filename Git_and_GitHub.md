@@ -1,4 +1,170 @@
+
+
+***
+
+Experiement-what the hell this doo...
+
+```bash
+git pull <url-of-the-repo>
+```
+
+***
+
+## Clone and work in vscode
+
+![image-20200528200127242](image-20200528200127242.png)
+
+***
+
+## Git merge - Squash  - Git's love
+
+This command will merge the changes you have made in feature, into the currently checked out branch. (but will not add any new commits to the current branch (Beauty of git))
+
+```bash
+git merge feature --squash
+```
+
+Now you can commit with a custom message to the current branch(to which the changes are ready to be commited) that includes all the description involved for all the changes you made to master interms of all the changes that different commits have in feature branch.
+
+```bash
+$ git commit -am "Merging the feature <newline><newline> paragraph explaining all the changes added by this commit, and the whole description of the meging."
+```
+
+***
+
+## Want to view history of a particular branch from anywhere-
+
+```bash
+$ git log <branch-name>
+$ git log --graph #this shows in graph form(so called :(
+```
+
+
+
+## Git merge
+
+Merge commits are unique against other commits in the fact that they have two parent commits. When creating a merge commit Git will attempt to auto magically merge the separate histories for you. If Git encounters a piece of data that is changed in both histories it will be unable to automatically combine them. This scenario is a version control conflict and Git will need user intervention to continue.  Source: [link](https://www.atlassian.com/git/tutorials/using-branches/git-merge)
+
+```bash
+#Syntax
+$ git merge feature # this will merge to the currently checked out branch/Head
+$ git merge feature feature2 feature3 # This will merge all the branches specified to the current checked out branch. 
+```
+
+```bash
+$ git merge feature # This will simply put all the newer commits made in feature branch to the current branch.
+#-no-ff just means that it facilitates you to add an additional message to put after the merge.
+$ git merge --no-ff feature # This will open vi editor to let you enter the closing commit message after the merge has finished. This will DO SAME AS ABOVE, but will ASK FOR COMMIT MESSAGE for the purpose of record keeping regarding the merge of the branch, and you can explain all about it there. 
+```
+
+This is verbose, and merge record keeping friendly while the former one doesn't write any commit message for the merging.
+You can also explicitly specify the message via -m switch shown below.
+
+```BASH
+$ git merge feature --no-ff -m "Kuch Kuch hota haigit log!"
+# Both these commands are valid and do as expected
+$ git merge --no-ff feature -m "Squashed from feature branch, yipee!!"
+```
+
+src: [git-scm.com - link](https://git-scm.com/docs/git-merge)
+
+Another **aspect**-
+
+```bash
+$ git merge --no-ff --no-commit feature #This will just merge the changes but will not commit. Hell, yeah, its the right thing to choose for reviewing the changes after the merge and you can get rid of the merge changes if you don't like them, with the git reset --hard command.
+```
+
+**
+
+## Struck with failed merge??
+
+```bash
+$ git merge --abort
+```
+
+The second syntax ("`git merge --abort`") can only be run after the merge has resulted in conflicts. *git merge --abort* will abort the merge process and try to reconstruct the pre-merge state. However, if there were uncommitted changes when the merge started (and especially if those changes were further modified after the merge was started), *git merge --abort* will in some cases be unable to reconstruct the original (pre-merge) changes. Therefore:
+**Warning**: Running *git merge* with non-trivial uncommitted changes is discouraged: while possible, it may leave you in a state that is hard to back out of in the case of a conflict.
+
+**
+
+### Dealing with merge conflict
+
+Just remove the arrow heads and 
+
+```bash
+$ git merge --continue
+$ git commit -am "Merging is done, So we have such such feature...now..!!"
+```
+
+The third syntax ("`git merge --continue`") can only be run after the merge has resulted in conflicts. 
+
+```
+git merge feature feature2 feature3 feature4
+//When the above command fails that means shit has happened and you need to do some advance stuff mentioned on stackoverflow and understand the terminologies like -x
+```
+
+![image-20200529115122093](image-20200529115122093.png)
+
+***
+
+## You must make multiline comments on git commits
+
+![image-20200528191909511](image-20200528191909511.png)
+
+***
+
+## Fireship.io
+
+Git lens is helpfuf in viewing changes in files in previous commits and all branches - 
+
+https://www.youtube.com/watch?v=HkdAHXoRtos
+
+***
+
+## Friends with stashes in git-
+
+What is the difference between **git stash pop** and **git stash apply**.
+
+![image-20200528190936591](image-20200528190936591.png)
+
+So, now you must handle these with ease with vscode - 
+
+![image-20200528191050164](image-20200528191050164.png)
+
+Apply Latest Stash, Apply stash, Drop Stash, Pop Latest Stash, Pop Stash, Stash, Stash (include Untracked)
+
+***
+
+## Use the below command to get rid of all the changes made to the tracked files, and it ignores all files which are not under tracking. 
+
+This will unstage and delete them forever.
+
+```bash
+$ git reset --hard
+```
+
+***
+
+### This will just unstage the changes made-
+
+```bash
+$ git reset
+```
+
+***
+
+## Use Dot and dashes to name branches-
+
+```
+release-v1.2
+```
+
+***
+
 ## Setting default upstream without using git push -u origin <some-branch>
+
+The only problem with this approach is that the target branch must be present locally, i.e., origin/targetBranch.
+So, you cannot set a remote for a that you created at the instant, you can only set it via `git push -u origin master`. Its not safe
 
 ```bash
 $ git branch <local-branch-name> --set-upstream-to=origin/backup
@@ -113,7 +279,7 @@ git revert HEAD
 
 ***
 
-## Git Reset
+## Git Reset - Lets reset current to older commit -
 
 `git reset` reverts changes by moving a branch reference backwards in time to an older commit. In this sense you can think of it as "rewriting history;" `git reset` will move a branch backwards as if the commit had never been made in the first place.(this is actually bad for people on remote repositories)
 
@@ -121,8 +287,10 @@ In order to reverse changes and *share* those reversed changes with others, we n
 
 Let's see what that looks like:
 
-```
-git reset HEAD~1
+```bash
+$ git reset HEAD~2 # HEAD~2 represents two commit above in the commit history. 
+$ git reset --hard e735ddf0bdf7e122e08b9431a00a84f7ecfcba6b # This is commit hash.
+# Notice: --hard flag is important as it actullay alters the working directory files and changes. This will actually make the current working directory to look like at the specified target(commit) the changes in working directory, while git reset just manages to move the commit head but do not make any changes in the working history.
 ```
 
 
@@ -1133,9 +1301,22 @@ git branch branchHellYeah master3 #Creates branch branchHellYeah from master2.
 git branch master origin/master #Create branch master from origin/master.
 ```
 
+***
+
+## Create branch and Create branch by explicitly providing branchSource-
+
+```bash
+$ git branch newBranch #Creates newBranch from currently checked out branch/HEAD
+$ git branch newBranch master 
+#Creates newBranch from the source you provide, it could be a commit-id too, like below-
+$ git branch newBranch 143776 #5 chars are sufficient
+```
 
 
-## Create branch from another branch and change to new branch:
+
+***
+
+## Create branch from another branch and change to newly created branch:
 
 ```bash
 git checkout -b myFeature dev
