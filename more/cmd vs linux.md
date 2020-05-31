@@ -1,3 +1,17 @@
+### Hibernate with cmd
+
+```bash
+$ shutdown /h
+```
+
+***
+
+## whoami and hostname
+
+![image-20200531174849720](image-20200531174849720.png)
+
+***
+
 ## Making a background script 
 
 [Running script in background with vbs script, and make shortcut in startup folder to make it a service.](https://www.winhelponline.com/blog/run-bat-files-invisibly-without-displaying-command-prompt/)
@@ -186,6 +200,8 @@ $ echo Hey Buddy, how are you?
 REM To skip the following Python commands, put "REM" before them:
 python foo.py
 python bar.py
+echo "sahil .."
+#anthing printed with echo <message> will print independently of @echo off
 ```
 
 So, using the above command will not show the commands for which it is showing the output(It hides the commnad, but shows all output.)

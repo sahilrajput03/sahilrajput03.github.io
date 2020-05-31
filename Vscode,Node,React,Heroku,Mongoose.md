@@ -43,24 +43,73 @@ Link - [Beginner's Article, though good things.](https://nodesource.com/blog/an-
 
 ### For details of all the heroku repository:
 
-heroku info
-
 ```bash
+$ heroku login
 $ heroku info
-OUTPUT:
-=== pacific-cliffs-97469
-Auto Cert Mgmt: false
-Dynos:          web: 1
-Git URL:        https://git.heroku.com/pacific-cliffs-97469.git
-Owner:          sahilrajput03@gmail.com
-Region:         us
-Repo Size:      302 KB
-Slug Size:      24 MB
-Stack:          heroku-18
-Web URL:        https://pacific-cliffs-97469.herokuapp.com/
+# OUTPUT:
+# === pacific-cliffs-97469
+# Auto Cert Mgmt: false
+# Dynos:          web: 1
+# Git URL:        https://git.heroku.com/pacific-cliffs-97469.git
+# Owner:          sahilrajput03@gmail.com
+# Region:         us
+# Repo Size:      302 KB
+# Slug Size:      24 MB
+# Stack:          heroku-18
+# Web URL:        https://pacific-cliffs-97469.herokuapp.com/
+_
+$ heroku apps
+# »   Warning: heroku update available from 7.33.3 to 7.41.1.
+# === sahilrajput03@gmail.com Apps
+# immense-tor-22661
+# infinite-meadow-87397
+# obscure-scrubland-72126
+# pacific-cliffs-97469
+# secret-beyond-42518
+_
+$ heroku whoami
+#Output: sahilrajput03@gmail.com
+_
+$ heroku update
+_
+$ heroku help info #help text for info
+_
+$ heroku info immense-tor-22661
+#=== immense-tor-22661
+#Auto Cert Mgmt: false
+#Dynos:
+#Git URL:        https://git.heroku.com/immense-tor-22661.git
+##Owner:          sahilrajput03@gmail.com
+#Region:         us
+#Repo Size:      0 B
+#Slug Size:      0 B
+#Stack:          heroku-18
+#Web URL:        https://immense-tor-22661.herokuapp.com/
+_
+Adding heroku remote manually(only if you ran heroku create before createing git repository)
+$ git remote add heroku https://git.heroku.com/immense-tor-22661.git
+_
+$ heroku help
+_
+$ heroku local web
+_
+$ heroku apps:destroy
+#Deletes heroku app from website.
+_
+
 ```
 
+### CAnnot add custom domain without entering creditcard details. Shit.!
 
+![image-20200531181000459](image-20200531181000459.png)
+
+
+
+-
+
+### Heroku - Failed to bind port?
+
+![image-20200531180243882](image-20200531180243882.png)
 
 ***
 
@@ -4259,4 +4308,31 @@ This relief, as when you want to log something new in the terminal you won't get
 ***
 
 
+
+![image-20200531152001056](image-20200531152001056.png)
+
+Shitt!!
+
+***
+
+### Trying to add wildcards to freenom.ml - Failed
+
+![image-20200531171605150](image-20200531171605150.png)
+
+![image-20200531171501155](image-20200531171501155.png)
+
+***
+
+## Expres Generator
+
+Official at [expressjs.com](https://expressjs.com/en/starter/generator.html)
+
+```bash
+$ npm install -g express-generator
+$ express --view=pug myapp #this creates myapp project.
+```
+
+Bakwaas.
+
+***
 

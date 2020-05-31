@@ -3,13 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Making a background script</title>
+    <title>Hibernate with cmd</title>
     <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="making-a-background-script"><a class="header-link" href="#making-a-background-script"></a>Making a background script</h2>
+    <article class="markdown-body"><h3 id="hibernate-with-cmd"><a class="header-link" href="#hibernate-with-cmd"></a>Hibernate with cmd</h3>
+<pre class="hljs"><code>$ shutdown /h</code></pre><hr>
+<h2 id="whoami-and-hostname"><a class="header-link" href="#whoami-and-hostname"></a>whoami and hostname</h2>
+<p class="img-container"><img src="image-20200531174849720.png" alt="image-20200531174849720"></p>
+<hr>
+<h2 id="making-a-background-script"><a class="header-link" href="#making-a-background-script"></a>Making a background script</h2>
 <p><a href="https://www.winhelponline.com/blog/run-bat-files-invisibly-without-displaying-command-prompt/">Running script in background with vbs script, and make shortcut in startup folder to make it a service.</a></p>
 <p>Make a program, as ==program.vbs== and replace the bat file path with your one, and create its shortcut in the <strong>startup</strong> folder.(shell:startup)</p>
 <pre class="hljs"><code>Set WshShell = CreateObject(<span class="hljs-string">"WScript.Shell"</span>) 
@@ -85,7 +90,9 @@ $ <span class="hljs-built_in">echo</span> Hey Buddy, how are you?</code></pre><h
 @<span class="hljs-built_in">echo</span> off
 REM To skip the following Python commands, put <span class="hljs-string">"REM"</span> before them:
 python foo.py
-python bar.py</code></pre><p>So, using the above command will not show the commands for which it is showing the output(It hides the commnad, but shows all output.)</p>
+python bar.py
+<span class="hljs-built_in">echo</span> <span class="hljs-string">"sahil .."</span>
+<span class="hljs-comment">#anthing printed with echo &lt;message&gt; will print independently of @echo off</span></code></pre><p>So, using the above command will not show the commands for which it is showing the output(It hides the commnad, but shows all output.)</p>
 <p>You can use it without .bat file too, i.e.,</p>
 <pre class="hljs"><code>$ @<span class="hljs-built_in">echo</span> off</code></pre><p> Now the cmd is another taste, isn&#39;t it.
 NOTE: To exit now you need to do</p>

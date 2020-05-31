@@ -28,19 +28,64 @@ $ npm init -y</code></pre><hr>
 <p> <code>npm init --yes</code> or <code>npm init -y</code></p>
 <hr>
 <h3 id="for-details-of-all-the-heroku-repository:"><a class="header-link" href="#for-details-of-all-the-heroku-repository:"></a>For details of all the heroku repository:</h3>
-<p>heroku info</p>
-<pre class="hljs"><code>$ heroku info
-OUTPUT:
-=== pacific-cliffs-97469
-Auto Cert Mgmt: <span class="hljs-literal">false</span>
-Dynos:          web: 1
-Git URL:        https://git.heroku.com/pacific-cliffs-97469.git
-Owner:          sahilrajput03@gmail.com
-Region:         us
-Repo Size:      302 KB
-Slug Size:      24 MB
-Stack:          heroku-18
-Web URL:        https://pacific-cliffs-97469.herokuapp.com/</code></pre><hr>
+<pre class="hljs"><code>$ heroku login
+$ heroku info
+<span class="hljs-comment"># OUTPUT:</span>
+<span class="hljs-comment"># === pacific-cliffs-97469</span>
+<span class="hljs-comment"># Auto Cert Mgmt: false</span>
+<span class="hljs-comment"># Dynos:          web: 1</span>
+<span class="hljs-comment"># Git URL:        https://git.heroku.com/pacific-cliffs-97469.git</span>
+<span class="hljs-comment"># Owner:          sahilrajput03@gmail.com</span>
+<span class="hljs-comment"># Region:         us</span>
+<span class="hljs-comment"># Repo Size:      302 KB</span>
+<span class="hljs-comment"># Slug Size:      24 MB</span>
+<span class="hljs-comment"># Stack:          heroku-18</span>
+<span class="hljs-comment"># Web URL:        https://pacific-cliffs-97469.herokuapp.com/</span>
+_
+$ heroku apps
+<span class="hljs-comment"># »   Warning: heroku update available from 7.33.3 to 7.41.1.</span>
+<span class="hljs-comment"># === sahilrajput03@gmail.com Apps</span>
+<span class="hljs-comment"># immense-tor-22661</span>
+<span class="hljs-comment"># infinite-meadow-87397</span>
+<span class="hljs-comment"># obscure-scrubland-72126</span>
+<span class="hljs-comment"># pacific-cliffs-97469</span>
+<span class="hljs-comment"># secret-beyond-42518</span>
+_
+$ heroku whoami
+<span class="hljs-comment">#Output: sahilrajput03@gmail.com</span>
+_
+$ heroku update
+_
+$ heroku <span class="hljs-built_in">help</span> info <span class="hljs-comment">#help text for info</span>
+_
+$ heroku info immense-tor-22661
+<span class="hljs-comment">#=== immense-tor-22661</span>
+<span class="hljs-comment">#Auto Cert Mgmt: false</span>
+<span class="hljs-comment">#Dynos:</span>
+<span class="hljs-comment">#Git URL:        https://git.heroku.com/immense-tor-22661.git</span>
+<span class="hljs-comment">##Owner:          sahilrajput03@gmail.com</span>
+<span class="hljs-comment">#Region:         us</span>
+<span class="hljs-comment">#Repo Size:      0 B</span>
+<span class="hljs-comment">#Slug Size:      0 B</span>
+<span class="hljs-comment">#Stack:          heroku-18</span>
+<span class="hljs-comment">#Web URL:        https://immense-tor-22661.herokuapp.com/</span>
+_
+Adding heroku remote manually(only <span class="hljs-keyword">if</span> you ran heroku create before createing git repository)
+$ git remote add heroku https://git.heroku.com/immense-tor-22661.git
+_
+$ heroku <span class="hljs-built_in">help</span>
+_
+$ heroku <span class="hljs-built_in">local</span> web
+_
+$ heroku apps:destroy
+<span class="hljs-comment">#Deletes heroku app from website.</span>
+_
+</code></pre><h3 id="cannot-add-custom-domain-without-entering-creditcard-details.-shit.!"><a class="header-link" href="#cannot-add-custom-domain-without-entering-creditcard-details.-shit.!"></a>CAnnot add custom domain without entering creditcard details. Shit.!</h3>
+<p class="img-container"><img src="image-20200531181000459.png" alt="image-20200531181000459"></p>
+<p>-</p>
+<h3 id="heroku---failed-to-bind-port?"><a class="header-link" href="#heroku---failed-to-bind-port?"></a>Heroku - Failed to bind port?</h3>
+<p class="img-container"><img src="image-20200531180243882.png" alt="image-20200531180243882"></p>
+<hr>
 <p>npm run eject: <a href="https://stackoverflow.com/questions/48308936/what-does-this-react-scripts-eject-command-do">What does this “react-scripts eject” command do?</a></p>
 <hr>
 <p>Comment in node package.json file: add the comments as object:</p>
@@ -2525,6 +2570,18 @@ npm run dev, npm statt, etc, directly in console.</p>
 <p>Note the <strong>when</strong>  as ==terminalFocustext==, its important, otherwise it will interfere with the keybindings starting with Ctrl+k, for e.g., Ctrl+k Ctrl+s will not work, that actually opens up the keyboard shortcuts.
 This relief, as when you want to log something new in the terminal you won&#39;t get confused howsoever after setting this..</p>
 <p class="img-container"><img src="image-20200530154025323.png" alt="image-20200530154025323"></p>
+<hr>
+<p class="img-container"><img src="image-20200531152001056.png" alt="image-20200531152001056"></p>
+<p>Shitt!!</p>
+<hr>
+<h3 id="trying-to-add-wildcards-to-freenom.ml---failed"><a class="header-link" href="#trying-to-add-wildcards-to-freenom.ml---failed"></a>Trying to add wildcards to freenom.ml - Failed</h3>
+<p class="img-container"><img src="image-20200531171605150.png" alt="image-20200531171605150"></p>
+<p class="img-container"><img src="image-20200531171501155.png" alt="image-20200531171501155"></p>
+<hr>
+<h2 id="expres-generator"><a class="header-link" href="#expres-generator"></a>Expres Generator</h2>
+<p>Official at <a href="https://expressjs.com/en/starter/generator.html">expressjs.com</a></p>
+<pre class="hljs"><code>$ npm install -g express-generator
+$ express --view=pug myapp <span class="hljs-comment">#this creates myapp project.</span></code></pre><p>Bakwaas.</p>
 <hr>
     </article>
   </body>
