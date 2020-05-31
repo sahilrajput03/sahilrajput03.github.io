@@ -339,49 +339,45 @@ Or a simple single command:-
 git checkout -b old-state 0d1d7fc32
 ```
 
-
-
 ***
 
 ## Edit CONTENT AND NAME BOTH of last commit:
 
-```bash
-git add . # or add individual files*(git add -A will does exactly same git add .)
-# IMPORTANT: If you haven't added any files, that means you have just changed some files only, then you must prefer(#2 ADDITIONALLY) that as that is one liner.
-git commit --amend
-#hence you'll be prompted to change the name of the commit, with new changes included.
-```
-
-### #2 ADDITIONALLY(if you haven't created any new files, managed changes to old files only)
-
-It could be done in one line too-
-
-```bash
-git commit -a --amend
-#This will prompt for NAME CHANGE as well as add the OLDER TRACKING FILES to the TRACKING too before making the commit.
-```
-
-
-
-***
-
 ## Edit the CONTENT ONLY of last commit:
-
-```bash
-git add . # or add individual files
-git commit --amend --no-edit
-# --no-edit: Specifies that we don't need to change the name of the commit.
-```
-
-Source: [ohshitgit.com](https://ohshitgit.com/#change-last-commit) - amazing must read website..
-
-***
 
 ## Change the MESSAGE ONLY of last commit
 
 ```bash
-git commit --amend
+git add . # or add individual files*(git add -A will does exactly same git add .)
+# IMPORTANT: If you haven't added any files, that means you have just changed some files only, then you must prefer(#2 ADDITIONALLY) that as that is one liner.
+git commit --amend -m "Feature 1 - Cool" # -m <message> if ommited you may edit the older message, edited in the vim editor that is follwed.
+#hence you'll be prompted to change the name of the commit, with new changes included.
+_
+git commit --amend -a # -a parameter will include the changes in tracking area.
+#vi editor will be followed to edit older commit message.
+git commit --amend -am "New Message, forge older message!!" #Changed files will add to old commit.
+_
+git add . # or add individual files
+git commit --amend --no-edit (since explicitly specified the staged area, it\'ll commit all changes)
+# --no-edit: SPECIFIES THAT WE DO NOT WANT TO CHANGE THE NAME OF THE OLDER COMMIT.
+_
+git commit --amend #Will not commit any changes unless added explicitly to the staged zone(i.e.,git add .) #Also, you can clear the staged zone via, {$ git reset}
+#vi editor will be followed to edit older commit message, changes aren't included.
+_
+git commit --amend -m "Just 1 feature" #This one just replaces the old commit message.
+_
+git commit --amend -am "Just 1 feature" # This will commit all changed files (+explicitly added in tracking/staging zone) ,This one just replaces the old commit message.
 ```
+
+```bash
+$ git commit -h |& grep "\-a"
+//Output:-
+-a 
+#  -a, --all             commit all changed files
+$ Anytime you want to see the staged changes, just do git status, and green ones are-> staged, and red ones are not. So, anytime you want clean th staging area, just do {git reset}
+```
+
+Source: [ohshitgit.com](https://ohshitgit.com/#change-last-commit) - amazing must read website..
 
 ***
 

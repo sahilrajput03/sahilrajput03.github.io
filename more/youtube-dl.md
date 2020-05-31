@@ -1,3 +1,24 @@
+***
+
+> **Internet is not 100% reliable thing for everytool, for some you have to deal with the hardway to be on a smooth experience for long.**
+
+***
+
+The Guide of Ubuntu's youtube-dl - [link](https://manpages.ubuntu.com/manpages/artful/en/man1/youtube-dl.1.html)
+
+***
+
+The best of all guides found so far- https://www.ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/
+
+```bash
+$ youtube-dl -f "bestvideo[height<=540]"+bestaudio <URL OF THE PAGE THAT HAS VIDEO>
+#Sometimes the extension code are like text so, better select video via height parameter.
+```
+
+##### src: same above link
+
+***
+
 ## Info: 
 
 If the download is paused, you can do press **Enter key**  or **ctrl+c** to **refresh** the currently downloading video or playlist.(hacks)

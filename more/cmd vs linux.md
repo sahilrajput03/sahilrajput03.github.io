@@ -1,3 +1,39 @@
+## Making a background script 
+
+[Running script in background with vbs script, and make shortcut in startup folder to make it a service.](https://www.winhelponline.com/blog/run-bat-files-invisibly-without-displaying-command-prompt/)
+
+Make a program, as ==program.vbs== and replace the bat file path with your one, and create its shortcut in the **startup** folder.(shell:startup)
+
+```bash
+Set WshShell = CreateObject("WScript.Shell") 
+WshShell.Run chr(34) & "C:\Batch Files\syncfiles.bat" & Chr(34), 0
+Set WshShell = Nothing
+```
+
+*
+
+Also, you can check if it is runnning like this-
+
+![image-20200531122512359](image-20200531122512359.png)
+
+
+
+![image-20200531125257571](image-20200531125257571.png)
+
+And you can end the process by ending both the cmd and node process from the same diaglog box, you should select both (otherwise the node will keep running the older processes too)easily with no hassel.
+
+***
+
+## Hibernate pc via cmd
+
+```bash
+$ shutdown /h
+```
+
+
+
+***
+
 ## Make a bat file to delete temp files
 
 ```bash

@@ -3,13 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Make a bat file to delete temp files</title>
+    <title>Making a background script</title>
     <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="make-a-bat-file-to-delete-temp-files"><a class="header-link" href="#make-a-bat-file-to-delete-temp-files"></a>Make a bat file to delete temp files</h2>
+    <article class="markdown-body"><h2 id="making-a-background-script"><a class="header-link" href="#making-a-background-script"></a>Making a background script</h2>
+<p><a href="https://www.winhelponline.com/blog/run-bat-files-invisibly-without-displaying-command-prompt/">Running script in background with vbs script, and make shortcut in startup folder to make it a service.</a></p>
+<p>Make a program, as ==program.vbs== and replace the bat file path with your one, and create its shortcut in the <strong>startup</strong> folder.(shell:startup)</p>
+<pre class="hljs"><code>Set WshShell = CreateObject(<span class="hljs-string">"WScript.Shell"</span>) 
+WshShell.Run chr(34) &amp; <span class="hljs-string">"C:\Batch Files\syncfiles.bat"</span> &amp; Chr(34), 0
+Set WshShell = Nothing</code></pre><p>*</p>
+<p>Also, you can check if it is runnning like this-</p>
+<p class="img-container"><img src="image-20200531122512359.png" alt="image-20200531122512359"></p>
+<p class="img-container"><img src="image-20200531125257571.png" alt="image-20200531125257571"></p>
+<p>And you can end the process by ending both the cmd and node process from the same diaglog box, you should select both (otherwise the node will keep running the older processes too)easily with no hassel.</p>
+<hr>
+<h2 id="hibernate-pc-via-cmd"><a class="header-link" href="#hibernate-pc-via-cmd"></a>Hibernate pc via cmd</h2>
+<pre class="hljs"><code>$ shutdown /h</code></pre><hr>
+<h2 id="make-a-bat-file-to-delete-temp-files"><a class="header-link" href="#make-a-bat-file-to-delete-temp-files"></a>Make a bat file to delete temp files</h2>
 <pre class="hljs"><code><span class="hljs-built_in">cd</span> %temp%
 rmdir /q /s .
 <span class="hljs-comment">#@pause</span></code></pre><p>Save the file as DeleteTemp.bat</p>

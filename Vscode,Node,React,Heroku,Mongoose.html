@@ -17,7 +17,12 @@
 ({<span class="hljs-attr">a</span>: <span class="hljs-number">23</span>})[<span class="hljs-string">'a'</span>] <span class="hljs-comment">// " double quotes would have worked the same way.</span>
 <span class="hljs-comment">// 23</span></code></pre><hr>
 <h1 id="fastest-way-to-create-node-project:-"><a class="header-link" href="#fastest-way-to-create-node-project:-"></a>Fastest way to create node project:-</h1>
-<pre class="hljs"><code>npm init --yes</code></pre><hr>
+<pre class="hljs"><code>$ npm init --yes
+or
+$ npm init -y</code></pre><hr>
+<h2 id="installing-dependency-as-development-dependency"><a class="header-link" href="#installing-dependency-as-development-dependency"></a>Installing dependency as development dependency</h2>
+<pre class="hljs"><code>$ npm i -D &lt;dependency-name&gt;</code></pre><p>Also, -D is ==case sensitive==.</p>
+<hr>
 <p>Link - <a href="https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/">Beginner&#39;s Article, though good things.</a></p>
 <p>• If you want to get on to building your project, and don&#39;t want to spend the (albeit brief) time answering the prompts that come from <code>npm init</code>, you can use the <code>--yes</code> flag on the <code>npm init</code> command to automatically populate all options with the default <code>npm init</code> values. </p>
 <p> <code>npm init --yes</code> or <code>npm init -y</code></p>
@@ -146,6 +151,12 @@ C:\Users&gt;</code></pre><p> <a href="https://www.poftut.com/how-to-list-set-get
 <pre class="hljs"><code>`printenv`</code></pre><hr>
 <h1 id="sending-response-back-to-the-request-in-express:"><a class="header-link" href="#sending-response-back-to-the-request-in-express:"></a>Sending response back to the request in express:</h1>
 <pre class="hljs"><code><span class="hljs-comment"># common responses</span>
+
+response.status(400).send(<span class="hljs-string">"username already exists."</span>)
+
+
+response.status(400).end() // use this line instead of the above to <span class="hljs-comment"># NOT RETURN ANYTHING.</span>
+
 
 response.status(201).send(<span class="hljs-string">"abrakadabra"</span>); //CONTENT-TYPE:TEXT/HTML, STATUS-CODE:201
 
@@ -861,7 +872,16 @@ arr.pop()
 <span class="hljs-keyword">const</span> noteArray = [{},{},{}]
 <span class="hljs-keyword">let</span> reducedValue = popo.reduce(<span class="hljs-function">(<span class="hljs-params">acc,cur</span>)=&gt;</span>acc+cur.likes,<span class="hljs-number">0</span>)</code></pre><hr>
 <h1 id="**how-promises-work:**"><a class="header-link" href="#**how-promises-work:**"></a><strong>How promises work:</strong></h1>
-<pre class="hljs"><code>Simplest <span class="hljs-built_in">Promise</span> Ever:
+<pre class="hljs"><code># Simplest <span class="hljs-built_in">Promise</span> Ever E.g<span class="hljs-number">.1</span>:
+
+<span class="hljs-keyword">let</span> what = <span class="hljs-literal">true</span>;<span class="hljs-comment">// true will resolve with 687, false will reject with 786</span>
+<span class="hljs-keyword">let</span> pa = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span>
+  setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> (what ? resolve(<span class="hljs-number">687</span>) : reject(<span class="hljs-number">786</span>)), <span class="hljs-number">3</span>_000)
+);
+pa.then(<span class="hljs-function">(<span class="hljs-params">j</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"The value of j is "</span>, j)).catch(<span class="hljs-function">(<span class="hljs-params">r</span>) =&gt;</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"The value of r is "</span>, r)
+);</code></pre><pre class="hljs"><code># Simplest <span class="hljs-built_in">Promise</span> Ever E.g<span class="hljs-number">.2</span>:
+
 <span class="hljs-comment">// Syntax fetch api, it is an asynchronous task</span>
 <span class="hljs-comment">//it creats promise and we know we can receive vale from promises</span>
 <span class="hljs-comment">// with the help of .then method, so :-</span>
@@ -2480,6 +2500,31 @@ alert(<span class="hljs-keyword">result</span>); <span class="hljs-comment">// a
 <hr>
 <h2 id="saving-workspace-with-**ctrl+shift+p**"><a class="header-link" href="#saving-workspace-with-**ctrl+shift+p**"></a>Saving workspace with <strong>Ctrl+Shift+P</strong></h2>
 <p class="img-container"><img src="image-20200528183936870.png" alt="image-20200528183936870"></p>
+<hr>
+<p>This annoying thing only shows up when you run scripts via NPM SCRIPTS from vscode&#39;s Toolbar. So, better use:-
+npm run dev, npm statt, etc, directly in console.</p>
+<p class="img-container"><img src="image-20200529222035489.png" alt="image-20200529222035489"></p>
+<hr>
+<h2 id="options-for-taks"><a class="header-link" href="#options-for-taks"></a>Options for taks</h2>
+<p>Press Ctrl+shift+P and enter configure task, this will generate the task for the appropriate script you select from the available list in the package.json file of the project.</p>
+<p><a href="https://vshaxe.github.io/vscode-extern/vscode/TaskPresentationOptions.html">link</a>, You probably need the settings as -</p>
+<p class="img-container"><img src="image-20200530145846061.png" alt="image-20200530145846061"></p>
+<p>as taks.json file is in -</p>
+<p class="img-container"><img src="image-20200530145907093.png" alt="image-20200530145907093"></p>
+<p>Check out this official guide from vscode @ <a href="https://code.visualstudio.com/docs/editor/tasks">link</a></p>
+<hr>
+<h2 id="to-install-a-dependency-as-development-dependency,-use-the--d-option(it-is-case-sensitive)#get-rid-of-terminate-batch-job-(y/n)?-this-is-for-command-prompt-only,-minnty-doesn't-ask-for-such-thing."><a class="header-link" href="#to-install-a-dependency-as-development-dependency,-use-the--d-option(it-is-case-sensitive)#get-rid-of-terminate-batch-job-(y/n)?-this-is-for-command-prompt-only,-minnty-doesn't-ask-for-such-thing."></a>To install a dependency as development dependency, use the -D option(it is case sensitive)#get rid of terminate batch job (Y/N)? This is for command prompt only, minnty doesn&#39;t ask for such thing.</h2>
+<p>Also this won&#39;t cause any sideeffect in mintty or ubuntu.</p>
+<p>==<strong>tbj</strong>== stands for <strong>T</strong>erminate <strong>B</strong>atch <strong>J</strong>ob (Getting rid of this..)</p>
+<pre class="hljs"><code>$ npm i -D tbj
+<span class="hljs-comment">#Above dependecy will help you close nodemon or node with simple ctrl+c only, and will not prompt for yes/no to exit. Amazing though.</span>
+<span class="hljs-comment">#To work with this, you need to preceed the existing commands with tbj keyword.</span>
+*This dependency requires you to install nodemon as a dependecy <span class="hljs-keyword">in</span> your current project. So that\<span class="hljs-string">'s a downside but still amazing, no other solution to this problem though(Its licensed by MIT).</span></code></pre><p>Helpful <a href="https://www.npmjs.com/package/tbj?activeTab=readme">link - dependecy page@npmjs.org</a>.</p>
+<hr>
+<h2 id="clearing-terminal-in-vscode-"><a class="header-link" href="#clearing-terminal-in-vscode-"></a>Clearing Terminal in vscode-</h2>
+<p>Note the <strong>when</strong>  as ==terminalFocustext==, its important, otherwise it will interfere with the keybindings starting with Ctrl+k, for e.g., Ctrl+k Ctrl+s will not work, that actually opens up the keyboard shortcuts.
+This relief, as when you want to log something new in the terminal you won&#39;t get confused howsoever after setting this..</p>
+<p class="img-container"><img src="image-20200530154025323.png" alt="image-20200530154025323"></p>
 <hr>
     </article>
   </body>

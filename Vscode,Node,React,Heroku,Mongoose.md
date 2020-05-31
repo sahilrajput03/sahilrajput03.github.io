@@ -16,8 +16,20 @@ Note: Never use : at the end of heading in typora, as it will cause problems whi
 # Fastest way to create node project:-
 
 ```bash
-npm init --yes
+$ npm init --yes
+or
+$ npm init -y
 ```
+
+***
+
+## Installing dependency as development dependency
+
+```bash
+$ npm i -D <dependency-name>
+```
+
+Also, -D is ==case sensitive==.
 
 ***
 
@@ -229,6 +241,12 @@ C:\Users>
 
 ```bash
 # common responses
+
+response.status(400).send("username already exists.")
+
+
+response.status(400).end() // use this line instead of the above to # NOT RETURN ANYTHING.
+
 
 response.status(201).send("abrakadabra"); //CONTENT-TYPE:TEXT/HTML, STATUS-CODE:201
 
@@ -1338,7 +1356,20 @@ let reducedValue = popo.reduce((acc,cur)=>acc+cur.likes,0)
 # **How promises work:**
 
 ```js
-Simplest Promise Ever:
+# Simplest Promise Ever E.g.1:
+
+let what = true;// true will resolve with 687, false will reject with 786
+let pa = new Promise((resolve, reject) =>
+  setTimeout(() => (what ? resolve(687) : reject(786)), 3_000)
+);
+pa.then((j) => console.log("The value of j is ", j)).catch((r) =>
+  console.log("The value of r is ", r)
+);
+```
+
+```js
+# Simplest Promise Ever E.g.2:
+
 // Syntax fetch api, it is an asynchronous task
 //it creats promise and we know we can receive vale from promises
 // with the help of .then method, so :-
@@ -4177,4 +4208,55 @@ https://observablehq.com/@sahilrajput03,
 ![image-20200528183936870](image-20200528183936870.png)
 
 ***
+
+This annoying thing only shows up when you run scripts via NPM SCRIPTS from vscode's Toolbar. So, better use:-
+npm run dev, npm statt, etc, directly in console.
+
+![image-20200529222035489](image-20200529222035489.png)
+
+***
+
+## Options for taks
+
+Press Ctrl+shift+P and enter configure task, this will generate the task for the appropriate script you select from the available list in the package.json file of the project.
+
+[link](https://vshaxe.github.io/vscode-extern/vscode/TaskPresentationOptions.html), You probably need the settings as -
+
+![image-20200530145846061](image-20200530145846061.png)
+
+as taks.json file is in -
+
+![image-20200530145907093](image-20200530145907093.png)
+
+Check out this official guide from vscode @ [link](https://code.visualstudio.com/docs/editor/tasks)
+
+***
+
+## To install a dependency as development dependency, use the -D option(it is case sensitive)#get rid of terminate batch job (Y/N)? This is for command prompt only, minnty doesn't ask for such thing.
+
+Also this won't cause any sideeffect in mintty or ubuntu.
+
+==**tbj**== stands for **T**erminate **B**atch **J**ob (Getting rid of this..)
+
+```bash
+$ npm i -D tbj
+#Above dependecy will help you close nodemon or node with simple ctrl+c only, and will not prompt for yes/no to exit. Amazing though.
+#To work with this, you need to preceed the existing commands with tbj keyword.
+*This dependency requires you to install nodemon as a dependecy in your current project. So that\'s a downside but still amazing, no other solution to this problem though(Its licensed by MIT).
+```
+
+Helpful [link - dependecy page@npmjs.org](https://www.npmjs.com/package/tbj?activeTab=readme).
+
+***
+
+## Clearing Terminal in vscode-
+
+Note the **when**  as ==terminalFocustext==, its important, otherwise it will interfere with the keybindings starting with Ctrl+k, for e.g., Ctrl+k Ctrl+s will not work, that actually opens up the keyboard shortcuts.
+This relief, as when you want to log something new in the terminal you won't get confused howsoever after setting this..
+
+![image-20200530154025323](image-20200530154025323.png)
+
+***
+
+
 
