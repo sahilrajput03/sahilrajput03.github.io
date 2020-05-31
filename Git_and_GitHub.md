@@ -1,4 +1,6 @@
+## Official Git documentation is really good though.
 
+https://git-scm.com/doc
 
 ***
 
@@ -348,25 +350,27 @@ git checkout -b old-state 0d1d7fc32
 ## Change the MESSAGE ONLY of last commit
 
 ```bash
-git add . # or add individual files*(git add -A will does exactly same git add .)
+$ git add . 
+# Or add individual files*(git add -A will does exactly same git add .)
 # IMPORTANT: If you haven't added any files, that means you have just changed some files only, then you must prefer(#2 ADDITIONALLY) that as that is one liner.
-git commit --amend -m "Feature 1 - Cool" # -m <message> if ommited you may edit the older message, edited in the vim editor that is follwed.
-#hence you'll be prompted to change the name of the commit, with new changes included.
+$ git commit --amend -m "Feature 1 - Cool" 
+# -m <message> if ommited you may edit the older message, edited in the vim editor that is follwed.
+# Hence you'll be prompted to change the name of the commit, with new changes included.
 _
-git commit --amend -a # -a parameter will include the changes in tracking area.
-#vi editor will be followed to edit older commit message.
-git commit --amend -am "New Message, forge older message!!" #Changed files will add to old commit.
+$ git commit --amend -a 
+# -a parameter will include the changes in tracking area.
+# vi editor will be followed to edit older commit message.
+$ git commit --amend -am "New Message, forge older message!!" 
+# Changed files will add to old commit.
 _
-git add . # or add individual files
-git commit --amend --no-edit (since explicitly specified the staged area, it\'ll commit all changes)
+$ git add . # or add individual files
+$ git commit --amend --no-edit 
+# Since explicitly specified the staged area, it\'ll commit all changes.
 # --no-edit: SPECIFIES THAT WE DO NOT WANT TO CHANGE THE NAME OF THE OLDER COMMIT.
 _
-git commit --amend #Will not commit any changes unless added explicitly to the staged zone(i.e.,git add .) #Also, you can clear the staged zone via, {$ git reset}
+$ git commit --amend 
+#Will not commit any changes unless added explicitly to the staged zone(i.e.,git add .) #Also, you can clear the staged zone via, {$ git reset}
 #vi editor will be followed to edit older commit message, changes aren't included.
-_
-git commit --amend -m "Just 1 feature" #This one just replaces the old commit message.
-_
-git commit --amend -am "Just 1 feature" # This will commit all changed files (+explicitly added in tracking/staging zone) ,This one just replaces the old commit message.
 ```
 
 ```bash

@@ -3,13 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Clone and work in vscode</title>
+    <title>Official Git documentation is really good though.</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><hr>
+    <article class="markdown-body"><h2 id="official-git-documentation-is-really-good-though."><a class="header-link" href="#official-git-documentation-is-really-good-though."></a>Official Git documentation is really good though.</h2>
+<p><a href="https://git-scm.com/doc">https://git-scm.com/doc</a></p>
+<hr>
 <p>Experiement-what the hell this doo...</p>
 <pre class="hljs"><code>git pull &lt;url-of-the-repo&gt;</code></pre><hr>
 <h2 id="clone-and-work-in-vscode"><a class="header-link" href="#clone-and-work-in-vscode"></a>Clone and work in vscode</h2>
@@ -145,25 +147,27 @@ git checkout -b myDesiredBranchYikes
 <h2 id="edit-content-and-name-both-of-last-commit:"><a class="header-link" href="#edit-content-and-name-both-of-last-commit:"></a>Edit CONTENT AND NAME BOTH of last commit:</h2>
 <h2 id="edit-the-content-only-of-last-commit:"><a class="header-link" href="#edit-the-content-only-of-last-commit:"></a>Edit the CONTENT ONLY of last commit:</h2>
 <h2 id="change-the-message-only-of-last-commit"><a class="header-link" href="#change-the-message-only-of-last-commit"></a>Change the MESSAGE ONLY of last commit</h2>
-<pre class="hljs"><code>git add . <span class="hljs-comment"># or add individual files*(git add -A will does exactly same git add .)</span>
+<pre class="hljs"><code>$ git add . 
+<span class="hljs-comment"># Or add individual files*(git add -A will does exactly same git add .)</span>
 <span class="hljs-comment"># IMPORTANT: If you haven't added any files, that means you have just changed some files only, then you must prefer(#2 ADDITIONALLY) that as that is one liner.</span>
-git commit --amend -m <span class="hljs-string">"Feature 1 - Cool"</span> <span class="hljs-comment"># -m &lt;message&gt; if ommited you may edit the older message, edited in the vim editor that is follwed.</span>
-<span class="hljs-comment">#hence you'll be prompted to change the name of the commit, with new changes included.</span>
+$ git commit --amend -m <span class="hljs-string">"Feature 1 - Cool"</span> 
+<span class="hljs-comment"># -m &lt;message&gt; if ommited you may edit the older message, edited in the vim editor that is follwed.</span>
+<span class="hljs-comment"># Hence you'll be prompted to change the name of the commit, with new changes included.</span>
 _
-git commit --amend <span class="hljs-_">-a</span> <span class="hljs-comment"># -a parameter will include the changes in tracking area.</span>
-<span class="hljs-comment">#vi editor will be followed to edit older commit message.</span>
-git commit --amend -am <span class="hljs-string">"New Message, forge older message!!"</span> <span class="hljs-comment">#Changed files will add to old commit.</span>
+$ git commit --amend <span class="hljs-_">-a</span> 
+<span class="hljs-comment"># -a parameter will include the changes in tracking area.</span>
+<span class="hljs-comment"># vi editor will be followed to edit older commit message.</span>
+$ git commit --amend -am <span class="hljs-string">"New Message, forge older message!!"</span> 
+<span class="hljs-comment"># Changed files will add to old commit.</span>
 _
-git add . <span class="hljs-comment"># or add individual files</span>
-git commit --amend --no-edit (since explicitly specified the staged area, it\<span class="hljs-string">'ll commit all changes)
-# --no-edit: SPECIFIES THAT WE DO NOT WANT TO CHANGE THE NAME OF THE OLDER COMMIT.
+$ git add . <span class="hljs-comment"># or add individual files</span>
+$ git commit --amend --no-edit 
+<span class="hljs-comment"># Since explicitly specified the staged area, it\'ll commit all changes.</span>
+<span class="hljs-comment"># --no-edit: SPECIFIES THAT WE DO NOT WANT TO CHANGE THE NAME OF THE OLDER COMMIT.</span>
 _
-git commit --amend #Will not commit any changes unless added explicitly to the staged zone(i.e.,git add .) #Also, you can clear the staged zone via, {$ git reset}
-#vi editor will be followed to edit older commit message, changes aren'</span>t included.
-_
-git commit --amend -m <span class="hljs-string">"Just 1 feature"</span> <span class="hljs-comment">#This one just replaces the old commit message.</span>
-_
-git commit --amend -am <span class="hljs-string">"Just 1 feature"</span> <span class="hljs-comment"># This will commit all changed files (+explicitly added in tracking/staging zone) ,This one just replaces the old commit message.</span></code></pre><pre class="hljs"><code>$ git commit -h |&amp; grep <span class="hljs-string">"\-a"</span>
+$ git commit --amend 
+<span class="hljs-comment">#Will not commit any changes unless added explicitly to the staged zone(i.e.,git add .) #Also, you can clear the staged zone via, {$ git reset}</span>
+<span class="hljs-comment">#vi editor will be followed to edit older commit message, changes aren't included.</span></code></pre><pre class="hljs"><code>$ git commit -h |&amp; grep <span class="hljs-string">"\-a"</span>
 //Output:-
 <span class="hljs-_">-a</span> 
 <span class="hljs-comment">#  -a, --all             commit all changed files</span>
