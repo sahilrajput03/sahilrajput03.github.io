@@ -1,3 +1,11 @@
+
+
+***
+
+![191749](191749.png)
+
+***
+
 ## Official Git documentation is really good though.
 
 https://git-scm.com/doc
@@ -1719,6 +1727,24 @@ Step1: $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 //Use your own email address.
 Step2: Copy the content of .pub file(C:\Users\chetan\.ssh\something.pub) and paste it in Github>Settings>Ssh and Cpg keys>New Ssh key.
 ```
+
+src: official git documentation to create keys like this.
+
+***
+
+You may add new ssh keys like-
+
+![image-20200603200231745](image-20200603200231745.png)
+
+src: [link](https://askubuntu.com/questions/1962/how-can-multiple-private-keys-be-used-with-ssh), 
+
+***
+
+You may add new ssh keys like- (it works this way too.)
+
+![image-20200603200425826](image-20200603200425826.png)
+
+
 
 ***
 

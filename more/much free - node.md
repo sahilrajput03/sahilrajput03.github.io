@@ -4,13 +4,24 @@
 
 ***
 
-## CheapMaster - Amazing bboommmM - [opennode.io](https://www.openode.io)	- This suppors deno too.WOW...
+### CheapMaster - Amazing bboommmM - [opennode.io](https://www.openode.io)	- This suppors deno too.WOW...
+
+But openode.io we can not host at baseUrl, we have to redirect it subdomain using cname and even that is not redirecting properly, idk whyy? try some other day..
+
+```bash
+$ npm i -g openode
+$ openode deploy
+```
+
+
 
 ## <img src="image-20200531182825502.png" alt="image-20200531182825502" style="zoom: 33%;" />	
 
 ***
 
-paid / drastic - Once a while lookup = [evennode](https://www.evennode.com/pricing)
+## paid / drastic - Once a while lookup = [evennode](https://www.evennode.com/pricing)
+
+This is real good as it supports the custom domain while providing access from all the wildcard entries, as openode doesn't allow wildcard to be supported even when you put cname for the redirect in the dns entries in the https://www.cloudns.net/ .
 
 Automated Awesome - git Automated Reviewer app - Shows all your push and pulls there accordingly - https://www.gitmemory.com/ - Check yours at https://www.gitmemory.com/sahilrajput03
 

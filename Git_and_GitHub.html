@@ -9,7 +9,10 @@
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="official-git-documentation-is-really-good-though."><a class="header-link" href="#official-git-documentation-is-really-good-though."></a>Official Git documentation is really good though.</h2>
+    <article class="markdown-body"><hr>
+<p class="img-container"><img src="191749.png" alt="191749"></p>
+<hr>
+<h2 id="official-git-documentation-is-really-good-though."><a class="header-link" href="#official-git-documentation-is-really-good-though."></a>Official Git documentation is really good though.</h2>
 <p><a href="https://git-scm.com/doc">https://git-scm.com/doc</a></p>
 <hr>
 <p>Experiement-what the hell this doo...</p>
@@ -819,7 +822,15 @@ $(You can easily reverse a git commit and view everything correctly.)</code></pr
 <p>Basically this features adds a ssh encrytion on your side(machine), and it bind the passphrase to the repository to the local pc and authenticated changes would be made only who has the encryted private key. Public key is stored on the github settings.</p>
 <pre class="hljs"><code>Step1: $ ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">"your_email@example.com"</span> 
 //Use your own email address.
-Step2: Copy the content of .pub file(C:\Users\chetan\.ssh\something.pub) and paste it <span class="hljs-keyword">in</span> Github&gt;Settings&gt;Ssh and Cpg keys&gt;New Ssh key.</code></pre><hr>
+Step2: Copy the content of .pub file(C:\Users\chetan\.ssh\something.pub) and paste it <span class="hljs-keyword">in</span> Github&gt;Settings&gt;Ssh and Cpg keys&gt;New Ssh key.</code></pre><p>src: official git documentation to create keys like this.</p>
+<hr>
+<p>You may add new ssh keys like-</p>
+<p class="img-container"><img src="image-20200603200231745.png" alt="image-20200603200231745"></p>
+<p>src: <a href="https://askubuntu.com/questions/1962/how-can-multiple-private-keys-be-used-with-ssh">link</a>, </p>
+<hr>
+<p>You may add new ssh keys like- (it works this way too.)</p>
+<p class="img-container"><img src="image-20200603200425826.png" alt="image-20200603200425826"></p>
+<hr>
 <pre class="hljs"><code><span class="hljs-built_in">clone</span> from original repo, make changes and make commits, and <span class="hljs-keyword">then</span> <span class="hljs-keyword">do</span>:-
 $ hub pull-request
 Aborted: the current branch seems not yet pushed to a remote

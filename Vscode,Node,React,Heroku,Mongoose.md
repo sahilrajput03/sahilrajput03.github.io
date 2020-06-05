@@ -3285,7 +3285,8 @@ Right click a tab, and press S.
 https://github.com/mixu/markdown-styles (1.5k stars)
 
 ```bash
-generate-md --layout github --input ./input --output ./output
+$ npm install -g markdown-styles
+$ generate-md --layout github --input ./input --output ./output
 ```
 
 Above command generates html files into output folder from the .md files available in input folder.
@@ -4338,5 +4339,15 @@ Bakwaas.
 
 https://michalsnik.github.io/aos/
 
-https://aleri.ca/
+https://aleri.ca/ developed by Nirmal Patel
+
+***
+
+On your laptop or tablet, hybrid sleep is disabled by default becuase you have a battery failsafe. If your battery no longer works and you have to keep your laptop plugged in at all times, you can enable hybrid sleep on via this option  -
+
+![image-20200602114806288](image-20200602114806288.png)
+
+Actually this feature will work like hibernate if power is lost during sleep. Otherwise it would have abruptly result in power failure crash of the system.
+
+***
 

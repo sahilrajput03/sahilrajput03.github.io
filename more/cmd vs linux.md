@@ -1,3 +1,5 @@
+
+
 ### Hibernate with cmd
 
 ```bash
@@ -489,7 +491,7 @@ Ctrl+X and then Backspace – removes all the text from the cursor to the beginn
 
 ***
 
-## Copy something to clipboard
+# **Copy something to clipboard  in terminal**
 
 ```bash
 ping 192.168.1.1 | clip #copies to clipboard
@@ -513,8 +515,8 @@ WHEN YOU NEED STDERR OUTUPUT TO A FILE:-
 ### Using > and >> to write in files in command prompt(windows) and bash (linux)
 
 ```bash
-help > c.txt #overwrite completely old content
-help >> c.txt #adds content
+help > c.txt # Overwrite completely old content.
+help >> c.txt # Adds content to the file.
 git > help.txt
 git commit -h 2> help.txt # OPTION 1
 git commit -h &> help.txt # OPTION 2
@@ -527,6 +529,10 @@ Double pipe (||), represents the "or" operator in scripting too.
 
 ```bash
 # using findstr(windows), works in both cmd and bash
+# To search for -h in the output(stdout or stderr) you need to escape it like-
+vi -h 2| findstr "\-a"
+vi -h 2| grep \\-a # Idk how but they but they work.
+vi -h 2| findstr \\-a # Idk how but they work.
 help | findstr "extension"
 git | findstr overview #both cmd,bash
 git help | findstr pull #both cmd,bash
@@ -544,6 +550,9 @@ git | findstr git | findstr and
 
 ```bash
 # using grep to find(bash, linux)
+vi -h 2| grep \\--not-a-ter
+vi -h 2| findstr \\--not-a-ter 
+vi -h 2| findstr "\--not-a-term"
 choco -h | grep "search" #works in cmd and bash now, installed grep via choco in windows.
 git add -h 2| grep dry # 2| operator is needed when there are switches in the command i.e., -h here.
 help | grep done #finds something in bash
@@ -560,6 +569,13 @@ choco -h | grep "search" #works in cmd and bash now, installed grep via choco in
 Above command throws some errrors as "#works in cmd ..." is interpreted as inside the command, it is not considered as comment in cmd, so we need to make use of REM which is used to comment out a command in cmd. Like below one, does the work greatly, with interpreting it as comment.
 $ choco -h | grep "search" && REM #works in cmd and bash now, installed grep via choco in windows.
 Above command will 
+```
+
+```bash
+curl -h | findstr "\-i"
+curl -h | findstr \-i #This would work too.
+curl -h | grep "\-i" #Because you need to escape the - (dash character) with backslash
+curl -h | grep \-i #This would work too.
 ```
 
 
@@ -807,8 +823,87 @@ Set-ExecutionPolicy Bypass -Scope Process.
       PS C:\Windows\system32>
       ```
 
-      
+   
+***
 
-   ***
+### #Installing curl #install curl # curl on windows #curl in windows
+
+   ```bash
+   $ choco install curl
+   ```
+
+### #installing vi #install vi #vi in windows #vi windows
+
+#### Convert unix lf to windows crlf-
+
+![114754](114754.png)
+
+https://chocolatey.org/packages/vim
+
+```bash
+$ choco install vim
+$ doskey vi=vim
+# Too set vi as alias(for temporary)
+```
+
+To add permanently, make a file named **macros.doskey** in **d:/bat/** and add this-
+
+```bash
+$ vi=vim
+```
+
+```bash
+$ reg add "HKCU\Software\Microsoft\Command Processor" /v Autorun /d "doskey /macrofile=\"d:\bat\macros.doskey\"" /f
+$ reg query "HKCU\Software\Microsoft\Command Processor" /v Autorun
+#Next you just need to reopen cmd, to get the hotkeys in effect. Yipee.
+```
+
+[link](https://kwilson.io/blog/getting-your-macro-on-with-doskey/)
+
+***
+
+### Another helpful link for doskey usage 
+
+Passing arguments to the vi command is actually by making the macro as 
+
+```bash
+vi=vim $*
+```
+
+![image-20200603113929464](image-20200603113929464.png)
+
+[link](https://kwilson.io/blog/getting-your-macro-on-with-doskey/)
+
+***
+
+## For cat and touch in windows , install core utils for windows
+
+http://gnuwin32.sourceforge.net/packages/coreutils.htm or download link @ download-[directly](https://sourceforge.net/projects/gnuwin32/postdownload)
+
+##### Install and add location to system path: - C:\Program Files (x86)\GnuWin32\bin
+
+Now you have access to linux's core utilities i.e., below commands - 
+
+![image-20200603101925960](image-20200603101925960.png)
+
+***
+
+```bash
+$ dir /B
+#Clearly shows the directory tree in cmd. Love
+```
+
+
+
+***
 
    
+
+## cat's alternate in windows
+
+![image-20200602211142638](image-20200602211142638.png)
+
+![image-20200602211150423](image-20200602211150423.png)
+
+***
+

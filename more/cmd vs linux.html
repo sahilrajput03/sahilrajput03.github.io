@@ -219,15 +219,15 @@ The following shortcuts are used <span class="hljs-keyword">for</span> deleting 
 Ctrl+D or Delete – remove or deletes the character under the cursor.
 Ctrl+K – removes all text from the cursor to the end of the line.
 Ctrl+X and <span class="hljs-keyword">then</span> Backspace – removes all the text from the cursor to the beginning of the line.</code></pre><hr>
-<h2 id="copy-something-to-clipboard"><a class="header-link" href="#copy-something-to-clipboard"></a>Copy something to clipboard</h2>
+<h1 id="**copy-something-to-clipboard-in-terminal**"><a class="header-link" href="#**copy-something-to-clipboard-in-terminal**"></a><strong>Copy something to clipboard  in terminal</strong></h1>
 <pre class="hljs"><code>ping 192.168.1.1 | clip <span class="hljs-comment">#copies to clipboard</span>
 <span class="hljs-built_in">help</span> | clip    <span class="hljs-comment">#copies to cilpboard</span></code></pre><pre class="hljs"><code>WHEN YOU NEED STDERR OUTUPUT TO SUPPLY TO OTHER THING, LIKE FINDSTR OR GREP:-
 2|
 |&amp;</code></pre><pre class="hljs"><code><span class="hljs-keyword">WHEN</span> YOU NEED STDERR OUTUPUT <span class="hljs-keyword">TO</span> A <span class="hljs-keyword">FILE</span>:- 
 &amp;&gt;
 <span class="hljs-number">2</span>&gt;</code></pre><h3 id="using->-and->>-to-write-in-files-in-command-prompt(windows)-and-bash-(linux)"><a class="header-link" href="#using->-and->>-to-write-in-files-in-command-prompt(windows)-and-bash-(linux)"></a>Using &gt; and &gt;&gt; to write in files in command prompt(windows) and bash (linux)</h3>
-<pre class="hljs"><code><span class="hljs-built_in">help</span> &gt; c.txt <span class="hljs-comment">#overwrite completely old content</span>
-<span class="hljs-built_in">help</span> &gt;&gt; c.txt <span class="hljs-comment">#adds content</span>
+<pre class="hljs"><code><span class="hljs-built_in">help</span> &gt; c.txt <span class="hljs-comment"># Overwrite completely old content.</span>
+<span class="hljs-built_in">help</span> &gt;&gt; c.txt <span class="hljs-comment"># Adds content to the file.</span>
 git &gt; help.txt
 git commit -h 2&gt; help.txt <span class="hljs-comment"># OPTION 1</span>
 git commit -h &amp;&gt; help.txt <span class="hljs-comment"># OPTION 2</span>
@@ -235,6 +235,10 @@ git commit -h &amp;&gt; help.txt <span class="hljs-comment"># OPTION 2</span>
 NOTE:
 Double pipe (||), represents the <span class="hljs-string">"or"</span> operator <span class="hljs-keyword">in</span> scripting too.</code></pre><h3 id="using-findstr(windows)"><a class="header-link" href="#using-findstr(windows)"></a>Using findstr(windows)</h3>
 <pre class="hljs"><code><span class="hljs-comment"># using findstr(windows), works in both cmd and bash</span>
+<span class="hljs-comment"># To search for -h in the output(stdout or stderr) you need to escape it like-</span>
+vi -h 2| findstr <span class="hljs-string">"\-a"</span>
+vi -h 2| grep \\<span class="hljs-_">-a</span> <span class="hljs-comment"># Idk how but they but they work.</span>
+vi -h 2| findstr \\<span class="hljs-_">-a</span> <span class="hljs-comment"># Idk how but they work.</span>
 <span class="hljs-built_in">help</span> | findstr <span class="hljs-string">"extension"</span>
 git | findstr overview <span class="hljs-comment">#both cmd,bash</span>
 git <span class="hljs-built_in">help</span> | findstr pull <span class="hljs-comment">#both cmd,bash</span>
@@ -247,6 +251,9 @@ git commit -h 2| findstr dry <span class="hljs-comment">#operator that supplies 
 git | findstr git | findstr and 
 <span class="hljs-comment"># So findstr can be chained like this, such that outputs are transferred to next one using pipe</span></code></pre><h3 id="using-grep:(now-works-in-windows-and-linux-equally[atleast-expected,-installed-via-choco-in-windows])"><a class="header-link" href="#using-grep:(now-works-in-windows-and-linux-equally[atleast-expected,-installed-via-choco-in-windows])"></a>Using grep:(now works in windows and linux equally[atleast expected, installed via choco in windows])</h3>
 <pre class="hljs"><code><span class="hljs-comment"># using grep to find(bash, linux)</span>
+vi -h 2| grep \\--not<span class="hljs-_">-a</span>-ter
+vi -h 2| findstr \\--not<span class="hljs-_">-a</span>-ter 
+vi -h 2| findstr <span class="hljs-string">"\--not-a-term"</span>
 choco -h | grep <span class="hljs-string">"search"</span> <span class="hljs-comment">#works in cmd and bash now, installed grep via choco in windows.</span>
 git add -h 2| grep dry <span class="hljs-comment"># 2| operator is needed when there are switches in the command i.e., -h here.</span>
 <span class="hljs-built_in">help</span> | grep <span class="hljs-keyword">done</span> <span class="hljs-comment">#finds something in bash</span>
@@ -257,7 +264,10 @@ git | grep git | grep and <span class="hljs-comment">#finds something in bash an
 <pre class="hljs"><code>choco -h | grep <span class="hljs-string">"search"</span> <span class="hljs-comment">#works in cmd and bash now, installed grep via choco in windows.</span>
 Above <span class="hljs-built_in">command</span> throws some errrors as <span class="hljs-string">"#works in cmd ..."</span> is interpreted as inside the <span class="hljs-built_in">command</span>, it is not considered as comment <span class="hljs-keyword">in</span> cmd, so we need to make use of REM <span class="hljs-built_in">which</span> is used to comment out a <span class="hljs-built_in">command</span> <span class="hljs-keyword">in</span> cmd. Like below one, does the work greatly, with interpreting it as comment.
 $ choco -h | grep <span class="hljs-string">"search"</span> &amp;&amp; REM <span class="hljs-comment">#works in cmd and bash now, installed grep via choco in windows.</span>
-Above <span class="hljs-built_in">command</span> will </code></pre><hr>
+Above <span class="hljs-built_in">command</span> will </code></pre><pre class="hljs"><code>curl -h | findstr <span class="hljs-string">"\-i"</span>
+curl -h | findstr \-i <span class="hljs-comment">#This would work too.</span>
+curl -h | grep <span class="hljs-string">"\-i"</span> <span class="hljs-comment">#Because you need to escape the - (dash character) with backslash</span>
+curl -h | grep \-i <span class="hljs-comment">#This would work too.</span></code></pre><hr>
 <h2 id="renaming-extensions-of-multiple-files:"><a class="header-link" href="#renaming-extensions-of-multiple-files:"></a>Renaming extensions of multiple files:</h2>
 <p><a href="https://unix.stackexchange.com/questions/19654/how-do-i-change-the-extension-of-multiple-files">https://unix.stackexchange.com/questions/19654/how-do-i-change-the-extension-of-multiple-files</a></p>
 <hr>
@@ -391,6 +401,35 @@ PS C:\Windows\system32&gt;</code></pre></li>
 </ol>
 </li>
 </ol>
+<hr>
+<h3 id="#installing-curl-#install-curl-#-curl-on-windows-#curl-in-windows"><a class="header-link" href="##installing-curl-#install-curl-#-curl-on-windows-#curl-in-windows"></a>#Installing curl #install curl # curl on windows #curl in windows</h3>
+<pre class="hljs"><code>   $ choco install curl</code></pre><h3 id="#installing-vi-#install-vi-#vi-in-windows-#vi-windows"><a class="header-link" href="##installing-vi-#install-vi-#vi-in-windows-#vi-windows"></a>#installing vi #install vi #vi in windows #vi windows</h3>
+<h4 id="convert-unix-lf-to-windows-crlf-"><a class="header-link" href="#convert-unix-lf-to-windows-crlf-"></a>Convert unix lf to windows crlf-</h4>
+<p class="img-container"><img src="114754.png" alt="114754"></p>
+<p><a href="https://chocolatey.org/packages/vim">https://chocolatey.org/packages/vim</a></p>
+<pre class="hljs"><code>$ choco install vim
+$ doskey vi=vim
+<span class="hljs-comment"># Too set vi as alias(for temporary)</span></code></pre><p>To add permanently, make a file named <strong>macros.doskey</strong> in <strong>d:/bat/</strong> and add this-</p>
+<pre class="hljs"><code>$ vi=vim</code></pre><pre class="hljs"><code>$ reg add <span class="hljs-string">"HKCU\Software\Microsoft\Command Processor"</span> /v Autorun /d <span class="hljs-string">"doskey /macrofile=\"d:\bat\macros.doskey\""</span> /f
+$ reg query <span class="hljs-string">"HKCU\Software\Microsoft\Command Processor"</span> /v Autorun
+<span class="hljs-comment">#Next you just need to reopen cmd, to get the hotkeys in effect. Yipee.</span></code></pre><p><a href="https://kwilson.io/blog/getting-your-macro-on-with-doskey/">link</a></p>
+<hr>
+<h3 id="another-helpful-link-for-doskey-usage"><a class="header-link" href="#another-helpful-link-for-doskey-usage"></a>Another helpful link for doskey usage</h3>
+<p>Passing arguments to the vi command is actually by making the macro as </p>
+<pre class="hljs"><code>vi=vim $*</code></pre><p class="img-container"><img src="image-20200603113929464.png" alt="image-20200603113929464"></p>
+<p><a href="https://kwilson.io/blog/getting-your-macro-on-with-doskey/">link</a></p>
+<hr>
+<h2 id="for-cat-and-touch-in-windows-,-install-core-utils-for-windows"><a class="header-link" href="#for-cat-and-touch-in-windows-,-install-core-utils-for-windows"></a>For cat and touch in windows , install core utils for windows</h2>
+<p><a href="http://gnuwin32.sourceforge.net/packages/coreutils.htm">http://gnuwin32.sourceforge.net/packages/coreutils.htm</a> or download link @ download-<a href="https://sourceforge.net/projects/gnuwin32/postdownload">directly</a></p>
+<h5 id="install-and-add-location-to-system-path:---c:\program-files-(x86)\gnuwin32\bin"><a class="header-link" href="#install-and-add-location-to-system-path:---c:\program-files-(x86)\gnuwin32\bin"></a>Install and add location to system path: - C:\Program Files (x86)\GnuWin32\bin</h5>
+<p>Now you have access to linux&#39;s core utilities i.e., below commands - </p>
+<p class="img-container"><img src="image-20200603101925960.png" alt="image-20200603101925960"></p>
+<hr>
+<pre class="hljs"><code>$ dir /B
+<span class="hljs-comment">#Clearly shows the directory tree in cmd. Love</span></code></pre><hr>
+<h2 id="cat's-alternate-in-windows"><a class="header-link" href="#cat's-alternate-in-windows"></a>cat&#39;s alternate in windows</h2>
+<p class="img-container"><img src="image-20200602211142638.png" alt="image-20200602211142638"></p>
+<p class="img-container"><img src="image-20200602211150423.png" alt="image-20200602211150423"></p>
 <hr>
     </article>
   </body>
