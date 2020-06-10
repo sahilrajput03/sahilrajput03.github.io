@@ -9,7 +9,8 @@
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><hr>
+    <article class="markdown-body"><pre class="hljs"><code>$ git checkout &lt;filename&gt;
+<span class="hljs-comment">#This command restores the file from the current HEAD.</span></code></pre><hr>
 <p class="img-container"><img src="191749.png" alt="191749"></p>
 <hr>
 <h2 id="official-git-documentation-is-really-good-though."><a class="header-link" href="#official-git-documentation-is-really-good-though."></a>Official Git documentation is really good though.</h2>
@@ -820,7 +821,7 @@ $(You can easily reverse a git commit and view everything correctly.)</code></pr
 <p>When working with a GitHub repository, you&#39;ll often need to identify yourself to GitHub using your username and password. An SSH key is an alternate way to identify yourself that doesn&#39;t require you to enter you username and password every time. Read more @ <a href="https://jdblischak.github.io/2014-09-18-chicago/novice/git/05-sshkeys.html">link</a></p>
 <h2 id="generate-a-new-ssh-key:"><a class="header-link" href="#generate-a-new-ssh-key:"></a>Generate a new ssh key:</h2>
 <p>Basically this features adds a ssh encrytion on your side(machine), and it bind the passphrase to the repository to the local pc and authenticated changes would be made only who has the encryted private key. Public key is stored on the github settings.</p>
-<pre class="hljs"><code>Step1: $ ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">"your_email@example.com"</span> 
+<pre class="hljs"><code>Step1: $ ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">"your_email@example.com"</span>  
 //Use your own email address.
 Step2: Copy the content of .pub file(C:\Users\chetan\.ssh\something.pub) and paste it <span class="hljs-keyword">in</span> Github&gt;Settings&gt;Ssh and Cpg keys&gt;New Ssh key.</code></pre><p>src: official git documentation to create keys like this.</p>
 <hr>

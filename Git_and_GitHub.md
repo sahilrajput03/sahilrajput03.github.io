@@ -1,3 +1,8 @@
+```bash
+$ git checkout <filename>
+#This command restores the file from the current HEAD.
+```
+
 
 
 ***
@@ -1723,7 +1728,7 @@ When working with a GitHub repository, you'll often need to identify yourself to
 Basically this features adds a ssh encrytion on your side(machine), and it bind the passphrase to the repository to the local pc and authenticated changes would be made only who has the encryted private key. Public key is stored on the github settings.
 
 ```bash
-Step1: $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com" 
+Step1: $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"  
 //Use your own email address.
 Step2: Copy the content of .pub file(C:\Users\chetan\.ssh\something.pub) and paste it in Github>Settings>Ssh and Cpg keys>New Ssh key.
 ```

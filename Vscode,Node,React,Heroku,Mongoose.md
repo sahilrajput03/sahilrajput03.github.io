@@ -1405,7 +1405,7 @@ let reducedValue = popo.reduce((acc,cur)=>acc+cur.likes,0)
 # **How promises work:**
 
 ```js
-# Simplest Promise Ever E.g.1:
+// # Simplest Promise Ever E.g.1:
 
 let what = true;// true will resolve with 687, false will reject with 786
 let pa = new Promise((resolve, reject) =>
@@ -1414,10 +1414,11 @@ let pa = new Promise((resolve, reject) =>
 pa.then((j) => console.log("The value of j is ", j)).catch((r) =>
   console.log("The value of r is ", r)
 );
+//* see the redundant catch method in e.g.3
 ```
 
 ```js
-# Simplest Promise Ever E.g.2:
+// # Simplest Promise Ever E.g.2:
 
 // Syntax fetch api, it is an asynchronous task
 //it creats promise and we know we can receive vale from promises
@@ -1442,6 +1443,38 @@ fetch("https://www.google.com")
 
 // ALSO you might see the cors error.. has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled//
 ```
+
+```js
+// # Simplest Promise Ever E.g.3:
+
+let what = false; // true will resolve with 687, false will reject with 786
+let pa = new Promise((resolve, reject) =>
+  setTimeout(() => (what ? resolve(687) : reject(786)), 3_000)
+);
+pa.then(
+  (j) => console.log("The value of j is ", j),
+  (m) => console.log("REJECTED from Sahil!!! and returned with - ", m)
+).catch((r) => console.log("The value of r is ", r)); //here catch method will be redundant(i.e. will not execute simply)
+//This shows that .then() method takes two functions as callbacks, i.e., first callback for execution if promise is fulfilled, and second callback to execute on rejection.(Both have params with the value they have been resolved or rejected)
+```
+
+***
+
+Below image shows the availble options vscode when **Ctrl + .** is pressed
+
+![image-20200605122427421](image-20200605122427421.png)
+
+*
+
+This promise is executed as soon as it is asigned to variable pa,
+
+![image-20200605124815559](image-20200605124815559.png)
+
+*
+
+Using promises via function wrapped around -
+
+![image-20200605125524152](image-20200605125524152.png)
 
 ***
 
@@ -4348,6 +4381,25 @@ On your laptop or tablet, hybrid sleep is disabled by default becuase you have a
 ![image-20200602114806288](image-20200602114806288.png)
 
 Actually this feature will work like hibernate if power is lost during sleep. Otherwise it would have abruptly result in power failure crash of the system.
+
+***
+
+## nvm
+
+```bash
+USE POWER SHELL TO ALL THESE COMMANDS:-
+
+nvm uninstall 12.16.2 64
+nvm list
+nvm on
+nvm off
+nvm install 12.16.2 64
+nvm use 12.16.2 64
+e.g.=> <node-version> <system architecture-32/64>
+
+nvm install 12.18.0 64
+nvm use 12.18.0 64
+```
 
 ***
 

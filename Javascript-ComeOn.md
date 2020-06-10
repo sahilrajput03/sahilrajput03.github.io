@@ -1110,7 +1110,10 @@ With err.message: undefined
 ```
 
 **
-Different style of throw:
+
+## Different style of throw:
+
+All below thrown values will cause the program to abrubt and show what is thrown....
 
 ```js
 throw { name: "Nicholas" };
@@ -1123,12 +1126,13 @@ throw new Date();
 // Uncaught Sun Apr 19 2020 18:28:04 GMT+0530 (India Standard Time)
 throw "message";
 // Uncaught message
-
+throw new Error("*****Whooooooooooooops!********");
+// throw error
 ```
 
 **
 
-### Create your own custom error:
+## Create your own custom error:
 
 Read this amazing article on medium, to find out more about logging errors in a good way. [Link](https://medium.com/@iaincollins/error-handling-in-javascript-a6172ccdf9af)
 
@@ -1143,8 +1147,6 @@ throw new MyError("Hello world!");
 
 
 ***
-
-
 
 ## Try and catch error in JS
 
@@ -1174,7 +1176,7 @@ catch(err) {
   Block of code to handle errors
 }
 finally {
-  Block of code to be executed regardless of the try / catch result
+  Block of code to be executed regardless of the try ''/ catch result
 }
    
 ***********************************************************************

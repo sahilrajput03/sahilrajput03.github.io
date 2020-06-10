@@ -655,8 +655,9 @@ Without the plus sign the result would be <span class="hljs-string">"--hello-wor
 }
 <span class="hljs-comment">//Output:</span>
 <span class="hljs-built_in">Error</span> is: Too big 
-With err.message: <span class="hljs-literal">undefined</span></code></pre><p>**
-Different style of throw:</p>
+With err.message: <span class="hljs-literal">undefined</span></code></pre><p>**</p>
+<h2 id="different-style-of-throw:"><a class="header-link" href="#different-style-of-throw:"></a>Different style of throw:</h2>
+<p>All below thrown values will cause the program to abrubt and show what is thrown....</p>
 <pre class="hljs"><code><span class="hljs-keyword">throw</span> { <span class="hljs-attr">name</span>: <span class="hljs-string">"Nicholas"</span> };
 <span class="hljs-comment">// Uncaught {name: "Nicholas"}</span>
 <span class="hljs-keyword">throw</span> <span class="hljs-literal">true</span>;
@@ -667,8 +668,9 @@ Different style of throw:</p>
 <span class="hljs-comment">// Uncaught Sun Apr 19 2020 18:28:04 GMT+0530 (India Standard Time)</span>
 <span class="hljs-keyword">throw</span> <span class="hljs-string">"message"</span>;
 <span class="hljs-comment">// Uncaught message</span>
-</code></pre><p>**</p>
-<h3 id="create-your-own-custom-error:"><a class="header-link" href="#create-your-own-custom-error:"></a>Create your own custom error:</h3>
+<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"*****Whooooooooooooops!********"</span>);
+<span class="hljs-comment">// throw error</span></code></pre><p>**</p>
+<h2 id="create-your-own-custom-error:"><a class="header-link" href="#create-your-own-custom-error:"></a>Create your own custom error:</h2>
 <p>Read this amazing article on medium, to find out more about logging errors in a good way. <a href="https://medium.com/@iaincollins/error-handling-in-javascript-a6172ccdf9af">Link</a></p>
 <pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyError</span>(<span class="hljs-params">message</span>)</span>{
     <span class="hljs-keyword">this</span>.message = message; <span class="hljs-comment">//you may specify more things here....according to need...</span>
@@ -701,7 +703,7 @@ Optionally you can use <span class="hljs-keyword">finally</span> too:
   Block <span class="hljs-keyword">of</span> code to handle errors
 }
 <span class="hljs-keyword">finally</span> {
-  Block <span class="hljs-keyword">of</span> code to be executed regardless <span class="hljs-keyword">of</span> the <span class="hljs-keyword">try</span> / <span class="hljs-keyword">catch</span> result
+  Block <span class="hljs-keyword">of</span> code to be executed regardless <span class="hljs-keyword">of</span> the <span class="hljs-keyword">try</span> <span class="hljs-string">''</span>/ <span class="hljs-keyword">catch</span> result
 }
 
 ***********************************************************************

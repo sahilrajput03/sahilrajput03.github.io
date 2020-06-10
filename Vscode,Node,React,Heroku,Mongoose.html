@@ -917,7 +917,7 @@ arr.pop()
 <span class="hljs-keyword">const</span> noteArray = [{},{},{}]
 <span class="hljs-keyword">let</span> reducedValue = popo.reduce(<span class="hljs-function">(<span class="hljs-params">acc,cur</span>)=&gt;</span>acc+cur.likes,<span class="hljs-number">0</span>)</code></pre><hr>
 <h1 id="**how-promises-work:**"><a class="header-link" href="#**how-promises-work:**"></a><strong>How promises work:</strong></h1>
-<pre class="hljs"><code># Simplest <span class="hljs-built_in">Promise</span> Ever E.g<span class="hljs-number">.1</span>:
+<pre class="hljs"><code><span class="hljs-comment">// # Simplest Promise Ever E.g.1:</span>
 
 <span class="hljs-keyword">let</span> what = <span class="hljs-literal">true</span>;<span class="hljs-comment">// true will resolve with 687, false will reject with 786</span>
 <span class="hljs-keyword">let</span> pa = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span>
@@ -925,7 +925,8 @@ arr.pop()
 );
 pa.then(<span class="hljs-function">(<span class="hljs-params">j</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"The value of j is "</span>, j)).catch(<span class="hljs-function">(<span class="hljs-params">r</span>) =&gt;</span>
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"The value of r is "</span>, r)
-);</code></pre><pre class="hljs"><code># Simplest <span class="hljs-built_in">Promise</span> Ever E.g<span class="hljs-number">.2</span>:
+);
+<span class="hljs-comment">//* see the redundant catch method in e.g.3</span></code></pre><pre class="hljs"><code><span class="hljs-comment">// # Simplest Promise Ever E.g.2:</span>
 
 <span class="hljs-comment">// Syntax fetch api, it is an asynchronous task</span>
 <span class="hljs-comment">//it creats promise and we know we can receive vale from promises</span>
@@ -948,7 +949,26 @@ fetch(<span class="hljs-string">"https://www.google.com"</span>)
   .finally(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"So, Promise is SETTLED."</span>));
 <span class="hljs-comment">//here settled means the promise is either resolved or rejected.</span>
 
-<span class="hljs-comment">// ALSO you might see the cors error.. has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled//</span></code></pre><hr>
+<span class="hljs-comment">// ALSO you might see the cors error.. has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled//</span></code></pre><pre class="hljs"><code><span class="hljs-comment">// # Simplest Promise Ever E.g.3:</span>
+
+<span class="hljs-keyword">let</span> what = <span class="hljs-literal">false</span>; <span class="hljs-comment">// true will resolve with 687, false will reject with 786</span>
+<span class="hljs-keyword">let</span> pa = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span>
+  setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> (what ? resolve(<span class="hljs-number">687</span>) : reject(<span class="hljs-number">786</span>)), <span class="hljs-number">3</span>_000)
+);
+pa.then(
+  <span class="hljs-function">(<span class="hljs-params">j</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"The value of j is "</span>, j),
+  (m) =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"REJECTED from Sahil!!! and returned with - "</span>, m)
+).catch(<span class="hljs-function">(<span class="hljs-params">r</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"The value of r is "</span>, r)); <span class="hljs-comment">//here catch method will be redundant(i.e. will not execute simply)</span>
+<span class="hljs-comment">//This shows that .then() method takes two functions as callbacks, i.e., first callback for execution if promise is fulfilled, and second callback to execute on rejection.(Both have params with the value they have been resolved or rejected)</span></code></pre><hr>
+<p>Below image shows the availble options vscode when <strong>Ctrl + .</strong> is pressed</p>
+<p class="img-container"><img src="image-20200605122427421.png" alt="image-20200605122427421"></p>
+<p>*</p>
+<p>This promise is executed as soon as it is asigned to variable pa,</p>
+<p class="img-container"><img src="image-20200605124815559.png" alt="image-20200605124815559"></p>
+<p>*</p>
+<p>Using promises via function wrapped around -</p>
+<p class="img-container"><img src="image-20200605125524152.png" alt="image-20200605125524152"></p>
+<hr>
 <h2 id="asynchronous-task-in-serial-order**(or-in-sequential-order)**:-"><a class="header-link" href="#asynchronous-task-in-serial-order**(or-in-sequential-order)**:-"></a>Asynchronous Task in Serial Order<strong>(or in sequential order)</strong>:-</h2>
 <p>In other words another asynchronous task starts only when previous is resolved.
 <strong>example:</strong></p>
@@ -2591,6 +2611,19 @@ $ express --view=pug myapp <span class="hljs-comment">#this creates myapp projec
 <p class="img-container"><img src="image-20200602114806288.png" alt="image-20200602114806288"></p>
 <p>Actually this feature will work like hibernate if power is lost during sleep. Otherwise it would have abruptly result in power failure crash of the system.</p>
 <hr>
+<h2 id="nvm"><a class="header-link" href="#nvm"></a>nvm</h2>
+<pre class="hljs"><code>USE POWER SHELL TO ALL THESE COMMANDS:-
+
+nvm uninstall 12.16.2 64
+nvm list
+nvm on
+nvm off
+nvm install 12.16.2 64
+nvm use 12.16.2 64
+e.g.=&gt; &lt;node-version&gt; &lt;system architecture-32/64&gt;
+
+nvm install 12.18.0 64
+nvm use 12.18.0 64</code></pre><hr>
     </article>
   </body>
 </html>

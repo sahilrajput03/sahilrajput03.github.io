@@ -1,4 +1,16 @@
+## **Jsonwebtoken**
 
+![image-20200609175218671](image-20200609175218671.png)
+
+This library is provided by auth0.
+
+![image-20200609175242125](image-20200609175242125.png)
+
+Also, you should look at **passport.js, coz this is also very popular** by its stars and but **it is used by 601k** and **jsonwebtoken is used by 601k**.(that's why jsonwebtoken is more trusted.)
+
+you must look at passportjs
+
+![image-20200609175600293](image-20200609175600293.png)
 
 ***
 

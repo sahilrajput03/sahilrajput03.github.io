@@ -1,4 +1,6 @@
-Github repo for official codelabs of flutter: https://github.com/flutter/samples/blob/master/INDEX.md 
+[[TOC]]
+
+## Github repo for official codelabs of flutter: https://github.com/flutter/samples/blob/master/INDEX.md 
 
  https://flutter.dev/create 
 
@@ -10,7 +12,7 @@ Github repo for official codelabs of flutter: https://github.com/flutter/samples
 
 Pawan Kumar - https://www.facebook.com/imthepk 
 
-Flutter indian developer (also he is Google Developer Expert) @  https://mtechviral.com/  ; @[Google Profiles](https://developers.google.com/community/experts/directory/profile/profile-pawan_kumar)
+### Flutter indian developer (also he is Google Developer Expert) @  https://mtechviral.com/  ; @[Google Profiles](https://developers.google.com/community/experts/directory/profile/profile-pawan_kumar)
 
 Course 1 - https://school.mtechviral.com/flutter-essential-hindi 
 

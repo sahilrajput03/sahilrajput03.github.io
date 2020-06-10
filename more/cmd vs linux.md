@@ -1,5 +1,45 @@
 
 
+***
+
+## cmd vs mintty(unix/linux)
+
+cmd
+
+```bash
+# CMD: 
+$ where <command-name/executable> 
+$ where where
+#Output=> C:\Windows\System32\where.exe
+$ where ls
+#Output=> C:\Program Files (x86)\GnuWin32\bin\ls.exe
+$ echo %variable-name%
+$ echo %path%
+$ echo %username%
+#Output=> chetan
+$ echo %temp%
+#Output=> C:\Users\chetan\AppData\Local\Temp
+```
+
+
+
+```bash
+
+# UNIX/MINTTY: 
+$ type <command/executable>
+
+_
+echo $varname
+echo `uname`
+
+winodows uses first match from paths
+npm config get prefix
+
+***
+
+### 
+```
+
 ### Hibernate with cmd
 
 ```bash
