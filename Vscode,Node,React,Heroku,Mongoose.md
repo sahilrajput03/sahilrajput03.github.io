@@ -1221,17 +1221,21 @@ Happy coding!! So hooks are real.
 
 # Code Folding: 
 
-To fold all - Ctrl+K Ctrl+ 0
-To unfold all - Ctrl+K Ctrl+J
+```ini
+To fold all: Ctrl+K Ctrl+ 0
+To unfold all: Ctrl+K Ctrl+J
 
-To fold at current cursor- Ctrl+Shift+[
-To unfold at current cursor- Ctrl+Shift+]
+To fold at current cursor: Ctrl+Shift+[
+To unfold at current cursor: Ctrl+Shift+]
 
-Tip: Folding can be done on certain levels with Ctrl + K Ctrl+1 to Ctrl +5.
+First members: Ctrl + K Ctrl+1
+Second members: Ctrl + K Ctrl+2
+Third members: Ctrl + K Ctrl+3
+Fourth members: Ctrl + K Ctrl+4
+Fifth members: Ctrl + K Ctrl+5
+```
 
-where 1 refers to closing below 1st members, 2 refers to closing below 2nd members, and so on...
 
-Remember: Ctrl+K Ctrl+J , unfolds all.
 
 ***
 
@@ -4400,6 +4404,26 @@ e.g.=> <node-version> <system architecture-32/64>
 nvm install 12.18.0 64
 nvm use 12.18.0 64
 ```
+
+***
+![some desktop](.pastes\2020-06-10-14-54-26.png)
+Isn't this amazing1!! I got this software for free. Isn't this awesome.!!
+
+>>??what do you say??
+>>
+>>*
+
+***
+
+## Setting desired titlebar design in vscode
+
+```json
+"window.title": "${dirty}${rootName}${separator}${activeEditorShort}"
+```
+
+$dirty -> this is like, a white dot is shown in front of the file name, and you'll save it, then only it'll get off.
+
+src- https://stackoverflow.com/questions/38483687/showing-project-folder-in-title-bar-for-visual-studio-code
 
 ***
 

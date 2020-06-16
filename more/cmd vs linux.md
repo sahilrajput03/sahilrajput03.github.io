@@ -1,3 +1,12 @@
+## Killing multiple taks via cmd-
+
+```BASH
+$ Taskkill /PID 10204 /F 
+#/F TELLS ABOUT THE FORCE TERMINATION OF TASK.
+$ Taskkill /PID 10204 /PID 10228 /PID 10256 /F
+#ALL PROCESSES WIL BE TERMINATED FORCEFULLY.
+```
+
 
 
 ***

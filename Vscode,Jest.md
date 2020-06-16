@@ -130,15 +130,36 @@ mode(["a","b","b","b","b","c","c","c"])
 
 ***
 
+## **Flattening arrays using Javascript reduce method**
+
+We can use the reduce() function to flatten the nested amounts into a single array.
+
+We set an initial value to the empty array and then concatenate the current value to the total.
+
+```js
+const data = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+const flatValues = data.reduce((total, value) => {
+  return total.concat(value);
+}, []);
+
+console.log(flatValues); // Output:- [1,2,3,4,5,6,7,8,9]
+```
+
+
+
+View other useful uses of reduce method, reduce method tricks @ https://appdividend.com/2018/10/16/javascript-reduce-example-tutorial/
+
+***
+
 ## Remove all duplicates in an array
 
 tags: #Remove duplicates in array, #Unique array, #remove all duplicates, #only unique; [Link](https://www.geeksforgeeks.org/how-to-convert-set-to-array-in-javascript/)
 
 - [ ] ```js
-  GETTING UNIQUE ARRAY FORM OLD ARRAY
+  // GETTING UNIQUE ARRAY FORM OLD ARRAY
   const arrayUnion = ["sahil","mohit","sahil"]
   const uniqSet = [...new Set(arrayUnion)];
-  const uniqArray = Array.from(uniqSet) # also, let uniqArray = [...uniqSet]; this works too.
+  const uniqArray = Array.from(uniqSet) // also, let uniqArray = [...uniqSet]; this works too.
   // uniqArray => ["sahil","mohit"]
   ```
 

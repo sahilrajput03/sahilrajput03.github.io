@@ -3,13 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>cmd vs mintty(unix/linux)</title>
+    <title>Killing multiple taks via cmd-</title>
     <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><hr>
+    <article class="markdown-body"><h2 id="killing-multiple-taks-via-cmd-"><a class="header-link" href="#killing-multiple-taks-via-cmd-"></a>Killing multiple taks via cmd-</h2>
+<pre class="hljs"><code>$ Taskkill /PID 10204 /F 
+<span class="hljs-comment">#/F TELLS ABOUT THE FORCE TERMINATION OF TASK.</span>
+$ Taskkill /PID 10204 /PID 10228 /PID 10256 /F
+<span class="hljs-comment">#ALL PROCESSES WIL BE TERMINATED FORCEFULLY.</span></code></pre><hr>
 <h2 id="cmd-vs-mintty(unix/linux)"><a class="header-link" href="#cmd-vs-mintty(unix/linux)"></a>cmd vs mintty(unix/linux)</h2>
 <p>cmd</p>
 <pre class="hljs"><code><span class="hljs-comment"># CMD: </span>

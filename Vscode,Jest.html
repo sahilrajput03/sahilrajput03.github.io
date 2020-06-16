@@ -82,14 +82,24 @@ expect(somefunctn).toEqual({});   // deep equality
 }
 mode([<span class="hljs-string">"a"</span>,<span class="hljs-string">"b"</span>,<span class="hljs-string">"b"</span>,<span class="hljs-string">"b"</span>,<span class="hljs-string">"b"</span>,<span class="hljs-string">"c"</span>,<span class="hljs-string">"c"</span>,<span class="hljs-string">"c"</span>])
 <span class="hljs-comment">// Output : b</span></code></pre><hr>
+<h2 id="**flattening-arrays-using-javascript-reduce-method**"><a class="header-link" href="#**flattening-arrays-using-javascript-reduce-method**"></a><strong>Flattening arrays using Javascript reduce method</strong></h2>
+<p>We can use the reduce() function to flatten the nested amounts into a single array.</p>
+<p>We set an initial value to the empty array and then concatenate the current value to the total.</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> data = [[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>], [<span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]];
+<span class="hljs-keyword">const</span> flatValues = data.reduce(<span class="hljs-function">(<span class="hljs-params">total, value</span>) =&gt;</span> {
+  <span class="hljs-keyword">return</span> total.concat(value);
+}, []);
+
+<span class="hljs-built_in">console</span>.log(flatValues); <span class="hljs-comment">// Output:- [1,2,3,4,5,6,7,8,9]</span></code></pre><p>View other useful uses of reduce method, reduce method tricks @ <a href="https://appdividend.com/2018/10/16/javascript-reduce-example-tutorial/">https://appdividend.com/2018/10/16/javascript-reduce-example-tutorial/</a></p>
+<hr>
 <h2 id="remove-all-duplicates-in-an-array"><a class="header-link" href="#remove-all-duplicates-in-an-array"></a>Remove all duplicates in an array</h2>
 <p>tags: #Remove duplicates in array, #Unique array, #remove all duplicates, #only unique; <a href="https://www.geeksforgeeks.org/how-to-convert-set-to-array-in-javascript/">Link</a></p>
 <ul class="list">
 <li>[ ] <code>js
-GETTING UNIQUE ARRAY FORM OLD ARRAY
+// GETTING UNIQUE ARRAY FORM OLD ARRAY
 const arrayUnion = [&quot;sahil&quot;,&quot;mohit&quot;,&quot;sahil&quot;]
 const uniqSet = [...new Set(arrayUnion)];
-const uniqArray = Array.from(uniqSet) # also, let uniqArray = [...uniqSet]; this works too.
+const uniqArray = Array.from(uniqSet) // also, let uniqArray = [...uniqSet]; this works too.
 // uniqArray =&gt; [&quot;sahil&quot;,&quot;mohit&quot;]</code></li>
 </ul>
 <hr>

@@ -1,3 +1,11 @@
+## Indic keyboard for desktop-
+
+![image-20200614102126985](image-20200614102126985.png)
+
+## ![101907](101907.png)
+
+***
+
 ## 1 to 10 in Hindi
 
 0     zero   ०     शून्य  Shuniye

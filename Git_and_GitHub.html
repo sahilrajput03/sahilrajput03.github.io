@@ -3,13 +3,100 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Official Git documentation is really good though.</title>
+    <title>Ignoring multiple folder/file with same name in the repository</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><pre class="hljs"><code>$ git checkout &lt;filename&gt;
+    <article class="markdown-body"><hr>
+<h2 id="ignoring-multiple-folder/file-with-same-name-in-the-repository"><a class="header-link" href="#ignoring-multiple-folder/file-with-same-name-in-the-repository"></a>Ignoring multiple folder/file with same name in the repository</h2>
+<table>
+<thead>
+<tr>
+<th><code>**/logs</code></th>
+<th><code>logs/debug.log</code> <code>logs/monday/foo.bar</code> <code>build/logs/debug.log</code></th>
+<th>You can prepend a pattern with a double asterisk to match directories anywhere in the repository.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>**/logs/debug.log</code></td>
+<td><code>logs/debug.log</code> <code>build/logs/debug.log</code> <em>but not</em> <code>logs/build/debug.log</code></td>
+<td>You can also use a double asterisk to match files based on their name and the name of their parent directory.</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore">https://www.atlassian.com/git/tutorials/saving-changes/gitignore</a></p>
+<hr>
+<p class="img-container"><img src="image-20200615224535981.png" alt="image-20200615224535981"></p>
+<hr>
+<h2 id="last-exercise-gitbranching"><a class="header-link" href="#last-exercise-gitbranching"></a>Last exercise gitbranching</h2>
+<p class="img-container"><img src="image-20200615173226853.png" alt="image-20200615173226853"></p>
+<hr>
+<h2 id="a-file-having-same-name-as-the-branch-in-git-could-conflict--"><a class="header-link" href="#a-file-having-same-name-as-the-branch-in-git-could-conflict--"></a>A file having same name as the branch in git could conflict -</h2>
+<p class="img-container"><img src="image-20200611122933909.png" alt="image-20200611122933909"></p>
+<p>This is happening bcoz i have a file named part8-7 and there is a branch named part8-7 and thats why its a conflict there. So, the command we actually need is -</p>
+<p class="img-container"><img src="image-20200611123114811.png" alt="image-20200611123114811"></p>
+<p>or <img src="image-20200611123353308.png" alt="image-20200611123353308"></p>
+<hr>
+<h2 id="chrome-full-screen-always,-scroll-tabs-using"><a class="header-link" href="#chrome-full-screen-always,-scroll-tabs-using"></a>Chrome full screen always, scroll tabs using</h2>
+<p>ctrl+tab,ctrl+1,ctrl+pagedown,</p>
+<p>Ctrl+w to close tab.</p>
+<p><a href="https://dottech.org/181522/how-to-enter-a-url-while-viewing-chrome-in-full-screen-tip/#:~:text=Just%20view%20any%20page%20in,field%20in%20a%20popup%20window">https://dottech.org/181522/how-to-enter-a-url-while-viewing-chrome-in-full-screen-tip/#:~:text=Just%20view%20any%20page%20in,field%20in%20a%20popup%20window</a>.</p>
+<hr>
+<p class="img-container"><img src="image-20200610175341364.png" alt="image-20200610175341364"></p>
+<p class="img-container"><img src="image-20200610175310793.png" alt="image-20200610175310793"></p>
+<p>*</p>
+<p class="img-container"><img src="image-20200610175420212.png" alt="image-20200610175420212"></p>
+<p class="img-container"><img src="image-20200610175433177.png" alt="image-20200610175433177"></p>
+<p>*</p>
+<p class="img-container"><img src="image-20200610175651155.png" alt="image-20200610175651155"></p>
+<p class="img-container"><img src="image-20200610180343315.png" alt="image-20200610180343315"></p>
+<p>So, thats how identifiers work. ~ is the frequent one, while ^ is to choose if you want to climb to parent (the right parent)other than the directly above. And using just climbs to one levelup in the second parent.</p>
+<pre class="hljs"><code>$ GIT checkout HEAD~2
+<span class="hljs-comment">#This is the command to cram or stick to.</span>
+$ GIT checkout HEAD~
+<span class="hljs-comment">#This gets to one level up.</span>
+_
+$ git checkout HEAD
+<span class="hljs-comment">#jus checkouts the files again from the current head, this is helpful when you have edited some files in current HEAD/branch, to get back the original files.</span>
+_
+$ git checkout HEAD^ ,$ git checkout HEAD^1 , $ git checkout HEAD~ , $ git checkout HEAD~1
+<span class="hljs-comment">#Goes one level up.</span>
+_
+$ git checkout HEAD~2
+<span class="hljs-comment">#Goes two level up.</span>
+
+___
+Not so commonly used, you better use ,$ git checkout commit-sha
+$ git checkout HEAD^2
+<span class="hljs-comment">#Output:- fatal: 'HEAD^2' is not a valid branch name.</span>
+<span class="hljs-comment">#This command is two go to the commit not directly above the current commit. And this is not usually a good usage for such feature. So you should always remember the tildayh.</span></code></pre><p>*</p>
+<p class="img-container"><img src="image-20200610213616131.png" alt="image-20200610213616131"></p>
+<p class="img-container"><img src="image-20200610213627451.png" alt="image-20200610213627451"></p>
+<p>__</p>
+<p>The modifier ~(tidle) and ^(caret) can be used to create branch too.</p>
+<p class="img-container"><img src="image-20200610222204349.png" alt="image-20200610222204349" style="zoom:50%;" /></p>
+<pre class="hljs"><code>$ git branch bugWork HEAD~1^2~1</code></pre><hr>
+<h2 id="git-blame"><a class="header-link" href="#git-blame"></a>git blame</h2>
+<p><a href="https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-blame">atlassian guide</a></p>
+<pre class="hljs"><code>$ git blame &lt;filename&gt;// shows all lines with each line shows the last editor of it.</code></pre><h4 id="summary"><a class="header-link" href="#summary"></a>Summary</h4>
+<p>The <code>git blame</code> command is used to examine the contents of a file line by line and see when each line was last modified and who the author of the modifications was. The output format of <code>git blame</code> can be altered with various command line options. Online Git hosting solutions like Bitbucket offer <em>blame views</em>, which offer a superior user experience to command line <code>git blame</code> usage. <code>git blame</code> and git log can be used in combination to help discover the history of a file&#39;s contents. The <code>git log</code> command has some similar blame functionality, to learn more visit the <code>git log</code> overview page.</p>
+<hr>
+<h2 id="git-log-with--p,-show-a-summary-of-changes-too."><a class="header-link" href="#git-log-with--p,-show-a-summary-of-changes-too."></a>git log with -p, show a summary of changes too.</h2>
+<pre class="hljs"><code>$ git <span class="hljs-built_in">log</span> -p</code></pre><p><a href="https://coderwall.com/p/euwpig/a-better-git-log">https://coderwall.com/p/euwpig/a-better-git-log</a></p>
+<pre class="hljs"><code><span class="hljs-comment">#alias in need-</span>
+$ git config --global alias.lg <span class="hljs-string">"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span></code></pre><pre class="hljs"><code>git lg
+git lg -p</code></pre><hr>
+<pre class="hljs"><code>$ git config --global alias.lg1 <span class="hljs-string">"log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"</span>
+$ git lg1
+
+_
+$ git config --global alias.lg2 <span class="hljs-string">"log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"</span>
+$ git lg2</code></pre><p>src:-<a href="https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs">link</a></p>
+<hr>
+<pre class="hljs"><code>$ git checkout &lt;filename&gt;
 <span class="hljs-comment">#This command restores the file from the current HEAD.</span></code></pre><hr>
 <p class="img-container"><img src="191749.png" alt="191749"></p>
 <hr>
@@ -114,6 +201,21 @@ You should never disable autocrlf, it&#39;s actually good for cross platform dev
 <strong>hide goal</strong> to hide the goals.</p>
 <hr>
 <h2 id="git-rebase:"><a class="header-link" href="#git-rebase:"></a>Git rebase:</h2>
+<pre class="hljs"><code>$ git checkout bugFix
+$ git rebase master
+<span class="hljs-comment"># This will place the bugFix brach(currently checked out branch)(you should think of it as pointer), on the top of master.</span>
+$ git checkout master
+$ git rebase bugFix
+<span class="hljs-comment"># This will place the master branch on the top of bugFix branch.</span></code></pre><p>or you can do above thing from anywhere like that(without checking out any of the branch)</p>
+<pre class="hljs"><code>$ git rebase master bugFix
+<span class="hljs-comment"># This sets base of bugFix to master.</span>
+<span class="hljs-comment"># Or you can read it like - set base as master of bugFix</span>
+$ git rebase bugFix master
+<span class="hljs-comment"># This sets base of master to bugFix.</span>
+<span class="hljs-comment"># Or you can read it like - set base as bugFix of master.</span></code></pre><pre class="hljs"><code>Note, <span class="hljs-number">1</span>st parameter <span class="hljs-keyword">is</span> setBaseAs, <span class="hljs-keyword">and</span> <span class="hljs-number">2</span>nd(<span class="hljs-keyword">optional</span>, <span class="hljs-keyword">if</span> absent sets <span class="hljs-keyword">to</span> currently checkedout branch) <span class="hljs-keyword">is</span> setBaseTo.</code></pre><p>*</p>
+<h4 id="solving-at-learngitbranching.js.org"><a class="header-link" href="#solving-at-learngitbranching.js.org"></a>Solving at learngitbranching.js.org</h4>
+<p class="img-container"><img src="image-20200610175028964.png" alt="image-20200610175028964"></p>
+<p>*</p>
 <p class="img-container"><img src="image-20200514190110995.png" alt="image-20200514190110995"></p>
 <p class="img-container"><img src="image-20200514190140425.png" alt="image-20200514190140425"></p>
 <p class="img-container"><img src="image-20200514190740574.png" alt="image-20200514190740574"></p>
@@ -125,29 +227,41 @@ You should never disable autocrlf, it&#39;s actually good for cross platform dev
 <h2 id="git-revert"><a class="header-link" href="#git-revert"></a>Git Revert</h2>
 <p>While resetting works great for local branches on your own machine, its method of &quot;rewriting history&quot; doesn&#39;t work for remote branches that others are using.</p>
 <p>In order to reverse changes and <em>share</em> those reversed changes with others, we need to use <code>git revert</code>. Let&#39;s see it in action.</p>
-<pre class="hljs"><code><span class="hljs-symbol">git</span> <span class="hljs-keyword">revert </span>HEAD</code></pre><p class="img-container"><img src="image-20200514183155902.png" alt="image-20200514183155902"></p>
+<pre class="hljs"><code>git revert HEAD</code></pre><p class="img-container"><img src="image-20200514183155902.png" alt="image-20200514183155902"></p>
 <hr>
-<h2 id="git-reset---lets-reset-current-to-older-commit--"><a class="header-link" href="#git-reset---lets-reset-current-to-older-commit--"></a>Git Reset - Lets reset current to older commit -</h2>
+<h2 id="git-reset---lets-reset-current-branch-to-older-commit--"><a class="header-link" href="#git-reset---lets-reset-current-branch-to-older-commit--"></a>Git Reset - Lets reset current branch to older commit -</h2>
 <p><code>git reset</code> reverts changes by moving a branch reference backwards in time to an older commit. In this sense you can think of it as &quot;rewriting history;&quot; <code>git reset</code> will move a branch backwards as if the commit had never been made in the first place.(this is actually bad for people on remote repositories)</p>
 <p>In order to reverse changes and <em>share</em> those reversed changes with others, we need to use <code>git revert</code>. Let&#39;s see it in action.</p>
 <p>Let&#39;s see what that looks like:</p>
 <pre class="hljs"><code>$ git reset HEAD~2 <span class="hljs-comment"># HEAD~2 represents two commit above in the commit history. </span>
+<span class="hljs-comment"># The above command will unstage the changes, but will keep the changes in the current HEAD. And the desired branch is move to the desired state.</span>
+$ git checkout <span class="hljs-_">-f</span> <span class="hljs-comment">#This will simply force checkout current branch.THIS IS IN NEED COMMAND TO GET THE CURRENT HEAD TO THE COMMIT WE JUST MOVED IT TO.</span>
+
+$ git reset --hard HEAD~1  <span class="hljs-comment"># HEAD~1 represents two commit above in the commit history.</span>
+<span class="hljs-comment"># The above command will discard all changes and checkout to the commit where the branch has been  destined to reset. (git reset HEAD~1 --hard) This would have behaved in same manner.</span>
 $ git reset --hard e735ddf0bdf7e122e08b9431a00a84f7ecfcba6b <span class="hljs-comment"># This is commit hash.</span>
 <span class="hljs-comment"># Notice: --hard flag is important as it actullay alters the working directory files and changes. This will actually make the current working directory to look like at the specified target(commit) the changes in working directory, while git reset just manages to move the commit head but do not make any changes in the working history.</span></code></pre><hr>
 <h2 id="relative-refs"><a class="header-link" href="#relative-refs"></a>Relative refs</h2>
 <p>One of the most common ways I use relative refs is to <strong>move branches around</strong>. You can <strong>directly reassign a branch to a commit with the <code>-f</code> option</strong>. So something like:</p>
-<pre class="hljs"><code>git branch <span class="hljs-_">-f</span> master HEAD~3</code></pre><p>moves (by force) the master branch to three parents behind HEAD.</p>
+<pre class="hljs"><code>git branch <span class="hljs-_">-f</span> master HEAD~3
+$ git <span class="hljs-built_in">log</span> master <span class="hljs-comment">#This will show logs for master branch.</span>
+$ git <span class="hljs-built_in">log</span> otherBranch <span class="hljs-comment">#This will show logs for otherBranch.</span></code></pre><p>moves (by force) the master branch to three parents behind HEAD.</p>
 <p class="img-container"><img src="image-20200514175822230.png" alt="image-20200514175822230"></p>
 <hr>
 <h3 id="when-adding-files/folder-in-.gitignore-doesn't-work,-you-need-to-do-this..."><a class="header-link" href="#when-adding-files/folder-in-.gitignore-doesn't-work,-you-need-to-do-this..."></a>When adding files/folder in .gitignore doesn&#39;t work, you need to do this...</h3>
 <p class="img-container"><img src="image-20200507182811898.png" alt="image-20200507182811898"></p>
 <hr>
-<pre class="hljs"><code>$ git commit -m file\ m\ and\ and\ ss\ are\ adeed. <span class="hljs-comment"># works too.</span></code></pre><hr>
+<pre class="hljs"><code>$ git commit -m file\ m\ and\ and\ ss\ are\ adeed. <span class="hljs-comment"># Works too.</span></code></pre><hr>
 <h2 id="make-a-branch-at-an-earlier-commit-in-current-branch:"><a class="header-link" href="#make-a-branch-at-an-earlier-commit-in-current-branch:"></a>Make a branch at an earlier commit in current branch:</h2>
 <pre class="hljs"><code>git checkout HEAD^ or git checkout &lt;commit-hash&gt; or git checkout HEAD~3 (3 commits back from now)
 git checkout -b myDesiredBranchYikes
 <span class="hljs-comment"># Hint: when you have checked out at an earlier commit, you can view the commit history via git log, to see what are the earlier commits to this HEAD.</span></code></pre><p>Or a simple single command:-</p>
-<pre class="hljs"><code>git checkout -b old-state 0d1d7<span class="hljs-built_in">fc</span>32</code></pre><hr>
+<pre class="hljs"><code>git checkout -b old-state 0d1d7<span class="hljs-built_in">fc</span>32
+<span class="hljs-comment">#Or you could have done it like that-</span>
+git branch <span class="hljs-_">-f</span> old-state &lt;commit-sha&gt;
+<span class="hljs-comment">#-f is significant if a branch with same name already exists, thus -f will force overwrite that branch completely.</span>
+git branch -C &lt;commit-sha&gt; old-state
+<span class="hljs-comment">#This would have worked in same way.(Note: This syntax is little odd to remember, as source is first and second is target{to be created.})</span></code></pre><hr>
 <h2 id="edit-content-and-name-both-of-last-commit:"><a class="header-link" href="#edit-content-and-name-both-of-last-commit:"></a>Edit CONTENT AND NAME BOTH of last commit:</h2>
 <h2 id="edit-the-content-only-of-last-commit:"><a class="header-link" href="#edit-the-content-only-of-last-commit:"></a>Edit the CONTENT ONLY of last commit:</h2>
 <h2 id="change-the-message-only-of-last-commit"><a class="header-link" href="#change-the-message-only-of-last-commit"></a>Change the MESSAGE ONLY of last commit</h2>
@@ -216,7 +330,11 @@ git stash pop
 <pre class="hljs"><code>git checkout 0d1d7<span class="hljs-built_in">fc</span>32 <span class="hljs-comment"># move to any previous commit temporarily</span>
 git checkout 0d1d <span class="hljs-comment"># would work too, <span class="hljs-doctag">NOTE:</span> atleast 4 characters are needed to work.</span></code></pre><hr>
 <h2 id="the-tidle-operator-in-github"><a class="header-link" href="#the-tidle-operator-in-github"></a>The tidle operator in github</h2>
-<pre class="hljs"><code>git checkout HEAD~3
+<p>(pronounciation - tildeahh)</p>
+<pre class="hljs"><code>git checkout HEAD~
+git checkout HEAD^
+<span class="hljs-comment">#Both the commands above are identical. And, now you are one level up in the commit history.</span>
+git checkout HEAD~3
 <span class="hljs-comment">#so now you have got to 3 levels up in commit history.</span></code></pre><hr>
 <h2 id="moving-upward(^-caret-symbol)-in-a-git-repository"><a class="header-link" href="#moving-upward(^-caret-symbol)-in-a-git-repository"></a>Moving upward(^ caret symbol) in a git repository</h2>
 <pre class="hljs"><code>git checkout HEAD^ 
@@ -600,9 +718,17 @@ $ git branch <span class="hljs-_">-d</span> master <span class="hljs-comment"># 
 <pre class="hljs"><code>git reset --hard HEAD</code></pre><hr>
 <h6 id="reverse-a-particular-commit-//-this-is-not-a-commonly-used-command..so-try-not-to-use..(although-works-great)"><a class="header-link" href="#reverse-a-particular-commit-//-this-is-not-a-commonly-used-command..so-try-not-to-use..(although-works-great)"></a>Reverse a particular commit // This is not a commonly used command..so try not to use..(although works great)</h6>
 <pre class="hljs"><code>git revert &lt;commit-hash&gt;</code></pre><hr>
+<h2 id="creating-branch-from-a-commit-sha-or-another-branch"><a class="header-link" href="#creating-branch-from-a-commit-sha-or-another-branch"></a>Creating branch from a commit-sha or another branch</h2>
+<pre class="hljs"><code>$ git branch <span class="hljs-_">-f</span> three &lt;COMMIT-SHA&gt;
+<span class="hljs-comment">#commit-sha could be from any branch.</span>
+$ git branch <span class="hljs-_">-f</span> three master
+<span class="hljs-comment">#This command will forcibly make branch three from master, even if a branch with name three already it exists.</span>
+
+!aLSO, <span class="hljs-_">-f</span> parameter is required <span class="hljs-keyword">if</span> the branch with the same name already exists.</code></pre><hr>
 <h2 id="create-a-branch-even-if-the-branch-with-that-name-already-exists-"><a class="header-link" href="#create-a-branch-even-if-the-branch-with-that-name-already-exists-"></a>Create a branch even if the branch with that name already exists-</h2>
 <p>#copy branch forcibly</p>
-<pre class="hljs"><code>git branch -C branchHellYeah
+<pre class="hljs"><code><span class="hljs-comment">#Note this syntax is little offset for learning to create branch, rather you should continue with the older git branch &lt;new branch&gt; &lt;source branch&gt; (mentioned just above this topic ^^^)</span>
+git branch -C branchHellYeah
 git branch -C master2 branchHellYeah <span class="hljs-comment">#This will create copy of branch master2 to branchHellYeah(forcibly)</span></code></pre><pre class="hljs"><code><span class="hljs-comment">#While, simply copying branch has different syntax i.e., </span>
 git branch branchHellYeah master3 <span class="hljs-comment">#Creates branch branchHellYeah from master2.</span>
 git branch master origin/master <span class="hljs-comment">#Create branch master from origin/master.</span></code></pre><hr>
@@ -854,7 +980,7 @@ $ hub pull-request -m <span class="hljs-string">"Implemented feature X"</span> -
 <pre class="hljs"><code>$ hub pull-request -m <span class="hljs-string">"MessgForPullRequest"</span> -p mylocalbranch -b chetanmishra8660:master -h mylocalbranch -c <span class="hljs-_">-f</span></code></pre><p>Example 2.</p>
 <pre class="hljs"><code>$ hub pull-request -m <span class="hljs-string">"Just added comments in backendBranch"</span> -b nirmal201:backendBranch -h backendBranch -c <span class="hljs-_">-f</span></code></pre><p>(^^YOU HAVE TO EXECUTE THIS INSIDE GIT REPO &gt;&gt;)</p>
 <pre class="hljs"><code>_
-Make a fork of the repo <span class="hljs-keyword">in</span> your github, and <span class="hljs-built_in">clone</span> that forked repo locally and make changes to the appropriate branch. And make a pull-request via:-
+<span class="hljs-comment"># Make a fork of the repo in your github, and clone that forked repo locally and make changes to the appropriate branch, and push the changes. And make a pull-request via:-</span>
 
 $ hub pull-request -m <span class="hljs-string">"Some message for pull-request"</span> -b chetanmishra8660:master -h sahilrajput03:master
 <span class="hljs-comment"># -b is the switch for &lt;username-to-request-to&gt;:&lt;branch-to-be-pushed-to&gt;</span>
@@ -875,7 +1001,7 @@ NOTE: <span class="hljs-_">-f</span> (this flag is really good, as you can omit 
 But <span class="hljs-keyword">for</span> THIS TO WORK, you need to specify, -p &lt;branch&gt; to be pushed to you forked-remote-repository, like <span class="hljs-keyword">in</span> the above <span class="hljs-built_in">command</span> we are specifying <span class="hljs-built_in">local</span> master brach to be pushed to its default upstream.     AWESOME.)
 $ hub pull-request -m <span class="hljs-string">"Some message for pull-request"</span> -b chetanmishra8660:master -c
 
-ALL ABOVE COMMANDS WORK FINE, i.e., copies the url of the pull-request to clipboard.
+ALL ABOVE COMMANDS WORK FINE, i.e., -c switch copies the url of the pull-request to clipboard.
 You can close a pull-request via visiting the pull-request-url and clicking [Close pull request] button. (The owner of the actual repo, can <span class="hljs-keyword">do</span> this, or you can <span class="hljs-keyword">do</span> this too.)
 YOu cannot edit/update the pull-request you have made from the terminal(hub cli). 
 If the terminal is saying
@@ -886,16 +1012,6 @@ ALTERNATELY: You can go to the owner\<span class="hljs-string">'s repository and
 ___
 </span></code></pre><p>Cheatsheet about hub:- <a href="https://kapeli.com/cheat_sheets/Hub.docset/Contents/Resources/Documents/index">Kapeli.com/cheatsheet####</a>
 Help link from official hub page: <a href="https://hub.github.com/hub-pull-request.1.html">Link</a> <a href="https://hub.github.com/">Link2</a></p>
-<h2 id="you-can-see-all-your-pull-request-you-have-made-via:"><a class="header-link" href="#you-can-see-all-your-pull-request-you-have-made-via:"></a>You can see all your pull-request you have made via:</h2>
-<p class="img-container"><img src="image-20200504192007114.png" alt="image-20200504192007114"></p>
-<hr>
-<p>You can view your pull request at the repository to which you have made the request to like below:-</p>
-<p class="img-container"><img src="image-20200504192315575.png" alt="image-20200504192315575"></p>
-<p>and then opening the desired pull request by clicking in the area:-</p>
-<p class="img-container"><img src="image-20200504192448680.png" alt="image-20200504192448680"></p>
-<p>and then clicking the button:-</p>
-<p class="img-container"><img src="image-20200504192523056.png" alt="image-20200504192523056"></p>
-<p>and you don&#39;t need to add any comment. That is an optional thing.</p>
 <hr>
 <h2 id="meging-pull-request"><a class="header-link" href="#meging-pull-request"></a>Meging pull request</h2>
 <p>Click <strong>Merge pull request</strong>, and then click <strong>Confirm Merge</strong>.</p>

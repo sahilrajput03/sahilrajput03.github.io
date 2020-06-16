@@ -1,3 +1,154 @@
+***
+
+## Ignoring multiple folder/file with same name in the repository
+
+| `**/logs`           | `logs/debug.log` `logs/monday/foo.bar` `build/logs/debug.log` | You can prepend a pattern with a double asterisk to match directories anywhere in the repository. |
+| ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `**/logs/debug.log` | `logs/debug.log` `build/logs/debug.log` *but not* `logs/build/debug.log` | You can also use a double asterisk to match files based on their name and the name of their parent directory. |
+
+https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+
+***
+
+![image-20200615224535981](image-20200615224535981.png)
+
+***
+
+## Last exercise gitbranching
+
+![image-20200615173226853](image-20200615173226853.png)
+
+***
+
+## A file having same name as the branch in git could conflict -
+
+![image-20200611122933909](image-20200611122933909.png)
+
+This is happening bcoz i have a file named part8-7 and there is a branch named part8-7 and thats why its a conflict there. So, the command we actually need is -
+
+![image-20200611123114811](image-20200611123114811.png)
+
+or ![image-20200611123353308](image-20200611123353308.png)
+
+***
+
+## Chrome full screen always, scroll tabs using 
+
+ctrl+tab,ctrl+1,ctrl+pagedown,
+
+Ctrl+w to close tab.
+
+https://dottech.org/181522/how-to-enter-a-url-while-viewing-chrome-in-full-screen-tip/#:~:text=Just%20view%20any%20page%20in,field%20in%20a%20popup%20window.
+
+***
+
+![image-20200610175341364](image-20200610175341364.png)
+
+![image-20200610175310793](image-20200610175310793.png)
+
+*
+
+![image-20200610175420212](image-20200610175420212.png)
+
+![image-20200610175433177](image-20200610175433177.png)
+
+*
+
+![image-20200610175651155](image-20200610175651155.png)
+
+![image-20200610180343315](image-20200610180343315.png)
+
+So, thats how identifiers work. ~ is the frequent one, while ^ is to choose if you want to climb to parent (the right parent)other than the directly above. And using just climbs to one levelup in the second parent.
+
+```bash
+$ GIT checkout HEAD~2
+#This is the command to cram or stick to.
+$ GIT checkout HEAD~
+#This gets to one level up.
+_
+$ git checkout HEAD
+#jus checkouts the files again from the current head, this is helpful when you have edited some files in current HEAD/branch, to get back the original files.
+_
+$ git checkout HEAD^ ,$ git checkout HEAD^1 , $ git checkout HEAD~ , $ git checkout HEAD~1
+#Goes one level up.
+_
+$ git checkout HEAD~2
+#Goes two level up.
+
+___
+Not so commonly used, you better use ,$ git checkout commit-sha
+$ git checkout HEAD^2
+#Output:- fatal: 'HEAD^2' is not a valid branch name.
+#This command is two go to the commit not directly above the current commit. And this is not usually a good usage for such feature. So you should always remember the tildayh.
+```
+
+*
+
+![image-20200610213616131](image-20200610213616131.png)
+
+![image-20200610213627451](image-20200610213627451.png)
+
+__
+
+The modifier ~(tidle) and ^(caret) can be used to create branch too.
+
+<img src="image-20200610222204349.png" alt="image-20200610222204349" style="zoom:50%;" />
+
+```BASH
+$ git branch bugWork HEAD~1^2~1
+```
+
+
+
+***
+
+## git blame
+
+[atlassian guide](https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-blame)
+
+```bash
+$ git blame <filename>// shows all lines with each line shows the last editor of it.
+```
+
+#### Summary
+
+The `git blame` command is used to examine the contents of a file line by line and see when each line was last modified and who the author of the modifications was. The output format of `git blame` can be altered with various command line options. Online Git hosting solutions like Bitbucket offer *blame views*, which offer a superior user experience to command line `git blame` usage. `git blame` and git log can be used in combination to help discover the history of a file's contents. The `git log` command has some similar blame functionality, to learn more visit the `git log` overview page.
+
+***
+
+## git log with -p, show a summary of changes too.
+
+```bash
+$ git log -p
+```
+
+https://coderwall.com/p/euwpig/a-better-git-log
+
+```bash
+#alias in need-
+$ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+```
+
+```bash
+git lg
+git lg -p
+```
+
+***
+
+```bash
+$ git config --global alias.lg1 "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+$ git lg1
+
+_
+$ git config --global alias.lg2 "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+$ git lg2
+```
+
+src:-[link](https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs)
+
+***
+
 ```bash
 $ git checkout <filename>
 #This command restores the file from the current HEAD.
@@ -262,6 +413,38 @@ https://learngitbranching.js.org/ :-> In terminal you can write,
 
 ## Git rebase:
 
+```bash
+$ git checkout bugFix
+$ git rebase master
+# This will place the bugFix brach(currently checked out branch)(you should think of it as pointer), on the top of master.
+$ git checkout master
+$ git rebase bugFix
+# This will place the master branch on the top of bugFix branch.
+```
+
+or you can do above thing from anywhere like that(without checking out any of the branch)
+
+```bash
+$ git rebase master bugFix
+# This sets base of bugFix to master.
+# Or you can read it like - set base as master of bugFix
+$ git rebase bugFix master
+# This sets base of master to bugFix.
+# Or you can read it like - set base as bugFix of master.
+```
+
+```
+Note, 1st parameter is setBaseAs, and 2nd(optional, if absent sets to currently checkedout branch) is setBaseTo.
+```
+
+*
+
+#### Solving at learngitbranching.js.org
+
+![image-20200610175028964](image-20200610175028964.png)
+
+*
+
 ![image-20200514190110995](image-20200514190110995.png)
 
 ![image-20200514190140425](image-20200514190140425.png)
@@ -271,8 +454,6 @@ https://learngitbranching.js.org/ :-> In terminal you can write,
 ***
 
 ## Git Cherry-pick
-
-
 
 ![image-20200514185653991](image-20200514185653991.png)
 
@@ -286,7 +467,7 @@ While resetting works great for local branches on your own machine, its method o
 
 In order to reverse changes and *share* those reversed changes with others, we need to use `git revert`. Let's see it in action.
 
-```
+```js
 git revert HEAD
 ```
 
@@ -294,7 +475,7 @@ git revert HEAD
 
 ***
 
-## Git Reset - Lets reset current to older commit -
+## Git Reset - Lets reset current branch to older commit -
 
 `git reset` reverts changes by moving a branch reference backwards in time to an older commit. In this sense you can think of it as "rewriting history;" `git reset` will move a branch backwards as if the commit had never been made in the first place.(this is actually bad for people on remote repositories)
 
@@ -304,6 +485,11 @@ Let's see what that looks like:
 
 ```bash
 $ git reset HEAD~2 # HEAD~2 represents two commit above in the commit history. 
+# The above command will unstage the changes, but will keep the changes in the current HEAD. And the desired branch is move to the desired state.
+$ git checkout -f #This will simply force checkout current branch.THIS IS IN NEED COMMAND TO GET THE CURRENT HEAD TO THE COMMIT WE JUST MOVED IT TO.
+
+$ git reset --hard HEAD~1  # HEAD~1 represents two commit above in the commit history.
+# The above command will discard all changes and checkout to the commit where the branch has been  destined to reset. (git reset HEAD~1 --hard) This would have behaved in same manner.
 $ git reset --hard e735ddf0bdf7e122e08b9431a00a84f7ecfcba6b # This is commit hash.
 # Notice: --hard flag is important as it actullay alters the working directory files and changes. This will actually make the current working directory to look like at the specified target(commit) the changes in working directory, while git reset just manages to move the commit head but do not make any changes in the working history.
 ```
@@ -318,6 +504,8 @@ One of the most common ways I use relative refs is to **move branches around**. 
 
 ```bash
 git branch -f master HEAD~3
+$ git log master #This will show logs for master branch.
+$ git log otherBranch #This will show logs for otherBranch.
 ```
 
 moves (by force) the master branch to three parents behind HEAD.
@@ -333,10 +521,8 @@ moves (by force) the master branch to three parents behind HEAD.
 ***
 
 ```bash
-$ git commit -m file\ m\ and\ and\ ss\ are\ adeed. # works too.
+$ git commit -m file\ m\ and\ and\ ss\ are\ adeed. # Works too.
 ```
-
-
 
 ***
 
@@ -352,6 +538,11 @@ Or a simple single command:-
 
 ```bash
 git checkout -b old-state 0d1d7fc32
+#Or you could have done it like that-
+git branch -f old-state <commit-sha>
+#-f is significant if a branch with same name already exists, thus -f will force overwrite that branch completely.
+git branch -C <commit-sha> old-state
+#This would have worked in same way.(Note: This syntax is little odd to remember, as source is first and second is target{to be created.})
 ```
 
 ***
@@ -490,9 +681,14 @@ git checkout 0d1d # would work too, NOTE: atleast 4 characters are needed to wor
 
 ***
 
-## The tidle operator in github
+## The tidle operator in github 
+
+(pronounciation - tildeahh)
 
 ```bash
+git checkout HEAD~
+git checkout HEAD^
+#Both the commands above are identical. And, now you are one level up in the commit history.
 git checkout HEAD~3
 #so now you have got to 3 levels up in commit history.
 ```
@@ -1299,11 +1495,27 @@ git revert <commit-hash>
 
 ***
 
+## Creating branch from a commit-sha or another branch 
+
+```bash
+$ git branch -f three <COMMIT-SHA>
+#commit-sha could be from any branch.
+$ git branch -f three master
+#This command will forcibly make branch three from master, even if a branch with name three already it exists.
+
+!aLSO, -f parameter is required if the branch with the same name already exists.
+```
+
+
+
+***
+
 ## Create a branch even if the branch with that name already exists-
 
 #copy branch forcibly
 
 ```bash
+#Note this syntax is little offset for learning to create branch, rather you should continue with the older git branch <new branch> <source branch> (mentioned just above this topic ^^^)
 git branch -C branchHellYeah
 git branch -C master2 branchHellYeah #This will create copy of branch master2 to branchHellYeah(forcibly)
 ```
@@ -1797,7 +2009,7 @@ $ hub pull-request -m "Just added comments in backendBranch" -b nirmal201:backen
 
 ```bash
 _
-Make a fork of the repo in your github, and clone that forked repo locally and make changes to the appropriate branch. And make a pull-request via:-
+# Make a fork of the repo in your github, and clone that forked repo locally and make changes to the appropriate branch, and push the changes. And make a pull-request via:-
 
 $ hub pull-request -m "Some message for pull-request" -b chetanmishra8660:master -h sahilrajput03:master
 # -b is the switch for <username-to-request-to>:<branch-to-be-pushed-to>
@@ -1818,7 +2030,7 @@ NOTE: -f (this flag is really good, as you can omit the git push command before 
 But for THIS TO WORK, you need to specify, -p <branch> to be pushed to you forked-remote-repository, like in the above command we are specifying local master brach to be pushed to its default upstream. 	AWESOME.)
 $ hub pull-request -m "Some message for pull-request" -b chetanmishra8660:master -c
 
-ALL ABOVE COMMANDS WORK FINE, i.e., copies the url of the pull-request to clipboard.
+ALL ABOVE COMMANDS WORK FINE, i.e., -c switch copies the url of the pull-request to clipboard.
 You can close a pull-request via visiting the pull-request-url and clicking [Close pull request] button. (The owner of the actual repo, can do this, or you can do this too.)
 YOu cannot edit/update the pull-request you have made from the terminal(hub cli). 
 If the terminal is saying
@@ -1832,28 +2044,6 @@ ___
 
 Cheatsheet about hub:- [Kapeli.com/cheatsheet####](https://kapeli.com/cheat_sheets/Hub.docset/Contents/Resources/Documents/index)
 Help link from official hub page: [Link](https://hub.github.com/hub-pull-request.1.html) [Link2](https://hub.github.com/)
-
-
-
-## You can see all your pull-request you have made via:
-
-![image-20200504192007114](image-20200504192007114.png)
-
-***
-
-You can view your pull request at the repository to which you have made the request to like below:-
-
-![image-20200504192315575](image-20200504192315575.png) 
-
-and then opening the desired pull request by clicking in the area:-
-
-![image-20200504192448680](image-20200504192448680.png)
-
-and then clicking the button:-
-
-![image-20200504192523056](image-20200504192523056.png) 
-
-and you don't need to add any comment. That is an optional thing.
 
 ***
 
