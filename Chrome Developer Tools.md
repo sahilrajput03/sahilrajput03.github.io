@@ -1,4 +1,4 @@
-Use SHORTCUT ctrl+shift+d to change docker style.
+Use SHORTCUT ctrl+shift+d to change docker style, common.
 
 ***
 
