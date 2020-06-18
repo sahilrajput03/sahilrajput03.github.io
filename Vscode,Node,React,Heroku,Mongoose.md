@@ -3474,8 +3474,13 @@ Press **Ctrl + shift + E** => then press Shift + tab, then press tab once. That'
 
 ## Install tar for windows via npm :
 
+#install tar, #tar for windows, #windows tar, #tar in windows
+
 ```
-find the way and install it, still anonomous to find...// booo
+"C:\Program Files\Git\usr\bin"
+add the above path in environment variable, to let cmd get access to the tar.exe file which bash.exe uses interally for its own purposes.
+
+*Note: tar can't be installed via:- npm i -g tar #This is something else, although this isn't an executable.
 ```
 
 ***

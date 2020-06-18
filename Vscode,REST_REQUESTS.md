@@ -1,3 +1,9 @@
+## Just image test.
+
+![DTEvcT3UMAA2jOm](imgs_typora/DTEvcT3UMAA2jOm.jpg)
+
+***
+
 ## REST Example with axios - Frontend and backend error handling collaboration example-
 
 - Frontend - deleteEventHandler 
