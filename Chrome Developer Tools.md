@@ -1,4 +1,4 @@
-checking updating..sssdd
+.sfschecking updating..sssdd
 
 Use SHORTCUT ctrl+shift+d to change docker style, common.
 
