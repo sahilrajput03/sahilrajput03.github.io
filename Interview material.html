@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><p>Tricky questions to cram:-</p>
+<p><a href="https://medium.com/@cbernardes?source=post_page-----189562fac0a7----------------------">GET or POST? 11 interview questions that most devs get wrong. @ MEDIUM.COM</a></p>
+<p>_from above article:-</p>
+<ol start="2">
+<li><p><strong>GET responses can be cached</strong> . BUT POST can’t be cached on the client side.
+POST is not Idempotent (idempotent means returning same even when queried for multiple times.)</p>
+</li>
+<li><p><strong>Get is a safe method</strong></p>
+<p>Because this method should NEVER change a resource (If it does you are not implementing RESTful best practices), it is considered safe.</p>
+<p><strong>Safe methods</strong> are HTTP methods that do not modify resources.</p>
+<ol start="8">
+<li><p>Q:Considering a Static Website, what is the only method this app responds to?</p>
+<p> <strong>Static Websites only responds to GET requests</strong></p>
+</li>
+<li><p><strong>Which method has length restrictions?</strong></p>
+<p>Regarding POST, because the payload is send in the request’s body, technically, there is no limit of data to be sent <strong>(6)</strong> neither data type restrictions.</p>
+</li>
+<li><p><strong>10. Which method can be bookmarked?</strong></p>
+<p>POST should not be bookmarked and the reasons are a combination of a few topics discussed above:</p>
+<ul class="list">
+<li>Attempting to bookmark a POST will just result in a GET operation on the URL.</li>
+<li>The method is not idempotent so there is not guarantee the response will always be the same. It could result in a duplicated bank transaction, for example.</li>
+<li>The URL would lose its parameters as bookmark doesn’t support a body payload.</li>
+<li>It may contain sensitive data, which should not be stored.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<p>Work at medium.com <a href="https://medium.com/jobs-at-medium/work-at-medium-959d1a85284e">link</a></p>
+<hr>
+    </article>
+  </body>
+</html>

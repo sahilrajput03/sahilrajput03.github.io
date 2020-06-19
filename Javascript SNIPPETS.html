@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>% - Remainder Operator. This is often reffered to as modulo.</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><h3 id="%---remainder-operator.-this-is-often-reffered-to-as-modulo."><a class="header-link" href="#%---remainder-operator.-this-is-often-reffered-to-as-modulo."></a>% - Remainder Operator. This is often reffered to as modulo.</h3>
+<p>Link - @<a href="https://medium.com/javascript-in-plain-english/here-are-some-useful-javascript-snippets-47f4fa75bdd4">medium</a></p>
+<ul class="list">
+<li><p><strong>isNullOrUndefined : check whether a value is null or undefined.</strong></p>
+</li>
+<li><pre class="hljs"><code><span class="hljs-comment">// IDEALLY you should use below, it covers all the edgecases, its fair and square:</span>
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> bullshit === <span class="hljs-string">'undefined'</span> || bullshit === <span class="hljs-literal">null</span> ){
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'YES..GHOST..'</span>) 
+    <span class="hljs-comment">// more code here...</span>
+}<span class="hljs-keyword">else</span>{
+    <span class="hljs-comment">// more code here...</span>
+}</code></pre></li>
+</ul>
+<pre class="hljs"><code># DEEP RESEARCH:
+<span class="hljs-keyword">const</span> isNullOrUndefined = <span class="hljs-function"><span class="hljs-params">val</span> =&gt;</span> val === <span class="hljs-literal">undefined</span> || val === <span class="hljs-literal">null</span>;
+<span class="hljs-built_in">console</span>.log(isNullOrUndefined(<span class="hljs-literal">null</span>));        <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(isNullOrUndefined(<span class="hljs-literal">undefined</span>));   <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">let</span> poom <span class="hljs-comment">// not intialized, hence undefined             #DECLARE VARIABLE</span>
+&gt;&gt; <span class="hljs-literal">undefined</span>
+<span class="hljs-keyword">let</span> carl = <span class="hljs-literal">undefined</span> <span class="hljs-comment">// explicityl defined undefined      #DECLARE VARIABLE</span>
+&gt;&gt; <span class="hljs-literal">undefined</span>
+<span class="hljs-keyword">let</span> roy = <span class="hljs-literal">null</span> <span class="hljs-comment">// explicity defined null                 #DECLARE VARIABLE</span>
+&gt;&gt; <span class="hljs-literal">null</span>
+isNullOrUndefined(poom)
+<span class="hljs-literal">true</span>
+isNullOrUndefined(carl)
+<span class="hljs-literal">true</span>
+isNullOrUndefined(roy)
+<span class="hljs-literal">true</span>
+isNullorUndefined(someUndeclaredVariable)                <span class="hljs-comment">// #UNDECLARED VARIABLE</span>
+&gt;&gt;# THROWS ERROR, HENCE YOU HAVE TO HANDLE IT, or <span class="hljs-keyword">do</span> it <span class="hljs-keyword">in</span> the below way. 
+if(<span class="hljs-keyword">typeof</span> someUndeclaredVariable === <span class="hljs-string">'undefined'</span>){
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'GHOST...(its undeclared)'</span>)                 <span class="hljs-comment">// #UNDECLARED VARIABLE</span>
+}</code></pre><pre class="hljs"><code><span class="hljs-comment">//LEARN ABOUT THE ERORRS, Try executing the below code in chrome dev tools, OR NODE</span>
+<span class="hljs-keyword">try</span>{
+    <span class="hljs-built_in">console</span>.log(someundefinedvariable)
+}
+<span class="hljs-keyword">catch</span>(err){
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'\n\n---Informative Info..\n\n'</span>)
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'errObjectItself:'</span>,err,<span class="hljs-string">'\n'</span>) <span class="hljs-comment">// err = err.stack // it helps in finding the line of error </span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'err.toString():'</span>,err.toString(),<span class="hljs-string">'\n'</span>)
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'err.name:'</span>,err.name,<span class="hljs-string">'\n'</span>)
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'err.message:'</span>,err.message)
+}</code></pre><h1 id="deal-with-specific-error:"><a class="header-link" href="#deal-with-specific-error:"></a>Deal with specific error:</h1>
+<pre class="hljs"><code><span class="hljs-keyword">try</span>{
+    <span class="hljs-built_in">console</span>.log(someundefinedvariable)
+}
+<span class="hljs-keyword">catch</span>(err){
+<span class="hljs-keyword">if</span>(err.name===<span class="hljs-string">'ReferenceError'</span>){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'It is reference error, buddy.'</span>)
+    }
+}
+</code></pre><ul class="list">
+<li><strong>isLowerCase : Used to determine whether a string is lower case or not.</strong></li>
+</ul>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> isLowerCase = <span class="hljs-built_in">str</span> =&gt; <span class="hljs-built_in">str</span> === <span class="hljs-built_in">str</span>.toLowerCase();console.<span class="hljs-built_in">log</span>(isLowerCase(<span class="hljs-string">'Batman'</span>));         <span class="hljs-comment">// false</span>
+console.<span class="hljs-built_in">log</span>(isLowerCase(<span class="hljs-string">'jamesbond007'</span>));   <span class="hljs-comment">// true</span>
+console.<span class="hljs-built_in">log</span>(isLowerCase(<span class="hljs-string">'FLASH'</span>));  </code></pre><hr>
+<h3 id="copying-object-from-one-to-another"><a class="header-link" href="#copying-object-from-one-to-another"></a>Copying object from one to another</h3>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> target = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">2</span> };
+<span class="hljs-keyword">const</span> source = { <span class="hljs-attr">b</span>: <span class="hljs-number">4</span>, <span class="hljs-attr">c</span>: <span class="hljs-number">5</span> };
+
+<span class="hljs-keyword">const</span> returnedTarget = <span class="hljs-built_in">Object</span>.assign(target, source);
+
+<span class="hljs-built_in">console</span>.log(target);
+<span class="hljs-comment">// expected output: Object { a: 1, b: 4, c: 5 }</span>
+
+<span class="hljs-built_in">console</span>.log(returnedTarget);
+<span class="hljs-comment">// expected output: Object { a: 1, b: 4, c: 5 }</span>
+</code></pre><hr>
+<h3 id="hell-yeah-operators-||"><a class="header-link" href="#hell-yeah-operators-||"></a>Hell yeah operators  ||</h3>
+<pre class="hljs"><code><span class="hljs-literal">false</span> || <span class="hljs-literal">false</span> || <span class="hljs-literal">false</span> || <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hell yeahh'</span>)
+<span class="hljs-comment">//output: hell yeah</span>
+
+<span class="hljs-literal">false</span> || <span class="hljs-literal">false</span> || <span class="hljs-literal">true</span> || <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hell yeahh'</span>)
+<span class="hljs-comment">//output: true</span>
+Basically || trails executes only the one statement it gets after concurrent <span class="hljs-literal">false</span> events.</code></pre><hr>
+<h3 id="hell-yeah-&&"><a class="header-link" href="#hell-yeah-&&"></a>Hell yeah &amp;&amp;</h3>
+<pre class="hljs"><code><span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hell yeahh'</span>)
+<span class="hljs-comment">//output: hell yeah</span>
+
+<span class="hljs-literal">true</span> &amp;&amp;<span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-literal">false</span> &amp;&amp; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hell yeahh'</span>)
+<span class="hljs-comment">//output: false</span></code></pre><hr>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> setPersonObject = <span class="hljs-function">(<span class="hljs-params">obj, ...defs</span>) =&gt;</span>{ 
+    <span class="hljs-comment">//define object model here..</span>
+    <span class="hljs-built_in">console</span>.log(obj,defs)
+    <span class="hljs-comment">// if you console log, above statement, then 1st parameter is real, rest all make an array. Get length of array with (defs.length) Array.length and use it accordingly.</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'what object you wanted with the model specified'</span>
+}
+setDefaultObject(<span class="hljs-number">10</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>)
+<span class="hljs-comment">//output: </span></code></pre><hr>
+<h4 id="reversing-the-elements-in-an-array."><a class="header-link" href="#reversing-the-elements-in-an-array."></a>Reversing the elements in an array.</h4>
+<pre class="hljs"><code><span class="hljs-keyword">let</span> tutu = [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]
+tutu.reverse()
+<span class="hljs-comment">//output: Array=&gt;(5) [6, 5, 4, 3, 2]; tutu array has been modified.</span></code></pre><hr>
+<h2 id="smooth-scroll:"><a class="header-link" href="#smooth-scroll:"></a>Smooth Scroll:</h2>
+<pre class="hljs"><code><span class="hljs-comment">//not tested yet</span>
+smoothScroll : can be used to smoothly scroll the element on which it is called into the visible area <span class="hljs-keyword">of</span> the browser <span class="hljs-built_in">window</span>.
+const smoothScroll = <span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span>
+  <span class="hljs-built_in">document</span>.querySelector(element).scrollIntoView({
+    <span class="hljs-attr">behavior</span>: <span class="hljs-string">'smooth'</span>
+  });
+<span class="hljs-comment">// scrolls smoothly to the element with the id elementID</span>
+smoothScroll(<span class="hljs-string">'#elementID'</span>);              
+<span class="hljs-comment">// scrolls smoothly to the first element with class name - elementClassName</span>
+smoothScroll(<span class="hljs-string">'.elementClassName'</span>);</code></pre><hr>
+<ul class="list">
+<li><strong>Arrays Intersection: Returns elements present in both the arrays.</strong></li>
+</ul>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> matchingElements = <span class="hljs-function">(<span class="hljs-params">array1, array2</span>) =&gt;</span> 
+             array1.filter(<span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span> array2.includes(element));<span class="hljs-keyword">var</span> heroes = [<span class="hljs-string">'Batman'</span>, <span class="hljs-string">'Superman'</span>, <span class="hljs-string">'X-Men'</span>, <span class="hljs-string">'Captain America'</span>];
+<span class="hljs-keyword">var</span> dcUniverse = [<span class="hljs-string">'Batman'</span>, <span class="hljs-string">'Superman'</span>, <span class="hljs-string">'Joker'</span>, <span class="hljs-string">'Lex Luthor'</span>];<span class="hljs-built_in">console</span>.log(matchingElements(heroes, dcUniverse));Output --&gt;
+[ <span class="hljs-string">'Batman'</span>, <span class="hljs-string">'Superman'</span> ]</code></pre><hr>
+<ul class="list">
+<li><strong>Array Difference : Finds the difference between two arrays.</strong></li>
+</ul>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> arrayDiff = <span class="hljs-function">(<span class="hljs-params">array1, array2</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> setArray = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>(array2);
+  <span class="hljs-keyword">return</span> array1.filter(<span class="hljs-function"><span class="hljs-params">arr</span> =&gt;</span> !setArray.has(arr));
+};<span class="hljs-keyword">var</span> heroes = [<span class="hljs-string">'Batman'</span>,<span class="hljs-string">'Flash'</span>,<span class="hljs-string">'Superman'</span>,<span class="hljs-string">'Wolverine'</span>]
+<span class="hljs-keyword">var</span> justiceLeaque = arrayDiff(heroes, [<span class="hljs-string">'Wolverine'</span>]);<span class="hljs-built_in">console</span>.log(justiceLeaque);Output --&gt;
+[ <span class="hljs-string">'Batman'</span>, <span class="hljs-string">'Flash'</span>, <span class="hljs-string">'Superman'</span> ]</code></pre><hr>
+<ul class="list">
+<li><strong>Splitting of multi line string : splits a multi-line string into an array of lines.</strong></li>
+</ul>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> splitLines = <span class="hljs-function"><span class="hljs-params">str</span> =&gt;</span> str.split(<span class="hljs-regexp">/\r?\n/</span>);
+<span class="hljs-built_in">console</span>.log(splitLines(<span class="hljs-string">'First Line\nSecond Line\nThird Line\nFourth Line'</span>));Output --&gt; 
+[ <span class="hljs-string">'First Line'</span>, <span class="hljs-string">'Second Line'</span>, <span class="hljs-string">'Third Line'</span>, <span class="hljs-string">'Fourth Line'</span> ]</code></pre><hr>
+<h3 id="precedence--"><a class="header-link" href="#precedence--"></a>PRECEDENCE -</h3>
+<pre class="hljs"><code>System Diaolic:
+<span class="hljs-literal">true</span> !== <span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-literal">true</span>
+<span class="hljs-comment">//output: false</span>
+<span class="hljs-comment">// Since,===, !===, ==, !=, &amp;&amp;, || HAVE SAME PRECEDENCE, so the expression is evaluated from LEFT TO RIGHT.</span>
+<span class="hljs-comment">//double operator i.e. ==, != DOES WEIRDY TYPE CONVERSIONS WHILE COMPARING of the operands given to them, SO WE AVOID THEM.</span>
+WHENEVER YOU THINK PRECEDENCE IS MAKING YOU MAD, JUST USE PARENTHESES
+SIMPLE e.g.
+<span class="hljs-number">2</span> + <span class="hljs-number">3</span> *<span class="hljs-number">3</span>
+<span class="hljs-comment">//output: 11</span>
+(<span class="hljs-number">2</span> + <span class="hljs-number">3</span>) *<span class="hljs-number">3</span>
+<span class="hljs-comment">//output: 15</span>
+somthining about precedence: 
+|| has lowest precedence, then comes &amp;&amp;, then the comparison operators(&gt;,==, and so on.)</code></pre><hr>
+<ul class="list">
+<li><strong>Removing Duplicates : Will remove duplicate values from an array.</strong></li>
+</ul>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> removeDuplicates = <span class="hljs-function"><span class="hljs-params">arr</span> =&gt;</span> [...new <span class="hljs-built_in">Set</span>(arr)];
+<span class="hljs-built_in">console</span>.log(removeDuplicates([<span class="hljs-number">11</span>, <span class="hljs-number">22</span>, <span class="hljs-number">22</span>, <span class="hljs-number">33</span>, <span class="hljs-number">44</span>, <span class="hljs-number">44</span>, <span class="hljs-number">55</span>]));Output --&gt;
+[ <span class="hljs-number">11</span>, <span class="hljs-number">22</span>, <span class="hljs-number">33</span>, <span class="hljs-number">44</span>, <span class="hljs-number">55</span> ]</code></pre><hr>
+<pre class="hljs"><code><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>]
+last element = arr.pop()</code></pre><hr>
+<p>See other snippets 127 @ <a href="https://medium.com/better-programming/127-helpful-javascript-snippets-you-can-learn-in-30-seconds-or-less-part-1-of-6-bc2bc890dfe5">https://medium.com/better-programming/127-helpful-javascript-snippets-you-can-learn-in-30-seconds-or-less-part-1-of-6-bc2bc890dfe5</a></p>
+<hr>
+    </article>
+  </body>
+</html>

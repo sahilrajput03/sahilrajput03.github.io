@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>src: same above link</title>
+    <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><hr>
+<blockquote>
+<p><strong>Internet is not 100% reliable thing for everytool, for some you have to deal with the hardway to be on a smooth experience for long.</strong></p>
+</blockquote>
+<hr>
+<p>The Guide of Ubuntu&#39;s youtube-dl - <a href="https://manpages.ubuntu.com/manpages/artful/en/man1/youtube-dl.1.html">link</a></p>
+<hr>
+<p>The best of all guides found so far- <a href="https://www.ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/">https://www.ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/</a></p>
+<pre class="hljs"><code>$ youtube-dl <span class="hljs-_">-f</span> <span class="hljs-string">"bestvideo[height&lt;=540]"</span>+bestaudio &lt;URL OF THE PAGE THAT HAS VIDEO&gt;
+<span class="hljs-comment">#Sometimes the extension code are like text so, better select video via height parameter.</span></code></pre><h5 id="src:-same-above-link"><a class="header-link" href="#src:-same-above-link"></a>src: same above link</h5>
+<hr>
+<h2 id="info:"><a class="header-link" href="#info:"></a>Info:</h2>
+<p>If the download is paused, you can do press <strong>Enter key</strong>  or <strong>ctrl+c</strong> to <strong>refresh</strong> the currently downloading video or playlist.(hacks)</p>
+<hr>
+<h3 id="download-a-list-of-video-urls-from-a-give-file"><a class="header-link" href="#download-a-list-of-video-urls-from-a-give-file"></a>Download a list of video urls from a give file</h3>
+<pre class="hljs"><code>$ youtube-<span class="hljs-selector-tag">dl</span> -<span class="hljs-selector-tag">a</span> list.txt</code></pre><p>Above command will download all the video-urls listed in the list.txt file.</p>
+<hr>
+<pre class="hljs"><code>youtube-<span class="hljs-selector-tag">dl</span> https:<span class="hljs-comment">//www.youtube.com/watch?v=blabla</span>
+<span class="hljs-selector-id">#automatic</span> merge is done after completion(<span class="hljs-selector-tag">i</span><span class="hljs-selector-class">.e</span>., audio_only file + video_only file)
+
+youtube-<span class="hljs-selector-tag">dl</span> --list-subs</code></pre><p>lists all available subtiles for the requested file</p>
+<hr>
+<h2 id="download-a-particular-quality-of-a-video"><a class="header-link" href="#download-a-particular-quality-of-a-video"></a>Download a particular quality of a video</h2>
+<pre class="hljs"><code>youtube-dl -F &lt;video-url&gt;
+youtube-dl -F <span class="hljs-string">'http://www.youtube.com/watch?v=P9pzm5b6FFY'</span></code></pre><pre class="hljs"><code>#note the uppercase letter F option <span class="hljs-keyword">to</span> <span class="hljs-built_in">get</span> the available formats <span class="hljs-keyword">to</span> download. Anything(any format) <span class="hljs-keyword">is</span> either audio <span class="hljs-keyword">only</span> <span class="hljs-built_in">or</span> video <span class="hljs-keyword">only</span> <span class="hljs-keyword">file</span>. SAD.</code></pre><p>Above command will list all the available quality and formats availabe to download, good thing is that corresponding to every available item, there&#39;s a format code(extreme left column). You need to use that format code to download that. </p>
+<p>_</p>
+<p>Like below:</p>
+<pre class="hljs"><code>youtube-dl <span class="hljs-_">-f</span> 22 <span class="hljs-string">'http://www.youtube.com/watch?v=P9pzm5b6FFY'</span>
+youtube-dl <span class="hljs-_">-f</span> 394+140 https://www.youtube.com/watch?v=M3BM9TB-8yA
+youtube-dl <span class="hljs-_">-f</span> 394+249 https://www.youtube.com/watch?v=M3BM9TB-8yA
+youtube-dl <span class="hljs-_">-f</span> 137+250  https://www.youtube.com/watch?v=HjdJzNoT_qg</code></pre><pre class="hljs"><code><span class="hljs-selector-id">#note</span> the lowercase letter f option to set the download format <span class="hljs-selector-tag">code</span>.
+<span class="hljs-selector-id">#note</span>: <span class="hljs-number">394</span> is mp4 <span class="hljs-selector-tag">video</span> only and <span class="hljs-number">140</span> is m4a <span class="hljs-selector-tag">audio</span> only. Automatic Mege Succesful.
+<span class="hljs-selector-id">#note</span>: <span class="hljs-number">394</span> is mp4 <span class="hljs-selector-tag">video</span> only and <span class="hljs-number">249</span> is webm <span class="hljs-selector-tag">audio</span> only. Automatic Mege Succesful.
+<span class="hljs-selector-id">#note</span>:<span class="hljs-number">137</span> is <span class="hljs-keyword">for</span> <span class="hljs-number">1080</span>p(mp4), <span class="hljs-number">250</span> is <span class="hljs-keyword">for</span> webm(<span class="hljs-number">68</span>k) <span class="hljs-selector-tag">audio</span>.</code></pre><hr>
+<h2 id="other-general-useful-options"><a class="header-link" href="#other-general-useful-options"></a>Other General Useful options</h2>
+<pre class="hljs"><code>$ youtube-<span class="hljs-selector-tag">dl</span> -h will list the help <span class="hljs-keyword">for</span> the program.
+<span class="hljs-comment">// help-text</span>
+
+$ youtube-<span class="hljs-selector-tag">dl</span><span class="hljs-selector-class">.exe</span> --version
+<span class="hljs-comment">// Output: 2020.03.08</span>
+
+$ youtube-<span class="hljs-selector-tag">dl</span> -U <span class="hljs-comment">// will update the program to the latest version.</span></code></pre>    </article>
+  </body>
+</html>

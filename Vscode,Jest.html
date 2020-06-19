@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Never run tests via file -</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><h2 id="never-run-tests-via-file--"><a class="header-link" href="#never-run-tests-via-file--"></a>Never run tests via file -</h2>
+<pre class="hljs"><code>$ jest &lt;file-name&gt;
+$ jest &lt;you don\<span class="hljs-string">'t need to enter the path to the file, just the name of the file&gt;
+i.e.,For e.g., jest test/lessons/mongoclient.test.js
+    you can write: 
+    $ jest mongoclient 
+    # this would be sufficient to run the file
+    // Jest did not exit one second after the test run has completed. This error is due to bad internet connection.
+
+# This usually means that there are asynchronous operations that weren\'</span>t stopped <span class="hljs-keyword">in</span> your tests. Consider running Jest with `--detectOpenHandles` to troubleshoot this issue.
+<span class="hljs-comment"># MOSTLY: IF ALL THE CODE IS CORRECT THEN, 100% OF THE TIMES THE CONNECTION TO THE DATABASE IS THE ISSUE. i.e., internet is not good to keep up with the database request like closing the database.</span>
+<span class="hljs-comment"># The best solution to this is to run the db locally on the mongoDB compass. And if you need the database import it with </span>
+$ mongorestore --drop --gzip --db sample_mflix --uri <span class="hljs-string">"mongodb://localhost/"</span> mflix/data/data/sample_mflix/</code></pre><hr>
+<pre class="hljs"><code><span class="hljs-comment">## Testing all tests in a file:</span>
+$ jest path/to/my-test.js 
+or just
+$ jest my-test  <span class="hljs-comment">#jest will fetch file location automatically.</span></code></pre><hr>
+<h2 id="running-tests-with-a-specific-name-in-test-desc-or-describe-desc:"><a class="header-link" href="#running-tests-with-a-specific-name-in-test-desc-or-describe-desc:"></a>Running tests with a specific name in test-desc or describe-desc:</h2>
+<pre class="hljs"><code>npx jest -t <span class="hljs-string">'a specific note is within the returned notes'</span>
+npx jest -t <span class="hljs-string">'&lt;test-name&gt;'</span> || <span class="hljs-string">'&lt;test-description&gt;'</span> (single or double quotes)</code></pre><p>The provided <strong>parameter</strong> can refer to the <strong>name of the test</strong> or the <strong>describe block</strong>. The parameter can also contain just a <strong>part of the name</strong>.</p>
+<hr>
+<h3 id="the-following-command-will-run-all-of-the-tests-that-contain-*notes*-in-their-name:"><a class="header-link" href="#the-following-command-will-run-all-of-the-tests-that-contain-*notes*-in-their-name:"></a>The following command will run all of the tests that contain <em>notes</em> in their name:</h3>
+<pre class="hljs"><code>npx jest -t <span class="hljs-string">'notes'</span> --runInBand <span class="hljs-comment">// runInBand implies to run tests sequentially.</span>
+                                <span class="hljs-comment">//This can be useful for debugging.</span></code></pre><hr>
+<h3 id="install-jest-*globally*:"><a class="header-link" href="#install-jest-*globally*:"></a>Install Jest <em>globally</em>:</h3>
+<pre class="hljs"><code>npm install -g jest</code></pre><p>Then you can run tests directly with the <em>jest</em> command and to install packages globally you need to have admin rights.</p>
+<hr>
+<h1 id="use-**toequal**-for-testing-objects,-and-use-**tobe**-method-to-compare-the-values."><a class="header-link" href="#use-**toequal**-for-testing-objects,-and-use-**tobe**-method-to-compare-the-values."></a>Use <strong>toEqual</strong> for testing objects, and use <strong>toBe</strong> method to compare the values.</h1>
+<pre class="hljs"><code>expect(somefunctn).toBe(36);  // Object.is equality
+
+expect(somefunctn).toEqual({});   // deep equality
+<span class="hljs-comment">###                                 this one actually tests the insides of the object to object's                                         properties.</span></code></pre><hr>
+<h3 id="deleting-object's-properties:"><a class="header-link" href="#deleting-object's-properties:"></a>Deleting object&#39;s properties:</h3>
+<p> var person = {
+ firstName:&quot;John&quot;,
+ lastName:&quot;Doe&quot;,
+ age:50,
+ eyeColor:&quot;blue&quot;
+};</p>
+<p>delete person.age; </p>
+<hr>
+<h3 id="working-with-lodash"><a class="header-link" href="#working-with-lodash"></a>Working with lodash</h3>
+<p>DOCUMENTATION:  <a href="https://lodash.com/docs/4.17.15">https://lodash.com/docs/4.17.15</a> </p>
+<p> <a href="https://stackoverflow.com/questions/40329742/removing-object-properties-with-lodash">https://stackoverflow.com/questions/40329742/removing-object-properties-with-lodash</a> </p>
+<p><em>var</em> _ = require(&#39;lodash&#39;);</p>
+<p>Learn more of lodash: <a href="https://www.youtube.com/watch?v=kdfikit351Y">1</a> , <a href="https://stackoverflow.com/search?q=lodash+count+item">2</a>, <a href="https://www.youtube.com/results?search_query=lodash">3</a>, </p>
+<hr>
+<pre class="hljs"><code>git remote show origin</code></pre><hr>
+<h3 id="[get-the-element-with-the-highest-occurrence-in-an-array]"><a class="header-link" href="#[get-the-element-with-the-highest-occurrence-in-an-array]"></a>[Get the element with the highest occurrence in an array]</h3>
+<p> <a href="https://stackoverflow.com/questions/1053843/get-the-element-with-the-highest-occurrence-in-an-array">https://stackoverflow.com/questions/1053843/get-the-element-with-the-highest-occurrence-in-an-array</a> </p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mode</span>(<span class="hljs-params">array</span>)
+</span>{
+    <span class="hljs-keyword">if</span>(array.length == <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">var</span> modeMap = {};
+    <span class="hljs-keyword">var</span> maxEl = array[<span class="hljs-number">0</span>], maxCount = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i++)
+    {
+        <span class="hljs-keyword">var</span> el = array[i];
+        <span class="hljs-keyword">if</span>(modeMap[el] == <span class="hljs-literal">null</span>)
+            modeMap[el] = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">else</span>
+            modeMap[el]++;  
+        <span class="hljs-keyword">if</span>(modeMap[el] &gt; maxCount)
+        {
+            maxEl = el;
+            maxCount = modeMap[el];
+        }
+    }
+    <span class="hljs-keyword">return</span> maxEl;
+}
+mode([<span class="hljs-string">"a"</span>,<span class="hljs-string">"b"</span>,<span class="hljs-string">"b"</span>,<span class="hljs-string">"b"</span>,<span class="hljs-string">"b"</span>,<span class="hljs-string">"c"</span>,<span class="hljs-string">"c"</span>,<span class="hljs-string">"c"</span>])
+<span class="hljs-comment">// Output : b</span></code></pre><hr>
+<h2 id="**flattening-arrays-using-javascript-reduce-method**"><a class="header-link" href="#**flattening-arrays-using-javascript-reduce-method**"></a><strong>Flattening arrays using Javascript reduce method</strong></h2>
+<p>We can use the reduce() function to flatten the nested amounts into a single array.</p>
+<p>We set an initial value to the empty array and then concatenate the current value to the total.</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> data = [[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>], [<span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]];
+<span class="hljs-keyword">const</span> flatValues = data.reduce(<span class="hljs-function">(<span class="hljs-params">total, value</span>) =&gt;</span> {
+  <span class="hljs-keyword">return</span> total.concat(value);
+}, []);
+
+<span class="hljs-built_in">console</span>.log(flatValues); <span class="hljs-comment">// Output:- [1,2,3,4,5,6,7,8,9]</span></code></pre><p>View other useful uses of reduce method, reduce method tricks @ <a href="https://appdividend.com/2018/10/16/javascript-reduce-example-tutorial/">https://appdividend.com/2018/10/16/javascript-reduce-example-tutorial/</a></p>
+<hr>
+<h2 id="remove-all-duplicates-in-an-array"><a class="header-link" href="#remove-all-duplicates-in-an-array"></a>Remove all duplicates in an array</h2>
+<p>tags: #Remove duplicates in array, #Unique array, #remove all duplicates, #only unique; <a href="https://www.geeksforgeeks.org/how-to-convert-set-to-array-in-javascript/">Link</a></p>
+<ul class="list">
+<li>[ ] <code>js
+// GETTING UNIQUE ARRAY FORM OLD ARRAY
+const arrayUnion = [&quot;sahil&quot;,&quot;mohit&quot;,&quot;sahil&quot;]
+const uniqSet = [...new Set(arrayUnion)];
+const uniqArray = Array.from(uniqSet) // Also, let uniqArray = [...uniqSet]; this works too.
+//Output: uniqArray =&gt; [&quot;sahil&quot;,&quot;mohit&quot;]</code></li>
+</ul>
+<hr>
+<p>We specified the mode of the application to be <em>development</em> in the <em>npm run watch</em> script that uses nodemon. We also specified that the default <em>npm start</em> ==command== will define the mode as <em>production</em></p>
+<p>There is a slight issue in the way that we have specified the mode of the application in our scripts: it will not work on Windows. We can correct this by installing the <a href="https://www.npmjs.com/package/cross-env">cross-env</a> package with the command:</p>
+<pre class="hljs"><code>npm install --save-dev cross-env</code></pre><hr>
+<p> <a href="https://github.com/sahilrajput03/sahilrajput03.github.io/raw/master/96x96.png">https://github.com/sahilrajput03/sahilrajput03.github.io/raw/master/96x96.png</a> </p>
+<p> <a href="https://github.com/sahilrajput03/sahilrajput03.github.io/blob/master/96x96.png">https://github.com/sahilrajput03/sahilrajput03.github.io/blob/master/96x96.png</a> </p>
+<hr>
+<p> In some situations, it can be beneficial to implement some of the backend tests by mocking the database instead of using a real database. One library that could be used for this is <a href="https://github.com/williamkapke/mongo-mock">mongo-mock</a>. </p>
+<hr>
+<p> It would be better to run our tests using a database that is installed and running in the developer&#39;s local machine. The optimal solution would be to have every test execution use its own separate database. This is &quot;relatively simple&quot; to achieve by <a href="https://docs.mongodb.com/manual/core/inmemory/">running Mongo in-memory</a> or by using <a href="https://www.docker.com/">Docker</a> containers. We will not complicate things and will instead continue to use the MongoDB Atlas database. </p>
+<hr>
+<pre class="hljs"><code><span class="hljs-keyword">if</span> (process.env.NODE_ENV === <span class="hljs-string">'test'</span>) {  MONGODB_URI = process.env.TEST_MONGODB_URI}</code></pre><p> The code imports the environment variables from the <em>.env</em> file if <em>it is not</em> in production mode. In production mode our application will use the environment variables defined in Heroku. </p>
+<hr>
+<p>Our tests are already using the <a href="https://facebook.github.io/jest/docs/en/api.html#afterallfn-timeout">afterAll</a> function of Jest to close the connection to the database after the tests are finished executing. Jest offers many other <a href="https://facebook.github.io/jest/docs/en/setup-teardown.html#content">functions</a> that can be used for executing operations once before any test is run, or every time before a test is run.</p>
+<pre class="hljs"><code>afterAll(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  mongoose.connection.close()
+})</code></pre><p>Let&#39;s initialize the database <em>before every test</em> with the <a href="https://jestjs.io/docs/en/api.html#aftereachfn-timeout">beforeEach</a> function:</p>
+<pre class="hljs"><code>beforeEach(<span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">await</span> Note.deleteMany({})
+
+  <span class="hljs-keyword">let</span> noteObject = <span class="hljs-keyword">new</span> Note(initialNotes[<span class="hljs-number">0</span>])
+  <span class="hljs-keyword">await</span> noteObject.save()
+
+  noteObject = <span class="hljs-keyword">new</span> Note(initialNotes[<span class="hljs-number">1</span>])
+  <span class="hljs-keyword">await</span> noteObject.save()
+})</code></pre><hr>
+<p>More logging tools (suggested by fullstackopen.com)- </p>
+<ol class="list">
+<li><a href="https://www.papertrail.com/">https://www.papertrail.com/</a> </li>
+<li><a href="https://www.graylog.org/">https://www.graylog.org/</a> </li>
+</ol>
+<hr>
+<pre class="hljs"><code><span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'id'</span>).click()</code></pre><hr>
+<pre class="hljs"><code>beforeEach(<span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">await</span> Blog.deleteMany({});
+
+  <span class="hljs-keyword">let</span> noteObject = <span class="hljs-keyword">new</span> Blog(helper.initialBlogs[<span class="hljs-number">0</span>]);
+  <span class="hljs-keyword">await</span> noteObject.save();
+
+  noteObject = <span class="hljs-keyword">new</span> Blog(helper.initialBlogs[<span class="hljs-number">1</span>]);
+  <span class="hljs-keyword">await</span> noteObject.save();
+
+  noteObject = <span class="hljs-keyword">new</span> Blog(helper.initialBlogs[<span class="hljs-number">2</span>]);
+  <span class="hljs-keyword">await</span> noteObject.save();
+});
+
+<span class="hljs-comment">//all above code can be put in insdie test before test in a test file.</span></code></pre><hr>
+<h1 id="[async-callback-was-not-invoked-within-the-5000ms-timeout-specified-by-jest.settimeout](https://stackoverflow.com/questions/49603939/async-callback-was-not-invoked-within-the-5000ms-timeout-specified-by-jest-setti)"><a class="header-link" href="#[async-callback-was-not-invoked-within-the-5000ms-timeout-specified-by-jest.settimeout](https://stackoverflow.com/questions/49603939/async-callback-was-not-invoked-within-the-5000ms-timeout-specified-by-jest-setti)"></a><a href="https://stackoverflow.com/questions/49603939/async-callback-was-not-invoked-within-the-5000ms-timeout-specified-by-jest-setti">Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout</a></h1>
+<pre class="hljs"><code><span class="hljs-comment">// jest.setup.js</span>
+jest.setTimeout(<span class="hljs-number">30000</span>)
+<span class="hljs-comment">// by default jest waits for 5 seconds for async to let it return the data, but sometimes the async functn returns afte 30,001ms, so you just missed it.</span></code></pre><pre class="hljs"><code><span class="hljs-comment">//jest.config.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">setupFilesAfterEnv</span>: [<span class="hljs-string">'./jest.setup.js'</span>]
+}</code></pre><hr>
+<h1 id="watch-mode-in-tests:"><a class="header-link" href="#watch-mode-in-tests:"></a>watch mode in tests:</h1>
+<pre class="hljs"><code>jest -t &lt;test_name, test_description&gt; --watch
+jest &lt;filename&gt; --watch
+<span class="hljs-comment">#now anytime you can stop the execution of the tests with *q*</span>
+<span class="hljs-comment">#rerun just press *Enter* key.</span></code></pre><hr>
+<h2 id="==if-testing-is-slow-,-it-means-your-internet-connection-sucks;-better-do-testing-on-locally-running-database-servers.=="><a class="header-link" href="#==if-testing-is-slow-,-it-means-your-internet-connection-sucks;-better-do-testing-on-locally-running-database-servers.=="></a>==If testing is slow  , it means your internet connection sucks; better do testing on locally running database servers.==</h2>
+<hr>
+<pre class="hljs"><code>/ The second parameter <span class="hljs-keyword">in</span> map and foreach loop is index <span class="hljs-keyword">of</span> the array
+<span class="hljs-keyword">var</span> myArray = [<span class="hljs-number">123</span>, <span class="hljs-number">15</span>, <span class="hljs-number">187</span>, <span class="hljs-number">32</span>]
+myArray.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value, i</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'%d: %s'</span>, i, value);
+});</code></pre><hr>
+    </article>
+  </body>
+</html>

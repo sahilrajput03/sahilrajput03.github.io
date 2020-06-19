@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Welcome to deno&#x27;s home</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><h1 id="welcome-to-deno's-home"><a class="header-link" href="#welcome-to-deno's-home"></a>Welcome to deno&#39;s home</h1>
+<hr>
+<p>denon  - a watch mode tool for deno (third party modules, mentioned at <a href="https://deno.land/x/denon">https://deno.land/x/denon</a>)</p>
+<p>Installation:</p>
+<pre class="hljs"><code>$ deno install -Af --unstable https://deno.land/x/denon/denon.ts</code></pre><pre class="hljs"><code><span class="hljs-comment"># To get knowledge about install command in deno, you can do..</span>
+$ deno <span class="hljs-built_in">help</span> install <span class="hljs-comment">#This is about deno, not denon.</span>
+<span class="hljs-comment"># Also, </span>
+<span class="hljs-comment"># -A, --allow-all                    Allow all permissions</span>
+<span class="hljs-comment"># -f, --force                        Forcefully overwrite existing installation</span>
+<span class="hljs-comment"># --unstable                          Enable unstable APIs</span></code></pre><pre class="hljs"><code>$ denon -h <span class="hljs-comment"># this will print the help text for denon</span></code></pre><h3 id="usage:"><a class="header-link" href="#usage:"></a>Usage:</h3>
+<p><strong>To use denon simply</strong> think of <code>denon</code> as an alternative to <code>deno run</code> which accepts all the same flags if no flags or configuration has been set.</p>
+<pre class="hljs"><code>Usage:    denon [COMMANDS] [OPTIONS] [DENO<span class="hljs-emphasis">_ARGS] [SCRIPT] [-- &lt;SCRIPT_</span>ARGS&gt;]
+OPTIONS:    -c, --config <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">file</span>&gt;</span></span>     A path to a config file, defaults to [default: .denon | .denon.json | .denonrc | .denonrc.json]    -d, --debug             Debugging mode for more verbose logging    -e, --extensions        List of extensions to look for separated by commas    -f, --fullscreen        Clears the screen each reload    -h, --help              Prints this    -i, --interval <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ms</span>&gt;</span></span>     The number of milliseconds between each check    -m, --match <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">glob</span>&gt;</span></span>      Glob pattern for all the files to match    -q, --quiet             Turns off all logging    -s, --skip <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">glob</span>&gt;</span></span>       Glob pattern for ignoring specific files or directories    -w, --watch             List of paths to watch separated by commas        --fmt               Adds a deno fmt executor        --test              Adds a deno test executor
+COMMANDS:    fmt                     Alias for flag --fmt    test                    Alias for flag --test
+DENO_ARGS: Arguments passed to Deno to run SCRIPT (like permisssions)</code></pre><hr>
+<h3 id="deno-handbook-goodone:"><a class="header-link" href="#deno-handbook-goodone:"></a>Deno Handbook Goodone:</h3>
+<p>@<a href="https://www.freecodecamp.org/news/the-deno-handbook/">freecodecamp.org</a>the extension:</p>
+<p class="img-container"><img src="image-20200518141102778.png" alt="image-20200518141102778"></p>
+<hr>
+<pre class="hljs"><code>$ deno run --allow-net --allow-read http://deno.land/std/http/file_server.ts
+$ deno run -A &lt;file/url.ts&gt;
+<span class="hljs-comment"># both commands run fine, below one gives all needed permissions to the program automatically.</span></code></pre><hr>
+<pre class="hljs"><code>$ deno info &lt;any file/ program<span class="hljs-string">'s url&gt;
+# above command will show the dependency tree of the dependencies included and other general information.</span></code></pre><p class="img-container"><img src="image-20200518134941032.png" alt="image-20200518134941032"></p>
+<hr>
+<pre class="hljs"><code>$ deno fmt &lt;any js or ts file&gt;
+<span class="hljs-comment">#This command will run prettier on the file.</span>
+<span class="hljs-comment">#JavaScript programmers are used to running Prettier, and deno fmt actually runs that under the hood.</span></code></pre><hr>
+<p>Get and post request with deno program</p>
+<p>@article @ <a href="https://medium.com/@kushalbhalaik/getting-started-with-deno-ee8859b1b716">medium</a></p>
+<p>Run the below fine as </p>
+<pre class="hljs"><code>$ deno run &lt;this file&gt;</code></pre><pre class="hljs"><code>import { Application, Router } from <span class="hljs-string">"https://deno.land/x/oak/mod.ts"</span><span class="hljs-comment">;</span>
+const router = new Router()<span class="hljs-comment">;</span>
+router.get(<span class="hljs-string">"/"</span>, <span class="hljs-built_in">context</span> =&gt; {
+  <span class="hljs-built_in">context</span>.response.<span class="hljs-keyword">body </span>= <span class="hljs-string">"Hello World!"</span><span class="hljs-comment">;</span>
+})<span class="hljs-comment">;</span>
+router.post(<span class="hljs-string">"/"</span>, <span class="hljs-built_in">context</span> =&gt; {
+  <span class="hljs-built_in">context</span>.response.<span class="hljs-keyword">body </span>= <span class="hljs-string">"You have made a POST request!"</span><span class="hljs-comment">;</span>
+})<span class="hljs-comment">;</span>
+const app = new Application()<span class="hljs-comment">;</span>
+app.use(router.routes())<span class="hljs-comment">;</span>
+app.use(router.allowedMethods())<span class="hljs-comment">;</span>
+const server = app.listen({ port: <span class="hljs-number">5000</span> })<span class="hljs-comment">;</span>
+console.log(<span class="hljs-string">"Listening on http://localhost:5000/"</span>)<span class="hljs-comment">;</span></code></pre><hr>
+<pre class="hljs"><code>$ deno -A index.ts</code></pre><p>&#39;    -A flag provides all the necessary permission for your app to run on your machine*</p>
+<hr>
+<h3 id="caching-design:"><a class="header-link" href="#caching-design:"></a>Caching Design:</h3>
+<p>User Device &gt; Edge Caching System &gt; -------&gt; Databse Caching System &gt; Database
+More than 80% of the service, energy costs go to the caching systems. Thats where all of the resources go.
+P99 == 99th percentile of the latency. All big companies want P99 to be below 100ms, but they don&#39;t achieve it at all anywhere. </p>
+<p>-</p>
+<p>Latency is a synonym for delay. In <a href="https://searchnetworking.techtarget.com/definition/telecommunications-telecom">telecommunications</a>, <strong>low latency is associated with a positive user experience</strong> (UX) while <strong>high latency is associated with poor UX</strong>.</p>
+<hr>
+<p>The JavaScript APIs that we have invented to interact with the operating system are all found inside the &quot;Deno&quot; namespace (e.g. <code>Deno.open()</code>). These have been carefully examined and we will not be making backwards incompatible changes to them.</p>
+<hr>
+<h3 id="program"><a class="header-link" href="#program"></a>Program</h3>
+<pre class="hljs"><code>$ deno run --allow-net HelloDeno.ts</code></pre><pre class="hljs"><code><span class="hljs-comment">//HelloDeno.ts file</span>
+<span class="hljs-keyword">import</span> { serve } <span class="hljs-keyword">from</span> <span class="hljs-string">"https://deno.land/std@0.50.0/http/server.ts"</span>;
+<span class="hljs-keyword">const</span> s = serve({ <span class="hljs-attr">port</span>: <span class="hljs-number">8000</span> });
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"http://localhost:8000/"</span>);
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">await</span> (<span class="hljs-keyword">const</span> req <span class="hljs-keyword">of</span> s) {
+  req.respond({ <span class="hljs-attr">body</span>: <span class="hljs-string">"Hello World\n"</span> });
+}</code></pre><hr>
+<h3 id="hello-world-program"><a class="header-link" href="#hello-world-program"></a>Hello world program</h3>
+<pre class="hljs"><code>$ deno run https://deno.land/std/examples/welcome.ts</code></pre><hr>
+<h3 id="installing"><a class="header-link" href="#installing"></a>Installing</h3>
+<pre class="hljs"><code>$ choco install deno
+<span class="hljs-comment"># OR You can try with powershell too. With the below command - </span>
+$ iwr https://deno.land/x/install/install.ps1 -useb | iex
+(powershell)</code></pre><hr>
+<p><a href="https://doc.deno.land/https/deno.land/std/fs/mod.ts"><img src="badge.svg" alt="deno doc"></a> &lt;= <strong>Deno Documentation Tag</strong></p>
+<p>A must read article on wikipedia @ <a href="https://en.wikipedia.org/wiki/Deno_software">link</a> . Lists all general things you need to know.</p>
+<hr>
+<p>Rust : A must checkout language, all you need to learn and know(there are videos too) @ <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Rust">MDN</a>.
+DENO is build with rust. (earlier it was written in go, but got problems with it.)</p>
+<hr>
+<p>From the video &quot;10 Things I Regret About Node.js - Ryan Dahl - JSConf EU&quot;, </p>
+<ul class="list">
+<li>When you specify the any url anywhere inside the files, deno will fetch out the code from the url and saves it somewhere, and never downloads it again from the website. If you ever want to refresh the resource form the url, you can specify --reload switch along with the command to execute the with deno. This is similar to Ctrl+F5 in the browser to refresh the resources from the website. Hell YEAH!!.</li>
+</ul>
+<hr>
+<p class="img-container"><img src="image-20200518111653092.png" alt="image-20200518111653092"></p>
+    </article>
+  </body>
+</html>

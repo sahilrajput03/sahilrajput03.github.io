@@ -159,8 +159,8 @@ tags: #Remove duplicates in array, #Unique array, #remove all duplicates, #only 
   // GETTING UNIQUE ARRAY FORM OLD ARRAY
   const arrayUnion = ["sahil","mohit","sahil"]
   const uniqSet = [...new Set(arrayUnion)];
-  const uniqArray = Array.from(uniqSet) // also, let uniqArray = [...uniqSet]; this works too.
-  // uniqArray => ["sahil","mohit"]
+  const uniqArray = Array.from(uniqSet) // Also, let uniqArray = [...uniqSet]; this works too.
+  //Output: uniqArray => ["sahil","mohit"]
   ```
 
 ***

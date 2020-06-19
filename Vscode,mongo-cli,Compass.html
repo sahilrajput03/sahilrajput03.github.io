@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>There are several ways to connect to your MongoDB instance</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><pre class="hljs"><code>db.help() <span class="hljs-comment">//This will give you a list of commands as shown in the following screenshot. </span>
+</code></pre><hr>
+<h2 id="there-are-several-ways-to-connect-to-your-mongodb-instance"><a class="header-link" href="#there-are-several-ways-to-connect-to-your-mongodb-instance"></a>There are several ways to connect to your MongoDB instance</h2>
+<p> <a href="https://docs.mongodb.com/guides/server/drivers/">https://docs.mongodb.com/guides/server/drivers/</a> </p>
+<hr>
+<h2 id="connecting-to-localdatabase-running-via-**mongodb-compass**"><a class="header-link" href="#connecting-to-localdatabase-running-via-**mongodb-compass**"></a>Connecting to localdatabase running via <strong>mongodb compass</strong></h2>
+<p>use </p>
+<pre class="hljs"><code><span class="hljs-keyword">for</span> local database running via mongo:
+MONGODB_URI=mongodb:<span class="hljs-comment">//localhost/admin</span>
+#                   ^^cluster(location), and <span class="hljs-string">'admin'</span> is the name <span class="hljs-keyword">of</span> the database.
+
+for hosted online:
+MONGODB_URI=mongodb+srv:<span class="hljs-comment">//admin:pass@cluster0-gmgwu.mongodb.net/note-app?retryWrites=true&amp;w=majority</span>
+#                   ^^cluster url, and <span class="hljs-string">'note-app'</span> is the name <span class="hljs-keyword">of</span> the database.
+#        For connecting via mongo(shell), mongo <span class="hljs-string">"mongodb+srv://m220student:m220password@&lt;YOUR_CLUSTER_URI&gt;"</span> , same like above.
+#        The above uri is generated <span class="hljs-keyword">for</span> the SCRAM authentication (<span class="hljs-keyword">default</span> authentication provided by mongodb i.e., <span class="hljs-keyword">with</span> the help <span class="hljs-keyword">of</span> username and password.)
+
+tip: knowing the cluster address(which includes secret username,password [like above]), we can connect to any database(it gets created automatically when you <span class="hljs-keyword">try</span> to connect.)
+MONGODB_URI=mongodb+srv:<span class="hljs-comment">//admin:pass@cluster0-gmgwu.mongodb.net/blogs-database?retryWrites=true&amp;w=majority</span>
+
+So, the above [<span class="hljs-string">'connection string'</span>] uri would be pointing to the database <span class="hljs-string">'blogs-database'</span> within the same cluster <span class="hljs-keyword">as</span> earlier. But being able to access the cluster he/she will be able to access other dbs on the cluster. For e.g., To <span class="hljs-keyword">switch</span> to database <span class="hljs-string">'test'</span>, below command can be used.
+<span class="hljs-string">'use test'</span></code></pre><hr>
+<p>MongoDB:</p>
+<pre class="hljs"><code>COMPONENTS
+
+mongod - The database server.
+mongos - Sharding router.
+mongo  - The database shell (uses interactive javascript).
+
+  ***
+
+## LEARN MONGODB - https:<span class="hljs-comment">//university.mongodb.com/</span>
+
+## CLOUD HOSTED MONGODB - https:<span class="hljs-comment">//www.mongodb.com/cloud/atlas</span>
+
+### Github -  https:<span class="hljs-comment">//github.com/mongodb/mongo {usefulresourse: true, lol:false}</span>
+
+## Community Support and talks - https:<span class="hljs-comment">//community.mongodb.com/ </span>
+
+### DBA: Database Administrator
+
+</code></pre><hr>
+<h2 id="atlas-has-a-hierarchical-structure:"><a class="header-link" href="#atlas-has-a-hierarchical-structure:"></a>Atlas has a hierarchical structure:</h2>
+<ul class="list">
+<li><strong>Organizations</strong>: The name of the organization will be set using your account <em>company</em> name. Feel free to use whatever name you&#39;d like.</li>
+<li><strong>Projects</strong>: Under <em>Organizations</em> you can have several <em>Projects</em>. A project is logical group shared by different Atlas users. You can invite friends and colleagues to access a given project. For this course our project will be named <strong>M220</strong>.</li>
+<li><strong>Clusters</strong>: A cluster is a MongoDB deployment. You can define several different types of clusters (Replica Sets, Shard Clusters) deployed in different Cloud Providers (AWS, Azure, GCP) and with a given Cluster Tier. For this course we will be using an <strong>M0 Free Tier</strong> cluster named <strong>mflix</strong>.</li>
+</ul>
+<hr>
+<h2 id="view-whitelist-entries"><a class="header-link" href="#view-whitelist-entries"></a>View Whitelist Entries</h2>
+<p>In the <strong>Security</strong> section of the left navigation, click <strong>Network Access</strong>. The <strong>IP Whitelist</strong> tab displays.</p>
+<hr>
+<h3 id="crud-operations:-create,-read,-update,-and-delete-operations"><a class="header-link" href="#crud-operations:-create,-read,-update,-and-delete-operations"></a>CRUD Operations: Create, Read, Update, and Delete operations</h3>
+<hr>
+<p>Cluster Name: <strong>mflix</strong></p>
+<ul class="list">
+<li>username: <strong>m220student</strong></li>
+<li>password: <strong>m220password</strong></li>
+</ul>
+<hr>
+<h2 id="srv--"><a class="header-link" href="#srv--"></a>srv -</h2>
+<p> <strong>Service record</strong> (<strong>SRV record</strong>) is a specification of data in the <a href="https://en.wikipedia.org/wiki/Domain_Name_System">Domain Name System</a> defining the location, i.e., the hostname and port number, of servers for specified services. </p>
+<hr>
+<h2 id="in-order-to-do-testing-with-mongodb-you-need-to-install-mongodb-in-npm-project:"><a class="header-link" href="#in-order-to-do-testing-with-mongodb-you-need-to-install-mongodb-in-npm-project:"></a>In order to do testing with mongodb you need to install mongodb in npm project:</h2>
+<pre class="hljs"><code>npm i mongodb --save-dev <span class="hljs-comment">#('not for production use')</span></code></pre><hr>
+<p>While on the nodemon you can restart easily, i.e., when the server has brocken , you may type <strong>rs</strong> and press <strong>Enter</strong> key to restart the server.</p>
+<p>And also debugging you can always set marker i.e., tyep something like </p>
+<pre class="hljs"><code>****hererby brocken already****
+and press Enter key to <span class="hljs-built_in">let</span> it <span class="hljs-built_in">print</span> to the console.</code></pre><hr>
+<h1 id="#mongodb-#moongoose"><a class="header-link" href="##mongodb-#moongoose"></a>#mongodb #moongoose</h1>
+<pre class="hljs"><code># below method <span class="hljs-keyword">in</span> making moongoose schema is optional, you may comment/remove it. But it helps <span class="hljs-keyword">in</span> making good api, by modelling the api<span class="hljs-string">'s data to our concerns and needs.
+noteSchema.set('</span>toJSON<span class="hljs-string">', {
+  transform: (document, returnedObject) =&gt; {
+    returnedObject.id = returnedObject._id.toString()
+    delete returnedObject._id
+    delete returnedObject.__v
+  }
+})</span></code></pre><hr>
+<pre class="hljs"><code><span class="hljs-built_in">module</span>.exports = mongoose.model(<span class="hljs-string">'Note'</span>, noteSchema)
+    <span class="hljs-comment">//                        ^^ this name represent the collection name, the related collection would be - notes (as mongodb makes it plural)</span>
+    # The first argument is the singular name <span class="hljs-keyword">of</span> the collection your model is <span class="hljs-keyword">for</span>. ** Mongoose automatically looks <span class="hljs-keyword">for</span> the plural, lowercased version <span class="hljs-keyword">of</span> your model name. ** Thus, <span class="hljs-keyword">for</span> the example above, the model Tank is <span class="hljs-keyword">for</span> the tanks collection <span class="hljs-keyword">in</span> the database.
+    <span class="hljs-comment">// https://mongoosejs.com/docs/models.html#compiling &lt;&lt; ALL ABOUT THIS NAMING TRANSLATION IS MENTIONED HERE.</span></code></pre><hr>
+<pre class="hljs"><code>#Populating a <span class="hljs-built_in">document</span> <span class="hljs-keyword">from</span> another collection, inside a <span class="hljs-built_in">document</span>.
+const notes = <span class="hljs-keyword">await</span> Note2.find({}).populate(<span class="hljs-string">"user"</span>, { <span class="hljs-attr">username</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">name</span>: <span class="hljs-number">1</span> });
+<span class="hljs-comment">// In statement above Note2.find({}) will find the complete set of documents from the databse (live connected), and with the help of the schema it will format the output on the screen accordingly as schema is modified to do so.</span>
+
+<span class="hljs-comment">// Next,  .populate('user',{username:1, name:1})</span>
+<span class="hljs-comment">// In the subsequent method i.e., populate will actually populate the property in the documents of the original collection; only if the matching property is </span></code></pre><hr>
+<h1 id="deleting-mongodb-cluster"><a class="header-link" href="#deleting-mongodb-cluster"></a>Deleting Mongodb Cluster</h1>
+<p>You can delete with the cli interface also <a href="https://docs.atlas.mongodb.com/reference/api/clusters-delete-one/">Link</a>.</p>
+<p>Click <strong>Terminate</strong> in the cluster options.</p>
+<hr>
+<h1 id="import-example-data"><a class="header-link" href="#import-example-data"></a>Import example data</h1>
+<p>To import the example data, please use your favorite tool to connect to your MongoDB instance. In my case, I am using VS Code with the Docker extension.</p>
+<pre class="hljs"><code>mongorestore --drop --gzip --db sample_mflix --uri <span class="hljs-string">"mongodb://localhost/"</span> mflix/data/data/sample_mflix/
+----------------------------------------------
+<span class="hljs-comment"># For reference for future chups, below line in .env file refers to the database to switch during the tests, as the variable is used via, process.env.MFLIX_NS</span>
+MFLIX_NS=sample_mflix</code></pre><p>Above method is caught from <a href="https://github.com/TheRobBrennan/mongo-course-M220JS-feb-2019/tree/master/chapter-1">here</a>. &lt;&lt;&lt;&lt;</p>
+<hr>
+<h1 id="import-and-export-data-in-compass:"><a class="header-link" href="#import-and-export-data-in-compass:"></a>Import and Export Data in Compass:</h1>
+<p> <a href="http://docs.mongodb.com/compass/master/import-export/">http://docs.mongodb.com/compass/master/import-export/</a>  to import json or csv files.</p>
+<hr>
+<h4 id="if-you-are-experiencing-errors-in-the-testing,-80%-chances-are-the-connection-issues(although-mobile-network-hotspot-works-efficiently-i.e.,-90%-of-the-time).-the-simple-solution-to-connection-issues-is-to-use-locally-running-db-in-the-**mongodb-compass**."><a class="header-link" href="#if-you-are-experiencing-errors-in-the-testing,-80%-chances-are-the-connection-issues(although-mobile-network-hotspot-works-efficiently-i.e.,-90%-of-the-time).-the-simple-solution-to-connection-issues-is-to-use-locally-running-db-in-the-**mongodb-compass**."></a>If you are experiencing errors in the testing, 80% chances are the connection issues(although mobile network hotspot works efficiently i.e., 90% of the time). The simple solution to connection issues is to use locally running db in the <strong>MongoDB Compass</strong>.</h4>
+<h4 id="next,-if-you-are-facing-issues-it-could-be-one-of-the-following:"><a class="header-link" href="#next,-if-you-are-facing-issues-it-could-be-one-of-the-following:"></a>Next, if you are facing issues it could be one of the following:</h4>
+<p>1.wrong database name (MFLIX_NS=sample_mflix in case of mongodb university, mflix app)
+2.wrong collection name(may be inside coding). Although testing would be much simpler when you are running database locally.</p>
+<hr>
+<h2 id="know-about-indexes-in-mongodb:"><a class="header-link" href="#know-about-indexes-in-mongodb:"></a>Know about indexes in mongodb:</h2>
+<p> <a href="https://docs.mongodb.com/manual/indexes/">https://docs.mongodb.com/manual/indexes/</a> </p>
+<hr>
+<h2 id="compress-your-output-database:"><a class="header-link" href="#compress-your-output-database:"></a>Compress your output database:</h2>
+<pre class="hljs"><code>mongodump --gzip --db=<span class="hljs-built_in">test</span></code></pre><hr>
+<h1 id="using-monogdump"><a class="header-link" href="#using-monogdump"></a>Using monogdump</h1>
+<p>Everything at once:  <a href="https://docs.mongodb.com/manual/reference/program/mongodump/">https://docs.mongodb.com/manual/reference/program/mongodump/</a> </p>
+<pre class="hljs"><code><span class="hljs-comment">#export one collection:</span>
+mongodump --uri=<span class="hljs-string">"mongodb+srv://m220student:m220password@mflix-qtv8w.mongodb.net/sample_analytics"</span> --ssl --collection customers -o airbnb_sample_db
+//Instead of --collection * -c also works pretty well.
+
+<span class="hljs-comment">#export one db:</span>
+mongodump --uri=<span class="hljs-string">"mongodb+srv://m220student:m220password@mflix-qtv8w.mongodb.net/sample_airbnb"</span> --ssl -o airbnb_sample_db
+
+<span class="hljs-comment">#export one db but except 1 collections(customers in this case):</span>
+mongodump --uri=<span class="hljs-string">"mongodb+srv://m220student:m220password@mflix-qtv8w.mongodb.net/sample_analytics"</span> --ssl --excludeCollection customers -o analytics_sample_db
+
+<span class="hljs-comment">#export one db but except 2 collections(customers and transactions in this case):</span>
+mongodump --uri=<span class="hljs-string">"mongodb+srv://m220student:m220password@mflix-qtv8w.mongodb.net/sample_analytics"</span> --ssl --excludeCollection customers --excludeCollection transactions -o analytics_sample_db
+
+<span class="hljs-comment">#export all dbs:</span>
+mongodump --uri=<span class="hljs-string">"mongodb+srv://m220student:m220password@mflix-qtv8w.mongodb.net/"</span> --ssl -o alldbs
+
+<span class="hljs-comment"># output databases would be inside respective folders i.e., airbnb_sample_db and alldbs.</span>
+<span class="hljs-comment"># Better you don't put -o &lt;folder-name&gt;; so all the downloaded db's would be in the dump folder by default.</span>
+<span class="hljs-comment">### Note:</span>
+-o &lt;folder&gt; : this is optional, <span class="hljs-keyword">if</span> you don\<span class="hljs-string">'t specify it will create folder dump and paste the dbs(which are defined) in it.
+# Its better not to specify the output folder, it is actually unnecessary name management for better optional backups for future use.</span></code></pre><pre class="hljs"><code>IMPORTANT
+
+The following command-line options cannot be used <span class="hljs-keyword">in</span> conjunction <span class="hljs-keyword">with</span> <span class="hljs-comment">--uri option:</span>
+
+<span class="hljs-comment">--host</span>
+<span class="hljs-comment">--port</span>
+<span class="hljs-comment">--db</span>
+<span class="hljs-comment">--username</span>
+<span class="hljs-comment">--password (if the URI connection string also includes the password)</span>
+<span class="hljs-comment">--authenticationDatabase</span>
+<span class="hljs-comment">--authenticationMechanism</span>
+Instead, specify these options <span class="hljs-keyword">as</span> part <span class="hljs-keyword">of</span> your <span class="hljs-comment">--uri connection string.</span></code></pre><hr>
+<h1 id="using-mongorestore"><a class="header-link" href="#using-mongorestore"></a>Using mongorestore</h1>
+<p>Everything at once: <a href="https://docs.mongodb.com/manual/reference/program/mongorestore/">https://docs.mongodb.com/manual/reference/program/mongorestore/</a> </p>
+<pre class="hljs"><code><span class="hljs-comment">#Restore whole database:</span>
+mongorestore --drop --db desired_database_name --uri <span class="hljs-string">"mongodb://localhost/"</span> source_folder_of_a_db
+
+<span class="hljs-comment">#Restore single collection:</span>
+mongorestore --drop --db desired_database_name -c desired_collection_name --uri <span class="hljs-string">"mongodb://localhost/"</span> &lt;file.bson&gt;</code></pre><p>Another less helpful link:  <a href="https://medium.com/dev-blogs/backup-and-restore-mongo-databases-e28db642cfd8">https://medium.com/dev-blogs/backup-and-restore-mongo-databases-e28db642cfd8</a> </p>
+<hr>
+    </article>
+  </body>
+</html>

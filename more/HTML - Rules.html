@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>HTML inline elements</title>
+    <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><section>
+ <h2>WWF</h2>
+ <p>The World Wide Fund for Nature (WWF) is....</p>
+</section>
+
+<hr>
+<h2 id="html-inline-elements"><a class="header-link" href="#html-inline-elements"></a>HTML inline elements</h2>
+<p>\1. <strong>HTML inline level elements</strong> can appear in the body of an HTML page.</p>
+<p>\2. It can contain data and other <strong>inline</strong> elements.</p>
+<p>\3. By default, <strong>inline elements</strong> do not begin on new lines.</p>
+<p>\4. <strong>inline elements</strong> create shorter structures (than block level elements).</p>
+<p><strong>List of inline elements</strong></p>
+<ul class="list">
+<li>b, big, i, small, tt</li>
+<li>abbr, acronym, cite, code, dfn, em, kbd, strong, samp, var</li>
+<li>a, bdo, br, img, map, object, q, script, span, sub, sup</li>
+<li>button, input, label, select, textarea</li>
+</ul>
+<hr>
+<h2 id="list-of-block-level-elements/-#block-elements"><a class="header-link" href="#list-of-block-level-elements/-#block-elements"></a>List of block level elements/ #block elements</h2>
+<p>Any of the below elements can be transformed to inline, block or inline-block element type with the help of css. i.e., assigning a property all or a particular of p,h1,ol,pre,etc for e.g.,</p>
+<pre class="hljs"><code> <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ex1"</span>&gt;</span>HELLO WORLD!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ex2"</span>&gt;</span>HELLO WORLD!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ex3"</span>&gt;</span>HELLO WORLD!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ex4"</span>&gt;</span>HELLO WORLD!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span> </code></pre><pre class="hljs"><code>&lt;<span class="hljs-selector-tag">style</span>&gt;
+<span class="hljs-selector-tag">p</span> {<span class="hljs-attribute">color</span>: red;}
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.ex1</span> {<span class="hljs-attribute">display</span>: none;} # <span class="hljs-selector-tag">this</span> <span class="hljs-selector-tag">will</span> <span class="hljs-selector-tag">hide</span> <span class="hljs-selector-tag">the</span> <span class="hljs-selector-tag">paragraph</span> <span class="hljs-selector-tag">element</span> <span class="hljs-selector-tag">with</span> <span class="hljs-selector-tag">class</span> <span class="hljs-selector-tag">ex1</span>
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.ex2</span> {<span class="hljs-attribute">display</span>: inline;} # <span class="hljs-selector-tag">this</span> <span class="hljs-selector-tag">will</span> <span class="hljs-selector-tag">convert</span> <span class="hljs-selector-tag">the</span> <span class="hljs-selector-tag">paragraph</span> <span class="hljs-selector-tag">element</span> <span class="hljs-selector-tag">to</span> <span class="hljs-selector-tag">inline</span> <span class="hljs-selector-tag">element</span>
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.ex3</span> {<span class="hljs-attribute">display</span>: block;} # <span class="hljs-selector-tag">wont</span> <span class="hljs-selector-tag">do</span> <span class="hljs-selector-tag">anything</span>
+<span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.ex4</span> {<span class="hljs-attribute">display</span>: inline-block;}
+&lt;/<span class="hljs-selector-tag">style</span>&gt;</code></pre><p>for the above detailed discussion - w3school example - <a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss_display">link</a></p>
+<pre class="hljs"><code>- <span class="hljs-selector-tag">p</span>
+- <span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-tag">h4</span>, <span class="hljs-selector-tag">h5</span>, <span class="hljs-selector-tag">h6</span>
+- <span class="hljs-selector-tag">ol</span>, <span class="hljs-selector-tag">ul</span>
+- pre
+- <span class="hljs-selector-tag">address</span>
+- <span class="hljs-selector-tag">blockquote</span>
+- <span class="hljs-selector-tag">dl</span>
+- <span class="hljs-selector-tag">div</span>
+- <span class="hljs-selector-tag">fieldset</span>
+- <span class="hljs-selector-tag">form</span>
+- hr
+- noscript
+- table</code></pre><hr>
+<h3 id="html---rules"><a class="header-link" href="#html---rules"></a>HTML - Rules</h3>
+<p>Below Code prints as it is in html with the give newline and defined number of spaces.</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span>Text in a pre element
+is displayed in a fixed-width
+font, and it preserves
+both      spaces and
+line breaks
+.<span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span></code></pre><hr>
+<p>This anchor tag</p>
+<p> <code>&lt;a href=&quot;///google.com&quot;&gt;GOOGLE&lt;/a&gt;</code>  </p>
+<p>goes to <a href="http://google.com">http://google.com</a>.</p>
+<p>And</p>
+<hr>
+<p> <code>&lt;a href=&quot;///www.google.com&quot;&gt;GOOGLE&lt;/a&gt;</code>  will go to <a href="http://www.google.com">http://www.google.com</a>.</p>
+<hr>
+<p>This anchor tag </p>
+<p> <code>&lt;a href=&quot;google.com&quot;&gt;GOOGLE&lt;/a&gt;</code>  </p>
+<p>goes to /google.com. i.e., if the site is hosted on localhost, it will go to <a href="http://localhost/google.com">http://localhost/google.com</a></p>
+<hr>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>hello there i'm inline<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>hello there i'm inline<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>hello there i'm inline<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre><p>Prints the code as 
+ <code>hello there i&#39;m inlinehello there i&#39;m inlinehello there i&#39;m inline</code> </p>
+<hr>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        Now I'm negleting any rules of css here that actullay applied to p tag
+        and i don't like enemies and also it is not so go.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        Now I'm negleting any rules of css here that actullay applied to p tag
+        and i don't like enemies and also it is not so go.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        Now I'm negleting any rules of css here that actullay applied to p tag
+        and i don't like enemies and also it is not so go.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        Now I'm negleting any rules of css here that actullay applied to p tag
+        and i don't like enemies and also it is not so go.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre><p>Above code prints</p>
+<pre class="hljs"><code>Now I'm negleting any rules of css here that actullay applied to p tag and i don't like enemies and also it is not so go.
+
+Now I'm negleting any rules of css here that actullay applied to p tag and i don't like enemies and also it is not so go.
+
+Now I'm negleting any rules of css here that actullay applied to p tag and i don't like enemies and also it is not so go.
+
+Now I'm negleting any rules of css here that actullay applied to p tag and i don't like enemies and also it is not so go.</code></pre><hr>
+<pre class="hljs"><code><span class="hljs-selector-class">.shadow_maa2</span> {
+            <span class="hljs-attribute">background-color</span>: bisque;
+            <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">20px</span>;
+            <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+            <span class="hljs-attribute">margin</span>: <span class="hljs-number">20px</span>;
+            <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0px</span> <span class="hljs-number">10px</span> <span class="hljs-number">10px</span> <span class="hljs-number">#888888</span>;
+            <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid;
+            <span class="hljs-attribute">border-color</span>: whitesmoke
+        }</code></pre><pre class="hljs"><code>    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"shadow-maa2"</span>&gt;</span>
+        Now I'm negleting any rules of css here that actullay applied to p tag
+        and i don't like enemies and also it is not so go.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre><hr>
+<p>hr tag produces horizontal rule in html.</p>
+<hr>
+<pre class="hljs"><code>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        Hello there.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        Hello there.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        Hello there.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre><p>Above code produces output as -</p>
+<pre class="hljs"><code>Hello there.
+Hello there.
+Hello there.</code></pre><hr>
+<pre class="hljs"><code>&lt;a id=<span class="hljs-string">"rohitkadad"</span> href=<span class="hljs-string">"index.html"</span>&gt;Bubaa&lt;<span class="hljs-regexp">/a&gt;
+&lt;script&gt;
+        document.onkeydown = function (e) {
+        if (e.keyCode == 49) {
+                document.getElementById("rohitkadad").click();
+            }
+        };
+&lt;/</span>script&gt;       </code></pre><pre class="hljs"><code>&lt;script&gt;
+        <span class="hljs-keyword">var</span> link = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"rohitkadad"</span>);
+        <span class="hljs-built_in">document</span>.onkeydown = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-keyword">if</span> (e.keyCode == <span class="hljs-number">49</span>) {
+                link.click();
+            }
+        };
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span> </code></pre><hr>
+<pre class="hljs"><code>&lt;script&gt;
+        <span class="hljs-built_in">window</span>.alert(<span class="hljs-string">"keypressed"</span>);
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span></code></pre><p>Above JS will execute the alert only once on the page load. If page is reloaded the alert will pop-up again.</p>
+<hr>
+<pre class="hljs"><code><span class="hljs-built_in">window</span>.alert(<span class="hljs-string">"sometext"</span>);
+alert(<span class="hljs-string">"someothertext."</span>);
+Both are same.</code></pre><p>cdc, vidal, mp</p>
+<p>(240,170,205)</p>
+<hr>
+<p>Add the width, height = 0px in style &gt;&gt; for example to hide the div element.</p>
+<hr>
+<p><a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>    </p>
+<hr>
+<h4 id="cursor"><a class="header-link" href="#cursor"></a>Cursor</h4>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-selector-tag">html</span>,<span class="hljs-selector-tag">body</span>{<span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;}
+        <span class="hljs-selector-tag">a</span>,<span class="hljs-selector-tag">body</span>{<span class="hljs-attribute">cursor</span>: cell}
+
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre><hr>
+<pre class="hljs"><code>a,body{<span class="hljs-attr">cursor</span>: url(someicon.gif),auto;}
+
+a,body{<span class="hljs-attr">cursor</span>: url(https:<span class="hljs-comment">//cursors4.totallyfreecursors.com/thumbnails/magic-wand-ani.gif),auto;}</span>
+
+a,body{<span class="hljs-attr">cursor</span>: url(http:<span class="hljs-comment">//www.rw-designer.com/cursor-view/55501.gif),auto;}</span>
+
+a,body{<span class="hljs-attr">cursor</span>: url(<span class="hljs-string">"https://github.com/sahilrajput03/JaaduJinn/blob/master/cursors/magic-wand-animated.gif?raw=true"</span>),auto;}
+
+a,body{<span class="hljs-attr">cursor</span>: url(data:image/gif;base64,R0lGODlhIAAgADMAACH5BAkRAAgAIf8LTkVUU0NBUEUyL#data#data#data#data#data#data#data#data#data#data#more#data#endData),auto;}
+<span class="hljs-comment">//convert-image to base64 - https://www.base64-image.de </span></code></pre><p><a href="https://www.base64-image.de">ConvertToBase-64</a></p>
+<hr>
+<p><strong>VSC</strong>: Ctrl+Shift+[.. and VICE-VERSA FOR SHOW HIDE TAGS IN HTML.</p>
+<hr>
+<p><a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor">Default cursors of web @w3schools</a>        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Basic_User_Interface/Using_URL_values_for_the_cursor_property">Cursor @MDN</a>        </p>
+<hr>
+<p>Cursor usability in different browsers - <a href="https://caniuse.com/#search=cursor">CanIUse.com</a> 
+Formats for cursors - cur, ico, png.</p>
+<p><a href="https://stackoverflow.com/questions/9408780/javascript-firefox-how-to-set-custom-cursor-from-local-png-file">Setting cursor via JS</a>  <a href="https://stackoverflow.com/questions/32037763/css-cur-cursor-format">Css cur format@StackOverflow</a>    </p>
+<hr>
+<p>GitHub pages host only static HTML pages. No server side technology is supported, so Node.js applications won’t run on GitHub pages. There are lots of hosting providers, as listed on the Node.js
+wiki. - </p>
+<p><strong>Node Hosting</strong>: <a href="https://github.com/nodejs/node-v0.x-archive/wiki/Node-Hosting">https://github.com/nodejs/node-v0.x-archive/wiki/Node-Hosting</a></p>
+<p>Publishing node on GitHub pages - <a href="https://stackoverflow.com/questions/15718649/how-to-publish-a-website-made-by-node-js-to-github-pages">@stackOverlof Lol</a></p>
+<hr>
+<p><a href="https://code.visualstudio.com/blogs/2016/02/23/introducing-chrome-debugger-for-vs-code">Introducing Chrome Debugging for VS Code</a>        </p>
+<hr>
+<h4 id="vscode-and-github:"><a class="header-link" href="#vscode-and-github:"></a>VSCode and GitHub:</h4>
+<p>•VSC: Ctrl+L : Just selects the current line and stars selecting the line below and below and below..and on.
+•VSC: Alt + shift + Down: copy the current line down.
+•VSC: Alt + shift +Up: copy the current line up.
+•The duplicate can also be achieved by CTRL+C and CTRL+V with cursor in the line without nothing selected.
+•Ctrl + C: without selecting anything copies the entire line.
+•Ctrl + [ and, Ctrl + ] moves the line (or selected lines) to corresponding directions next respective indents.
+•To comment a selected text in VCS – Ctrl + / , for block comment use Alt+Shift+A
+•Alt+shift+f &gt;&gt; Reformat the code.
+•Press T in any GitHub repository, to activate file finder; and start typing the name of the file you’ll see the results lively on the screen.</p>
+<hr>
+<p>Aligning a div in html [does not use the style property to center the the div]</p>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">align</span>=<span class="hljs-string">"center"</span>&gt;</span> </code></pre><p>src: <a href="https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_div_align">w3schools.com</a> and <a href="https://www.w3schools.com/tags/att_div_align.asp">link@w3schools.com</a></p>
+<hr>
+<p>Right aligned List in HTML: <a href="https://stackoverflow.com/questions/10431037/css-right-aligned-list">@StackOverflow Answer</a>    </p>
+<hr>
+<p>Remove outline around text boxes, input fields, etcetrae - 
+<a href="https://www.tutorialrepublic.com/faq/how-to-remove-outline-around-text-input-boxes-in-chrome-using-css.php">Tutorial @ tutorialRepblic.com</a>        <a href="https://medium.com/@hassadee/remove-blue-border-outline-in-chrome-and-dash-border-in-firefox-b857d452d136">Tutorial @ Medium.com</a>    </p>
+<p>Remove dotter outline in Mozilla -
+<a href="https://stackoverflow.com/questions/71074/how-to-remove-firefoxs-dotted-outline-on-buttons-as-well-as-links">Tutorial @StackOverflow</a></p>
+<p>INSHORT -</p>
+<pre class="hljs"><code><span class="hljs-comment">/*code the css file with the this to smoothe every focus area*/</span>
+
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-pseudo">:focus</span>, <span class="hljs-selector-tag">textarea</span><span class="hljs-selector-pseudo">:focus</span>, <span class="hljs-selector-tag">select</span><span class="hljs-selector-pseudo">:focus</span>, <span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:focus</span>{
+  <span class="hljs-attribute">outline</span>: none;
+}
+
+<span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">::-moz-focus-inner</span> {
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
+}</code></pre><hr>
+<h5 id="left-or-right-align-a-button"><a class="header-link" href="#left-or-right-align-a-button"></a>Left or Right align a button</h5>
+<pre class="hljs"><code><span class="hljs-selector-class">.floatLeft</span>{
+  <span class="hljs-attribute">float</span>: left;
+}<span class="hljs-comment">/* Add this class to the button */</span> <span class="hljs-comment">/*change the left/right to use*/</span></code></pre><hr>
+<p>EMMET CheatSheet:  <a href="https://docs.emmet.io/cheat-sheet/">https://docs.emmet.io/cheat-sheet/</a> </p>
+<hr>
+<h1 id="onclick-in-div"><a class="header-link" href="#onclick-in-div"></a>onclick in div</h1>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"alert('clicked')"</span>&gt;</span>
+    This text generates alert.
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+above property can be assigned to any div, paragraph, span and other tags(you may test others, testing is always important.)
+
+important note # BUT WHEN YOU WANT TO USE THIS PROPERTY IN REACT, YOU MUST USE THEM AS 
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span>=&gt;</span>alert("li click")}&gt;
+    This text generates alert.
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+sO BEWARE OF REACT, REACT USUALLY HURTS EVERBODY. Be prepare for it.
+
+***
+Other React html: you should always use <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> as <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>, <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span> as <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span></code></pre><hr>
+<pre class="hljs"><code>The <span class="hljs-tag">&lt;<span class="hljs-name">input</span>&gt;</span> Element  - w3schools.com
+The <span class="hljs-tag">&lt;<span class="hljs-name">input</span>&gt;</span> element is the most important form element.
+
+The <span class="hljs-tag">&lt;<span class="hljs-name">input</span>&gt;</span> element is displayed in several ways, depending on the type attribute.
+
+Here are some examples:
+
+Type    Description
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span>    Defines a single-line text input field
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span>&gt;</span>    Defines a radio button (for selecting one of many choices)
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>    Defines a submit button (for submitting the form)</code></pre><hr>
+<p class="img-container"><img src="image-20200416172356378.png" alt="image-20200416172356378"></p>
+<hr>
+<p class="img-container"><img src="image-20200416172527245.png" alt="image-20200416172527245"></p>
+<hr>
+<p class="img-container"><img src="image-20200416172947038.png" alt="img"></p>
+<p class="img-container"><img src="image-20200416173048618.png" alt="image-20200416173048618"></p>
+<p class="img-container"><img src="image-20200416173104881.png" alt="image-20200416173104881"></p>
+<p><a href="https://www.w3schools.com/jsref/prop_radio_checked.asp">https://www.w3schools.com/jsref/prop_radio_checked.asp</a></p>
+<hr>
+<p class="img-container"><img src="image-20200418150548100.png" alt="image-20200418150548100"></p>
+<hr>
+<p class="img-container"><img src="image-20200418150642528.png" alt="image-20200418150642528"></p>
+<p class="img-container"><img src="image-20200418150726380.png" alt="image-20200418150726380"></p>
+<p class="img-container"><img src="image-20200418150749897.png" alt="image-20200418150749897"></p>
+<hr>
+<p class="img-container"><img src="image-20200418150923276.png" alt="image-20200418150923276"></p>
+<hr>
+<h2 id="crux-of-the-research-of-absolute-,-relative,-root-relative-url"><a class="header-link" href="#crux-of-the-research-of-absolute-,-relative,-root-relative-url"></a>Crux of the research of absolute , relative, root relative url</h2>
+<p class="img-container"><img src="image-20200418151141498.png" alt="image-20200418151141498"></p>
+<p>Above example is the interesting one, since the root/absolute url is set to <a href="https://www.32schools.com/tags">https://www.32schools.com/tags</a> ,(target=&quot;_blank has no relevace in the context we are talking but it means that all links will be open in new tab, unless they are specified with target=&quot;_self&quot;  explicitly.)
+So, all the url of the page are now modified accordingly, like </p>
+<p>href=&quot;images/stickman.gif&quot; &gt;&gt; href=&quot;<a href="https://www.32schools.com/tags/images/stickman.git&quot;">https://www.32schools.com/tags/images/stickman.git&quot;</a>
+href=&quot;/tag_base.asp&quot; &gt;&gt; href=&quot;<a href="https://www.32schools.com/tag_base.asp&quot;">https://www.32schools.com/tag_base.asp&quot;</a> &lt;&lt; THIS ONE IS INTERESTING(root relative)
+This is so because, <strong>setting</strong> base href=&quot;domain/subfolder&quot; &gt;&gt;  willl set the 
+root domain <strong>to</strong> domain
+root url  <strong>to</strong> domain/subfolder. </p>
+<p>-----<strong>By default</strong> (if you do not specifiy <base> tag in your page.html):-
+root domain=&gt; current domain of the page =&gt; <a href="http://www.google.com">www.google.com</a>, <a href="http://www.youtube.com">www.youtube.com</a>, <a href="http://www.facebook.com">www.facebook.com</a>
+root url =&gt; current url of the page =&gt; <a href="http://www.google.com">www.google.com</a>, <a href="http://www.google.com/drive">www.google.com/drive</a></p>
+<hr>
+<p class="img-container"><img src="image-20200418152811073.png" alt="image-20200418152811073"></p>
+<p>cd to root folder (this is example of relative url)</p>
+<hr>
+<p class="img-container"><img src="image-20200418152924652.png" alt="image-20200418152924652"></p>
+<p>cd to root/Users folder. (this is example of relative url)</p>
+<hr>
+<p class="img-container"><img src="image-20200418154717492.png" alt="image-20200418154717492"></p>
+<hr>
+<p>From <a href="https://developers.google.com/chrome-developer-tools/docs/css-preprocessors">Working with CSS preprocessors in Chrome DevTools</a>:</p>
+<blockquote>
+<p>Many developers generate CSS style sheets using a CSS preprocessor, such as Sass, Less, or Stylus. Because the CSS files are generated, editing the CSS files directly is not as helpful.</p>
+<p>For preprocessors that support CSS source maps, DevTools lets you live-edit your preprocessor source files in the Sources panel, and view the results without having to leave DevTools or refresh the page. When you inspect an element whose styles are provided by a generated CSS file, the Elements panel displays a link to the original source file, not the generated .css file.</p>
+</blockquote>
+<hr>
+    </article>
+  </body>
+</html>

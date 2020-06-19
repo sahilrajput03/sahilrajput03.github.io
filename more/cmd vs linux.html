@@ -1,0 +1,472 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Killing multiple taks via cmd-</title>
+    <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><p>TEST</p>
+<h2 id="killing-multiple-taks-via-cmd-"><a class="header-link" href="#killing-multiple-taks-via-cmd-"></a>Killing multiple taks via cmd-</h2>
+<pre class="hljs"><code>$ Taskkill /PID 10204 /F 
+<span class="hljs-comment">#/F TELLS ABOUT THE FORCE TERMINATION OF TASK.</span>
+$ Taskkill /PID 10204 /PID 10228 /PID 10256 /F
+<span class="hljs-comment">#ALL PROCESSES WIL BE TERMINATED FORCEFULLY.</span></code></pre><hr>
+<h2 id="cmd-vs-mintty(unix/linux)"><a class="header-link" href="#cmd-vs-mintty(unix/linux)"></a>cmd vs mintty(unix/linux)</h2>
+<h2 id="cmd"><a class="header-link" href="#cmd"></a>cmd</h2>
+<pre class="hljs"><code><span class="hljs-comment"># CMD: </span>
+$ <span class="hljs-built_in">where</span> &lt;<span class="hljs-built_in">command</span>-name/executable&gt; 
+$ <span class="hljs-built_in">where</span> <span class="hljs-built_in">where</span>
+<span class="hljs-comment">#Output=&gt; C:\Windows\System32\where.exe</span>
+$ <span class="hljs-built_in">where</span> ls
+<span class="hljs-comment">#Output=&gt; C:\Program Files (x86)\GnuWin32\bin\ls.exe</span>
+$ <span class="hljs-built_in">echo</span> %variable-name%
+$ <span class="hljs-built_in">echo</span> %path%
+$ <span class="hljs-built_in">echo</span> %username%
+<span class="hljs-comment">#Output=&gt; chetan</span>
+$ <span class="hljs-built_in">echo</span> %temp%
+<span class="hljs-comment">#Output=&gt; C:\Users\chetan\AppData\Local\Temp</span>
+**
+<span class="hljs-built_in">set</span> message=Hello World 
+<span class="hljs-built_in">set</span> poco=Amoeba
+<span class="hljs-built_in">echo</span> %poco%</code></pre><pre class="hljs"><code>
+<span class="hljs-comment"># UNIX/MINTTY: </span>
+$ <span class="hljs-built_in">type</span> &lt;<span class="hljs-built_in">command</span>/executable&gt;
+
+_
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$varname</span>
+<span class="hljs-built_in">echo</span> `uname`
+
+winodows uses first match from paths
+npm config get prefix
+
+***
+
+<span class="hljs-comment">### </span></code></pre><h3 id="hibernate-with-cmd"><a class="header-link" href="#hibernate-with-cmd"></a>Hibernate with cmd</h3>
+<pre class="hljs"><code>$ shutdown /h</code></pre><hr>
+<h2 id="whoami-and-hostname"><a class="header-link" href="#whoami-and-hostname"></a>whoami and hostname</h2>
+<p class="img-container"><img src="image-20200531174849720.png" alt="image-20200531174849720"></p>
+<hr>
+<h2 id="making-a-background-script"><a class="header-link" href="#making-a-background-script"></a>Making a background script</h2>
+<p><a href="https://www.winhelponline.com/blog/run-bat-files-invisibly-without-displaying-command-prompt/">Running script in background with vbs script, and make shortcut in startup folder to make it a service.</a></p>
+<p>Make a program, as ==program.vbs== and replace the bat file path with your one, and create its shortcut in the <strong>startup</strong> folder.(shell:startup)</p>
+<pre class="hljs"><code>Set WshShell = CreateObject(<span class="hljs-string">"WScript.Shell"</span>) 
+WshShell.Run chr(34) &amp; <span class="hljs-string">"C:\Batch Files\syncfiles.bat"</span> &amp; Chr(34), 0
+Set WshShell = Nothing</code></pre><p>*</p>
+<p>Also, you can check if it is runnning like this-</p>
+<p class="img-container"><img src="image-20200531122512359.png" alt="image-20200531122512359"></p>
+<p class="img-container"><img src="image-20200531125257571.png" alt="image-20200531125257571"></p>
+<p>And you can end the process by ending both the cmd and node process from the same diaglog box, you should select both (otherwise the node will keep running the older processes too)easily with no hassel.</p>
+<hr>
+<h2 id="hibernate-pc-via-cmd"><a class="header-link" href="#hibernate-pc-via-cmd"></a>Hibernate pc via cmd</h2>
+<pre class="hljs"><code>$ shutdown /h</code></pre><hr>
+<h2 id="make-a-bat-file-to-delete-temp-files"><a class="header-link" href="#make-a-bat-file-to-delete-temp-files"></a>Make a bat file to delete temp files</h2>
+<pre class="hljs"><code><span class="hljs-built_in">cd</span> %temp%
+rmdir /q /s .
+<span class="hljs-comment">#@pause</span></code></pre><p>Save the file as DeleteTemp.bat</p>
+<hr>
+<h3 id="use-ctrl-+-p-to-go-to-previous-and-ctrl-+-n-to-go-to-next-command-in-bash.-use-ctrl-+-w-to-delete-word-to-the-left."><a class="header-link" href="#use-ctrl-+-p-to-go-to-previous-and-ctrl-+-n-to-go-to-next-command-in-bash.-use-ctrl-+-w-to-delete-word-to-the-left."></a>Use Ctrl + p to go to previous and Ctrl + n to go to next command in bash. Use Ctrl + w to delete word to the left.</h3>
+<hr>
+<h2 id="favourable-window-size-setting-in-mintty/git-bash"><a class="header-link" href="#favourable-window-size-setting-in-mintty/git-bash"></a>Favourable window size setting in mintty/git-bash</h2>
+<p class="img-container"><img src="image-20200527202235380.png" alt="image-20200527202235380"></p>
+<hr>
+<h2 id="copying-in-git-bash(mintty)-and-cmd-"><a class="header-link" href="#copying-in-git-bash(mintty)-and-cmd-"></a>Copying in git-bash(mintty) and cmd-</h2>
+<ul class="list">
+<li><p>You can <strong>copy</strong> something in git-bash via just selecting something and pressing <strong>c</strong>. [no sideeffect] and paste something with <strong>ctrl+shift+v</strong> or <strong>right-mouse-click</strong>.</p>
+</li>
+<li><p>You can <strong>copy</strong>/<strong>paste</strong> something in cmd via just selecting something and pressing <strong>righ-mouse-click</strong>. [no sideeffect]</p>
+</li>
+</ul>
+<hr>
+<h2 id="you-can-create-a-new-bash-from-gitbash"><a class="header-link" href="#you-can-create-a-new-bash-from-gitbash"></a>You can create a new bash from gitbash</h2>
+<p>With shortcut-&gt; Alt+f2</p>
+<p class="img-container"><img src="image-20200527002414819.png" alt="image-20200527002414819"></p>
+<h2 id="in-cmd,-you-can-do-similarly-by"><a class="header-link" href="#in-cmd,-you-can-do-similarly-by"></a>In cmd, you can do similarly by</h2>
+<pre class="hljs"><code>$ start cmd</code></pre><hr>
+<h2 id="vscode-default-settings-for-->-end-of-line-sequence"><a class="header-link" href="#vscode-default-settings-for-->-end-of-line-sequence"></a>Vscode default settings for -&gt; End of line sequence</h2>
+<p>It uses whats already good for windows, i.e., CRLF in new .js and .txt files.</p>
+<hr>
+<h2 id="there-global-savings-of-all-mingw-command-"><a class="header-link" href="#there-global-savings-of-all-mingw-command-"></a>There global savings of all mingw command-</h2>
+<p>You can view them, via command </p>
+<pre class="hljs"><code>$ <span class="hljs-built_in">history</span></code></pre><p>Note the history for currently opened bash (mingw) is only saved when its closed and new a new bash(mingw) is opened.</p>
+<p>Also, you can clear the history in mingw via:-</p>
+<pre class="hljs"><code>$ rm ~/.bash_history</code></pre><p>In linux, its like </p>
+<pre class="hljs"><code>$ <span class="hljs-built_in">history</span> -c</code></pre><hr>
+<h3 id="[is-there-a-global,-persistent-cmd-history?](https://serverfault.com/questions/95404/is-there-a-global-persistent-cmd-history)"><a class="header-link" href="#[is-there-a-global,-persistent-cmd-history?](https://serverfault.com/questions/95404/is-there-a-global-persistent-cmd-history)"></a><a href="https://serverfault.com/questions/95404/is-there-a-global-persistent-cmd-history">Is there a global, persistent CMD history?</a></h3>
+<p>No, Windows command prompt history can&#39;t be saved when a session ends.</p>
+<hr>
+<h3 id="viewing-history-in-cmd:-"><a class="header-link" href="#viewing-history-in-cmd:-"></a>Viewing history in cmd:-</h3>
+<p>Press f7, to view the history of current cmd.</p>
+<hr>
+<h2 id="scroll-the-screen-of-mingw:-"><a class="header-link" href="#scroll-the-screen-of-mingw:-"></a>Scroll the screen of mingw:-</h2>
+<p>Hold shift key, and use arrow keys(up/down) and pg up/down keys. (Home/End keys are supported)</p>
+<hr>
+<h2 id="scroll-the-screen-of-cmd:-"><a class="header-link" href="#scroll-the-screen-of-cmd:-"></a>Scroll the screen of cmd:-</h2>
+<p>Press Alt+Space together, and then E, then L
+Then, you are free to use arrow keys or page up/down keys.(Home/End keys are not supported.)</p>
+<p><a href="https://www.howtogeek.com/howto/windows-vista/keyboard-ninja-scrolling-the-windows-command-prompt-with-only-the-keyboard/">link</a></p>
+<hr>
+<h2 id="setting-the-position-for-cmd"><a class="header-link" href="#setting-the-position-for-cmd"></a>Setting the position for cmd</h2>
+<p class="img-container"><img src="image-20200525100607451.png" alt="image-20200525100607451"></p>
+<p>then do this, </p>
+<p class="img-container"><img src="image-20200525100629535.png" alt="image-20200525100629535"></p>
+<p>Note: Properties Settings for a cmd, is for the current cmd only, not for the cmd&#39;s that you open by typing cmd in explorer&#39;s current directory path, for that you&#39;ll need to do it for the Default settings the same thing i.e.,</p>
+<p class="img-container"><img src="image-20200525100723542.png" alt="image-20200525100723542"></p>
+<h5 id="now,-thats-all."><a class="header-link" href="#now,-thats-all."></a>Now, thats all.</h5>
+<hr>
+<h3 id="printing-date-in-cmd"><a class="header-link" href="#printing-date-in-cmd"></a>Printing Date in cmd</h3>
+<pre class="hljs"><code>$ date /t</code></pre><h3 id="print-some-text-in-cmd"><a class="header-link" href="#print-some-text-in-cmd"></a>Print some text in cmd</h3>
+<pre class="hljs"><code>$ <span class="hljs-built_in">echo</span> <span class="hljs-built_in">echo</span> turned off
+$ <span class="hljs-built_in">echo</span> Hey Buddy, how are you?</code></pre><hr>
+<h3 id="using-@echo-off-in-cmd"><a class="header-link" href="#using-@echo-off-in-cmd"></a>Using @echo off in cmd</h3>
+<pre class="hljs"><code><span class="hljs-comment">#Save below content in a .bat file and run.</span>
+@<span class="hljs-built_in">echo</span> off
+REM To skip the following Python commands, put <span class="hljs-string">"REM"</span> before them:
+python foo.py
+python bar.py
+<span class="hljs-built_in">echo</span> <span class="hljs-string">"sahil .."</span>
+<span class="hljs-comment">#anthing printed with echo &lt;message&gt; will print independently of @echo off</span></code></pre><p>So, using the above command will not show the commands for which it is showing the output(It hides the commnad, but shows all output.)</p>
+<p>You can use it without .bat file too, i.e.,</p>
+<pre class="hljs"><code>$ @<span class="hljs-built_in">echo</span> off</code></pre><p> Now the cmd is another taste, isn&#39;t it.
+NOTE: To exit now you need to do</p>
+<pre class="hljs"><code>$ <span class="hljs-built_in">exit</span></code></pre><hr>
+<h2 id="rem-(cmd-commenting)"><a class="header-link" href="#rem-(cmd-commenting)"></a>REM (cmd commenting)</h2>
+<p>REM is used to do commenting in cmd.</p>
+<pre class="hljs"><code>#Save below content <span class="hljs-keyword">in</span> a .bat file and run.
+@<span class="hljs-built_in">echo</span> off
+<span class="hljs-comment">REM To skip the following Python commands, put "REM" before them:</span>
+python foo.py
+python bar.py</code></pre><p>It can be used for inline commenting too, i.e., </p>
+<pre class="hljs"><code>$ dir &amp;&amp; REM blahBlahBlowingg....</code></pre><hr>
+<h2 id="installing-grep-in-windows:-"><a class="header-link" href="#installing-grep-in-windows:-"></a>Installing grep in windows:-</h2>
+<pre class="hljs"><code>$ choco install grep</code></pre><p>help <a href="https://chocolatey.org/packages?q=grep">link</a></p>
+<hr>
+<h2 id="cmd-1"><a class="header-link" href="#cmd-1"></a>Cmd</h2>
+<p>To refresh environment variables instantly, withought closing and opening cmd again(works in powershell too), you can use </p>
+<pre class="hljs"><code>$ refreshenv</code></pre><hr>
+<p>Table of  keyboard shortcuts](<a href="https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts#Command_line_shortcuts">https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts#Command_line_shortcuts</a>)</p>
+<hr>
+<h3 id="deleting-a-word-in-cmd:"><a class="header-link" href="#deleting-a-word-in-cmd:"></a>Deleting a word in cmd:</h3>
+<pre class="hljs"><code><span class="hljs-comment">#CMD's F4 functionality: Prompts for a character and deletes up to that char. So, jump a word back with ctrl-Left, then F4 followed by Space, to delete up to a space. </span>
+
+<span class="hljs-comment"># The only minor downsides are that (a) it flashes the prompt box briefly, and (b) repeated word erases leave a pile of spaces (harmless but a bit unattractive).</span></code></pre><hr>
+<h1 id="**vi-shortcuts-**"><a class="header-link" href="#**vi-shortcuts-**"></a><strong>Vi shortcuts-</strong></h1>
+<h3 id="navigate-"><a class="header-link" href="#navigate-"></a>Navigate-</h3>
+<pre class="hljs"><code>e goes to the <span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> the <span class="hljs-keyword">next</span> word
+w goes <span class="hljs-keyword">to</span> the <span class="hljs-keyword">beginning</span> <span class="hljs-keyword">of</span> the <span class="hljs-keyword">next</span> word
+b goes <span class="hljs-keyword">to</span> the <span class="hljs-keyword">beginning</span> <span class="hljs-keyword">of</span> the previous word
+ge goes <span class="hljs-keyword">to</span> the <span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> the previous word
+
+Homekey/Endkey : <span class="hljs-keyword">Start</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> line.(Also works <span class="hljs-keyword">in</span> bash cli)
+Ctrl + <span class="hljs-keyword">left</span>/<span class="hljs-keyword">right</span> : Previous <span class="hljs-keyword">or</span> <span class="hljs-keyword">Next</span> word
+Ctrl + homekey/endkey: <span class="hljs-keyword">Start</span>/<span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> the file.
+
+u : <span class="hljs-keyword">get</span> the <span class="hljs-keyword">last</span> saved changes <span class="hljs-keyword">of</span> the <span class="hljs-keyword">file</span>, reget the <span class="hljs-keyword">file</span>(<span class="hljs-keyword">get</span> rid <span class="hljs-keyword">of</span> <span class="hljs-keyword">current</span> changes)
+
+j : downline
+k : upline
+l : <span class="hljs-keyword">cursor</span> <span class="hljs-keyword">right</span>
+h : <span class="hljs-keyword">cursor</span> <span class="hljs-keyword">left</span></code></pre><h3 id="add-tab-to-the-start-of-current-line"><a class="header-link" href="#add-tab-to-the-start-of-current-line"></a>Add tab to the start of current line</h3>
+<pre class="hljs"><code>ctrl + <span class="hljs-literal">t</span> (<span class="hljs-name">works</span> in Insert mode)</code></pre><h3 id="enter-insert-mode-"><a class="header-link" href="#enter-insert-mode-"></a>Enter Insert Mode-</h3>
+<pre class="hljs"><code># a : <span class="hljs-keyword">To</span> insert <span class="hljs-literal">text</span> <span class="hljs-keyword">to</span> the right <span class="hljs-keyword">of</span> the cursor
+# i : <span class="hljs-keyword">To</span> insert <span class="hljs-literal">text</span> <span class="hljs-keyword">to</span> the left <span class="hljs-keyword">of</span> the cursor
+
+# A <span class="hljs-keyword">to</span> add <span class="hljs-literal">text</span> <span class="hljs-keyword">to</span> the <span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> a <span class="hljs-literal">line</span>
+# I <span class="hljs-keyword">to</span> insert <span class="hljs-literal">text</span> at the beginning <span class="hljs-keyword">of</span> a <span class="hljs-literal">line</span>
+
+<span class="hljs-keyword">OPEN</span> <span class="hljs-literal">LINE</span>
+o <span class="hljs-keyword">to</span> <span class="hljs-keyword">open</span> a <span class="hljs-literal">line</span> below the current cursor position
+O <span class="hljs-keyword">to</span> <span class="hljs-keyword">open</span> a <span class="hljs-literal">line</span> above the current cursor position.
+
+MOVING <span class="hljs-keyword">TO</span> START <span class="hljs-keyword">OR</span> <span class="hljs-keyword">END</span> <span class="hljs-keyword">OF</span> THE <span class="hljs-literal">LINE</span>:-
+Press ^ <span class="hljs-keyword">to</span> move the cursor <span class="hljs-keyword">to</span> the start <span class="hljs-keyword">of</span> the current <span class="hljs-literal">line</span>.
+
+Press $ <span class="hljs-keyword">to</span> move the cursor <span class="hljs-keyword">to</span> the <span class="hljs-keyword">end</span> <span class="hljs-keyword">of</span> the current <span class="hljs-literal">line</span>.</code></pre><h3 id="exit-insert-mode"><a class="header-link" href="#exit-insert-mode"></a>Exit insert mode</h3>
+<pre class="hljs"><code>Ctrl + [
+Ctrl + <span class="hljs-keyword">c</span>
+Esc</code></pre><h3 id="text-selection-mode-"><a class="header-link" href="#text-selection-mode-"></a>Text selection mode-</h3>
+<pre class="hljs"><code>v : --<span class="hljs-keyword">visual</span>-- : (hjkl(respectively <span class="hljs-keyword">to</span> <span class="hljs-keyword">left</span>/down/<span class="hljs-keyword">up</span>/<span class="hljs-keyword">right</span>-arrowkey), <span class="hljs-keyword">w</span>(one word at <span class="hljs-keyword">a</span> time), <span class="hljs-keyword">left</span>/down/<span class="hljs-keyword">up</span>/<span class="hljs-keyword">right</span>-arrow. 
+V : --<span class="hljs-keyword">visual</span> <span class="hljs-built_in">line</span>-- : that means <span class="hljs-built_in">complete</span> <span class="hljs-built_in">line</span> <span class="hljs-keyword">is</span> selected at <span class="hljs-keyword">a</span> time, use <span class="hljs-keyword">up</span> down <span class="hljs-keyword">to</span> <span class="hljs-keyword">copy</span> more lines
+Ctrl + v : --<span class="hljs-keyword">visual</span> block <span class="hljs-keyword">mode</span> : that <span class="hljs-keyword">is</span> somewhat like multicursor selecting text.
+<span class="hljs-keyword">w</span> : select <span class="hljs-keyword">a</span> word <span class="hljs-keyword">a</span> time <span class="hljs-keyword">to</span> the <span class="hljs-keyword">right</span>.
+
+<span class="hljs-keyword">y</span> : <span class="hljs-keyword">to</span> <span class="hljs-keyword">copy</span> character under <span class="hljs-built_in">cursor</span> <span class="hljs-built_in">or</span> selected text</code></pre><h3 id="cut-"><a class="header-link" href="#cut-"></a>Cut-</h3>
+<pre class="hljs"><code>d : cut selected <span class="hljs-keyword">text</span>
+d : cut selected <span class="hljs-keyword">text</span>
+dd : cut <span class="hljs-keyword">the</span> current <span class="hljs-built_in">line</span>
+<span class="hljs-number">2</span>dd : will cut <span class="hljs-number">2</span> <span class="hljs-keyword">lines</span>
+<span class="hljs-number">3</span>dd : will cut <span class="hljs-number">3</span> <span class="hljs-keyword">lines</span>
+Hold d : <span class="hljs-built_in">to</span> <span class="hljs-built_in">delete</span> everything <span class="hljs-keyword">in</span> vi.</code></pre><h3 id="paste-"><a class="header-link" href="#paste-"></a>Paste-</h3>
+<pre class="hljs"><code><span class="hljs-keyword">p</span>(lowercase) : paste below current <span class="hljs-built_in">line</span> (Ctrl+Shift+v works too)
+<span class="hljs-keyword">P</span> : paste above current <span class="hljs-built_in">line</span> (shift bole <span class="hljs-keyword">to</span> uppar)
+<span class="hljs-keyword">p</span>(lowercase) : paste <span class="hljs-keyword">right</span> <span class="hljs-keyword">to</span> the <span class="hljs-built_in">cursor</span> (Ctrl+Shift+v works too)
+<span class="hljs-keyword">P</span> : paste <span class="hljs-keyword">left</span> <span class="hljs-keyword">to</span> the <span class="hljs-built_in">cursor</span> (shift bole <span class="hljs-keyword">to</span> uppar)</code></pre><h3 id="copy-"><a class="header-link" href="#copy-"></a>Copy-</h3>
+<pre class="hljs"><code>y stands <span class="hljs-keyword">for</span> yank, (pull <span class="hljs-keyword">with</span> <span class="hljs-keyword">a</span> jerk, <span class="hljs-keyword">a</span> sudden hard pull.)
+y - copies <span class="hljs-keyword">the</span> <span class="hljs-keyword">character</span> under <span class="hljs-keyword">the</span> cursor <span class="hljs-keyword">or</span> <span class="hljs-keyword">text</span> under <span class="hljs-keyword">the</span> selection <span class="hljs-keyword">and</span> <span class="hljs-keyword">the</span> cursor including.
+yy - Yank (copy) <span class="hljs-keyword">the</span> current <span class="hljs-built_in">line</span>, including <span class="hljs-keyword">the</span> newline <span class="hljs-keyword">character</span>.
+yw - Yank (copy) <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">start</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> next <span class="hljs-built_in">word</span>.
+yiw – Yank (copy) <span class="hljs-keyword">the</span> current <span class="hljs-built_in">word</span>.</code></pre><h3 id="delete-"><a class="header-link" href="#delete-"></a>Delete-</h3>
+<pre class="hljs"><code>Ctrl + E :(Edit Mode) Deletes <span class="hljs-keyword">the</span> <span class="hljs-keyword">first</span> <span class="hljs-built_in">line</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">file</span>.
+x:(Edit Mode) Deleting Character under <span class="hljs-keyword">the</span> cursor
+X:(Edit Mode) Delete Character left <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> cursor</code></pre><h3 id="undo"><a class="header-link" href="#undo"></a>Undo</h3>
+<pre class="hljs"><code>u : <span class="hljs-type">undo</span></code></pre><h2 id="moving-around-in-vi"><a class="header-link" href="#moving-around-in-vi"></a>Moving around in vi</h2>
+<pre class="hljs"><code>$ vi
+$ vim
+<span class="hljs-comment"># Above two commands link to same file. Below one is an alias for the above. It was need earlier so as to distinguish between two programs, but now they are same, as older vi is no-more there. Also, vim stands for vi iMproved. Also, vi --version and vim --version outputs same version of vim.</span></code></pre><pre class="hljs"><code>To enale edit mode <span class="hljs-keyword">use</span> <span class="hljs-keyword">key</span> =&gt; a <span class="hljs-keyword">or</span> i
+*<span class="hljs-keyword">To</span> fix a typo, you can <span class="hljs-keyword">use</span> s <span class="hljs-keyword">to</span> <span class="hljs-keyword">delete</span> the <span class="hljs-built_in">character</span> <span class="hljs-keyword">to</span> the <span class="hljs-keyword">right</span> <span class="hljs-keyword">of</span> the <span class="hljs-keyword">cursor</span> <span class="hljs-keyword">and</span> enter edit <span class="hljs-keyword">mode</span> directly.</code></pre><pre class="hljs"><code><span class="hljs-comment"># All these bindings work in edit mode, not in insert mode.</span>
+
+dd : would delete the line
+dw : Would DELETE THE WORD right to the cursor.
+Ctrl + w (Alt+Backspace) : Would DELETE THE WORD to the left
+
+_
+BAsh cli: 
+Ctrl+W : Deleting word before cursor.
+Ctrl+ P/ Up Arrow : Previous <span class="hljs-built_in">command</span>
+Ctrl+ N/ Down Arrow : Next Command
+Home key, Ctrl + K : Deletes the <span class="hljs-built_in">command</span> typed.
+Ctrl + T : Transpose the left and right to the cursor (FIXING TYPO :D)
+<span class="hljs-comment"># Understanding for block cursor: Transposes the character before the cursor with the character under the cursor.</span></code></pre><h3 id="creating-new-file-and-saving-"><a class="header-link" href="#creating-new-file-and-saving-"></a>Creating new file and saving-</h3>
+<pre class="hljs"><code>$ vi <span class="hljs-comment"># Creates a empty file.</span>
+:wq &lt;filename.txt&gt;</code></pre><h3 id="opening-file"><a class="header-link" href="#opening-file"></a>Opening file</h3>
+<pre class="hljs"><code>$ vi &lt;filename&gt; <span class="hljs-comment">#Opens the given file</span></code></pre><h3 id="save-as"><a class="header-link" href="#save-as"></a>Save as</h3>
+<pre class="hljs"><code>$ vi file1.txt
+<span class="hljs-comment"># Let say we made some changes, and need to save the file to newfile with name file2.txt and exit.</span>
+$ :wq! file2.txt <span class="hljs-comment"># We need ! (coz cache of the file1.txt is modified, and we need to get rid of it)</span>
+<span class="hljs-comment"># So, we are having what we desired :D.</span></code></pre><h3 id="read-a-file"><a class="header-link" href="#read-a-file"></a>Read a file</h3>
+<pre class="hljs"><code>$ cat &lt;filename&gt;</code></pre><hr>
+<h3 id="hahah!!"><a class="header-link" href="#hahah!!"></a>Hahah!!</h3>
+<pre class="hljs"><code>Transpose Text or Change Case on the Command Line
+These shortcuts will transpose or change the <span class="hljs-keyword">case</span> of letters or words on the <span class="hljs-built_in">command</span> line:
+
+Ctrl+T – transposes the character before the cursor with the character under the cursor.
+Esc and <span class="hljs-keyword">then</span> T – transposes the two words immediately before (or under) the cursor.
+Esc and <span class="hljs-keyword">then</span> U – transforms the text from the cursor to the end of the word to uppercase.
+Esc and <span class="hljs-keyword">then</span> L – transforms the text from the cursor to the end of the word to lowercase.
+Esc and <span class="hljs-keyword">then</span> C – changes the letter under the cursor (or the first letter of the next word) to uppercase, leaving the rest of the word unchanged.
+</code></pre><pre class="hljs"><code>Ctrl + A: Move to start of the line
+Ctrl + E: Move to the end of line.</code></pre><h2 id="deleting-things-on-cli:"><a class="header-link" href="#deleting-things-on-cli:"></a>Deleting things on cli:</h2>
+<pre class="hljs"><code>Delete Text on the Command Line
+The following shortcuts are used <span class="hljs-keyword">for</span> deleting text on the <span class="hljs-built_in">command</span> line:
+
+Ctrl+D or Delete – remove or deletes the character under the cursor.
+Ctrl+K – removes all text from the cursor to the end of the line.
+Ctrl+X and <span class="hljs-keyword">then</span> Backspace – removes all the text from the cursor to the beginning of the line.</code></pre><hr>
+<h1 id="**copy-something-to-clipboard-in-terminal**"><a class="header-link" href="#**copy-something-to-clipboard-in-terminal**"></a><strong>Copy something to clipboard  in terminal</strong></h1>
+<pre class="hljs"><code>ping 192.168.1.1 | clip <span class="hljs-comment">#copies to clipboard</span>
+<span class="hljs-built_in">help</span> | clip    <span class="hljs-comment">#copies to cilpboard</span></code></pre><pre class="hljs"><code>WHEN YOU NEED STDERR OUTUPUT TO SUPPLY TO OTHER THING, LIKE FINDSTR OR GREP:-
+2|
+|&amp;</code></pre><pre class="hljs"><code><span class="hljs-keyword">WHEN</span> YOU NEED STDERR OUTUPUT <span class="hljs-keyword">TO</span> A <span class="hljs-keyword">FILE</span>:- 
+&amp;&gt;
+<span class="hljs-number">2</span>&gt;</code></pre><h3 id="using->-and->>-to-write-in-files-in-command-prompt(windows)-and-bash-(linux)"><a class="header-link" href="#using->-and->>-to-write-in-files-in-command-prompt(windows)-and-bash-(linux)"></a>Using &gt; and &gt;&gt; to write in files in command prompt(windows) and bash (linux)</h3>
+<pre class="hljs"><code><span class="hljs-built_in">help</span> &gt; c.txt <span class="hljs-comment"># Overwrite completely old content.</span>
+<span class="hljs-built_in">help</span> &gt;&gt; c.txt <span class="hljs-comment"># Adds content to the file.</span>
+git &gt; help.txt
+git commit -h 2&gt; help.txt <span class="hljs-comment"># OPTION 1</span>
+git commit -h &amp;&gt; help.txt <span class="hljs-comment"># OPTION 2</span>
+
+NOTE:
+Double pipe (||), represents the <span class="hljs-string">"or"</span> operator <span class="hljs-keyword">in</span> scripting too.</code></pre><h3 id="using-findstr(windows)"><a class="header-link" href="#using-findstr(windows)"></a>Using findstr(windows)</h3>
+<pre class="hljs"><code><span class="hljs-comment"># using findstr(windows), works in both cmd and bash</span>
+<span class="hljs-comment"># To search for -h in the output(stdout or stderr) you need to escape it like-</span>
+vi -h 2| findstr <span class="hljs-string">"\-a"</span>
+vi -h 2| grep \\<span class="hljs-_">-a</span> <span class="hljs-comment"># Idk how but they but they work.</span>
+vi -h 2| findstr \\<span class="hljs-_">-a</span> <span class="hljs-comment"># Idk how but they work.</span>
+<span class="hljs-built_in">help</span> | findstr <span class="hljs-string">"extension"</span>
+git | findstr overview <span class="hljs-comment">#both cmd,bash</span>
+git <span class="hljs-built_in">help</span> | findstr pull <span class="hljs-comment">#both cmd,bash</span>
+git commit | findstr will
+<span class="hljs-comment"># important:</span>
+vi -h 2| findstr <span class="hljs-string">"\-a"</span>
+git add -h 2| findstr dry <span class="hljs-comment">#operator that supplies stderr to the findstr command, OPTION1</span>
+git add -h |&amp; findstr dry <span class="hljs-comment">#operator that supplies stderr to the findstr command, OPTION2</span>
+git commit -h 2| findstr dry <span class="hljs-comment">#operator that supplies stderr to the findstr command</span>
+git | findstr git | findstr and 
+<span class="hljs-comment"># So findstr can be chained like this, such that outputs are transferred to next one using pipe</span></code></pre><h3 id="using-grep:(now-works-in-windows-and-linux-equally[atleast-expected,-installed-via-choco-in-windows])"><a class="header-link" href="#using-grep:(now-works-in-windows-and-linux-equally[atleast-expected,-installed-via-choco-in-windows])"></a>Using grep:(now works in windows and linux equally[atleast expected, installed via choco in windows])</h3>
+<pre class="hljs"><code><span class="hljs-comment"># using grep to find(bash, linux)</span>
+vi -h 2| grep \\--not<span class="hljs-_">-a</span>-ter
+vi -h 2| findstr \\--not<span class="hljs-_">-a</span>-ter 
+vi -h 2| findstr <span class="hljs-string">"\--not-a-term"</span>
+choco -h | grep <span class="hljs-string">"search"</span> <span class="hljs-comment">#works in cmd and bash now, installed grep via choco in windows.</span>
+git add -h 2| grep dry <span class="hljs-comment"># 2| operator is needed when there are switches in the command i.e., -h here.</span>
+<span class="hljs-built_in">help</span> | grep <span class="hljs-keyword">done</span> <span class="hljs-comment">#finds something in bash</span>
+<span class="hljs-built_in">help</span> | grep tree <span class="hljs-comment">#finds something in cmd</span>
+<span class="hljs-built_in">help</span> | grep <span class="hljs-keyword">while</span> <span class="hljs-comment">#finds something in bash</span>
+git | grep git | grep and <span class="hljs-comment">#finds something in bash and cmd too.</span>
+<span class="hljs-comment"># So grep can be chained like this, such that outputs are transferred to next one using pipe</span></code></pre><h3 id="cmd-comment]must-look[(special)"><a class="header-link" href="#cmd-comment]must-look[(special)"></a>Cmd  Comment]Must Look[(Special)</h3>
+<pre class="hljs"><code>choco -h | grep <span class="hljs-string">"search"</span> <span class="hljs-comment">#works in cmd and bash now, installed grep via choco in windows.</span>
+Above <span class="hljs-built_in">command</span> throws some errrors as <span class="hljs-string">"#works in cmd ..."</span> is interpreted as inside the <span class="hljs-built_in">command</span>, it is not considered as comment <span class="hljs-keyword">in</span> cmd, so we need to make use of REM <span class="hljs-built_in">which</span> is used to comment out a <span class="hljs-built_in">command</span> <span class="hljs-keyword">in</span> cmd. Like below one, does the work greatly, with interpreting it as comment.
+$ choco -h | grep <span class="hljs-string">"search"</span> &amp;&amp; REM <span class="hljs-comment">#works in cmd and bash now, installed grep via choco in windows.</span>
+Above <span class="hljs-built_in">command</span> will </code></pre><pre class="hljs"><code>curl -h | findstr <span class="hljs-string">"\-i"</span>
+curl -h | findstr \-i <span class="hljs-comment">#This would work too.</span>
+curl -h | grep <span class="hljs-string">"\-i"</span> <span class="hljs-comment">#Because you need to escape the - (dash character) with backslash</span>
+curl -h | grep \-i <span class="hljs-comment">#This would work too.</span></code></pre><hr>
+<h2 id="renaming-extensions-of-multiple-files:"><a class="header-link" href="#renaming-extensions-of-multiple-files:"></a>Renaming extensions of multiple files:</h2>
+<p><a href="https://unix.stackexchange.com/questions/19654/how-do-i-change-the-extension-of-multiple-files">https://unix.stackexchange.com/questions/19654/how-do-i-change-the-extension-of-multiple-files</a></p>
+<hr>
+<h2 id="converting-multiple-file-with-pandoc-to-html,-pandoc"><a class="header-link" href="#converting-multiple-file-with-pandoc-to-html,-pandoc"></a>Converting multiple file with pandoc to html, pandoc</h2>
+<p>(designing problem with pandoc, so avoiding for a while)</p>
+<pre class="hljs"><code><span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> *.md ; <span class="hljs-keyword">do</span> pandoc <span class="hljs-variable">${f}</span> <span class="hljs-_">-f</span> markdown -t html <span class="hljs-_">-s</span> -o <span class="hljs-variable">${f%.md}</span>.html  ; <span class="hljs-keyword">done</span>
+
+___
+<span class="hljs-comment">#assigns appropriate metadat for all files</span>
+<span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> *.md ; <span class="hljs-keyword">do</span> pandoc <span class="hljs-string">"<span class="hljs-variable">${f}</span>"</span> <span class="hljs-_">-f</span> markdown -t html <span class="hljs-_">-s</span> -o <span class="hljs-string">"<span class="hljs-variable">${f%.md}</span>.html"</span> --metadata title=<span class="hljs-string">"<span class="hljs-variable">${f%.md}</span>"</span>  ; <span class="hljs-keyword">done</span>
+
+___
+<span class="hljs-comment"># to folder html in current folder</span>
+<span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> *.md ; <span class="hljs-keyword">do</span> pandoc <span class="hljs-string">"<span class="hljs-variable">${f}</span>"</span> <span class="hljs-_">-f</span> markdown -t html <span class="hljs-_">-s</span> -o html/<span class="hljs-string">"<span class="hljs-variable">${f%.md}</span>.html"</span> --metadata title=<span class="hljs-string">"<span class="hljs-variable">${f%.md}</span>"</span>  ; <span class="hljs-keyword">done</span></code></pre><hr>
+<p><a href="https://devhints.io/bash">https://devhints.io/bash</a> - bash cheatsheet.</p>
+<hr>
+<h2 id="#moving-in-teminal-#bash,-#moving-in-cmd,-#moving-cmd,#move-all-files,-#-move-everything,-#move-files,-#move-all-files,-#-move-hidden-files"><a class="header-link" href="##moving-in-teminal-#bash,-#moving-in-cmd,-#moving-cmd,#move-all-files,-#-move-everything,-#move-files,-#move-all-files,-#-move-hidden-files"></a>#Moving in teminal #Bash, #moving in cmd, #moving cmd,#move all files, # move everything, #move files, #move all files, # move hidden files</h2>
+<pre class="hljs"><code>Syntax:
+$ mv [file/files] [directory]
+
+$ mv package/* . <span class="hljs-comment"># this will move all the files from the package to the current directory(except the files starting with .)</span>
+
+$ mv package/.* . <span class="hljs-comment"># this will move all the files from the package to the current directory(only the files starting with .)</span>
+
+$ mv package/.* package/* . <span class="hljs-comment"># this will move all the files from the package to the current directory (includes ALL FILES).</span>
+<span class="hljs-comment"># All in addition to the moving you'll get the acceptable errors i.e.,</span>
+<span class="hljs-comment"># 1. mv: cannot move ‘from/.’ to ‘to/.’: Device or resource busy</span>
+<span class="hljs-comment"># 2. mv: cannot remove ‘from/..’: s  directory</span></code></pre><hr>
+<h2 id="download-something-with-wget:"><a class="header-link" href="#download-something-with-wget:"></a>Download something with wget:</h2>
+<pre class="hljs"><code>wget &lt;link to anything&gt;</code></pre><hr>
+<pre class="hljs"><code><span class="hljs-built_in">cd</span> %userprofile%
+will open the current user<span class="hljs-string">'s directory, additionally you may open via cd /users/chetan</span></code></pre><hr>
+<p>In windows, directory system is case insensitive, so Car and car can not exist in the same folder.</p>
+<p>Similary, when you cd /users/chetan or cd /Users/Chetan will result in same things(it would not give sideeffect).</p>
+<pre class="hljs"><code>dir /p
+will <span class="hljs-built_in">print</span> directory content to the screen but will stop when the screen is filled.</code></pre><hr>
+<h2 id="enable-pasting-with-right-click-of-mouse:"><a class="header-link" href="#enable-pasting-with-right-click-of-mouse:"></a>Enable pasting with right click of mouse:</h2>
+<p>If you enable &quot;Quick edit mode&quot; then you can paste by right clicking with the mouse anywhere in the window - its not as quick as a shortcut key, but its quicker than the context menu.</p>
+<p>To enable quick edit mode right click on the window border and select properties, on the resulting properties dialog make sure that &quot;<strong>Quick edit mode</strong>&quot; is selected and press OK:</p>
+<p class="img-container"><img src="ft1L6.png" alt="Screenshot of the properties dialog"></p>
+<hr>
+<h1 id="command-prompt:"><a class="header-link" href="#command-prompt:"></a>COMMAND PROMPT:</h1>
+<pre class="hljs"><code>COPY: 
+xcopy src dest /e /i  <span class="hljs-comment">#copies insides of src folder into dest folder</span>
+<span class="hljs-comment"># /e is for copying directories, empty and non-empty including both types of directories.</span>
+<span class="hljs-comment"># /I - If destination does not exist and copying more than one file, assumes that destination must be a directory.</span>
+<span class="hljs-comment"># To overwrite while copying to the destination use /Y switch like below:</span>
+xcopy <span class="hljs-string">"./source"</span> <span class="hljs-string">"./destination"</span> /h /y
+<span class="hljs-comment"># /y Suppresses prompting to confirm you want to overwrite an existing destination file.</span>
+<span class="hljs-comment"># /h is a switch for copying hidden and system files too.</span>
+
+CREATE FILE:
+$ <span class="hljs-built_in">echo</span> <span class="hljs-comment">## &gt;&gt; newemptyfile1</span>
+
+DELETE FILE/S:
+$ del &lt;file/files/*&gt; (removes files, not folders)
+
+DELETE FOLDER/S, empty folder: 
+$ rmdir /q /s &lt;folder/folders/ 
+<span class="hljs-comment"># deletes the folder that is passed(including its content completely)</span>
+<span class="hljs-comment">## {* not supported}</span>
+<span class="hljs-comment">### /s =&gt; /S      Removes all directories and files in the specified directory in addition to the directory itself.  Used to remove a directory tree.</span>
+<span class="hljs-comment">#### /q =&gt; Quiet mode, do not ask if ok to remove a directory tree with /s</span>
+
+$ rmdir /q /s . 
+<span class="hljs-comment"># Deletes everything in the current directory.</span>
+<span class="hljs-comment"># <span class="hljs-doctag">NOTE:</span> You can also use it in the way below, and notice the || in the end to follow any command further, as &amp;&amp; doesn\'t work for this command to write any follow-up command.</span>
+$ <span class="hljs-built_in">cd</span> temp-generatemd-dontdelete &amp;&amp; rmdir /q /s . ||
+
+_
+CREATE FOLDER:
+mkdir &lt;folder-name&gt;
+
+PAUSE BATCH FILE AFTER EXECUTION:
+&lt;code&gt; &amp;&amp; @pause
+
+ECHO NEXT LINE CHARACTER:
+<span class="hljs-built_in">echo</span> ..... &amp;&amp; echo.This comes as new line.
+
+RENAME:
+ren dotenv_win .env
+
+EDIT FILE:
+notepad &lt;file&gt;</code></pre><p><strong>EXAMPLES</strong>: 
+cd jekyll-jinn/_site/ &amp;&amp; xcopy . &quot;../..&quot; /e /i {&quot; Quotes are important, otherwise cmd interpret them as option rather parameters}</p>
+<hr>
+<h4 id="you-may-recover-the-premission-of-a-folder-via-using-this-article:-[links](https://answers.microsoft.com/en-us/windows/forum/windows_8-files/you-dont-currently-have-permission-to-access-this/2cc4abe2-41ea-4023-b594-104c3b9e9f4d?auth=1)-.-although,-what-actually-solved-the-harsh-problem-is-below-command:"><a class="header-link" href="#you-may-recover-the-premission-of-a-folder-via-using-this-article:-[links](https://answers.microsoft.com/en-us/windows/forum/windows_8-files/you-dont-currently-have-permission-to-access-this/2cc4abe2-41ea-4023-b594-104c3b9e9f4d?auth=1)-.-although,-what-actually-solved-the-harsh-problem-is-below-command:"></a>You may recover the premission of a folder via using this article: <a href="https://answers.microsoft.com/en-us/windows/forum/windows_8-files/you-dont-currently-have-permission-to-access-this/2cc4abe2-41ea-4023-b594-104c3b9e9f4d?auth=1">Links</a> . Although, what actually solved the harsh problem is below command:</h4>
+<pre class="hljs"><code>TAKEOWN /F &lt;DIRECTORY&gt; /R /D Y</code></pre><hr>
+<p>You may set the low battery action and critical battery action to hibernate. And set the respective percentage to 20% and 12%. So than even when you have hibernated while doing work you  could boot again the last time and you know that you are risking the failure of power for the system this time. Its very important. You must set the reserve battery level below the critical battery level so that when you are risking power failure you could have some benefit of power. You must set it to 7%, so that when you start up pc after hibernating twice it could take the action to get the reserve battery when the battery reaches 7% after some time.</p>
+<hr>
+<h2 id="create-folder:-md-or-mkdir"><a class="header-link" href="#create-folder:-md-or-mkdir"></a>Create folder: md or mkdir</h2>
+<pre class="hljs"><code>md<span class="hljs-built_in"> new-folder-name
+</span>mkdir new-folder-name2</code></pre><hr>
+<h2 id="bat-file-example-contents:-"><a class="header-link" href="#bat-file-example-contents:-"></a>Bat file example contents:-</h2>
+<pre class="hljs"><code><span class="hljs-built_in">echo</span> <span class="hljs-string">"sahil"</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">"mohit"</span>
+@pause</code></pre><p>{bat executables are like each line contains one command, and any command including multiple &amp;&amp; , is considered single command}</p>
+<hr>
+<h1 id="linux:"><a class="header-link" href="#linux:"></a>LINUX:</h1>
+<p>copy: cp -r src dest
+create: touch newemptyfile1
+delete: rm -rf &lt;file/folder&gt;
+pause in linux: read -p &quot;The command has been completed. Press Enter  key to continue...&quot;
+ mv dotenv_unix .env 
+Edit FIle: <code>vi &lt;file&gt;</code></p>
+<pre class="hljs"><code>rm -rf * *.* .*
+<span class="hljs-comment"># * will remove all the files with names without any dot</span>
+<span class="hljs-comment"># *.* will remote all the files with names with periods in between them (file.txt or some.js)</span>
+<span class="hljs-comment"># .* will delete all the file with names which start with . (.txt .js .folder-name)</span></code></pre><hr>
+<h1 id="chocolatey---a-windows-package-manager."><a class="header-link" href="#chocolatey---a-windows-package-manager."></a>Chocolatey - A windows package manager.</h1>
+<h2 id="installing-chocolatey-in-windows:"><a class="header-link" href="#installing-chocolatey-in-windows:"></a>Installing chocolatey in windows:</h2>
+<p>Open powershell with admin.</p>
+<ol class="list">
+<li>Run </li>
+</ol>
+<pre class="hljs"><code>Get-ExecutionPolicy</code></pre><ol start="2">
+<li>If it returns Restricted, then run </li>
+</ol>
+<pre class="hljs"><code>Set-ExecutionPolicy AllSigned or 
+Set-ExecutionPolicy Bypass -Scope Process.</code></pre><ol start="3">
+<li><p>Run the script:</p>
+<pre class="hljs"><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString(<span class="hljs-string">'https://chocolatey.org/install.ps1'</span>))</code></pre><ol start="4">
+<li><p>Wait a few seconds for the command to complete</p>
+</li>
+<li><p>If you don&#39;t see any errors, you are ready to use Chocolatey! </p>
+<pre class="hljs"><code><span class="hljs-attribute">choco</span>
+choco -?</code></pre><pre class="hljs"><code>PS C:\Windows\system32&gt; choco
+Chocolatey v0.10.15
+Please run <span class="hljs-string">'choco -?'</span> or <span class="hljs-string">'choco &lt;command&gt; -?'</span> <span class="hljs-keyword">for</span> <span class="hljs-built_in">help</span> menu.
+PS C:\Windows\system32&gt;</code></pre></li>
+</ol>
+</li>
+</ol>
+<hr>
+<h3 id="#installing-curl-#install-curl-#-curl-on-windows-#curl-in-windows"><a class="header-link" href="##installing-curl-#install-curl-#-curl-on-windows-#curl-in-windows"></a>#Installing curl #install curl # curl on windows #curl in windows</h3>
+<pre class="hljs"><code>   $ choco install curl</code></pre><h3 id="#installing-vi-#install-vi-#vi-in-windows-#vi-windows"><a class="header-link" href="##installing-vi-#install-vi-#vi-in-windows-#vi-windows"></a>#installing vi #install vi #vi in windows #vi windows</h3>
+<h4 id="convert-unix-lf-to-windows-crlf-"><a class="header-link" href="#convert-unix-lf-to-windows-crlf-"></a>Convert unix lf to windows crlf-</h4>
+<p class="img-container"><img src="114754.png" alt="114754"></p>
+<p><a href="https://chocolatey.org/packages/vim">https://chocolatey.org/packages/vim</a></p>
+<pre class="hljs"><code>$ choco install vim
+$ doskey vi=vim
+<span class="hljs-comment"># Too set vi as alias(for temporary)</span></code></pre><p>To add permanently, make a file named <strong>macros.doskey</strong> in <strong>d:/bat/</strong> and add this-</p>
+<pre class="hljs"><code>$ vi=vim</code></pre><pre class="hljs"><code>$ reg add <span class="hljs-string">"HKCU\Software\Microsoft\Command Processor"</span> /v Autorun /d <span class="hljs-string">"doskey /macrofile=\"d:\bat\macros.doskey\""</span> /f
+$ reg query <span class="hljs-string">"HKCU\Software\Microsoft\Command Processor"</span> /v Autorun
+<span class="hljs-comment">#Next you just need to reopen cmd, to get the hotkeys in effect. Yipee.</span></code></pre><p><a href="https://kwilson.io/blog/getting-your-macro-on-with-doskey/">link</a></p>
+<hr>
+<h3 id="another-helpful-link-for-doskey-usage"><a class="header-link" href="#another-helpful-link-for-doskey-usage"></a>Another helpful link for doskey usage</h3>
+<p>Passing arguments to the vi command is actually by making the macro as </p>
+<pre class="hljs"><code>vi=vim $*</code></pre><p class="img-container"><img src="image-20200603113929464.png" alt="image-20200603113929464"></p>
+<p><a href="https://kwilson.io/blog/getting-your-macro-on-with-doskey/">link</a></p>
+<hr>
+<h2 id="for-cat-and-touch-in-windows-,-install-core-utils-for-windows"><a class="header-link" href="#for-cat-and-touch-in-windows-,-install-core-utils-for-windows"></a>For cat and touch in windows , install core utils for windows</h2>
+<p><a href="http://gnuwin32.sourceforge.net/packages/coreutils.htm">http://gnuwin32.sourceforge.net/packages/coreutils.htm</a> or download link @ download-<a href="https://sourceforge.net/projects/gnuwin32/postdownload">directly</a></p>
+<h5 id="install-and-add-location-to-system-path:---c:\program-files-(x86)\gnuwin32\bin"><a class="header-link" href="#install-and-add-location-to-system-path:---c:\program-files-(x86)\gnuwin32\bin"></a>Install and add location to system path: - C:\Program Files (x86)\GnuWin32\bin</h5>
+<p>Now you have access to linux&#39;s core utilities i.e., below commands - </p>
+<p class="img-container"><img src="image-20200603101925960.png" alt="image-20200603101925960"></p>
+<hr>
+<pre class="hljs"><code>$ dir /B
+<span class="hljs-comment">#Clearly shows the directory tree in cmd. Love</span></code></pre><hr>
+<h2 id="cat's-alternate-in-windows"><a class="header-link" href="#cat's-alternate-in-windows"></a>cat&#39;s alternate in windows</h2>
+<p class="img-container"><img src="image-20200602211142638.png" alt="image-20200602211142638"></p>
+<p class="img-container"><img src="image-20200602211150423.png" alt="image-20200602211150423"></p>
+<hr>
+    </article>
+  </body>
+</html>

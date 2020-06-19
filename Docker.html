@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+  </head>
+  <body>
+    <article class="markdown-body"><p><a href="https://stackoverflow.com/questions/32047660/docker-for-windows-not-working">https://stackoverflow.com/questions/32047660/docker-for-windows-not-working</a></p>
+<pre class="hljs"><code><span class="hljs-built_in">set</span> DOCKER_HOST=tcp://192.168.99.101:2376
+<span class="hljs-comment">##</span>
+$ docker-machine regenerate-certs default
+Above <span class="hljs-built_in">command</span> works good, <span class="hljs-keyword">if</span> we run it <span class="hljs-keyword">in</span> <span class="hljs-string">"Docker Quickstart Terminal"</span> app, and <span class="hljs-keyword">then</span> retrying <span class="hljs-keyword">in</span> kitematic, it runs good.</code></pre><p><a href="https://github.com/docker/kitematic/issues/519">link this solved it, goodly</a></p>
+<hr>
+<p>After you build an image with the docker build command, you can view it via - </p>
+<pre class="hljs"><code>$ docker images</code></pre><p>So, how to build and run one?</p>
+<pre class="hljs"><code>$ docker build -t node-docker-first .
+$ docker run -it -p 9000:3000 node-docker-first</code></pre><p>(-it stands for interactive terminal). (The <code>-p</code> flag redirects a public port to a private port inside the container)</p>
+<pre class="hljs"><code>$ docker run <span class="hljs-_">-d</span> -p 9000:3000 node-docker-first <span class="hljs-comment"># Runs in detach mode(background).</span>
+$ docker ps <span class="hljs-comment"># Will show the docker images running in detach mode, with respective port on which they are running.</span>
+$ docker logs &lt;container id&gt; <span class="hljs-comment"># Print app output.</span>
+$ docker <span class="hljs-built_in">exec</span> -it &lt;container id&gt; /bin/bash <span class="hljs-comment"># To go inside the container.</span>
+</code></pre><pre class="hljs"><code>$ docker images</code></pre>    </article>
+  </body>
+</html>
