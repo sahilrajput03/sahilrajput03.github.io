@@ -1,7 +1,3 @@
-Komal
-
-![images](.imgs_typora/images.jpg)
-
 Use SHORTCUT ctrl+shift+d to change docker style, common.
 
 ***
