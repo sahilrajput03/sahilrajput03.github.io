@@ -1,4 +1,4 @@
-img..
+Komal
 
 ![images](.imgs_typora/images.jpg)
 
