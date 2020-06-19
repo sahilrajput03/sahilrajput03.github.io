@@ -47,6 +47,10 @@ Eslint runtime vscode extension- https://marketplace.visualstudio.com/items?item
 
 ![153535](.imgs_typora/153535.png)
 
+### Semicolons settings-
+
+![image-20200619151629518](.imgs_typora/image-20200619151629518.png)
+
 ***
 
 ## Assigning Ctrl+k Ctrl+F to closing folder/workspace
