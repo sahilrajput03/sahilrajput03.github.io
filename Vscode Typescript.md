@@ -1,3 +1,5 @@
+
+
 So, I lost some work, and now I need to coverup.
 
 ***
@@ -47,9 +49,17 @@ Eslint runtime vscode extension- https://marketplace.visualstudio.com/items?item
 
 ![153535](.imgs_typora/153535.png)
 
-### Semicolons settings-
+***
 
-![image-20200619151629518](.imgs_typora/image-20200619151629518.png)
+## Excluding folders from eslint
+
+![image-20200619152717885](.imgs_typora/image-20200619152717885.png)
+
+## Semicolons settings-
+
+![image-20200619151629518](.imgs_typora/image-20200619151629518.png)![image-20200619152556598](.imgs_typora/image-20200619152556598.png)
+
+**Disabling no-console** ![image-20200619152822922](.imgs_typora/image-20200619152822922.png)
 
 ***
 
@@ -118,6 +128,12 @@ Eslint runtime vscode extension- https://marketplace.visualstudio.com/items?item
 ## Two ways to define type for arrray type in typescript
 
 ![195049](.imgs_typora/195049.png)
+
+***
+
+Debugging easy-
+
+![image-20200619152015429](.imgs_typora/image-20200619152015429.png)
 
 ***
 
