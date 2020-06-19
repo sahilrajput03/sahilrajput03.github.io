@@ -1,4 +1,66 @@
-TEST
+OP meaning in stackoverflow-
+
+![130211](.imgs_typora/130211.png)
+
+***
+
+## Some debugging about windows batch file and programming 
+
+```
+https://en.wikipedia.org/wiki/Batch_file
+*
+exit will simply exit the program, you should better use exit with the && opertaor.
+|| and && acts as the same way as they do in javascript.
+I mean that || will execute the right thing only if the left is false,
+and && will execute the right thing only if the left is true.
+
+set folder=magic && ECHO someMessage
+set folder=magic || ECHO someMessage
+
+Above both commands doesn't work.
+**
+But appending set command with || or && works as expected.
+**
+echo %folder% && dir 
+Above command will execute dir even if the folder is variable is set or not.
+**
+:: This is a simple comment. Below program is for practice if block
+cd ccd && set folder=cc
+if %folder%==cc dir
+@pause
+**
+Below command will execute ECHO irrespective if there are any html files
+del *.html && echo YIPEE DELETED.. && @PAUSE
+**
+Below command will execute @PAUSE only copy is done
+copy some.html some.thml || @PAUSE
+**
+Example if command in batch programming.
+if %folder%==sahilrajput03 copy index.html index.htlm 
+**
+Belo command will supress the output(src: https://stackoverflow.com/questions/617182/how-can-i-suppress-all-output-from-a-command-using-bash)
+node nodescript.js >nul 2>nul
+**
+beLOW command is as effective way to check any error, like to find if its executing or not at all.
+ECHO PAUSE28 && @PAUSE
+**
+Below command throws error always so you need to append || inorder to execute any following command in the current line.
+#Although, it throws error program doesn't exit at all.
+rmdir /q /s . || echo FULL FOLDER && @pause
+**
+```
+
+
+
+***
+
+## Keeping cmd prompt open while running a file as script from the command line
+
+![image-20200619135542875](.imgs_typora/image-20200619135542875.png)
+
+
+
+***
 
 ## Killing multiple taks via cmd-
 

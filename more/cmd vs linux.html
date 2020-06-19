@@ -3,13 +3,60 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Killing multiple taks via cmd-</title>
+    <title>Some debugging about windows batch file and programming</title>
     <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><p>TEST</p>
+    <article class="markdown-body"><p>OP meaning in stackoverflow-</p>
+<p class="img-container"><img src=".imgs_typora/130211.png" alt="130211"></p>
+<hr>
+<h2 id="some-debugging-about-windows-batch-file-and-programming"><a class="header-link" href="#some-debugging-about-windows-batch-file-and-programming"></a>Some debugging about windows batch file and programming</h2>
+<pre class="hljs"><code>https://en.wikipedia.org/wiki/Batch_file
+*
+exit will simply exit the program, you should better use exit with the &amp;&amp; opertaor.
+||<span class="hljs-built_in"> and </span>&amp;&amp; acts as the same way as they do in javascript.
+I mean that || will<span class="hljs-built_in"> execute </span>the right thing only<span class="hljs-built_in"> if </span>the left is false,<span class="hljs-built_in">
+and </span>&amp;&amp; will<span class="hljs-built_in"> execute </span>the right thing only<span class="hljs-built_in"> if </span>the left is true.
+
+set folder=magic &amp;&amp; ECHO someMessage
+set folder=magic || ECHO someMessage
+
+Above both commands doesn't work.
+**
+But appending set command with ||<span class="hljs-built_in"> or </span>&amp;&amp; works as expected.
+**
+echo %folder% &amp;&amp; dir 
+Above command will<span class="hljs-built_in"> execute </span>dir even<span class="hljs-built_in"> if </span>the folder is variable is set<span class="hljs-built_in"> or </span>not.
+**<span class="hljs-keyword">
+:</span>: This is a simple comment. Below program is for practice<span class="hljs-built_in"> if </span>block
+cd ccd &amp;&amp; set folder=cc<span class="hljs-built_in">
+if </span>%folder%==cc dir
+@pause
+**
+Below command will<span class="hljs-built_in"> execute </span>ECHO irrespective<span class="hljs-built_in"> if </span>there are any html files
+del *.html &amp;&amp; echo YIPEE DELETED.. &amp;&amp; @PAUSE
+**
+Below command will<span class="hljs-built_in"> execute </span>@PAUSE only copy is done
+copy some.html some.thml || @PAUSE
+**
+Example<span class="hljs-built_in"> if </span>command in batch programming.<span class="hljs-built_in">
+if </span>%folder%==sahilrajput03 copy index.html index.htlm 
+**
+Belo command will supress the output(src: https://stackoverflow.com/questions/617182/how-can-i-suppress-all-output-from-a-command-using-bash)
+node nodescript.js &gt;nul 2&gt;nul
+**
+beLOW command is as effective way to<span class="hljs-built_in"> check </span>any error, like to find<span class="hljs-built_in"> if </span>its executing<span class="hljs-built_in"> or </span>not at all.
+ECHO PAUSE28 &amp;&amp; @PAUSE
+**
+Below command throws error always so you need to append || inorder to<span class="hljs-built_in"> execute </span>any following command in the current line.
+<span class="hljs-comment">#Although, it throws error program doesn't exit at all.</span>
+rmdir /q /s . || echo FULL FOLDER &amp;&amp; @pause
+**</code></pre><hr>
+<h2 id="keeping-cmd-prompt-open-while-running-a-file-as-script-from-the-command-line"><a class="header-link" href="#keeping-cmd-prompt-open-while-running-a-file-as-script-from-the-command-line"></a>Keeping cmd prompt open while running a file as script from the command line</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200619135542875.png" alt="image-20200619135542875"></p>
+<hr>
 <h2 id="killing-multiple-taks-via-cmd-"><a class="header-link" href="#killing-multiple-taks-via-cmd-"></a>Killing multiple taks via cmd-</h2>
 <pre class="hljs"><code>$ Taskkill /PID 10204 /F 
 <span class="hljs-comment">#/F TELLS ABOUT THE FORCE TERMINATION OF TASK.</span>
