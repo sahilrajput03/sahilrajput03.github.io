@@ -1,4 +1,4 @@
-.sfschecking updating..sssdd
+.sfschecking updating..sssdd, another final check, added || after when the file copying failed.
 
 Use SHORTCUT ctrl+shift+d to change docker style, common.
 

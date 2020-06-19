@@ -13,7 +13,7 @@ $ Taskkill /PID 10204 /PID 10228 /PID 10256 /F
 
 ## cmd vs mintty(unix/linux)
 
-cmd
+## cmd
 
 ```bash
 # CMD: 
@@ -28,6 +28,10 @@ $ echo %username%
 #Output=> chetan
 $ echo %temp%
 #Output=> C:\Users\chetan\AppData\Local\Temp
+**
+set message=Hello World 
+set poco=Amoeba
+echo %poco%
 ```
 
 
