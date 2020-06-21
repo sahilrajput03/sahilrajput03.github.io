@@ -82,17 +82,33 @@ $ <span class="hljs-built_in">echo</span> %temp%
 <span class="hljs-built_in">echo</span> %poco%</code></pre><pre class="hljs"><code>
 <span class="hljs-comment"># UNIX/MINTTY: </span>
 $ <span class="hljs-built_in">type</span> &lt;<span class="hljs-built_in">command</span>/executable&gt;
-
+<span class="hljs-comment">#This command finds the path of the executable.(Though this command works as cat in windows).</span>
 _
 <span class="hljs-built_in">echo</span> <span class="hljs-variable">$varname</span>
-<span class="hljs-built_in">echo</span> `uname`
 
-winodows uses first match from paths
-npm config get prefix
+<span class="hljs-comment"># Winodows uses first match from paths</span>
+$ npm config get prefix
+This <span class="hljs-built_in">command</span> gets the default directory <span class="hljs-keyword">for</span> global packages <span class="hljs-keyword">for</span> npm.
 
-***
+<span class="hljs-comment"># Below commands set value for environment variables in linux/mintty.</span>
+$ <span class="hljs-built_in">export</span> NAME=VALUE
+$ <span class="hljs-built_in">export</span> JAVA_HOME=/opt/openjdk11
+*
+<span class="hljs-comment"># Below commands print the value of environment variables in linux/mintty.</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$NAME</span>
+$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$JAVA_HOME</span>
+*
+<span class="hljs-comment"># Below commands will unset (remove) the environment variable in linux/mintty.</span>
+$ <span class="hljs-built_in">unset</span> NAME
+$ <span class="hljs-built_in">unset</span> JAVA_HOME
 
-<span class="hljs-comment">### </span></code></pre><h3 id="hibernate-with-cmd"><a class="header-link" href="#hibernate-with-cmd"></a>Hibernate with cmd</h3>
+<span class="hljs-comment">### </span></code></pre><p>src: <a href="https://www.serverlab.ca/tutorials/linux/administration-linux/how-to-set-environment-variables-in-linux/">link</a></p>
+<pre class="hljs"><code>$ npm i
+<span class="hljs-comment">#this command first checks if the NODE_ENV is set to production or not, if yes it'll behave to install only production dependencies otherwise it'll install both prod and dev dependencies.</span></code></pre><p>src: <a href="https://docs.npmjs.com/cli/install#:~:text=npm%20install%20(in%20package%20directory,directory">link</a>%20as%20a%20global%20package.)</p>
+<p class="img-container"><img src=".imgs_typora/image-20200621220029174.png" alt="image-20200621220029174"></p>
+<pre class="hljs"><code>$ npm i --only prod
+$ npm i --only dev</code></pre><p class="img-container"><img src=".imgs_typora/image-20200621220149416.png" alt="image-20200621220149416"></p>
+<h3 id="hibernate-with-cmd"><a class="header-link" href="#hibernate-with-cmd"></a>Hibernate with cmd</h3>
 <pre class="hljs"><code>$ shutdown /h</code></pre><hr>
 <h2 id="whoami-and-hostname"><a class="header-link" href="#whoami-and-hostname"></a>whoami and hostname</h2>
 <p class="img-container"><img src="image-20200531174849720.png" alt="image-20200531174849720"></p>

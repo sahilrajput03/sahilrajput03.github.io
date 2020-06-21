@@ -104,18 +104,46 @@ echo %poco%
 
 # UNIX/MINTTY: 
 $ type <command/executable>
-
+#This command finds the path of the executable.(Though this command works as cat in windows).
 _
 echo $varname
-echo `uname`
 
-winodows uses first match from paths
-npm config get prefix
+# Winodows uses first match from paths
+$ npm config get prefix
+This command gets the default directory for global packages for npm.
 
-***
+# Below commands set value for environment variables in linux/mintty.
+$ export NAME=VALUE
+$ export JAVA_HOME=/opt/openjdk11
+*
+# Below commands print the value of environment variables in linux/mintty.
+$ echo $NAME
+$ echo $JAVA_HOME
+*
+# Below commands will unset (remove) the environment variable in linux/mintty.
+$ unset NAME
+$ unset JAVA_HOME
 
 ### 
 ```
+
+src: [link](https://www.serverlab.ca/tutorials/linux/administration-linux/how-to-set-environment-variables-in-linux/)
+
+```bash
+$ npm i
+#this command first checks if the NODE_ENV is set to production or not, if yes it'll behave to install only production dependencies otherwise it'll install both prod and dev dependencies.
+```
+
+src: [link](https://docs.npmjs.com/cli/install#:~:text=npm%20install%20(in%20package%20directory,directory)%20as%20a%20global%20package.)
+
+![image-20200621220029174](.imgs_typora/image-20200621220029174.png)
+
+```bash
+$ npm i --only prod
+$ npm i --only dev
+```
+
+![image-20200621220149416](.imgs_typora/image-20200621220149416.png)
 
 ### Hibernate with cmd
 

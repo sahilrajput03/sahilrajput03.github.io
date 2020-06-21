@@ -6,6 +6,7 @@ So, I lost some work, and now I need to coverup.
 
 ```bash
 $ npm list -g --depth 0
+$ npm ls -g --depth 0
 $ npm list -g --depth=0 (this and above commands are same)
 //Get the list of dependencies with their appropriate versions installed.
 //This will show you any dependent for the current dependencies that you need to install(which might be disturbing dependency tree in global node_modules).
@@ -57,6 +58,25 @@ aliases: up, upgrade
 
 ***
 
+## npm-uninstall
+
+aliases: remove, rm, r, un, unlink
+
+```BASH
+$ npm uninstall sax
+```
+
+*
+
+```bash
+$ npm prune 
+#This command will uninstall all the packages that are listed in node_modules folder  which are not present in the package.json file.
+```
+
+
+
+***
+
 ## Listing indivicual package via `npm list`
 
 ```bash
@@ -75,7 +95,8 @@ $ npm ls --only dev
 *
 $ npm ls --only=prod
 $ npm ls --only=dev
-*
+***
+$ npm install --only prod
 $ npm install --only=prod
 ```
 

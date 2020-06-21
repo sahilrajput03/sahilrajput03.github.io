@@ -13,6 +13,7 @@
 <h2 id="global-packages-under-the-hood"><a class="header-link" href="#global-packages-under-the-hood"></a>Global packages under the hood</h2>
 <p><a href="https://medium.com/@alberto.schiabel/npm-tricks-part-1-get-list-of-globally-installed-packages-39a240347ef0">link</a></p>
 <pre class="hljs"><code>$ npm list -g --depth 0
+$ npm ls -g --depth 0
 $ npm list -g --depth=0 (this and above commands are same)
 //Get the list of dependencies with their appropriate versions installed.
 //This will show you any dependent <span class="hljs-keyword">for</span> the current dependencies that you need to install(<span class="hljs-built_in">which</span> might be disturbing dependency tree <span class="hljs-keyword">in</span> global node_modules).</code></pre><pre class="hljs"><code>$ npm list <span class="hljs-comment"># npm ls (is also an alias)</span>
@@ -43,6 +44,11 @@ aliases: ls, list, la, ll
 <pre class="hljs"><code>$ npm update [-g] [&lt;pkg&gt;...]
 <span class="hljs-comment">#-g is for global config</span>
 aliases: up, upgrade</code></pre><hr>
+<h2 id="npm-uninstall"><a class="header-link" href="#npm-uninstall"></a>npm-uninstall</h2>
+<p>aliases: remove, rm, r, un, unlink</p>
+<pre class="hljs"><code>$ npm uninstall sax</code></pre><p>*</p>
+<pre class="hljs"><code>$ npm prune 
+<span class="hljs-comment">#This command will uninstall all the packages that are listed in node_modules folder  which are not present in the package.json file.</span></code></pre><hr>
 <h2 id="listing-indivicual-package-via-`npm-list`"><a class="header-link" href="#listing-indivicual-package-via-`npm-list`"></a>Listing indivicual package via <code>npm list</code></h2>
 <pre class="hljs"><code>$ npm link react
 $ npm link react react-dom 
@@ -53,7 +59,8 @@ $ npm ls --only dev
 *
 $ npm ls --only=prod
 $ npm ls --only=dev
-*
+***
+$ npm install --only prod
 $ npm install --only=prod</code></pre><p class="img-container"><img src=".imgs_typora/image-20200621163624702.png" alt="image-20200621163624702"></p>
 <p class="img-container"><img src=".imgs_typora/image-20200621164001953.png" alt="image-20200621164001953"></p>
 <p>*</p>
