@@ -239,7 +239,15 @@ console.log("message");  */
 When executables are installed via npm packages, npm creates links to them:
 
 - **local** installs have links created at the `./node_modules/.bin/` directory
-- **global** installs have links created from the global `bin/` directory (for example: `/usr/local/bin` on Linux or at `%AppData%/npm` on Windows)
+
+- **global** installs have links created from the global `bin/` directory (for example: `/usr/local/bin` on Linux or at `%AppData%/npm` on Windows)[#npm global #global path npm , npm ]
+
+  ```bash
+  $ npm config get prefix
+  ```
+
+  
+
 - Windows: C:\Users\chetan\AppData\Roaming\npm OR %AppData%/npm
 
 ***
@@ -4343,10 +4351,11 @@ Helpful [link - dependecy page@npmjs.org](https://www.npmjs.com/package/tbj?acti
 
 ## Clearing Terminal in vscode-
 
-Note the **when**  as ==terminalFocustext==, its important, otherwise it will interfere with the keybindings starting with Ctrl+k, for e.g., Ctrl+k Ctrl+s will not work, that actually opens up the keyboard shortcuts.
+Note the **when**  as ==terminalFocustext==. Clear terminal vscode, vscode clear terminal, console clear vscode, clean console, clear terminal vscode, vscode clear terminal, 
+
 This relief, as when you want to log something new in the terminal you won't get confused howsoever after setting this..
 
-![image-20200530154025323](image-20200530154025323.png)
+![image-20200619155036194](.imgs_typora/image-20200619155036194.png)
 
 ***
 
