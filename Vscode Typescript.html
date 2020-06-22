@@ -3,13 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Global packages under the hood</title>
+    <title>Some interesting casts-</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
     <article class="markdown-body"><p>So, I lost some work, and now I need to coverup.</p>
+<h2 id="some-interesting-casts-"><a class="header-link" href="#some-interesting-casts-"></a>Some interesting casts-</h2>
+<p class="img-container"><img src=".imgs_typora/143512.png" alt="143512"></p>
+<p class="img-container"><img src=".imgs_typora/113929.png" alt="113929"></p>
+<p class="img-container"><img src=".imgs_typora/113857.png" alt="113857"></p>
+<p class="img-container"><img src=".imgs_typora/183720.png" alt="183720"></p>
+<p class="img-container"><img src=".imgs_typora/144113.png" alt="144113"></p>
+<p class="img-container"><img src=".imgs_typora/143628.png" alt="143628"></p>
+<hr>
+<h2 id="npm-install"><a class="header-link" href="#npm-install"></a>npm install</h2>
+<pre class="hljs"><code>$ npm i --only prod
+<span class="hljs-comment"># This will check if there is any production dependency that  </span>
+$ npm i --only dev </code></pre><hr>
 <h2 id="global-packages-under-the-hood"><a class="header-link" href="#global-packages-under-the-hood"></a>Global packages under the hood</h2>
 <p><a href="https://medium.com/@alberto.schiabel/npm-tricks-part-1-get-list-of-globally-installed-packages-39a240347ef0">link</a></p>
 <pre class="hljs"><code>$ npm list -g --depth 0
@@ -52,7 +64,10 @@ aliases: up, upgrade</code></pre><hr>
 <h2 id="listing-indivicual-package-via-`npm-list`"><a class="header-link" href="#listing-indivicual-package-via-`npm-list`"></a>Listing indivicual package via <code>npm list</code></h2>
 <pre class="hljs"><code>$ npm link react
 $ npm link react react-dom 
-<span class="hljs-comment">#This works too.</span></code></pre><hr>
+<span class="hljs-comment">#This works too.</span>
+<span class="hljs-comment"># <span class="hljs-doctag">NOTE:</span> You must have the dependency as globally installed for what you are creating the symlink. npm links are just awesome, when you do</span>
+$ npm install 
+<span class="hljs-comment"># will NOT uninstall any symlinks you have created(You must have it in package.json file). So, you can just use symlinks with easy anytime.</span></code></pre><hr>
 <h2 id="npm-list,-npm-ls"><a class="header-link" href="#npm-list,-npm-ls"></a>npm list, npm ls</h2>
 <pre class="hljs"><code>$ npm ls --only prod
 $ npm ls --only dev

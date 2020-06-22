@@ -1,5 +1,35 @@
 So, I lost some work, and now I need to coverup.
 
+## Some interesting casts-
+
+![143512](.imgs_typora/143512.png)
+
+![113929](.imgs_typora/113929.png)
+
+![113857](.imgs_typora/113857.png)
+
+![183720](.imgs_typora/183720.png)
+
+![144113](.imgs_typora/144113.png)
+
+![143628](.imgs_typora/143628.png)
+
+
+
+***
+
+## npm install
+
+```bash
+$ npm i --only prod
+# This will check if there is any production dependency that  
+$ npm i --only dev 
+```
+
+
+
+***
+
 ## Global packages under the hood
 
 [link](https://medium.com/@alberto.schiabel/npm-tricks-part-1-get-list-of-globally-installed-packages-39a240347ef0)
@@ -83,6 +113,9 @@ $ npm prune
 $ npm link react
 $ npm link react react-dom 
 #This works too.
+# NOTE: You must have the dependency as globally installed for what you are creating the symlink. npm links are just awesome, when you do
+$ npm install 
+# will NOT uninstall any symlinks you have created(You must have it in package.json file). So, you can just use symlinks with easy anytime.
 ```
 
 ***
