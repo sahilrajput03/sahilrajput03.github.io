@@ -10,6 +10,45 @@ So, I lost some work, and now I need to coverup.
 
 ## Reload Extension for vscode
 
+You do not need this extension for anything. Not for even typescript types definitions(npm link or npm install), vscode is just too much smart to detect dependencies in your node_modules folder. But BEWARE, that you use complete package name to link to the repository, otherwise vscode won't pick the type definitions from the dependencies in the @types folder. 
+
+## What do you need to//
+
+To be able to save to local package.json file on the command npm link <pkg-name> but this isn't facilitated, but there [npm-link-save@npm](https://www.npmjs.com/package/npm-link-save) , [github](https://github.com/laggingreflex/npm-link-save#readme) **Usage**-
+
+```bash
+$ nls expres // single links
+$ nls express morgan // multiple links
+$ nls -D express     // links in devDependencies // -D is used in npm i -d <pkg-name> (for saving as dev dependency, same pattern is followed here)
+```
+
+*
+
+## Link complete local node_modules folder to global node_modules insttead of linking individual dependencies-
+
+```
+$ npm link
+This is just amazing, it links your local node_modules folder to the global node_modules folder, and doesn't consume
+```
+
+
+
+```bash
+$ npm link @typescript-eslint/eslint-plugin @typescript-eslint/parser express @types/node @types/express
+```
+
+```bash
+#Note: npm unlink will remove the package from the local package.json file.
+(Destructive command, but doesn\'t alter anything in global node_modules folder)
+$ npm unlink @typescript-eslint/eslint-plugin @typescript-eslint/parser express @types/node @types/express
+#This command just reverses the command in the above snippet. (Won't cause any sideeffect in global packages)
+```
+
+```bash
+# IMPORTANT: YOU NEED TO USE --no-save switch to be able to let package.json retain the package name after the unlink command finishes:-
+npm unlink --no-save @typescript-eslint/eslint-plugin @typescript-eslint/parser express @types/node @types/express
+```
+
 ![image-20200623181619324](.imgs_typora/image-20200623181619324.png)
 
 ![image-20200623181541469](.imgs_typora/image-20200623181541469.png)

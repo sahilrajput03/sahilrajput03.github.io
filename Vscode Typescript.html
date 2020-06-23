@@ -12,7 +12,19 @@
     <article class="markdown-body"><p>So, I lost some work, and now I need to coverup.</p>
 <hr>
 <h2 id="reload-extension-for-vscode"><a class="header-link" href="#reload-extension-for-vscode"></a>Reload Extension for vscode</h2>
-<p class="img-container"><img src=".imgs_typora/image-20200623181619324.png" alt="image-20200623181619324"></p>
+<p>You do not need this extension for anything. Not for even typescript types definitions(npm link or npm install), vscode is just too much smart to detect dependencies in your node_modules folder. But BEWARE, that you use complete package name to link to the repository, otherwise vscode won&#39;t pick the type definitions from the dependencies in the @types folder. </p>
+<h2 id="what-do-you-need-to//"><a class="header-link" href="#what-do-you-need-to//"></a>What do you need to//</h2>
+<p>To be able to save to local package.json file on the command npm link <pkg-name> but this isn&#39;t facilitated, but there <a href="https://www.npmjs.com/package/npm-link-save">npm-link-save@npm</a> , <a href="https://github.com/laggingreflex/npm-link-save#readme">github</a> <strong>Usage</strong>-</p>
+<pre class="hljs"><code>$ nls expres // single links
+$ nls express morgan // multiple links
+$ nls -D express     // links <span class="hljs-keyword">in</span> devDependencies // -D is used <span class="hljs-keyword">in</span> npm i <span class="hljs-_">-d</span> &lt;pkg-name&gt; (<span class="hljs-keyword">for</span> saving as dev dependency, same pattern is followed here)</code></pre><p>*</p>
+<h2 id="link-complete-local-node_modules-folder-to-global-node_modules-insttead-of-linking-individual-dependencies-"><a class="header-link" href="#link-complete-local-node_modules-folder-to-global-node_modules-insttead-of-linking-individual-dependencies-"></a>Link complete local node_modules folder to global node_modules insttead of linking individual dependencies-</h2>
+<pre class="hljs"><code>$ npm link
+This is just amazing, <span class="hljs-keyword">it</span> links your <span class="hljs-built_in">local</span> node_modules <span class="hljs-built_in">folder</span> <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">global</span> node_modules <span class="hljs-built_in">folder</span>, <span class="hljs-keyword">and</span> doesn<span class="hljs-string">'t consume</span></code></pre><pre class="hljs"><code>$ npm link @typescript-eslint/eslint-plugin @typescript-eslint/parser express @types/node @types/express</code></pre><pre class="hljs"><code><span class="hljs-comment">#Note: npm unlink will remove the package from the local package.json file.</span>
+(Destructive <span class="hljs-built_in">command</span>, but doesn\<span class="hljs-string">'t alter anything in global node_modules folder)
+$ npm unlink @typescript-eslint/eslint-plugin @typescript-eslint/parser express @types/node @types/express
+#This command just reverses the command in the above snippet. (Won'</span>t cause any sideeffect <span class="hljs-keyword">in</span> global packages)</code></pre><pre class="hljs"><code><span class="hljs-comment"># IMPORTANT: YOU NEED TO USE --no-save switch to be able to let package.json retain the package name after the unlink command finishes:-</span>
+npm unlink --no-save @typescript-eslint/eslint-plugin @typescript-eslint/parser express @types/node @types/express</code></pre><p class="img-container"><img src=".imgs_typora/image-20200623181619324.png" alt="image-20200623181619324"></p>
 <p class="img-container"><img src=".imgs_typora/image-20200623181541469.png" alt="image-20200623181541469"></p>
 <hr>
 <h2 id="some-interesting-casts-"><a class="header-link" href="#some-interesting-casts-"></a>Some interesting casts-</h2>
