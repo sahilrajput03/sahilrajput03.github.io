@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Reload Extension for vscode</title>
+    <title>What do you need to//</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
@@ -11,13 +11,14 @@
   <body>
     <article class="markdown-body"><p>So, I lost some work, and now I need to coverup.</p>
 <hr>
-<h2 id="reload-extension-for-vscode"><a class="header-link" href="#reload-extension-for-vscode"></a>Reload Extension for vscode</h2>
-<p>You do not need this extension for anything. Not for even typescript types definitions(npm link or npm install), vscode is just too much smart to detect dependencies in your node_modules folder. But BEWARE, that you use complete package name to link to the repository, otherwise vscode won&#39;t pick the type definitions from the dependencies in the @types folder. </p>
 <h2 id="what-do-you-need-to//"><a class="header-link" href="#what-do-you-need-to//"></a>What do you need to//</h2>
 <p>To be able to save to local package.json file on the command npm link <pkg-name> but this isn&#39;t facilitated, but there <a href="https://www.npmjs.com/package/npm-link-save">npm-link-save@npm</a> , <a href="https://github.com/laggingreflex/npm-link-save#readme">github</a> <strong>Usage</strong>-</p>
 <pre class="hljs"><code>$ nls expres // single links
 $ nls express morgan // multiple links
-$ nls -D express     // links <span class="hljs-keyword">in</span> devDependencies // -D is used <span class="hljs-keyword">in</span> npm i <span class="hljs-_">-d</span> &lt;pkg-name&gt; (<span class="hljs-keyword">for</span> saving as dev dependency, same pattern is followed here)</code></pre><p>*</p>
+$ nls -D express     // links <span class="hljs-keyword">in</span> devDependencies // -D is used <span class="hljs-keyword">in</span> npm i -D &lt;pkg-name&gt; (<span class="hljs-keyword">for</span> saving as dev dependency, same pattern is followed here)</code></pre><p>*</p>
+<h2 id="reload-extension-for-vscode"><a class="header-link" href="#reload-extension-for-vscode"></a>Reload Extension for vscode</h2>
+<p>You do not need this extension for anything. Not for even typescript types definitions(npm link or npm install), vscode is just too much smart to detect dependencies in your node_modules folder. But BEWARE, that you use complete package name to link to the repository, otherwise vscode won&#39;t pick the type definitions from the dependencies in the @types folder. </p>
+<p>*</p>
 <h2 id="link-complete-local-node_modules-folder-to-global-node_modules-insttead-of-linking-individual-dependencies-"><a class="header-link" href="#link-complete-local-node_modules-folder-to-global-node_modules-insttead-of-linking-individual-dependencies-"></a>Link complete local node_modules folder to global node_modules insttead of linking individual dependencies-</h2>
 <pre class="hljs"><code>$ npm link
 This is just amazing, <span class="hljs-keyword">it</span> links your <span class="hljs-built_in">local</span> node_modules <span class="hljs-built_in">folder</span> <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">global</span> node_modules <span class="hljs-built_in">folder</span>, <span class="hljs-keyword">and</span> doesn<span class="hljs-string">'t consume</span></code></pre><pre class="hljs"><code>$ npm link @typescript-eslint/eslint-plugin @typescript-eslint/parser express @types/node @types/express</code></pre><pre class="hljs"><code><span class="hljs-comment">#Note: npm unlink will remove the package from the local package.json file.</span>

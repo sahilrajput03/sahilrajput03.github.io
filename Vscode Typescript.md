@@ -8,10 +8,6 @@ So, I lost some work, and now I need to coverup.
 
 ***
 
-## Reload Extension for vscode
-
-You do not need this extension for anything. Not for even typescript types definitions(npm link or npm install), vscode is just too much smart to detect dependencies in your node_modules folder. But BEWARE, that you use complete package name to link to the repository, otherwise vscode won't pick the type definitions from the dependencies in the @types folder. 
-
 ## What do you need to//
 
 To be able to save to local package.json file on the command npm link <pkg-name> but this isn't facilitated, but there [npm-link-save@npm](https://www.npmjs.com/package/npm-link-save) , [github](https://github.com/laggingreflex/npm-link-save#readme) **Usage**-
@@ -19,8 +15,14 @@ To be able to save to local package.json file on the command npm link <pkg-name>
 ```bash
 $ nls expres // single links
 $ nls express morgan // multiple links
-$ nls -D express     // links in devDependencies // -D is used in npm i -d <pkg-name> (for saving as dev dependency, same pattern is followed here)
+$ nls -D express     // links in devDependencies // -D is used in npm i -D <pkg-name> (for saving as dev dependency, same pattern is followed here)
 ```
+
+*
+
+## Reload Extension for vscode
+
+You do not need this extension for anything. Not for even typescript types definitions(npm link or npm install), vscode is just too much smart to detect dependencies in your node_modules folder. But BEWARE, that you use complete package name to link to the repository, otherwise vscode won't pick the type definitions from the dependencies in the @types folder. 
 
 *
 
