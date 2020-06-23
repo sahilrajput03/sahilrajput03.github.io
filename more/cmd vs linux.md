@@ -1,3 +1,16 @@
+## curl, wget, grep, vi all for windows
+
+```tx
+You just need one cli package manager for windows, and chocolatey is the most idea one. https://chocolatey.org/install , after that.
+1. curl: choco install curl
+2. wget: https://eternallybored.org/misc/wget/ (Download recent one according to 32/64 bit) and paste the executable in C:\Windows\system32 and its up now.
+3. grep: choco install grep 
+OR(recommended) You can add the path C:\Program Files\Git\usr\bin to the environments path to get access to the grep utility for the command prompt.(Actually, its made for mintty, the default shell that gets installed when we install git in windows)
+4. vi: adding C:\Program Files\Git\usr\bin to the environments path, will enable you to use the vi from command prompt too.
+
+5. querying with && works good with windows though, can you some example what you tried?
+```
+
 OP meaning in stackoverflow-
 
 ![130211](.imgs_typora/130211.png)
@@ -394,6 +407,7 @@ $ dir && REM blahBlahBlowingg....
 
 ```bash
 $ choco install grep
+Or you could add the path C:\Program Files\Git\usr\bin to the environments path to get access to the grep utility for the command prompt.(Actually, its made for mintty, the default shell that gets installed when we install git in windows)
 ```
 
 help [link](https://chocolatey.org/packages?q=grep)

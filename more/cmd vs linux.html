@@ -3,13 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Some debugging about windows batch file and programming</title>
+    <title>curl, wget, grep, vi all for windows</title>
     <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><p>OP meaning in stackoverflow-</p>
+    <article class="markdown-body"><h2 id="curl,-wget,-grep,-vi-all-for-windows"><a class="header-link" href="#curl,-wget,-grep,-vi-all-for-windows"></a>curl, wget, grep, vi all for windows</h2>
+<pre class="hljs"><code>You just need one cli package manager for windows, and chocolatey is the most idea one. https://chocolatey.org/<span class="hljs-keyword">install</span> , <span class="hljs-keyword">after</span> that.
+<span class="hljs-number">1.</span> curl: choco <span class="hljs-keyword">install</span> curl
+<span class="hljs-number">2.</span> wget: https://eternallybored.org/misc/wget/ (Download recent one according <span class="hljs-keyword">to</span> <span class="hljs-number">32</span>/<span class="hljs-number">64</span> <span class="hljs-built_in">bit</span>) <span class="hljs-keyword">and</span> paste the executable <span class="hljs-keyword">in</span> C:\Windows\system32 <span class="hljs-keyword">and</span> its up now.
+<span class="hljs-number">3.</span> grep: choco <span class="hljs-keyword">install</span> grep 
+<span class="hljs-keyword">OR</span>(recommended) You can <span class="hljs-keyword">add</span> the <span class="hljs-keyword">path</span> C:\Program Files\Git\usr\<span class="hljs-keyword">bin</span> <span class="hljs-keyword">to</span> the environments <span class="hljs-keyword">path</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">get</span> <span class="hljs-keyword">access</span> <span class="hljs-keyword">to</span> the grep utility <span class="hljs-keyword">for</span> the command prompt.(Actually, its made <span class="hljs-keyword">for</span> mintty, the <span class="hljs-keyword">default</span> shell that gets installed <span class="hljs-keyword">when</span> we <span class="hljs-keyword">install</span> git <span class="hljs-keyword">in</span> windows)
+<span class="hljs-number">4.</span> vi: adding C:\Program Files\Git\usr\<span class="hljs-keyword">bin</span> <span class="hljs-keyword">to</span> the environments <span class="hljs-keyword">path</span>, will <span class="hljs-keyword">enable</span> you <span class="hljs-keyword">to</span> <span class="hljs-keyword">use</span> the vi <span class="hljs-keyword">from</span> command <span class="hljs-keyword">prompt</span> too.
+
+<span class="hljs-number">5.</span> querying <span class="hljs-keyword">with</span> &amp;&amp; works good <span class="hljs-keyword">with</span> windows though, can you <span class="hljs-keyword">some</span> example what you tried?</code></pre><p>OP meaning in stackoverflow-</p>
 <p class="img-container"><img src=".imgs_typora/130211.png" alt="130211"></p>
 <hr>
 <h2 id="some-debugging-about-windows-batch-file-and-programming"><a class="header-link" href="#some-debugging-about-windows-batch-file-and-programming"></a>Some debugging about windows batch file and programming</h2>
@@ -205,7 +213,8 @@ python foo.py
 python bar.py</code></pre><p>It can be used for inline commenting too, i.e., </p>
 <pre class="hljs"><code>$ dir &amp;&amp; REM blahBlahBlowingg....</code></pre><hr>
 <h2 id="installing-grep-in-windows:-"><a class="header-link" href="#installing-grep-in-windows:-"></a>Installing grep in windows:-</h2>
-<pre class="hljs"><code>$ choco install grep</code></pre><p>help <a href="https://chocolatey.org/packages?q=grep">link</a></p>
+<pre class="hljs"><code>$ choco install grep
+Or you could add the path C:\Program Files\Git\usr\bin to the environments path to get access to the grep utility <span class="hljs-keyword">for</span> the <span class="hljs-built_in">command</span> prompt.(Actually, its made <span class="hljs-keyword">for</span> mintty, the default shell that gets installed when we install git <span class="hljs-keyword">in</span> windows)</code></pre><p>help <a href="https://chocolatey.org/packages?q=grep">link</a></p>
 <hr>
 <h2 id="cmd-1"><a class="header-link" href="#cmd-1"></a>Cmd</h2>
 <p>To refresh environment variables instantly, withought closing and opening cmd again(works in powershell too), you can use </p>

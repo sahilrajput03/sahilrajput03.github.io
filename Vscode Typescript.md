@@ -1,10 +1,40 @@
+
+
 So, I lost some work, and now I need to coverup.
 
+
+
+
+
+***
+
+## Reload Extension for vscode
+
+![image-20200623181619324](.imgs_typora/image-20200623181619324.png)
+
+![image-20200623181541469](.imgs_typora/image-20200623181541469.png)
+
+***
+
 ## Some interesting casts-
+
+![image-20200622185620378](.imgs_typora/image-20200622185620378.png)
+
+*
+
+![image-20200622184124919](.imgs_typora/image-20200622184124919.png)
+
+
 
 ![143512](.imgs_typora/143512.png)
 
 ![113929](.imgs_typora/113929.png)
+
+## Send formatted json with express-
+
+Note: you need to refresh with Ctrl+shift+f5 for once to view the updated formatting of the json, otherwise it'll fetch the old formatting from the cache when you use simple refresh. [link](https://stackoverflow.com/questions/32679505/node-and-express-send-json-formatted)
+
+![image-20200623151717176](.imgs_typora/image-20200623151717176.png)
 
 ![113857](.imgs_typora/113857.png)
 

@@ -4096,6 +4096,8 @@ lsExample();
 
 ## wget
 
+Download wget from https://eternallybored.org/misc/wget/ and place it in c:\personalExecutables and add this path to the environment's path. # download curl, install curl, curl install, curl download
+
 ```
 wget <url>
 doing this multiple times, will create addiotional copies like.
