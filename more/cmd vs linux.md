@@ -1,3 +1,56 @@
+## Creating aliases for mintty-
+
+Also,
+
+```bash
+$ e .
+::The command is ok.
+```
+
+![image-20200624100200663](.imgs_typora/image-20200624100200663.png)
+
+```bash
+Create file in ~ directory in mintty:
+(Below alias will work with parameters too)
+$ vi ~/.bashrc
+And add the line:- alias e='/c/Windows/explorer'
+
+Also, you can temporarily test the alias in a mintty session via-
+$ alias e='/c/Windows/explorer'
+$ type explorer
+Output=> explorer is /c/Windows/explorer
+_
+Other examples for making aliases-
+$ alias less='/bin/less -r'
+$ alias ls='/bin/ls -F --color=tty --show-control-chars'
+
+FYI:
+File containing .bash_history
+•C:\Users\chetan\.bash_history
+vi /c/users/chetan/.bash_history
+cat /c/users/chetan/.bash_history
+```
+
+src: [link](https://www.cygwin.com/cygwin-ug-net/setup-files.html)
+
+***
+
+## What does the * signify after file names in mintty-
+
+![image-20200624095350966](.imgs_typora/image-20200624095350966.png)
+
+***
+
+## Open cmd promp from windows using File explorer menu
+
+![image-20200624080543057](.imgs_typora/image-20200624080543057.png)
+
+
+
+![image-20200624081820384](.imgs_typora/image-20200624081820384.png)
+
+***
+
 ## curl, wget, grep, vi all for windows
 
 ```tx

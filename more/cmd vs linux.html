@@ -3,13 +3,44 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>curl, wget, grep, vi all for windows</title>
+    <title>Creating aliases for mintty-</title>
     <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="curl,-wget,-grep,-vi-all-for-windows"><a class="header-link" href="#curl,-wget,-grep,-vi-all-for-windows"></a>curl, wget, grep, vi all for windows</h2>
+    <article class="markdown-body"><h2 id="creating-aliases-for-mintty-"><a class="header-link" href="#creating-aliases-for-mintty-"></a>Creating aliases for mintty-</h2>
+<p>Also,</p>
+<pre class="hljs"><code>$ e .
+::The <span class="hljs-built_in">command</span> is ok.</code></pre><p class="img-container"><img src=".imgs_typora/image-20200624100200663.png" alt="image-20200624100200663"></p>
+<pre class="hljs"><code>Create file <span class="hljs-keyword">in</span> ~ directory <span class="hljs-keyword">in</span> mintty:
+(Below <span class="hljs-built_in">alias</span> will work with parameters too)
+$ vi ~/.bashrc
+And add the line:- <span class="hljs-built_in">alias</span> e=<span class="hljs-string">'/c/Windows/explorer'</span>
+
+Also, you can temporarily <span class="hljs-built_in">test</span> the <span class="hljs-built_in">alias</span> <span class="hljs-keyword">in</span> a mintty session via-
+$ <span class="hljs-built_in">alias</span> e=<span class="hljs-string">'/c/Windows/explorer'</span>
+$ <span class="hljs-built_in">type</span> explorer
+Output=&gt; explorer is /c/Windows/explorer
+_
+Other examples <span class="hljs-keyword">for</span> making aliases-
+$ <span class="hljs-built_in">alias</span> less=<span class="hljs-string">'/bin/less -r'</span>
+$ <span class="hljs-built_in">alias</span> ls=<span class="hljs-string">'/bin/ls -F --color=tty --show-control-chars'</span>
+
+FYI:
+File containing .bash_history
+•C:\Users\chetan\.bash_history
+vi /c/users/chetan/.bash_history
+cat /c/users/chetan/.bash_history</code></pre><p>src: <a href="https://www.cygwin.com/cygwin-ug-net/setup-files.html">link</a></p>
+<hr>
+<h2 id="what-does-the-*-signify-after-file-names-in-mintty-"><a class="header-link" href="#what-does-the-*-signify-after-file-names-in-mintty-"></a>What does the * signify after file names in mintty-</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200624095350966.png" alt="image-20200624095350966"></p>
+<hr>
+<h2 id="open-cmd-promp-from-windows-using-file-explorer-menu"><a class="header-link" href="#open-cmd-promp-from-windows-using-file-explorer-menu"></a>Open cmd promp from windows using File explorer menu</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200624080543057.png" alt="image-20200624080543057"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200624081820384.png" alt="image-20200624081820384"></p>
+<hr>
+<h2 id="curl,-wget,-grep,-vi-all-for-windows"><a class="header-link" href="#curl,-wget,-grep,-vi-all-for-windows"></a>curl, wget, grep, vi all for windows</h2>
 <pre class="hljs"><code>You just need one cli package manager for windows, and chocolatey is the most idea one. https://chocolatey.org/<span class="hljs-keyword">install</span> , <span class="hljs-keyword">after</span> that.
 <span class="hljs-number">1.</span> curl: choco <span class="hljs-keyword">install</span> curl
 <span class="hljs-number">2.</span> wget: https://eternallybored.org/misc/wget/ (Download recent one according <span class="hljs-keyword">to</span> <span class="hljs-number">32</span>/<span class="hljs-number">64</span> <span class="hljs-built_in">bit</span>) <span class="hljs-keyword">and</span> paste the executable <span class="hljs-keyword">in</span> C:\Windows\system32 <span class="hljs-keyword">and</span> its up now.
