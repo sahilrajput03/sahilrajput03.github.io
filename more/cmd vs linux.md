@@ -7,7 +7,16 @@ $ e .
 ::The command is ok.
 ```
 
-![image-20200624100200663](.imgs_typora/image-20200624100200663.png)
+NOTE: to open any folder via argument, you must remove the last slash thats appended automatically via autocomplete.
+
+```bash
+$ e GitHub\ Repos/
+# Above will not work.
+$ e GitHub\ Repos
+# This works good though.
+```
+
+
 
 ```bash
 Create file in ~ directory in mintty:

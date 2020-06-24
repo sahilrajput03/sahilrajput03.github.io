@@ -12,8 +12,11 @@
     <article class="markdown-body"><h2 id="creating-aliases-for-mintty-"><a class="header-link" href="#creating-aliases-for-mintty-"></a>Creating aliases for mintty-</h2>
 <p>Also,</p>
 <pre class="hljs"><code>$ e .
-::The <span class="hljs-built_in">command</span> is ok.</code></pre><p class="img-container"><img src=".imgs_typora/image-20200624100200663.png" alt="image-20200624100200663"></p>
-<pre class="hljs"><code>Create file <span class="hljs-keyword">in</span> ~ directory <span class="hljs-keyword">in</span> mintty:
+::The <span class="hljs-built_in">command</span> is ok.</code></pre><p>NOTE: to open any folder via argument, you must remove the last slash thats appended automatically via autocomplete.</p>
+<pre class="hljs"><code>$ e GitHub\ Repos/
+<span class="hljs-comment"># Above will not work.</span>
+$ e GitHub\ Repos
+<span class="hljs-comment"># This works good though.</span></code></pre><pre class="hljs"><code>Create file <span class="hljs-keyword">in</span> ~ directory <span class="hljs-keyword">in</span> mintty:
 (Below <span class="hljs-built_in">alias</span> will work with parameters too)
 $ vi ~/.bashrc
 And add the line:- <span class="hljs-built_in">alias</span> e=<span class="hljs-string">'/c/Windows/explorer'</span>
