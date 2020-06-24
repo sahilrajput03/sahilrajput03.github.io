@@ -28,6 +28,13 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1a
 }
 ```
 
+```
+POST VIA CURL
+curl -d '{"key1":"value1", "key2":"value2"}' -H "Content-Type: application/json" -X POST http://localhost:3000/data
+```
+
+src: https://gist.github.com/subfuzion/08c5d85437d5d4f00e58
+
 ```js
 #create-user
 post http://localhost:3003/api/users

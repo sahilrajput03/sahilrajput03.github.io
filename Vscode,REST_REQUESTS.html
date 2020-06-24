@@ -29,7 +29,9 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1a
 {
   <span class="hljs-string">"content"</span>: <span class="hljs-string">"Single Page Apps use token authentication"</span>,
   <span class="hljs-string">"important"</span>: <span class="hljs-literal">false</span>
-}</code></pre><pre class="hljs"><code>#create-user
+}</code></pre><pre class="hljs"><code><span class="hljs-keyword">POST</span> VIA CURL
+curl -<span class="hljs-keyword">d</span> '{<span class="hljs-string">"key1"</span>:<span class="hljs-string">"value1"</span>, <span class="hljs-string">"key2"</span>:<span class="hljs-string">"value2"</span>}' -<span class="hljs-keyword">H</span> <span class="hljs-string">"Content-Type: application/json"</span> -X <span class="hljs-keyword">POST</span> http:<span class="hljs-comment">//localhost:3000/data</span></code></pre><p>src: <a href="https://gist.github.com/subfuzion/08c5d85437d5d4f00e58">https://gist.github.com/subfuzion/08c5d85437d5d4f00e58</a></p>
+<pre class="hljs"><code>#create-user
 post http:<span class="hljs-comment">//localhost:3003/api/users</span>
 Content-Type: application/json
 

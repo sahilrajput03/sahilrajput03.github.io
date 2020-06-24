@@ -1,8 +1,37 @@
 
 
+***
+
+## Find the age of windows os
+
+```bash
+CMD
+$ systeminfo|find /i "original" 
+Output:
+Original Install Date:     25-Jun-18, 6:35:21 AM
+
+_
+POWERSHELL
+$ $os = get-wmiobject win32_operatingsystem
+$ $os.ConvertToDateTime($os.InstallDate) -f "MM/dd/yyyy" 
+```
+
 So, I lost some work, and now I need to coverup.
 
+```bash
+$ tsc --init
+#This will create the tsconfig.json file
+```
 
+[Example file created with the above command here@gist](https://gist.github.com/f525e712f01352bdfa405242eaac7b75)
+
+***
+
+![image-20200624185015875](.imgs_typora/image-20200624185015875.png)
+
+![image-20200624171649813](.imgs_typora/image-20200624171649813.png)
+
+![image-20200624165611115](.imgs_typora/image-20200624165611115.png)
 
 
 
