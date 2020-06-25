@@ -1,5 +1,9 @@
 ***
 
+![image-20200624220146513](.imgs_typora/image-20200624220146513.png)
+
+***
+
 ## Ignoring multiple folder/file with same name in the repository
 
 | `**/logs`           | `logs/debug.log` `logs/monday/foo.bar` `build/logs/debug.log` | You can prepend a pattern with a double asterisk to match directories anywhere in the repository. |

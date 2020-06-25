@@ -3,13 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Find the age of windows os</title>
+    <title>Promblem with graphql in global node_modules (npm list -g was throwing error actually, hence fixed with this)</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><hr>
+    <article class="markdown-body"><p class="img-container"><img src=".imgs_typora/image-20200625171649248.png" alt="image-20200625171649248"></p>
+<hr>
+<h2 id="promblem-with-graphql-in-global-node_modules-(npm-list--g-was-throwing-error-actually,-hence-fixed-with-this)"><a class="header-link" href="#promblem-with-graphql-in-global-node_modules-(npm-list--g-was-throwing-error-actually,-hence-fixed-with-this)"></a>Promblem with graphql in global node_modules (npm list -g was throwing error actually, hence fixed with this)</h2>
+<p>src: <a href="https://github.com/graphql/graphql-js/issues/1531">link</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200625151957910.png" alt="image-20200625151957910"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200625115501158.png" alt="image-20200625115501158"></p>
+<hr>
 <h2 id="find-the-age-of-windows-os"><a class="header-link" href="#find-the-age-of-windows-os"></a>Find the age of windows os</h2>
 <pre class="hljs"><code>CMD
 $ systeminfo|find /i <span class="hljs-string">"original"</span> 
@@ -29,6 +35,7 @@ $ <span class="hljs-variable">$os</span>.ConvertToDateTime(<span class="hljs-var
 <hr>
 <h2 id="what-do-you-need-to//"><a class="header-link" href="#what-do-you-need-to//"></a>What do you need to//</h2>
 <p>To be able to save to local package.json file on the command npm link <pkg-name> but this isn&#39;t facilitated, but there <a href="https://www.npmjs.com/package/npm-link-save">npm-link-save@npm</a> , <a href="https://github.com/laggingreflex/npm-link-save#readme">github</a> <strong>Usage</strong>-</p>
+<p>nls is amazing when creating your own projects, but when you are using someone&#39;s project you must use ==npm link <pkg-name> <pkg-name2>[<pkg-names>]== as using npm link won&#39;t mutate(edit) your package.json file locally. While nls would actually replace the version of the of local dependecy version with global dependency version nubmer.</p>
 <pre class="hljs"><code>$ nls expres // single links
 $ nls express morgan // multiple links
 $ nls -D express     // links <span class="hljs-keyword">in</span> devDependencies // -D is used <span class="hljs-keyword">in</span> npm i -D &lt;pkg-name&gt; (<span class="hljs-keyword">for</span> saving as dev dependency, same pattern is followed here)</code></pre><p>*</p>
@@ -130,7 +137,11 @@ $ npm install --only=prod</code></pre><p class="img-container"><img src=".imgs_t
 <span class="hljs-comment">#You should install them globally only as you just the executables over the commandline.</span>
 <span class="hljs-comment">#Both are required to be used via cmd line with commands like, </span>
 $ ts-node &lt;file-name&gt;
-$ tsc &lt;file-name&gt;</code></pre><p><em>npm install --save-dev @types/react @types/express @types/lodash @types/jest @types/mongoose</em> and so on and so on. The *@types/** are maintained by <a href="http://definitelytyped.org/">Definitely typed</a>, a community project with the goal to maintaining types of everything in one place.</p>
+$ tsc &lt;file-name&gt;
+*
+When using apps created by create-react-app, it reqires you to have it installed locally, so it will not allow to start the app, unless you install <span class="hljs-keyword">in</span> locally. BETTER THING is to just link it with global one-
+npm link typescript
+THAT WORKS LIKE CHARM!!</code></pre><p><em>npm install --save-dev @types/react @types/express @types/lodash @types/jest @types/mongoose</em> and so on and so on. The *@types/** are maintained by <a href="http://definitelytyped.org/">Definitely typed</a>, a community project with the goal to maintaining types of everything in one place.</p>
 <h2 id="typescript-hero-extension-"><a class="header-link" href="#typescript-hero-extension-"></a>Typescript hero extension-</h2>
 <p>For Visual Studio Code you need the <a href="https://marketplace.visualstudio.com/items?itemName=rbbit.typescript-hero">typescript hero</a> extension.</p>
 <hr>
@@ -151,6 +162,9 @@ bcoz this will link the complete @types folder from global directory(c:/nodejs/n
 <hr>
 <h2 id="eslint"><a class="header-link" href="#eslint"></a>eslint</h2>
 <p>==You may disable prettier now onwards==</p>
+<p>what to do, install globally or locally or both? <a href="https://github.com/microsoft/vscode-eslint/issues/13">link</a> <a href="https://github.com/eslint/eslint/issues/6732">link2</a></p>
+<p>The simple answer is, local one can only be accessd by specifying a script in package.json for that, and running the command like: ==npm run lint== or like using from the local executable with=&gt;  ==node_modules/.bin/nodemon index.js== or you could you ==npx eslint== too for using the locally installed version.</p>
+<p>==&quot;lint&quot;: &quot;eslint --ext .ts .&quot;== , Globally installed version of eslint is good engough. But you must check that the project is compartible with that, via looking the version of eslint used to make the eslintrc.json at the time of the project initiated. Otherwise its just fine. Coz ^ in front of version number says, that a newer patch or newer minor version (the second of the 3 set version number) of eslint would be supported. The problem arises when you want to access a different version, so when it is the case, you must install a local that version of the eslint(that&#39;s automatically done with npm install though). Even if you haven&#39;t installed eslint locally, it would still work with npm run lint command bcoz, npm will fetch from the global dependecy automatically.(FYI: vesioning semantic of npm: major no., minor no., patch no.)</p>
 <pre class="hljs"><code>npm i -g eslint
 npm i -g @typescript-eslint/parser
 <span class="hljs-comment">#eslint can be used via-</span>

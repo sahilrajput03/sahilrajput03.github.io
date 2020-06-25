@@ -1,4 +1,14 @@
+![image-20200625171649248](.imgs_typora/image-20200625171649248.png)
 
+***
+
+## Promblem with graphql in global node_modules (npm list -g was throwing error actually, hence fixed with this)
+
+src: [link](https://github.com/graphql/graphql-js/issues/1531)
+
+![image-20200625151957910](.imgs_typora/image-20200625151957910.png)
+
+![image-20200625115501158](.imgs_typora/image-20200625115501158.png)
 
 ***
 
@@ -40,6 +50,8 @@ $ tsc --init
 ## What do you need to//
 
 To be able to save to local package.json file on the command npm link <pkg-name> but this isn't facilitated, but there [npm-link-save@npm](https://www.npmjs.com/package/npm-link-save) , [github](https://github.com/laggingreflex/npm-link-save#readme) **Usage**-
+
+nls is amazing when creating your own projects, but when you are using someone's project you must use ==npm link <pkg-name> <pkg-name2>[<pkg-names>]== as using npm link won't mutate(edit) your package.json file locally. While nls would actually replace the version of the of local dependecy version with global dependency version nubmer.
 
 ```bash
 $ nls expres // single links
@@ -263,6 +275,10 @@ $ npm i -g ts-node typescript
 #Both are required to be used via cmd line with commands like, 
 $ ts-node <file-name>
 $ tsc <file-name>
+*
+When using apps created by create-react-app, it reqires you to have it installed locally, so it will not allow to start the app, unless you install in locally. BETTER THING is to just link it with global one-
+npm link typescript
+THAT WORKS LIKE CHARM!!
 ```
 
 *npm install --save-dev @types/react @types/express @types/lodash @types/jest @types/mongoose* and so on and so on. The *@types/** are maintained by [Definitely typed](http://definitelytyped.org/), a community project with the goal to maintaining types of everything in one place.
@@ -298,6 +314,12 @@ The *@types/** are maintained by [Definitely typed](http://definitelytyped.org/)
 ## eslint
 
 ==You may disable prettier now onwards==
+
+what to do, install globally or locally or both? [link](https://github.com/microsoft/vscode-eslint/issues/13) [link2](https://github.com/eslint/eslint/issues/6732)
+
+The simple answer is, local one can only be accessd by specifying a script in package.json for that, and running the command like: ==npm run lint== or like using from the local executable with=>  ==node_modules/.bin/nodemon index.js== or you could you ==npx eslint== too for using the locally installed version.
+
+=="lint": "eslint --ext .ts ."== , Globally installed version of eslint is good engough. But you must check that the project is compartible with that, via looking the version of eslint used to make the eslintrc.json at the time of the project initiated. Otherwise its just fine. Coz ^ in front of version number says, that a newer patch or newer minor version (the second of the 3 set version number) of eslint would be supported. The problem arises when you want to access a different version, so when it is the case, you must install a local that version of the eslint(that's automatically done with npm install though). Even if you haven't installed eslint locally, it would still work with npm run lint command bcoz, npm will fetch from the global dependecy automatically.(FYI: vesioning semantic of npm: major no., minor no., patch no.)
 
 ```bash
 npm i -g eslint
