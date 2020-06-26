@@ -3,13 +3,48 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Promblem with graphql in global node_modules (npm list -g was throwing error actually, hence fixed with this)</title>
+    <title>Creating symlinks in windows</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><p class="img-container"><img src=".imgs_typora/image-20200625171649248.png" alt="image-20200625171649248"></p>
+    <article class="markdown-body"><p class="img-container"><img src=".imgs_typora/142512-1593163577148.png" alt="142512"></p>
+<p>Solution:-</p>
+<p class="img-container"><img src=".imgs_typora/image-20200626145636094.png" alt="image-20200626145636094"></p>
+<hr>
+<p class="img-container"><img src=".imgs_typora/image-20200626133432047.png" alt="image-20200626133432047"></p>
+<hr>
+<p>The symlink is created with the mklink for node_modules folder, but the problem with symlink of node_modules folder for the need of globalspace2 for eslint 6.8.0, is that when you do a npm i <any-package> or just do npm i in any folder, the  the node_modules symlink is overwritten by creating a new folder of node_modules by npm automatically. So, we need to make installs only in the eslint-6.8.0 project folder and never run any npm i related commands from anywhere where we liked it as symlink. Also, the same npm i related commands will result in crashing the configuration of the original globalspace2&#39;s config(the eslint 6.8.0 project).[if so, get the backup there.☺]</p>
+<hr>
+<h2 id="creating-symlinks-in-windows"><a class="header-link" href="#creating-symlinks-in-windows"></a>Creating symlinks in windows</h2>
+<pre class="hljs"><code>$ mklink /d LinkName folderName
+$ mklink /d myLink ..\someFolder <span class="hljs-comment"># This createsa link named myLink to someFolder in its parent folder.</span>
+
+<span class="hljs-comment">#Note: symlinks(symbolic links) can only be created with admin cmd. Tip: Use=&gt; ALT F,M,A</span>
+<span class="hljs-comment">#Symlinks created could be moved/copied anywhere  but they would just WON'T work.</span></code></pre><p class="img-container"><img src=".imgs_typora/image-20200626112131303.png" alt="image-20200626112131303"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200626105617578.png" alt="image-20200626105617578"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200626105738087.png" alt="image-20200626105738087"></p>
+<hr>
+<h2 id="opens-link-for-funding-for-the-desired-package."><a class="header-link" href="#opens-link-for-funding-for-the-desired-package."></a>Opens link for funding for the desired package.</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200626105314708.png" alt="image-20200626105314708"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200626103645461.png" alt="image-20200626103645461"></p>
+<p class="img-container"><img src=".imgs_typora/103731.png" alt="103731"></p>
+<hr>
+<p class="img-container"><img src=".imgs_typora/image-20200626103014517.png" alt="image-20200626103014517"></p>
+<h2 id="dealing-with-react-scripts-version-of-eslint"><a class="header-link" href="#dealing-with-react-scripts-version-of-eslint"></a>Dealing with react-scripts version of eslint</h2>
+<p>We&#39;re dealing bcoz, when we run npm start, it gives error with eslint config, says to do SKIP_PREFLIGHT_CHECK=true  in env to avoid it.
+So, you might try to do-</p>
+<pre class="hljs"><code><span class="hljs-built_in">npm</span> link react-scripts</code></pre><p>to get the eslint under it to be discovered by the current node project but it would not detect it. So, the last change is to try to install a separate version of eslint in local project with <code>npm i eslint@6.8.0</code> and when you try to do that it gives error. So, the next option is to install react-scripts in local project, via <code>npm i react-scripts@requiredversion</code>. </p>
+<p class="img-container"><img src=".imgs_typora/image-20200626094954206.png" alt="image-20200626094954206"></p>
+<h3 id="new-swithing-tabs-in-panel(newly-created--#my-shortcuts)"><a class="header-link" href="#new-swithing-tabs-in-panel(newly-created--#my-shortcuts)"></a>New swithing tabs in panel(newly created- #my shortcuts)</h3>
+<p class="img-container"><img src=".imgs_typora/image-20200626090131194.png" alt="image-20200626090131194"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200626090023259.png" alt="image-20200626090023259"></p>
+<h2 id="use:-ctrl-+-alt+-j-to-join-a-collaboration-session-link-via-vs-live-share"><a class="header-link" href="#use:-ctrl-+-alt+-j-to-join-a-collaboration-session-link-via-vs-live-share"></a>Use: Ctrl + Alt+ J to join a collaboration session link  via vs live share</h2>
+<p>Also, <img src=".imgs_typora/image-20200626085255399.png" alt="image-20200626085255399"></p>
+<hr>
+<h2 id="this-is-great-to-work-with-source-code-mode-too,-as-it-allows-to-get-rid-of-imgae-context-menu-when-we-press-enter.-use-ctrl+/"><a class="header-link" href="#this-is-great-to-work-with-source-code-mode-too,-as-it-allows-to-get-rid-of-imgae-context-menu-when-we-press-enter.-use-ctrl+/"></a>This is  great to work with source code mode too, as it allows to get rid of imgae context menu when we press enter. use ctrl+/</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200625171649248.png" alt="image-20200625171649248"></p>
 <hr>
 <h2 id="promblem-with-graphql-in-global-node_modules-(npm-list--g-was-throwing-error-actually,-hence-fixed-with-this)"><a class="header-link" href="#promblem-with-graphql-in-global-node_modules-(npm-list--g-was-throwing-error-actually,-hence-fixed-with-this)"></a>Promblem with graphql in global node_modules (npm list -g was throwing error actually, hence fixed with this)</h2>
 <p>src: <a href="https://github.com/graphql/graphql-js/issues/1531">link</a></p>

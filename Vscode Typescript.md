@@ -1,4 +1,93 @@
+![142512](.imgs_typora/142512-1593163577148.png)
+
+Solution:-
+
+![image-20200626145636094](.imgs_typora/image-20200626145636094.png)
+
+***
+
+![image-20200626133432047](.imgs_typora/image-20200626133432047.png)
+
+***
+
+The symlink is created with the mklink for node_modules folder, but the problem with symlink of node_modules folder for the need of globalspace2 for eslint 6.8.0, is that when you do a npm i <any-package> or just do npm i in any folder, the  the node_modules symlink is overwritten by creating a new folder of node_modules by npm automatically. So, we need to make installs only in the eslint-6.8.0 project folder and never run any npm i related commands from anywhere where we liked it as symlink. Also, the same npm i related commands will result in crashing the configuration of the original globalspace2's config(the eslint 6.8.0 project).[if so, get the backup there.☺]
+
+***
+
+## Creating symlinks in windows
+
+```bash
+$ mklink /d LinkName folderName
+$ mklink /d myLink ..\someFolder # This createsa link named myLink to someFolder in its parent folder.
+
+#Note: symlinks(symbolic links) can only be created with admin cmd. Tip: Use=> ALT F,M,A
+#Symlinks created could be moved/copied anywhere  but they would just WON'T work.
+```
+
+![image-20200626112131303](.imgs_typora/image-20200626112131303.png)
+
+![image-20200626105617578](.imgs_typora/image-20200626105617578.png)
+
+![image-20200626105738087](.imgs_typora/image-20200626105738087.png)
+
+***
+
+## Opens link for funding for the desired package.
+
+![image-20200626105314708](.imgs_typora/image-20200626105314708.png)
+
+![image-20200626103645461](.imgs_typora/image-20200626103645461.png)
+
+![103731](.imgs_typora/103731.png)
+
+
+
+***
+
+
+![image-20200626103014517](.imgs_typora/image-20200626103014517.png)
+
+
+
+## Dealing with react-scripts version of eslint
+
+We're dealing bcoz, when we run npm start, it gives error with eslint config, says to do SKIP_PREFLIGHT_CHECK=true  in env to avoid it.
+So, you might try to do-
+
+```
+npm link react-scripts
+```
+
+to get the eslint under it to be discovered by the current node project but it would not detect it. So, the last change is to try to install a separate version of eslint in local project with `npm i eslint@6.8.0` and when you try to do that it gives error. So, the next option is to install react-scripts in local project, via `npm i react-scripts@requiredversion`. 
+
+![image-20200626094954206](.imgs_typora/image-20200626094954206.png)
+
+
+### New swithing tabs in panel(newly created- #my shortcuts)
+
+
+![image-20200626090131194](.imgs_typora/image-20200626090131194.png)
+
+
+![image-20200626090023259](.imgs_typora/image-20200626090023259.png)
+
+## Use: Ctrl + Alt+ J to join a collaboration session link  via vs live share
+
+Also, ![image-20200626085255399](.imgs_typora/image-20200626085255399.png)
+
+***
+
+## This is  great to work with source code mode too, as it allows to get rid of imgae context menu when we press enter. use ctrl+/
+
 ![image-20200625171649248](.imgs_typora/image-20200625171649248.png)
+
+
+
+
+
+
+
+
 
 ***
 
