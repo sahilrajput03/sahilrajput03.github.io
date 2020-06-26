@@ -3,13 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>The best way to deal with eslint error while starting react-server is to just use below variable to disable the eslint version checking simply-</title>
+    <title>Fixing error in global node_modules is easy like this-/</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><hr>
+    <article class="markdown-body"><p>Hello there!! go on..</p>
+<hr>
+<h2 id="fixing-error-in-global-node_modules-is-easy-like-this-/"><a class="header-link" href="#fixing-error-in-global-node_modules-is-easy-like-this-/"></a>Fixing error in global node_modules is easy like this-/</h2>
+<p class="img-container"><img src=".imgs_typora/010940.png" alt="010940"></p>
+<hr>
+<h2 id="nql"><a class="header-link" href="#nql"></a>nql</h2>
+<p>npm-quick-link find its usage, it did some trouble last time though, as it created a symlink in c:\node\node_modules folder and showed it as a dependency when we did a npm ls -g --depth 0</p>
+<hr>
+<p class="img-container"><img src=".imgs_typora/image-20200626231729537.png" alt="image-20200626231729537"></p>
+<p>Hence, using commandline npx eslint . would be able to tell why is vscode eslint extension is not working at all. So, just install any requiring extension, it could probably be - <strong>eslint-plugin-react</strong> or <strong>@typescript-eslint/parser</strong> or <strong>@typescript-eslint/eslint-plugin</strong> or anything you&#39;re using in <strong>.eslintrc</strong> file, its very easy to find out from there too, though npx eslint . command will tell exactly whats missing.  BEWARE:: You should never ever install any of dependencies <strong>eslint-plugin-react</strong> or <strong>@typescript-eslint/parser</strong> or <strong>@typescript-eslint/eslint-plugin</strong> locally via <code>npm i &lt;pkg-name&gt;</code> because this way you&#39;ll end up installing complete package from the beginning form the package.json(and that might unlink some packages you linked somehow which aren&#39;t mentioned in local package.json, though it should do any change in global node_modules too, but you should never use npm i , but use npm i -g <pkg>, so you could make a link to to use from global node_modules only).</p>
+<hr>
+<h2 id="eslint"><a class="header-link" href="#eslint"></a>eslint</h2>
+<pre class="hljs"><code>It requires you <span class="hljs-keyword">to</span> have <span class="hljs-keyword">it</span> installed, </code></pre><hr>
 <h1 id="the-best-way-to-deal-with-eslint-error-while-starting-react-server-is-to-just-use-below-variable-to-disable-the-eslint-version-checking-simply-"><a class="header-link" href="#the-best-way-to-deal-with-eslint-error-while-starting-react-server-is-to-just-use-below-variable-to-disable-the-eslint-version-checking-simply-"></a>The best way to deal with eslint error while starting react-server is to just use below variable to disable the eslint version checking simply-</h1>
 <pre class="hljs"><code>SKIP_PREFLIGHT_CHECK=<span class="hljs-literal">true</span></code></pre><p>There would be errors other than this, if there are you just need to fix it in the files or the eslintrc file.</p>
 <hr>
@@ -77,6 +89,28 @@ $ <span class="hljs-variable">$os</span>.ConvertToDateTime(<span class="hljs-var
 <p class="img-container"><img src=".imgs_typora/image-20200624165611115.png" alt="image-20200624165611115"></p>
 <hr>
 <h2 id="what-do-you-need-to//"><a class="header-link" href="#what-do-you-need-to//"></a>What do you need to//</h2>
+<h1 id="**npm-link-better**[latest-tech-for-global-usage]"><a class="header-link" href="#**npm-link-better**[latest-tech-for-global-usage]"></a><strong>npm-link-better</strong>[LATEST tech for global usage]</h1>
+<p><a href="https://github.com/laggingreflex/npm-link-better">@github.com</a>, <a href="https://www.npmjs.com/package/npm-link-better">@npmjs.com</a></p>
+<h2 id="**update==>**"><a class="header-link" href="#**update==>**"></a><strong>update==&gt;</strong></h2>
+<pre class="hljs"><code>Install the newer version of npm-link-better from the linkimportant link after this code snippet.
+Sometimes, installation of a package doens<span class="hljs-string">'t work siply it throws that file already exist, and suggests you to delete them first or overwrite them with the --force switch.
+$ npm i -g npm-link-better 
+#This failed, said some files already exist, you first delete them or use the --force switch to overwrite them like : $ npm i -g npm-link-better --force
+And I did the --force things and the package was good enough now.
+Next you can now try uninstalling the global package again and installing it like-
+$ npm un -g npm-link-better 
+$ npm i -g npm-link-better #This will work smoothly to install now with no errors.
+**
+So, how to use it...
+USAGE:::----
+$ nlq #Execute in a project.
+# Above command, will automatically link all the packages from local package.json file to the global ones with goodness.
+$ nls &lt;dependency&gt; &lt;dependency2&gt; [&lt;more dependencies here&gt;]
+#Above command will first install it globally and then link to it and then add the entry in local package.json file.
+$ nls -D &lt;dependency&gt; &lt;dependency2&gt; [&lt;more dependencies here&gt;]
+#Above command will save it for development dependency. Rest is same.</span></code></pre><p><a href="https://github.com/laggingreflex/npm-link-better">linkimportant</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200626181333693.png" alt="image-20200626181333693"></p>
+<hr>
 <p>To be able to save to local package.json file on the command npm link <pkg-name> but this isn&#39;t facilitated, but there <a href="https://www.npmjs.com/package/npm-link-save">npm-link-save@npm</a> , <a href="https://github.com/laggingreflex/npm-link-save#readme">github</a> <strong>Usage</strong>-</p>
 <p>nls is amazing when creating your own projects, but when you are using someone&#39;s project you must use ==npm link <pkg-name> <pkg-name2>[<pkg-names>]== as using npm link won&#39;t mutate(edit) your package.json file locally. While nls would actually replace the version of the of local dependecy version with global dependency version nubmer.</p>
 <pre class="hljs"><code>$ nls expres // single links
@@ -205,7 +239,7 @@ You should use
 $ npm link @types
 bcoz this will link the complete @types folder from global directory(c:/nodejs/node_modules/@types/), notice that this commmand give error, you just need to ignore that. That error is just redundant.</code></pre><p>The *@types/** are maintained by <a href="http://definitelytyped.org/">Definitely typed</a>, a community project with the goal to maintaining types of everything in one place.</p>
 <hr>
-<h2 id="eslint"><a class="header-link" href="#eslint"></a>eslint</h2>
+<h2 id="eslint-1"><a class="header-link" href="#eslint-1"></a>eslint</h2>
 <p><strong>==You may disable prettier now onwards==</strong></p>
 <p>what to do, install globally or locally or both? <a href="https://github.com/microsoft/vscode-eslint/issues/13">link</a> <a href="https://github.com/eslint/eslint/issues/6732"></a></p>
 <p><strong>==My new anwser: Install globally, and use it everywhere. And when react says you have another version, silent it with pref_light_check=true (check the variable name from the same error :D). And thats it. Use newer version always. Thats stable, thats why they have released it.☺==</strong></p>

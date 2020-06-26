@@ -1,3 +1,31 @@
+Hello there!! go on..
+
+***
+
+## Fixing error in global node_modules is easy like this-/
+
+![010940](.imgs_typora/010940.png)
+
+***
+
+## nql
+
+npm-quick-link find its usage, it did some trouble last time though, as it created a symlink in c:\node\node_modules folder and showed it as a dependency when we did a npm ls -g --depth 0
+
+***
+
+![image-20200626231729537](.imgs_typora/image-20200626231729537.png)
+
+Hence, using commandline npx eslint . would be able to tell why is vscode eslint extension is not working at all. So, just install any requiring extension, it could probably be - **eslint-plugin-react** or **@typescript-eslint/parser** or **@typescript-eslint/eslint-plugin** or anything you're using in **.eslintrc** file, its very easy to find out from there too, though npx eslint . command will tell exactly whats missing.  BEWARE:: You should never ever install any of dependencies **eslint-plugin-react** or **@typescript-eslint/parser** or **@typescript-eslint/eslint-plugin** locally via `npm i <pkg-name>` because this way you'll end up installing complete package from the beginning form the package.json(and that might unlink some packages you linked somehow which aren't mentioned in local package.json, though it should do any change in global node_modules too, but you should never use npm i , but use npm i -g <pkg>, so you could make a link to to use from global node_modules only).
+
+***
+
+## eslint
+
+```
+It requires you to have it installed, 
+```
+
 
 
 ***
@@ -156,6 +184,40 @@ $ tsc --init
 ***
 
 ## What do you need to//
+
+# **npm-link-better**[LATEST tech for global usage]
+
+[@github.com](https://github.com/laggingreflex/npm-link-better), [@npmjs.com](https://www.npmjs.com/package/npm-link-better)
+
+## **update==>**
+
+```bash
+Install the newer version of npm-link-better from the linkimportant link after this code snippet.
+Sometimes, installation of a package doens't work siply it throws that file already exist, and suggests you to delete them first or overwrite them with the --force switch.
+$ npm i -g npm-link-better 
+#This failed, said some files already exist, you first delete them or use the --force switch to overwrite them like : $ npm i -g npm-link-better --force
+And I did the --force things and the package was good enough now.
+Next you can now try uninstalling the global package again and installing it like-
+$ npm un -g npm-link-better 
+$ npm i -g npm-link-better #This will work smoothly to install now with no errors.
+**
+So, how to use it...
+USAGE:::----
+$ nlq #Execute in a project.
+# Above command, will automatically link all the packages from local package.json file to the global ones with goodness.
+$ nls <dependency> <dependency2> [<more dependencies here>]
+#Above command will first install it globally and then link to it and then add the entry in local package.json file.
+$ nls -D <dependency> <dependency2> [<more dependencies here>]
+#Above command will save it for development dependency. Rest is same.
+```
+
+[linkimportant](https://github.com/laggingreflex/npm-link-better)
+
+![image-20200626181333693](.imgs_typora/image-20200626181333693.png)
+
+
+
+***
 
 To be able to save to local package.json file on the command npm link <pkg-name> but this isn't facilitated, but there [npm-link-save@npm](https://www.npmjs.com/package/npm-link-save) , [github](https://github.com/laggingreflex/npm-link-save#readme) **Usage**-
 
