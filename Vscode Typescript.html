@@ -3,13 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Creating symlinks in windows</title>
+    <title>The best way to deal with eslint error while starting react-server is to just use below variable to disable the eslint version checking simply-</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><p>temp--</p>
+    <article class="markdown-body"><hr>
+<h1 id="the-best-way-to-deal-with-eslint-error-while-starting-react-server-is-to-just-use-below-variable-to-disable-the-eslint-version-checking-simply-"><a class="header-link" href="#the-best-way-to-deal-with-eslint-error-while-starting-react-server-is-to-just-use-below-variable-to-disable-the-eslint-version-checking-simply-"></a>The best way to deal with eslint error while starting react-server is to just use below variable to disable the eslint version checking simply-</h1>
+<pre class="hljs"><code>SKIP_PREFLIGHT_CHECK=<span class="hljs-literal">true</span></code></pre><p>There would be errors other than this, if there are you just need to fix it in the files or the eslintrc file.</p>
+<hr>
+<p>temp--</p>
 <p class="img-container"><img src=".imgs_typora/image-20200626150701985.png" alt="image-20200626150701985"></p>
 <hr>
 <p class="img-container"><img src=".imgs_typora/142512-1593163577148.png" alt="142512"></p>
@@ -36,9 +40,9 @@ $ mklink /d myLink ..\someFolder <span class="hljs-comment"># This createsa link
 <hr>
 <p class="img-container"><img src=".imgs_typora/image-20200626103014517.png" alt="image-20200626103014517"></p>
 <h2 id="dealing-with-react-scripts-version-of-eslint"><a class="header-link" href="#dealing-with-react-scripts-version-of-eslint"></a>Dealing with react-scripts version of eslint</h2>
-<p>We&#39;re dealing bcoz, when we run npm start, it gives error with eslint config, says to do SKIP_PREFLIGHT_CHECK=true  in env to avoid it.
-So, you might try to do-</p>
-<pre class="hljs"><code><span class="hljs-built_in">npm</span> link react-scripts</code></pre><p>to get the eslint under it to be discovered by the current node project but it would not detect it. So, the last change is to try to install a separate version of eslint in local project with <code>npm i eslint@6.8.0</code> and when you try to do that it gives error. So, the next option is to install react-scripts in local project, via <code>npm i react-scripts@requiredversion</code>. </p>
+<p>We&#39;re dealing bcoz, when we run npm start, it gives error with eslint config, says to do SKIP_PREFLIGHT_CHECK=true  in env to avoid it. </p>
+<p>So, you might try to do-</p>
+<pre class="hljs"><code><span class="hljs-built_in">npm</span> link react-scripts</code></pre><p>to get the eslint under it to be discovered by the current node project but it would not detect it. So, the last change is to try to install a separate version of eslint in local project with <code>npm i eslint@6.8.0</code> and when you try to do that it gives error. And it can be fixed via <code>npm cache clean --force</code> [The screenshot is somewhere up on this page to verify it.] So, the next option is to install react-scripts in local project, via <code>npm i react-scripts@requiredversion</code>. </p>
 <p class="img-container"><img src=".imgs_typora/image-20200626094954206.png" alt="image-20200626094954206"></p>
 <h3 id="new-swithing-tabs-in-panel(newly-created--#my-shortcuts)"><a class="header-link" href="#new-swithing-tabs-in-panel(newly-created--#my-shortcuts)"></a>New swithing tabs in panel(newly created- #my shortcuts)</h3>
 <p class="img-container"><img src=".imgs_typora/image-20200626090131194.png" alt="image-20200626090131194"></p>
@@ -46,7 +50,8 @@ So, you might try to do-</p>
 <h2 id="use:-ctrl-+-alt+-j-to-join-a-collaboration-session-link-via-vs-live-share"><a class="header-link" href="#use:-ctrl-+-alt+-j-to-join-a-collaboration-session-link-via-vs-live-share"></a>Use: Ctrl + Alt+ J to join a collaboration session link  via vs live share</h2>
 <p>Also, <img src=".imgs_typora/image-20200626085255399.png" alt="image-20200626085255399"></p>
 <hr>
-<h2 id="this-is-great-to-work-with-source-code-mode-too,-as-it-allows-to-get-rid-of-imgae-context-menu-when-we-press-enter.-use-ctrl+/"><a class="header-link" href="#this-is-great-to-work-with-source-code-mode-too,-as-it-allows-to-get-rid-of-imgae-context-menu-when-we-press-enter.-use-ctrl+/"></a>This is  great to work with source code mode too, as it allows to get rid of imgae context menu when we press enter. use ctrl+/</h2>
+<h2 id="this-is-great-to-work-with-source-code-mode-too,-as-it-allows-to-get-rid-of-image-context-menu(copy-image-to,-upload-image,-zoom-image-in-typora)-when-we-press-enter.-use-ctrl+/"><a class="header-link" href="#this-is-great-to-work-with-source-code-mode-too,-as-it-allows-to-get-rid-of-image-context-menu(copy-image-to,-upload-image,-zoom-image-in-typora)-when-we-press-enter.-use-ctrl+/"></a>This is  great to work with source code mode too, as it allows to get rid of image context menu(copy image to, upload image, zoom image in typora) when we press enter. use ctrl+/</h2>
+<hr>
 <p class="img-container"><img src=".imgs_typora/image-20200625171649248.png" alt="image-20200625171649248"></p>
 <hr>
 <h2 id="promblem-with-graphql-in-global-node_modules-(npm-list--g-was-throwing-error-actually,-hence-fixed-with-this)"><a class="header-link" href="#promblem-with-graphql-in-global-node_modules-(npm-list--g-was-throwing-error-actually,-hence-fixed-with-this)"></a>Promblem with graphql in global node_modules (npm list -g was throwing error actually, hence fixed with this)</h2>
@@ -100,6 +105,8 @@ npm unlink --no-save @typescript-eslint/eslint-plugin @typescript-eslint/parser 
 <p class="img-container"><img src=".imgs_typora/image-20200623151717176.png" alt="image-20200623151717176"></p>
 <p class="img-container"><img src=".imgs_typora/113857.png" alt="113857"></p>
 <p class="img-container"><img src=".imgs_typora/183720.png" alt="183720"></p>
+<hr>
+<p>src: <a href="https://github.com/fullstack-hy2020/create-app">link from kalle Ilves</a></p>
 <p class="img-container"><img src=".imgs_typora/144113.png" alt="144113"></p>
 <p class="img-container"><img src=".imgs_typora/143628.png" alt="143628"></p>
 <hr>
@@ -199,8 +206,9 @@ $ npm link @types
 bcoz this will link the complete @types folder from global directory(c:/nodejs/node_modules/@types/), notice that this commmand give error, you just need to ignore that. That error is just redundant.</code></pre><p>The *@types/** are maintained by <a href="http://definitelytyped.org/">Definitely typed</a>, a community project with the goal to maintaining types of everything in one place.</p>
 <hr>
 <h2 id="eslint"><a class="header-link" href="#eslint"></a>eslint</h2>
-<p>==You may disable prettier now onwards==</p>
-<p>what to do, install globally or locally or both? <a href="https://github.com/microsoft/vscode-eslint/issues/13">link</a> <a href="https://github.com/eslint/eslint/issues/6732">link2</a></p>
+<p><strong>==You may disable prettier now onwards==</strong></p>
+<p>what to do, install globally or locally or both? <a href="https://github.com/microsoft/vscode-eslint/issues/13">link</a> <a href="https://github.com/eslint/eslint/issues/6732"></a></p>
+<p><strong>==My new anwser: Install globally, and use it everywhere. And when react says you have another version, silent it with pref_light_check=true (check the variable name from the same error :D). And thats it. Use newer version always. Thats stable, thats why they have released it.☺==</strong></p>
 <p>The simple answer is, local one can only be accessd by specifying a script in package.json for that, and running the command like: ==npm run lint== or like using from the local executable with=&gt;  ==node_modules/.bin/nodemon index.js== or you could you ==npx eslint== too for using the locally installed version.</p>
 <p>==&quot;lint&quot;: &quot;eslint --ext .ts .&quot;== , Globally installed version of eslint is good engough. But you must check that the project is compartible with that, via looking the version of eslint used to make the eslintrc.json at the time of the project initiated. Otherwise its just fine. Coz ^ in front of version number says, that a newer patch or newer minor version (the second of the 3 set version number) of eslint would be supported. The problem arises when you want to access a different version, so when it is the case, you must install a local that version of the eslint(that&#39;s automatically done with npm install though). Even if you haven&#39;t installed eslint locally, it would still work with npm run lint command bcoz, npm will fetch from the global dependecy automatically.(FYI: vesioning semantic of npm: major no., minor no., patch no.)</p>
 <pre class="hljs"><code>npm i -g eslint

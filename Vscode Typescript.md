@@ -1,3 +1,17 @@
+
+
+***
+
+# The best way to deal with eslint error while starting react-server is to just use below variable to disable the eslint version checking simply-
+
+```bash
+SKIP_PREFLIGHT_CHECK=true
+```
+
+There would be errors other than this, if there are you just need to fix it in the files or the eslintrc file.
+
+***
+
 temp--
 
 ![image-20200626150701985](.imgs_typora/image-20200626150701985.png)
@@ -59,14 +73,15 @@ $ mklink /d myLink ..\someFolder # This createsa link named myLink to someFolder
 
 ## Dealing with react-scripts version of eslint
 
-We're dealing bcoz, when we run npm start, it gives error with eslint config, says to do SKIP_PREFLIGHT_CHECK=true  in env to avoid it.
+We're dealing bcoz, when we run npm start, it gives error with eslint config, says to do SKIP_PREFLIGHT_CHECK=true  in env to avoid it. 
+
 So, you might try to do-
 
 ```
 npm link react-scripts
 ```
 
-to get the eslint under it to be discovered by the current node project but it would not detect it. So, the last change is to try to install a separate version of eslint in local project with `npm i eslint@6.8.0` and when you try to do that it gives error. So, the next option is to install react-scripts in local project, via `npm i react-scripts@requiredversion`. 
+to get the eslint under it to be discovered by the current node project but it would not detect it. So, the last change is to try to install a separate version of eslint in local project with `npm i eslint@6.8.0` and when you try to do that it gives error. And it can be fixed via `npm cache clean --force` [The screenshot is somewhere up on this page to verify it.] So, the next option is to install react-scripts in local project, via `npm i react-scripts@requiredversion`. 
 
 ![image-20200626094954206](.imgs_typora/image-20200626094954206.png)
 
@@ -85,17 +100,13 @@ Also, ![image-20200626085255399](.imgs_typora/image-20200626085255399.png)
 
 ***
 
-## This is  great to work with source code mode too, as it allows to get rid of imgae context menu when we press enter. use ctrl+/
+## This is  great to work with source code mode too, as it allows to get rid of image context menu(copy image to, upload image, zoom image in typora) when we press enter. use ctrl+/
+
+***
+
+
 
 ![image-20200625171649248](.imgs_typora/image-20200625171649248.png)
-
-
-
-
-
-
-
-
 
 ***
 
@@ -218,6 +229,10 @@ Note: you need to refresh with Ctrl+shift+f5 for once to view the updated format
 ![113857](.imgs_typora/113857.png)
 
 ![183720](.imgs_typora/183720.png)
+
+***
+
+src: [link from kalle Ilves](https://github.com/fullstack-hy2020/create-app)
 
 ![144113](.imgs_typora/144113.png)
 
@@ -410,9 +425,11 @@ The *@types/** are maintained by [Definitely typed](http://definitelytyped.org/)
 
 ## eslint
 
-==You may disable prettier now onwards==
+**==You may disable prettier now onwards==**
 
-what to do, install globally or locally or both? [link](https://github.com/microsoft/vscode-eslint/issues/13) [link2](https://github.com/eslint/eslint/issues/6732)
+what to do, install globally or locally or both? [link](https://github.com/microsoft/vscode-eslint/issues/13) [](https://github.com/eslint/eslint/issues/6732)
+
+**==My new anwser: Install globally, and use it everywhere. And when react says you have another version, silent it with pref_light_check=true (check the variable name from the same error :D). And thats it. Use newer version always. Thats stable, thats why they have released it.☺==**
 
 The simple answer is, local one can only be accessd by specifying a script in package.json for that, and running the command like: ==npm run lint== or like using from the local executable with=>  ==node_modules/.bin/nodemon index.js== or you could you ==npx eslint== too for using the locally installed version.
 
