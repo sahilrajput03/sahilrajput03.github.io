@@ -1,5 +1,29 @@
 Hello there!! go on..
 
+You may read npm scope - [link](https://docs.npmjs.com/misc/scope)
+
+Below image from src- [link](https://docs.npmjs.com/cli/link)
+
+[This is actually referencable to the better-link-saver(combined three softs, (one is nls - npmLinkSaver))]
+
+![image-20200627171000849](.imgs_typora/image-20200627171000849.png)
+
+## Whats lint in npm 
+
+![image-20200627134615806](.imgs_typora/image-20200627134615806.png)
+
+![image-20200627134549947](.imgs_typora/image-20200627134549947.png)
+
+***
+
+## Whats that??
+
+![image-20200627134251443](.imgs_typora/image-20200627134251443.png)
+
+## VScode's eslint worked after doing a npx lint .
+
+![image-20200627133637500](.imgs_typora/image-20200627133637500.png)``
+
 ***
 
 ## Fixing error in global node_modules is easy like this-/
