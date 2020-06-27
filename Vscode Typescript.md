@@ -50,8 +50,6 @@ Hence, using commandline npx eslint . would be able to tell why is vscode eslint
 It requires you to have it installed, 
 ```
 
-![221951](.imgs_typora/221951.png)
-
 ***
 
 # The best way to deal with eslint error while starting react-server is to just use below variable to disable the eslint version checking simply-
