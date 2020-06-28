@@ -1,4 +1,20 @@
+
+
 Hello there!! go on..
+
+***
+
+![201318](.imgs_typora/201318.png)
+
+![image-20200628215713460](.imgs_typora/image-20200628215713460.png)
+
+***
+
+## typescript eslint no explicity any-
+
+![image-20200628220342101](.imgs_typora/image-20200628220342101.png)
+
+***
 
 You may read npm scope - [link](https://docs.npmjs.com/misc/scope)
 
@@ -47,7 +63,8 @@ Hence, using commandline npx eslint . would be able to tell why is vscode eslint
 ## eslint
 
 ```
-It requires you to have it installed, 
+It requires you to have it installed as a local dependecy to be able to run via command line, but doens't need to be present of linked for the editor's extension to work.
+Though, editor's extension required the .eslinrc file, and it also needs the appropriate plugins metioned in the eslintrc file to work, otherwise it won't work at all.
 ```
 
 ***

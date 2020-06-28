@@ -3,13 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Whats lint in npm</title>
+    <title>typescript eslint no explicity any-</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
     <article class="markdown-body"><p>Hello there!! go on..</p>
+<hr>
+<p class="img-container"><img src=".imgs_typora/201318.png" alt="201318"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200628215713460.png" alt="image-20200628215713460"></p>
+<hr>
+<h2 id="typescript-eslint-no-explicity-any-"><a class="header-link" href="#typescript-eslint-no-explicity-any-"></a>typescript eslint no explicity any-</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200628220342101.png" alt="image-20200628220342101"></p>
+<hr>
 <p>You may read npm scope - <a href="https://docs.npmjs.com/misc/scope">link</a></p>
 <p>Below image from src- <a href="https://docs.npmjs.com/cli/link">link</a></p>
 <p>[This is actually referencable to the better-link-saver(combined three softs, (one is nls - npmLinkSaver))]</p>
@@ -33,7 +40,8 @@
 <p>Hence, using commandline npx eslint . would be able to tell why is vscode eslint extension is not working at all. So, just install any requiring extension, it could probably be - <strong>eslint-plugin-react</strong> or <strong>@typescript-eslint/parser</strong> or <strong>@typescript-eslint/eslint-plugin</strong> or anything you&#39;re using in <strong>.eslintrc</strong> file, its very easy to find out from there too, though npx eslint . command will tell exactly whats missing.  BEWARE:: You should never ever install any of dependencies <strong>eslint-plugin-react</strong> or <strong>@typescript-eslint/parser</strong> or <strong>@typescript-eslint/eslint-plugin</strong> locally via <code>npm i &lt;pkg-name&gt;</code> because this way you&#39;ll end up installing complete package from the beginning form the package.json(and that might unlink some packages you linked somehow which aren&#39;t mentioned in local package.json, though it should do any change in global node_modules too, but you should never use npm i , but use npm i -g <pkg>, so you could make a link to to use from global node_modules only).</p>
 <hr>
 <h2 id="eslint"><a class="header-link" href="#eslint"></a>eslint</h2>
-<pre class="hljs"><code>It requires you <span class="hljs-keyword">to</span> have <span class="hljs-keyword">it</span> installed, </code></pre><hr>
+<pre class="hljs"><code>It requires you <span class="hljs-keyword">to</span> have <span class="hljs-keyword">it</span> installed <span class="hljs-keyword">as</span> a <span class="hljs-keyword">local</span> dependecy <span class="hljs-keyword">to</span> be able <span class="hljs-keyword">to</span> <span class="hljs-built_in">run</span> via command line, <span class="hljs-keyword">but</span> doens't need <span class="hljs-keyword">to</span> be present <span class="hljs-keyword">of</span> linked <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> editor's extension <span class="hljs-keyword">to</span> work.
+Though, editor's extension required <span class="hljs-keyword">the</span> .eslinrc <span class="hljs-built_in">file</span>, <span class="hljs-keyword">and</span> <span class="hljs-keyword">it</span> also needs <span class="hljs-keyword">the</span> appropriate plugins metioned <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> eslintrc <span class="hljs-built_in">file</span> <span class="hljs-keyword">to</span> work, otherwise <span class="hljs-keyword">it</span> won't work <span class="hljs-keyword">at</span> all.</code></pre><hr>
 <h1 id="the-best-way-to-deal-with-eslint-error-while-starting-react-server-is-to-just-use-below-variable-to-disable-the-eslint-version-checking-simply-"><a class="header-link" href="#the-best-way-to-deal-with-eslint-error-while-starting-react-server-is-to-just-use-below-variable-to-disable-the-eslint-version-checking-simply-"></a>The best way to deal with eslint error while starting react-server is to just use below variable to disable the eslint version checking simply-</h1>
 <pre class="hljs"><code>SKIP_PREFLIGHT_CHECK=<span class="hljs-literal">true</span></code></pre><p>There would be errors other than this, if there are you just need to fix it in the files or the eslintrc file.</p>
 <hr>
