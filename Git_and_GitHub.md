@@ -572,7 +572,8 @@ $ git commit --amend -am "New Message, forge older message!!"
 # Changed files will add to old commit.
 _
 $ git add . # or add individual files
-$ git commit --amend --no-edit 
+$ git commit --amend --no-edit
+THIS IS THE MOST REQUIRED COMMAND.
 # Since explicitly specified the staged area, it\'ll commit all changes.
 # --no-edit: SPECIFIES THAT WE DO NOT WANT TO CHANGE THE NAME OF THE OLDER COMMIT.
 _

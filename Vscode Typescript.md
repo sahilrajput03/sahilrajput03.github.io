@@ -1,4 +1,119 @@
+We have to use hooks unconditionally - deeper meaning(do not define any hook in some condition)
 
+***
+
+## Using DOM
+
+![image-20200701122113561](.imgs_typora/image-20200701122113561.png)
+
+![image-20200701121410237](.imgs_typora/image-20200701121410237.png)![image-20200701121607349](.imgs_typora/image-20200701121607349.png)
+
+![image-20200701121916210](.imgs_typora/image-20200701121916210.png)
+
+***
+
+## Ultimate Interfaces
+
+Using multiple interfaces with same name is allowed, but multiple types with same name isn't for e.g., 
+
+I added another interface with a property love, i.e.,
+
+ ![image-20200630195634360](.imgs_typora/image-20200630195634360.png)
+
+So, both the interfaces combines to make the interface and doesn't cause any error for that.(But using types would have thrown as editors error like "not allowed, already declared"). Hence, it causes this errror as the data doens't include the love property, though you can make the property optional to get rid of the error, as that would make it optional with ? operator of typescript in the interface definition.(**after the errors image**)
+
+![image-20200630195506426](.imgs_typora/image-20200630195506426.png)
+
+![image-20200630195946084](.imgs_typora/image-20200630195946084.png)
+
+**So, errorrs are clean now.**
+
+***
+
+## Using express's inbuilt types for defining types of different things for request and response-
+
+![image-20200630135214238](.imgs_typora/image-20200630135214238.png)
+
+-credits- AMAN
+
+Also, the first params for the route are just redundant as we're not using exercises anywhere. 
+
+`{exercises: string}` and we can actually write more descriptory thing there, like `{[index:string]: string}`.
+
+https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/express/index.d.ts#L109
+
+Kalle Ives: Express also has a RequestHandler type which can be used to add types to a request handler. It has generic types, which can be used to e.g. type the request body: 
+
+> Kalle Ives: This is something I experimented on a few weeks back. You will se a pattern.
+>
+> The **first type** parameter of the RequestHandler is for **req.params**, 
+>
+> **second** parameter is for the **response.body** and the 
+>
+> **third** one is for **req.body**
+
+![image-20200630134229437](.imgs_typora/image-20200630134229437.png)
+
+***
+
+## Using as operator  in request of express-
+
+![image-20200630134145885](.imgs_typora/image-20200630134145885.png)
+
+-credits- AMAN
+
+## Typescript using array within properties-
+
+![133623](.imgs_typora/133623.png)
+
+![image-20200630133718399](.imgs_typora/image-20200630133718399.png)
+
+## Assinging types to process variable in typescript
+
+#process.env process, typescript process.env variables 
+
+![image-20200630111848802](.imgs_typora/image-20200630111848802.png)
+
+***
+
+## as chaining
+
+![image-20200630104822637](.imgs_typora/image-20200630104822637.png)
+
+## Working with eslint requires package lint to be installed-
+
+![image-20200630104102646](.imgs_typora/image-20200630104102646.png)
+
+```bash
+Fixing above issue is to run below command-
+$ nls lint
+#This will install lint globally(if not installed), and then will link to it in the node_modules folder. If already installed, you  may use => 
+$ npm link lint #This should work good though.
+```
+
+
+
+***
+
+## Catching errors as typed
+
+```js
+  } catch (e) {
+    // const message2 = e.message; // This will give error as unsafe assignment of an any value.
+    // const message = (e as Error).message; // This works flawlessly.
+    res.status(400).send((e as Error).message); // This works good102.
+    // res.status(400).send(e instanceof Error ? e.message : "no message"); // This works good101.
+    // res.status(400).send(e instanceof Error ? e.message : "no message"); // This works good100.
+    // res.status(400).send(isError(e) ? e.message : "No message"); // This works good0.
+    // e instanceof Error && res.status(400).send(e.message);  // This works good1.
+    // isError(e) && res.status(400).send(e.message); // This works good2.
+
+    // Old coders style below- //This works good3.
+    // if(isError(e)){
+    //   res.status(400).send(e.message);
+    // }
+  }
+```
 
 Hello there!! go on..
 

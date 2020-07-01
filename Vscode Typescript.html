@@ -3,13 +3,77 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>typescript eslint no explicity any-</title>
+    <title>Using DOM</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><p>Hello there!! go on..</p>
+    <article class="markdown-body"><p>We have to use hooks unconditionally - deeper meaning(do not define any hook in some condition)</p>
+<hr>
+<h2 id="using-dom"><a class="header-link" href="#using-dom"></a>Using DOM</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200701122113561.png" alt="image-20200701122113561"></p>
+<p><img src=".imgs_typora/image-20200701121410237.png" alt="image-20200701121410237"><img src=".imgs_typora/image-20200701121607349.png" alt="image-20200701121607349"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200701121916210.png" alt="image-20200701121916210"></p>
+<hr>
+<h2 id="ultimate-interfaces"><a class="header-link" href="#ultimate-interfaces"></a>Ultimate Interfaces</h2>
+<p>Using multiple interfaces with same name is allowed, but multiple types with same name isn&#39;t for e.g., </p>
+<p>I added another interface with a property love, i.e.,</p>
+<p> <img src=".imgs_typora/image-20200630195634360.png" alt="image-20200630195634360"></p>
+<p>So, both the interfaces combines to make the interface and doesn&#39;t cause any error for that.(But using types would have thrown as editors error like &quot;not allowed, already declared&quot;). Hence, it causes this errror as the data doens&#39;t include the love property, though you can make the property optional to get rid of the error, as that would make it optional with ? operator of typescript in the interface definition.(<strong>after the errors image</strong>)</p>
+<p class="img-container"><img src=".imgs_typora/image-20200630195506426.png" alt="image-20200630195506426"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200630195946084.png" alt="image-20200630195946084"></p>
+<p><strong>So, errorrs are clean now.</strong></p>
+<hr>
+<h2 id="using-express's-inbuilt-types-for-defining-types-of-different-things-for-request-and-response-"><a class="header-link" href="#using-express's-inbuilt-types-for-defining-types-of-different-things-for-request-and-response-"></a>Using express&#39;s inbuilt types for defining types of different things for request and response-</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200630135214238.png" alt="image-20200630135214238"></p>
+<p>-credits- AMAN</p>
+<p>Also, the first params for the route are just redundant as we&#39;re not using exercises anywhere. </p>
+<p><code>{exercises: string}</code> and we can actually write more descriptory thing there, like <code>{[index:string]: string}</code>.</p>
+<p><a href="https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/express/index.d.ts#L109">https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/express/index.d.ts#L109</a></p>
+<p>Kalle Ives: Express also has a RequestHandler type which can be used to add types to a request handler. It has generic types, which can be used to e.g. type the request body: </p>
+<blockquote>
+<p>Kalle Ives: This is something I experimented on a few weeks back. You will se a pattern.</p>
+<p>The <strong>first type</strong> parameter of the RequestHandler is for <strong>req.params</strong>, </p>
+<p><strong>second</strong> parameter is for the <strong>response.body</strong> and the </p>
+<p><strong>third</strong> one is for <strong>req.body</strong></p>
+</blockquote>
+<p class="img-container"><img src=".imgs_typora/image-20200630134229437.png" alt="image-20200630134229437"></p>
+<hr>
+<h2 id="using-as-operator-in-request-of-express-"><a class="header-link" href="#using-as-operator-in-request-of-express-"></a>Using as operator  in request of express-</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200630134145885.png" alt="image-20200630134145885"></p>
+<p>-credits- AMAN</p>
+<h2 id="typescript-using-array-within-properties-"><a class="header-link" href="#typescript-using-array-within-properties-"></a>Typescript using array within properties-</h2>
+<p class="img-container"><img src=".imgs_typora/133623.png" alt="133623"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200630133718399.png" alt="image-20200630133718399"></p>
+<h2 id="assinging-types-to-process-variable-in-typescript"><a class="header-link" href="#assinging-types-to-process-variable-in-typescript"></a>Assinging types to process variable in typescript</h2>
+<p>#process.env process, typescript process.env variables </p>
+<p class="img-container"><img src=".imgs_typora/image-20200630111848802.png" alt="image-20200630111848802"></p>
+<hr>
+<h2 id="as-chaining"><a class="header-link" href="#as-chaining"></a>as chaining</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200630104822637.png" alt="image-20200630104822637"></p>
+<h2 id="working-with-eslint-requires-package-lint-to-be-installed-"><a class="header-link" href="#working-with-eslint-requires-package-lint-to-be-installed-"></a>Working with eslint requires package lint to be installed-</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200630104102646.png" alt="image-20200630104102646"></p>
+<pre class="hljs"><code>Fixing above issue is to run below <span class="hljs-built_in">command</span>-
+$ nls lint
+<span class="hljs-comment">#This will install lint globally(if not installed), and then will link to it in the node_modules folder. If already installed, you  may use =&gt; </span>
+$ npm link lint <span class="hljs-comment">#This should work good though.</span></code></pre><hr>
+<h2 id="catching-errors-as-typed"><a class="header-link" href="#catching-errors-as-typed"></a>Catching errors as typed</h2>
+<pre class="hljs"><code>  } <span class="hljs-keyword">catch</span> (e) {
+    <span class="hljs-comment">// const message2 = e.message; // This will give error as unsafe assignment of an any value.</span>
+    <span class="hljs-comment">// const message = (e as Error).message; // This works flawlessly.</span>
+    res.status(<span class="hljs-number">400</span>).send((e <span class="hljs-keyword">as</span> <span class="hljs-built_in">Error</span>).message); <span class="hljs-comment">// This works good102.</span>
+    <span class="hljs-comment">// res.status(400).send(e instanceof Error ? e.message : "no message"); // This works good101.</span>
+    <span class="hljs-comment">// res.status(400).send(e instanceof Error ? e.message : "no message"); // This works good100.</span>
+    <span class="hljs-comment">// res.status(400).send(isError(e) ? e.message : "No message"); // This works good0.</span>
+    <span class="hljs-comment">// e instanceof Error &amp;&amp; res.status(400).send(e.message);  // This works good1.</span>
+    <span class="hljs-comment">// isError(e) &amp;&amp; res.status(400).send(e.message); // This works good2.</span>
+
+    <span class="hljs-comment">// Old coders style below- //This works good3.</span>
+    <span class="hljs-comment">// if(isError(e)){</span>
+    <span class="hljs-comment">//   res.status(400).send(e.message);</span>
+    <span class="hljs-comment">// }</span>
+  }</code></pre><p>Hello there!! go on..</p>
 <hr>
 <p class="img-container"><img src=".imgs_typora/201318.png" alt="201318"></p>
 <p class="img-container"><img src=".imgs_typora/image-20200628215713460.png" alt="image-20200628215713460"></p>

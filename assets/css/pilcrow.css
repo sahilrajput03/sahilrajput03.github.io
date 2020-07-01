@@ -1,6 +1,6 @@
 /* needed because the container has overflow: hidden, but the pilcrows overflow */
 .markdown-body {
-  padding: 24px;
+  padding-left: 30px;
 }
 
 .markdown-body h1,
