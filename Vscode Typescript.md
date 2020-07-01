@@ -1,4 +1,43 @@
+
+
+***
+
+## For defining indentation for switch case(by default its set to 0 indentation)
+
+[link](https://eslint.org/docs/rules/indent)
+
+![image-20200701155929118](.imgs_typora/image-20200701155929118.png)
+
+***
+
+### Use Ctrl+L and then press, alt+ctrl+right arrow to get the desired block select with just those two shortcuts.
+
+***
+
+## You can create a .eslintrc.json file in the src foler(or anywhere you want it) to overwrite the settings for eslint in current project
+
+src: [link8](http://rahulgaba.com/front-end/2019/02/17/Use-custom-eslint-config-in-create-react-app-using-three-simple-steps-No-external-dependencies.html)
+
+```json
+{
+  "extends": "react-app",
+  "rules": {
+    "indent": [
+      "error",
+      2
+    ] // A custom style-related rule for example
+    // More custom rules here
+  }
+}
+```
+
+
+
+***
+
 We have to use hooks unconditionally - deeper meaning(do not define any hook in some condition)
+
+## We love hooks unconditionally. ;D
 
 ***
 

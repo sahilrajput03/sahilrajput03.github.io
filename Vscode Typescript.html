@@ -3,13 +3,33 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Using DOM</title>
+    <title>For defining indentation for switch case(by default its set to 0 indentation)</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><p>We have to use hooks unconditionally - deeper meaning(do not define any hook in some condition)</p>
+    <article class="markdown-body"><hr>
+<h2 id="for-defining-indentation-for-switch-case(by-default-its-set-to-0-indentation)"><a class="header-link" href="#for-defining-indentation-for-switch-case(by-default-its-set-to-0-indentation)"></a>For defining indentation for switch case(by default its set to 0 indentation)</h2>
+<p><a href="https://eslint.org/docs/rules/indent">link</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200701155929118.png" alt="image-20200701155929118"></p>
+<hr>
+<h3 id="use-ctrl+l-and-then-press,-alt+ctrl+right-arrow-to-get-the-desired-block-select-with-just-those-two-shortcuts."><a class="header-link" href="#use-ctrl+l-and-then-press,-alt+ctrl+right-arrow-to-get-the-desired-block-select-with-just-those-two-shortcuts."></a>Use Ctrl+L and then press, alt+ctrl+right arrow to get the desired block select with just those two shortcuts.</h3>
+<hr>
+<h2 id="you-can-create-a-.eslintrc.json-file-in-the-src-foler(or-anywhere-you-want-it)-to-overwrite-the-settings-for-eslint-in-current-project"><a class="header-link" href="#you-can-create-a-.eslintrc.json-file-in-the-src-foler(or-anywhere-you-want-it)-to-overwrite-the-settings-for-eslint-in-current-project"></a>You can create a .eslintrc.json file in the src foler(or anywhere you want it) to overwrite the settings for eslint in current project</h2>
+<p>src: <a href="http://rahulgaba.com/front-end/2019/02/17/Use-custom-eslint-config-in-create-react-app-using-three-simple-steps-No-external-dependencies.html">link8</a></p>
+<pre class="hljs"><code>{
+  <span class="hljs-attr">"extends"</span>: <span class="hljs-string">"react-app"</span>,
+  <span class="hljs-attr">"rules"</span>: {
+    <span class="hljs-attr">"indent"</span>: [
+      <span class="hljs-string">"error"</span>,
+      <span class="hljs-number">2</span>
+    ] // A custom style-related rule for example
+    // More custom rules here
+  }
+}</code></pre><hr>
+<p>We have to use hooks unconditionally - deeper meaning(do not define any hook in some condition)</p>
+<h2 id="we-love-hooks-unconditionally.-;d"><a class="header-link" href="#we-love-hooks-unconditionally.-;d"></a>We love hooks unconditionally. ;D</h2>
 <hr>
 <h2 id="using-dom"><a class="header-link" href="#using-dom"></a>Using DOM</h2>
 <p class="img-container"><img src=".imgs_typora/image-20200701122113561.png" alt="image-20200701122113561"></p>
