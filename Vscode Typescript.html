@@ -3,13 +3,59 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>For defining indentation for switch case(by default its set to 0 indentation)</title>
+    <title>npm-safe-install - a waste of time</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><hr>
+    <article class="markdown-body"><h2 id="npm-safe-install---a-waste-of-time"><a class="header-link" href="#npm-safe-install---a-waste-of-time"></a>npm-safe-install - a waste of time</h2>
+<p>This dependency isn&#39;t any better coz its just too lazy to detect what&#39;s linked and it install those linked if they are present in the package.json file, and that&#39;s just redundant coz we have just liked to that to be able to access that dependency for. Just waste of time. nsi is an alias for this command.</p>
+<p class="img-container"><img src=".imgs_typora/image-20200701221915979.png" alt="image-20200701221915979"></p>
+<hr>
+<h2 id="npm-link---save---the-issue-that-is-long-lived-form-2011"><a class="header-link" href="#npm-link---save---the-issue-that-is-long-lived-form-2011"></a>npm link --save - the issue that is long lived form 2011</h2>
+<p><a href="https://github.com/npm/npm/issues/1166">https://github.com/npm/npm/issues/1166</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200701220946095.png" alt="image-20200701220946095"></p>
+<hr>
+<h2 id="a-required-knowledge-on-the-basis-of-npm-link-"><a class="header-link" href="#a-required-knowledge-on-the-basis-of-npm-link-"></a>A required knowledge on the basis of npm link-</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200701220656211.png" alt="image-20200701220656211" style="zoom:50%;" /></p>
+<hr>
+<h2 id="a-unrealitic-way-to-work-with-package.json-file-though-all-this-can-be-done-with-`npm-i---link`now."><a class="header-link" href="#a-unrealitic-way-to-work-with-package.json-file-though-all-this-can-be-done-with-`npm-i---link`now."></a>A unrealitic way to work with package.json file though all this can be done with <code>npm i --link</code>now.</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200701220445157.png" alt="image-20200701220445157" style="zoom:50%;" /></p>
+<hr>
+<h2 id="https://docs.npmjs.com/misc/semver"><a class="header-link" href="#https://docs.npmjs.com/misc/semver"></a><a href="https://docs.npmjs.com/misc/semver">https://docs.npmjs.com/misc/semver</a></h2>
+<p class="img-container"><img src=".imgs_typora/image-20200701214045732.png" alt="image-20200701214045732"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200701213654811.png" alt="image-20200701213654811"></p>
+<pre class="hljs"><code><span class="hljs-comment">#prefer </span>
+$ npm i --link
+<span class="hljs-comment">#below one doesn't add anything to the local package.json file</span>
+$ npm i &lt;pkg&gt; --link , So avoid this <span class="hljs-built_in">command</span>, use nls but remember it updates the same package package.json file.</code></pre><h2 id="scoped-dependencies-in-node"><a class="header-link" href="#scoped-dependencies-in-node"></a>Scoped dependencies in node</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200701212427571.png" alt="image-20200701212427571" style="zoom:50%;" /></p>
+<h2 id="bundled-dependencies-in-node"><a class="header-link" href="#bundled-dependencies-in-node"></a>Bundled dependencies in node</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200701211623576.png" alt="image-20200701211623576" style="zoom:50%;" /></p>
+<hr>
+<p>So, preferable you should use a few commands only-</p>
+<pre class="hljs"><code>nls &lt;pkg&gt; <span class="hljs-comment">#To install a dependency but will overwrite the package version in the local package.json file</span>
+npm i &lt;pkg&gt; --link
+<span class="hljs-comment">#Above command just don't add anything to the package.json file, but installs globally and then link to it in local node_modules folder. Not recommended as it does the same destructive behavious like would remove the symmlinks that are not in package.json file.</span>
+<span class="hljs-comment">#USE NPM LINK &lt;PKG&gt; instead. Safer option, as it isn't destructive at all. Doens't even checks the local package.json file.</span></code></pre><hr>
+<h2 id="npm-i---link"><a class="header-link" href="#npm-i---link"></a>npm i --link</h2>
+<pre class="hljs"><code>$ npm i --link
+<span class="hljs-comment">#This is really phenomenal, try if for few years, it doesn't download dependencies much rather prefers a way to fetch older caches and install them as globally and there's a verly littlt chance it would break anything, and it works offine, thats one of the best thing.</span>
+<span class="hljs-comment">#This works offline too.</span>
+<span class="hljs-comment">#This is a pretty good option to install a project, though using nls is also favourable</span>
+<span class="hljs-comment">#Above command installs all packages globally and links to them, from local package.json file.</span>
+<span class="hljs-comment">#TIP: Works offline too, though throws a warning that using stale data, but its okay though.</span></code></pre><pre class="hljs"><code>$ npm install formik --link
+<span class="hljs-comment">#Just simply perfer, npm i -g formik &amp;&amp; npm link </span>
+<span class="hljs-comment">#Above command just installs/updates formik package (internet must be available, if no earlier version is present, it won't download it again though), and then does npm link formik.</span>
+Above <span class="hljs-built_in">command</span> is just a short of-
+$ npm i -g formik &amp;&amp; npm link formik
+**
+So, npm install &lt;pkg&gt; --link is official alternate <span class="hljs-keyword">for</span> nls &lt;pkg&gt; but the former one requires the internet to be working, <span class="hljs-keyword">while</span> the second doesn\<span class="hljs-string">'t. Thats where nls wins.</span></code></pre><hr>
+<h2 id="npm-uninstall"><a class="header-link" href="#npm-uninstall"></a>npm uninstall</h2>
+<p>So, the learning is to never unlink but actually <strong>delete the linked symlinks manually from the node_modules folder.</strong></p>
+<p class="img-container"><img src=".imgs_typora/image-20200701195354197.png" alt="image-20200701195354197"></p>
+<hr>
 <h2 id="for-defining-indentation-for-switch-case(by-default-its-set-to-0-indentation)"><a class="header-link" href="#for-defining-indentation-for-switch-case(by-default-its-set-to-0-indentation)"></a>For defining indentation for switch case(by default its set to 0 indentation)</h2>
 <p><a href="https://eslint.org/docs/rules/indent">link</a></p>
 <p class="img-container"><img src=".imgs_typora/image-20200701155929118.png" alt="image-20200701155929118"></p>
@@ -286,7 +332,7 @@ aliases: ls, list, la, ll
 <pre class="hljs"><code>$ npm update [-g] [&lt;pkg&gt;...]
 <span class="hljs-comment">#-g is for global config</span>
 aliases: up, upgrade</code></pre><hr>
-<h2 id="npm-uninstall"><a class="header-link" href="#npm-uninstall"></a>npm-uninstall</h2>
+<h2 id="npm-uninstall-1"><a class="header-link" href="#npm-uninstall-1"></a>npm-uninstall</h2>
 <p>aliases: remove, rm, r, un, unlink</p>
 <pre class="hljs"><code>$ npm uninstall sax</code></pre><p>*</p>
 <pre class="hljs"><code>$ npm prune 

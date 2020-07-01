@@ -1,4 +1,105 @@
+## npm-safe-install - a waste of time
 
+This dependency isn't any better coz its just too lazy to detect what's linked and it install those linked if they are present in the package.json file, and that's just redundant coz we have just liked to that to be able to access that dependency for. Just waste of time. nsi is an alias for this command.
+
+![image-20200701221915979](.imgs_typora/image-20200701221915979.png)
+
+***
+
+## npm link --save - the issue that is long lived form 2011
+
+https://github.com/npm/npm/issues/1166
+
+![image-20200701220946095](.imgs_typora/image-20200701220946095.png)
+
+***
+
+## A required knowledge on the basis of npm link-
+
+<img src=".imgs_typora/image-20200701220656211.png" alt="image-20200701220656211" style="zoom:50%;" />
+
+***
+
+## A unrealitic way to work with package.json file though all this can be done with `npm i --link`now.
+
+<img src=".imgs_typora/image-20200701220445157.png" alt="image-20200701220445157" style="zoom:50%;" />
+
+
+
+***
+
+## https://docs.npmjs.com/misc/semver
+
+![image-20200701214045732](.imgs_typora/image-20200701214045732.png)
+
+![image-20200701213654811](.imgs_typora/image-20200701213654811.png)
+
+```bash
+#prefer 
+$ npm i --link
+#below one doesn't add anything to the local package.json file
+$ npm i <pkg> --link , So avoid this command, use nls but remember it updates the same package package.json file.
+```
+
+
+
+## Scoped dependencies in node
+
+<img src=".imgs_typora/image-20200701212427571.png" alt="image-20200701212427571" style="zoom:50%;" />
+
+
+
+## Bundled dependencies in node
+
+<img src=".imgs_typora/image-20200701211623576.png" alt="image-20200701211623576" style="zoom:50%;" />
+
+
+
+***
+
+So, preferable you should use a few commands only-
+
+```bash
+nls <pkg> #To install a dependency but will overwrite the package version in the local package.json file
+npm i <pkg> --link
+#Above command just don't add anything to the package.json file, but installs globally and then link to it in local node_modules folder. Not recommended as it does the same destructive behavious like would remove the symmlinks that are not in package.json file.
+#USE NPM LINK <PKG> instead. Safer option, as it isn't destructive at all. Doens't even checks the local package.json file.
+```
+
+
+
+***
+
+## npm i --link
+
+```bash
+$ npm i --link
+#This is really phenomenal, try if for few years, it doesn't download dependencies much rather prefers a way to fetch older caches and install them as globally and there's a verly littlt chance it would break anything, and it works offine, thats one of the best thing.
+#This works offline too.
+#This is a pretty good option to install a project, though using nls is also favourable
+#Above command installs all packages globally and links to them, from local package.json file.
+#TIP: Works offline too, though throws a warning that using stale data, but its okay though.
+```
+
+```bash
+$ npm install formik --link
+#Just simply perfer, npm i -g formik && npm link 
+#Above command just installs/updates formik package (internet must be available, if no earlier version is present, it won't download it again though), and then does npm link formik.
+Above command is just a short of-
+$ npm i -g formik && npm link formik
+**
+So, npm install <pkg> --link is official alternate for nls <pkg> but the former one requires the internet to be working, while the second doesn\'t. Thats where nls wins.
+```
+
+
+
+***
+
+## npm uninstall
+
+So, the learning is to never unlink but actually **delete the linked symlinks manually from the node_modules folder.**
+
+![image-20200701195354197](.imgs_typora/image-20200701195354197.png)
 
 ***
 
