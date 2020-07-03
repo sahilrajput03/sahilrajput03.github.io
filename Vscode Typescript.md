@@ -1,6 +1,14 @@
+![image-20200703210932526](.imgs_typora/image-20200703210932526.png)
+
+***
+
 ## npm-safe-install - a waste of time
 
 This dependency isn't any better coz its just too lazy to detect what's linked and it install those linked if they are present in the package.json file, and that's just redundant coz we have just liked to that to be able to access that dependency for. Just waste of time. nsi is an alias for this command.
+
+What all this nsi does is, just delete everything in the node_modules folder and then install everything from package.json file(do not link anythink, heckkk), and then restores all the symlinks that were present earlier in the node_modules folder.
+
+Unistalled this heck of waste of time.
 
 ![image-20200701221915979](.imgs_typora/image-20200701221915979.png)
 
