@@ -1,3 +1,107 @@
+![cool-background](.imgs_typora/cool-background.svg)
+
+## Sequence and parallel reading of files-
+
+[link@stackoverflow](https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop)
+
+![image-20200705204559439](.imgs_typora/image-20200705204559439.png)
+
+***
+
+## pkg - executable maker for node programs
+
+[link](https://github.com/vercel/pkg)
+
+```bash
+$ npm i -g pkg
+#To make an executable, just exeucte like 
+$ pkg <file-name>.js
+#The above syntax is not providing any target like windows, linux, or mac, so it compiles for all three. Which we don't want, try the below command.
+$ pkg -t node12-win-x64 <file-name>.js
+#Thats all, this would compile only for windows. Though you can always get help via 
+$ pkg -h
+```
+
+
+
+***
+
+## Disabled a lot of non- usable extension in vscode(use them anytime later)\
+
+***
+
+## tslint ignore files/folder
+
+[link](https://stackoverflow.com/questions/34578677/how-to-ignore-a-particular-directory-or-file-for-tslint)
+
+![image-20200705144538426](.imgs_typora/image-20200705144538426.png)
+
+***
+
+[link](https://stackoverflow.com/questions/62737905/why-property-does-not-exist-on-type-in-object-destructuring)
+
+![image-20200705142910955](.imgs_typora/image-20200705142910955.png)
+
+## semantic ui 
+
+https://react.semantic-ui.com/elements/icon/#gendersicons-can-represent-genders-or-types-of-sexuality
+
+![image-20200704162305602](.imgs_typora/image-20200704162305602.png)
+
+***
+
+## send pretty json
+
+Though this mehtod is good to view things on a webpage with no extra extensions in the browser. But it increases the size of the output, thus might be a little bulky in scenarios where we are dealing with heavy data.
+
+```js
+res.header("Content-Type", 'application/json');
+res.send(JSON.stringify(DESIRED_object, null, 4));
+# Below line isn't good any. You need to explicitly use JSON.stringify() to get it the desired shape.
+//  res.json(singleEntry, null, 4);
+```
+
+```js
+Using params:
+req.params
+```
+
+
+
+****
+
+![image-20200704132259746](.imgs_typora/image-20200704132259746.png)
+
+***
+
+![image-20200704030651308](.imgs_typora/image-20200704030651308.png)
+
+![image-20200704020028603](.imgs_typora/image-20200704020028603.png)
+
+
+
+![image-20200704015628076](.imgs_typora/image-20200704015628076.png)
+
+[kotlin projects](https://techlog360.com/best-open-source-android-apps/#:~:text=TimberX%20Music%20Player%20is%20one,and%20dependency%20injection%20with%20KOIN.)  , [kotlin trending repos@officialKotlin](https://github.com/trending/kotlin)
+
+![image-20200704005256404](.imgs_typora/image-20200704005256404.png)
+
+## Object.freeze method
+
+![image-20200704003805129](.imgs_typora/image-20200704003805129.png)
+
+![image-20200704003521162](.imgs_typora/image-20200704003521162.png)
+
+***
+
+## Typescripts gold features-
+
+![image-20200703220932555](.imgs_typora/image-20200703220932555.png)
+
+
+
+***
+
 ![image-20200703210932526](.imgs_typora/image-20200703210932526.png)
 
 ***
@@ -219,6 +323,7 @@ Kalle Ives: Express also has a RequestHandler type which can be used to add type
 ## Assinging types to process variable in typescript
 
 #process.env process, typescript process.env variables 
+link
 
 ![image-20200630111848802](.imgs_typora/image-20200630111848802.png)
 

@@ -3,13 +3,60 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>npm-safe-install - a waste of time</title>
+    <title>Sequence and parallel reading of files-</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><p class="img-container"><img src=".imgs_typora/image-20200703210932526.png" alt="image-20200703210932526"></p>
+    <article class="markdown-body"><p class="img-container"><img src=".imgs_typora/cool-background.svg" alt="cool-background"></p>
+<h2 id="sequence-and-parallel-reading-of-files-"><a class="header-link" href="#sequence-and-parallel-reading-of-files-"></a>Sequence and parallel reading of files-</h2>
+<p><a href="https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop">link@stackoverflow</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200705204559439.png" alt="image-20200705204559439"></p>
+<hr>
+<h2 id="pkg---executable-maker-for-node-programs"><a class="header-link" href="#pkg---executable-maker-for-node-programs"></a>pkg - executable maker for node programs</h2>
+<p><a href="https://github.com/vercel/pkg">link</a></p>
+<pre class="hljs"><code>$ npm i -g pkg
+<span class="hljs-comment">#To make an executable, just exeucte like </span>
+$ pkg &lt;file-name&gt;.js
+<span class="hljs-comment">#The above syntax is not providing any target like windows, linux, or mac, so it compiles for all three. Which we don't want, try the below command.</span>
+$ pkg -t node12-win-x64 &lt;file-name&gt;.js
+<span class="hljs-comment">#Thats all, this would compile only for windows. Though you can always get help via </span>
+$ pkg -h</code></pre><hr>
+<h2 id="disabled-a-lot-of-non--usable-extension-in-vscode(use-them-anytime-later)\"><a class="header-link" href="#disabled-a-lot-of-non--usable-extension-in-vscode(use-them-anytime-later)\"></a>Disabled a lot of non- usable extension in vscode(use them anytime later)\</h2>
+<hr>
+<h2 id="tslint-ignore-files/folder"><a class="header-link" href="#tslint-ignore-files/folder"></a>tslint ignore files/folder</h2>
+<p><a href="https://stackoverflow.com/questions/34578677/how-to-ignore-a-particular-directory-or-file-for-tslint">link</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200705144538426.png" alt="image-20200705144538426"></p>
+<hr>
+<p><a href="https://stackoverflow.com/questions/62737905/why-property-does-not-exist-on-type-in-object-destructuring">link</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200705142910955.png" alt="image-20200705142910955"></p>
+<h2 id="semantic-ui"><a class="header-link" href="#semantic-ui"></a>semantic ui</h2>
+<p><a href="https://react.semantic-ui.com/elements/icon/#gendersicons-can-represent-genders-or-types-of-sexuality">https://react.semantic-ui.com/elements/icon/#gendersicons-can-represent-genders-or-types-of-sexuality</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200704162305602.png" alt="image-20200704162305602"></p>
+<hr>
+<h2 id="send-pretty-json"><a class="header-link" href="#send-pretty-json"></a>send pretty json</h2>
+<p>Though this mehtod is good to view things on a webpage with no extra extensions in the browser. But it increases the size of the output, thus might be a little bulky in scenarios where we are dealing with heavy data.</p>
+<pre class="hljs"><code>res.header(<span class="hljs-string">"Content-Type"</span>, <span class="hljs-string">'application/json'</span>);
+res.send(<span class="hljs-built_in">JSON</span>.stringify(DESIRED_object, <span class="hljs-literal">null</span>, <span class="hljs-number">4</span>));
+# Below line isn<span class="hljs-string">'t good any. You need to explicitly use JSON.stringify() to get it the desired shape.
+//  res.json(singleEntry, null, 4);</span></code></pre><pre class="hljs"><code>Using params:
+req.params</code></pre><hr>
+<p class="img-container"><img src=".imgs_typora/image-20200704132259746.png" alt="image-20200704132259746"></p>
+<hr>
+<p class="img-container"><img src=".imgs_typora/image-20200704030651308.png" alt="image-20200704030651308"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200704020028603.png" alt="image-20200704020028603"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200704015628076.png" alt="image-20200704015628076"></p>
+<p><a href="https://techlog360.com/best-open-source-android-apps/#:~:text=TimberX%20Music%20Player%20is%20one,and%20dependency%20injection%20with%20KOIN.">kotlin projects</a>  , <a href="https://github.com/trending/kotlin">kotlin trending repos@officialKotlin</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200704005256404.png" alt="image-20200704005256404"></p>
+<h2 id="object.freeze-method"><a class="header-link" href="#object.freeze-method"></a>Object.freeze method</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200704003805129.png" alt="image-20200704003805129"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200704003521162.png" alt="image-20200704003521162"></p>
+<hr>
+<h2 id="typescripts-gold-features-"><a class="header-link" href="#typescripts-gold-features-"></a>Typescripts gold features-</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200703220932555.png" alt="image-20200703220932555"></p>
+<hr>
+<p class="img-container"><img src=".imgs_typora/image-20200703210932526.png" alt="image-20200703210932526"></p>
 <hr>
 <h2 id="npm-safe-install---a-waste-of-time"><a class="header-link" href="#npm-safe-install---a-waste-of-time"></a>npm-safe-install - a waste of time</h2>
 <p>This dependency isn&#39;t any better coz its just too lazy to detect what&#39;s linked and it install those linked if they are present in the package.json file, and that&#39;s just redundant coz we have just liked to that to be able to access that dependency for. Just waste of time. nsi is an alias for this command.</p>
@@ -117,7 +164,8 @@ So, npm install &lt;pkg&gt; --link is official alternate <span class="hljs-keywo
 <p class="img-container"><img src=".imgs_typora/133623.png" alt="133623"></p>
 <p class="img-container"><img src=".imgs_typora/image-20200630133718399.png" alt="image-20200630133718399"></p>
 <h2 id="assinging-types-to-process-variable-in-typescript"><a class="header-link" href="#assinging-types-to-process-variable-in-typescript"></a>Assinging types to process variable in typescript</h2>
-<p>#process.env process, typescript process.env variables </p>
+<p>#process.env process, typescript process.env variables 
+link</p>
 <p class="img-container"><img src=".imgs_typora/image-20200630111848802.png" alt="image-20200630111848802"></p>
 <hr>
 <h2 id="as-chaining"><a class="header-link" href="#as-chaining"></a>as chaining</h2>
