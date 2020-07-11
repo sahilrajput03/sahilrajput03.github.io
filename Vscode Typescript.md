@@ -1,3 +1,7 @@
+
+
+
+
 ![cool-background](.imgs_typora/cool-background.svg)
 
 ## Sequence and parallel reading of files-
@@ -866,7 +870,7 @@ THAT WORKS LIKE CHARM!!
 
 ## Typescript hero extension-
 
-For Visual Studio Code you need the [typescript hero](https://marketplace.visualstudio.com/items?itemName=rbbit.typescript-hero) extension.
+<mark>For Visual Studio Code you need the [typescript hero](https://marketplace.visualstudio.com/items?itemName=rbbit.typescript-hero) extension.</mark>
 
 ***
 
@@ -874,8 +878,12 @@ For Visual Studio Code you need the [typescript hero](https://marketplace.visual
 
 ```bash
 $ npm i --save-dev @types/node
-#This has to installed as local dependency, installing globally doesn't work.
 
+#This has to installed as local dependency, installing globally doesn't work.
+++++
+<mark>Somethingg</mark>
+==somehight==
+++++
 __
 For using global packages via npm link
 $ npm i -g @types/node
