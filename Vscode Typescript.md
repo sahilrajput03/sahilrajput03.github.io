@@ -1,3 +1,7 @@
+---
+title: Blogging Like a Hacker
+---
+
 
 
 
@@ -24,6 +28,9 @@ $ pkg <file-name>.js
 $ pkg -t node12-win-x64 <file-name>.js
 #Thats all, this would compile only for windows. Though you can always get help via 
 $ pkg -h
+<pre>
+Making text <b>bold</b> inside code fence
+</pre>
 ```
 
 
@@ -840,7 +847,7 @@ $ npm install --only=prod
 
 ***
 
-![image-20200621141859040](.imgs_typora/image-20200621141859040.png)
+![image-20200621141859040](.imgs_typora/image-20200621141859040.png "GoodThings")
 
 ***
 
@@ -872,9 +879,15 @@ THAT WORKS LIKE CHARM!!
 
 <mark>For Visual Studio Code you need the [typescript hero](https://marketplace.visualstudio.com/items?itemName=rbbit.typescript-hero) extension.</mark>
 
+
+
+Hold down Cmd (on Windows: Ctrl) and click on [this link](#ts-node for development) to jump to header `Block Elements`. 
+
 ***
 
-## To install types support for node internal modules
+## To install types support for node internal modules :happy:
+
+:family_man_girl_boy: <span style="color:red">this text is red</span>
 
 ```bash
 $ npm i --save-dev @types/node
@@ -882,7 +895,6 @@ $ npm i --save-dev @types/node
 #This has to installed as local dependency, installing globally doesn't work.
 ++++
 <mark>Somethingg</mark>
-==somehight==
 ++++
 __
 For using global packages via npm link

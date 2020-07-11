@@ -1,6 +1,9 @@
 ---
+
 Rumours are worst to deal with.	This is YAML front matter. You may this to any document via context menu > insert > YAML front matter.
 ---
+
+~~STRIKED TEXT~~
 
 Use:
 
