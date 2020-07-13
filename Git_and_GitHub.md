@@ -1,5 +1,36 @@
 ***
 
+## Well documentation in nested folders supported by github
+
+Readme.md file works for individual folders in github too. Its amazing though.
+
+***
+
+## Empty commit
+
+You could make empty commit if you want
+
+```bash
+git commit -m"Initial commit" --allow-empty
+#Something like this is very intitutive when you just created a repo and need to make an empty commit coz you need to push.
+```
+
+
+
+***
+
+## git diff
+
+[link to refer](https://www.atlassian.com/git/tutorials/saving-changes/git-diff)
+
+It comares the current ==**head**== to the currently checked out branch(last commit obviously). 
+
+Also, ==we refer to the **untracked head**==( i.e., if you add the file to the tracking area, you won't be able to see the differences via `git diff` and thus to get the file out of the tracking area, you just need to do `git reset` to get everything{all_files_folders} out of the tracked area). 
+
+
+
+***
+
 ![image-20200624220146513](.imgs_typora/image-20200624220146513.png)
 
 ***
@@ -557,6 +588,10 @@ git branch -C <commit-sha> old-state
 
 ## Change the MESSAGE ONLY of last commit
 
+*beware: ANY`git --amend` MADE TO COMMIT THAT WAS PUSHED TO REMOTE EARLIER WOULD CAUSE MERGE ERROR IF YOU PUSH AGAIN{it will say your head is behind}. TO GET IT SOLVED YOU SIMPLY NEED TO MERGE IT VIA `git pull`. A simple thumb rule would be to NOT USE GIT --amend for the commits you have pushed to remote earlier(==though its completely safe to use if you do a git merge via `git pull` after you use `git commit --amend`==).
+
+ <img src=".imgs_typora/image-20200712220348692.png" alt="image-20200712220348692" style="zoom: 67%;" />
+
 ```bash
 $ git add . 
 # Or add individual files*(git add -A will does exactly same git add .)
@@ -566,7 +601,8 @@ $ git commit --amend -m "Feature 1 - Cool"
 # Hence you'll be prompted to change the name of the commit, with new changes included.
 _
 $ git commit --amend -a 
-# -a parameter will include the changes in tracking area.
+# -a parameter will simply include the changes in current tracking area.
+#You can alwasy see whats in tracking area via, git staus and all the green things{staged changes} are in tracking area and all red things are not in tracking area{non staged changes}.
 # vi editor will be followed to edit older commit message.
 $ git commit --amend -am "New Message, forge older message!!" 
 # Changed files will add to old commit.

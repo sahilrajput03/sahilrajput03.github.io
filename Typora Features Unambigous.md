@@ -3,6 +3,33 @@
 Rumours are worst to deal with.	This is YAML front matter. You may this to any document via context menu > insert > YAML front matter.
 ---
 
+:happy:
+:family_man_girl_boy:
+:StartTypingSomeCharactedAutocompleteWillHelp
+
+Video
+You can use the <video> HTML tag to embed videos. For example:
+
+<video src="xxx.mp4" />
+
+<u>Underline</u> becomes Underline.
+
+<span style="color:red">this text is red</span> 
+
+Strong
+A double * or _ will cause its enclosed contents to be wrapped with an HTML <strong> tag, e.g:
+**double asterisks**
+
+__double underscores__
+
+********
+Internal Links:
+Hold down Cmd (on Windows: Ctrl) and click on [this link](#ts-node for development <actually this is some heading in current typora md file>) to jump to header `Block Elements`. 
+
+********
+Horizontal Rules
+Entering *** or --- on a blank line and pressing return will draw a horizontal line.
+
 ~~STRIKED TEXT~~
 
 Use:

@@ -28,9 +28,6 @@ $ pkg <file-name>.js
 $ pkg -t node12-win-x64 <file-name>.js
 #Thats all, this would compile only for windows. Though you can always get help via 
 $ pkg -h
-<pre>
-Making text <b>bold</b> inside code fence
-</pre>
 ```
 
 

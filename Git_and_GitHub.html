@@ -3,13 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Ignoring multiple folder/file with same name in the repository</title>
+    <title>Well documentation in nested folders supported by github</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
     <article class="markdown-body"><hr>
+<h2 id="well-documentation-in-nested-folders-supported-by-github"><a class="header-link" href="#well-documentation-in-nested-folders-supported-by-github"></a>Well documentation in nested folders supported by github</h2>
+<p>Readme.md file works for individual folders in github too. Its amazing though.</p>
+<hr>
+<h2 id="empty-commit"><a class="header-link" href="#empty-commit"></a>Empty commit</h2>
+<p>You could make empty commit if you want</p>
+<pre class="hljs"><code>git commit -m<span class="hljs-string">"Initial commit"</span> --allow-empty
+<span class="hljs-comment">#Something like this is very intitutive when you just created a repo and need to make an empty commit coz you need to push.</span></code></pre><hr>
+<h2 id="git-diff"><a class="header-link" href="#git-diff"></a>git diff</h2>
+<p><a href="https://www.atlassian.com/git/tutorials/saving-changes/git-diff">link to refer</a></p>
+<p>It comares the current ==<strong>head</strong>== to the currently checked out branch(last commit obviously). </p>
+<p>Also, ==we refer to the <strong>untracked head</strong>==( i.e., if you add the file to the tracking area, you won&#39;t be able to see the differences via <code>git diff</code> and thus to get the file out of the tracking area, you just need to do <code>git reset</code> to get everything{all_files_folders} out of the tracked area). </p>
+<hr>
 <p class="img-container"><img src=".imgs_typora/image-20200624220146513.png" alt="image-20200624220146513"></p>
 <hr>
 <h2 id="ignoring-multiple-folder/file-with-same-name-in-the-repository"><a class="header-link" href="#ignoring-multiple-folder/file-with-same-name-in-the-repository"></a>Ignoring multiple folder/file with same name in the repository</h2>
@@ -267,6 +279,8 @@ git branch -C &lt;commit-sha&gt; old-state
 <h2 id="edit-content-and-name-both-of-last-commit:"><a class="header-link" href="#edit-content-and-name-both-of-last-commit:"></a>Edit CONTENT AND NAME BOTH of last commit:</h2>
 <h2 id="edit-the-content-only-of-last-commit:"><a class="header-link" href="#edit-the-content-only-of-last-commit:"></a>Edit the CONTENT ONLY of last commit:</h2>
 <h2 id="change-the-message-only-of-last-commit"><a class="header-link" href="#change-the-message-only-of-last-commit"></a>Change the MESSAGE ONLY of last commit</h2>
+<p>*beware: ANY<code>git --amend</code> MADE TO COMMIT THAT WAS PUSHED TO REMOTE EARLIER WOULD CAUSE MERGE ERROR IF YOU PUSH AGAIN{it will say your head is behind}. TO GET IT SOLVED YOU SIMPLY NEED TO MERGE IT VIA <code>git pull</code>. A simple thumb rule would be to NOT USE GIT --amend for the commits you have pushed to remote earlier(==though its completely safe to use if you do a git merge via <code>git pull</code> after you use <code>git commit --amend</code>==).</p>
+<p> <img src=".imgs_typora/image-20200712220348692.png" alt="image-20200712220348692" style="zoom: 67%;" /></p>
 <pre class="hljs"><code>$ git add . 
 <span class="hljs-comment"># Or add individual files*(git add -A will does exactly same git add .)</span>
 <span class="hljs-comment"># IMPORTANT: If you haven't added any files, that means you have just changed some files only, then you must prefer(#2 ADDITIONALLY) that as that is one liner.</span>
@@ -275,7 +289,8 @@ $ git commit --amend -m <span class="hljs-string">"Feature 1 - Cool"</span>
 <span class="hljs-comment"># Hence you'll be prompted to change the name of the commit, with new changes included.</span>
 _
 $ git commit --amend <span class="hljs-_">-a</span> 
-<span class="hljs-comment"># -a parameter will include the changes in tracking area.</span>
+<span class="hljs-comment"># -a parameter will simply include the changes in current tracking area.</span>
+<span class="hljs-comment">#You can alwasy see whats in tracking area via, git staus and all the green things{staged changes} are in tracking area and all red things are not in tracking area{non staged changes}.</span>
 <span class="hljs-comment"># vi editor will be followed to edit older commit message.</span>
 $ git commit --amend -am <span class="hljs-string">"New Message, forge older message!!"</span> 
 <span class="hljs-comment"># Changed files will add to old commit.</span>

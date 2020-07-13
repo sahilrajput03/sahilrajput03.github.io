@@ -2,6 +2,16 @@ kicking
 
 ***
 
+## Actual handling of error data(sting or complex data send via express route) and handled in front-end try catch appropriately
+
+[helpful resource link@stackoverflowc](https://stackoverflow.com/questions/14154337/how-to-send-a-custom-http-status-message-in-node-express)
+
+![image-20200714004605392](.imgs_typora/image-20200714004605392.png)
+
+
+
+***
+
 ## REST Example with axios - Frontend and backend error handling collaboration example-
 
 - Frontend - deleteEventHandler 

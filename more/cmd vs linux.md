@@ -1,3 +1,26 @@
+![image-20200712223329872](.imgs_typora/image-20200712223329872.png)
+
+## using ctrl+[shift]+tab
+
+This helps in swithching windows only in between opened mintty windows.
+
+### Scrolling in mintty
+
+You can scroll window of mintty via **up/down** arror or **pgup/pgdown** ==while holdingshift key==.
+
+***
+
+### Creating a file with content with only one command
+
+```bash
+echo "this is a git diff test example" > diff_test.txt
+echo "this is a diff example" > diff_test.txt #This is adding more content to the file.
+```
+
+
+
+***
+
 ## Creating aliases for mintty-
 
 Also,
