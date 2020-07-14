@@ -249,6 +249,7 @@ Merge commits are unique against other commits in the fact that they have two pa
 ```bash
 #Syntax
 $ git merge feature # this will merge to the currently checked out branch/Head
+#Important thing to notice is that all newer commits in feature branch will be added to current tip of the checkedout branch and if you sepecify --no-ff option you'll be prompted for an additional identifier branch merge commit (with defined merging branch names in that. That's really good if you want to track later how and when did you merge any branch. This feature can be used in below multiple branch merging strategy too.)
 $ git merge feature feature2 feature3 # This will merge all the branches specified to the current checked out branch. 
 ```
 
@@ -1766,6 +1767,10 @@ git clone --branch <branch-name> <repository-url>
  
  #this works with any branch too
  git checkout <branch-name> -f
+ 
+#Also:
+#To remove untracked files from current branch.
+git clean -f #This has to done explicitly as  •git reset --hard OR •git checkout -f OR •git checkout <branch-name> -f doesn't clear(deleted untracked files).
 ```
 
 ***

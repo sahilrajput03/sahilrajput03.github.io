@@ -132,6 +132,7 @@ $ git <span class="hljs-built_in">log</span> --graph <span class="hljs-comment">
 <p>Merge commits are unique against other commits in the fact that they have two parent commits. When creating a merge commit Git will attempt to auto magically merge the separate histories for you. If Git encounters a piece of data that is changed in both histories it will be unable to automatically combine them. This scenario is a version control conflict and Git will need user intervention to continue.  Source: <a href="https://www.atlassian.com/git/tutorials/using-branches/git-merge">link</a></p>
 <pre class="hljs"><code><span class="hljs-comment">#Syntax</span>
 $ git merge feature <span class="hljs-comment"># this will merge to the currently checked out branch/Head</span>
+<span class="hljs-comment">#Important thing to notice is that all newer commits in feature branch will be added to current tip of the checkedout branch and if you sepecify --no-ff option you'll be prompted for an additional identifier branch merge commit (with defined merging branch names in that. That's really good if you want to track later how and when did you merge any branch. This feature can be used in below multiple branch merging strategy too.)</span>
 $ git merge feature feature2 feature3 <span class="hljs-comment"># This will merge all the branches specified to the current checked out branch. </span></code></pre><pre class="hljs"><code>$ git merge feature <span class="hljs-comment"># This will simply put all the newer commits made in feature branch to the current branch.</span>
 <span class="hljs-comment">#-no-ff just means that it facilitates you to add an additional message to put after the merge.</span>
 $ git merge --no-ff feature <span class="hljs-comment"># This will open vi editor to let you enter the closing commit message after the merge has finished. This will DO SAME AS ABOVE, but will ASK FOR COMMIT MESSAGE for the purpose of record keeping regarding the merge of the branch, and you can explain all about it there. </span></code></pre><p>This is verbose, and merge record keeping friendly while the former one doesn&#39;t write any commit message for the merging.
@@ -853,7 +854,11 @@ git <span class="hljs-built_in">clone</span> --branch &lt;branch-name&gt; &lt;re
  git checkout <span class="hljs-_">-f</span>
 
  <span class="hljs-comment">#this works with any branch too</span>
- git checkout &lt;branch-name&gt; <span class="hljs-_">-f</span></code></pre><hr>
+ git checkout &lt;branch-name&gt; <span class="hljs-_">-f</span>
+
+<span class="hljs-comment">#Also:</span>
+<span class="hljs-comment">#To remove untracked files from current branch.</span>
+git clean <span class="hljs-_">-f</span> <span class="hljs-comment">#This has to done explicitly as  •git reset --hard OR •git checkout -f OR •git checkout &lt;branch-name&gt; -f doesn't clear(deleted untracked files).</span></code></pre><hr>
 <p>Good One: You may download: <a href="https://egghead.io/courses/practical-git-for-everyday-professional-use">https://egghead.io/courses/practical-git-for-everyday-professional-use</a> </p>
 <p> <a href="https://egghead.io/courses/productive-git-for-developers">https://egghead.io/courses/productive-git-for-developers</a> </p>
 <hr>
