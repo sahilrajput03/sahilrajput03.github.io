@@ -244,7 +244,7 @@ $ git log --graph #this shows in graph form(so called :(
 
 ## Git merge
 
-Merge commits are unique against other commits in the fact that they have two parent commits. When creating a merge commit Git will attempt to auto magically merge the separate histories for you. If Git encounters a piece of data that is changed in both histories it will be unable to automatically combine them. This scenario is a version control conflict and Git will need user intervention to continue.  Source: [link](https://www.atlassian.com/git/tutorials/using-branches/git-merge)
+Merge commits are unique against other commits in the fact that they have two parent commits. When creating a merge commit Git will attempt to auto magically merge the separate histories for you. If Git encounters a piece of data that is changed in both histories it will be unable to automatically combine them. This scenario is a version control conflict and Git will need user intervention to continue.  Source: [ best ever link on internet@atlassian.com♥](https://www.atlassian.com/git/tutorials/using-branches/git-merge)
 
 ```bash
 #Syntax
