@@ -1,0 +1,30 @@
+a:link {
+    color: cornflowerblue;
+}
+a:active {
+    color: cornflowerblue;
+}
+a:hover {
+    color: red;
+}
+a:visited {
+    color: yellow;
+}
+a:visited:hover {
+    color: red;
+}
+.markdown-body a {
+    color: cornflowerblue;
+}
+.blue-line__buses {
+    color:white;
+}
+b {
+    color: white;
+}
+body {
+    background: #231738;
+}
+.markdown-body {
+    color:white;
+}

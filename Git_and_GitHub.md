@@ -511,7 +511,9 @@ git revert HEAD
 
 ***
 
-## Git Reset - Lets reset current branch to older commit -
+## Git Reset - **reset current branch** to older commit -
+
+#move to previous commit, #go to previous commit, #undo commit, #go back to previous commit, #undo commit, # navigate to previous commit, #git reset, #reset to previous state, 
 
 `git reset` reverts changes by moving a branch reference backwards in time to an older commit. In this sense you can think of it as "rewriting history;" `git reset` will move a branch backwards as if the commit had never been made in the first place.(this is actually bad for people on remote repositories)
 
