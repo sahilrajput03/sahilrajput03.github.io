@@ -1,3 +1,5 @@
+![image-20200716143706624](.imgs_typora/image-20200716143706624.png)
+
 ***
 
 > **Internet is not 100% reliable thing for everytool, for some you have to deal with the hardway to be on a smooth experience for long.**
@@ -77,7 +79,9 @@ youtube-dl -f 137+250  https://www.youtube.com/watch?v=HjdJzNoT_qg
 #note:137 is for 1080p(mp4), 250 is for webm(68k) audio.
 ```
 
+![image-20200715222257715](.imgs_typora/image-20200715222257715.png)
 
+here formats => 18, and 22 includes audio in it too.
 
 ***
 
