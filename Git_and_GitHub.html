@@ -3,13 +3,53 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Well documentation in nested folders supported by github</title>
+    <title>Updating remotes on local copy of the repository-</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><hr>
+    <article class="markdown-body"><h2 id="updating-remotes-on-local-copy-of-the-repository-"><a class="header-link" href="#updating-remotes-on-local-copy-of-the-repository-"></a>Updating remotes on local copy of the repository-</h2>
+<pre class="hljs"><code><span class="hljs-comment"># Update the url of origin once in a local repository:</span>
+git remote <span class="hljs-built_in">set</span>-url origin https://github.com/AlikeThingsOrg/profile_project_repo
+<span class="hljs-comment"># A lengthy way to do same thing is :-</span>
+git remote remove origin
+git remote add origin https://github.com/AlikeThingsOrg/profile_project_repo</code></pre><hr>
+<h2 id="git-merge"><a class="header-link" href="#git-merge"></a>git merge</h2>
+<pre class="hljs"><code>git merge --continue
+git merge --abort</code></pre><pre class="hljs"><code><span class="hljs-comment">#create branch from another without checking out any..</span>
+git branch somebranch SourceBranchHere</code></pre><h2 id="rebase-simplicity"><a class="header-link" href="#rebase-simplicity"></a>rebase simplicity</h2>
+<p>git push -f is required coz we have rebased changes(so commmit sha&#39;s change), rebaseing cons=&gt; <a href="https://www.atlassian.com/git/articles/git-team-workflows-merge-or-rebase#:~:text=Rebasing%20can%20be%20dangerous!,and%20carefulness%20must%20be%20employed.">link@atlassian</a></p>
+<h2 id="merge-conflict"><a class="header-link" href="#merge-conflict"></a>merge conflict</h2>
+<p>src: <a href="https://www.atlassian.com/git/tutorials/using-branches/git-merge">link</a></p>
+<p class="img-container"><img src=".imgs_typora/134941.png" alt="134941"></p>
+<p>*</p>
+<hr>
+<p class="img-container"><img src=".imgs_typora/image-20200727134538173.png" alt="image-20200727134538173"></p>
+<p>src: <a href="https://stackoverflow.com/questions/39399804/updates-were-rejected-because-the-tip-of-your-current-branch-is-behind">link@stackoverflow</a></p>
+<hr>
+<h3 id="this-would-ease-the-work-in-mintty-or-linux-shell"><a class="header-link" href="#this-would-ease-the-work-in-mintty-or-linux-shell"></a>This would ease the work in mintty or linux shell</h3>
+<pre class="hljs"><code><span class="hljs-comment"># Add an alias to pulling latest git changes into your same branch. Should work for mintty.</span>
+<span class="hljs-built_in">alias</span> pullhead=<span class="hljs-string">'git pull origin $(git rev-parse --abbrev-ref HEAD)'</span></code></pre><h2 id=">>>>>my-current-config<<<<<"><a class="header-link" href="#>>>>>my-current-config<<<<<"></a>&gt;&gt;&gt;&gt;&gt;MY CURRENT CONFIG&lt;&lt;&lt;&lt;&lt;</h2>
+<pre class="hljs"><code><span class="hljs-comment">#For cmd(added in files =&gt; c:\additionalPath\push.cmd) #Works good from mintty too.</span>
+FOR /F <span class="hljs-string">"tokens=*"</span> %%a <span class="hljs-keyword">in</span> (<span class="hljs-string">'git rev-parse --abbrev-ref HEAD'</span>) <span class="hljs-keyword">do</span> SET thisbranch=%%a
+<span class="hljs-built_in">echo</span> on
+git push -u origin %thisbranch%
+<span class="hljs-comment">#SO NOW ONWARDS I JUST NEED TO DO, push from cmd or mintty to set upstream and push directly.</span>
+<span class="hljs-comment">#Also, using p CommitMessage is also supported coz I added &lt;push.cmd&gt; to the p.cmd script too.</span></code></pre><p class="img-container"><img src=".imgs_typora/image-20200726230132546.png" alt="image-20200726230132546" style="zoom: 67%;" /></p>
+<p>src: link@<a href="https://stackoverflow.com/questions/6052005/how-can-you-git-pull-only-the-current-branch">stackoverflow</a></p>
+<p>src: cmd: @<a href="https://stackoverflow.com/questions/1355791/how-do-you-loop-in-a-windows-batch-file">stackoverlflow</a>, @stackoverflow2*<a href="https://serverfault.com/questions/245679/store-output-of-windows-command-in-batch-file">Helped</a></p>
+<hr>
+<p><img src=".imgs_typora/image-20200726193248069.png" alt="image-20200726193248069">`</p>
+<p>Above is not necessary if you don&#39;t gamble on branch names with below settings.</p>
+<h3 id="to-see-current-configuration:-"><a class="header-link" href="#to-see-current-configuration:-"></a>To see current configuration:-</h3>
+<pre class="hljs"><code>$ git config --global push.default <span class="hljs-comment">#OR</span>
+$ git config --global --get push.default</code></pre><h3 id="to-set-configuration:-"><a class="header-link" href="#to-set-configuration:-"></a>To set configuration:-</h3>
+<pre class="hljs"><code>$ git config --global push.default current <span class="hljs-comment">#This sets configuration to push to current on remote.</span></code></pre><h3 id="to-unset-configuration-"><a class="header-link" href="#to-unset-configuration-"></a>To unset configuration-</h3>
+<pre class="hljs"><code>$ git config --global push.default simple <span class="hljs-comment">#This unsets the configuration.</span>
+<span class="hljs-comment">#Also, simple is the default configuration of from git software.</span></code></pre><p class="img-container"><img src=".imgs_typora/image-20200726194905666.png" alt="image-20200726194905666" style="zoom:67%;" /></p>
+<p><a href="https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushdefault">resource@git-scm.com</a></p>
+<hr>
 <h2 id="well-documentation-in-nested-folders-supported-by-github"><a class="header-link" href="#well-documentation-in-nested-folders-supported-by-github"></a>Well documentation in nested folders supported by github</h2>
 <p>Readme.md file works for individual folders in github too. Its amazing though.</p>
 <hr>
@@ -128,7 +168,7 @@ $ git lg2</code></pre><p>src:-<a href="https://stackoverflow.com/questions/10575
 <pre class="hljs"><code>$ git commit -am <span class="hljs-string">"Merging the feature &lt;newline&gt;&lt;newline&gt; paragraph explaining all the changes added by this commit, and the whole description of the meging."</span></code></pre><hr>
 <h2 id="want-to-view-history-of-a-particular-branch-from-anywhere-"><a class="header-link" href="#want-to-view-history-of-a-particular-branch-from-anywhere-"></a>Want to view history of a particular branch from anywhere-</h2>
 <pre class="hljs"><code>$ git <span class="hljs-built_in">log</span> &lt;branch-name&gt;
-$ git <span class="hljs-built_in">log</span> --graph <span class="hljs-comment">#this shows in graph form(so called :(</span></code></pre><h2 id="git-merge"><a class="header-link" href="#git-merge"></a>Git merge</h2>
+$ git <span class="hljs-built_in">log</span> --graph <span class="hljs-comment">#this shows in graph form(so called :(</span></code></pre><h2 id="git-merge-1"><a class="header-link" href="#git-merge-1"></a>Git merge</h2>
 <p>Merge commits are unique against other commits in the fact that they have two parent commits. When creating a merge commit Git will attempt to auto magically merge the separate histories for you. If Git encounters a piece of data that is changed in both histories it will be unable to automatically combine them. This scenario is a version control conflict and Git will need user intervention to continue.  Source: <a href="https://www.atlassian.com/git/tutorials/using-branches/git-merge"> best ever link on internet@atlassian.com♥</a></p>
 <pre class="hljs"><code><span class="hljs-comment">#Syntax</span>
 $ git merge feature <span class="hljs-comment"># this will merge to the currently checked out branch/Head</span>

@@ -1,3 +1,109 @@
+## Updating remotes on local copy of the repository-
+
+```bash
+# Update the url of origin once in a local repository:
+git remote set-url origin https://github.com/AlikeThingsOrg/profile_project_repo
+# A lengthy way to do same thing is :-
+git remote remove origin
+git remote add origin https://github.com/AlikeThingsOrg/profile_project_repo
+```
+
+
+
+***
+
+## git merge
+
+```bash
+git merge --continue
+git merge --abort
+```
+
+```bash
+#create branch from another without checking out any..
+git branch somebranch SourceBranchHere
+```
+
+
+
+## rebase simplicity
+
+git push -f is required coz we have rebased changes(so commmit sha's change), rebaseing cons=> [link@atlassian](https://www.atlassian.com/git/articles/git-team-workflows-merge-or-rebase#:~:text=Rebasing%20can%20be%20dangerous!,and%20carefulness%20must%20be%20employed.)
+
+## merge conflict
+
+src: [link](https://www.atlassian.com/git/tutorials/using-branches/git-merge)
+
+![134941](.imgs_typora/134941.png)
+
+*
+
+
+
+***
+
+![image-20200727134538173](.imgs_typora/image-20200727134538173.png)
+
+src: [link@stackoverflow](https://stackoverflow.com/questions/39399804/updates-were-rejected-because-the-tip-of-your-current-branch-is-behind)
+
+***
+
+### This would ease the work in mintty or linux shell
+
+```bash
+# Add an alias to pulling latest git changes into your same branch. Should work for mintty.
+alias pullhead='git pull origin $(git rev-parse --abbrev-ref HEAD)'
+```
+
+## >>>>>MY CURRENT CONFIG<<<<<
+
+```bash
+#For cmd(added in files => c:\additionalPath\push.cmd) #Works good from mintty too.
+FOR /F "tokens=*" %%a in ('git rev-parse --abbrev-ref HEAD') do SET thisbranch=%%a
+echo on
+git push -u origin %thisbranch%
+#SO NOW ONWARDS I JUST NEED TO DO, push from cmd or mintty to set upstream and push directly.
+#Also, using p CommitMessage is also supported coz I added <push.cmd> to the p.cmd script too.
+```
+
+<img src=".imgs_typora/image-20200726230132546.png" alt="image-20200726230132546" style="zoom: 67%;" />
+
+src: link@[stackoverflow](https://stackoverflow.com/questions/6052005/how-can-you-git-pull-only-the-current-branch)
+
+src: cmd: @[stackoverlflow](https://stackoverflow.com/questions/1355791/how-do-you-loop-in-a-windows-batch-file), @stackoverflow2*[Helped](https://serverfault.com/questions/245679/store-output-of-windows-command-in-batch-file)
+
+***
+
+
+
+![image-20200726193248069](.imgs_typora/image-20200726193248069.png)`
+
+Above is not necessary if you don't gamble on branch names with below settings.
+
+### To see current configuration:-
+
+```bash
+$ git config --global push.default #OR
+$ git config --global --get push.default
+```
+
+### To set configuration:-
+
+```bash
+$ git config --global push.default current #This sets configuration to push to current on remote.
+```
+
+### To unset configuration-
+
+```bash
+$ git config --global push.default simple #This unsets the configuration.
+#Also, simple is the default configuration of from git software.
+```
+
+<img src=".imgs_typora/image-20200726194905666.png" alt="image-20200726194905666" style="zoom:67%;" />
+
+[resource@git-scm.com](https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushdefault)
+
 ***
 
 ## Well documentation in nested folders supported by github

@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"path": "sahilrajput03",
+			"folder_exclude_patterns": [".github", ".pastes",".imgs_typora","assets",".script pushing code"],
+			"file_exclude_patterns": ["*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", "*.psd", "*.db", "*.sublime-workspace","*.png","*.svg","*.jpg","*.html","*.nojekyll","*.gif","*.htlm","*.js","*.json"]
+		}
+	]
+}

@@ -1,0 +1,559 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"hot",
+				"react-hot-loader"
+			],
+			[
+				"so",
+				"some"
+			],
+			[
+				"TI",
+				"TITLE\tTag"
+			]
+		]
+	},
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"save proj",
+				"Project: Save As"
+			],
+			[
+				"project",
+				"Project: Close"
+			],
+			[
+				"project open",
+				"Terminal: Open in project folder"
+			],
+			[
+				"Package Control: instal",
+				"Package Control: Install Package"
+			],
+			[
+				"package control insta",
+				"Package Control: Install Package"
+			],
+			[
+				"set backgroun",
+				"BackgroundColorEdit: Set Background Color"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"new file",
+				"File: New File Relative to Current View"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"package controlisnt",
+				"Package Control: Install Package"
+			],
+			[
+				"newfile",
+				"File: New File Relative to Project Root"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"package control remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"sidebar",
+				"View: Toggle Side Bar"
+			],
+			[
+				"autosave",
+				"Toggle AutoSave: all files"
+			],
+			[
+				"Package Control:install",
+				"Package Control: Install Package"
+			],
+			[
+				"pc instal",
+				"Package Control: Install Package"
+			],
+			[
+				"pc remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"pc insta",
+				"Package Control: Install Package"
+			],
+			[
+				"save",
+				"File: Save All"
+			],
+			[
+				"pcremove",
+				"Package Control: Remove Package"
+			],
+			[
+				"pclist",
+				"Package Control: List Packages"
+			],
+			[
+				"package control remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"increme",
+				"Emmet: Increment Number by 10"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"terminal",
+				"Terminal: Open"
+			],
+			[
+				"termina",
+				"Terminal: Open"
+			],
+			[
+				"commit qu",
+				"Git: Quick Commit"
+			],
+			[
+				"commit",
+				"Git: Commit"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"git commt",
+				"Set Syntax: Git Commit"
+			],
+			[
+				"package control",
+				"Package Control: Remove Package"
+			],
+			[
+				"package control ins",
+				"Package Control: Install Package"
+			],
+			[
+				"package control remv",
+				"Package Control: Remove Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"package cont",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Repository"
+			],
+			[
+				"autos ",
+				"Toggle AutoSave: all files"
+			],
+			[
+				"package contro",
+				"Package Control: Enable Package"
+			],
+			[
+				"package control install",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"package",
+				"Package Control: Add Repository"
+			],
+			[
+				"autosa",
+				"Toggle AutoSave: all files"
+			],
+			[
+				"package contr",
+				"Package Control: Remove Package"
+			],
+			[
+				"package install",
+				"Package Control: Install Package"
+			],
+			[
+				"package instal",
+				"Package Control: Install Package"
+			],
+			[
+				"dir",
+				"Emmet: Encode\\Decode Image to data:URL"
+			],
+			[
+				"control packag",
+				"Package Control: Remove Package"
+			],
+			[
+				"package control ",
+				"Package Control: Install Package"
+			],
+			[
+				"package con",
+				"Package Control: Install Package"
+			],
+			[
+				"package ",
+				"Package Control: Install Package"
+			],
+			[
+				"PACKAGE CONTROL INSTA",
+				"Package Control: Install Package"
+			],
+			[
+				"PACKAGE CONTROL REMO",
+				"Package Control: Remove Package"
+			],
+			[
+				"add repo",
+				"Package Control: Add Repository"
+			],
+			[
+				"install package control",
+				"Package Control: Install Package"
+			],
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"View In Browser",
+				"View In Browser"
+			],
+			[
+				"view",
+				"View In Browser"
+			],
+			[
+				"view ",
+				"View In Browser"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 371.0,
+		"history":
+		[
+			"doing someting",
+			"npm start",
+			"clear",
+			"hello",
+			"console.log(\"asfasf\")",
+			"help",
+			"node",
+			"npm",
+			"echo sasdf",
+			"echo",
+			"ls",
+			"clear",
+			"cls",
+			"dir",
+			"hello"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/chetan/Desktop/GitHub Repos/sahilrajput03.sublime-project",
+		"/C/Users/chetan/Desktop/GitHub Repos/sahilrajput03/sahilrajput03.sublime-project",
+		"/C/Users/chetan/Desktop/sahilrajput03.sublime-project",
+		"/C/Users/chetan/Desktop/GitHub Repos/sahilrajput03/.2sublime-project",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/C/Users/chetan/Desktop/GitHub Repos/sahilrajput03/.sublime-project",
+		"/C/Users/chetan/Desktop/Rapid Growth/react-refresh-cra/react-fast-refresh-boilerplate/package.json",
+		"/C/Users/chetan/Desktop/codesandboxes/patientor one proj/package.json",
+		"/C/Users/chetan/Desktop/codesandboxes/patientor one proj/patientor/.env",
+		"/C/Users/chetan/Desktop/codesandboxes/patientor one proj/backend-patientor/package.json",
+		"/C/Users/chetan/Desktop/Rapid Growth/react-refresh-cra/MVP-Eg-create-react-app- example-Added dependecy, created pull request too for this/.env",
+		"/C/Users/chetan/Desktop/codesandboxes/exported populest one/src/App.js",
+		"/C/Users/chetan/Desktop/codesandboxes/my-app/public/index.html",
+		"/C/Users/chetan/Desktop/codesandboxes/my-app/public/logo192.png",
+		"/C/Users/chetan/Desktop/codesandboxes/my-app/yarn.lock",
+		"/C/Users/chetan/Desktop/codesandboxes/my-app/.gitignore",
+		"/C/Users/chetan/Desktop/codesandboxes/my-app/src/App.css",
+		"/C/Users/chetan/Desktop/codesandboxes/my-app/README.md",
+		"/C/Users/chetan/Desktop/codesandboxes/my-app/package.json",
+		"/C/Users/chetan/Desktop/globalPackages.json",
+		"/C/additionalPath/ReactBoilerplate/src/App.js",
+		"/C/Users/chetan/Desktop/Rapid Growth/nextjsLearning/new/nextjs-blog/pages/index.js",
+		"/C/additionalPath/ReactBoilerplate/package.json",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/SyntaxHighlightTools/README.rst",
+		"/C/Users/chetan/Desktop/Rapid Growth/react-refresh-cra/OFFICIAL(egs included, cra is imp relevant to us for now)-react-refresh-webpack-plugin/examples/create-react-app/package.json",
+		"/C/Users/chetan/Desktop/Rapid Growth/react-refresh-cra/Eg-create-react-app- example-Added dependecy, created pull request too for this/config-overrides.js",
+		"/C/Users/chetan/Desktop/react-refresh-cra/patientor/config-overrides.js",
+		"/C/Users/chetan/Desktop/react-refresh-cra/test/src/App.js",
+		"/C/Users/chetan/Desktop/react-refresh-cra/test/package.json",
+		"/C/Users/chetan/Desktop/react-refresh-cra/react-refresh-webpack-plugin/config-overrides.js",
+		"/C/Users/chetan/Desktop/testProjects/podcast-player/package.json",
+		"/C/Users/chetan/Desktop/profileProject/frontend-branch/.env",
+		"/C/Users/chetan/Desktop/react-native/rate-repository-app/src/components/pileUpNative.jsx",
+		"/C/Users/chetan/Desktop/react-native/rate-repository-app/src/theme.js",
+		"/C/additionalPath/BetterNpmParallelLinker.js",
+		"/C/Users/chetan/Desktop/testProjects/Youtube-Clone/.env",
+		"/C/Users/chetan/Desktop/Rapid Growth/readingFileGeneratingGlobalPackageList/app.js",
+		"/C/Users/chetan/Desktop/react-native/rate-repository-app/App.js",
+		"/C/Users/chetan/Desktop/react-native/rate-repository-app/package.json",
+		"/C/Users/chetan/Desktop/react-native/rate-repository-app/.eslintrc",
+		"/C/Users/chetan/Desktop/Rapid Growth/typescript-sublime/new.ts",
+		"/C/FullstackopenProjects/Z Backup + Other Project/part-8-graphql-ch1-ch5/graphql-library-frontend-ex-8.1-8.16-stillDoing/src/App.js",
+		"/C/Users/chetan/Desktop/letsSolve/AttributeFilter.js",
+		"/C/Users/chetan/Desktop/profileProject/frontend-branch/index.js",
+		"/C/Users/chetan/Desktop/profileProject/testingGoogleLogin/google_login_demo/index.html",
+		"/C/Users/chetan/Desktop/profileProject/profile_project_repo/src/App.js",
+		"/C/Users/chetan/Desktop/profileProject/profile_project_repo/src/components/NavBar.js",
+		"/C/Users/chetan/Desktop/profileProject/profile_project_repo/package.json",
+		"/C/Users/chetan/Desktop/profileProject/profile_project_repo/some.js",
+		"/C/Users/chetan/Desktop/Rapid Growth/react-hot-reloader-love/src/App.js",
+		"/C/Users/chetan/Desktop/Rapid Growth/react-hot-reloader-love/src/kokoa.ts",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/User/auto_save.sublime-settings",
+		"/C/Users/chetan/Desktop/Rapid Growth/react-hot-reloader-love/src/App.test.js",
+		"/C/Users/chetan/Desktop/Rapid Growth/react-hot-reloader-love/src/logo.svg",
+		"/C/Users/chetan/Desktop/Rapid Growth/react-hot-reloader-love/src/index.css",
+		"/C/Users/chetan/Desktop/Rapid Growth/react-hot-reloader-love/src/serviceWorker.js",
+		"/C/Users/chetan/Desktop/Rapid Growth/react-hot-reloader-love/src/index.js",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/TortoiseSVN/TortoiseSVN.sublime-settings",
+		"/C/FullstackopenProjects/test-sublime-colt/script.js",
+		"/C/FullstackopenProjects/test-sublime-colt/index.html",
+		"/C/Users/chetan/Desktop/Rapid Growth/SOME HMR-HotModuleReplacement testing/christmas-tree/src/tree.js",
+		"/C/Users/chetan/Desktop/Rapid Growth/SOME HMR-HotModuleReplacement testing/christmas-tree/src/lights.js",
+		"/C/Users/chetan/Desktop/Rapid Growth/SOME HMR-HotModuleReplacement testing/webpack-HMR-demo/index.js",
+		"/C/Users/chetan/Desktop/Rapid Growth/SOME HMR-HotModuleReplacement testing/webpack-HMR-demo/index.html",
+		"/C/Users/chetan/Desktop/Rapid Growth/SOME HMR-HotModuleReplacement testing/webpack-HMR-demo/hello.js",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Default (Windows).sublime-keymap",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/User/Side Bar.sublime-settings",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/auto-save/auto_save.sublime-settings",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/User/auto_save_on_startup.py",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/User/Emmet.sublime-settings",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/auto-save/Default (Windows).sublime-keymap",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/auto-save/README.md",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Installed Packages/auto-save.sublime-package",
+		"/C/Users/chetan/Desktop/Rapid Growth/react-hot-reloader-love/src/some.ts",
+		"/C/Program Files/Sublime Text 3/sublime.py",
+		"/C/Python33/Lib/subprocess.py",
+		"/C/FullstackopenProjects/test-sublime-colt/some.py",
+		"/C/Nodejs Apps/demo1/app.js",
+		"/C/Nodejs Apps/demo1/package.json",
+		"/C/Users/chetan/Desktop/hello.htm",
+		"/C/Users/chetan/Desktop/example2.html",
+		"/C/Users/chetan/Desktop/pp.md",
+		"/C/Users/chetan/AppData/Roaming/Sublime Text 3/Packages/User/Chrome.sublime-build",
+		"/C/Users/chetan/Desktop/test_index3.html",
+		"/C/Users/chetan/Desktop/code/FullTesting.html",
+		"/C/Users/chetan/Desktop/code/javascript.js",
+		"/C/Users/chetan/Desktop/index.htm",
+		"/C/Users/chetan/Desktop/index.cpp"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"react-refresh-webpack",
+			"\"expo",
+			"src",
+			"react",
+			"react-refresh",
+			"react",
+			"()",
+			"export"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 72.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 132.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git-commit":
+	{
+		"height": 132.0
+	},
+	"pinned_build_system": "Packages/User/Chrome.sublime-build",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\chetan\\Desktop\\GitHub Repos\\sahilrajput03\\sahilrajput03.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 194.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

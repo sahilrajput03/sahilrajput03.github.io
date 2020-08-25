@@ -298,7 +298,11 @@ $ shutdown /h
 ```bash
 cd %temp%
 rmdir /q /s .
-#@pause
+#@pause'
+###
+#Also below command will delete .git folder in curretn directory
+rmdir /q /s .git
+
 ```
 
 Save the file as DeleteTemp.bat
@@ -1134,7 +1138,7 @@ Now you have access to linux's core utilities i.e., below commands -
 
 ```bash
 $ dir /B
-#Clearly shows the directory tree in cmd. Love
+# Clearly shows the directory tree in cmd. Love
 ```
 
 

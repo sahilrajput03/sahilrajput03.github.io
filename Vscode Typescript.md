@@ -1,12 +1,110 @@
----
-title: Blogging Like a Hacker
----
+### •Typescript Playground:
+
+ https://www.typescriptlang.org/play/index.html
+
+***
+
+### • | (union operator) => It acts as OR operator. So, that means it acts like...
+
+let someValue: string | number = "sahil"
+let someValue: string | number = 24
+Both are okay.
+
+***
+
+### • & (intersection operator) 
+
+=> It acts ADD OPERATOR. So, it works as to add multiple types to get a single type that has all the type annotations.
+
+```
+type nameType = { name: string }
+type numberType = { phone_number: number}
+const message: nameType & numberType = { name: '
+hello world' , phone_number: 234};```
+That's a good example.
 
 
+```
+***
 
+### •Amazing function typings:
 
+```interface SearchFunc {
+    (source: string, subString: number): boolean;
+}
+let mySearch: SearchFunc;
+mySearch = function(firstThing, secondThing) {
+    let result = firstThing.search(String(secondThing));
+    return result > -1;
+}```
+```
 
-![cool-background](.imgs_typora/cool-background.svg)
+***
+
+### • Interfaces for object's interface:
+
+```js
+interface BirdObjectInterface {
+    alive: boolean;
+    fly(): string;
+    layEggs(): number;
+}
+interface FishObjectInterface {
+    swim(): string;
+    layEggs(): number;
+}
+// Object with given proper interfaces-->
+let creature: BirdObjectInterface = {
+    alive: true,
+    fly: function (): string {
+    return "kaka"
+    },
+    layEggs: () => 23
+}
+```
+
+***
+
+### • Extending interface to include more types:
+
+```js
+interface Shape {
+    color: string;
+}
+
+interface Square extends Shape {
+    sideLength: number;
+}
+// Amazing implementation of intefaces
+let square = {} as Square;
+square.color = "blue";
+square.sideLength = 10;
+```
+
+***
+
+### • Interface can extend multiple interfaces-
+
+```js
+interface Shape {
+    color: string;
+}
+
+interface PenStroke {
+    penWidth: number;
+}
+
+interface Square extends Shape, PenStroke {
+    sideLength: number;
+}
+
+let square = {} as Square;
+square.color = "blue";
+square.sideLength = 10;
+square.penWidth = 5.0;
+```
+
+***
 
 ## Sequence and parallel reading of files-
 

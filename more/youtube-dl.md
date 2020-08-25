@@ -1,7 +1,3 @@
-![image-20200716143706624](.imgs_typora/image-20200716143706624.png)
-
-***
-
 > **Internet is not 100% reliable thing for everytool, for some you have to deal with the hardway to be on a smooth experience for long.**
 
 ***

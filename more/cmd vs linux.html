@@ -180,7 +180,11 @@ Set WshShell = Nothing</code></pre><p>*</p>
 <h2 id="make-a-bat-file-to-delete-temp-files"><a class="header-link" href="#make-a-bat-file-to-delete-temp-files"></a>Make a bat file to delete temp files</h2>
 <pre class="hljs"><code><span class="hljs-built_in">cd</span> %temp%
 rmdir /q /s .
-<span class="hljs-comment">#@pause</span></code></pre><p>Save the file as DeleteTemp.bat</p>
+<span class="hljs-comment">#@pause'</span>
+<span class="hljs-comment">###</span>
+<span class="hljs-comment">#Also below command will delete .git folder in curretn directory</span>
+rmdir /q /s .git
+</code></pre><p>Save the file as DeleteTemp.bat</p>
 <hr>
 <h3 id="use-ctrl-+-p-to-go-to-previous-and-ctrl-+-n-to-go-to-next-command-in-bash.-use-ctrl-+-w-to-delete-word-to-the-left."><a class="header-link" href="#use-ctrl-+-p-to-go-to-previous-and-ctrl-+-n-to-go-to-next-command-in-bash.-use-ctrl-+-w-to-delete-word-to-the-left."></a>Use Ctrl + p to go to previous and Ctrl + n to go to next command in bash. Use Ctrl + w to delete word to the left.</h3>
 <hr>
@@ -577,7 +581,7 @@ $ reg query <span class="hljs-string">"HKCU\Software\Microsoft\Command Processor
 <p class="img-container"><img src="image-20200603101925960.png" alt="image-20200603101925960"></p>
 <hr>
 <pre class="hljs"><code>$ dir /B
-<span class="hljs-comment">#Clearly shows the directory tree in cmd. Love</span></code></pre><hr>
+<span class="hljs-comment"># Clearly shows the directory tree in cmd. Love</span></code></pre><hr>
 <h2 id="cat's-alternate-in-windows"><a class="header-link" href="#cat's-alternate-in-windows"></a>cat&#39;s alternate in windows</h2>
 <p class="img-container"><img src="image-20200602211142638.png" alt="image-20200602211142638"></p>
 <p class="img-container"><img src="image-20200602211150423.png" alt="image-20200602211150423"></p>

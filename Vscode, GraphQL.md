@@ -14,10 +14,7 @@ server.listen({port: 4001}).then(({ url }) => { //This line is modified, port is
 
 ```
 
-
-
 ***
-
 ## Point to remeber
 
 - The type *YesNo* is GraphQL [enum](https://graphql.org/learn/schema/#enumeration-types), or an enumerable, with two possible values *YES* or *NO*.

@@ -4407,7 +4407,8 @@ Actually this feature will work like hibernate if power is lost during sleep. Ot
 ## nvm
 
 ```bash
-USE POWER SHELL TO ALL THESE COMMANDS:-
+# ****USE POWER SHELL TO ALL THESE COMMANDS**********:-
+
 
 nvm uninstall 12.16.2 64
 nvm list
@@ -4417,6 +4418,7 @@ nvm install 12.16.2 64
 nvm use 12.16.2 64
 e.g.=> <node-version> <system architecture-32/64>
 
+#Currently using version of node
 nvm install 12.18.0 64
 nvm use 12.18.0 64
 ```
