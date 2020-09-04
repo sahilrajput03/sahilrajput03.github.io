@@ -12,17 +12,15 @@
     <article class="markdown-body"><h3 id="%---remainder-operator.-this-is-often-reffered-to-as-modulo."><a class="header-link" href="#%---remainder-operator.-this-is-often-reffered-to-as-modulo."></a>% - Remainder Operator. This is often reffered to as modulo.</h3>
 <p>Link - @<a href="https://medium.com/javascript-in-plain-english/here-are-some-useful-javascript-snippets-47f4fa75bdd4">medium</a></p>
 <ul class="list">
-<li><p><strong>isNullOrUndefined : check whether a value is null or undefined.</strong></p>
-</li>
-<li><pre class="hljs"><code><span class="hljs-comment">// IDEALLY you should use below, it covers all the edgecases, its fair and square:</span>
-<span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> bullshit === <span class="hljs-string">'undefined'</span> || bullshit === <span class="hljs-literal">null</span> ){
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'YES..GHOST..'</span>) 
-    <span class="hljs-comment">// more code here...</span>
-}<span class="hljs-keyword">else</span>{
-    <span class="hljs-comment">// more code here...</span>
-}</code></pre></li>
+<li><strong>isNullOrUndefined : check whether a value is null or undefined.</strong></li>
 </ul>
-<pre class="hljs"><code># DEEP RESEARCH:
+<pre class="hljs"><code>  <span class="hljs-comment">// IDEALLY you should use below, it covers all the edgecases, its fair and square:</span>
+  <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> bullshit === <span class="hljs-string">'undefined'</span> || bullshit === <span class="hljs-literal">null</span> ){
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'YES..GHOST..'</span>) 
+      <span class="hljs-comment">// more code here...</span>
+  }<span class="hljs-keyword">else</span>{
+      <span class="hljs-comment">// more code here...</span>
+  }</code></pre><pre class="hljs"><code># DEEP RESEARCH:
 <span class="hljs-keyword">const</span> isNullOrUndefined = <span class="hljs-function"><span class="hljs-params">val</span> =&gt;</span> val === <span class="hljs-literal">undefined</span> || val === <span class="hljs-literal">null</span>;
 <span class="hljs-comment">/*+*/</span><span class="hljs-built_in">console</span>.log(isNullOrUndefined(<span class="hljs-literal">null</span>));        <span class="hljs-comment">// true</span>
 <span class="hljs-comment">/*+*/</span><span class="hljs-built_in">console</span>.log(isNullOrUndefined(<span class="hljs-literal">undefined</span>));   <span class="hljs-comment">// true</span>

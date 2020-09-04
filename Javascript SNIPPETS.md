@@ -4,7 +4,8 @@ Link - @[medium](https://medium.com/javascript-in-plain-english/here-are-some-us
 
 - **isNullOrUndefined : check whether a value is null or undefined.**
 
-- ```js
+
+  ```js
   // IDEALLY you should use below, it covers all the edgecases, its fair and square:
   if(typeof bullshit === 'undefined' || bullshit === null ){
   console.log('YES..GHOST..') 

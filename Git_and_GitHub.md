@@ -7,7 +7,6 @@
 ## Updating remotes on local copy of the repository-
 
 ```bash
-#!/bin/bash
 # Update the url of origin once in a local repository:
 git remote set-url origin https://github.com/AlikeThingsOrg/profile_project_repo
 # A lengthy way to do same thing is :-
