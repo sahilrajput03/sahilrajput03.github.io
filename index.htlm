@@ -20,9 +20,15 @@
 
   a:hover {
     /* color: #3b4045; */
-    color: gold;
+    color: orange;
     text-decoration: none;
+    color: white
   }
+
+  a:active {
+    background-color: orange;
+  }
+
 
   .blue-line__buses {
     border-bottom: solid;
@@ -43,8 +49,70 @@
     border-radius: 20px;
     padding: 20px;
     font-family: "Sofia";
-    width: max-content
-      /* Above is to wrap element width w.r.t. to text accordingly */
+    width: max-content;
+    /* width as 'max-content' is to wrap element width w.r.t. to text accordingly */
+  }
+
+  #my-image {
+    align-self: right;
+    position: fixed;
+    right: 0px;
+    top: 80px;
+    margin-right: 260px;
+    border-radius: 80px;
+    box-shadow: 0px 0px grey, 10px 10px lightgrey, 15px 15px lightcyan;
+  }
+
+  @media only screen and (max-width: 926px) {
+    body {
+      background-color: lightblue;
+    }
+
+    #my-image {
+      position: fixed;
+      align-self: right;
+      top: 18px;
+      width: 61px;
+      margin-right: 22px;
+      border-radius: 20px;
+      box-shadow: 0px 0px grey, 1px 1px lightgrey, 2px 2px pink;
+    }
+
+    #headingAnnouncement {
+      background-color: burlywood;
+      width: 200px;
+      border-radius: 20px;
+      padding: 20px;
+      font-family: "Sofia";
+      width: auto;
+      /* width as 'auto' is to makes text to wrap in smaller screen. */
+    }
+
+    body {
+      background: peachpuff
+    }
+
+    .blue-line__buses {
+      border-bottom: solid;
+      border-bottom-width: 5px;
+      border-color: burlywood;
+    }
+
+    .blue-line__buses:active {
+      background-color: orange;
+      border-bottom: solid;
+      border-bottom-width: 5px;
+      border-color: orange;
+
+    }
+
+    .blue-line__buses:hover {
+      background-color: orange;
+      border-bottom: solid;
+      border-bottom-width: 5px;
+      border-color: orange;
+
+    }
   }
 </style>
 
@@ -54,6 +122,7 @@
   <br />
   <h2 id="headingAnnouncement">This is a book to be compiled very soon. ~ Sahil Rajput</h2>
   <br />
+  <img src="https://avatars3.githubusercontent.com/u/31458531?s=460&v=4" id="my-image"></img><br>
   <b>Current Projects on GitHub</b><br /><br />
   <a href="/more/Government%20Stats.html">India - Political Bodies.html</a>
   <br /><br />
