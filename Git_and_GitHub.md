@@ -1,3 +1,9 @@
+### Set vscode as the default message editor for git( You need to do it for each environment separately i.e., separately for cmd, msys2, and fish)
+
+`git config --global core.editor "code --wait"`
+
+***
+
 ## Updating remotes on local copy of the repository-
 
 ```bash

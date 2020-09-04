@@ -19,25 +19,25 @@ Link - @[medium](https://medium.com/javascript-in-plain-english/here-are-some-us
 ```js
 # DEEP RESEARCH:
 const isNullOrUndefined = val => val === undefined || val === null;
-console.log(isNullOrUndefined(null));        // true
-console.log(isNullOrUndefined(undefined));   // true
-let poom // not intialized, hence undefined 			#DECLARE VARIABLE
->> undefined
+/* + */console.log(isNullOrUndefined(null));        // true
+/* + */console.log(isNullOrUndefined(undefined));   // true
+/* + */let poom // not intialized, hence undefined 			#DECLARE VARIABLE
+/* + */>> undefined
 let carl = undefined // explicityl defined undefined 	 #DECLARE VARIABLE
 >> undefined
-let roy = null // explicity defined null 				#DECLARE VARIABLE
->> null
-isNullOrUndefined(poom)
-true
-isNullOrUndefined(carl)
-true
+/* + */let roy = null // explicity defined null 				#DECLARE VARIABLE
+/* + */>> null
+/* + */isNullOrUndefined(poom)
+/* + */true
+/* + */isNullOrUndefined(carl)
+/* + */true
 isNullOrUndefined(roy)
-true
+/* + */true
 isNullorUndefined(someUndeclaredVariable)				// #UNDECLARED VARIABLE
 >># THROWS ERROR, HENCE YOU HAVE TO HANDLE IT, or do it in the below way. 
-if(typeof someUndeclaredVariable === 'undefined'){
-console.log('GHOST...(its undeclared)') 				// #UNDECLARED VARIABLE
-}
+/* + */if(typeof someUndeclaredVariable === 'undefined'){
+/* + */console.log('GHOST...(its undeclared)') 				// #UNDECLARED VARIABLE
+/* + */}
 ```
 
 

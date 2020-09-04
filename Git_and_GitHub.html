@@ -3,13 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Updating remotes on local copy of the repository-</title>
+    <title>Set vscode as the default message editor for git( You need to do it for each environment separately i.e., separately for cmd, msys2, and fish)</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css">
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="updating-remotes-on-local-copy-of-the-repository-"><a class="header-link" href="#updating-remotes-on-local-copy-of-the-repository-"></a>Updating remotes on local copy of the repository-</h2>
+    <article class="markdown-body"><h3 id="set-vscode-as-the-default-message-editor-for-git(-you-need-to-do-it-for-each-environment-separately-i.e.,-separately-for-cmd,-msys2,-and-fish)"><a class="header-link" href="#set-vscode-as-the-default-message-editor-for-git(-you-need-to-do-it-for-each-environment-separately-i.e.,-separately-for-cmd,-msys2,-and-fish)"></a>Set vscode as the default message editor for git( You need to do it for each environment separately i.e., separately for cmd, msys2, and fish)</h3>
+<p><code>git config --global core.editor &quot;code --wait&quot;</code></p>
+<hr>
+<h2 id="updating-remotes-on-local-copy-of-the-repository-"><a class="header-link" href="#updating-remotes-on-local-copy-of-the-repository-"></a>Updating remotes on local copy of the repository-</h2>
 <pre class="hljs"><code><span class="hljs-comment"># Update the url of origin once in a local repository:</span>
 git remote <span class="hljs-built_in">set</span>-url origin https://github.com/AlikeThingsOrg/profile_project_repo
 <span class="hljs-comment"># A lengthy way to do same thing is :-</span>

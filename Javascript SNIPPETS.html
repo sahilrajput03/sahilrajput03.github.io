@@ -24,25 +24,25 @@
 </ul>
 <pre class="hljs"><code># DEEP RESEARCH:
 <span class="hljs-keyword">const</span> isNullOrUndefined = <span class="hljs-function"><span class="hljs-params">val</span> =&gt;</span> val === <span class="hljs-literal">undefined</span> || val === <span class="hljs-literal">null</span>;
-<span class="hljs-built_in">console</span>.log(isNullOrUndefined(<span class="hljs-literal">null</span>));        <span class="hljs-comment">// true</span>
-<span class="hljs-built_in">console</span>.log(isNullOrUndefined(<span class="hljs-literal">undefined</span>));   <span class="hljs-comment">// true</span>
-<span class="hljs-keyword">let</span> poom <span class="hljs-comment">// not intialized, hence undefined             #DECLARE VARIABLE</span>
-&gt;&gt; <span class="hljs-literal">undefined</span>
+<span class="hljs-comment">/* + */</span><span class="hljs-built_in">console</span>.log(isNullOrUndefined(<span class="hljs-literal">null</span>));        <span class="hljs-comment">// true</span>
+<span class="hljs-comment">/* + */</span><span class="hljs-built_in">console</span>.log(isNullOrUndefined(<span class="hljs-literal">undefined</span>));   <span class="hljs-comment">// true</span>
+<span class="hljs-comment">/* + */</span><span class="hljs-keyword">let</span> poom <span class="hljs-comment">// not intialized, hence undefined             #DECLARE VARIABLE</span>
+<span class="hljs-comment">/* + */</span>&gt;&gt; <span class="hljs-literal">undefined</span>
 <span class="hljs-keyword">let</span> carl = <span class="hljs-literal">undefined</span> <span class="hljs-comment">// explicityl defined undefined      #DECLARE VARIABLE</span>
 &gt;&gt; <span class="hljs-literal">undefined</span>
-<span class="hljs-keyword">let</span> roy = <span class="hljs-literal">null</span> <span class="hljs-comment">// explicity defined null                 #DECLARE VARIABLE</span>
-&gt;&gt; <span class="hljs-literal">null</span>
-isNullOrUndefined(poom)
-<span class="hljs-literal">true</span>
-isNullOrUndefined(carl)
-<span class="hljs-literal">true</span>
+<span class="hljs-comment">/* + */</span><span class="hljs-keyword">let</span> roy = <span class="hljs-literal">null</span> <span class="hljs-comment">// explicity defined null                 #DECLARE VARIABLE</span>
+<span class="hljs-comment">/* + */</span>&gt;&gt; <span class="hljs-literal">null</span>
+<span class="hljs-comment">/* + */</span>isNullOrUndefined(poom)
+<span class="hljs-comment">/* + */</span><span class="hljs-literal">true</span>
+<span class="hljs-comment">/* + */</span>isNullOrUndefined(carl)
+<span class="hljs-comment">/* + */</span><span class="hljs-literal">true</span>
 isNullOrUndefined(roy)
-<span class="hljs-literal">true</span>
+<span class="hljs-comment">/* + */</span><span class="hljs-literal">true</span>
 isNullorUndefined(someUndeclaredVariable)                <span class="hljs-comment">// #UNDECLARED VARIABLE</span>
 &gt;&gt;# THROWS ERROR, HENCE YOU HAVE TO HANDLE IT, or <span class="hljs-keyword">do</span> it <span class="hljs-keyword">in</span> the below way. 
-if(<span class="hljs-keyword">typeof</span> someUndeclaredVariable === <span class="hljs-string">'undefined'</span>){
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'GHOST...(its undeclared)'</span>)                 <span class="hljs-comment">// #UNDECLARED VARIABLE</span>
-}</code></pre><pre class="hljs"><code><span class="hljs-comment">//LEARN ABOUT THE ERORRS, Try executing the below code in chrome dev tools, OR NODE</span>
+<span class="hljs-comment">/* + */</span><span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> someUndeclaredVariable === <span class="hljs-string">'undefined'</span>){
+<span class="hljs-comment">/* + */</span><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'GHOST...(its undeclared)'</span>)                 <span class="hljs-comment">// #UNDECLARED VARIABLE</span>
+<span class="hljs-comment">/* + */</span>}</code></pre><pre class="hljs"><code><span class="hljs-comment">//LEARN ABOUT THE ERORRS, Try executing the below code in chrome dev tools, OR NODE</span>
 <span class="hljs-keyword">try</span>{
     <span class="hljs-built_in">console</span>.log(someundefinedvariable)
 }
