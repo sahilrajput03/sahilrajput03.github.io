@@ -1,0 +1,22 @@
+## React Router
+
+https://reactrouter.com/web/example/basic
+
+**Below is sample code 1** -
+
+```jsx
+<Router>
+	<Link to="/" children="Home"/> // • Equivalent to `<a href="/"> Home</a>`
+    <Switch
+		children={[
+    		<Route path={`${match.path}/:topicId`} children={<Topic />} />,
+    		<Route path={match.path} children={<h3>Please select a topic.</h3>} />
+    	]}
+	/>
+</Router>
+
+
+```
+
+***
+
