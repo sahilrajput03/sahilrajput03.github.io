@@ -3355,7 +3355,7 @@ C:\Users\chetan\AppData\Roaming\npm\node_modules\markdown-styles\layouts\github\
 generate-md --export github --output ./custom-layout
 ```
 
-### *Also, see the  folder `custom-layout-mypersonalized-dontdelete` in github repos, that has this awesome current custom design with 'click to copy' script embedded. YIkes!!
+### *Also, see the  folder `custom-layout-mypersonalized-dontdelete` in github repos, that has this awesome current custom design with 'click to copy' script embedded. YIkes!!!
 
 *
 
