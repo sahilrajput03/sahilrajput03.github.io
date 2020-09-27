@@ -27,7 +27,7 @@ copyableElements.forEach(function (item) {
   var button = document.createElement("button");
 
   button.className = "copyButton";
-  button.innerHTML = "Copy to clipboard1";
+  button.innerHTML = "Copy to clipboard";
 
   item.parentNode.insertBefore(button, item.nextSibling);
 
