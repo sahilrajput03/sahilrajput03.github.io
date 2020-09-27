@@ -1,0 +1,11 @@
+button {
+  outline: none;
+  border-radius: 20px;
+  background-color: pink;
+}
+.copyButton {
+  padding: 5px;
+}
+.copyButton:active {
+  background-color: papayawhip;
+}
