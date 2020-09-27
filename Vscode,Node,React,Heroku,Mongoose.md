@@ -3355,6 +3355,8 @@ C:\Users\chetan\AppData\Roaming\npm\node_modules\markdown-styles\layouts\github\
 generate-md --export github --output ./custom-layout
 ```
 
+### *Also, see the  folder `custom-layout-mypersonalized-dontdelete` in github repos, that has this awesome current custom design with 'click to copy' script embedded. YIkes!!
+
 *
 
 Also for the need to convert to convert to single html document from all the md docs, you can use pandoc and you need to find for the options that you need to convert to one file, you may search for the already learned tactics in pandoc command line via searching typora "pandoc".
