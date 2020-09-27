@@ -19,8 +19,10 @@ Both are okay.
 ```js
 type nameType = { name: string }
 type numberType = { phone_number: number}
-const message: nameType & numberType = { name: '
-hello world' , phone_number: 234};```
+const message: nameType & numberType = { 
+    name: 'hello world', 
+    phone_number: 234
+};
 //That's a good example.
 ```
 ***

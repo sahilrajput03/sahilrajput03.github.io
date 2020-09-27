@@ -23,20 +23,21 @@ Both are okay.</p>
 <p>=&gt; It acts ADD OPERATOR. So, it works as to add multiple types to get a single type that has all the type annotations.</p>
 <pre class="hljs"><code>type nameType = { <span class="hljs-attr">name</span>: string }
 type numberType = { <span class="hljs-attr">phone_number</span>: number}
-<span class="hljs-keyword">const</span> message: nameType &amp; numberType = { <span class="hljs-attr">name</span>: <span class="hljs-string">'
-hello world'</span> , <span class="hljs-attr">phone_number</span>: <span class="hljs-number">234</span>};</code></pre><p>//That&#39;s a good example.</p>
-<pre class="hljs"><code>***
-
-### •Amazing <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">typings</span>:
-
-```<span class="hljs-title">interface</span> <span class="hljs-title">SearchFunc</span> </span>{
-    (source: <span class="hljs-built_in">string</span>, subString: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">boolean</span>;
+<span class="hljs-keyword">const</span> message: nameType &amp; numberType = { 
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'hello world'</span>, 
+    <span class="hljs-attr">phone_number</span>: <span class="hljs-number">234</span>
+};
+<span class="hljs-comment">//That's a good example.</span></code></pre><hr>
+<h3 id="•amazing-function-typings:"><a class="header-link" href="#•amazing-function-typings:"></a>•Amazing function typings:</h3>
+<p><code>interface SearchFunc {
+    (source: string, subString: number): boolean;
 }
-<span class="hljs-keyword">let</span> mySearch: SearchFunc;
-mySearch = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">firstThing, secondThing</span>) </span>{
-    <span class="hljs-keyword">let</span> result = firstThing.search(<span class="hljs-built_in">String</span>(secondThing));
-    <span class="hljs-keyword">return</span> result &gt; <span class="hljs-number">-1</span>;
-}</code></pre><pre class="hljs"><code>
+let mySearch: SearchFunc;
+mySearch = function(firstThing, secondThing) {
+    let result = firstThing.search(String(secondThing));
+    return result &gt; -1;
+}</code></p>
+<pre class="hljs"><code>
 ***
 
 <span class="hljs-comment">### • Interfaces for object's interface:</span>
