@@ -1,0 +1,3 @@
+If you edit or add anything to js files, it won't get pasted to assets folder, so either you delete old `js`file you have in sahilrajput03/assets/myjs , or you delete the whole assets folder.
+Former is a better choice though.
+That'll actually reflect changes in website. Have a nice day!!

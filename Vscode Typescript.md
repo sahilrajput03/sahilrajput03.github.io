@@ -16,14 +16,12 @@ Both are okay.
 
 => It acts ADD OPERATOR. So, it works as to add multiple types to get a single type that has all the type annotations.
 
-```
+```js
 type nameType = { name: string }
 type numberType = { phone_number: number}
 const message: nameType & numberType = { name: '
 hello world' , phone_number: 234};```
-That's a good example.
-
-
+//That's a good example.
 ```
 ***
 

@@ -2,6 +2,7 @@ button {
   outline: none;
   border-radius: 20px;
   background-color: pink;
+  margin-bottom: 45px;
 }
 .copyButton {
   padding: 5px;
