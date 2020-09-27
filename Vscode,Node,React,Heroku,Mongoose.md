@@ -3349,6 +3349,12 @@ C:\Users\chetan\AppData\Roaming\npm\node_modules\markdown-styles\layouts\github\
 #This is required as in mobile-view, the paddind from left is only taken into cosideration, not from right, and that makes the design bad of the webpage.
 ```
 
+## Below command will export the github's layout to ./custom-layout directory, so use this for now.. , for greater security and consistent design.(and make all edits to this file for adding/editing css, and adding javascript-yikes)
+
+```bash
+generate-md --export github --output ./custom-layout
+```
+
 *
 
 Also for the need to convert to convert to single html document from all the md docs, you can use pandoc and you need to find for the options that you need to convert to one file, you may search for the already learned tactics in pandoc command line via searching typora "pandoc".
