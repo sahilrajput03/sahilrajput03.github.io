@@ -4,7 +4,7 @@
 
 ***
 
-## **BEWARE: opennode is used with docker, don't use if you don't know docker thing**, prefer https://www.evennode.com/,thats best.
+## **BEWARE: opennode is used with docker, don't use if you don't know docker thing**, prefer https://www.evennode.com/ ,thats best.
 
 ### CheapMaster - Amazing bboommmM - [opennode.io](https://www.openode.io)	- This suppors deno too.WOW...
 
@@ -17,7 +17,7 @@ $ openode deploy
 
 
 
-## <img src="image-20200531182825502.png" alt="image-20200531182825502" style="zoom: 33%;" />	
+<img src=".imgs_typora/image-20200531182825502.png" alt="image-20200531182825502" style="zoom:50%;" />
 
 ***
 

@@ -1,3 +1,13 @@
+## Remove all the the recent changes, and reset to last commit.
+
+```bash
+git clean --force && git reset --hard
+```
+
+
+
+***
+
 ### Set vscode as the default message editor for git( You need to do it for each environment separately i.e., separately for cmd, msys2, and fish)
 
 `git config --global core.editor "code --wait"`
