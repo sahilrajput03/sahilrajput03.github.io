@@ -1,62 +1,74 @@
-### •Typescript Playground:
+## Typescript Playground
 
  https://www.typescriptlang.org/play/index.html
 
 ***
 
-### • | (union operator) => It acts as OR operator. So, that means it acts like...
+### Union Operator( | )
 
+It acts as **OR** operator.
+
+```ts
 let someValue: string | number = "sahil"
 let someValue: string | number = 24
-Both are okay.
+// So, thats like someValue can be string or number.
+```
 
-***
+### Intersection Operator ( & ) 
 
-### • & (intersection operator) 
+So, it works as to **add multiple types to get a single type** that has all the type annotations. We can also say it works as **ADD OPERATOR** because it adds different types to single type.
 
-=> It acts ADD OPERATOR. So, it works as to add multiple types to get a single type that has all the type annotations.
-
-```js
+```ts
 type nameType = { name: string }
 type numberType = { phone_number: number}
-const message: nameType & numberType = { 
-    name: 'hello world', 
+const message: nameType & numberType = {
+    name: 'hello world',
     phone_number: 234
 };
-//That's a good example.
 ```
 ***
 
-### •Amazing function typings:
+### Function typings
 
-```interface SearchFunc {
-    (source: string, subString: number): boolean;
+```ts
+interface SearchFunctionInterface {
+	(source: string, subString: number): boolean;
+  // We could have written that like - 
+  // (arg0: string, arg1: number): boolean;
+  // So, (arg0, arg1) represents **parameters**.
+  // And, : boolean represents the **return_type** of function.
 }
-let mySearch: SearchFunc;
+
+let mySearch: SearchFunctionInterface;
+
 mySearch = function(firstThing, secondThing) {
     let result = firstThing.search(String(secondThing));
     return result > -1;
-}```
+}
 ```
 
 ***
 
-### • Interfaces for object's interface:
+### Defining Object's type - Interface
 
-```js
+```ts
 interface BirdObjectInterface {
     alive: boolean;
+    // alive `key` has `value` of type ``boolean``.
     fly(): string;
+    // fly `key` has `value` of type ``method``(*Also, method has return type of ``string``).
     layEggs(): number;
+    // layEggs `key` has `value` of type ``method``  (*Also, method has return type of ``number``).
 }
 interface FishObjectInterface {
     swim(): string;
     layEggs(): number;
 }
-// Object with given proper interfaces-->
+
+// #Object with given proper interfaces-->
 let creature: BirdObjectInterface = {
     alive: true,
-    fly: function (): string {
+    fly : function (): string {
     return "kaka"
     },
     layEggs: () => 23
@@ -65,27 +77,29 @@ let creature: BirdObjectInterface = {
 
 ***
 
-### • Extending interface to include more types:
+###  Extending interface to include more types:
 
-```js
+```ts
 interface Shape {
     color: string;
 }
-
 interface Square extends Shape {
     sideLength: number;
 }
+
 // Amazing implementation of intefaces
 let square = {} as Square;
 square.color = "blue";
 square.sideLength = 10;
+// Below would throw error!!
+square.sideLength = "common man!"
 ```
 
 ***
 
 ### • Interface can extend multiple interfaces-
 
-```js
+```ts
 interface Shape {
     color: string;
 }
@@ -98,15 +112,28 @@ interface Square extends Shape, PenStroke {
     sideLength: number;
 }
 
-let square = {} as Square;
+let square = {} as Square; /* #1 */
 square.color = "blue";
 square.sideLength = 10;
 square.penWidth = 5.0;
+// #Learn: If we have written below statement instead of /* #1 */ line, like:
+// let square: Square = {}; #This would have thrown error like,
+// Type '{}' is missing the following properties from type 'Square': sideLength, color, penWidth(2739)
 ```
 
 ***
 
-## Sequence and parallel reading of files-
+## "Function" built-in interface for function
+
+```ts
+let myMethod: Function
+// # Below would throw error like -> Type 'number' is not assignable to type 'Function'.
+myMethod = 20
+```
+
+***
+
+## Sequence and parallel reading of files(# non typescript topic)
 
 [link@stackoverflow](https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop)
 
@@ -114,7 +141,7 @@ square.penWidth = 5.0;
 
 ***
 
-## pkg - executable maker for node programs
+## pkg - executable maker for node programs(# non typescript topic)
 
 [link](https://github.com/vercel/pkg)
 
@@ -128,15 +155,9 @@ $ pkg -t node12-win-x64 <file-name>.js
 $ pkg -h
 ```
 
-
-
 ***
 
-## Disabled a lot of non- usable extension in vscode(use them anytime later)\
-
-***
-
-## tslint ignore files/folder
+## .tslint - Ignore Files/Folder to check with typescript copiler
 
 [link](https://stackoverflow.com/questions/34578677/how-to-ignore-a-particular-directory-or-file-for-tslint)
 

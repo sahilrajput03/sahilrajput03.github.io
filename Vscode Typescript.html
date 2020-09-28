@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui" />
-    <title>•Typescript Playground:</title>
+    <title>Typescript Playground</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css" />
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css" />
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css" />
@@ -11,89 +11,101 @@
     <script src="assets/myJs/copyToClipboardScript.js" defer></script>
   </head>
   <body>
-    <article class="markdown-body"><h3 id="•typescript-playground:"><a class="header-link" href="#•typescript-playground:"></a>•Typescript Playground:</h3>
+    <article class="markdown-body"><h2 id="typescript-playground"><a class="header-link" href="#typescript-playground"></a>Typescript Playground</h2>
 <p> <a href="https://www.typescriptlang.org/play/index.html">https://www.typescriptlang.org/play/index.html</a></p>
 <hr>
-<h3 id="•-|-(union-operator)-=>-it-acts-as-or-operator.-so,-that-means-it-acts-like..."><a class="header-link" href="#•-|-(union-operator)-=>-it-acts-as-or-operator.-so,-that-means-it-acts-like..."></a>• | (union operator) =&gt; It acts as OR operator. So, that means it acts like...</h3>
-<p>let someValue: string | number = &quot;sahil&quot;
-let someValue: string | number = 24
-Both are okay.</p>
-<hr>
-<h3 id="•-&-(intersection-operator)"><a class="header-link" href="#•-&-(intersection-operator)"></a>• &amp; (intersection operator)</h3>
-<p>=&gt; It acts ADD OPERATOR. So, it works as to add multiple types to get a single type that has all the type annotations.</p>
-<pre class="hljs"><code>type nameType = { <span class="hljs-attr">name</span>: string }
-type numberType = { <span class="hljs-attr">phone_number</span>: number}
-<span class="hljs-keyword">const</span> message: nameType &amp; numberType = { 
-    <span class="hljs-attr">name</span>: <span class="hljs-string">'hello world'</span>, 
-    <span class="hljs-attr">phone_number</span>: <span class="hljs-number">234</span>
-};
-<span class="hljs-comment">//That's a good example.</span></code></pre><hr>
-<h3 id="•amazing-function-typings:"><a class="header-link" href="#•amazing-function-typings:"></a>•Amazing function typings:</h3>
-<p><code>interface SearchFunc {
-    (source: string, subString: number): boolean;
+<h3 id="union-operator(-|-)"><a class="header-link" href="#union-operator(-|-)"></a>Union Operator( | )</h3>
+<p>It acts as <strong>OR</strong> operator.</p>
+<pre class="hljs"><code><span class="hljs-keyword">let</span> someValue: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span> = <span class="hljs-string">"sahil"</span>
+<span class="hljs-keyword">let</span> someValue: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span> = <span class="hljs-number">24</span>
+<span class="hljs-comment">// So, thats like someValue can be string or number.</span></code></pre><h3 id="intersection-operator-(-&-)"><a class="header-link" href="#intersection-operator-(-&-)"></a>Intersection Operator ( &amp; )</h3>
+<p>So, it works as to <strong>add multiple types to get a single type</strong> that has all the type annotations. We can also say it works as <strong>ADD OPERATOR</strong> because it adds different types to single type.</p>
+<pre class="hljs"><code><span class="hljs-keyword">type</span> nameType = { name: <span class="hljs-built_in">string</span> }
+<span class="hljs-keyword">type</span> numberType = { phone_number: <span class="hljs-built_in">number</span>}
+<span class="hljs-keyword">const</span> message: nameType &amp; numberType = {
+    name: <span class="hljs-string">'hello world'</span>,
+    phone_number: <span class="hljs-number">234</span>
+};</code></pre><hr>
+<h3 id="function-typings"><a class="header-link" href="#function-typings"></a>Function typings</h3>
+<pre class="hljs"><code><span class="hljs-keyword">interface</span> SearchFunctionInterface {
+    (source: <span class="hljs-built_in">string</span>, subString: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">boolean</span>;
+  <span class="hljs-comment">// We could have written that like - </span>
+  <span class="hljs-comment">// (arg0: string, arg1: number): boolean;</span>
+  <span class="hljs-comment">// So, (arg0, arg1) represents **parameters**.</span>
+  <span class="hljs-comment">// And, : boolean represents the **return_type** of function.</span>
 }
-let mySearch: SearchFunc;
-mySearch = function(firstThing, secondThing) {
-    let result = firstThing.search(String(secondThing));
-    return result &gt; -1;
-}</code></p>
-<pre class="hljs"><code>
-***
 
-<span class="hljs-comment">### • Interfaces for object's interface:</span>
+<span class="hljs-keyword">let</span> mySearch: SearchFunctionInterface;
 
-```js
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">BirdObjectInterface</span> </span>{
-    alive: <span class="hljs-keyword">boolean</span>;
-    fly(): string;
-    layEggs(): number;
+mySearch = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">firstThing, secondThing</span>) </span>{
+    <span class="hljs-keyword">let</span> result = firstThing.search(<span class="hljs-built_in">String</span>(secondThing));
+    <span class="hljs-keyword">return</span> result &gt; <span class="hljs-number">-1</span>;
+}</code></pre><hr>
+<h3 id="defining-object's-type---interface"><a class="header-link" href="#defining-object's-type---interface"></a>Defining Object&#39;s type - Interface</h3>
+<pre class="hljs"><code><span class="hljs-keyword">interface</span> BirdObjectInterface {
+    alive: <span class="hljs-built_in">boolean</span>;
+    <span class="hljs-comment">// alive `key` has `value` of type ``boolean``.</span>
+    fly(): <span class="hljs-built_in">string</span>;
+    <span class="hljs-comment">// fly `key` has `value` of type ``method``(*Also, method has return type of ``string``).</span>
+    layEggs(): <span class="hljs-built_in">number</span>;
+    <span class="hljs-comment">// layEggs `key` has `value` of type ``method``  (*Also, method has return type of ``number``).</span>
 }
-<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">FishObjectInterface</span> </span>{
-    swim(): string;
-    layEggs(): number;
+<span class="hljs-keyword">interface</span> FishObjectInterface {
+    swim(): <span class="hljs-built_in">string</span>;
+    layEggs(): <span class="hljs-built_in">number</span>;
 }
-<span class="hljs-comment">// Object with given proper interfaces--&gt;</span>
+
+<span class="hljs-comment">// #Object with given proper interfaces--&gt;</span>
 <span class="hljs-keyword">let</span> creature: BirdObjectInterface = {
-    alive: <span class="hljs-keyword">true</span>,
-    fly: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span>: <span class="hljs-title">string</span> </span>{
+    alive: <span class="hljs-literal">true</span>,
+    fly : <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>): <span class="hljs-title">string</span> </span>{
     <span class="hljs-keyword">return</span> <span class="hljs-string">"kaka"</span>
     },
     layEggs: () =&gt; <span class="hljs-number">23</span>
 }</code></pre><hr>
-<h3 id="•-extending-interface-to-include-more-types:"><a class="header-link" href="#•-extending-interface-to-include-more-types:"></a>• Extending interface to include more types:</h3>
-<pre class="hljs"><code>interface Shape {
-    <span class="hljs-attr">color</span>: string;
+<h3 id="extending-interface-to-include-more-types:"><a class="header-link" href="#extending-interface-to-include-more-types:"></a>Extending interface to include more types:</h3>
+<pre class="hljs"><code><span class="hljs-keyword">interface</span> Shape {
+    color: <span class="hljs-built_in">string</span>;
+}
+<span class="hljs-keyword">interface</span> Square <span class="hljs-keyword">extends</span> Shape {
+    sideLength: <span class="hljs-built_in">number</span>;
 }
 
-interface Square extends Shape {
-    <span class="hljs-attr">sideLength</span>: number;
-}
 <span class="hljs-comment">// Amazing implementation of intefaces</span>
-<span class="hljs-keyword">let</span> square = {} <span class="hljs-keyword">as</span> Square;
-square.color = <span class="hljs-string">"blue"</span>;
-square.sideLength = <span class="hljs-number">10</span>;</code></pre><hr>
-<h3 id="•-interface-can-extend-multiple-interfaces-"><a class="header-link" href="#•-interface-can-extend-multiple-interfaces-"></a>• Interface can extend multiple interfaces-</h3>
-<pre class="hljs"><code>interface Shape {
-    <span class="hljs-attr">color</span>: string;
-}
-
-interface PenStroke {
-    <span class="hljs-attr">penWidth</span>: number;
-}
-
-interface Square extends Shape, PenStroke {
-    <span class="hljs-attr">sideLength</span>: number;
-}
-
-<span class="hljs-keyword">let</span> square = {} <span class="hljs-keyword">as</span> Square;
+<span class="hljs-keyword">let</span> square = {} as Square;
 square.color = <span class="hljs-string">"blue"</span>;
 square.sideLength = <span class="hljs-number">10</span>;
-square.penWidth = <span class="hljs-number">5.0</span>;</code></pre><hr>
-<h2 id="sequence-and-parallel-reading-of-files-"><a class="header-link" href="#sequence-and-parallel-reading-of-files-"></a>Sequence and parallel reading of files-</h2>
+<span class="hljs-comment">// Below would throw error!!</span>
+square.sideLength = <span class="hljs-string">"common man!"</span></code></pre><hr>
+<h3 id="•-interface-can-extend-multiple-interfaces-"><a class="header-link" href="#•-interface-can-extend-multiple-interfaces-"></a>• Interface can extend multiple interfaces-</h3>
+<pre class="hljs"><code><span class="hljs-keyword">interface</span> Shape {
+    color: <span class="hljs-built_in">string</span>;
+}
+
+<span class="hljs-keyword">interface</span> PenStroke {
+    penWidth: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-keyword">interface</span> Square <span class="hljs-keyword">extends</span> Shape, PenStroke {
+    sideLength: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-keyword">let</span> square = {} as Square; <span class="hljs-comment">/* #1 */</span>
+square.color = <span class="hljs-string">"blue"</span>;
+square.sideLength = <span class="hljs-number">10</span>;
+square.penWidth = <span class="hljs-number">5.0</span>;
+<span class="hljs-comment">// #Learn: If we have written below statement instead of /* #1 */ line, like:</span>
+<span class="hljs-comment">// let square: Square = {}; #This would have thrown error like,</span>
+<span class="hljs-comment">// Type '{}' is missing the following properties from type 'Square': sideLength, color, penWidth(2739)</span></code></pre><hr>
+<h2 id=""function"-built-in-interface-for-function"><a class="header-link" href="#"function"-built-in-interface-for-function"></a>&quot;Function&quot; built-in interface for function</h2>
+<pre class="hljs"><code><span class="hljs-keyword">let</span> myMethod: <span class="hljs-built_in">Function</span>
+<span class="hljs-comment">// # Below would throw error like -&gt; Type 'number' is not assignable to type 'Function'.</span>
+myMethod = <span class="hljs-number">20</span></code></pre><hr>
+<h2 id="sequence-and-parallel-reading-of-files(#-non-typescript-topic)"><a class="header-link" href="#sequence-and-parallel-reading-of-files(#-non-typescript-topic)"></a>Sequence and parallel reading of files(# non typescript topic)</h2>
 <p><a href="https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop">link@stackoverflow</a></p>
 <p class="img-container"><img src=".imgs_typora/image-20200705204559439.png" alt="image-20200705204559439"></p>
 <hr>
-<h2 id="pkg---executable-maker-for-node-programs"><a class="header-link" href="#pkg---executable-maker-for-node-programs"></a>pkg - executable maker for node programs</h2>
+<h2 id="pkg---executable-maker-for-node-programs(#-non-typescript-topic)"><a class="header-link" href="#pkg---executable-maker-for-node-programs(#-non-typescript-topic)"></a>pkg - executable maker for node programs(# non typescript topic)</h2>
 <p><a href="https://github.com/vercel/pkg">link</a></p>
 <pre class="hljs"><code>$ npm i -g pkg
 <span class="hljs-comment">#To make an executable, just exeucte like </span>
@@ -102,9 +114,7 @@ $ pkg &lt;file-name&gt;.js
 $ pkg -t node12-win-x64 &lt;file-name&gt;.js
 <span class="hljs-comment">#Thats all, this would compile only for windows. Though you can always get help via </span>
 $ pkg -h</code></pre><hr>
-<h2 id="disabled-a-lot-of-non--usable-extension-in-vscode(use-them-anytime-later)\"><a class="header-link" href="#disabled-a-lot-of-non--usable-extension-in-vscode(use-them-anytime-later)\"></a>Disabled a lot of non- usable extension in vscode(use them anytime later)\</h2>
-<hr>
-<h2 id="tslint-ignore-files/folder"><a class="header-link" href="#tslint-ignore-files/folder"></a>tslint ignore files/folder</h2>
+<h2 id=".tslint---ignore-files/folder-to-check-with-typescript-copiler"><a class="header-link" href="#.tslint---ignore-files/folder-to-check-with-typescript-copiler"></a>.tslint - Ignore Files/Folder to check with typescript copiler</h2>
 <p><a href="https://stackoverflow.com/questions/34578677/how-to-ignore-a-particular-directory-or-file-for-tslint">link</a></p>
 <p class="img-container"><img src=".imgs_typora/image-20200705144538426.png" alt="image-20200705144538426"></p>
 <hr>
