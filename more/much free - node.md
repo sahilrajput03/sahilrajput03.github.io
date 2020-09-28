@@ -6,7 +6,7 @@
 
 ## **BEWARE: opennode is used with docker, don't use if you don't know docker thing**, prefer https://www.evennode.com/ ,thats best.
 
-### CheapMaster - Amazing bboommmM - [opennode.io](https://www.openode.io)	- This suppors deno too.WOW...
+### CheapMaster - Amazing(ONLY FOR PEOPLE WITH DOCKER KNOWLEDGE) bboommmM - [opennode.io](https://www.openode.io)	- This suppors deno too.WOW...
 
 But openode.io we can not host at baseUrl, we have to redirect it subdomain using cname and even that is not redirecting properly, idk whyy? try some other day..
 
