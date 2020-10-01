@@ -4417,18 +4417,18 @@ Actually this feature will work like hibernate if power is lost during sleep. Ot
 ```bash
 # ****USE POWER SHELL TO ALL THESE COMMANDS**********:-
 
+# I am Currently using version of node 12.18.0 64bit vesion.
+# LEARN: nvm install syntax -> e.g. <node-version> <system architecture-32/64>
+nvm install 12.18.0 64 ## This will install - Node 12.18.0 64bit version.
+nvm install 12.16.2 64 # This will install - Node 12.16.2 64bit version.
+nvm install nvm use 12.16.2 64 # Will do similarly.
+nvm uninstall 12.16.2 64 # This will undo tha, LOL, don't do it, you may need it some years later.
 
-nvm uninstall 12.16.2 64
-nvm list
-nvm on
-nvm off
-nvm install 12.16.2 64
-nvm use 12.16.2 64
-e.g.=> <node-version> <system architecture-32/64>
+nvm list ## This will show you all the installed versions of node, you installed via `npm install ...` 
+nvm off # This will just turn off nvm.
+nvm on # This will just turn it on again.
 
-#Currently using version of node
-nvm install 12.18.0 64
-nvm use 12.18.0 64
+nvm use 12.18.0 64 ## You can activate a different vesion of installed node via this command.
 ```
 
 ***
