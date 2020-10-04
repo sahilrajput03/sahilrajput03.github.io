@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui" />
+    <title>Typescript Playground</title>
+    <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/mycss.css" />
+    <script src="assets/myJs/copyToClipboardScript.js" defer></script>
+  </head>
+  <body>
+    <article class="markdown-body"><h2 id="typescript-playground"><a class="header-link" href="#typescript-playground"></a>Typescript Playground</h2>
+<p> <a href="https://www.typescriptlang.org/play/index.html">https://www.typescriptlang.org/play/index.html</a></p>
+<hr>
+<h3 id="union-operator(-|-)"><a class="header-link" href="#union-operator(-|-)"></a>Union Operator( | )</h3>
+<p>It acts as <strong>OR</strong> operator.</p>
+<pre class="hljs"><code><span class="hljs-keyword">let</span> someValue: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span> = <span class="hljs-string">"sahil"</span>
+<span class="hljs-keyword">let</span> someValue: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span> = <span class="hljs-number">24</span>
+<span class="hljs-comment">// So, thats like someValue can be string or number.</span></code></pre><h3 id="intersection-operator-(-&-)"><a class="header-link" href="#intersection-operator-(-&-)"></a>Intersection Operator ( &amp; )</h3>
+<p>So, it works as to <strong>add multiple types to get a single type</strong> that has all the type annotations. We can also say it works as <strong>ADD OPERATOR</strong> because it adds different types to single type.</p>
+<pre class="hljs"><code><span class="hljs-keyword">type</span> nameType = { name: <span class="hljs-built_in">string</span> }
+<span class="hljs-keyword">type</span> numberType = { phone_number: <span class="hljs-built_in">number</span>}
+<span class="hljs-keyword">const</span> message: nameType &amp; numberType = {
+    name: <span class="hljs-string">'hello world'</span>,
+    phone_number: <span class="hljs-number">234</span>
+};</code></pre><hr>
+<h3 id="function-typings"><a class="header-link" href="#function-typings"></a>Function typings</h3>
+<pre class="hljs"><code><span class="hljs-keyword">interface</span> SearchFunctionInterface {
+    (source: <span class="hljs-built_in">string</span>, subString: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">boolean</span>;
+  <span class="hljs-comment">// We could have written that like - </span>
+  <span class="hljs-comment">// (arg0: string, arg1: number): boolean;</span>
+  <span class="hljs-comment">// So, (arg0, arg1) represents **parameters**.</span>
+  <span class="hljs-comment">// And, : boolean represents the **return_type** of function.</span>
+}
+
+<span class="hljs-keyword">let</span> mySearch: SearchFunctionInterface;
+
+mySearch = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">firstThing, secondThing</span>) </span>{
+    <span class="hljs-keyword">let</span> result = firstThing.search(<span class="hljs-built_in">String</span>(secondThing));
+    <span class="hljs-keyword">return</span> result &gt; <span class="hljs-number">-1</span>;
+}</code></pre><hr>
+<h3 id="defining-object's-type---interface"><a class="header-link" href="#defining-object's-type---interface"></a>Defining Object&#39;s type - Interface</h3>
+<pre class="hljs"><code><span class="hljs-keyword">interface</span> BirdObjectInterface {
+    alive: <span class="hljs-built_in">boolean</span>;
+    <span class="hljs-comment">// alive `key` has `value` of type ``boolean``.</span>
+    fly(): <span class="hljs-built_in">string</span>;
+    <span class="hljs-comment">// fly `key` has `value` of type ``method``(*Also, method has return type of ``string``).</span>
+    layEggs(): <span class="hljs-built_in">number</span>;
+    <span class="hljs-comment">// layEggs `key` has `value` of type ``method``  (*Also, method has return type of ``number``).</span>
+}
+<span class="hljs-keyword">interface</span> FishObjectInterface {
+    swim(): <span class="hljs-built_in">string</span>;
+    layEggs(): <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-comment">// #Object with given proper interfaces--&gt;</span>
+<span class="hljs-keyword">let</span> creature: BirdObjectInterface = {
+    alive: <span class="hljs-literal">true</span>,
+    fly : <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>): <span class="hljs-title">string</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"kaka"</span>
+    },
+    layEggs: () =&gt; <span class="hljs-number">23</span>
+}</code></pre><hr>
+<h3 id="extending-interface-to-include-more-types:"><a class="header-link" href="#extending-interface-to-include-more-types:"></a>Extending interface to include more types:</h3>
+<pre class="hljs"><code><span class="hljs-keyword">interface</span> Shape {
+    color: <span class="hljs-built_in">string</span>;
+}
+<span class="hljs-keyword">interface</span> Square <span class="hljs-keyword">extends</span> Shape {
+    sideLength: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-comment">// Amazing implementation of intefaces</span>
+<span class="hljs-keyword">let</span> square = {} as Square;
+square.color = <span class="hljs-string">"blue"</span>;
+square.sideLength = <span class="hljs-number">10</span>;
+<span class="hljs-comment">// Below would throw error!!</span>
+square.sideLength = <span class="hljs-string">"common man!"</span></code></pre><hr>
+<h3 id="•-interface-can-extend-multiple-interfaces-"><a class="header-link" href="#•-interface-can-extend-multiple-interfaces-"></a>• Interface can extend multiple interfaces-</h3>
+<pre class="hljs"><code><span class="hljs-keyword">interface</span> Shape {
+    color: <span class="hljs-built_in">string</span>;
+}
+
+<span class="hljs-keyword">interface</span> PenStroke {
+    penWidth: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-keyword">interface</span> Square <span class="hljs-keyword">extends</span> Shape, PenStroke {
+    sideLength: <span class="hljs-built_in">number</span>;
+}
+
+<span class="hljs-keyword">let</span> square = {} as Square; <span class="hljs-comment">/* #1 */</span>
+square.color = <span class="hljs-string">"blue"</span>;
+square.sideLength = <span class="hljs-number">10</span>;
+square.penWidth = <span class="hljs-number">5.0</span>;
+<span class="hljs-comment">// #Learn: If we have written below statement instead of /* #1 */ line, like:</span>
+<span class="hljs-comment">// let square: Square = {}; #This would have thrown error like,</span>
+<span class="hljs-comment">// Type '{}' is missing the following properties from type 'Square': sideLength, color, penWidth(2739)</span></code></pre><hr>
+<h2 id=""function"-built-in-interface-for-function"><a class="header-link" href="#"function"-built-in-interface-for-function"></a>&quot;Function&quot; built-in interface for function</h2>
+<pre class="hljs"><code><span class="hljs-keyword">let</span> myMethod: <span class="hljs-built_in">Function</span>
+<span class="hljs-comment">// # Below would throw error like -&gt; Type 'number' is not assignable to type 'Function'.</span>
+myMethod = <span class="hljs-number">20</span></code></pre><hr>
+<h2 id="sequence-and-parallel-reading-of-files(#-non-typescript-topic)"><a class="header-link" href="#sequence-and-parallel-reading-of-files(#-non-typescript-topic)"></a>Sequence and parallel reading of files(# non typescript topic)</h2>
+<p><a href="https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop">link@stackoverflow</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200705204559439.png" alt="image-20200705204559439"></p>
+<hr>
+<h2 id="pkg---executable-maker-for-node-programs(#-non-typescript-topic)"><a class="header-link" href="#pkg---executable-maker-for-node-programs(#-non-typescript-topic)"></a>pkg - executable maker for node programs(# non typescript topic)</h2>
+<p><a href="https://github.com/vercel/pkg">link</a></p>
+<pre class="hljs"><code>$ npm i -g pkg
+<span class="hljs-comment">#To make an executable, just exeucte like </span>
+$ pkg &lt;file-name&gt;.js
+<span class="hljs-comment">#The above syntax is not providing any target like windows, linux, or mac, so it compiles for all three. Which we don't want, try the below command.</span>
+$ pkg -t node12-win-x64 &lt;file-name&gt;.js
+<span class="hljs-comment">#Thats all, this would compile only for windows. Though you can always get help via </span>
+$ pkg -h</code></pre><hr>
+<h2 id=".tslint---ignore-files/folder-to-check-with-typescript-copiler"><a class="header-link" href="#.tslint---ignore-files/folder-to-check-with-typescript-copiler"></a>.tslint - Ignore Files/Folder to check with typescript copiler</h2>
+<p><a href="https://stackoverflow.com/questions/34578677/how-to-ignore-a-particular-directory-or-file-for-tslint">link</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200705144538426.png" alt="image-20200705144538426"></p>
+<hr>
+<p><a href="https://stackoverflow.com/questions/62737905/why-property-does-not-exist-on-type-in-object-destructuring">link</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200705142910955.png" alt="image-20200705142910955"></p>
+<h2 id="semantic-ui"><a class="header-link" href="#semantic-ui"></a>semantic ui</h2>
+<p><a href="https://react.semantic-ui.com/elements/icon/#gendersicons-can-represent-genders-or-types-of-sexuality">https://react.semantic-ui.com/elements/icon/#gendersicons-can-represent-genders-or-types-of-sexuality</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200704162305602.png" alt="image-20200704162305602"></p>
+<hr>
+<h2 id="send-pretty-json"><a class="header-link" href="#send-pretty-json"></a>send pretty json</h2>
+<p>Though this mehtod is good to view things on a webpage with no extra extensions in the browser. But it increases the size of the output, thus might be a little bulky in scenarios where we are dealing with heavy data.</p>
+<pre class="hljs"><code>res.header(<span class="hljs-string">"Content-Type"</span>, <span class="hljs-string">'application/json'</span>);
+res.send(<span class="hljs-built_in">JSON</span>.stringify(DESIRED_object, <span class="hljs-literal">null</span>, <span class="hljs-number">4</span>));
+# Below line isn<span class="hljs-string">'t good any. You need to explicitly use JSON.stringify() to get it the desired shape.
+//  res.json(singleEntry, null, 4);</span></code></pre><pre class="hljs"><code>Using params:
+req.params</code></pre><hr>
+<p class="img-container"><img src=".imgs_typora/image-20200704132259746.png" alt="image-20200704132259746"></p>
+<hr>
+<p class="img-container"><img src=".imgs_typora/image-20200704030651308.png" alt="image-20200704030651308"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200704020028603.png" alt="image-20200704020028603"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200704015628076.png" alt="image-20200704015628076"></p>
+<p><a href="https://techlog360.com/best-open-source-android-apps/#:~:text=TimberX%20Music%20Player%20is%20one,and%20dependency%20injection%20with%20KOIN.">kotlin projects</a>  , <a href="https://github.com/trending/kotlin">kotlin trending repos@officialKotlin</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200704005256404.png" alt="image-20200704005256404"></p>
+<h2 id="object.freeze-method"><a class="header-link" href="#object.freeze-method"></a>Object.freeze method</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200704003805129.png" alt="image-20200704003805129"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200704003521162.png" alt="image-20200704003521162"></p>
+<hr>
+<h2 id="typescripts-gold-features-"><a class="header-link" href="#typescripts-gold-features-"></a>Typescripts gold features-</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200703220932555.png" alt="image-20200703220932555"></p>
+<hr>
+<p class="img-container"><img src=".imgs_typora/image-20200703210932526.png" alt="image-20200703210932526"></p>
+<hr>
+<h2 id="npm-safe-install---a-waste-of-time"><a class="header-link" href="#npm-safe-install---a-waste-of-time"></a>npm-safe-install - a waste of time</h2>
+<p>This dependency isn&#39;t any better coz its just too lazy to detect what&#39;s linked and it install those linked if they are present in the package.json file, and that&#39;s just redundant coz we have just liked to that to be able to access that dependency for. Just waste of time. nsi is an alias for this command.</p>
+<p>What all this nsi does is, just delete everything in the node_modules folder and then install everything from package.json file(do not link anythink, heckkk), and then restores all the symlinks that were present earlier in the node_modules folder.</p>
+<p>Unistalled this heck of waste of time.</p>
+<p class="img-container"><img src=".imgs_typora/image-20200701221915979.png" alt="image-20200701221915979"></p>
+<hr>
+<h2 id="npm-link---save---the-issue-that-is-long-lived-form-2011"><a class="header-link" href="#npm-link---save---the-issue-that-is-long-lived-form-2011"></a>npm link --save - the issue that is long lived form 2011</h2>
+<p><a href="https://github.com/npm/npm/issues/1166">https://github.com/npm/npm/issues/1166</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200701220946095.png" alt="image-20200701220946095"></p>
+<hr>
+<h2 id="a-required-knowledge-on-the-basis-of-npm-link-"><a class="header-link" href="#a-required-knowledge-on-the-basis-of-npm-link-"></a>A required knowledge on the basis of npm link-</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200701220656211.png" alt="image-20200701220656211" style="zoom:50%;" /></p>
+<hr>
+<h2 id="a-unrealitic-way-to-work-with-package.json-file-though-all-this-can-be-done-with-`npm-i---link`now."><a class="header-link" href="#a-unrealitic-way-to-work-with-package.json-file-though-all-this-can-be-done-with-`npm-i---link`now."></a>A unrealitic way to work with package.json file though all this can be done with <code>npm i --link</code>now.</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200701220445157.png" alt="image-20200701220445157" style="zoom:50%;" /></p>
+<hr>
+<h2 id="https://docs.npmjs.com/misc/semver"><a class="header-link" href="#https://docs.npmjs.com/misc/semver"></a><a href="https://docs.npmjs.com/misc/semver">https://docs.npmjs.com/misc/semver</a></h2>
+<p class="img-container"><img src=".imgs_typora/image-20200701214045732.png" alt="image-20200701214045732"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200701213654811.png" alt="image-20200701213654811"></p>
+<pre class="hljs"><code><span class="hljs-comment">#prefer </span>
+$ npm i --link
+<span class="hljs-comment">#below one doesn't add anything to the local package.json file</span>
+$ npm i &lt;pkg&gt; --link , So avoid this <span class="hljs-built_in">command</span>, use nls but remember it updates the same package package.json file.</code></pre><h2 id="scoped-dependencies-in-node"><a class="header-link" href="#scoped-dependencies-in-node"></a>Scoped dependencies in node</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200701212427571.png" alt="image-20200701212427571" style="zoom:50%;" /></p>
+<h2 id="bundled-dependencies-in-node"><a class="header-link" href="#bundled-dependencies-in-node"></a>Bundled dependencies in node</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200701211623576.png" alt="image-20200701211623576" style="zoom:50%;" /></p>
+<hr>
+<p>So, preferable you should use a few commands only-</p>
+<pre class="hljs"><code>nls &lt;pkg&gt; <span class="hljs-comment">#To install a dependency but will overwrite the package version in the local package.json file</span>
+npm i &lt;pkg&gt; --link
+<span class="hljs-comment">#Above command just don't add anything to the package.json file, but installs globally and then link to it in local node_modules folder. Not recommended as it does the same destructive behavious like would remove the symmlinks that are not in package.json file.</span>
+<span class="hljs-comment">#USE NPM LINK &lt;PKG&gt; instead. Safer option, as it isn't destructive at all. Doens't even checks the local package.json file.</span></code></pre><hr>
+<h2 id="npm-i---link"><a class="header-link" href="#npm-i---link"></a>npm i --link</h2>
+<pre class="hljs"><code>$ npm i --link
+<span class="hljs-comment">#This is really phenomenal, try if for few years, it doesn't download dependencies much rather prefers a way to fetch older caches and install them as globally and there's a verly littlt chance it would break anything, and it works offine, thats one of the best thing.</span>
+<span class="hljs-comment">#This works offline too.</span>
+<span class="hljs-comment">#This is a pretty good option to install a project, though using nls is also favourable</span>
+<span class="hljs-comment">#Above command installs all packages globally and links to them, from local package.json file.</span>
+<span class="hljs-comment">#TIP: Works offline too, though throws a warning that using stale data, but its okay though.</span></code></pre><pre class="hljs"><code>$ npm install formik --link
+<span class="hljs-comment">#Just simply perfer, npm i -g formik &amp;&amp; npm link </span>
+<span class="hljs-comment">#Above command just installs/updates formik package (internet must be available, if no earlier version is present, it won't download it again though), and then does npm link formik.</span>
+Above <span class="hljs-built_in">command</span> is just a short of-
+$ npm i -g formik &amp;&amp; npm link formik
+**
+So, npm install &lt;pkg&gt; --link is official alternate <span class="hljs-keyword">for</span> nls &lt;pkg&gt; but the former one requires the internet to be working, <span class="hljs-keyword">while</span> the second doesn\<span class="hljs-string">'t. Thats where nls wins.</span></code></pre><hr>
+<h2 id="npm-uninstall"><a class="header-link" href="#npm-uninstall"></a>npm uninstall</h2>
+<p>So, the learning is to never unlink but actually <strong>delete the linked symlinks manually from the node_modules folder.</strong></p>
+<p class="img-container"><img src=".imgs_typora/image-20200701195354197.png" alt="image-20200701195354197"></p>
+<hr>
+<h2 id="for-defining-indentation-for-switch-case(by-default-its-set-to-0-indentation)"><a class="header-link" href="#for-defining-indentation-for-switch-case(by-default-its-set-to-0-indentation)"></a>For defining indentation for switch case(by default its set to 0 indentation)</h2>
+<p><a href="https://eslint.org/docs/rules/indent">link</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200701155929118.png" alt="image-20200701155929118"></p>
+<hr>
+<h3 id="use-ctrl+l-and-then-press,-alt+ctrl+right-arrow-to-get-the-desired-block-select-with-just-those-two-shortcuts."><a class="header-link" href="#use-ctrl+l-and-then-press,-alt+ctrl+right-arrow-to-get-the-desired-block-select-with-just-those-two-shortcuts."></a>Use Ctrl+L and then press, alt+ctrl+right arrow to get the desired block select with just those two shortcuts.</h3>
+<hr>
+<h2 id="you-can-create-a-.eslintrc.json-file-in-the-src-foler(or-anywhere-you-want-it)-to-overwrite-the-settings-for-eslint-in-current-project"><a class="header-link" href="#you-can-create-a-.eslintrc.json-file-in-the-src-foler(or-anywhere-you-want-it)-to-overwrite-the-settings-for-eslint-in-current-project"></a>You can create a .eslintrc.json file in the src foler(or anywhere you want it) to overwrite the settings for eslint in current project</h2>
+<p>src: <a href="http://rahulgaba.com/front-end/2019/02/17/Use-custom-eslint-config-in-create-react-app-using-three-simple-steps-No-external-dependencies.html">link8</a></p>
+<pre class="hljs"><code>{
+  <span class="hljs-attr">"extends"</span>: <span class="hljs-string">"react-app"</span>,
+  <span class="hljs-attr">"rules"</span>: {
+    <span class="hljs-attr">"indent"</span>: [
+      <span class="hljs-string">"error"</span>,
+      <span class="hljs-number">2</span>
+    ] // A custom style-related rule for example
+    // More custom rules here
+  }
+}</code></pre><hr>
+<p>We have to use hooks unconditionally - deeper meaning(do not define any hook in some condition)</p>
+<h2 id="we-love-hooks-unconditionally.-;d"><a class="header-link" href="#we-love-hooks-unconditionally.-;d"></a>We love hooks unconditionally. ;D</h2>
+<hr>
+<h2 id="using-dom"><a class="header-link" href="#using-dom"></a>Using DOM</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200701122113561.png" alt="image-20200701122113561"></p>
+<p><img src=".imgs_typora/image-20200701121410237.png" alt="image-20200701121410237"><img src=".imgs_typora/image-20200701121607349.png" alt="image-20200701121607349"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200701121916210.png" alt="image-20200701121916210"></p>
+<hr>
+<h2 id="ultimate-interfaces"><a class="header-link" href="#ultimate-interfaces"></a>Ultimate Interfaces</h2>
+<p>Using multiple interfaces with same name is allowed, but multiple types with same name isn&#39;t for e.g., </p>
+<p>I added another interface with a property love, i.e.,</p>
+<p> <img src=".imgs_typora/image-20200630195634360.png" alt="image-20200630195634360"></p>
+<p>So, both the interfaces combines to make the interface and doesn&#39;t cause any error for that.(But using types would have thrown as editors error like &quot;not allowed, already declared&quot;). Hence, it causes this errror as the data doens&#39;t include the love property, though you can make the property optional to get rid of the error, as that would make it optional with ? operator of typescript in the interface definition.(<strong>after the errors image</strong>)</p>
+<p class="img-container"><img src=".imgs_typora/image-20200630195506426.png" alt="image-20200630195506426"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200630195946084.png" alt="image-20200630195946084"></p>
+<p><strong>So, errorrs are clean now.</strong></p>
+<hr>
+<h2 id="using-express's-inbuilt-types-for-defining-types-of-different-things-for-request-and-response-"><a class="header-link" href="#using-express's-inbuilt-types-for-defining-types-of-different-things-for-request-and-response-"></a>Using express&#39;s inbuilt types for defining types of different things for request and response-</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200630135214238.png" alt="image-20200630135214238"></p>
+<p>-credits- AMAN</p>
+<p>Also, the first params for the route are just redundant as we&#39;re not using exercises anywhere. </p>
+<p><code>{exercises: string}</code> and we can actually write more descriptory thing there, like <code>{[index:string]: string}</code>.</p>
+<p><a href="https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/express/index.d.ts#L109">https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/express/index.d.ts#L109</a></p>
+<p>Kalle Ives: Express also has a RequestHandler type which can be used to add types to a request handler. It has generic types, which can be used to e.g. type the request body: </p>
+<blockquote>
+<p>Kalle Ives: This is something I experimented on a few weeks back. You will se a pattern.</p>
+<p>The <strong>first type</strong> parameter of the RequestHandler is for <strong>req.params</strong>, </p>
+<p><strong>second</strong> parameter is for the <strong>response.body</strong> and the </p>
+<p><strong>third</strong> one is for <strong>req.body</strong></p>
+</blockquote>
+<p class="img-container"><img src=".imgs_typora/image-20200630134229437.png" alt="image-20200630134229437"></p>
+<hr>
+<h2 id="using-as-operator-in-request-of-express-"><a class="header-link" href="#using-as-operator-in-request-of-express-"></a>Using as operator  in request of express-</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200630134145885.png" alt="image-20200630134145885"></p>
+<p>-credits- AMAN</p>
+<h2 id="typescript-using-array-within-properties-"><a class="header-link" href="#typescript-using-array-within-properties-"></a>Typescript using array within properties-</h2>
+<p class="img-container"><img src=".imgs_typora/133623.png" alt="133623"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200630133718399.png" alt="image-20200630133718399"></p>
+<h2 id="assinging-types-to-process-variable-in-typescript"><a class="header-link" href="#assinging-types-to-process-variable-in-typescript"></a>Assinging types to process variable in typescript</h2>
+<p>#process.env process, typescript process.env variables 
+link</p>
+<p class="img-container"><img src=".imgs_typora/image-20200630111848802.png" alt="image-20200630111848802"></p>
+<hr>
+<h2 id="as-chaining"><a class="header-link" href="#as-chaining"></a>as chaining</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200630104822637.png" alt="image-20200630104822637"></p>
+<h2 id="working-with-eslint-requires-package-lint-to-be-installed-"><a class="header-link" href="#working-with-eslint-requires-package-lint-to-be-installed-"></a>Working with eslint requires package lint to be installed-</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200630104102646.png" alt="image-20200630104102646"></p>
+<pre class="hljs"><code>Fixing above issue is to run below <span class="hljs-built_in">command</span>-
+$ nls lint
+<span class="hljs-comment">#This will install lint globally(if not installed), and then will link to it in the node_modules folder. If already installed, you  may use =&gt; </span>
+$ npm link lint <span class="hljs-comment">#This should work good though.</span></code></pre><hr>
+<h2 id="catching-errors-as-typed"><a class="header-link" href="#catching-errors-as-typed"></a>Catching errors as typed</h2>
+<pre class="hljs"><code>  } <span class="hljs-keyword">catch</span> (e) {
+    <span class="hljs-comment">// const message2 = e.message; // This will give error as unsafe assignment of an any value.</span>
+    <span class="hljs-comment">// const message = (e as Error).message; // This works flawlessly.</span>
+    res.status(<span class="hljs-number">400</span>).send((e <span class="hljs-keyword">as</span> <span class="hljs-built_in">Error</span>).message); <span class="hljs-comment">// This works good102.</span>
+    <span class="hljs-comment">// res.status(400).send(e instanceof Error ? e.message : "no message"); // This works good101.</span>
+    <span class="hljs-comment">// res.status(400).send(e instanceof Error ? e.message : "no message"); // This works good100.</span>
+    <span class="hljs-comment">// res.status(400).send(isError(e) ? e.message : "No message"); // This works good0.</span>
+    <span class="hljs-comment">// e instanceof Error &amp;&amp; res.status(400).send(e.message);  // This works good1.</span>
+    <span class="hljs-comment">// isError(e) &amp;&amp; res.status(400).send(e.message); // This works good2.</span>
+
+    <span class="hljs-comment">// Old coders style below- //This works good3.</span>
+    <span class="hljs-comment">// if(isError(e)){</span>
+    <span class="hljs-comment">//   res.status(400).send(e.message);</span>
+    <span class="hljs-comment">// }</span>
+  }</code></pre><p>Hello there!! go on..</p>
+<hr>
+<p class="img-container"><img src=".imgs_typora/201318.png" alt="201318"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200628215713460.png" alt="image-20200628215713460"></p>
+<hr>
+<h2 id="typescript-eslint-no-explicity-any-"><a class="header-link" href="#typescript-eslint-no-explicity-any-"></a>typescript eslint no explicity any-</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200628220342101.png" alt="image-20200628220342101"></p>
+<hr>
+<p>You may read npm scope - <a href="https://docs.npmjs.com/misc/scope">link</a></p>
+<p>Below image from src- <a href="https://docs.npmjs.com/cli/link">link</a></p>
+<p>[This is actually referencable to the better-link-saver(combined three softs, (one is nls - npmLinkSaver))]</p>
+<p class="img-container"><img src=".imgs_typora/image-20200627171000849.png" alt="image-20200627171000849"></p>
+<h2 id="whats-lint-in-npm"><a class="header-link" href="#whats-lint-in-npm"></a>Whats lint in npm</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200627134615806.png" alt="image-20200627134615806"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200627134549947.png" alt="image-20200627134549947"></p>
+<hr>
+<h2 id="whats-that??"><a class="header-link" href="#whats-that??"></a>Whats that??</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200627134251443.png" alt="image-20200627134251443"></p>
+<h2 id="vscode's-eslint-worked-after-doing-a-npx-lint-."><a class="header-link" href="#vscode's-eslint-worked-after-doing-a-npx-lint-."></a>VScode&#39;s eslint worked after doing a npx lint .</h2>
+<p><img src=".imgs_typora/image-20200627133637500.png" alt="image-20200627133637500"><code></code></p>
+<hr>
+<h2 id="fixing-error-in-global-node_modules-is-easy-like-this-/"><a class="header-link" href="#fixing-error-in-global-node_modules-is-easy-like-this-/"></a>Fixing error in global node_modules is easy like this-/</h2>
+<p class="img-container"><img src=".imgs_typora/010940.png" alt="010940"></p>
+<hr>
+<h2 id="nql"><a class="header-link" href="#nql"></a>nql</h2>
+<p>npm-quick-link find its usage, it did some trouble last time though, as it created a symlink in c:\node\node_modules folder and showed it as a dependency when we did a npm ls -g --depth 0</p>
+<hr>
+<p class="img-container"><img src=".imgs_typora/image-20200626231729537.png" alt="image-20200626231729537"></p>
+<p>Hence, using commandline npx eslint . would be able to tell why is vscode eslint extension is not working at all. So, just install any requiring extension, it could probably be - <strong>eslint-plugin-react</strong> or <strong>@typescript-eslint/parser</strong> or <strong>@typescript-eslint/eslint-plugin</strong> or anything you&#39;re using in <strong>.eslintrc</strong> file, its very easy to find out from there too, though npx eslint . command will tell exactly whats missing.  BEWARE:: You should never ever install any of dependencies <strong>eslint-plugin-react</strong> or <strong>@typescript-eslint/parser</strong> or <strong>@typescript-eslint/eslint-plugin</strong> locally via <code>npm i &lt;pkg-name&gt;</code> because this way you&#39;ll end up installing complete package from the beginning form the package.json(and that might unlink some packages you linked somehow which aren&#39;t mentioned in local package.json, though it should do any change in global node_modules too, but you should never use npm i , but use npm i -g <pkg>, so you could make a link to to use from global node_modules only).</p>
+<hr>
+<h2 id="eslint"><a class="header-link" href="#eslint"></a>eslint</h2>
+<pre class="hljs"><code>It requires you <span class="hljs-keyword">to</span> have <span class="hljs-keyword">it</span> installed <span class="hljs-keyword">as</span> a <span class="hljs-keyword">local</span> dependecy <span class="hljs-keyword">to</span> be able <span class="hljs-keyword">to</span> <span class="hljs-built_in">run</span> via command line, <span class="hljs-keyword">but</span> doens't need <span class="hljs-keyword">to</span> be present <span class="hljs-keyword">of</span> linked <span class="hljs-keyword">for</span> <span class="hljs-keyword">the</span> editor's extension <span class="hljs-keyword">to</span> work.
+Though, editor's extension required <span class="hljs-keyword">the</span> .eslinrc <span class="hljs-built_in">file</span>, <span class="hljs-keyword">and</span> <span class="hljs-keyword">it</span> also needs <span class="hljs-keyword">the</span> appropriate plugins metioned <span class="hljs-keyword">in</span> <span class="hljs-keyword">the</span> eslintrc <span class="hljs-built_in">file</span> <span class="hljs-keyword">to</span> work, otherwise <span class="hljs-keyword">it</span> won't work <span class="hljs-keyword">at</span> all.</code></pre><hr>
+<h1 id="the-best-way-to-deal-with-eslint-error-while-starting-react-server-is-to-just-use-below-variable-to-disable-the-eslint-version-checking-simply-"><a class="header-link" href="#the-best-way-to-deal-with-eslint-error-while-starting-react-server-is-to-just-use-below-variable-to-disable-the-eslint-version-checking-simply-"></a>The best way to deal with eslint error while starting react-server is to just use below variable to disable the eslint version checking simply-</h1>
+<pre class="hljs"><code>SKIP_PREFLIGHT_CHECK=<span class="hljs-literal">true</span></code></pre><p>There would be errors other than this, if there are you just need to fix it in the files or the eslintrc file.</p>
+<hr>
+<p>temp--</p>
+<p class="img-container"><img src=".imgs_typora/image-20200626150701985.png" alt="image-20200626150701985"></p>
+<hr>
+<p class="img-container"><img src=".imgs_typora/142512-1593163577148.png" alt="142512"></p>
+<p>Solution:-</p>
+<p class="img-container"><img src=".imgs_typora/image-20200626145636094.png" alt="image-20200626145636094"></p>
+<hr>
+<p class="img-container"><img src=".imgs_typora/image-20200626133432047.png" alt="image-20200626133432047"></p>
+<hr>
+<p>The symlink is created with the mklink for node_modules folder, but the problem with symlink of node_modules folder for the need of globalspace2 for eslint 6.8.0, is that when you do a npm i <any-package> or just do npm i in any folder, the  the node_modules symlink is overwritten by creating a new folder of node_modules by npm automatically. So, we need to make installs only in the eslint-6.8.0 project folder and never run any npm i related commands from anywhere where we liked it as symlink. Also, the same npm i related commands will result in crashing the configuration of the original globalspace2&#39;s config(the eslint 6.8.0 project).[if so, get the backup there.☺]</p>
+<hr>
+<h2 id="creating-symlinks-in-windows"><a class="header-link" href="#creating-symlinks-in-windows"></a>Creating symlinks in windows</h2>
+<pre class="hljs"><code>$ mklink /d LinkName folderName
+$ mklink /d myLink ..\someFolder <span class="hljs-comment"># This createsa link named myLink to someFolder in its parent folder.</span>
+
+<span class="hljs-comment">#Note: symlinks(symbolic links) can only be created with admin cmd. Tip: Use=&gt; ALT F,M,A</span>
+<span class="hljs-comment">#Symlinks created could be moved/copied anywhere  but they would just WON'T work.</span></code></pre><p class="img-container"><img src=".imgs_typora/image-20200626112131303.png" alt="image-20200626112131303"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200626105617578.png" alt="image-20200626105617578"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200626105738087.png" alt="image-20200626105738087"></p>
+<hr>
+<h2 id="opens-link-for-funding-for-the-desired-package."><a class="header-link" href="#opens-link-for-funding-for-the-desired-package."></a>Opens link for funding for the desired package.</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200626105314708.png" alt="image-20200626105314708"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200626103645461.png" alt="image-20200626103645461"></p>
+<p class="img-container"><img src=".imgs_typora/103731.png" alt="103731"></p>
+<hr>
+<p class="img-container"><img src=".imgs_typora/image-20200626103014517.png" alt="image-20200626103014517"></p>
+<h2 id="dealing-with-react-scripts-version-of-eslint"><a class="header-link" href="#dealing-with-react-scripts-version-of-eslint"></a>Dealing with react-scripts version of eslint</h2>
+<p>We&#39;re dealing bcoz, when we run npm start, it gives error with eslint config, says to do SKIP_PREFLIGHT_CHECK=true  in env to avoid it. </p>
+<p>So, you might try to do-</p>
+<pre class="hljs"><code><span class="hljs-built_in">npm</span> link react-scripts</code></pre><p>to get the eslint under it to be discovered by the current node project but it would not detect it. So, the last change is to try to install a separate version of eslint in local project with <code>npm i eslint@6.8.0</code> and when you try to do that it gives error. And it can be fixed via <code>npm cache clean --force</code> [The screenshot is somewhere up on this page to verify it.] So, the next option is to install react-scripts in local project, via <code>npm i react-scripts@requiredversion</code>. </p>
+<p class="img-container"><img src=".imgs_typora/image-20200626094954206.png" alt="image-20200626094954206"></p>
+<h3 id="new-swithing-tabs-in-panel(newly-created--#my-shortcuts)"><a class="header-link" href="#new-swithing-tabs-in-panel(newly-created--#my-shortcuts)"></a>New swithing tabs in panel(newly created- #my shortcuts)</h3>
+<p class="img-container"><img src=".imgs_typora/image-20200626090131194.png" alt="image-20200626090131194"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200626090023259.png" alt="image-20200626090023259"></p>
+<h2 id="use:-ctrl-+-alt+-j-to-join-a-collaboration-session-link-via-vs-live-share"><a class="header-link" href="#use:-ctrl-+-alt+-j-to-join-a-collaboration-session-link-via-vs-live-share"></a>Use: Ctrl + Alt+ J to join a collaboration session link  via vs live share</h2>
+<p>Also, <img src=".imgs_typora/image-20200626085255399.png" alt="image-20200626085255399"></p>
+<hr>
+<h2 id="this-is-great-to-work-with-source-code-mode-too,-as-it-allows-to-get-rid-of-image-context-menu(copy-image-to,-upload-image,-zoom-image-in-typora)-when-we-press-enter.-use-ctrl+/"><a class="header-link" href="#this-is-great-to-work-with-source-code-mode-too,-as-it-allows-to-get-rid-of-image-context-menu(copy-image-to,-upload-image,-zoom-image-in-typora)-when-we-press-enter.-use-ctrl+/"></a>This is  great to work with source code mode too, as it allows to get rid of image context menu(copy image to, upload image, zoom image in typora) when we press enter. use ctrl+/</h2>
+<hr>
+<p class="img-container"><img src=".imgs_typora/image-20200625171649248.png" alt="image-20200625171649248"></p>
+<hr>
+<h2 id="promblem-with-graphql-in-global-node_modules-(npm-list--g-was-throwing-error-actually,-hence-fixed-with-this)"><a class="header-link" href="#promblem-with-graphql-in-global-node_modules-(npm-list--g-was-throwing-error-actually,-hence-fixed-with-this)"></a>Promblem with graphql in global node_modules (npm list -g was throwing error actually, hence fixed with this)</h2>
+<p>src: <a href="https://github.com/graphql/graphql-js/issues/1531">link</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200625151957910.png" alt="image-20200625151957910"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200625115501158.png" alt="image-20200625115501158"></p>
+<hr>
+<h2 id="find-the-age-of-windows-os"><a class="header-link" href="#find-the-age-of-windows-os"></a>Find the age of windows os</h2>
+<pre class="hljs"><code>CMD
+$ systeminfo|find /i <span class="hljs-string">"original"</span> 
+Output:
+Original Install Date:     25-Jun-18, 6:35:21 AM
+
+_
+POWERSHELL
+$ <span class="hljs-variable">$os</span> = get-wmiobject win32_operatingsystem
+$ <span class="hljs-variable">$os</span>.ConvertToDateTime(<span class="hljs-variable">$os</span>.InstallDate) <span class="hljs-_">-f</span> <span class="hljs-string">"MM/dd/yyyy"</span> </code></pre><p>So, I lost some work, and now I need to coverup.</p>
+<pre class="hljs"><code>$ tsc --init
+<span class="hljs-comment">#This will create the tsconfig.json file</span></code></pre><p><a href="https://gist.github.com/f525e712f01352bdfa405242eaac7b75">Example file created with the above command here@gist</a></p>
+<hr>
+<p class="img-container"><img src=".imgs_typora/image-20200624185015875.png" alt="image-20200624185015875"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200624171649813.png" alt="image-20200624171649813"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200624165611115.png" alt="image-20200624165611115"></p>
+<hr>
+<h2 id="what-do-you-need-to//"><a class="header-link" href="#what-do-you-need-to//"></a>What do you need to//</h2>
+<h1 id="**npm-link-better**[latest-tech-for-global-usage]"><a class="header-link" href="#**npm-link-better**[latest-tech-for-global-usage]"></a><strong>npm-link-better</strong>[LATEST tech for global usage]</h1>
+<p><a href="https://github.com/laggingreflex/npm-link-better">@github.com</a>, <a href="https://www.npmjs.com/package/npm-link-better">@npmjs.com</a></p>
+<h2 id="**update==>**"><a class="header-link" href="#**update==>**"></a><strong>update==&gt;</strong></h2>
+<pre class="hljs"><code>Install the newer version of npm-link-better from the linkimportant link after this code snippet.
+Sometimes, installation of a package doens<span class="hljs-string">'t work siply it throws that file already exist, and suggests you to delete them first or overwrite them with the --force switch.
+$ npm i -g npm-link-better 
+#This failed, said some files already exist, you first delete them or use the --force switch to overwrite them like : $ npm i -g npm-link-better --force
+And I did the --force things and the package was good enough now.
+Next you can now try uninstalling the global package again and installing it like-
+$ npm un -g npm-link-better 
+$ npm i -g npm-link-better #This will work smoothly to install now with no errors.
+**
+So, how to use it...
+USAGE:::----
+$ nlq #Execute in a project.
+# Above command, will automatically link all the packages from local package.json file to the global ones with goodness.
+$ nls &lt;dependency&gt; &lt;dependency2&gt; [&lt;more dependencies here&gt;]
+#Above command will first install it globally and then link to it and then add the entry in local package.json file.
+$ nls -D &lt;dependency&gt; &lt;dependency2&gt; [&lt;more dependencies here&gt;]
+#Above command will save it for development dependency. Rest is same.</span></code></pre><p><a href="https://github.com/laggingreflex/npm-link-better">linkimportant</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200626181333693.png" alt="image-20200626181333693"></p>
+<hr>
+<p>To be able to save to local package.json file on the command npm link <pkg-name> but this isn&#39;t facilitated, but there <a href="https://www.npmjs.com/package/npm-link-save">npm-link-save@npm</a> , <a href="https://github.com/laggingreflex/npm-link-save#readme">github</a> <strong>Usage</strong>-</p>
+<p>nls is amazing when creating your own projects, but when you are using someone&#39;s project you must use ==npm link <pkg-name> <pkg-name2>[<pkg-names>]== as using npm link won&#39;t mutate(edit) your package.json file locally. While nls would actually replace the version of the of local dependecy version with global dependency version nubmer.</p>
+<pre class="hljs"><code>$ nls expres // single links
+$ nls express morgan // multiple links
+$ nls -D express     // links <span class="hljs-keyword">in</span> devDependencies // -D is used <span class="hljs-keyword">in</span> npm i -D &lt;pkg-name&gt; (<span class="hljs-keyword">for</span> saving as dev dependency, same pattern is followed here)</code></pre><p>*</p>
+<h2 id="reload-extension-for-vscode"><a class="header-link" href="#reload-extension-for-vscode"></a>Reload Extension for vscode</h2>
+<p>You do not need this extension for anything. Not for even typescript types definitions(npm link or npm install), vscode is just too much smart to detect dependencies in your node_modules folder. But BEWARE, that you use complete package name to link to the repository, otherwise vscode won&#39;t pick the type definitions from the dependencies in the @types folder. </p>
+<p>*</p>
+<h2 id="link-complete-local-node_modules-folder-to-global-node_modules-insttead-of-linking-individual-dependencies-"><a class="header-link" href="#link-complete-local-node_modules-folder-to-global-node_modules-insttead-of-linking-individual-dependencies-"></a>Link complete local node_modules folder to global node_modules insttead of linking individual dependencies-</h2>
+<pre class="hljs"><code>$ npm link
+This is just amazing, <span class="hljs-keyword">it</span> links your <span class="hljs-built_in">local</span> node_modules <span class="hljs-built_in">folder</span> <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> <span class="hljs-built_in">global</span> node_modules <span class="hljs-built_in">folder</span>, <span class="hljs-keyword">and</span> doesn<span class="hljs-string">'t consume</span></code></pre><pre class="hljs"><code>$ npm link @typescript-eslint/eslint-plugin @typescript-eslint/parser express @types/node @types/express</code></pre><pre class="hljs"><code><span class="hljs-comment">#Note: npm unlink will remove the package from the local package.json file.</span>
+(Destructive <span class="hljs-built_in">command</span>, but doesn\<span class="hljs-string">'t alter anything in global node_modules folder)
+$ npm unlink @typescript-eslint/eslint-plugin @typescript-eslint/parser express @types/node @types/express
+#This command just reverses the command in the above snippet. (Won'</span>t cause any sideeffect <span class="hljs-keyword">in</span> global packages)</code></pre><pre class="hljs"><code><span class="hljs-comment"># IMPORTANT: YOU NEED TO USE --no-save switch to be able to let package.json retain the package name after the unlink command finishes:-</span>
+npm unlink --no-save @typescript-eslint/eslint-plugin @typescript-eslint/parser express @types/node @types/express</code></pre><p class="img-container"><img src=".imgs_typora/image-20200623181619324.png" alt="image-20200623181619324"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200623181541469.png" alt="image-20200623181541469"></p>
+<hr>
+<h2 id="some-interesting-casts-"><a class="header-link" href="#some-interesting-casts-"></a>Some interesting casts-</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200622185620378.png" alt="image-20200622185620378"></p>
+<p>*</p>
+<p class="img-container"><img src=".imgs_typora/image-20200622184124919.png" alt="image-20200622184124919"></p>
+<p class="img-container"><img src=".imgs_typora/143512.png" alt="143512"></p>
+<p class="img-container"><img src=".imgs_typora/113929.png" alt="113929"></p>
+<h2 id="send-formatted-json-with-express-"><a class="header-link" href="#send-formatted-json-with-express-"></a>Send formatted json with express-</h2>
+<p>Note: you need to refresh with Ctrl+shift+f5 for once to view the updated formatting of the json, otherwise it&#39;ll fetch the old formatting from the cache when you use simple refresh. <a href="https://stackoverflow.com/questions/32679505/node-and-express-send-json-formatted">link</a></p>
+<p class="img-container"><img src=".imgs_typora/image-20200623151717176.png" alt="image-20200623151717176"></p>
+<p class="img-container"><img src=".imgs_typora/113857.png" alt="113857"></p>
+<p class="img-container"><img src=".imgs_typora/183720.png" alt="183720"></p>
+<hr>
+<p>src: <a href="https://github.com/fullstack-hy2020/create-app">link from kalle Ilves</a></p>
+<p class="img-container"><img src=".imgs_typora/144113.png" alt="144113"></p>
+<p class="img-container"><img src=".imgs_typora/143628.png" alt="143628"></p>
+<hr>
+<h2 id="npm-install"><a class="header-link" href="#npm-install"></a>npm install</h2>
+<pre class="hljs"><code>$ npm i --only prod
+<span class="hljs-comment"># This will check if there is any production dependency that  </span>
+$ npm i --only dev </code></pre><hr>
+<h2 id="global-packages-under-the-hood"><a class="header-link" href="#global-packages-under-the-hood"></a>Global packages under the hood</h2>
+<p><a href="https://medium.com/@alberto.schiabel/npm-tricks-part-1-get-list-of-globally-installed-packages-39a240347ef0">link</a></p>
+<pre class="hljs"><code>$ npm list -g --depth 0
+$ npm ls -g --depth 0
+$ npm list -g --depth=0 (this and above commands are same)
+//Get the list of dependencies with their appropriate versions installed.
+//This will show you any dependent <span class="hljs-keyword">for</span> the current dependencies that you need to install(<span class="hljs-built_in">which</span> might be disturbing dependency tree <span class="hljs-keyword">in</span> global node_modules).</code></pre><pre class="hljs"><code>$ npm list <span class="hljs-comment"># npm ls (is also an alias)</span>
+aliases: ls, list, la, ll
+<span class="hljs-comment">#This will list for local packages.</span></code></pre><p>OUTPUTS:-</p>
+<pre class="hljs"><code><span class="hljs-comment">#Output</span>
++-- @types/express@4.17.6
++-- @types/node@14.0.13
++-- @typescript-eslint/eslint-plugin@3.3.0
++-- @typescript-eslint/parser@3.3.0
++-- elasticdump@6.31.4
++-- eslint@7.2.0
++-- express@4.17.1
++-- jest@24.9.0
++-- live-server@1.2.1
++-- markdown-styles@3.1.10
++-- nodemon@2.0.4
++-- npm@6.14.4
++-- npm-bundle@3.0.3
++-- prisma@1.34.10
++-- react@16.13.1
++-- react-dom@16.3.1
++-- react-scripts@3.4.1
++-- ts-node@8.10.2
++-- ts-node-dev@1.0.0-pre.49
+`-- typescript@3.9.5</code></pre><hr>
+<h2 id="updating,-upgrading,-up-npm-package-"><a class="header-link" href="#updating,-upgrading,-up-npm-package-"></a>Updating, upgrading, up npm package-</h2>
+<pre class="hljs"><code>$ npm update [-g] [&lt;pkg&gt;...]
+<span class="hljs-comment">#-g is for global config</span>
+aliases: up, upgrade</code></pre><hr>
+<h2 id="npm-uninstall-1"><a class="header-link" href="#npm-uninstall-1"></a>npm-uninstall</h2>
+<p>aliases: remove, rm, r, un, unlink</p>
+<pre class="hljs"><code>$ npm uninstall sax</code></pre><p>*</p>
+<pre class="hljs"><code>$ npm prune 
+<span class="hljs-comment">#This command will uninstall all the packages that are listed in node_modules folder  which are not present in the package.json file.</span></code></pre><hr>
+<h2 id="listing-indivicual-package-via-`npm-list`"><a class="header-link" href="#listing-indivicual-package-via-`npm-list`"></a>Listing indivicual package via <code>npm list</code></h2>
+<pre class="hljs"><code>$ npm link react
+$ npm link react react-dom 
+<span class="hljs-comment">#This works too.</span>
+<span class="hljs-comment"># <span class="hljs-doctag">NOTE:</span> You must have the dependency as globally installed for what you are creating the symlink. npm links are just awesome, when you do</span>
+$ npm install 
+<span class="hljs-comment"># will NOT uninstall any symlinks you have created(You must have it in package.json file). So, you can just use symlinks with easy anytime.</span></code></pre><hr>
+<h2 id="npm-list,-npm-ls"><a class="header-link" href="#npm-list,-npm-ls"></a>npm list, npm ls</h2>
+<pre class="hljs"><code>$ npm ls --only prod
+$ npm ls --only dev
+*
+$ npm ls --only=prod
+$ npm ls --only=dev
+***
+$ npm install --only prod
+$ npm install --only=prod</code></pre><p class="img-container"><img src=".imgs_typora/image-20200621163624702.png" alt="image-20200621163624702"></p>
+<p class="img-container"><img src=".imgs_typora/image-20200621164001953.png" alt="image-20200621164001953"></p>
+<p>*</p>
+<p class="img-container"><img src=".imgs_typora/image-20200621164208921.png" alt="image-20200621164208921"></p>
+<hr>
+<p class="img-container"><img src=".imgs_typora/image-20200621141859040.png" alt="image-20200621141859040" title="GoodThings"></p>
+<hr>
+<h2 id="ts-node-for-development"><a class="header-link" href="#ts-node-for-development"></a>ts-node for development</h2>
+<pre class="hljs"><code>$ npm i -g ts-node-dev</code></pre><hr>
+<h2 id="to-install-support-for-typescript"><a class="header-link" href="#to-install-support-for-typescript"></a>To install support for typescript</h2>
+<pre class="hljs"><code>$ npm i -g ts-node typescript
+<span class="hljs-comment">#You should install them globally only as you just the executables over the commandline.</span>
+<span class="hljs-comment">#Both are required to be used via cmd line with commands like, </span>
+$ ts-node &lt;file-name&gt;
+$ tsc &lt;file-name&gt;
+*
+When using apps created by create-react-app, it reqires you to have it installed locally, so it will not allow to start the app, unless you install <span class="hljs-keyword">in</span> locally. BETTER THING is to just link it with global one-
+npm link typescript
+THAT WORKS LIKE CHARM!!</code></pre><p><em>npm install --save-dev @types/react @types/express @types/lodash @types/jest @types/mongoose</em> and so on and so on. The *@types/** are maintained by <a href="http://definitelytyped.org/">Definitely typed</a>, a community project with the goal to maintaining types of everything in one place.</p>
+<h2 id="typescript-hero-extension-"><a class="header-link" href="#typescript-hero-extension-"></a>Typescript hero extension-</h2>
+<p><mark>For Visual Studio Code you need the <a href="https://marketplace.visualstudio.com/items?itemName=rbbit.typescript-hero">typescript hero</a> extension.</mark></p>
+<p>Hold down Cmd (on Windows: Ctrl) and click on <a href="#ts-node for development">this link</a> to jump to header <code>Block Elements</code>. </p>
+<hr>
+<h2 id="to-install-types-support-for-node-internal-modules-:happy:"><a class="header-link" href="#to-install-types-support-for-node-internal-modules-:happy:"></a>To install types support for node internal modules :happy:</h2>
+<p>:family_man_girl_boy: <span style="color:red">this text is red</span></p>
+<pre class="hljs"><code>$ npm i --save-dev @types/node
+
+<span class="hljs-comment">#This has to installed as local dependency, installing globally doesn't work.</span>
+++++
+&lt;mark&gt;Somethingg&lt;/mark&gt;
+++++
+__
+For using global packages via npm link
+$ npm i -g @types/node
+<span class="hljs-comment">#For the use of gloablly installed modules you need to create a symlink(known as shortcut in windows) to the global module. You can easily do this with below command -</span>
+$ npm link @types/node
+
+__
+You should use
+$ npm link @types
+bcoz this will link the complete @types folder from global directory(c:/nodejs/node_modules/@types/), notice that this commmand give error, you just need to ignore that. That error is just redundant.</code></pre><p>The *@types/** are maintained by <a href="http://definitelytyped.org/">Definitely typed</a>, a community project with the goal to maintaining types of everything in one place.</p>
+<hr>
+<h2 id="eslint-1"><a class="header-link" href="#eslint-1"></a>eslint</h2>
+<p><strong>==You may disable prettier now onwards==</strong></p>
+<p>what to do, install globally or locally or both? <a href="https://github.com/microsoft/vscode-eslint/issues/13">link</a> <a href="https://github.com/eslint/eslint/issues/6732"></a></p>
+<p><strong>==My new anwser: Install globally, and use it everywhere. And when react says you have another version, silent it with pref_light_check=true (check the variable name from the same error :D). And thats it. Use newer version always. Thats stable, thats why they have released it.☺==</strong></p>
+<p>The simple answer is, local one can only be accessd by specifying a script in package.json for that, and running the command like: ==npm run lint== or like using from the local executable with=&gt;  ==node_modules/.bin/nodemon index.js== or you could you ==npx eslint== too for using the locally installed version.</p>
+<p>==&quot;lint&quot;: &quot;eslint --ext .ts .&quot;== , Globally installed version of eslint is good engough. But you must check that the project is compartible with that, via looking the version of eslint used to make the eslintrc.json at the time of the project initiated. Otherwise its just fine. Coz ^ in front of version number says, that a newer patch or newer minor version (the second of the 3 set version number) of eslint would be supported. The problem arises when you want to access a different version, so when it is the case, you must install a local that version of the eslint(that&#39;s automatically done with npm install though). Even if you haven&#39;t installed eslint locally, it would still work with npm run lint command bcoz, npm will fetch from the global dependecy automatically.(FYI: vesioning semantic of npm: major no., minor no., patch no.)</p>
+<pre class="hljs"><code>npm i -g eslint
+npm i -g @typescript-eslint/parser
+<span class="hljs-comment">#eslint can be used via-</span>
+$ eslint .
+<span class="hljs-comment">#But you need to initialize the current repository with a eslint(or you must have eslintrc file in the folder)</span>
+$ eslint --init
+<span class="hljs-comment">#Add a script entry in the package.json like-</span>
+<span class="hljs-string">"lint"</span>: <span class="hljs-string">"eslint ."</span></code></pre><p>Eslint runtime vscode extension- <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint</a></p>
+<h3 id="answering-questions-on-eslint---init"><a class="header-link" href="#answering-questions-on-eslint---init"></a>Answering questions on eslint --init</h3>
+<p class="img-container"><img src=".imgs_typora/153535.png" alt="153535"></p>
+<hr>
+<h2 id="excluding-folders-from-eslint"><a class="header-link" href="#excluding-folders-from-eslint"></a>Excluding folders from eslint</h2>
+<p class="img-container"><img src=".imgs_typora/image-20200619152717885.png" alt="image-20200619152717885"></p>
+<h2 id="semicolons-settings-"><a class="header-link" href="#semicolons-settings-"></a>Semicolons settings-</h2>
+<p><img src=".imgs_typora/image-20200619151629518.png" alt="image-20200619151629518"><img src=".imgs_typora/image-20200619152556598.png" alt="image-20200619152556598"></p>
+<p><strong>Disabling no-console</strong> <img src=".imgs_typora/image-20200619152822922.png" alt="image-20200619152822922"></p>
+<hr>
+<h2 id="assigning-ctrl+k-ctrl+f-to-closing-folder/workspace"><a class="header-link" href="#assigning-ctrl+k-ctrl+f-to-closing-folder/workspace"></a>Assigning Ctrl+k Ctrl+F to closing folder/workspace</h2>
+<p class="img-container"><img src=".imgs_typora/201603.png" alt="201603"></p>
+<p class="img-container"><img src=".imgs_typora/201647.png" alt="201647"></p>
+<hr>
+<h2 id="cloning-to-a-desired-name-folder"><a class="header-link" href="#cloning-to-a-desired-name-folder"></a>Cloning to a desired name folder</h2>
+<p class="img-container"><img src=".imgs_typora/203151.png" alt="203151"></p>
+<hr>
+<h2 id="using-cdn-for-react-and-other-useful-resource"><a class="header-link" href="#using-cdn-for-react-and-other-useful-resource"></a>Using cdn for react and other useful resource</h2>
+<p class="img-container"><img src=".imgs_typora/083524.png" alt="083524"></p>
+<hr>
+<h2 id="end-of-line-characters-in-vscode"><a class="header-link" href="#end-of-line-characters-in-vscode"></a>End of line characters in vscode</h2>
+<p class="img-container"><img src=".imgs_typora/183507.png" alt="183507"></p>
+<hr>
+<h2 id="argv-array-in-node"><a class="header-link" href="#argv-array-in-node"></a>argv array in node</h2>
+<p class="img-container"><img src=".imgs_typora/184514.png" alt="184514"></p>
+<hr>
+<h2 id="autocomplete-in-ts"><a class="header-link" href="#autocomplete-in-ts"></a>Autocomplete in ts</h2>
+<p class="img-container"><img src=".imgs_typora/184727.png" alt="184727"></p>
+<p class="img-container"><img src=".imgs_typora/185528.png" alt="185528"></p>
+<p class="img-container"><img src=".imgs_typora/185813.png" alt="185813"></p>
+<hr>
+<h2 id="amazing-format-on-paste-option(do-this-now..)"><a class="header-link" href="#amazing-format-on-paste-option(do-this-now..)"></a>Amazing format on paste option(Do this now..)</h2>
+<p class="img-container"><img src=".imgs_typora/191129.png" alt="191129"></p>
+<p class="img-container"><img src=".imgs_typora/191402.png" alt="191402"></p>
+<hr>
+<h2 id="knowing-default-formatters-in-vscode"><a class="header-link" href="#knowing-default-formatters-in-vscode"></a>Knowing default formatters in vscode</h2>
+<p class="img-container"><img src=".imgs_typora/191934.png" alt="191934"></p>
+<hr>
+<h2 id="is-methods-in-javascript-for-checking-type-"><a class="header-link" href="#is-methods-in-javascript-for-checking-type-"></a>is methods in javascript for checking type-</h2>
+<p class="img-container"><img src=".imgs_typora/194907.png" alt="194907"></p>
+<hr>
+<h2 id="two-ways-to-define-type-for-arrray-type-in-typescript"><a class="header-link" href="#two-ways-to-define-type-for-arrray-type-in-typescript"></a>Two ways to define type for arrray type in typescript</h2>
+<p class="img-container"><img src=".imgs_typora/195049.png" alt="195049"></p>
+<hr>
+<p>Debugging easy-</p>
+<p class="img-container"><img src=".imgs_typora/image-20200619152015429.png" alt="image-20200619152015429"></p>
+<hr>
+</article>
+  </body>
+</html>

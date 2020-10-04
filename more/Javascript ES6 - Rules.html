@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui" />
+    <title>Javascript ES6 - Rules</title>
+    <link type="text/css" rel="stylesheet" href="../assets/css/github-markdown.css" />
+    <link type="text/css" rel="stylesheet" href="../assets/css/pilcrow.css" />
+    <link type="text/css" rel="stylesheet" href="../assets/css/hljs-github.min.css" />
+    <link type="text/css" rel="stylesheet" href="../assets/css/mycss.css" />
+    <script src="../assets/myJs/copyToClipboardScript.js" defer></script>
+  </head>
+  <body>
+    <article class="markdown-body"><h3 id="javascript-es6---rules"><a class="header-link" href="#javascript-es6---rules"></a>Javascript ES6 - Rules</h3>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"window.location.href = 'https://w3docs.com';"</span>&gt;</span>w3docs.com<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span> // current tab
+
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"window.open() = 'https://w3docs.com';"</span>&gt;</span>w3docs.com<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span> // new tab</code></pre><h6 id="*-prints-current-page-via-js--"><a class="header-link" href="#*-prints-current-page-via-js--"></a>* Prints current page via JS -</h6>
+<p><code>window.print();</code> </p>
+<h6 id="*-also-you-would-like-to-work-with-them-too."><a class="header-link" href="#*-also-you-would-like-to-work-with-them-too."></a>* Also you would like to work with them too.</h6>
+<p>Old JavaScript examples may use a type attribute: <script type="text/javascript">.
+The type attribute is not required. JavaScript is the default scripting language in HTML.</p>
+<h6 id="*-where-to-place-the-script---[stackoverflow](https://stackoverflow.com/questions/38407962/when-to-use-the-script-tag-in-the-head-and-body-section-of-a-html-page?noredirect=1&lq=1)"><a class="header-link" href="#*-where-to-place-the-script---[stackoverflow](https://stackoverflow.com/questions/38407962/when-to-use-the-script-tag-in-the-head-and-body-section-of-a-html-page?noredirect=1&lq=1)"></a>* Where to place the script - <a href="https://stackoverflow.com/questions/38407962/when-to-use-the-script-tag-in-the-head-and-body-section-of-a-html-page?noredirect=1&amp;lq=1">StackOverflow</a></h6>
+<hr>
+<h6 id="*-alert-function-invokation--"><a class="header-link" href="#*-alert-function-invokation--"></a>* alert function invokation -</h6>
+<pre class="hljs"><code>alert(<span class="hljs-string">"I am a alert."</span>)</code></pre><p class="img-container"><img src="1569572047754.png" alt="1569572047754"></p>
+<p>OR if address is 127.0.0.1 then it wud be-</p>
+<p class="img-container"><img src="1569572129341.png" alt="1569572129341"></p>
+<hr>
+<pre class="hljs"><code> &lt;script&gt;
+        <span class="hljs-built_in">document</span>.onkeydown = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{ 
+            <span class="hljs-keyword">let</span> amla = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"rohitkadad"</span>);
+            <span class="hljs-keyword">if</span> (e.keyCode == <span class="hljs-number">49</span>) {
+
+                amla.click();
+            }
+        };
+        alert(<span class="hljs-string">"coca-cola"</span>);
+    <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+
+&lt;a id=<span class="hljs-string">"rohitkadad"</span> href=<span class="hljs-string">"///www.google.com"</span>&gt;Bubaa&lt;<span class="hljs-regexp">/a&gt;</span></code></pre><p>above code will open mouse click / enter key on the element. </p>
+<p>But the code below will not -</p>
+<pre class="hljs"><code> &lt;script&gt;
+            <span class="hljs-keyword">let</span> amla = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"rohitkadad"</span>); <span class="hljs-comment">//statement-1</span>
+<span class="hljs-comment">/* the code will be executed in the order it is found in the html document. So, statement-1 can't find the element with a id "rohitkadad", thus amla is not retured null value. So code will not work properly. ONE alternate solution to make this code work is to place the element with the id "rohitkadad" above the &lt;script&gt; so the statement can find the define element with the id. 
+*/</span>
+            <span class="hljs-built_in">document</span>.onkeydown = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-keyword">if</span> (e.keyCode == <span class="hljs-number">49</span>) {
+
+                amla.click();
+            }
+        };
+        alert(<span class="hljs-string">"coca-cola"</span>);
+    <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+
+    &lt;a id=<span class="hljs-string">"rohitkadad"</span> href=<span class="hljs-string">"///www.google.com"</span>&gt;Bubaa&lt;<span class="hljs-regexp">/a&gt;</span></code></pre><hr>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> myObject = {
+      <span class="hljs-attr">fullName</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    alert(<span class="hljs-keyword">this</span>)
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+  }
+}
+myObject.fullName();</code></pre><p> <img src="1569573391481.png" alt="1569573391481"> </p>
+<hr>
+<pre class="hljs"><code>alert(<span class="hljs-built_in">window</span>);</code></pre><p class="img-container"><img src="1569573740613.png" alt="1569573740613"></p>
+<hr>
+<pre class="hljs"><code>alert(Window);</code></pre><p class="img-container"><img src="1569573814015.png" alt="1569573814015"></p>
+<hr>
+<h6 id="javascript-popup-boxes--"><a class="header-link" href="#javascript-popup-boxes--"></a>JavaScript Popup Boxes -</h6>
+<pre class="hljs"><code><span class="hljs-built_in">window</span>.alert(<span class="hljs-string">"I'm Alert Box."</span>);
+<span class="hljs-built_in">window</span>.confirm(<span class="hljs-string">"I'm Confirm Box."</span>);
+<span class="hljs-built_in">window</span>.prompt(<span class="hljs-string">"I'm Prompt Box.\nPlease enter your name"</span>,<span class="hljs-string">"Harry Potter(By Default)"</span>);
+alert(<span class="hljs-string">"Hello\nHow are you?"</span>);</code></pre><p class="img-container"><img src="1569674149780.png" alt="1569674149780"></p>
+<p class="img-container"><img src="1569674166878.png" alt="1569674166878"></p>
+<p class="img-container"><img src="1569674180634.png" alt="1569674180634"></p>
+<p><img src="1569674194753.png" alt="1569674194753"> For more check at w3Schools.com </p>
+<hr>
+</article>
+  </body>
+</html>
