@@ -789,14 +789,15 @@ lor: #888;
   }
 }
 
-/* My personal formattings!! */
+/* My personal formattings beloww!! */
 /* This is for code snippets */
+/* This will give awesome shadows to code blocks. */
+/* border: 3px solid black; */    /* Removing this in favor of nice pleasent shadow of boxes. */
+/*Below attributes to hide scrollbar */
+
 .markdown-body pre{
   border-radius: 10px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)
-  /* This will give awesome shadows to code blocks. */
-  /* border: 3px solid black; */    /* Removing this in favor of nice pleasent shadow of boxes. */
-  /*Below attributes to hide scrollbar */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
