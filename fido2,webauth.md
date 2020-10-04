@@ -15,21 +15,19 @@ Google Codelab  for FIDO2: First android fido2 api:  [Link](https://codelabs.dev
 
 # SomeDemos:(fido2 doesn't work on rooted devices)
 
-1. **https://webauthndemo.appspot.com/** • working like river.
+1. **https://webauthndemo.appspot.com/** • Working Great!
 
-2. **https://webauthn.me/** • working like river.(must analyse now - as the animation shows the behind the screen process beautifully)
+2. **https://webauthn.me/** • Working Great! (Shows beneath process beautifully)
 
-3. **http://webauthn.io/**  • working like river.
+3. **http://webauthn.io/**  • Working Great!
 
-   BADASS....BELOW
+   BADASSes....BELOW
 
-4. https://www.passwordless.dev/  - X - SOMEGLITCH - 
+4. https://www.passwordless.dev/  - Not working correctly atm. 
 
-   not working correctly
+5. https://webauthn.org - Not working correctly atm.
 
-5. https://webauthn.org - X - SOMEGLITCH - not working correctly
-
-6. https://app.auth.bio/bioauth -NOOBO- X - not working correctly
+6. https://app.auth.bio/bioauth -Not working correctly atm.
 
 ***
 
