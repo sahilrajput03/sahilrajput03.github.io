@@ -1,14 +1,15 @@
 button {
 	outline: none;
 	border-radius: 20px;
-	background-color: pink;
+	background-color: white;
 	margin-bottom: 45px;
 }
 .copyButton {
 	padding: 5px;
 }
 .copyButton:active {
-	background-color: white;
+	background-color: black;
+	color: white;
 	/*above is color for copy button.*/
 }
 
