@@ -12,6 +12,10 @@
 
 ## [Ditto](https://sourceforge.net/projects/ditto-cp/) - Quickly access previous clipboard entries
 
+## [Networx](https://reverberate.ml/softwares/networx.exe) - **NetWorx** is a simple, yet versatile and powerful tool that helps you objectively evaluate your bandwidth consumption situation.
+
+## [Netlimiter](https://www.netlimiter.com/) - NetLimiter is an ultimate internet traffic control and monitoring tool designed for Windows. Finally, you will become master over your internet connection.
+
 ***
 
 # Chrome's new tab
@@ -33,4 +37,10 @@
 ***
 
 # Chrome Extensions are soon coming.
+
+***
+
+Thanks for visiting.
+
+~ [Sahil Rajput](https://twitter.com/freakstarrocks) - [Twitter](https://twitter.com/freakstarrocks)
 
