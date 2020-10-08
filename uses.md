@@ -16,6 +16,8 @@
 
 ## [Netlimiter](https://www.netlimiter.com/) - NetLimiter is an ultimate internet traffic control and monitoring tool designed for Windows. Finally, you will become master over your internet connection.
 
+## [Typora](https://typora.io/#windows) - Typora gives you a seamless experience as both a reader and a writer. It removes the preview window, mode switcher, syntax symbols of markdown source code, and all other unnecessary distractions.
+
 ***
 
 # Chrome's new tab
@@ -31,8 +33,6 @@
 # Web Apps
 
 ## [Workflowy](https://workflowy.com/) - WorkFlowy offers a simpler way to stay organized. If you have a crazy job or an ambitious project, we will be your trusty sidekick.
-
-## [Typora](https://typora.io/#windows) - Typora gives you a seamless experience as both a reader and a writer. It removes the preview window, mode switcher, syntax symbols of markdown source code, and all other unnecessary distractions.
 
 ***
 
