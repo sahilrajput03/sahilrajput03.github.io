@@ -58,9 +58,9 @@ Thanks for visiting.
 
 # Online Coding Environmensts
 
-## [JS Bin](https://jsbin.com/) - JS Bin is a tool for experimenting with web languages. In particular HTML, CSS and JavaScript, but JS Bin also supports other languages too (like Markdown, Jade and Sass). [Docs](https://jsbin.com/help/getting-started/) , [Shortcut Keys](https://jsbin.com/help/keyboard-shortcuts/) , Have Emmet support + Live reload.
+## [JS Bin](https://jsbin.com/) - JS Bin is a tool for experimenting with web languages. In particular HTML, CSS and JavaScript, but JS Bin also supports other languages too (like Markdown, Jade and Sass). [Docs](https://jsbin.com/help/getting-started/) , [Shortcut Keys](https://jsbin.com/help/keyboard-shortcuts/) , Have Emmet support + Live reload, [FAQ's](https://jsbin.com/help/faq/).
 
-## [CodeSandbox](https://codesandbox.io/) - CodeSandbox is an online editor for rapid web development. With CodeSandbox, you can prototype quickly, experiment easily, and share creations with a click. [Docs](https://codesandbox.io/docs) , Have Emmet support + Live reload.
+## [CodeSandbox](https://codesandbox.io/) - CodeSandbox is an online editor for rapid web development. With CodeSandbox, you can prototype quickly, experiment easily, and share creations with a click. [Docs](https://codesandbox.io/docs) , Have Emmet support + Live reload, [FAQ's](https://codesandbox.io/docs/faq).
 
 ## [StackBlitz](https://stackblitz.com/) - StackBlitz is an online IDE where you can create Angular & React projects that are immediately online & shareable via link… in just one click. [Docs](https://developer.stackblitz.com/docs/platform/), Have Emmet support + Live reload(Only after you sign in(Has support for Github integrated signing)).
 
