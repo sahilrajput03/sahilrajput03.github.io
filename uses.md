@@ -68,3 +68,9 @@ Thanks for visiting.
 
 `setInterval(() => document.getElementsByClassName("w3-button w3-bar-item w3-green w3-hover-white w3-hover-text-green")[0].click(), 500)`
 
+# Guides
+
+## [vscodecandothat](https://www.vscodecandothat.com/)
+
+## [emmet cheatsheet](https://docs.emmet.io/cheat-sheet/), [Abbrevation Syntax emmet](https://docs.emmet.io/abbreviations/syntax/)
+
