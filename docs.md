@@ -1,4 +1,4 @@
-# Documentation
+# Documentation Hub
 
 ## [Joi Docs](https://github.com/sideway/joi/blob/master/API.md) - **joi** lets you describe your data using a simple, intuitive, and readable language.
 
@@ -6,13 +6,13 @@
 
 ## [Expressjs Docs](http://expressjs.com/) - Fast, unopinionated, minimalist web framework for [Node.js](https://nodejs.org/en/)
 
-## [mongoosejs Docs](https://mongoosejs.com/docs/guide.html)
+## [Mongoosejs Docs](https://mongoosejs.com/docs/guide.html)
 
-## [reactjs Docs](https://reactjs.org/docs/getting-started.html)
+## [Reactjs Docs](https://reactjs.org/docs/getting-started.html)
 
-## [nodejs Docs](https://nodejs.org/dist/latest-v12.x/docs/api/)
+## [Nodejs Docs](https://nodejs.org/dist/latest-v12.x/docs/api/)
 
-## [inkscape Docs](https://inkscape.org/learn/tutorials/)
+## [Inkscape Docs](https://inkscape.org/learn/tutorials/)
 
 ## [Typescript Docs](https://www.typescriptlang.org/docs/handbook/basic-types.html) - [Typescript Playground](https://www.typescriptlang.org/play?#code/Q)
 
