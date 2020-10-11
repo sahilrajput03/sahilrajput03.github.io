@@ -50,3 +50,17 @@
 
 ## [Material-UI Docs - Learn Material-UI](https://material-ui.com/getting-started/learn/)
 
+# Some Libraries for react-hooks
+
+## [react-use@Github(interesting typescript code)](https://github.com/streamich/react-use/tree/master/src)
+
+## [react-native-community/hooks@Github](https://github.com/react-native-community/hooks)
+
+## [rehooks/awesome-react-hooks@Github](rehooks/awesome-react-hooks) {Sum of repos*}
+
+## [ahooks](ahooks.js.org)  - [alibaba/hooks@Github](https://github.com/alibaba/hooks/tree/master/packages/hooks/src)
+
+## [vercel/swr@Github](vercel/swr) - SWR is a React Hooks library for remote data fetching.
+
+## [react-query](https://react-query.tanstack.com/) - [Github](https://github.com/tannerlinsley/react-query) - Hooks for fetching, caching and updating asynchronous data in React
+
