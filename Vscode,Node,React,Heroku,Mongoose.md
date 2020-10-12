@@ -2922,7 +2922,13 @@ https://npm.runkit.com/
 
 ## Webserver on npm: 
 
-## => Always prefer: live-server
+## => Always prefer: browser-sync or live-server
+
+And remember you can directly use a child directory to serve like, 
+
+```bash
+$ live-server folder_name
+```
 
 live-server - It **opens the url** at which the folder is server when **you execute the live-server command** in a folder automatically.[command - $live-server]
 
@@ -2931,14 +2937,20 @@ live-server - It **opens the url** at which the folder is server when **you exec
 **Hotreload Support:** live-server(works on mobile browsers too(**tested - redmi note 5**)), lite-server(*[this tool shows  Browser Sync connected everytime the page is refreshed, so could be a little annoying]works on mobile browsers too(**tested - redmi note 5**)), NO -> static-server(but manual refresh does work), NO ->http-server(but manual refresh does work)
 
 ```bash
-1. npx static-server # npm i -g lite-server (doesnt support directory listings)
+1. static-server # npm i -g lite-server (doesnt support directory listings)
 2. http-server <directory> OR http-server . OR http-server (with no arguments) # npm i -g lite-server
 3. lite-server #Slowest App(in terms of starting the application) npm i -g lite-server  #** WITH HOTRELOAD
 #Warning lite-server takes time to start its server, you must use live-server.
-4. live-server # npm i -g live-server  #** WITH HOTRELOAD
+4. live-server # npm i -g live-server, + WITH HOTRELOAD, + `live-server folder_name` works.
+5. serve # npm i -g serve, +Directory listing support(though root of drive can't be shared)
+6. npx browser-sync start --server --files "./*.html" --no-open --no-notify --directory
+# npm install -g browser-sync, + Directory listing support. #BEST!!
 ```
 
-lite-server --baseDir="dist"
+- browser-sync [Docs](https://browsersync.io/#install
+- FYI: serve is made by [vercel](https://github.com/vercel/serve).
+
+- lite-server --baseDir="dist"
 
 ***
 

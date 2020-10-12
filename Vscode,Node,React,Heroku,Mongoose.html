@@ -1844,15 +1844,25 @@ a.toFixed(<span class="hljs-number">2</span>) <span class="hljs-comment">// Numb
 <p><a href="https://npm.runkit.com/">https://npm.runkit.com/</a></p>
 <hr>
 <h2 id="webserver-on-npm:"><a class="header-link" href="#webserver-on-npm:"></a>Webserver on npm:</h2>
-<h2 id="=>-always-prefer:-live-server"><a class="header-link" href="#=>-always-prefer:-live-server"></a>=&gt; Always prefer: live-server</h2>
-<p>live-server - It <strong>opens the url</strong> at which the folder is server when <strong>you execute the live-server command</strong> in a folder automatically.[command - $live-server]</p>
+<h2 id="=>-always-prefer:-browser-sync-or-live-server"><a class="header-link" href="#=>-always-prefer:-browser-sync-or-live-server"></a>=&gt; Always prefer: browser-sync or live-server</h2>
+<p>And remember you can directly use a child directory to serve like, </p>
+<pre class="hljs"><code>$ live-server folder_name</code></pre><p>live-server - It <strong>opens the url</strong> at which the folder is server when <strong>you execute the live-server command</strong> in a folder automatically.[command - $live-server]</p>
 <p><strong>Directory Listings support:</strong> live-server, http-server,  No-&gt; static-server, No -&gt; lite-server</p>
 <p><strong>Hotreload Support:</strong> live-server(works on mobile browsers too(<strong>tested - redmi note 5</strong>)), lite-server(*[this tool shows  Browser Sync connected everytime the page is refreshed, so could be a little annoying]works on mobile browsers too(<strong>tested - redmi note 5</strong>)), NO -&gt; static-server(but manual refresh does work), NO -&gt;http-server(but manual refresh does work)</p>
-<pre class="hljs"><code>1. npx static-server <span class="hljs-comment"># npm i -g lite-server (doesnt support directory listings)</span>
+<pre class="hljs"><code>1. static-server <span class="hljs-comment"># npm i -g lite-server (doesnt support directory listings)</span>
 2. http-server &lt;directory&gt; OR http-server . OR http-server (with no arguments) <span class="hljs-comment"># npm i -g lite-server</span>
 3. lite-server <span class="hljs-comment">#Slowest App(in terms of starting the application) npm i -g lite-server  #** WITH HOTRELOAD</span>
 <span class="hljs-comment">#Warning lite-server takes time to start its server, you must use live-server.</span>
-4. live-server <span class="hljs-comment"># npm i -g live-server  #** WITH HOTRELOAD</span></code></pre><p>lite-server --baseDir=&quot;dist&quot;</p>
+4. live-server <span class="hljs-comment"># npm i -g live-server, + WITH HOTRELOAD, + `live-server folder_name` works.</span>
+5. serve <span class="hljs-comment"># npm i -g serve, +Directory listing support(though root of drive can't be shared)</span>
+6. npx browser-sync start --server --files <span class="hljs-string">"./*.html"</span> --no-open --no-notify --directory
+<span class="hljs-comment"># npm install -g browser-sync, + Directory listing support. #BEST!!</span></code></pre><ul class="list">
+<li>browser-sync [Docs](<a href="https://browsersync.io/#install">https://browsersync.io/#install</a></li>
+<li><p>FYI: serve is made by <a href="https://github.com/vercel/serve">vercel</a>.</p>
+</li>
+<li><p>lite-server --baseDir=&quot;dist&quot;</p>
+</li>
+</ul>
 <hr>
 <p>Ctrl+ k Ctrl+ S will show you all the shortcuts(keybindings).</p>
 <p>Ctrl + k, z : Will open zen mode, distraction free mode. Press double esc to exit out.</p>

@@ -1,5 +1,9 @@
 # Documentation Hub
 
+## [Yarn Cli - Docs](https://classic.yarnpkg.com/en/docs/cli/upgrade/) , [Yarn - Install/Update](https://classic.yarnpkg.com/en/docs/install/#windows-stable)
+
+## [NextJS](https://nextjs.org/docs)
+
 ## [Joi Docs](https://github.com/sideway/joi/blob/master/API.md) - **joi** lets you describe your data using a simple, intuitive, and readable language.
 
 ## [And Design Docs](https://ant.design/docs/react/introduce) - UI library for react
