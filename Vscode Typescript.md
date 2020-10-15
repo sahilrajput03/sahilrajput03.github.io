@@ -4,6 +4,35 @@
 
 ***
 
+## Type Aliases
+
+![image-20201015164707012](.imgs_typora/image-20201015164707012.png)
+
+
+
+## Object Destructuing type assertions
+
+```typescript
+const { name, age } = body.value
+const { name: string, age: number } = body.value 
+//Throws error as `string` is new binding for `name`, and `number` is new binding for `age`
+//We actually want to assert types not assign new bindings to destructured variables!
+
+//The solution is:
+const { name, age }: { name: string; age: number } = body.value
+
+// Though best way to approach this would be to use an `interface`
+interface DogI {
+  name: string
+  age: number
+}
+const dog: DogI = body.value
+```
+
+
+
+***
+
 ### Union Operator( | )
 
 It acts as **OR** operator.

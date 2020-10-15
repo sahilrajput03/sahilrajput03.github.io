@@ -1,5 +1,9 @@
 # Documentation Hub
 
+## [Yup](https://github.com/jquense/yup)
+
+## [react-hooks-testing-library](https://react-hooks-testing-library.com/) - [Api Reference](https://react-hooks-testing-library.com/reference/api)- [Github](https://github.com/testing-library/react-hooks-testing-library)
+
 ## [Yarn Cli - Docs](https://classic.yarnpkg.com/en/docs/cli/upgrade/) , [Yarn - Install/Update](https://classic.yarnpkg.com/en/docs/install/#windows-stable)
 
 ## [NextJS](https://nextjs.org/docs)
