@@ -29,7 +29,7 @@ interface DogI {
 const dog: DogI = body.value
 ```
 
-
+source: https://flaviocopes.com/typescript-object-destructuring/
 
 ***
 
