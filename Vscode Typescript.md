@@ -4,6 +4,16 @@
 
 ***
 
+## Enum's Type guards and hell
+
+![234437](.imgs_typora/234437.png)
+
+### A good way!
+
+![234320](.imgs_typora/234320.png)
+
+***
+
 ## Type Aliases
 
 ![image-20201015164707012](.imgs_typora/image-20201015164707012.png)
