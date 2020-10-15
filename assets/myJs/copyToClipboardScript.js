@@ -47,11 +47,11 @@ copyableElements.forEach(function (item) {
 // https://www.30secondsofcode.org/blog/s/copy-text-to-clipboard-with-javascript
 
 // _________________________________________________
-if (window.location.href.includes("https://reverberate.ml/uses")) {
-	var links = document.links;
-	for (var i = 0, linksLength = links.length; i < linksLength; i++) {
-		if (links[i].hostname != window.location.hostname) {
-			links[i].target = "_blank";
-		}
+// if (window.location.href.includes("https://reverberate.ml/uses")) {
+// } // This block was earlier helpful coz I wanted below functionality for only one page, i.e., reverberate.ml/uses
+var links = document.links;
+for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+	if (links[i].hostname != window.location.hostname) {
+		links[i].target = "_blank";
 	}
 }
