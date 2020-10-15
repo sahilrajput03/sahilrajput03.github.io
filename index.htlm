@@ -44,7 +44,7 @@
     color: white;
   }
 
-  #headingAnnouncement {
+  .headingAnnouncement {
     background-color: burlywood;
     border-radius: 20px;
     padding: 20px;
@@ -120,7 +120,7 @@
   <span class="blue-line__buses">Hello, I am <b>Sahil</b> here.</span>
   <br /><br />
   <br />
-  <h2 id="headingAnnouncement">This is a book to be compiled very soon. ~ Sahil Rajput</h2>
+  <h2 class="headingAnnouncement">Hello world. ~ Sahil Rajput</h2>
   <br />
   <img src="https://avatars3.githubusercontent.com/u/31458531?s=460&v=4" id="my-image"></img><br>
   <b>Current Projects on GitHub</b><br /><br />
@@ -148,19 +148,14 @@
   <hr />
   <a href="https://www.wikimedia.org">Wikimedia</a> <br /><br />
   <a href="https://wikileaks.org">WikiLeaks</a> <br /><br />
-  <a href="https://www.lexico.com/en">Oxford Dictionary</a> <br /><br />
-  <a href="https://dictionary.cambridge.org">Cambridge Dictionary</a>
-  <br /><br />
+  
   <a href="http://www.bbc.co.uk/learningenglish/">BBC - LearnEnglish</a>
-  &nbsp;&nbsp;
+  &nbsp;&nbsp; <br/><br/>
   <a href="https://fsymbols.com/keyboard/windows/alt-codes/list/shortcuts/">ALT Symbolsc</a>
-
   <hr />
-  <hr />
-  <a href="Vscode,Jest">Vscode,Jest</a><br />
-  <a href="Vscode,mongo-cli,Compass">Vscode,mongo-cli,Compass</a><br />
-  <a href="Vscode,Node,Heroku,Mongoose">Vscode,Node,Heroku,Mongoose</a><br />
-  <a href="Vscode,REST_REQUESTS">Vscode,REST_REQUESTS</a><br />
+  <a href="https://dictionary.cambridge.org">Cambridge Dictionary</a> <br> <br>
+  <a href="https://www.lexico.com/en">Oxford Dictionary</a> <br /><br />
+  <a href="https://www.merriam-webster.com/">Merriam-Webster Dictionary</a> <br />
 </body>
 
 </html>
