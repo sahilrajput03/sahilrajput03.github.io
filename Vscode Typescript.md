@@ -4,6 +4,49 @@
 
 ***
 
+## Inference 
+
+```typescript
+// Type inference
+declare function wrap<T>(value: T): { value: T }
+const wrappedNumber = wrap(1024) 
+// wrappedNumber is of type { value: number } 
+// as type variable `T` is inferred as `number` from the argument `1024`
+
+
+
+const wrappedString = wrap("hello")
+// wrappedNumber is of type { value: string } 
+// as type variable `T` is inferred as `string` from the argument `hello`
+
+// ------------------------------------------------------
+
+// Multiple type arguments can also be inferred as long as the context is comprehensive.
+declare function wrap2<T, U>(t: T, u: U): { t: T, u: U }
+const wrapped = wrap2('hello', 1024)
+// wrapped is of type { t: string, u: number }
+
+const wrapped2 = wrap2(true, {a: 20, b: "booo"})
+// wrapped2 is of type {t: boolean, u: { a: number, b: string}}
+
+
+// src: https://medium.com/@nandiinbao/partial-type-argument-inference-in-typescript-and-workarounds-for-it-d7c772788b2e
+```
+
+```typescript
+// Providing type arguments explicitly - As implicit type inference is always an optional feature, type arguments can be provided explicitly in the function call.
+declare function wrap<T>(value: T): { value: T }
+const wrapped = wrap<number>(1)
+```
+
+src: [Link](https://medium.com/@nandiinbao/partial-type-argument-inference-in-typescript-and-workarounds-for-it-d7c772788b2e)
+
+## Declaration files .d.ts
+
+Link @ [Modules .d.ts @ typescriptlang.org](https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-d-ts.html)
+
+***
+
 ## Enum's Type guards and hell
 
 ![234437](.imgs_typora/234437.png)
@@ -169,6 +212,33 @@ let myMethod: Function
 // # Below would throw error like -> Type 'number' is not assignable to type 'Function'.
 myMethod = 20
 ```
+
+***
+
+## Interface allow simple addition
+
+```typescript
+let log = console.log
+
+interface a {
+  b: string
+}
+
+interface a {
+  c: string
+}
+
+let myObject: a = {
+  b: "second alphabet",
+  c: "third alphabet"
+}
+
+log(myObject.b, myObject.c) //This is fine with interfaces.
+```
+
+src: [typescriptlang.org](https://www.typescriptlang.org/docs/handbook/declaration-files/deep-dive.html#adding-using-an-interface)
+
+**Note**: We **cannot** add to type aliases (`type s = string;`) using an interface.
 
 ***
 

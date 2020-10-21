@@ -8,7 +8,9 @@
 
 ## [React Query](https://react-query.tanstack.com/docs/overview) [Github](https://github.com/tannerlinsley/react-query)
 
-## [Yup](https://github.com/jquense/yup)
+## [Yup](https://github.com/jquense/yup) - Data Validation
+
+## [io-ts](https://gcanti.github.io/io-ts/) - Data Validation for typescript
 
 ## [react-hooks-testing-library](https://react-hooks-testing-library.com/) - [Api Reference](https://react-hooks-testing-library.com/reference/api)- [Github](https://github.com/testing-library/react-hooks-testing-library)
 
@@ -80,3 +82,12 @@
 
 ## [react-query](https://react-query.tanstack.com/) - [Github](https://github.com/tannerlinsley/react-query) - Hooks for fetching, caching and updating asynchronous data in React
 
+# Hacks
+
+## [Firing Range](https://public-firing-range.appspot.com/) - [Github](https://github.com/google/firing-range)
+
+## [RandomDadJoke](https://www.randomdadjoke.com/), [Dadjokegenerator](https://dadjokegenerator.com/), [icanhazdadjoke](https://icanhazdadjoke.com/)
+
+# Interesting Topics
+
+## [Class Inheritance](https://javascript.info/class-inheritance#super-internals-homeobject)

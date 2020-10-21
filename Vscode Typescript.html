@@ -14,6 +14,36 @@
     <article class="markdown-body"><h2 id="typescript-playground"><a class="header-link" href="#typescript-playground"></a>Typescript Playground</h2>
 <p> <a href="https://www.typescriptlang.org/play/index.html">https://www.typescriptlang.org/play/index.html</a></p>
 <hr>
+<h2 id="inference"><a class="header-link" href="#inference"></a>Inference</h2>
+<pre class="hljs"><code><span class="hljs-comment">// Type inference</span>
+<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">wrap</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">value: T</span>): </span>{ value: T }
+<span class="hljs-keyword">const</span> wrappedNumber = wrap(<span class="hljs-number">1024</span>) 
+<span class="hljs-comment">// wrappedNumber is of type { value: number } </span>
+<span class="hljs-comment">// as type variable `T` is inferred as `number` from the argument `1024`</span>
+
+
+
+<span class="hljs-keyword">const</span> wrappedString = wrap(<span class="hljs-string">"hello"</span>)
+<span class="hljs-comment">// wrappedNumber is of type { value: string } </span>
+<span class="hljs-comment">// as type variable `T` is inferred as `string` from the argument `hello`</span>
+
+<span class="hljs-comment">// ------------------------------------------------------</span>
+
+<span class="hljs-comment">// Multiple type arguments can also be inferred as long as the context is comprehensive.</span>
+<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">wrap2</span>&lt;<span class="hljs-title">T</span>, <span class="hljs-title">U</span>&gt;(<span class="hljs-params">t: T, u: U</span>): </span>{ t: T, u: U }
+<span class="hljs-keyword">const</span> wrapped = wrap2(<span class="hljs-string">'hello'</span>, <span class="hljs-number">1024</span>)
+<span class="hljs-comment">// wrapped is of type { t: string, u: number }</span>
+
+<span class="hljs-keyword">const</span> wrapped2 = wrap2(<span class="hljs-literal">true</span>, {a: <span class="hljs-number">20</span>, b: <span class="hljs-string">"booo"</span>})
+<span class="hljs-comment">// wrapped2 is of type {t: boolean, u: { a: number, b: string}}</span>
+
+
+<span class="hljs-comment">// src: https://medium.com/@nandiinbao/partial-type-argument-inference-in-typescript-and-workarounds-for-it-d7c772788b2e</span></code></pre><pre class="hljs"><code><span class="hljs-comment">// Providing type arguments explicitly - As implicit type inference is always an optional feature, type arguments can be provided explicitly in the function call.</span>
+<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">wrap</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">value: T</span>): </span>{ value: T }
+<span class="hljs-keyword">const</span> wrapped = wrap&lt;<span class="hljs-built_in">number</span>&gt;(<span class="hljs-number">1</span>)</code></pre><p>src: <a href="https://medium.com/@nandiinbao/partial-type-argument-inference-in-typescript-and-workarounds-for-it-d7c772788b2e">Link</a></p>
+<h2 id="declaration-files-.d.ts"><a class="header-link" href="#declaration-files-.d.ts"></a>Declaration files .d.ts</h2>
+<p>Link @ <a href="https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-d-ts.html">Modules .d.ts @ typescriptlang.org</a></p>
+<hr>
 <h2 id="enum's-type-guards-and-hell"><a class="header-link" href="#enum's-type-guards-and-hell"></a>Enum&#39;s Type guards and hell</h2>
 <p class="img-container"><img src=".imgs_typora/234437.png" alt="234437"></p>
 <h3 id="a-good-way!"><a class="header-link" href="#a-good-way!"></a>A good way!</h3>
@@ -124,6 +154,25 @@ square.penWidth = <span class="hljs-number">5.0</span>;
 <pre class="hljs"><code><span class="hljs-keyword">let</span> myMethod: <span class="hljs-built_in">Function</span>
 <span class="hljs-comment">// # Below would throw error like -&gt; Type 'number' is not assignable to type 'Function'.</span>
 myMethod = <span class="hljs-number">20</span></code></pre><hr>
+<h2 id="interface-allow-simple-addition"><a class="header-link" href="#interface-allow-simple-addition"></a>Interface allow simple addition</h2>
+<pre class="hljs"><code><span class="hljs-keyword">let</span> log = <span class="hljs-built_in">console</span>.log
+
+<span class="hljs-keyword">interface</span> a {
+  b: <span class="hljs-built_in">string</span>
+}
+
+<span class="hljs-keyword">interface</span> a {
+  c: <span class="hljs-built_in">string</span>
+}
+
+<span class="hljs-keyword">let</span> myObject: a = {
+  b: <span class="hljs-string">"second alphabet"</span>,
+  c: <span class="hljs-string">"third alphabet"</span>
+}
+
+log(myObject.b, myObject.c) <span class="hljs-comment">//This is fine with interfaces.</span></code></pre><p>src: <a href="https://www.typescriptlang.org/docs/handbook/declaration-files/deep-dive.html#adding-using-an-interface">typescriptlang.org</a></p>
+<p><strong>Note</strong>: We <strong>cannot</strong> add to type aliases (<code>type s = string;</code>) using an interface.</p>
+<hr>
 <h2 id="sequence-and-parallel-reading-of-files(#-non-typescript-topic)"><a class="header-link" href="#sequence-and-parallel-reading-of-files(#-non-typescript-topic)"></a>Sequence and parallel reading of files(# non typescript topic)</h2>
 <p><a href="https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop">link@stackoverflow</a></p>
 <p class="img-container"><img src=".imgs_typora/image-20200705204559439.png" alt="image-20200705204559439"></p>
