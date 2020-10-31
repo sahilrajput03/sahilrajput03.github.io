@@ -80,3 +80,13 @@ Thanks for visiting.
 
 ## [emmet cheatsheet](https://docs.emmet.io/cheat-sheet/), [Abbrevation Syntax emmet](https://docs.emmet.io/abbreviations/syntax/)
 
+# Other people uses
+
+## https://dzhavat.github.io/uses
+
+## https://kentcdodds.com/uses
+
+### [Interesting post](https://dev.to/nickytonline/do-you-have-a-uses-page-5b82)
+
+
+

@@ -88,7 +88,7 @@ source: https://flaviocopes.com/typescript-object-destructuring/
 
 ### Union Operator( | )
 
-It acts as **OR** operator.
+It acts as **OR** operator. You can also say, its like **either of those type** simply.
 
 ```ts
 let someValue: string | number = "sahil"
