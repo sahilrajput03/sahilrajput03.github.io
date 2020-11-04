@@ -14,6 +14,74 @@
     <article class="markdown-body"><h2 id="typescript-playground"><a class="header-link" href="#typescript-playground"></a>Typescript Playground</h2>
 <p> <a href="https://www.typescriptlang.org/play/index.html">https://www.typescriptlang.org/play/index.html</a></p>
 <hr>
+<h2 id="learningn-readonly-operator"><a class="header-link" href="#learningn-readonly-operator"></a>Learningn readonly operator</h2>
+<pre class="hljs"><code><span class="hljs-comment">// `Readonly` typefunction is built in application on the `readonly` operator.</span>
+<span class="hljs-comment">// Below SOURCE CODE PRESENT IN lib.es5.d.ts //Tip: See the src below to learn more.</span>
+<span class="hljs-comment">// type Readonly&lt;T&gt; = {</span>
+<span class="hljs-comment">//   readonly [P in keyof T]: T[P]; // readonly operator</span>
+<span class="hljs-comment">// };</span>
+
+<span class="hljs-keyword">type</span> myDataType = {
+  isGood: <span class="hljs-built_in">boolean</span>;
+  isBetter: <span class="hljs-built_in">boolean</span>;
+}
+<span class="hljs-keyword">let</span> ss: Readonly&lt;myDataType&gt;
+
+ss = {
+  isGood: <span class="hljs-literal">true</span>,
+  isBetter: <span class="hljs-literal">true</span>
+}
+
+ss.isBetter = <span class="hljs-literal">true</span> <span class="hljs-comment">// this throws =&gt; Cannot assign to 'isBetter' because it is a read-only property.</span>
+ss.isBetter = <span class="hljs-literal">false</span> <span class="hljs-comment">// this throws same error too =&gt; Cannot assign to 'isBetter' because it is a read-only property.</span></code></pre><p>src: <a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html">Link</a></p>
+<hr>
+<h2 id="learning-**keyof**-operator-of-typescript"><a class="header-link" href="#learning-**keyof**-operator-of-typescript"></a>Learning <strong>keyof</strong> operator of typescript</h2>
+<pre class="hljs"><code><span class="hljs-keyword">interface</span> Person {
+  name: <span class="hljs-built_in">string</span>;
+  age: <span class="hljs-built_in">number</span>;
+  location: <span class="hljs-built_in">string</span>;
+}
+
+<span class="hljs-keyword">type</span> K1 = keyof Person; <span class="hljs-comment">// "name" | "age" | "location"</span>
+<span class="hljs-keyword">type</span> K2 = keyof Person[]; <span class="hljs-comment">// "length" | "push" | "pop" | "concat" | ...</span>
+<span class="hljs-keyword">type</span> K3 = keyof { [x: <span class="hljs-built_in">string</span>]: Person }; <span class="hljs-comment">// string</span></code></pre><p>Src: <a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html">Link</a></p>
+<hr>
+<h2 id="defining-types-for-array-of-arguments"><a class="header-link" href="#defining-types-for-array-of-arguments"></a>Defining types for array of arguments</h2>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> ss = (...args: <span class="hljs-built_in">any</span>[]) =&gt; <span class="hljs-built_in">console</span>.log(...args)</code></pre><hr>
+<h2 id="finding-builtin-ts-libraries-for-interesing-lookings"><a class="header-link" href="#finding-builtin-ts-libraries-for-interesing-lookings"></a>Finding builtin ts libraries for interesing lookings</h2>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> ss: Partial
+<span class="hljs-comment">// Now hold ctrl and click on Partial and explore the "lib.es5.d.ts" file.</span>
+<span class="hljs-keyword">const</span> ss: Omit <span class="hljs-comment">// You can use this Omit keyword to explore too.</span>
+
+<span class="hljs-comment">//Learning: </span>
+# Record (Built <span class="hljs-keyword">in</span> <span class="hljs-keyword">type</span> from typescript)
+<span class="hljs-comment">// Source code: </span>
+    <span class="hljs-keyword">type</span> Record&lt;K extends keyof <span class="hljs-built_in">any</span>, T&gt; = {
+        [P <span class="hljs-keyword">in</span> K]: T;
+    };
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// Its useful as - </span>
+<span class="hljs-keyword">let</span> obj: Record&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>&gt;
+<span class="hljs-comment">// obj is of shape like, {abc: 23, bcd: 30 } i.e., all keys are string and all values are numbers.</span>
+
+</code></pre><hr>
+<h2 id="generic-types"><a class="header-link" href="#generic-types"></a>Generic types</h2>
+<p class="img-container"><img src=".imgs_typora/image-20201031140124314.png" alt="image-20201031140124314"></p>
+<pre class="hljs"><code><span class="hljs-keyword">type</span> Result&lt;DataType&gt; = {
+  error: DataType;
+  success: <span class="hljs-built_in">boolean</span>
+}
+<span class="hljs-keyword">type</span> SuccessResult = Result&lt;<span class="hljs-built_in">String</span>&gt;</code></pre><hr>
+<h2 id="null-check-is-done-by-typescript-out-of-the-box"><a class="header-link" href="#null-check-is-done-by-typescript-out-of-the-box"></a>Null check is done by typescript out of the box</h2>
+<pre class="hljs"><code><span class="hljs-keyword">let</span> mystring: <span class="hljs-built_in">string</span>
+
+
+<span class="hljs-keyword">let</span> func = (param:<span class="hljs-built_in">string</span>) =&gt; {
+  <span class="hljs-built_in">console</span>.log(param)
+}
+
+func(mystring) <span class="hljs-comment">// it throws error here, like "Variable 'mystring' is used before being assigned."</span>
+</code></pre><hr>
 <h2 id="inference"><a class="header-link" href="#inference"></a>Inference</h2>
 <pre class="hljs"><code><span class="hljs-comment">// Type inference</span>
 <span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">wrap</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">value: T</span>): </span>{ value: T }

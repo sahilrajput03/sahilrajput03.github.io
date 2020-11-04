@@ -54,10 +54,6 @@
 
 ***
 
-Thanks for visiting.
-
-~ [Sahil Rajput](https://twitter.com/freakstarrocks) - [Twitter](https://twitter.com/freakstarrocks)
-
 # Online Coding Environmensts
 
 ## [JS Bin](https://jsbin.com/) - JS Bin is a tool for experimenting with web languages. In particular HTML, CSS and JavaScript, but JS Bin also supports other languages too (like Markdown, Jade and Sass). [Docs](https://jsbin.com/help/getting-started/) , [Shortcut Keys](https://jsbin.com/help/keyboard-shortcuts/) , Have Emmet support + Live reload, [FAQ's](https://jsbin.com/help/faq/).
@@ -90,3 +86,6 @@ Thanks for visiting.
 
 
 
+Thanks for visiting.
+
+~ [Sahil Rajput](https://twitter.com/freakstarrocks) - [Twitter](https://twitter.com/freakstarrocks)

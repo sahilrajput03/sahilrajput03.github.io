@@ -4,6 +4,121 @@
 
 ***
 
+## Learningn readonly operator
+
+```typescript
+// `Readonly` typefunction is built in application on the `readonly` operator.
+// Below SOURCE CODE PRESENT IN lib.es5.d.ts //Tip: See the src below to learn more.
+// type Readonly<T> = {
+//   readonly [P in keyof T]: T[P]; // readonly operator
+// };
+
+type myDataType = {
+  isGood: boolean;
+  isBetter: boolean;
+}
+let ss: Readonly<myDataType>
+
+ss = {
+  isGood: true,
+  isBetter: true
+}
+
+ss.isBetter = true // this throws => Cannot assign to 'isBetter' because it is a read-only property.
+ss.isBetter = false // this throws same error too => Cannot assign to 'isBetter' because it is a read-only property.
+```
+
+src: [Link](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html)
+
+***
+
+## Learning **keyof** operator of typescript
+
+```typescript
+interface Person {
+  name: string;
+  age: number;
+  location: string;
+}
+
+type K1 = keyof Person; // "name" | "age" | "location"
+type K2 = keyof Person[]; // "length" | "push" | "pop" | "concat" | ...
+type K3 = keyof { [x: string]: Person }; // string
+```
+
+Src: [Link](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html)
+
+***
+
+## Defining types for array of arguments
+
+```typescript
+const ss = (...args: any[]) => console.log(...args)
+```
+
+
+
+***
+
+## Finding builtin ts libraries for interesing lookings
+
+```typescript
+const ss: Partial
+// Now hold ctrl and click on Partial and explore the "lib.es5.d.ts" file.
+const ss: Omit // You can use this Omit keyword to explore too.
+
+//Learning: 
+# Record (Built in type from typescript)
+// Source code: 
+	type Record<K extends keyof any, T> = {
+	    [P in K]: T;
+	};
+//
+// Its useful as - 
+let obj: Record<string, number>
+// obj is of shape like, {abc: 23, bcd: 30 } i.e., all keys are string and all values are numbers.
+    
+
+```
+
+
+
+***
+
+## Generic types
+
+![image-20201031140124314](.imgs_typora/image-20201031140124314.png)
+
+```typescript
+type Result<DataType> = {
+  error: DataType;
+  success: boolean
+}
+type SuccessResult = Result<String>
+```
+
+
+
+***
+
+## Null check is done by typescript out of the box
+
+```typescript
+let mystring: string
+
+
+let func = (param:string) => {
+  console.log(param)
+}
+
+func(mystring) // it throws error here, like "Variable 'mystring' is used before being assigned."
+
+```
+
+
+
+***
+
 ## Inference 
 
 ```typescript
