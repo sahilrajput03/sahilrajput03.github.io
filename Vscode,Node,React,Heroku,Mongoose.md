@@ -4436,11 +4436,16 @@ nvm install 12.16.2 64 # This will install - Node 12.16.2 64bit version.
 nvm install nvm use 12.16.2 64 # Will do similarly.
 nvm uninstall 12.16.2 64 # This will undo tha, LOL, don't do it, you may need it some years later.
 
+
 nvm list ## This will show you all the installed versions of node, you installed via `npm install ...` 
 nvm off # This will just turn off nvm.
 nvm on # This will just turn it on again.
 
 nvm use 12.18.0 64 ## You can activate a different vesion of installed node via this command.
+
+#From npm -h, below also seems to work!!
+nvm install latest 64 
+nvm install latest #By deafult system architecture(so specifying 64 is optional I guess) is used for the node too.
 ```
 
 ***
