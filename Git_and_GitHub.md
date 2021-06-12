@@ -2272,13 +2272,18 @@ Resets index entries and updates files in the working tree that are different be
                changes, reset is aborted.
 ```
 
+
+
 ## Mixed Reset (Default) vs. Soft Reset
 
 
 
-![Though the file chnages are not altered by any of these two reset methods](https://i.imgur.com/AiXFQfV.png)
+![](./imgs_typora/mixed_vs._soft_reset.png)
+
+
 
 ## What is diff, staging and index
 
-![](https://i.imgur.com/6PHRS1P.png)
+![](./imgs_typora/git-diff--index--staging.png)
+
 
