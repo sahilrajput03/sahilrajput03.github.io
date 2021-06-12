@@ -2240,3 +2240,45 @@ https://help.github.com/en/github/managing-files-in-a-repository/getting-permane
 
 ***
 
+## From git manpages (git reset help): 
+
+```bash
+git reset --mixed # DEFAULT: Doesn't alter current working tree, RESETS index to target commit/branch you specified.
+git reset --soft # Doesn't alter current working tree, keep index{that means `git diff` will show the diff between the state of last commit's index (which is same as last commit state unless you added something more via `git add somthing` command) and the current working tree.
+
+git reset --merge
+git reset --keep
+
+--soft
+Does not touch the index file or the working tree at all (but resets the head to <commit>, just like all modes do). This leaves all your changed files "Changes to be
+               committed", as git status would put it.
+
+--mixed
+Resets the index but not the working tree (i.e., the changed files are preserved but not marked for commit) and reports what has not been updated. This is the default
+               action.
+   
+   
+--hard
+Resets the index and working tree. Any changes to tracked files in the working tree since <commit> are discarded.
+
+--merge
+Resets the index and updates the files in the working tree that are different between <commit> and HEAD, but keeps those which are different between the index and working
+               tree (i.e. which have changes which have not been added). If a file that is different between <commit> and the index has unstaged changes, reset is aborted.
+
+               In other words, --merge does something like a git read-tree -u -m <commit>, but carries forward unmerged index entries.
+
+--keep
+Resets index entries and updates files in the working tree that are different between <commit> and HEAD. If a file that is different between <commit> and HEAD has local
+               changes, reset is aborted.
+```
+
+## Mixed Reset (Default) vs. Soft Reset
+
+
+
+![Though the file chnages are not altered by any of these two reset methods](https://i.imgur.com/AiXFQfV.png)
+
+## What is diff, staging and index
+
+![](https://i.imgur.com/6PHRS1P.png)
+

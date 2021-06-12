@@ -650,14 +650,14 @@ git push origin</code></pre><hr>
 <p>Let say you have created a repo online on github and didn&#39;t add any files yet.</p>
 <p>And locally, you are having a empty directory, and inside that, you </p>
 <p>git init</p>
-<p>git add remote origin <a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>:freakstarrocks/freakstarrocks.github.io.git</p>
+<p>git add remote origin <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#105;&#116;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#x63;&#111;&#x6d;</a>:freakstarrocks/freakstarrocks.github.io.git</p>
 <p>git push  origin master</p>
 <blockquote>
 <blockquote>
 <p>now this command will return error: </p>
 <p>$ git push origin master
 error: src refspec master does not match any.
-error: failed to push some refs to &#39;<a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;">&#103;&#105;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;</a>:freakstarrocks/freakstarrocks.github.io.git&#39;</p>
+error: failed to push some refs to &#39;<a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#x6d;">&#103;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#x6d;</a>:freakstarrocks/freakstarrocks.github.io.git&#39;</p>
 </blockquote>
 </blockquote>
 <p>This error occured cause you don&#39;t have any reference file i.e.,  A Git reference (<code>git ref</code>) is just a file that contains a Git commit SHA-1 hash. <a href="https://developer.github.com/v3/git/refs/#get-a-single-reference">Post@Github</a></p>
@@ -1097,6 +1097,37 @@ Help link from official hub page: <a href="https://hub.github.com/hub-pull-reque
 <hr>
 <p><a href="https://help.github.com/en/github/managing-files-in-a-repository/getting-permanent-links-to-files">https://help.github.com/en/github/managing-files-in-a-repository/getting-permanent-links-to-files</a></p>
 <hr>
+<h2 id="from-git-manpages-git-reset-help"><a class="header-link" href="#from-git-manpages-git-reset-help"></a>From git manpages (git reset help):</h2>
+<pre class="hljs"><code>git reset --mixed <span class="hljs-comment"># DEFAULT: Doesn&#x27;t alter current working tree, RESETS index to target commit/branch you specified.</span>
+git reset --soft <span class="hljs-comment"># Doesn&#x27;t alter current working tree, keep index{that means `git diff` will show the diff between the state of last commit&#x27;s index (which is same as last commit state unless you added something more via `git add somthing` command) and the current working tree.</span>
+
+git reset --merge
+git reset --keep
+
+--soft
+Does not touch the index file or the working tree at all (but resets the head to &lt;commit&gt;, just like all modes <span class="hljs-keyword">do</span>). This leaves all your changed files <span class="hljs-string">&quot;Changes to be
+               committed&quot;</span>, as git status would put it.
+
+--mixed
+Resets the index but not the working tree (i.e., the changed files are preserved but not marked <span class="hljs-keyword">for</span> commit) and reports what has not been updated. This is the default
+               action.
+   
+   
+--hard
+Resets the index and working tree. Any changes to tracked files <span class="hljs-keyword">in</span> the working tree since &lt;commit&gt; are discarded.
+
+--merge
+Resets the index and updates the files <span class="hljs-keyword">in</span> the working tree that are different between &lt;commit&gt; and HEAD, but keeps those <span class="hljs-built_in">which</span> are different between the index and working
+               tree (i.e. <span class="hljs-built_in">which</span> have changes <span class="hljs-built_in">which</span> have not been added). If a file that is different between &lt;commit&gt; and the index has unstaged changes, reset is aborted.
+
+               In other words, --merge does something like a git read-tree -u -m &lt;commit&gt;, but carries forward unmerged index entries.
+
+--keep
+Resets index entries and updates files <span class="hljs-keyword">in</span> the working tree that are different between &lt;commit&gt; and HEAD. If a file that is different between &lt;commit&gt; and HEAD has <span class="hljs-built_in">local</span>
+               changes, reset is aborted.</code></pre><h2 id="mixed-reset-default-vs-soft-reset"><a class="header-link" href="#mixed-reset-default-vs-soft-reset"></a>Mixed Reset (Default) vs. Soft Reset</h2>
+<p class="img-container"><img src="https://i.imgur.com/AiXFQfV.png" alt="Though the file chnages are not altered by any of these two reset methods"></p>
+<h2 id="what-is-diff-staging-and-index"><a class="header-link" href="#what-is-diff-staging-and-index"></a>What is diff, staging and index</h2>
+<p class="img-container"><img src="https://i.imgur.com/6PHRS1P.png" alt=""></p>
 </article>
   </body>
 </html>
