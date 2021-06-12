@@ -13,21 +13,22 @@
   <body>
     <article class="markdown-body"><h2 id="creating-requesttime-middleware"><a class="header-link" href="#creating-requesttime-middleware"></a>Creating requestTime middleware</h2>
 <p>src: <a href="https://expressjs.com/en/guide/writing-middleware.html">@Express Docs</a></p>
-<p class="img-container"><img src=".imgs_typora/image-20200929120244400.png" alt="image-20200929120244400" style="zoom:67%;" /></p>
+<img src=".imgs_typora/image-20200929120244400.png" alt="image-20200929120244400" style="zoom:67%;" />
+
 <h2 id="mounting-sub-express-in-exress-app"><a class="header-link" href="#mounting-sub-express-in-exress-app"></a>Mounting sub express in exress app</h2>
-<pre class="hljs"><code>var express = require(<span class="hljs-string">'express'</span>)
+<pre class="hljs"><code>var express = require(<span class="hljs-string">&#x27;express&#x27;</span>)
 
 var app = express() // the main app
 var admin = express() // the sub app
 
-admin.get(<span class="hljs-string">'/'</span>, <span class="hljs-keyword">function</span> (req, res) {
+admin.get(<span class="hljs-string">&#x27;/&#x27;</span>, <span class="hljs-keyword">function</span> (req, res) {
   console.log(admin.mountpath) // /admin
-  res.send(<span class="hljs-string">'Admin Homepage'</span>)
+  res.send(<span class="hljs-string">&#x27;Admin Homepage&#x27;</span>)
 })
 
-app.use(<span class="hljs-string">'/admin'</span>, admin) // mount the sub app</code></pre><p>express docs - <a href="https://expressjs.com/en/4x/api.html#req.body">link</a></p>
+app.use(<span class="hljs-string">&#x27;/admin&#x27;</span>, admin) // mount the sub app</code></pre><p>express docs - <a href="https://expressjs.com/en/4x/api.html#req.body">link</a></p>
 <hr>
-<h2 id="different-key-value-properties-of-request:"><a class="header-link" href="#different-key-value-properties-of-request:"></a>Different key-value properties of request:</h2>
+<h2 id="different-key-value-properties-of-request"><a class="header-link" href="#different-key-value-properties-of-request"></a>Different key-value properties of request:</h2>
 <p><a href="https://expressjs.com/en/4x/api.html#req">link</a> - express amaz documentation.</p>
 <hr>
 </article>

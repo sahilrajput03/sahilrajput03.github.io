@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui" />
-    <title>Remove all the the recent changes, and reset to last commit.</title>
+    <title>Back to last commit&#x27;s state</title>
     <link type="text/css" rel="stylesheet" href="assets/css/github-markdown.css" />
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css" />
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css" />
@@ -11,19 +11,25 @@
     <script src="assets/myJs/copyToClipboardScript.js" defer></script>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="remove-all-the-the-recent-changes,-and-reset-to-last-commit."><a class="header-link" href="#remove-all-the-the-recent-changes,-and-reset-to-last-commit."></a>Remove all the the recent changes, and reset to last commit.</h2>
+    <article class="markdown-body"><h4 id="back-to-last-commits-state"><a class="header-link" href="#back-to-last-commits-state"></a>Back to last commit&#39;s state</h4>
+<pre class="hljs"><code><span class="hljs-comment">#Either of below is cool!</span>
+$ git reset --hard
+$ git checkout -f
+
+<span class="hljs-comment">#To reset some file to last commit</span>
+$ git checkout fileName</code></pre><h2 id="remove-all-the-the-recent-changes-and-reset-to-last-commit"><a class="header-link" href="#remove-all-the-the-recent-changes-and-reset-to-last-commit"></a>Remove all the the recent changes, and reset to last commit.</h2>
 <pre class="hljs"><code>git clean --force &amp;&amp; git reset --hard</code></pre><hr>
-<h3 id="set-vscode-as-the-default-message-editor-for-git(-you-need-to-do-it-for-each-environment-separately-i.e.,-separately-for-cmd,-msys2,-and-fish)"><a class="header-link" href="#set-vscode-as-the-default-message-editor-for-git(-you-need-to-do-it-for-each-environment-separately-i.e.,-separately-for-cmd,-msys2,-and-fish)"></a>Set vscode as the default message editor for git( You need to do it for each environment separately i.e., separately for cmd, msys2, and fish)</h3>
+<h3 id="set-vscode-as-the-default-message-editor-for-git-you-need-to-do-it-for-each-environment-separately-ie-separately-for-cmd-msys2-and-fish"><a class="header-link" href="#set-vscode-as-the-default-message-editor-for-git-you-need-to-do-it-for-each-environment-separately-ie-separately-for-cmd-msys2-and-fish"></a>Set vscode as the default message editor for git( You need to do it for each environment separately i.e., separately for cmd, msys2, and fish)</h3>
 <p><code>git config --global core.editor &quot;code --wait&quot;</code></p>
 <hr>
 <h2 id="updating-remotes-on-local-copy-of-the-repository-"><a class="header-link" href="#updating-remotes-on-local-copy-of-the-repository-"></a>Updating remotes on local copy of the repository-</h2>
 <pre class="hljs"><code><span class="hljs-comment"># Update the url of origin once in a local repository:</span>
-git remote <span class="hljs-built_in">set</span>-url origin https://github.com/AlikeThingsOrg/profile_project_repo
+git remote set-url origin https://github.com/AlikeThingsOrg/profile_project_repo
 <span class="hljs-comment"># A lengthy way to do same thing is :-</span>
 git remote remove origin
 git remote add origin https://github.com/AlikeThingsOrg/profile_project_repo</code></pre><hr>
 <h2 id="git-merge"><a class="header-link" href="#git-merge"></a>git merge</h2>
-<pre class="hljs"><code>git merge --continue
+<pre class="hljs"><code>git merge --<span class="hljs-built_in">continue</span>
 git merge --abort</code></pre><pre class="hljs"><code><span class="hljs-comment">#create branch from another without checking out any..</span>
 git branch somebranch SourceBranchHere</code></pre><h2 id="rebase-simplicity"><a class="header-link" href="#rebase-simplicity"></a>rebase simplicity</h2>
 <p>git push -f is required coz we have rebased changes(so commmit sha&#39;s change), rebaseing cons=&gt; <a href="https://www.atlassian.com/git/articles/git-team-workflows-merge-or-rebase#:~:text=Rebasing%20can%20be%20dangerous!,and%20carefulness%20must%20be%20employed.">link@atlassian</a></p>
@@ -37,24 +43,26 @@ git branch somebranch SourceBranchHere</code></pre><h2 id="rebase-simplicity"><a
 <hr>
 <h3 id="this-would-ease-the-work-in-mintty-or-linux-shell"><a class="header-link" href="#this-would-ease-the-work-in-mintty-or-linux-shell"></a>This would ease the work in mintty or linux shell</h3>
 <pre class="hljs"><code><span class="hljs-comment"># Add an alias to pulling latest git changes into your same branch. Should work for mintty.</span>
-<span class="hljs-built_in">alias</span> pullhead=<span class="hljs-string">'git pull origin $(git rev-parse --abbrev-ref HEAD)'</span></code></pre><h2 id=">>>>>my-current-config<<<<<"><a class="header-link" href="#>>>>>my-current-config<<<<<"></a>&gt;&gt;&gt;&gt;&gt;MY CURRENT CONFIG&lt;&lt;&lt;&lt;&lt;</h2>
+<span class="hljs-built_in">alias</span> pullhead=<span class="hljs-string">&#x27;git pull origin $(git rev-parse --abbrev-ref HEAD)&#x27;</span></code></pre><h2 id="my-current-config"><a class="header-link" href="#my-current-config"></a>&gt;&gt;&gt;&gt;&gt;MY CURRENT CONFIG&lt;&lt;&lt;&lt;&lt;</h2>
 <pre class="hljs"><code><span class="hljs-comment">#For cmd(added in files =&gt; c:\additionalPath\push.cmd) #Works good from mintty too.</span>
-FOR /F <span class="hljs-string">"tokens=*"</span> %%a <span class="hljs-keyword">in</span> (<span class="hljs-string">'git rev-parse --abbrev-ref HEAD'</span>) <span class="hljs-keyword">do</span> SET thisbranch=%%a
+FOR /F <span class="hljs-string">&quot;tokens=*&quot;</span> %%a <span class="hljs-keyword">in</span> (<span class="hljs-string">&#x27;git rev-parse --abbrev-ref HEAD&#x27;</span>) <span class="hljs-keyword">do</span> SET thisbranch=%%a
 <span class="hljs-built_in">echo</span> on
 git push -u origin %thisbranch%
 <span class="hljs-comment">#SO NOW ONWARDS I JUST NEED TO DO, push from cmd or mintty to set upstream and push directly.</span>
-<span class="hljs-comment">#Also, using p CommitMessage is also supported coz I added &lt;push.cmd&gt; to the p.cmd script too.</span></code></pre><p class="img-container"><img src=".imgs_typora/image-20200726230132546.png" alt="image-20200726230132546" style="zoom: 67%;" /></p>
+<span class="hljs-comment">#Also, using p CommitMessage is also supported coz I added &lt;push.cmd&gt; to the p.cmd script too.</span></code></pre><img src=".imgs_typora/image-20200726230132546.png" alt="image-20200726230132546" style="zoom: 67%;" />
+
 <p>src: link@<a href="https://stackoverflow.com/questions/6052005/how-can-you-git-pull-only-the-current-branch">stackoverflow</a></p>
 <p>src: cmd: @<a href="https://stackoverflow.com/questions/1355791/how-do-you-loop-in-a-windows-batch-file">stackoverlflow</a>, @stackoverflow2*<a href="https://serverfault.com/questions/245679/store-output-of-windows-command-in-batch-file">Helped</a></p>
 <hr>
 <p><img src=".imgs_typora/image-20200726193248069.png" alt="image-20200726193248069">`</p>
 <p>Above is not necessary if you don&#39;t gamble on branch names with below settings.</p>
-<h3 id="to-see-current-configuration:-"><a class="header-link" href="#to-see-current-configuration:-"></a>To see current configuration:-</h3>
+<h3 id="to-see-current-configuration-"><a class="header-link" href="#to-see-current-configuration-"></a>To see current configuration:-</h3>
 <pre class="hljs"><code>$ git config --global push.default <span class="hljs-comment">#OR</span>
-$ git config --global --get push.default</code></pre><h3 id="to-set-configuration:-"><a class="header-link" href="#to-set-configuration:-"></a>To set configuration:-</h3>
+$ git config --global --get push.default</code></pre><h3 id="to-set-configuration-"><a class="header-link" href="#to-set-configuration-"></a>To set configuration:-</h3>
 <pre class="hljs"><code>$ git config --global push.default current <span class="hljs-comment">#This sets configuration to push to current on remote.</span></code></pre><h3 id="to-unset-configuration-"><a class="header-link" href="#to-unset-configuration-"></a>To unset configuration-</h3>
 <pre class="hljs"><code>$ git config --global push.default simple <span class="hljs-comment">#This unsets the configuration.</span>
-<span class="hljs-comment">#Also, simple is the default configuration of from git software.</span></code></pre><p class="img-container"><img src=".imgs_typora/image-20200726194905666.png" alt="image-20200726194905666" style="zoom:67%;" /></p>
+<span class="hljs-comment">#Also, simple is the default configuration of from git software.</span></code></pre><img src=".imgs_typora/image-20200726194905666.png" alt="image-20200726194905666" style="zoom:67%;" />
+
 <p><a href="https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushdefault">resource@git-scm.com</a></p>
 <hr>
 <h2 id="well-documentation-in-nested-folders-supported-by-github"><a class="header-link" href="#well-documentation-in-nested-folders-supported-by-github"></a>Well documentation in nested folders supported by github</h2>
@@ -62,7 +70,7 @@ $ git config --global --get push.default</code></pre><h3 id="to-set-configuratio
 <hr>
 <h2 id="empty-commit"><a class="header-link" href="#empty-commit"></a>Empty commit</h2>
 <p>You could make empty commit if you want</p>
-<pre class="hljs"><code>git commit -m<span class="hljs-string">"Initial commit"</span> --allow-empty
+<pre class="hljs"><code>git commit -m<span class="hljs-string">&quot;Initial commit&quot;</span> --allow-empty
 <span class="hljs-comment">#Something like this is very intitutive when you just created a repo and need to make an empty commit coz you need to push.</span></code></pre><hr>
 <h2 id="git-diff"><a class="header-link" href="#git-diff"></a>git diff</h2>
 <p><a href="https://www.atlassian.com/git/tutorials/saving-changes/git-diff">link to refer</a></p>
@@ -71,7 +79,7 @@ $ git config --global --get push.default</code></pre><h3 id="to-set-configuratio
 <hr>
 <p class="img-container"><img src=".imgs_typora/image-20200624220146513.png" alt="image-20200624220146513"></p>
 <hr>
-<h2 id="ignoring-multiple-folder/file-with-same-name-in-the-repository"><a class="header-link" href="#ignoring-multiple-folder/file-with-same-name-in-the-repository"></a>Ignoring multiple folder/file with same name in the repository</h2>
+<h2 id="ignoring-multiple-folderfile-with-same-name-in-the-repository"><a class="header-link" href="#ignoring-multiple-folderfile-with-same-name-in-the-repository"></a>Ignoring multiple folder/file with same name in the repository</h2>
 <table>
 <thead>
 <tr>
@@ -80,14 +88,12 @@ $ git config --global --get push.default</code></pre><h3 id="to-set-configuratio
 <th>You can prepend a pattern with a double asterisk to match directories anywhere in the repository.</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>**/logs/debug.log</code></td>
 <td><code>logs/debug.log</code> <code>build/logs/debug.log</code> <em>but not</em> <code>logs/build/debug.log</code></td>
 <td>You can also use a double asterisk to match files based on their name and the name of their parent directory.</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p><a href="https://www.atlassian.com/git/tutorials/saving-changes/gitignore">https://www.atlassian.com/git/tutorials/saving-changes/gitignore</a></p>
 <hr>
 <p class="img-container"><img src="image-20200615224535981.png" alt="image-20200615224535981"></p>
@@ -101,7 +107,7 @@ $ git config --global --get push.default</code></pre><h3 id="to-set-configuratio
 <p class="img-container"><img src="image-20200611123114811.png" alt="image-20200611123114811"></p>
 <p>or <img src="image-20200611123353308.png" alt="image-20200611123353308"></p>
 <hr>
-<h2 id="chrome-full-screen-always,-scroll-tabs-using"><a class="header-link" href="#chrome-full-screen-always,-scroll-tabs-using"></a>Chrome full screen always, scroll tabs using</h2>
+<h2 id="chrome-full-screen-always-scroll-tabs-using"><a class="header-link" href="#chrome-full-screen-always-scroll-tabs-using"></a>Chrome full screen always, scroll tabs using</h2>
 <p>ctrl+tab,ctrl+1,ctrl+pagedown,</p>
 <p>Ctrl+w to close tab.</p>
 <p><a href="https://dottech.org/181522/how-to-enter-a-url-while-viewing-chrome-in-full-screen-tip/#:~:text=Just%20view%20any%20page%20in,field%20in%20a%20popup%20window">https://dottech.org/181522/how-to-enter-a-url-while-viewing-chrome-in-full-screen-tip/#:~:text=Just%20view%20any%20page%20in,field%20in%20a%20popup%20window</a>.</p>
@@ -132,36 +138,37 @@ $ git checkout HEAD~2
 ___
 Not so commonly used, you better use ,$ git checkout commit-sha
 $ git checkout HEAD^2
-<span class="hljs-comment">#Output:- fatal: 'HEAD^2' is not a valid branch name.</span>
+<span class="hljs-comment">#Output:- fatal: &#x27;HEAD^2&#x27; is not a valid branch name.</span>
 <span class="hljs-comment">#This command is two go to the commit not directly above the current commit. And this is not usually a good usage for such feature. So you should always remember the tildayh.</span></code></pre><p>*</p>
 <p class="img-container"><img src="image-20200610213616131.png" alt="image-20200610213616131"></p>
 <p class="img-container"><img src="image-20200610213627451.png" alt="image-20200610213627451"></p>
 <p>__</p>
 <p>The modifier ~(tidle) and ^(caret) can be used to create branch too.</p>
-<p class="img-container"><img src="image-20200610222204349.png" alt="image-20200610222204349" style="zoom:50%;" /></p>
+<img src="image-20200610222204349.png" alt="image-20200610222204349" style="zoom:50%;" />
+
 <pre class="hljs"><code>$ git branch bugWork HEAD~1^2~1</code></pre><hr>
 <h2 id="git-blame"><a class="header-link" href="#git-blame"></a>git blame</h2>
 <p><a href="https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-blame">atlassian guide</a></p>
 <pre class="hljs"><code>$ git blame &lt;filename&gt;// shows all lines with each line shows the last editor of it.</code></pre><h4 id="summary"><a class="header-link" href="#summary"></a>Summary</h4>
 <p>The <code>git blame</code> command is used to examine the contents of a file line by line and see when each line was last modified and who the author of the modifications was. The output format of <code>git blame</code> can be altered with various command line options. Online Git hosting solutions like Bitbucket offer <em>blame views</em>, which offer a superior user experience to command line <code>git blame</code> usage. <code>git blame</code> and git log can be used in combination to help discover the history of a file&#39;s contents. The <code>git log</code> command has some similar blame functionality, to learn more visit the <code>git log</code> overview page.</p>
 <hr>
-<h2 id="git-log-with--p,-show-a-summary-of-changes-too."><a class="header-link" href="#git-log-with--p,-show-a-summary-of-changes-too."></a>git log with -p, show a summary of changes too.</h2>
+<h2 id="git-log-with--p-show-a-summary-of-changes-too"><a class="header-link" href="#git-log-with--p-show-a-summary-of-changes-too"></a>git log with -p, show a summary of changes too.</h2>
 <pre class="hljs"><code>$ git <span class="hljs-built_in">log</span> -p</code></pre><p><a href="https://coderwall.com/p/euwpig/a-better-git-log">https://coderwall.com/p/euwpig/a-better-git-log</a></p>
 <pre class="hljs"><code><span class="hljs-comment">#alias in need-</span>
-$ git config --global alias.lg <span class="hljs-string">"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span></code></pre><pre class="hljs"><code>git lg
+$ git config --global alias.lg <span class="hljs-string">&quot;log --color --graph --pretty=format:&#x27;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#x27; --abbrev-commit&quot;</span></code></pre><pre class="hljs"><code>git lg
 git lg -p</code></pre><hr>
-<pre class="hljs"><code>$ git config --global alias.lg1 <span class="hljs-string">"log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"</span>
+<pre class="hljs"><code>$ git config --global alias.lg1 <span class="hljs-string">&quot;log --graph --abbrev-commit --decorate --format=format:&#x27;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&#x27; --all&quot;</span>
 $ git lg1
 
 _
-$ git config --global alias.lg2 <span class="hljs-string">"log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"</span>
+$ git config --global alias.lg2 <span class="hljs-string">&quot;log --graph --abbrev-commit --decorate --format=format:&#x27;%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n&#x27;&#x27;          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)&#x27; --all&quot;</span>
 $ git lg2</code></pre><p>src:-<a href="https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs">link</a></p>
 <hr>
 <pre class="hljs"><code>$ git checkout &lt;filename&gt;
 <span class="hljs-comment">#This command restores the file from the current HEAD.</span></code></pre><hr>
 <p class="img-container"><img src="191749.png" alt="191749"></p>
 <hr>
-<h2 id="official-git-documentation-is-really-good-though."><a class="header-link" href="#official-git-documentation-is-really-good-though."></a>Official Git documentation is really good though.</h2>
+<h2 id="official-git-documentation-is-really-good-though"><a class="header-link" href="#official-git-documentation-is-really-good-though"></a>Official Git documentation is really good though.</h2>
 <p><a href="https://git-scm.com/doc">https://git-scm.com/doc</a></p>
 <hr>
 <p>Experiement-what the hell this doo...</p>
@@ -169,41 +176,41 @@ $ git lg2</code></pre><p>src:-<a href="https://stackoverflow.com/questions/10575
 <h2 id="clone-and-work-in-vscode"><a class="header-link" href="#clone-and-work-in-vscode"></a>Clone and work in vscode</h2>
 <p class="img-container"><img src="image-20200528200127242.png" alt="image-20200528200127242"></p>
 <hr>
-<h2 id="git-merge---squash---git's-love"><a class="header-link" href="#git-merge---squash---git's-love"></a>Git merge - Squash  - Git&#39;s love</h2>
+<h2 id="git-merge---squash----gits-love"><a class="header-link" href="#git-merge---squash----gits-love"></a>Git merge - Squash  - Git&#39;s love</h2>
 <p>This command will merge the changes you have made in feature, into the currently checked out branch. (but will not add any new commits to the current branch (Beauty of git))</p>
 <pre class="hljs"><code>git merge feature --squash</code></pre><p>Now you can commit with a custom message to the current branch(to which the changes are ready to be commited) that includes all the description involved for all the changes you made to master interms of all the changes that different commits have in feature branch.</p>
-<pre class="hljs"><code>$ git commit -am <span class="hljs-string">"Merging the feature &lt;newline&gt;&lt;newline&gt; paragraph explaining all the changes added by this commit, and the whole description of the meging."</span></code></pre><hr>
+<pre class="hljs"><code>$ git commit -am <span class="hljs-string">&quot;Merging the feature &lt;newline&gt;&lt;newline&gt; paragraph explaining all the changes added by this commit, and the whole description of the meging.&quot;</span></code></pre><hr>
 <h2 id="want-to-view-history-of-a-particular-branch-from-anywhere-"><a class="header-link" href="#want-to-view-history-of-a-particular-branch-from-anywhere-"></a>Want to view history of a particular branch from anywhere-</h2>
 <pre class="hljs"><code>$ git <span class="hljs-built_in">log</span> &lt;branch-name&gt;
 $ git <span class="hljs-built_in">log</span> --graph <span class="hljs-comment">#this shows in graph form(so called :(</span></code></pre><h2 id="git-merge-1"><a class="header-link" href="#git-merge-1"></a>Git merge</h2>
 <p>Merge commits are unique against other commits in the fact that they have two parent commits. When creating a merge commit Git will attempt to auto magically merge the separate histories for you. If Git encounters a piece of data that is changed in both histories it will be unable to automatically combine them. This scenario is a version control conflict and Git will need user intervention to continue.  Source: <a href="https://www.atlassian.com/git/tutorials/using-branches/git-merge"> best ever link on internet@atlassian.com♥</a></p>
 <pre class="hljs"><code><span class="hljs-comment">#Syntax</span>
 $ git merge feature <span class="hljs-comment"># this will merge to the currently checked out branch/Head</span>
-<span class="hljs-comment">#Important thing to notice is that all newer commits in feature branch will be added to current tip of the checkedout branch and if you sepecify --no-ff option you'll be prompted for an additional identifier branch merge commit (with defined merging branch names in that. That's really good if you want to track later how and when did you merge any branch. This feature can be used in below multiple branch merging strategy too.)</span>
+<span class="hljs-comment">#Important thing to notice is that all newer commits in feature branch will be added to current tip of the checkedout branch and if you sepecify --no-ff option you&#x27;ll be prompted for an additional identifier branch merge commit (with defined merging branch names in that. That&#x27;s really good if you want to track later how and when did you merge any branch. This feature can be used in below multiple branch merging strategy too.)</span>
 $ git merge feature feature2 feature3 <span class="hljs-comment"># This will merge all the branches specified to the current checked out branch. </span></code></pre><pre class="hljs"><code>$ git merge feature <span class="hljs-comment"># This will simply put all the newer commits made in feature branch to the current branch.</span>
 <span class="hljs-comment">#-no-ff just means that it facilitates you to add an additional message to put after the merge.</span>
 $ git merge --no-ff feature <span class="hljs-comment"># This will open vi editor to let you enter the closing commit message after the merge has finished. This will DO SAME AS ABOVE, but will ASK FOR COMMIT MESSAGE for the purpose of record keeping regarding the merge of the branch, and you can explain all about it there. </span></code></pre><p>This is verbose, and merge record keeping friendly while the former one doesn&#39;t write any commit message for the merging.
 You can also explicitly specify the message via -m switch shown below.</p>
-<pre class="hljs"><code>$ git merge feature --no-ff -m <span class="hljs-string">"Kuch Kuch hota haigit log!"</span>
+<pre class="hljs"><code>$ git merge feature --no-ff -m <span class="hljs-string">&quot;Kuch Kuch hota haigit log!&quot;</span>
 <span class="hljs-comment"># Both these commands are valid and do as expected</span>
-$ git merge --no-ff feature -m <span class="hljs-string">"Squashed from feature branch, yipee!!"</span></code></pre><p>src: <a href="https://git-scm.com/docs/git-merge">git-scm.com - link</a></p>
+$ git merge --no-ff feature -m <span class="hljs-string">&quot;Squashed from feature branch, yipee!!&quot;</span></code></pre><p>src: <a href="https://git-scm.com/docs/git-merge">git-scm.com - link</a></p>
 <p>Another <strong>aspect</strong>-</p>
-<pre class="hljs"><code>$ git merge --no-ff --no-commit feature <span class="hljs-comment">#This will just merge the changes but will not commit. Hell, yeah, its the right thing to choose for reviewing the changes after the merge and you can get rid of the merge changes if you don't like them, with the git reset --hard command.</span></code></pre><p>**</p>
-<h2 id="struck-with-failed-merge??"><a class="header-link" href="#struck-with-failed-merge??"></a>Struck with failed merge??</h2>
+<pre class="hljs"><code>$ git merge --no-ff --no-commit feature <span class="hljs-comment">#This will just merge the changes but will not commit. Hell, yeah, its the right thing to choose for reviewing the changes after the merge and you can get rid of the merge changes if you don&#x27;t like them, with the git reset --hard command.</span></code></pre><p>**</p>
+<h2 id="struck-with-failed-merge"><a class="header-link" href="#struck-with-failed-merge"></a>Struck with failed merge??</h2>
 <pre class="hljs"><code>$ git merge --abort</code></pre><p>The second syntax (&quot;<code>git merge --abort</code>&quot;) can only be run after the merge has resulted in conflicts. <em>git merge --abort</em> will abort the merge process and try to reconstruct the pre-merge state. However, if there were uncommitted changes when the merge started (and especially if those changes were further modified after the merge was started), <em>git merge --abort</em> will in some cases be unable to reconstruct the original (pre-merge) changes. Therefore:
 <strong>Warning</strong>: Running <em>git merge</em> with non-trivial uncommitted changes is discouraged: while possible, it may leave you in a state that is hard to back out of in the case of a conflict.</p>
 <p>**</p>
 <h3 id="dealing-with-merge-conflict"><a class="header-link" href="#dealing-with-merge-conflict"></a>Dealing with merge conflict</h3>
 <p>Just remove the arrow heads and </p>
-<pre class="hljs"><code>$ git merge --continue
-$ git commit -am <span class="hljs-string">"Merging is done, So we have such such feature...now..!!"</span></code></pre><p>The third syntax (&quot;<code>git merge --continue</code>&quot;) can only be run after the merge has resulted in conflicts. </p>
+<pre class="hljs"><code>$ git merge --<span class="hljs-built_in">continue</span>
+$ git commit -am <span class="hljs-string">&quot;Merging is done, So we have such such feature...now..!!&quot;</span></code></pre><p>The third syntax (&quot;<code>git merge --continue</code>&quot;) can only be run after the merge has resulted in conflicts. </p>
 <pre class="hljs"><code>git <span class="hljs-keyword">merge</span> feature feature2 feature3 feature4
-//<span class="hljs-keyword">When</span> the above command fails that means shit has happened <span class="hljs-keyword">and</span> you need <span class="hljs-keyword">to</span> <span class="hljs-keyword">do</span> <span class="hljs-keyword">some</span> advance <span class="hljs-keyword">stuff</span> mentioned <span class="hljs-keyword">on</span> stackoverflow <span class="hljs-keyword">and</span> understand the terminologies <span class="hljs-keyword">like</span> -x</code></pre><p class="img-container"><img src="image-20200529115122093.png" alt="image-20200529115122093"></p>
+//<span class="hljs-keyword">When</span> the above command fails that means shit has happened <span class="hljs-keyword">and</span> you need <span class="hljs-keyword">to</span> <span class="hljs-keyword">do</span> <span class="hljs-keyword">some</span> advance stuff mentioned <span class="hljs-keyword">on</span> stackoverflow <span class="hljs-keyword">and</span> understand the terminologies <span class="hljs-keyword">like</span> -x</code></pre><p class="img-container"><img src="image-20200529115122093.png" alt="image-20200529115122093"></p>
 <hr>
 <h2 id="you-must-make-multiline-comments-on-git-commits"><a class="header-link" href="#you-must-make-multiline-comments-on-git-commits"></a>You must make multiline comments on git commits</h2>
 <p class="img-container"><img src="image-20200528191909511.png" alt="image-20200528191909511"></p>
 <hr>
-<h2 id="fireship.io"><a class="header-link" href="#fireship.io"></a>Fireship.io</h2>
+<h2 id="fireshipio"><a class="header-link" href="#fireshipio"></a>Fireship.io</h2>
 <p>Git lens is helpfuf in viewing changes in files in previous commits and all branches - </p>
 <p><a href="https://www.youtube.com/watch?v=HkdAHXoRtos">https://www.youtube.com/watch?v=HkdAHXoRtos</a></p>
 <hr>
@@ -214,29 +221,29 @@ $ git commit -am <span class="hljs-string">"Merging is done, So we have such suc
 <p class="img-container"><img src="image-20200528191050164.png" alt="image-20200528191050164"></p>
 <p>Apply Latest Stash, Apply stash, Drop Stash, Pop Latest Stash, Pop Stash, Stash, Stash (include Untracked)</p>
 <hr>
-<h2 id="use-the-below-command-to-get-rid-of-all-the-changes-made-to-the-tracked-files,-and-it-ignores-all-files-which-are-not-under-tracking."><a class="header-link" href="#use-the-below-command-to-get-rid-of-all-the-changes-made-to-the-tracked-files,-and-it-ignores-all-files-which-are-not-under-tracking."></a>Use the below command to get rid of all the changes made to the tracked files, and it ignores all files which are not under tracking.</h2>
+<h2 id="use-the-below-command-to-get-rid-of-all-the-changes-made-to-the-tracked-files-and-it-ignores-all-files-which-are-not-under-tracking"><a class="header-link" href="#use-the-below-command-to-get-rid-of-all-the-changes-made-to-the-tracked-files-and-it-ignores-all-files-which-are-not-under-tracking"></a>Use the below command to get rid of all the changes made to the tracked files, and it ignores all files which are not under tracking.</h2>
 <p>This will unstage and delete them forever.</p>
 <pre class="hljs"><code>$ git reset --hard</code></pre><hr>
 <h3 id="this-will-just-unstage-the-changes-made-"><a class="header-link" href="#this-will-just-unstage-the-changes-made-"></a>This will just unstage the changes made-</h3>
 <pre class="hljs"><code>$ git reset</code></pre><hr>
 <h2 id="use-dot-and-dashes-to-name-branches-"><a class="header-link" href="#use-dot-and-dashes-to-name-branches-"></a>Use Dot and dashes to name branches-</h2>
-<pre class="hljs"><code><span class="hljs-built_in">release</span>-v1<span class="hljs-number">.2</span></code></pre><hr>
-<h2 id="setting-default-upstream-without-using-git-push--u-origin-<some-branch>"><a class="header-link" href="#setting-default-upstream-without-using-git-push--u-origin-<some-branch>"></a>Setting default upstream without using git push -u origin <some-branch></h2>
+<pre class="hljs"><code><span class="hljs-attribute">release</span>-v<span class="hljs-number">1</span>.<span class="hljs-number">2</span></code></pre><hr>
+<h2 id="setting-default-upstream-without-using-git-push--u-origin-"><a class="header-link" href="#setting-default-upstream-without-using-git-push--u-origin-"></a>Setting default upstream without using git push -u origin <some-branch></h2>
 <p>The only problem with this approach is that the target branch must be present locally, i.e., origin/targetBranch.
 So, you cannot set a remote for a that you created at the instant, you can only set it via <code>git push -u origin master</code>. Its not safe</p>
-<pre class="hljs"><code>$ git branch &lt;<span class="hljs-built_in">local</span>-branch-name&gt; --set-upstream-to=origin/backup
+<pre class="hljs"><code>$ git branch &lt;local-branch-name&gt; --set-upstream-to=origin/backup
 <span class="hljs-comment"># E.g 1.,</span>
 $ git branch poma  --set-upstream-to=origin/backup
-<span class="hljs-comment"># Output: Branch 'poma' set up to track remote branch 'backup' from 'origin'.</span>
-<span class="hljs-comment"># Note: Branch names could be different though, isn't amazing.</span>
+<span class="hljs-comment"># Output: Branch &#x27;poma&#x27; set up to track remote branch &#x27;backup&#x27; from &#x27;origin&#x27;.</span>
+<span class="hljs-comment"># Note: Branch names could be different though, isn&#x27;t amazing.</span>
 <span class="hljs-comment"># E.g 2.,</span>
 $ git branch --set-upstream-to=origin/backup <span class="hljs-comment">#Currently checkedout branch is backup.</span>
-<span class="hljs-comment"># Output: Branch 'backup' set up to track remote branch 'backup' from 'origin'.</span></code></pre><h3 id="get-list-of-default-upstreams-for-all-branches-"><a class="header-link" href="#get-list-of-default-upstreams-for-all-branches-"></a>Get list of default upstreams for all branches-</h3>
+<span class="hljs-comment"># Output: Branch &#x27;backup&#x27; set up to track remote branch &#x27;backup&#x27; from &#x27;origin&#x27;.</span></code></pre><h3 id="get-list-of-default-upstreams-for-all-branches-"><a class="header-link" href="#get-list-of-default-upstreams-for-all-branches-"></a>Get list of default upstreams for all branches-</h3>
 <pre class="hljs"><code>$ git branch -vv
 <span class="hljs-comment"># Output:             || These are corresponding set upstreams for each branch.</span>
 * backup 9de0dc3 [origin/backup] fileadded
   poma   9de0dc3 [origin/backup] fileadded
-  temp   9de0dc3 fileadded</code></pre><h3 id="removing-default-upstreams-of-a-branch-"><a class="header-link" href="#removing-default-upstreams-of-a-branch-"></a>Removing  default upstreams of a branch-</h3>
+  temp   9de0dc3 fileadded</code></pre><h3 id="removing--default-upstreams-of-a-branch-"><a class="header-link" href="#removing--default-upstreams-of-a-branch-"></a>Removing  default upstreams of a branch-</h3>
 <pre class="hljs"><code>$ git branch --unset-upstream <span class="hljs-comment">#This will unset for currently checkedout branch.</span>
 _
 $ git branch poma  --unset-upstream 
@@ -249,7 +256,7 @@ You should never disable autocrlf, it&#39;s actually good for cross platform dev
 <p>Amazing Tags in github:</p>
 <p class="img-container"><img src="image-20200522084031669.png" alt="image-20200522084031669"></p>
 <p class="img-container"><img src="image-20200522084048173.png" alt="image-20200522084048173"></p>
-<h5 id="above-image-also-describes-about-describe-in-git-:d"><a class="header-link" href="#above-image-also-describes-about-describe-in-git-:d"></a>Above image also describes about describe in git :D</h5>
+<h5 id="above-image-also-describes-about-describe-in-git-d"><a class="header-link" href="#above-image-also-describes-about-describe-in-git-d"></a>Above image also describes about describe in git :D</h5>
 <hr>
 <h2 id="git-organization"><a class="header-link" href="#git-organization"></a>Git Organization</h2>
 <p>Assigning base permission to the organization, so that everone in the organization can push to the repositories. While if set to <strong>Read</strong>, they&#39;ll be able to see private repositories and create pull requests to them.</p>
@@ -262,7 +269,7 @@ You should never disable autocrlf, it&#39;s actually good for cross platform dev
 <strong>goal</strong> to show the goals for the exercise
 <strong>hide goal</strong> to hide the goals.</p>
 <hr>
-<h2 id="git-rebase:"><a class="header-link" href="#git-rebase:"></a>Git rebase:</h2>
+<h2 id="git-rebase"><a class="header-link" href="#git-rebase"></a>Git rebase:</h2>
 <pre class="hljs"><code>$ git checkout bugFix
 $ git rebase master
 <span class="hljs-comment"># This will place the bugFix brach(currently checked out branch)(you should think of it as pointer), on the top of master.</span>
@@ -274,8 +281,8 @@ $ git rebase bugFix
 <span class="hljs-comment"># Or you can read it like - set base as master of bugFix</span>
 $ git rebase bugFix master
 <span class="hljs-comment"># This sets base of master to bugFix.</span>
-<span class="hljs-comment"># Or you can read it like - set base as bugFix of master.</span></code></pre><pre class="hljs"><code>Note, <span class="hljs-number">1</span>st parameter <span class="hljs-keyword">is</span> setBaseAs, <span class="hljs-keyword">and</span> <span class="hljs-number">2</span>nd(<span class="hljs-keyword">optional</span>, <span class="hljs-keyword">if</span> absent sets <span class="hljs-keyword">to</span> currently checkedout branch) <span class="hljs-keyword">is</span> setBaseTo.</code></pre><p>*</p>
-<h4 id="solving-at-learngitbranching.js.org"><a class="header-link" href="#solving-at-learngitbranching.js.org"></a>Solving at learngitbranching.js.org</h4>
+<span class="hljs-comment"># Or you can read it like - set base as bugFix of master.</span></code></pre><pre class="hljs"><code><span class="hljs-literal">Note</span>, <span class="hljs-number">1</span>st <span class="hljs-keyword">parameter</span> <span class="hljs-keyword">is</span> setBaseAs, <span class="hljs-keyword">and</span> <span class="hljs-number">2</span>nd(optional, <span class="hljs-keyword">if</span> absent sets <span class="hljs-keyword">to</span> currently checkedout branch) <span class="hljs-keyword">is</span> setBaseTo.</code></pre><p>*</p>
+<h4 id="solving-at-learngitbranchingjsorg"><a class="header-link" href="#solving-at-learngitbranchingjsorg"></a>Solving at learngitbranching.js.org</h4>
 <p class="img-container"><img src="image-20200610175028964.png" alt="image-20200610175028964"></p>
 <p>*</p>
 <p class="img-container"><img src="image-20200514190110995.png" alt="image-20200514190110995"></p>
@@ -291,14 +298,14 @@ $ git rebase bugFix master
 <p>In order to reverse changes and <em>share</em> those reversed changes with others, we need to use <code>git revert</code>. Let&#39;s see it in action.</p>
 <pre class="hljs"><code>git revert HEAD</code></pre><p class="img-container"><img src="image-20200514183155902.png" alt="image-20200514183155902"></p>
 <hr>
-<h2 id="git-reset---**reset-current-branch**-to-older-commit--"><a class="header-link" href="#git-reset---**reset-current-branch**-to-older-commit--"></a>Git Reset - <strong>reset current branch</strong> to older commit -</h2>
+<h2 id="git-reset---reset-current-branch-to-older-commit--"><a class="header-link" href="#git-reset---reset-current-branch-to-older-commit--"></a>Git Reset - <strong>reset current branch</strong> to older commit -</h2>
 <p>#move to previous commit, #go to previous commit, #undo commit, #go back to previous commit, #undo commit, # navigate to previous commit, #git reset, #reset to previous state, </p>
 <p><code>git reset</code> reverts changes by moving a branch reference backwards in time to an older commit. In this sense you can think of it as &quot;rewriting history;&quot; <code>git reset</code> will move a branch backwards as if the commit had never been made in the first place.(this is actually bad for people on remote repositories)</p>
 <p>In order to reverse changes and <em>share</em> those reversed changes with others, we need to use <code>git revert</code>. Let&#39;s see it in action.</p>
 <p>Let&#39;s see what that looks like:</p>
 <pre class="hljs"><code>$ git reset HEAD~2 <span class="hljs-comment"># HEAD~2 represents two commit above in the commit history. </span>
 <span class="hljs-comment"># The above command will unstage the changes, but will keep the changes in the current HEAD. And the desired branch is move to the desired state.</span>
-$ git checkout <span class="hljs-_">-f</span> <span class="hljs-comment">#This will simply force checkout current branch.THIS IS IN NEED COMMAND TO GET THE CURRENT HEAD TO THE COMMIT WE JUST MOVED IT TO.</span>
+$ git checkout -f <span class="hljs-comment">#This will simply force checkout current branch.THIS IS IN NEED COMMAND TO GET THE CURRENT HEAD TO THE COMMIT WE JUST MOVED IT TO.</span>
 
 $ git reset --hard HEAD~1  <span class="hljs-comment"># HEAD~1 represents two commit above in the commit history.</span>
 <span class="hljs-comment"># The above command will discard all changes and checkout to the commit where the branch has been  destined to reset. (git reset HEAD~1 --hard) This would have behaved in same manner.</span>
@@ -306,70 +313,71 @@ $ git reset --hard e735ddf0bdf7e122e08b9431a00a84f7ecfcba6b <span class="hljs-co
 <span class="hljs-comment"># Notice: --hard flag is important as it actullay alters the working directory files and changes. This will actually make the current working directory to look like at the specified target(commit) the changes in working directory, while git reset just manages to move the commit head but do not make any changes in the working history.</span></code></pre><hr>
 <h2 id="relative-refs"><a class="header-link" href="#relative-refs"></a>Relative refs</h2>
 <p>One of the most common ways I use relative refs is to <strong>move branches around</strong>. You can <strong>directly reassign a branch to a commit with the <code>-f</code> option</strong>. So something like:</p>
-<pre class="hljs"><code>git branch <span class="hljs-_">-f</span> master HEAD~3
+<pre class="hljs"><code>git branch -f master HEAD~3
 $ git <span class="hljs-built_in">log</span> master <span class="hljs-comment">#This will show logs for master branch.</span>
 $ git <span class="hljs-built_in">log</span> otherBranch <span class="hljs-comment">#This will show logs for otherBranch.</span></code></pre><p>moves (by force) the master branch to three parents behind HEAD.</p>
 <p class="img-container"><img src="image-20200514175822230.png" alt="image-20200514175822230"></p>
 <hr>
-<h3 id="when-adding-files/folder-in-.gitignore-doesn't-work,-you-need-to-do-this..."><a class="header-link" href="#when-adding-files/folder-in-.gitignore-doesn't-work,-you-need-to-do-this..."></a>When adding files/folder in .gitignore doesn&#39;t work, you need to do this...</h3>
+<h3 id="when-adding-filesfolder-in-gitignore-doesnt-work-you-need-to-do-this"><a class="header-link" href="#when-adding-filesfolder-in-gitignore-doesnt-work-you-need-to-do-this"></a>When adding files/folder in .gitignore doesn&#39;t work, you need to do this...</h3>
 <p class="img-container"><img src="image-20200507182811898.png" alt="image-20200507182811898"></p>
 <hr>
 <pre class="hljs"><code>$ git commit -m file\ m\ and\ and\ ss\ are\ adeed. <span class="hljs-comment"># Works too.</span></code></pre><hr>
-<h2 id="make-a-branch-at-an-earlier-commit-in-current-branch:"><a class="header-link" href="#make-a-branch-at-an-earlier-commit-in-current-branch:"></a>Make a branch at an earlier commit in current branch:</h2>
+<h2 id="make-a-branch-at-an-earlier-commit-in-current-branch"><a class="header-link" href="#make-a-branch-at-an-earlier-commit-in-current-branch"></a>Make a branch at an earlier commit in current branch:</h2>
 <pre class="hljs"><code>git checkout HEAD^ or git checkout &lt;commit-hash&gt; or git checkout HEAD~3 (3 commits back from now)
 git checkout -b myDesiredBranchYikes
 <span class="hljs-comment"># Hint: when you have checked out at an earlier commit, you can view the commit history via git log, to see what are the earlier commits to this HEAD.</span></code></pre><p>Or a simple single command:-</p>
-<pre class="hljs"><code>git checkout -b old-state 0d1d7<span class="hljs-built_in">fc</span>32
+<pre class="hljs"><code>git checkout -b old-state 0d1d7fc32
 <span class="hljs-comment">#Or you could have done it like that-</span>
-git branch <span class="hljs-_">-f</span> old-state &lt;commit-sha&gt;
+git branch -f old-state &lt;commit-sha&gt;
 <span class="hljs-comment">#-f is significant if a branch with same name already exists, thus -f will force overwrite that branch completely.</span>
 git branch -C &lt;commit-sha&gt; old-state
 <span class="hljs-comment">#This would have worked in same way.(Note: This syntax is little odd to remember, as source is first and second is target{to be created.})</span></code></pre><hr>
-<h2 id="edit-content-and-name-both-of-last-commit:"><a class="header-link" href="#edit-content-and-name-both-of-last-commit:"></a>Edit CONTENT AND NAME BOTH of last commit:</h2>
-<h2 id="edit-the-content-only-of-last-commit:"><a class="header-link" href="#edit-the-content-only-of-last-commit:"></a>Edit the CONTENT ONLY of last commit:</h2>
+<h2 id="edit-content-and-name-both-of-last-commit"><a class="header-link" href="#edit-content-and-name-both-of-last-commit"></a>Edit CONTENT AND NAME BOTH of last commit:</h2>
+<h2 id="edit-the-content-only-of-last-commit"><a class="header-link" href="#edit-the-content-only-of-last-commit"></a>Edit the CONTENT ONLY of last commit:</h2>
 <h2 id="change-the-message-only-of-last-commit"><a class="header-link" href="#change-the-message-only-of-last-commit"></a>Change the MESSAGE ONLY of last commit</h2>
 <p>*beware: ANY<code>git --amend</code> MADE TO COMMIT THAT WAS PUSHED TO REMOTE EARLIER WOULD CAUSE MERGE ERROR IF YOU PUSH AGAIN{it will say your head is behind}. TO GET IT SOLVED YOU SIMPLY NEED TO MERGE IT VIA <code>git pull</code>. A simple thumb rule would be to NOT USE GIT --amend for the commits you have pushed to remote earlier(==though its completely safe to use if you do a git merge via <code>git pull</code> after you use <code>git commit --amend</code>==).</p>
-<p> <img src=".imgs_typora/image-20200712220348692.png" alt="image-20200712220348692" style="zoom: 67%;" /></p>
+ <img src=".imgs_typora/image-20200712220348692.png" alt="image-20200712220348692" style="zoom: 67%;" />
+
 <pre class="hljs"><code>$ git add . 
 <span class="hljs-comment"># Or add individual files*(git add -A will does exactly same git add .)</span>
-<span class="hljs-comment"># IMPORTANT: If you haven't added any files, that means you have just changed some files only, then you must prefer(#2 ADDITIONALLY) that as that is one liner.</span>
-$ git commit --amend -m <span class="hljs-string">"Feature 1 - Cool"</span> 
+<span class="hljs-comment"># IMPORTANT: If you haven&#x27;t added any files, that means you have just changed some files only, then you must prefer(#2 ADDITIONALLY) that as that is one liner.</span>
+$ git commit --amend -m <span class="hljs-string">&quot;Feature 1 - Cool&quot;</span> 
 <span class="hljs-comment"># -m &lt;message&gt; if ommited you may edit the older message, edited in the vim editor that is follwed.</span>
-<span class="hljs-comment"># Hence you'll be prompted to change the name of the commit, with new changes included.</span>
+<span class="hljs-comment"># Hence you&#x27;ll be prompted to change the name of the commit, with new changes included.</span>
 _
-$ git commit --amend <span class="hljs-_">-a</span> 
+$ git commit --amend -a 
 <span class="hljs-comment"># -a parameter will simply include the changes in current tracking area.</span>
 <span class="hljs-comment">#You can alwasy see whats in tracking area via, git staus and all the green things{staged changes} are in tracking area and all red things are not in tracking area{non staged changes}.</span>
 <span class="hljs-comment"># vi editor will be followed to edit older commit message.</span>
-$ git commit --amend -am <span class="hljs-string">"New Message, forge older message!!"</span> 
+$ git commit --amend -am <span class="hljs-string">&quot;New Message, forge older message!!&quot;</span> 
 <span class="hljs-comment"># Changed files will add to old commit.</span>
 _
 $ git add . <span class="hljs-comment"># or add individual files</span>
 $ git commit --amend --no-edit
 THIS IS THE MOST REQUIRED COMMAND.
-<span class="hljs-comment"># Since explicitly specified the staged area, it\'ll commit all changes.</span>
+<span class="hljs-comment"># Since explicitly specified the staged area, it\&#x27;ll commit all changes.</span>
 <span class="hljs-comment"># --no-edit: SPECIFIES THAT WE DO NOT WANT TO CHANGE THE NAME OF THE OLDER COMMIT.</span>
 _
 $ git commit --amend 
 <span class="hljs-comment">#Will not commit any changes unless added explicitly to the staged zone(i.e.,git add .) #Also, you can clear the staged zone via, {$ git reset}</span>
-<span class="hljs-comment">#vi editor will be followed to edit older commit message, changes aren't included.</span></code></pre><pre class="hljs"><code>$ git commit -h |&amp; grep <span class="hljs-string">"\-a"</span>
+<span class="hljs-comment">#vi editor will be followed to edit older commit message, changes aren&#x27;t included.</span></code></pre><pre class="hljs"><code>$ git commit -h |&amp; grep <span class="hljs-string">&quot;\-a&quot;</span>
 //Output:-
-<span class="hljs-_">-a</span> 
+-a 
 <span class="hljs-comment">#  -a, --all             commit all changed files</span>
 $ Anytime you want to see the staged changes, just <span class="hljs-keyword">do</span> git status, and green ones are-&gt; staged, and red ones are not. So, anytime you want clean th staging area, just <span class="hljs-keyword">do</span> {git reset}</code></pre><p>Source: <a href="https://ohshitgit.com/#change-last-commit">ohshitgit.com</a> - amazing must read website..</p>
 <hr>
-<h2 id="commit-simply,-live-with-git-simply:"><a class="header-link" href="#commit-simply,-live-with-git-simply:"></a>Commit simply, live with git simply:</h2>
-<pre class="hljs"><code>git commit -am <span class="hljs-string">"firstCommit"</span>
-git commit -am <span class="hljs-string">"secondCommit"</span>
-git commit -am <span class="hljs-string">"thirdCommit"</span></code></pre><hr>
-<h2 id="detach-head(move-to-previous-commit)"><a class="header-link" href="#detach-head(move-to-previous-commit)"></a>Detach Head(move to previous commit)</h2>
+<h2 id="commit-simply-live-with-git-simply"><a class="header-link" href="#commit-simply-live-with-git-simply"></a>Commit simply, live with git simply:</h2>
+<pre class="hljs"><code>git commit -am <span class="hljs-string">&quot;firstCommit&quot;</span>
+git commit -am <span class="hljs-string">&quot;secondCommit&quot;</span>
+git commit -am <span class="hljs-string">&quot;thirdCommit&quot;</span></code></pre><hr>
+<h2 id="detach-headmove-to-previous-commit"><a class="header-link" href="#detach-headmove-to-previous-commit"></a>Detach Head(move to previous commit)</h2>
 <pre class="hljs"><code>git checkout HEAD^</code></pre><hr>
 <h2 id="git-commit-help"><a class="header-link" href="#git-commit-help"></a>Git commit help</h2>
 <pre class="hljs"><code>git commit -h
 git add -h</code></pre><pre class="hljs"><code>git add -A (adds all tracked and untracked files)
 git add . (does same)
 git add * (does same but excludes hidden files)</code></pre><hr>
-<h2 id="move-branch-on-a-previous-commit(commonly-needed):"><a class="header-link" href="#move-branch-on-a-previous-commit(commonly-needed):"></a>Move branch on a previous commit(commonly needed):</h2>
+<h2 id="move-branch-on-a-previous-commitcommonly-needed"><a class="header-link" href="#move-branch-on-a-previous-commitcommonly-needed"></a>Move branch on a previous commit(commonly needed):</h2>
 <p class="img-container"><img src="image-20200505211531257.png" alt="image-20200505211531257"></p>
 <pre class="hljs"><code>git branch -h 
 <span class="hljs-comment">#shows help pages for git branch. And outputs the infomation for -f switch</span>
@@ -383,19 +391,19 @@ git add * (does same but excludes hidden files)</code></pre><hr>
 
 __
 git reset HEAD^
-<span class="hljs-comment"># this command will just remove the last commit from the history, but will keep the files, changes as it is.(Doesn't alter any change in the current state of the repository.)</span>
+<span class="hljs-comment"># this command will just remove the last commit from the history, but will keep the files, changes as it is.(Doesn&#x27;t alter any change in the current state of the repository.)</span>
 <span class="hljs-comment">#In git log,the last commit is no longer there.</span></code></pre><p>Also: </p>
-<pre class="hljs"><code>git reset --hard 0d1d7<span class="hljs-built_in">fc</span>32
+<pre class="hljs"><code>git reset --hard 0d1d7fc32
 <span class="hljs-comment"># works like above but, this will move your repository to the commit specified.</span>
 
 __
 git stash
-git reset --hard 0d1d7<span class="hljs-built_in">fc</span>32
+git reset --hard 0d1d7fc32
 git stash pop
 <span class="hljs-comment"># do these if you want to save the current un</span></code></pre><hr>
 <h2 id="checkout-at-particular-commit"><a class="header-link" href="#checkout-at-particular-commit"></a>Checkout at particular commit</h2>
-<pre class="hljs"><code>git checkout 0d1d7<span class="hljs-built_in">fc</span>32 <span class="hljs-comment"># move to any previous commit temporarily</span>
-git checkout 0d1d <span class="hljs-comment"># would work too, <span class="hljs-doctag">NOTE:</span> atleast 4 characters are needed to work.</span></code></pre><hr>
+<pre class="hljs"><code><span class="hljs-attribute">git</span> checkout <span class="hljs-number">0</span>d<span class="hljs-number">1</span>d<span class="hljs-number">7</span>fc<span class="hljs-number">32</span> # move to any previous commit temporarily
+<span class="hljs-attribute">git</span> checkout <span class="hljs-number">0</span>d<span class="hljs-number">1</span>d # would work too, NOTE: atleast <span class="hljs-number">4</span> characters are needed to work.</code></pre><hr>
 <h2 id="the-tidle-operator-in-github"><a class="header-link" href="#the-tidle-operator-in-github"></a>The tidle operator in github</h2>
 <p>(pronounciation - tildeahh)</p>
 <pre class="hljs"><code>git checkout HEAD~
@@ -403,27 +411,27 @@ git checkout HEAD^
 <span class="hljs-comment">#Both the commands above are identical. And, now you are one level up in the commit history.</span>
 git checkout HEAD~3
 <span class="hljs-comment">#so now you have got to 3 levels up in commit history.</span></code></pre><hr>
-<h2 id="moving-upward(^-caret-symbol)-in-a-git-repository"><a class="header-link" href="#moving-upward(^-caret-symbol)-in-a-git-repository"></a>Moving upward(^ caret symbol) in a git repository</h2>
+<h2 id="moving-upward-caret-symbol-in-a-git-repository"><a class="header-link" href="#moving-upward-caret-symbol-in-a-git-repository"></a>Moving upward(^ caret symbol) in a git repository</h2>
 <pre class="hljs"><code>git checkout HEAD^ 
 <span class="hljs-comment"># move up a single commit (unless you have a single commit in your history.)</span></code></pre><pre class="hljs"><code>git checkout HEAD^
 git checkout HEAD^
 git checkout HEAD^
 <span class="hljs-comment">#so now you have got to 3 levels up in commit history.</span></code></pre><hr>
-<h2 id="what-the-hell-is-head?"><a class="header-link" href="#what-the-hell-is-head?"></a>What the hell is HEAD?</h2>
+<h2 id="what-the-hell-is-head"><a class="header-link" href="#what-the-hell-is-head"></a>What the hell is HEAD?</h2>
 <p class="img-container"><img src="image-20200505202921231.png" alt="image-20200505202921231"></p>
 <hr>
-<h3 id="https://learngitbranching.js.org/"><a class="header-link" href="#https://learngitbranching.js.org/"></a><a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></h3>
+<h3 id="httpslearngitbranchingjsorg"><a class="header-link" href="#httpslearngitbranchingjsorg"></a><a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></h3>
 <hr>
 <h1 id="making-use-of-collaborations-on-github"><a class="header-link" href="#making-use-of-collaborations-on-github"></a>Making use of collaborations on github</h1>
 <p>The first techniuque is, make a fork of someone&#39;s repo (repo-original)(this will make of copy of the repo in your github account, say repo-copy) and then make changed to your copy of the repo(repo-copy). And push the code to your repo-copy in github(via git push). So, when you are ready with your changes, make a pull request from your repo-copy. Like :</p>
 <p class="img-container"><img src="image-20200504172905367.png" alt="image-20200504172905367"></p>
 <p>and this will ask you the TARGET repo to which you want to make a request. And the actual user of the repo has to merge the pull request to the repository(he/she gets the link for that in the associated email). Or he/she can do it via visiting the repository and clicking the available pull request like belo:w-</p>
 <p><img src="image-20200504174144199.png" alt="image-20200504174144199">. And merging it to the repo with a single click.</p>
-<h2 id="better-way:-"><a class="header-link" href="#better-way:-"></a>Better way:-</h2>
+<h2 id="better-way-"><a class="header-link" href="#better-way-"></a>Better way:-</h2>
 <blockquote>
 <p>The <strong>second method</strong> is to add the other person as collaborator in the original repository, in which we are supposed to work collaboratively. This can be done, via visiting the settings of the repository and going to <strong>Manage Access</strong> and clicking <strong>Invite a collaborator</strong>. Doing this will send a link to email to the other user for the inviation and once the user accepts that, it gets the direct push access to the entire repository. This is the <strong>best</strong> way to collaborate as the the other uses then gets the direct push access to the repository without any forked copy of other thing.</p>
 </blockquote>
-<h2 id="github-pages-jekyll-error-build-erro:"><a class="header-link" href="#github-pages-jekyll-error-build-erro:"></a>Github pages jekyll error build erro:</h2>
+<h2 id="github-pages-jekyll-error-build-erro"><a class="header-link" href="#github-pages-jekyll-error-build-erro"></a>Github pages jekyll error build erro:</h2>
 <p><a href="https://stackoverflow.com/questions/25262183/github-page-build-failure">https://stackoverflow.com/questions/25262183/github-page-build-failure</a></p>
 <hr>
 <h2 id="how-contributing-works"><a class="header-link" href="#how-contributing-works"></a>How contributing works</h2>
@@ -431,14 +439,14 @@ git checkout HEAD^
 <p>The process for contributing to a public repository in GitHub starts by forking the repository, then <strong>pushing the change onto the forked</strong>, then creating a <strong>pull request onto the original repository</strong>. After that comes the role of the project owner to review and take action (merge/decline) of the requested code change.</p>
 <pre class="hljs"><code>If <span class="hljs-keyword">the</span> repository is public others can fork <span class="hljs-keyword">it</span>, commit <span class="hljs-built_in">to</span> their own fork.
 
-They can <span class="hljs-keyword">then</span> ask you <span class="hljs-built_in">to</span> pull some <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> changes <span class="hljs-keyword">in</span> their fork <span class="hljs-keyword">into</span> your repository via <span class="hljs-keyword">a</span> pull-request.</code></pre><pre class="hljs"><code>Too, <span class="hljs-keyword">all</span> repositories are read-only <span class="hljs-keyword">for</span> anonymous users. By <span class="hljs-keyword">default</span> only the owner <span class="hljs-keyword">of</span> the repository has write <span class="hljs-keyword">access</span>. <span class="hljs-keyword">If</span> you can push <span class="hljs-keyword">to</span> your own repo, it<span class="hljs-symbol">'s</span> because you are using one <span class="hljs-keyword">of</span> the supported authentification methods (HTTPS, SSH, ...).
+They can <span class="hljs-keyword">then</span> ask you <span class="hljs-built_in">to</span> pull some <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> changes <span class="hljs-keyword">in</span> their fork <span class="hljs-keyword">into</span> your repository via <span class="hljs-keyword">a</span> pull-request.</code></pre><pre class="hljs"><code>Too, all repositories are read-only <span class="hljs-keyword">for</span> anonymous users. <span class="hljs-keyword">By</span> <span class="hljs-keyword">default</span> only the owner <span class="hljs-keyword">of</span> the repository has write access. <span class="hljs-keyword">If</span> you can push <span class="hljs-keyword">to</span> your own repo, it<span class="hljs-comment">&#x27;s because you are using one of the supported authentification methods (HTTPS, SSH, ...).</span>
 
-<span class="hljs-keyword">If</span> you want <span class="hljs-keyword">to</span> grant someone <span class="hljs-keyword">else</span> privileges <span class="hljs-keyword">to</span> push <span class="hljs-keyword">to</span> your repo, you would need <span class="hljs-keyword">to</span> configure that <span class="hljs-keyword">access</span> <span class="hljs-keyword">in</span> the project settings.
+<span class="hljs-keyword">If</span> you want <span class="hljs-keyword">to</span> grant someone <span class="hljs-keyword">else</span> privileges <span class="hljs-keyword">to</span> push <span class="hljs-keyword">to</span> your repo, you would need <span class="hljs-keyword">to</span> configure that access <span class="hljs-keyword">in</span> the project settings.
 
-<span class="hljs-keyword">To</span> contribute <span class="hljs-keyword">to</span> projects <span class="hljs-keyword">in</span> which you don<span class="hljs-symbol">'t</span> have push <span class="hljs-keyword">access</span>, you push <span class="hljs-keyword">to</span> your own copy <span class="hljs-keyword">of</span> the repo, <span class="hljs-keyword">then</span> ask <span class="hljs-keyword">for</span> a pull-request. Linux <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> a good example <span class="hljs-keyword">for</span> that, because the kernel developers do <span class="hljs-keyword">not</span> <span class="hljs-keyword">use</span> GitHub pull requests.</code></pre><hr>
+<span class="hljs-keyword">To</span> contribute <span class="hljs-keyword">to</span> projects <span class="hljs-keyword">in</span> which you don<span class="hljs-comment">&#x27;t have push access, you push to your own copy of the repo, then ask for a pull-request. Linux is not a good example for that, because the kernel developers do not use GitHub pull requests.</span></code></pre><hr>
 <h2 id="create-branch-name-with-a-slash"><a class="header-link" href="#create-branch-name-with-a-slash"></a>Create branch name with a slash</h2>
 <pre class="hljs"><code>$  git checkout -b hotfix/fixed-readme</code></pre><hr>
-<h2 id="install-hub-with-choco(to-manage-github-via-command-line)"><a class="header-link" href="#install-hub-with-choco(to-manage-github-via-command-line)"></a>Install hub with choco(to manage github via command line)</h2>
+<h2 id="install-hub-with-chocoto-manage-github-via-command-line"><a class="header-link" href="#install-hub-with-chocoto-manage-github-via-command-line"></a>Install hub with choco(to manage github via command line)</h2>
 <pre class="hljs"><code>$ choco install hub</code></pre><p>To get general info about hub com</p>
 <p>mand-line:</p>
 <pre class="hljs"><code>$ hub</code></pre><p>Create new gist:</p>
@@ -451,10 +459,10 @@ $ hub gist create -v &lt;file1&gt; &lt;file2&gt; &lt;file3&gt; &lt;as many you w
 <span class="hljs-comment">#this will open the url in default browser.</span>
 Also, <span class="hljs-keyword">if</span> you want just get the url <span class="hljs-keyword">in</span> clipboard only, you must <span class="hljs-keyword">do</span> 
 $ hub browse -c</code></pre><hr>
-<h3 id="create-new-repositoryfrom-local-repositories:"><a class="header-link" href="#create-new-repositoryfrom-local-repositories:"></a>Create new repositoryfrom local repositories:</h3>
+<h3 id="create-new-repositoryfrom-local-repositories"><a class="header-link" href="#create-new-repositoryfrom-local-repositories"></a>Create new repositoryfrom local repositories:</h3>
 <pre class="hljs"><code>$ hub create
 $ hub create &lt;You can specify the name, <span class="hljs-keyword">if</span> not it will be the name of the folder(with spaces as dashes)&gt;</code></pre><pre class="hljs"><code>C:\Users\chetan&gt;hub create -h
-Usage: hub create [-poc] [<span class="hljs-_">-d</span> &lt;DESCRIPTION&gt;] [-h &lt;HOMEPAGE&gt;] [[&lt;ORGANIZATION&gt;/]&lt;NAME&gt;]
+Usage: hub create [-poc] [-d &lt;DESCRIPTION&gt;] [-h &lt;HOMEPAGE&gt;] [[&lt;ORGANIZATION&gt;/]&lt;NAME&gt;]
 <span class="hljs-comment"># -d for description of the repository, -h for setting the homepage, </span></code></pre><pre class="hljs"><code><span class="hljs-comment"># You can view the default upstreadm of all the branches via (default remote of all branches)</span>
 $ git branch -vv <span class="hljs-comment">#shows for all</span></code></pre><p>Note: Above command will just create the desired repository, but will not upload anything to any branch. You need to do 
 it for the first time while specifying the default upstream remote.</p>
@@ -466,23 +474,23 @@ $ hub browse -c</code></pre><p>Above command will create the repository with the
 $ hub delete &lt;repository-name&gt; 
 <span class="hljs-comment">#Above will prompt you fro confirmation. To bypass confirmation use switch -y.</span>
 $ hub delete &lt;repository-name&gt; -y <span class="hljs-comment">#This bypasss the deleting confirmation.</span></code></pre><hr>
-<h3 id="deleting-branch-with-hub:"><a class="header-link" href="#deleting-branch-with-hub:"></a>Deleting branch with hub:</h3>
+<h3 id="deleting-branch-with-hub"><a class="header-link" href="#deleting-branch-with-hub"></a>Deleting branch with hub:</h3>
 <p>You need to enable token for deleting repositories via visiting <a href="https://github.com/settings/tokens/">https://github.com/settings/tokens/</a> and opening hub for your pc. And then enable token for <strong>delete_repo</strong> and click <strong>Update token</strong> button. That&#39;s all.</p>
 <pre class="hljs"><code>$ hub delete &lt;repo-name&gt;</code></pre><p>View repository: <a href="https://github.com/github/hub">https://github.com/github/hub</a> to learn more about hub commandline.</p>
 <hr>
-<h2 id="view-all-local-branches:"><a class="header-link" href="#view-all-local-branches:"></a>View all local branches:</h2>
+<h2 id="view-all-local-branches"><a class="header-link" href="#view-all-local-branches"></a>View all local branches:</h2>
 <p>The below command shows all local and all remote branches(irrespectively they have been checked out earlier or not).</p>
 <pre class="hljs"><code>git checkout &lt;press-tab&gt;&lt;press-tab&gt;</code></pre><p><strong>Note</strong>: we have git branch and <strong>git branch -a</strong> to get the list of branches present in the repository. 
 But the former one (<strong>git branch</strong>) can show branches which you have <strong>checkedout earlier atleast once</strong>.
 And the latter one (<strong>git branch -a</strong>) shows branches which you have <strong>checkedout earlier atleast once</strong>(or more) and <strong>all remote branches too</strong>. But the best way is(although, locally branch copies of the remote branches are there, but they are not shown as it seems obvious to experienced developers), so it is </p>
 <pre class="hljs"><code>$ git checkout &lt;TAB&gt;&lt;TAB&gt;</code></pre><hr>
-<h2 id="clone-a-single-branch-only:"><a class="header-link" href="#clone-a-single-branch-only:"></a>Clone a single branch only:</h2>
+<h2 id="clone-a-single-branch-only"><a class="header-link" href="#clone-a-single-branch-only"></a>Clone a single branch only:</h2>
 <p>Below command only clones the the desired branch:</p>
 <pre class="hljs"><code>git <span class="hljs-built_in">clone</span> --single-branch --branch &lt;branchname&gt; &lt;remote-repo&gt;</code></pre><p>__
 But if you want all remote branches, but checkout the one you desired:</p>
 <pre class="hljs"><code>git <span class="hljs-built_in">clone</span> --branch &lt;branchname&gt; url</code></pre><hr>
-<h2 id="work-with-same-branch-in-gitbhub-with-different-local-repositories-and-push-them:"><a class="header-link" href="#work-with-same-branch-in-gitbhub-with-different-local-repositories-and-push-them:"></a>Work with same branch in gitbhub with different local repositories and push them:</h2>
-<h3 id="the-best-of-all-tools:"><a class="header-link" href="#the-best-of-all-tools:"></a>The best of all tools:</h3>
+<h2 id="work-with-same-branch-in-gitbhub-with-different-local-repositories-and-push-them"><a class="header-link" href="#work-with-same-branch-in-gitbhub-with-different-local-repositories-and-push-them"></a>Work with same branch in gitbhub with different local repositories and push them:</h2>
+<h3 id="the-best-of-all-tools"><a class="header-link" href="#the-best-of-all-tools"></a>The best of all tools:</h3>
 <p><strong>Initialize local repository, and then add a remote, and then set default remote for the checkedout branch and simultaneously push to the same remote.</strong></p>
 <pre class="hljs"><code>git init
 touch readme.md
@@ -505,7 +513,7 @@ $ git push <span class="hljs-comment">#This works when you have set default upst
 _
 Git push bad syntaxes:
 $ git push &lt;branch-name&gt; :- would give error like below
-fatal: <span class="hljs-string">'&lt;branch-name&gt;'</span> does not appear to be a git repository
+fatal: <span class="hljs-string">&#x27;&lt;branch-name&gt;&#x27;</span> does not appear to be a git repository
 fatal: Could not <span class="hljs-built_in">read</span> from remote repository.
 </code></pre><hr>
 <p>Git Guide - <a href="https://gist.github.com/hofmannsven/6814451">Guide Awesome and recommeded by Github.com</a></p>
@@ -532,9 +540,9 @@ First: perform the <code>git init</code> inside the folder to make the contents 
 
 $ git init                                        <span class="hljs-comment">#Initialize the current directory as repository.</span>
 
-$ git <span class="hljs-built_in">add</span> .                                        <span class="hljs-comment"># Adds the files in the local repository and stages them for commit. To unstage a file, use 'git reset HEAD YOUR-FILE'</span>
+$ git <span class="hljs-built_in">add</span> .                                        <span class="hljs-comment"># Adds the files in the local repository and stages them for commit. To unstage a file, use &#x27;git reset HEAD YOUR-FILE&#x27;</span>
 
-$ git commit -m <span class="hljs-string">"First commit"</span>                    <span class="hljs-comment"># Commits the tracked changes and prepares them to be pushed to a remote repository. To remove this commit and modify the file, use 'git reset --soft HEAD~1' and commit and add the file again.</span>
+$ git commit -m <span class="hljs-string">&quot;First commit&quot;</span>                    <span class="hljs-comment"># Commits the tracked changes and prepares them to be pushed to a remote repository. To remove this commit and modify the file, use &#x27;git reset --soft HEAD~1&#x27; and commit and add the file again.</span>
 
 
 $ git remote <span class="hljs-built_in">add</span> origin &lt;remote repository <span class="hljs-built_in">URL</span>&gt;    <span class="hljs-comment"># Sets the new remote</span>
@@ -559,14 +567,14 @@ $ git push origin master                        <span class="hljs-comment"># Pus
 2011<span class="hljs-string">-03</span><span class="hljs-string">-10</span>T10:22:33<span class="hljs-string">-08</span>:00 heroku[web.1]: Listening on 18320
 2011<span class="hljs-string">-03</span><span class="hljs-string">-10</span>T10:22:34<span class="hljs-string">-08</span>:00 heroku[web.1]: State changed from starting to up</code></pre><p>Visit your application in the browser again, and you’ll see another log message generated.</p>
 <p>Press <code>Control+C</code> to stop streaming the logs.</p>
-<pre class="hljs"><code>Real-<span class="hljs-built_in">time</span> tail
-Similar <span class="hljs-built_in">to</span> tail -f, real-<span class="hljs-built_in">time</span> tail displays recent logs <span class="hljs-keyword">and</span> leaves <span class="hljs-keyword">the</span> session <span class="hljs-built_in">open</span> <span class="hljs-keyword">for</span> real-<span class="hljs-built_in">time</span> logs <span class="hljs-built_in">to</span> stream <span class="hljs-keyword">in</span>. By viewing <span class="hljs-keyword">a</span> live stream <span class="hljs-keyword">of</span> logs <span class="hljs-built_in">from</span> your app, you can gain insight <span class="hljs-keyword">into</span> <span class="hljs-keyword">the</span> behavior <span class="hljs-keyword">of</span> your live application <span class="hljs-keyword">and</span> debug current problems.
+<pre class="hljs"><code><span class="hljs-type">Real</span>-<span class="hljs-type">time</span> tail
+<span class="hljs-keyword">Similar</span> <span class="hljs-keyword">to</span> tail -f, <span class="hljs-type">real</span>-<span class="hljs-type">time</span> tail displays recent logs <span class="hljs-keyword">and</span> leaves the <span class="hljs-keyword">session</span> <span class="hljs-keyword">open</span> <span class="hljs-keyword">for</span> <span class="hljs-type">real</span>-<span class="hljs-type">time</span> logs <span class="hljs-keyword">to</span> stream <span class="hljs-keyword">in</span>. <span class="hljs-keyword">By</span> viewing a live stream <span class="hljs-keyword">of</span> logs <span class="hljs-keyword">from</span> your app, you can gain insight <span class="hljs-keyword">into</span> the behavior <span class="hljs-keyword">of</span> your live application <span class="hljs-keyword">and</span> <span class="hljs-keyword">debug</span> <span class="hljs-keyword">current</span> problems.
 
 You can tail your logs <span class="hljs-keyword">using</span> <span class="hljs-comment">--tail (or -t).</span></code></pre><p>src: <a href="https://devcenter.heroku.com/articles/logging">logging commands,(above one)</a></p>
 <hr>
 <p>Fastest way to remove hyphens from a string [js]</p>
-<pre class="hljs"><code><span class="hljs-keyword">var</span> str=<span class="hljs-string">"185-51-671"</span>;
-<span class="hljs-keyword">var</span> newStr = str.replace(<span class="hljs-regexp">/-/g</span>, <span class="hljs-string">""</span>);</code></pre><hr>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> str=<span class="hljs-string">&quot;185-51-671&quot;</span>;
+<span class="hljs-keyword">var</span> newStr = str.replace(<span class="hljs-regexp">/-/g</span>, <span class="hljs-string">&quot;&quot;</span>);</code></pre><hr>
 <p>Remove mongo db warning - &quot;use UnifiedTopology&quot;</p>
 <p><a href="https://stackoverflow.com/questions/57895175/server-discovery-and-monitoring-engine-is-deprecated">https://stackoverflow.com/questions/57895175/server-discovery-and-monitoring-engine-is-deprecated</a></p>
 <pre class="hljs"><code>mongoose.connect(url, { <span class="hljs-attr">useNewUrlParser</span>: <span class="hljs-literal">true</span> ,<span class="hljs-attr">useUnifiedTopology</span>: <span class="hljs-literal">true</span>})</code></pre><p>// added in phonebook&#39;s url .. see there for easy reference.</p>
@@ -585,7 +593,7 @@ You can tail your logs <span class="hljs-keyword">using</span> <span class="hljs
 <li><p>Launch a terminal, and in your project do the following commands :</p>
 <p><code>git remote add origin YOUR/ORIGIN.git</code></p>
 <p>for e.g.,</p>
-<p><code>git remote add origin &quot;github.com/your_repo.git&quot;</code></p>
+<p><code> git remote add origin &quot;github.com/your_repo.git&quot;</code></p>
 <p><code>git add .</code></p>
 <p><code>git commit -m &quot;initial commit or whatever message for first commit&quot;</code></p>
 <p><code>git push -u origin master</code></p>
@@ -608,10 +616,10 @@ This will not work &gt;&gt; git <span class="hljs-built_in">clone</span> &lt;git
 <pre class="hljs"><code> Updates were rejected because the remote contains work that you <span class="hljs-keyword">do</span>
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
-hint: (e.g., <span class="hljs-string">'git pull ...'</span>) before pushing again.
-hint: See the <span class="hljs-string">'Note about fast-forwards'</span> <span class="hljs-keyword">in</span> <span class="hljs-string">'git push --help'</span> <span class="hljs-keyword">for</span> details.</code></pre><p>SOLUTION: <strong>git pull origin master</strong></p>
+hint: (e.g., <span class="hljs-string">&#x27;git pull ...&#x27;</span>) before pushing again.
+hint: See the <span class="hljs-string">&#x27;Note about fast-forwards&#x27;</span> <span class="hljs-keyword">in</span> <span class="hljs-string">&#x27;git push --help&#x27;</span> <span class="hljs-keyword">for</span> details.</code></pre><p>SOLUTION: <strong>git pull origin master</strong></p>
 <hr>
-<h5 id="deal-with-"refusing-to-merge-unrelated-histories"-error-:"><a class="header-link" href="#deal-with-"refusing-to-merge-unrelated-histories"-error-:"></a>Deal with &quot;refusing to merge unrelated histories&quot; error :</h5>
+<h5 id="deal-with-refusing-to-merge-unrelated-histories-error-"><a class="header-link" href="#deal-with-refusing-to-merge-unrelated-histories-error-"></a>Deal with &quot;refusing to merge unrelated histories&quot; error :</h5>
 <pre class="hljs"><code> git pull --allow-unrelated-histories origin master</code></pre><hr>
 <pre class="hljs"><code>git init
 
@@ -630,7 +638,7 @@ git push origin master</code></pre><blockquote>
 <pre class="hljs"><code>
 git add .
 
-git commit -m <span class="hljs-string">"first commit from the project"</span>
+git commit -m <span class="hljs-string">&quot;first commit from the project&quot;</span>
 
 git push origin master
 
@@ -642,14 +650,14 @@ git push origin</code></pre><hr>
 <p>Let say you have created a repo online on github and didn&#39;t add any files yet.</p>
 <p>And locally, you are having a empty directory, and inside that, you </p>
 <p>git init</p>
-<p>git add remote origin <a href="mailto:git@github.com">git@github.com</a>:freakstarrocks/freakstarrocks.github.io.git</p>
+<p>git add remote origin <a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>:freakstarrocks/freakstarrocks.github.io.git</p>
 <p>git push  origin master</p>
 <blockquote>
 <blockquote>
 <p>now this command will return error: </p>
 <p>$ git push origin master
 error: src refspec master does not match any.
-error: failed to push some refs to <a href="mailto:&#39;git@github.com">&#39;git@github.com</a>:freakstarrocks/freakstarrocks.github.io.git&#39;</p>
+error: failed to push some refs to &#39;<a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;">&#103;&#105;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#x6d;</a>:freakstarrocks/freakstarrocks.github.io.git&#39;</p>
 </blockquote>
 </blockquote>
 <p>This error occured cause you don&#39;t have any reference file i.e.,  A Git reference (<code>git ref</code>) is just a file that contains a Git commit SHA-1 hash. <a href="https://developer.github.com/v3/git/refs/#get-a-single-reference">Post@Github</a></p>
@@ -661,17 +669,17 @@ error: failed to push some refs to <a href="mailto:&#39;git@github.com">&#39;git
 <pre class="hljs"><code>https://youruser:password@github.com/user/repo.git</code></pre><p>Do it with notepad like.. </p>
 <p><code>notepad ./.git/config</code></p>
 <hr>
-<h6 id="github-pages->>-your-site-is-currently-being-built...."><a class="header-link" href="#github-pages->>-your-site-is-currently-being-built...."></a>Github pages &gt;&gt; Your site is currently being built....</h6>
+<h6 id="github-pages--your-site-is-currently-being-built"><a class="header-link" href="#github-pages--your-site-is-currently-being-built"></a>Github pages &gt;&gt; Your site is currently being built....</h6>
 <p> In order for your site to be published, a Jekyll theme must be chosen, even if you don&#39;t use Jekyll <em>at all</em>. </p>
 <p>src: <a href="https://github.community/t5/GitHub-Pages/Github-Pages-are-not-published-after-following-the-documentation/m-p/18676#M1398">@Github Questions</a>    </p>
 <hr>
-<h1 id="when-pushing-says-you-are-ahead-of-remote-repository:"><a class="header-link" href="#when-pushing-says-you-are-ahead-of-remote-repository:"></a>When Pushing says you  are ahead of remote repository:</h1>
+<h1 id="when-pushing-says-you--are-ahead-of-remote-repository"><a class="header-link" href="#when-pushing-says-you--are-ahead-of-remote-repository"></a>When Pushing says you  are ahead of remote repository:</h1>
 <p>Then first PULL and then immediately PUSH..</p>
 <p>git pull origin (if configured default repo for the remote, otherwise define the local branch too i.e., git pull origin master)</p>
 <p>git push origin(if configured default repo for the remote, otherwise define the local branch too i.e., git push origin master)</p>
 <hr>
-<h1 id="fullstack-course-building-build-with-gatsby->>"><a class="header-link" href="#fullstack-course-building-build-with-gatsby->>"></a>Fullstack course building build with gatsby &gt;&gt;</h1>
-<h5 id="get-stuck-on-"building-static-html-for-pages-in-gatsby-build"-#10630"><a class="header-link" href="#get-stuck-on-"building-static-html-for-pages-in-gatsby-build"-#10630"></a>Get stuck on &quot;Building static HTML for pages in gatsby build&quot; #10630</h5>
+<h1 id="fullstack-course-building-build-with-gatsby"><a class="header-link" href="#fullstack-course-building-build-with-gatsby"></a>Fullstack course building build with gatsby &gt;&gt;</h1>
+<h5 id="get-stuck-on-building-static-html-for-pages-in-gatsby-build-10630"><a class="header-link" href="#get-stuck-on-building-static-html-for-pages-in-gatsby-build-10630"></a>Get stuck on &quot;Building static HTML for pages in gatsby build&quot; #10630</h5>
 <p>Answet: <a href="https://github.com/meiyouqing">@meiyouqing</a> I just tried to reproduce this using the steps you listed in your issue and everything seems to be working fine.</p>
 <p>Try <strong>deleting the <code>.cache</code> directory</strong> in root and build again? Please link to a minimal reproduction repo if possible.</p>
 <p>src: <a href="https://github.com/gatsbyjs/gatsby/issues/10630">question@github.com</a></p>
@@ -685,16 +693,16 @@ error: failed to push some refs to <a href="mailto:&#39;git@github.com">&#39;git
 <hr>
 <p>EEHYYY.. if changing the background color and the prism-dark.css to prism.dark.. doesn&#39;t refletct the chages in the github-pages website, then manually search for text in the folder of /public/... for the text .. &quot;prism-dark.css&quot; and rename it to &quot;prism.css&quot;. This would solve the issue.</p>
 <hr>
-<h1 id="create-aliases..-"><a class="header-link" href="#create-aliases..-"></a>Create Aliases..-</h1>
-<h6 id="git-commit-with-no-commit-message:"><a class="header-link" href="#git-commit-with-no-commit-message:"></a>Git commit with no commit message:</h6>
+<h1 id="create-aliases-"><a class="header-link" href="#create-aliases-"></a>Create Aliases..-</h1>
+<h6 id="git-commit-with-no-commit-message"><a class="header-link" href="#git-commit-with-no-commit-message"></a>Git commit with no commit message:</h6>
 <p>And if you add an alias for it then it&#39;s even better right?</p>
-<pre class="hljs"><code>git config --global alias.nccommit <span class="hljs-string">'commit -a --allow-empty-message -m ""'</span></code></pre><p>Now you just do an <strong>nccommit</strong>, nc because of no comment, and everything should be commited.</p>
+<pre class="hljs"><code>git config --global alias.nccommit <span class="hljs-string">&#x27;commit -a --allow-empty-message -m &quot;&quot;&#x27;</span></code></pre><p>Now you just do an <strong>nccommit</strong>, nc because of no comment, and everything should be commited.</p>
 <hr>
 <p>Get commit log on git via - </p>
-<pre class="hljs"><code>git <span class="hljs-built_in">log</span> <span class="hljs-built_in">origin</span>/master</code></pre><hr>
+<pre class="hljs"><code>git log origin/master</code></pre><hr>
 <p><a href="https://stackoverflow.com/questions/21223464/why-does-git-require-me-to-pull-before-i-push">Question on StackOverflow(good)</a>    </p>
 <hr>
-<h4 id="[how-do-i-clone-into-a-non-empty-directory?](https://stackoverflow.com/questions/2411031/how-do-i-clone-into-a-non-empty-directory)"><a class="header-link" href="#[how-do-i-clone-into-a-non-empty-directory?](https://stackoverflow.com/questions/2411031/how-do-i-clone-into-a-non-empty-directory)"></a><a href="https://stackoverflow.com/questions/2411031/how-do-i-clone-into-a-non-empty-directory">How do I clone into a non-empty directory?</a></h4>
+<h4 id="how-do-i-clone-into-a-non-empty-directory"><a class="header-link" href="#how-do-i-clone-into-a-non-empty-directory"></a><a href="https://stackoverflow.com/questions/2411031/how-do-i-clone-into-a-non-empty-directory">How do I clone into a non-empty directory?</a></h4>
 <p>git init
 git remote add origin PATH/TO/REPO
 git fetch #FETCHES THE COMPLETE .GIT FOLDER FROM THE REMOTE
@@ -716,7 +724,7 @@ git checkout -t origin/master</p>
 <p>When a repo is cloned, it has a default remote called <code>origin</code> that points to your fork on GitHub, not the original repo it was forked from.
 To keep track of the original repo, you need to add another remote named <code>upstream</code></p>
 </blockquote>
-<pre class="hljs"><code>git remote <span class="hljs-built_in">add</span> upstream gi<span class="hljs-variable">t:</span>//github.<span class="hljs-keyword">com</span>/<span class="hljs-symbol">&lt;aUser&gt;</span>/&lt;aRepo.git&gt;</code></pre><p>(with <code>aUser/aRepo</code> the reference for the original creator and repository, that you have forked)</p>
+<pre class="hljs"><code>git remote add upstream git:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/&lt;aUser&gt;/</span>&lt;aRepo.git&gt;</code></pre><p>(with <code>aUser/aRepo</code> the reference for the original creator and repository, that you have forked)</p>
 <p>You will use <code>upstream</code> to <strong>fetch from the original repo</strong> (in order to keep your local copy in sync with the project you want to contribute to).</p>
 <pre class="hljs"><code><span class="hljs-attribute">git fetch upstream</span></code></pre><p>(<code>git fetch</code> alone would fetch from <code>origin</code> by default, which is not what is needed here)</p>
 <p>You will use <code>origin</code> to <strong>pull and push</strong> since you can contribute to your own repository.</p>
@@ -725,50 +733,50 @@ git <span class="hljs-keyword">push</span></code></pre><p>(again, without parame
 <p>You will contribute back to the <code>upstream</code> repo by making a <strong><a href="https://help.github.com/articles/about-pull-requests/">pull request</a></strong>.</p>
 <p class="img-container"><img src="https://i.stack.imgur.com/cEJjT.png" alt="fork and upstream"></p>
 <hr>
-<pre class="hljs"><code>git pull <span class="hljs-keyword">and</span> git rebase are <span class="hljs-keyword">not</span> interchangeable, <span class="hljs-keyword">but</span> they are closely connected.
+<pre class="hljs"><code>git pull <span class="hljs-keyword">and</span> git rebase are <span class="hljs-keyword">not</span> interchangeable, but they are closely connected.
 
-git pull fetches <span class="hljs-keyword">the</span> latest changes <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> current branch <span class="hljs-keyword">from</span> a remote <span class="hljs-keyword">and</span> applies those changes <span class="hljs-keyword">to</span> your <span class="hljs-keyword">local</span> <span class="hljs-keyword">copy</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> branch. Generally this <span class="hljs-keyword">is</span> done <span class="hljs-keyword">by</span> merging, i.e. <span class="hljs-keyword">the</span> <span class="hljs-keyword">local</span> changes are merged <span class="hljs-keyword">into</span> <span class="hljs-keyword">the</span> remote changes. So git pull <span class="hljs-keyword">is</span> similar <span class="hljs-keyword">to</span> git fetch &amp; git merge.
+git pull fetches the latest changes <span class="hljs-keyword">of</span> the <span class="hljs-keyword">current</span> branch <span class="hljs-keyword">from</span> a remote <span class="hljs-keyword">and</span> applies those changes <span class="hljs-keyword">to</span> your <span class="hljs-keyword">local</span> <span class="hljs-keyword">copy</span> <span class="hljs-keyword">of</span> the branch. Generally this <span class="hljs-keyword">is</span> done <span class="hljs-keyword">by</span> merging, i.e. the <span class="hljs-keyword">local</span> changes are merged <span class="hljs-keyword">into</span> the remote changes. So git pull <span class="hljs-keyword">is</span> <span class="hljs-keyword">similar</span> <span class="hljs-keyword">to</span> git <span class="hljs-keyword">fetch</span> &amp; git merge.
 
-Rebasing <span class="hljs-keyword">is</span> an alternative <span class="hljs-keyword">to</span> merging. Instead <span class="hljs-keyword">of</span> creating a new commit <span class="hljs-keyword">that</span> combines <span class="hljs-keyword">the</span> two branches, <span class="hljs-keyword">it</span> moves <span class="hljs-keyword">the</span> commits <span class="hljs-keyword">of</span> one <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> branches <span class="hljs-keyword">on</span> top <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> other.
+Rebasing <span class="hljs-keyword">is</span> an alternative <span class="hljs-keyword">to</span> merging. <span class="hljs-keyword">Instead</span> <span class="hljs-keyword">of</span> creating a <span class="hljs-built_in">new</span> <span class="hljs-keyword">commit</span> that combines the two branches, it moves the commits <span class="hljs-keyword">of</span> one <span class="hljs-keyword">of</span> the branches <span class="hljs-keyword">on</span> top <span class="hljs-keyword">of</span> the other.
 
-You can pull using rebase <span class="hljs-keyword">instead of</span> merge (git pull <span class="hljs-comment">--rebase). The local changes you made will be rebased on top of the remote changes, instead of being merged with the remote changes.</span>
+You can pull <span class="hljs-keyword">using</span> rebase <span class="hljs-keyword">instead</span> <span class="hljs-keyword">of</span> merge (git pull <span class="hljs-comment">--rebase). The local changes you made will be rebased on top of the remote changes, instead of being merged with the remote changes.</span>
 
 Atlassian has <span class="hljs-keyword">some</span> excellent documentation <span class="hljs-keyword">on</span> merging vs. rebasing.</code></pre><hr>
 <h6 id="awesome-article-on-git-merge"><a class="header-link" href="#awesome-article-on-git-merge"></a>Awesome article on git merge</h6>
 <p><a href="https://stackabuse.com/git-merge-branch-into-master/">Git: Merge Branch into Master@StackAbuse.com</a></p>
 <hr>
-<h2 id="about-#delete-branch-#delete-branches-#delete-branch-on-remote-#deleting-branch-locally-and-#deleting-branches-on-remotes,#delete-branch,"><a class="header-link" href="#about-#delete-branch-#delete-branches-#delete-branch-on-remote-#deleting-branch-locally-and-#deleting-branches-on-remotes,#delete-branch,"></a>About #delete branch #Delete branches #delete branch on remote #deleting branch locally and #deleting branches on remotes,#delete branch,</h2>
+<h2 id="about-delete-branch-delete-branches-delete-branch-on-remote-deleting-branch-locally-and-deleting-branches-on-remotesdelete-branch"><a class="header-link" href="#about-delete-branch-delete-branches-delete-branch-on-remote-deleting-branch-locally-and-deleting-branches-on-remotesdelete-branch"></a>About #delete branch #Delete branches #delete branch on remote #deleting branch locally and #deleting branches on remotes,#delete branch,</h2>
 <p><em>You <strong>CANNOT</strong> delete a <strong>checked out</strong> branch.</em> 
 <em>You <strong>CANNOT</strong> delete <strong>default branch on github remote</strong> repository.</em></p>
-<pre class="hljs"><code>$ git push <span class="hljs-_">-d</span> &lt;remote_name&gt; &lt;branch_name&gt; <span class="hljs-comment">#Deletes remote branch only,doesn't deletes local branch.</span></code></pre><pre class="hljs"><code>$ git branch <span class="hljs-_">-d</span> &lt;branch_name&gt; <span class="hljs-comment">#Deletes local branch only, doesn't deletes remote branch.</span></code></pre><pre class="hljs"><code><span class="hljs-comment"># Note that in most cases the remote name is origin.</span>
+<pre class="hljs"><code>$ git push -d &lt;remote_name&gt; &lt;branch_name&gt; <span class="hljs-comment">#Deletes remote branch only,doesn&#x27;t deletes local branch.</span></code></pre><pre class="hljs"><code>$ git branch -d &lt;branch_name&gt; <span class="hljs-comment">#Deletes local branch only, doesn&#x27;t deletes remote branch.</span></code></pre><pre class="hljs"><code><span class="hljs-comment"># Note that in most cases the remote name is origin.</span>
 
 _
 Delete Local Branch
-$ git branch <span class="hljs-_">-d</span> branch_name
+$ git branch -d branch_name
 $ git branch -D branch_name
 <span class="hljs-comment"># Note: The -d option is an alias for --delete, which only deletes the branch if it has already been fully merged in its upstream branch. </span>
-<span class="hljs-comment"># You could also use -D, which is an alias for --delete --force, which deletes the branch "irrespective of its merged status." [Source: man git-branch]</span>
+<span class="hljs-comment"># You could also use -D, which is an alias for --delete --force, which deletes the branch &quot;irrespective of its merged status.&quot; [Source: man git-branch]</span>
 
 _
 Delete Remote Branch
-$ git push <span class="hljs-_">-d</span> &lt;remote_name&gt; &lt;branch_name&gt; <span class="hljs-comment">#doesn't deletes branch on local machine</span>
+$ git push -d &lt;remote_name&gt; &lt;branch_name&gt; <span class="hljs-comment">#doesn&#x27;t deletes branch on local machine</span>
 <span class="hljs-comment"># Defalut branch CANNOT BE DELETED IN GITHUB.</span>
 <span class="hljs-comment"># Use --delete option as an alias for -d.</span>
 Also, below <span class="hljs-built_in">command</span> does the same above thing.
-$ git push &lt;remote_name&gt; :&lt;branch_name&gt; <span class="hljs-comment"># Doesn't deletes branch on local machine</span></code></pre><p>src: <a href="https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely">How do I delete a Git branch locally and remotely..?</a> </p>
+$ git push &lt;remote_name&gt; :&lt;branch_name&gt; <span class="hljs-comment"># Doesn&#x27;t deletes branch on local machine</span></code></pre><p>src: <a href="https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely">How do I delete a Git branch locally and remotely..?</a> </p>
 <hr>
 <h2 id="rename-branch-on-github"><a class="header-link" href="#rename-branch-on-github"></a>Rename branch on github</h2>
 <p>Tags: #delete branch github,delete branch on github,#delete master branch on Github, delete master branch Github, rename branch github.</p>
-<h3 id="this-is-needed-so-as-to-be-able-to-add-remote-of-this-repository-to-some-other-repository,-and-push-master-branch-on-it."><a class="header-link" href="#this-is-needed-so-as-to-be-able-to-add-remote-of-this-repository-to-some-other-repository,-and-push-master-branch-on-it."></a>This is needed so as to be able to add remote of this repository to some other repository, and push master branch on it.</h3>
+<h3 id="this-is-needed-so-as-to-be-able-to-add-remote-of-this-repository-to-some-other-repository-and-push-master-branch-on-it"><a class="header-link" href="#this-is-needed-so-as-to-be-able-to-add-remote-of-this-repository-to-some-other-repository-and-push-master-branch-on-it"></a>This is needed so as to be able to add remote of this repository to some other repository, and push master branch on it.</h3>
 <p class="img-container"><img src="DeletingMasterBranchOnGithub.gif" alt="Image"></p>
 <p>*</p>
-<h2 id="you-can-do-simililarly-on-git-cli-too,"><a class="header-link" href="#you-can-do-simililarly-on-git-cli-too,"></a>You can do simililarly on git-cli too,</h2>
+<h2 id="you-can-do-simililarly-on-git-cli-too"><a class="header-link" href="#you-can-do-simililarly-on-git-cli-too"></a>You can do simililarly on git-cli too,</h2>
 <pre class="hljs"><code>$ git branch backup master <span class="hljs-comment">#Syntax is =&gt; git branch &lt;targetBranch&gt; &lt;sourceBranch&gt;</span>
 $ git push origin backup <span class="hljs-comment">#We pushed the backup branch on github remote.</span>
-$ git push <span class="hljs-_">-d</span> origin master <span class="hljs-comment"># Deletes master on remote.</span>
+$ git push -d origin master <span class="hljs-comment"># Deletes master on remote.</span>
 <span class="hljs-comment">#This will only be allowed once you set default branch as backup by visiting repo on github.com/&lt;user&gt;/&lt;repo-name&gt;</span>
 $ git checkout backup 
-$ git branch <span class="hljs-_">-d</span> master <span class="hljs-comment"># Deletes master on local copy of repo.</span></code></pre><hr>
+$ git branch -d master <span class="hljs-comment"># Deletes master on local copy of repo.</span></code></pre><hr>
 <p><a href="https://gist.github.com/cmatskas/454e3369e6963a1c8c89">GitDeleteCommands.ps1</a></p>
 <hr>
 <p><a href="https://www.youtube.com/watch?v=CRlGDDprdOQ">Video on youtube about the merge vs. rebase</a></p>
@@ -781,17 +789,17 @@ $ git branch <span class="hljs-_">-d</span> master <span class="hljs-comment"># 
 <h5 id="go-to-a-particular-commit--"><a class="header-link" href="#go-to-a-particular-commit--"></a>Go to a particular commit -</h5>
 <pre class="hljs"><code>git reset --hard &lt;commit-hash&gt;</code></pre><p>get the hashes via git log.</p>
 <hr>
-<h5 id="reset-to-the-most-recent-commit-and-erase-all-the-changes-in-your-working-tree-and-index:"><a class="header-link" href="#reset-to-the-most-recent-commit-and-erase-all-the-changes-in-your-working-tree-and-index:"></a>Reset to the most recent commit and erase all the changes in your working tree and index:</h5>
+<h5 id="reset-to-the-most-recent-commit-and-erase-all-the-changes-in-your-working-tree-and-index"><a class="header-link" href="#reset-to-the-most-recent-commit-and-erase-all-the-changes-in-your-working-tree-and-index"></a>Reset to the most recent commit and erase all the changes in your working tree and index:</h5>
 <pre class="hljs"><code>git reset --hard HEAD</code></pre><hr>
-<h6 id="reverse-a-particular-commit-//-this-is-not-a-commonly-used-command..so-try-not-to-use..(although-works-great)"><a class="header-link" href="#reverse-a-particular-commit-//-this-is-not-a-commonly-used-command..so-try-not-to-use..(although-works-great)"></a>Reverse a particular commit // This is not a commonly used command..so try not to use..(although works great)</h6>
+<h6 id="reverse-a-particular-commit--this-is-not-a-commonly-used-commandso-try-not-to-usealthough-works-great"><a class="header-link" href="#reverse-a-particular-commit--this-is-not-a-commonly-used-commandso-try-not-to-usealthough-works-great"></a>Reverse a particular commit // This is not a commonly used command..so try not to use..(although works great)</h6>
 <pre class="hljs"><code>git revert &lt;commit-hash&gt;</code></pre><hr>
 <h2 id="creating-branch-from-a-commit-sha-or-another-branch"><a class="header-link" href="#creating-branch-from-a-commit-sha-or-another-branch"></a>Creating branch from a commit-sha or another branch</h2>
-<pre class="hljs"><code>$ git branch <span class="hljs-_">-f</span> three &lt;COMMIT-SHA&gt;
+<pre class="hljs"><code>$ git branch -f three &lt;COMMIT-SHA&gt;
 <span class="hljs-comment">#commit-sha could be from any branch.</span>
-$ git branch <span class="hljs-_">-f</span> three master
+$ git branch -f three master
 <span class="hljs-comment">#This command will forcibly make branch three from master, even if a branch with name three already it exists.</span>
 
-!aLSO, <span class="hljs-_">-f</span> parameter is required <span class="hljs-keyword">if</span> the branch with the same name already exists.</code></pre><hr>
+!aLSO, -f parameter is required <span class="hljs-keyword">if</span> the branch with the same name already exists.</code></pre><hr>
 <h2 id="create-a-branch-even-if-the-branch-with-that-name-already-exists-"><a class="header-link" href="#create-a-branch-even-if-the-branch-with-that-name-already-exists-"></a>Create a branch even if the branch with that name already exists-</h2>
 <p>#copy branch forcibly</p>
 <pre class="hljs"><code><span class="hljs-comment">#Note this syntax is little offset for learning to create branch, rather you should continue with the older git branch &lt;new branch&gt; &lt;source branch&gt; (mentioned just above this topic ^^^)</span>
@@ -804,23 +812,23 @@ git branch master origin/master <span class="hljs-comment">#Create branch master
 $ git branch newBranch master 
 <span class="hljs-comment">#Creates newBranch from the source you provide, it could be a commit-id too, like below-</span>
 $ git branch newBranch 143776 <span class="hljs-comment">#5 chars are sufficient</span></code></pre><hr>
-<h2 id="create-branch-from-another-branch-and-change-to-newly-created-branch:"><a class="header-link" href="#create-branch-from-another-branch-and-change-to-newly-created-branch:"></a>Create branch from another branch and change to newly created branch:</h2>
+<h2 id="create-branch-from-another-branch-and-change-to-newly-created-branch"><a class="header-link" href="#create-branch-from-another-branch-and-change-to-newly-created-branch"></a>Create branch from another branch and change to newly created branch:</h2>
 <pre class="hljs"><code>git checkout -b myFeature dev</code></pre><hr>
-<h2 id="create-branch-from-current-branch-and-change-to-new-branch:"><a class="header-link" href="#create-branch-from-current-branch-and-change-to-new-branch:"></a>Create branch from current branch and change to new branch:</h2>
+<h2 id="create-branch-from-current-branch-and-change-to-new-branch"><a class="header-link" href="#create-branch-from-current-branch-and-change-to-new-branch"></a>Create branch from current branch and change to new branch:</h2>
 <pre class="hljs"><code>git checkout -b myFeature</code></pre><pre class="hljs"><code>git <span class="hljs-built_in">log</span> --oneline
 <span class="hljs-comment"># Print all commits with single commit status in one line syntaxes.</span></code></pre><pre class="hljs"><code>git <span class="hljs-built_in">clone</span> &lt;repo-url&gt; .
 <span class="hljs-comment"># Cone a repo in curren directory</span></code></pre><hr>
-<h5 id="git-with-github-quick:(reverse)"><a class="header-link" href="#git-with-github-quick:(reverse)"></a>Git with GitHub quick:(Reverse)</h5>
+<h5 id="git-with-github-quickreverse"><a class="header-link" href="#git-with-github-quickreverse"></a>Git with GitHub quick:(Reverse)</h5>
 <p>•Create local repo(in any project folder, do <strong>git init</strong>, and make some commits as usual)</p>
 <p>•Create online repo in Github(<strong>copy</strong> the <strong>repo-url.git</strong>)[DO NOT INITIALIZE IT WITH ANY README FILE..]</p>
 <pre class="hljs"><code>FINALLY DO THE PUSH with switch --all
 git push origin --all</code></pre><hr>
 <h5 id="help-for-git-push"><a class="header-link" href="#help-for-git-push"></a>Help for git push</h5>
-<pre class="hljs"><code>git push -h &gt;&gt; show <span class="hljs-built_in">help</span> <span class="hljs-keyword">for</span> the push command.</code></pre><hr>
+<pre class="hljs"><code>git push -h &gt;&gt; show <span class="hljs-built_in">help</span> <span class="hljs-keyword">for</span> the push <span class="hljs-built_in">command</span>.</code></pre><hr>
 <pre class="hljs"><code>git push origin --all (push all references)
 OR
 git push --all (push all references)
-<span class="hljs-comment">##both the commands above will push all the local branches to the remote 'origin'</span></code></pre><hr>
+<span class="hljs-comment">##both the commands above will push all the local branches to the remote &#x27;origin&#x27;</span></code></pre><hr>
 <pre class="hljs"><code>$ git push
 fatal: The current branch master has no upstream branch.
 To push the current branch and <span class="hljs-built_in">set</span> the remote as upstream, use
@@ -835,22 +843,22 @@ git push
 chetan@insidebug MINGW64 ~/Desktop/tttt (master)
 $ git push -u origin2
 Everything up-to-date
-Branch <span class="hljs-string">'master'</span> <span class="hljs-built_in">set</span> up to track remote branch <span class="hljs-string">'master'</span> from <span class="hljs-string">'origin2'</span>.
+Branch <span class="hljs-string">&#x27;master&#x27;</span> <span class="hljs-built_in">set</span> up to track remote branch <span class="hljs-string">&#x27;master&#x27;</span> from <span class="hljs-string">&#x27;origin2&#x27;</span>.
 
 chetan@insidebug MINGW64 ~/Desktop/tttt (master)
 $ git push -u origin
 Everything up-to-date
-Branch <span class="hljs-string">'master'</span> <span class="hljs-built_in">set</span> up to track remote branch <span class="hljs-string">'master'</span> from <span class="hljs-string">'origin'</span>.
+Branch <span class="hljs-string">&#x27;master&#x27;</span> <span class="hljs-built_in">set</span> up to track remote branch <span class="hljs-string">&#x27;master&#x27;</span> from <span class="hljs-string">&#x27;origin&#x27;</span>.
 
 chetan@insidebug MINGW64 ~/Desktop/tttt (master)
 $ git push -u origin master2
 Everything up-to-date
-Branch <span class="hljs-string">'master2'</span> <span class="hljs-built_in">set</span> up to track remote branch <span class="hljs-string">'master2'</span> from <span class="hljs-string">'origin'</span>.
+Branch <span class="hljs-string">&#x27;master2&#x27;</span> <span class="hljs-built_in">set</span> up to track remote branch <span class="hljs-string">&#x27;master2&#x27;</span> from <span class="hljs-string">&#x27;origin&#x27;</span>.
 
 chetan@insidebug MINGW64 ~/Desktop/tttt (master)
 $ git push -u origin2 master2
 Everything up-to-date
-Branch <span class="hljs-string">'master2'</span> <span class="hljs-built_in">set</span> up to track remote branch <span class="hljs-string">'master2'</span> from <span class="hljs-string">'origin2'</span>.</code></pre><hr>
+Branch <span class="hljs-string">&#x27;master2&#x27;</span> <span class="hljs-built_in">set</span> up to track remote branch <span class="hljs-string">&#x27;master2&#x27;</span> from <span class="hljs-string">&#x27;origin2&#x27;</span>.</code></pre><hr>
 <h5 id="push-single-branch"><a class="header-link" href="#push-single-branch"></a>Push single branch</h5>
 <pre class="hljs"><code><span class="hljs-comment">#After making appropriate branching and commits</span>
 <span class="hljs-comment">#Pushing single branch to remote i.e., master</span>
@@ -860,15 +868,15 @@ git push origin master
 git push origin --all
 </code></pre><hr>
 <pre class="hljs"><code><span class="hljs-comment">#remove untracked files</span>
-git clean <span class="hljs-_">-f</span></code></pre><hr>
+git clean -f</code></pre><hr>
 <h5 id="add-multiple-push-urls-to-the-repository"><a class="header-link" href="#add-multiple-push-urls-to-the-repository"></a>Add multiple push URLs to the repository</h5>
-<pre class="hljs"><code><span class="hljs-comment">#Before adding any pushurl's to the local repo, you need to have a remote named as origin as indicated in the command. Also on adding the first pushurl to the local repository, the origin's push url will be replaced by the new pushurl specified as the argument. Surely, the original push url for the remote can be added again with the same command but with the url of the origin's original git-reo url. You can add as many push urls to the repository.</span>
-git remote <span class="hljs-built_in">set</span>-url --add --push origin git@github.com:muccg/my-project.git
-git remote <span class="hljs-built_in">set</span>-url --add --push origin git@bitbucket.org:ccgmurdoch/my-project.git
+<pre class="hljs"><code><span class="hljs-comment">#Before adding any pushurl&#x27;s to the local repo, you need to have a remote named as origin as indicated in the command. Also on adding the first pushurl to the local repository, the origin&#x27;s push url will be replaced by the new pushurl specified as the argument. Surely, the original push url for the remote can be added again with the same command but with the url of the origin&#x27;s original git-reo url. You can add as many push urls to the repository.</span>
+git remote set-url --add --push origin git@github.com:muccg/my-project.git
+git remote set-url --add --push origin git@bitbucket.org:ccgmurdoch/my-project.git
 </code></pre><hr>
 <h5 id="delete-any-repository-with-bash"><a class="header-link" href="#delete-any-repository-with-bash"></a>Delete any repository with bash</h5>
 <pre class="hljs"><code>rm -rf .git <span class="hljs-comment">#inside the repository.</span></code></pre><hr>
-<h1 id="disable-automatic-conversion/-handling-of-line-conversions:"><a class="header-link" href="#disable-automatic-conversion/-handling-of-line-conversions:"></a>Disable automatic conversion/ handling of line conversions:</h1>
+<h1 id="disable-automatic-conversion-handling-of-line-conversions"><a class="header-link" href="#disable-automatic-conversion-handling-of-line-conversions"></a>Disable automatic conversion/ handling of line conversions:</h1>
 <p>DISABLE EOL CONVERSIONS - StackOverflow.com</p>
 <p>src: <a href="https://stackoverflow.com/questions/1967370/git-replacing-lf-with-crlf/20653073">Git replacing LF with CRLF@Ultimate@StackOverflow</a>
 src2: <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">Getting Started - First-Time Git Setup</a></p>
@@ -882,11 +890,11 @@ src2: <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Set
 <h3 id="general-git-cloning-and-dealing-with-branches"><a class="header-link" href="#general-git-cloning-and-dealing-with-branches"></a>General Git Cloning and Dealing with branches</h3>
 <pre class="hljs"><code>BEST WAY TO GET THE LIST OF AVAILBE BRANCHES TO CHECKOUT FROM IS:
 git checkout &lt;tab&gt; &lt;tab&gt;
-//output=&gt; this will list out all the possible branches from <span class="hljs-built_in">which</span> you can checkout. While git branch <span class="hljs-_">-a</span> just shows the available remote branches, not the locally cloned branches.
+//output=&gt; this will list out all the possible branches from <span class="hljs-built_in">which</span> you can checkout. While git branch -a just shows the available remote branches, not the locally cloned branches.
 
 git branch 
 <span class="hljs-comment"># show all local branches, #show branches, #show all branches</span>
-git branch <span class="hljs-_">-a</span>
+git branch -a
 <span class="hljs-comment"># View all branches(local and remote branches)</span>
 git <span class="hljs-built_in">clone</span> &lt;repo-url&gt;
 <span class="hljs-comment"># clone a complete repository</span>
@@ -896,21 +904,21 @@ git checkout &lt;branch-name&gt;
 ***
 git <span class="hljs-built_in">clone</span> --branch &lt;branch-name&gt; &lt;repository-url&gt;
 <span class="hljs-comment"># Clone a particular branch.</span></code></pre><hr>
-<h1 id="discard-local-changes:"><a class="header-link" href="#discard-local-changes:"></a>Discard local changes:</h1>
+<h1 id="discard-local-changes"><a class="header-link" href="#discard-local-changes"></a>Discard local changes:</h1>
 <pre class="hljs"><code> git reset --hard 
  <span class="hljs-comment">#OR TRY CHECKOUT THE BRANCH WITH WITH FORCE</span>
- git checkout <span class="hljs-_">-f</span>
-
+ git checkout -f
+ 
  <span class="hljs-comment">#this works with any branch too</span>
- git checkout &lt;branch-name&gt; <span class="hljs-_">-f</span>
-
+ git checkout &lt;branch-name&gt; -f
+ 
 <span class="hljs-comment">#Also:</span>
 <span class="hljs-comment">#To remove untracked files from current branch.</span>
-git clean <span class="hljs-_">-f</span> <span class="hljs-comment">#This has to done explicitly as  •git reset --hard OR •git checkout -f OR •git checkout &lt;branch-name&gt; -f doesn't clear(deleted untracked files).</span></code></pre><hr>
+git clean -f <span class="hljs-comment">#This has to done explicitly as  •git reset --hard OR •git checkout -f OR •git checkout &lt;branch-name&gt; -f doesn&#x27;t clear(deleted untracked files).</span></code></pre><hr>
 <p>Good One: You may download: <a href="https://egghead.io/courses/practical-git-for-everyday-professional-use">https://egghead.io/courses/practical-git-for-everyday-professional-use</a> </p>
 <p> <a href="https://egghead.io/courses/productive-git-for-developers">https://egghead.io/courses/productive-git-for-developers</a> </p>
 <hr>
-<h1 id="git-stash:"><a class="header-link" href="#git-stash:"></a>Git STASH:</h1>
+<h1 id="git-stash"><a class="header-link" href="#git-stash"></a>Git STASH:</h1>
 <pre class="hljs"><code><span class="hljs-comment"># stash meaning: store something safely in a hidden/secret place.</span>
 <span class="hljs-comment"># git stash</span>
 
@@ -920,8 +928,8 @@ git stash
 <span class="hljs-comment"># git stash pop</span>
 
 __
-git stash save <span class="hljs-string">'message-about-the-changes-to-be-stashed'</span>
-<span class="hljs-comment"># You may make as many stashes with approprite message and clears the recent changes from the local branch and save them to secret place 'message....•'</span>
+git stash save <span class="hljs-string">&#x27;message-about-the-changes-to-be-stashed&#x27;</span>
+<span class="hljs-comment"># You may make as many stashes with approprite message and clears the recent changes from the local branch and save them to secret place &#x27;message....•&#x27;</span>
 
 __
 git stash list <span class="hljs-comment"># Shows all the stashes you have made so far like below.</span>
@@ -941,20 +949,20 @@ __
 git stash clear
 <span class="hljs-comment"># Will clear the list of the stashes.</span>
 awesome-video@https://www.youtube.com/watch?v=KLEDKgMmbBI</code></pre><hr>
-<pre class="hljs"><code>$ git commit <span class="hljs-_">-a</span>
+<pre class="hljs"><code>$ git commit -a
 <span class="hljs-comment">#from git commit -h</span>
 <span class="hljs-comment"># -a, --all             commit all changed files.</span></code></pre><p>which will automatically notice any modified (but not new) files, add them to the index, and commit, all in one step.</p>
 <hr>
 <p>Opening git guides, </p>
 <pre class="hljs"><code>git <span class="hljs-built_in">help</span> // shows all related info about the below ones.
-git <span class="hljs-built_in">help</span> <span class="hljs-_">-a</span> // all available commands
+git <span class="hljs-built_in">help</span> -a // all available commands
 git <span class="hljs-built_in">help</span> -g // all git related guides &gt;&gt; Opening guides: git <span class="hljs-built_in">help</span> &lt;git-guide&gt;</code></pre><hr>
 <p>So for Git 2 the answer is:</p>
 <ul class="list">
 <li><code>git add .</code> and <code>git add -A .</code> and <code>git add --all</code> add new/modified/deleted files in the current directory</li>
 </ul>
 <hr>
-<h3 id="in-git-help-documents,-you-will-find-it-talking-about-the-index,-so-index-is-nothing-but-the-staging-state."><a class="header-link" href="#in-git-help-documents,-you-will-find-it-talking-about-the-index,-so-index-is-nothing-but-the-staging-state."></a>In git help documents, you will find it talking about the index, so index is nothing but the staging state.</h3>
+<h3 id="in-git-help-documents-you-will-find-it-talking-about-the-index-so-index-is-nothing-but-the-staging-state"><a class="header-link" href="#in-git-help-documents-you-will-find-it-talking-about-the-index-so-index-is-nothing-but-the-staging-state"></a>In git help documents, you will find it talking about the index, so index is nothing but the staging state.</h3>
 <hr>
 <h2 id="awesomee---an-official-visual-git-cheatsheet"><a class="header-link" href="#awesomee---an-official-visual-git-cheatsheet"></a>AWESOMEE - An official visual git cheatsheet</h2>
 <p>@  <a href="https://ndpsoftware.com/git-cheatsheet.html#loc=workspace">https://ndpsoftware.com/git-cheatsheet.html#loc=workspace</a>; </p>
@@ -965,10 +973,10 @@ git <span class="hljs-built_in">help</span> -g // all git related guides &gt;&gt
 <pre class="hljs"><code>git pull
 <span class="hljs-comment"># The above command equals to below command as git fetch just add the history of remote repository to the local copy of the repository.</span>
 git fetch ; git fetch</code></pre><hr>
-<h3 id="git-cheatsheet-from-git-scm-:"><a class="header-link" href="#git-cheatsheet-from-git-scm-:"></a>git cheatsheet from git-scm :</h3>
+<h3 id="git-cheatsheet-from-git-scm-"><a class="header-link" href="#git-cheatsheet-from-git-scm-"></a>git cheatsheet from git-scm :</h3>
 <p><a href="https://github.github.com/training-kit/downloads/github-git-cheat-sheet/">https://github.github.com/training-kit/downloads/github-git-cheat-sheet/</a> </p>
 <hr>
-<h2 id=".gitignore-file-pattern,#adding-files-.gitignore,#folders-in-.gitignore,#forder-.gitignore:"><a class="header-link" href="#.gitignore-file-pattern,#adding-files-.gitignore,#folders-in-.gitignore,#forder-.gitignore:"></a>.gitignore file pattern,#adding files .gitignore,#folders in .gitignore,#forder .gitignore:</h2>
+<h2 id="gitignore-file-patternadding-files-gitignorefolders-in-gitignoreforder-gitignore"><a class="header-link" href="#gitignore-file-patternadding-files-gitignorefolders-in-gitignoreforder-gitignore"></a>.gitignore file pattern,#adding files .gitignore,#folders in .gitignore,#forder .gitignore:</h2>
 <p><a href="https://linuxize.com/post/gitignore-ignoring-files-in-git/">https://linuxize.com/post/gitignore-ignoring-files-in-git/</a></p>
 <hr>
 <h2 id="stash-your-changes"><a class="header-link" href="#stash-your-changes"></a>Stash your changes</h2>
@@ -985,40 +993,40 @@ Saved working directory and index state WIP on part6-1: 57cbab1 part6-1
 
 chetan@insidebug MINGW64 /c/FullstackopenProjects/redux-notes/src (part6-1)
 $ git checkout part6-2
-Switched to a new branch <span class="hljs-string">'part6-2'</span>
-Branch <span class="hljs-string">'part6-2'</span> <span class="hljs-built_in">set</span> up to track remote branch <span class="hljs-string">'part6-2'</span> from <span class="hljs-string">'origin'</span>.
+Switched to a new branch <span class="hljs-string">&#x27;part6-2&#x27;</span>
+Branch <span class="hljs-string">&#x27;part6-2&#x27;</span> <span class="hljs-built_in">set</span> up to track remote branch <span class="hljs-string">&#x27;part6-2&#x27;</span> from <span class="hljs-string">&#x27;origin&#x27;</span>.
 </code></pre><hr>
 <p><a href="https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches">https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches</a></p>
 <hr>
-<h2 id="#rename-branch,-#change-the-name-of-branch-,-#name-of-branch,-#branch-name,-#change-branch-name,-#change-name-of-branch,#786"><a class="header-link" href="##rename-branch,-#change-the-name-of-branch-,-#name-of-branch,-#branch-name,-#change-branch-name,-#change-name-of-branch,#786"></a>#Rename Branch, #Change the name of  branch , #name of branch, #branch name,  #change branch name, #change name of branch,#786</h2>
+<h2 id="rename-branch-change-the-name-of--branch--name-of-branch-branch-name--change-branch-name-change-name-of-branch786"><a class="header-link" href="#rename-branch-change-the-name-of--branch--name-of-branch-branch-name--change-branch-name-change-name-of-branch786"></a>#Rename Branch, #Change the name of  branch , #name of branch, #branch name,  #change branch name, #change name of branch,#786</h2>
 <p>NOTE: YOU CAN ONLY CHANGE THE NAME OF BRANCH ONCE FIRST COMMIT IS MADE.</p>
 <pre class="hljs"><code>git branch -m desiredBranchName // Changes the name of currently checked out branch
 git branch -m branchName desiredBranchName // General syntax <span class="hljs-keyword">for</span> changing name of any branch</code></pre><hr>
-<h1 id="**remove-untracked/uncached/unstaged-data-(files/folder)#786**"><a class="header-link" href="#**remove-untracked/uncached/unstaged-data-(files/folder)#786**"></a><strong>Remove Untracked/Uncached/Unstaged Data (files/folder)#786</strong></h1>
+<h1 id="remove-untrackeduncachedunstaged-data-filesfolder786"><a class="header-link" href="#remove-untrackeduncachedunstaged-data-filesfolder786"></a><strong>Remove Untracked/Uncached/Unstaged Data (files/folder)#786</strong></h1>
 <pre class="hljs"><code>git clean -fd //Cleans the Untracked/Uncached/Unstaged Area</code></pre><hr>
-<h2 id="creating-new-empty-branch#786"><a class="header-link" href="#creating-new-empty-branch#786"></a>Creating new empty branch#786</h2>
+<h2 id="creating-new-empty-branch786"><a class="header-link" href="#creating-new-empty-branch786"></a>Creating new empty branch#786</h2>
 <pre class="hljs"><code>git checkout --orphan &lt;branch-name&gt; // checkout to an unborned branch.
 git rm -rf .         //Deletes everything except the .git folder
 *(There is forth category too, i.e., ignored)</code></pre><hr>
-<h2 id="deletes-everything-except-the-.git-folder-#786"><a class="header-link" href="#deletes-everything-except-the-.git-folder-#786"></a>Deletes everything except the .git folder #786</h2>
+<h2 id="deletes-everything-except-the-git-folder-786"><a class="header-link" href="#deletes-everything-except-the-git-folder-786"></a>Deletes everything except the .git folder #786</h2>
 <pre class="hljs"><code>git rm -rf . // deletes everything of the repository except the .git folder</code></pre><hr>
-<h2 id="forcefully-checkout-current-branch(if-you-messed-up-anything)"><a class="header-link" href="#forcefully-checkout-current-branch(if-you-messed-up-anything)"></a>Forcefully checkout current branch(if you messed up anything)</h2>
-<pre class="hljs"><code>git checkout <span class="hljs-_">-f</span></code></pre><hr>
-<h2 id="everything-from-staging-area/cached-area-/tracked-area-to-unstaged-area/cachedarea/untracked-area-"><a class="header-link" href="#everything-from-staging-area/cached-area-/tracked-area-to-unstaged-area/cachedarea/untracked-area-"></a>Everything from staging area/cached area /tracked area  TO UNSTAGED Area/CACHEDArea/UNTRACKED Area-</h2>
+<h2 id="forcefully-checkout-current-branchif-you-messed-up-anything"><a class="header-link" href="#forcefully-checkout-current-branchif-you-messed-up-anything"></a>Forcefully checkout current branch(if you messed up anything)</h2>
+<pre class="hljs"><code>git checkout -f</code></pre><hr>
+<h2 id="everything-from-staging-areacached-area-tracked-area--to-unstaged-areacachedareauntracked-area-"><a class="header-link" href="#everything-from-staging-areacached-area-tracked-area--to-unstaged-areacachedareauntracked-area-"></a>Everything from staging area/cached area /tracked area  TO UNSTAGED Area/CACHEDArea/UNTRACKED Area-</h2>
 <p>(In other words you can say UNDO git add .)</p>
 <pre class="hljs"><code>$(All the below commands works <span class="hljs-keyword">in</span> same manner)
 git reset
 git rm --cached -r .
 git rm --cached &lt;fielname&gt; //<span class="hljs-keyword">for</span> individual file</code></pre><hr>
-<h2 id="#gitk---a-graphical-interface-of-git"><a class="header-link" href="##gitk---a-graphical-interface-of-git"></a>#Gitk - a graphical interface of git</h2>
+<h2 id="gitk---a-graphical-interface-of-git"><a class="header-link" href="#gitk---a-graphical-interface-of-git"></a>#Gitk - a graphical interface of git</h2>
 <pre class="hljs"><code>gitk 
 <span class="hljs-comment"># In a git repository.</span>
 $(You can easily reverse a git commit and view everything correctly.)</code></pre><hr>
-<h2 id="why-to-use-ssh-public-private-keys-in-local-git-bash-??"><a class="header-link" href="#why-to-use-ssh-public-private-keys-in-local-git-bash-??"></a>Why to use ssh public-private keys in local git-bash ??</h2>
+<h2 id="why-to-use-ssh-public-private-keys-in-local-git-bash-"><a class="header-link" href="#why-to-use-ssh-public-private-keys-in-local-git-bash-"></a>Why to use ssh public-private keys in local git-bash ??</h2>
 <p>When working with a GitHub repository, you&#39;ll often need to identify yourself to GitHub using your username and password. An SSH key is an alternate way to identify yourself that doesn&#39;t require you to enter you username and password every time. Read more @ <a href="https://jdblischak.github.io/2014-09-18-chicago/novice/git/05-sshkeys.html">link</a></p>
-<h2 id="generate-a-new-ssh-key:"><a class="header-link" href="#generate-a-new-ssh-key:"></a>Generate a new ssh key:</h2>
+<h2 id="generate-a-new-ssh-key"><a class="header-link" href="#generate-a-new-ssh-key"></a>Generate a new ssh key:</h2>
 <p>Basically this features adds a ssh encrytion on your side(machine), and it bind the passphrase to the repository to the local pc and authenticated changes would be made only who has the encryted private key. Public key is stored on the github settings.</p>
-<pre class="hljs"><code>Step1: $ ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">"your_email@example.com"</span>  
+<pre class="hljs"><code>Step1: $ ssh-keygen -t rsa -b 4096 -C <span class="hljs-string">&quot;your_email@example.com&quot;</span>  
 //Use your own email address.
 Step2: Copy the content of .pub file(C:\Users\chetan\.ssh\something.pub) and paste it <span class="hljs-keyword">in</span> Github&gt;Settings&gt;Ssh and Cpg keys&gt;New Ssh key.</code></pre><p>src: official git documentation to create keys like this.</p>
 <hr>
@@ -1032,28 +1040,28 @@ Step2: Copy the content of .pub file(C:\Users\chetan\.ssh\something.pub) and pas
 <pre class="hljs"><code><span class="hljs-built_in">clone</span> from original repo, make changes and make commits, and <span class="hljs-keyword">then</span> <span class="hljs-keyword">do</span>:-
 $ hub pull-request
 Aborted: the current branch seems not yet pushed to a remote
-(use `-p` to push the branch or `<span class="hljs-_">-f</span>` to skip this check)
-$ hub pull-request <span class="hljs-_">-f</span> (this is the needed <span class="hljs-built_in">command</span>)
+(use `-p` to push the branch or `-f` to skip this check)
+$ hub pull-request -f (this is the needed <span class="hljs-built_in">command</span>)
 ***
-$ hub pull-request <span class="hljs-_">-f</span>
+$ hub pull-request -f
 error using text editor <span class="hljs-keyword">for</span> pull request message
 ***</code></pre><pre class="hljs"><code>$ hub pull-request -h // shows <span class="hljs-built_in">help</span> about the <span class="hljs-built_in">command</span>:
-<span class="hljs-comment"># while on a topic branch called "feature":</span>
+<span class="hljs-comment"># while on a topic branch called &quot;feature&quot;:</span>
 $ hub pull-request
 [ opens text editor to edit title &amp; body <span class="hljs-keyword">for</span> the request ]
-[ opened pull request on GitHub <span class="hljs-keyword">for</span> <span class="hljs-string">"YOUR_USER:feature"</span> ]
+[ opened pull request on GitHub <span class="hljs-keyword">for</span> <span class="hljs-string">&quot;YOUR_USER:feature&quot;</span> ]
 
 <span class="hljs-comment"># explicit title, pull base &amp; head:</span>
-$ hub pull-request -m <span class="hljs-string">"Implemented feature X"</span> -b defunkt:master -h mislav:feature</code></pre><h3 id="final-resultant-of-all-research>>:"><a class="header-link" href="#final-resultant-of-all-research>>:"></a>FINAL RESULTANT OF ALL research&gt;&gt;:</h3>
+$ hub pull-request -m <span class="hljs-string">&quot;Implemented feature X&quot;</span> -b defunkt:master -h mislav:feature</code></pre><h3 id="final-resultant-of-all-research"><a class="header-link" href="#final-resultant-of-all-research"></a>FINAL RESULTANT OF ALL research&gt;&gt;:</h3>
 <p>favourite command to make pull request,(fork a copy, make a local copy of the forked via git clone <url>), then make pull requests via:-
 (you just commit changes and make pull request via this command{no need to push to your forked your copy of the repository, as this command this automatically.})</p>
 <p>Example 1.</p>
-<pre class="hljs"><code>$ hub pull-request -m <span class="hljs-string">"MessgForPullRequest"</span> -p mylocalbranch -b chetanmishra8660:master -h mylocalbranch -c <span class="hljs-_">-f</span></code></pre><p>Example 2.</p>
-<pre class="hljs"><code>$ hub pull-request -m <span class="hljs-string">"Just added comments in backendBranch"</span> -b nirmal201:backendBranch -h backendBranch -c <span class="hljs-_">-f</span></code></pre><p>(^^YOU HAVE TO EXECUTE THIS INSIDE GIT REPO &gt;&gt;)</p>
+<pre class="hljs"><code>$ hub pull-request -m <span class="hljs-string">&quot;MessgForPullRequest&quot;</span> -p mylocalbranch -b chetanmishra8660:master -h mylocalbranch -c -f</code></pre><p>Example 2.</p>
+<pre class="hljs"><code>$ hub pull-request -m <span class="hljs-string">&quot;Just added comments in backendBranch&quot;</span> -b nirmal201:backendBranch -h backendBranch -c -f</code></pre><p>(^^YOU HAVE TO EXECUTE THIS INSIDE GIT REPO &gt;&gt;)</p>
 <pre class="hljs"><code>_
 <span class="hljs-comment"># Make a fork of the repo in your github, and clone that forked repo locally and make changes to the appropriate branch, and push the changes. And make a pull-request via:-</span>
 
-$ hub pull-request -m <span class="hljs-string">"Some message for pull-request"</span> -b chetanmishra8660:master -h sahilrajput03:master
+$ hub pull-request -m <span class="hljs-string">&quot;Some message for pull-request&quot;</span> -b chetanmishra8660:master -h sahilrajput03:master
 <span class="hljs-comment"># -b is the switch for &lt;username-to-request-to&gt;:&lt;branch-to-be-pushed-to&gt;</span>
 <span class="hljs-comment"># -h is the switch for &lt;my-username&gt;:&lt;my-branch-name-to-make pull-request-for&gt;</span>
 ____________________
@@ -1064,22 +1072,22 @@ making use of this would be like:
 -p, --push (this is not working to the way we expect, so better no to use it at all.)
 &gt;&gt;Push the current branch to HEAD before creating the pull request.
 __
-$ hub pull-request -m <span class="hljs-string">"Some message for pull-request"</span> -b chetanmishra8660:master -h sahilrajput03:master -c
-$ hub pull-request -m <span class="hljs-string">"Some message for pull-request"</span> -b chetanmishra8660:master -h master -c
-$ hub pull-request -m <span class="hljs-string">"Some message for pull-request"</span> -b chetanmishra8660:master -h mylocalbranch -c
-$ hub pull-request -m <span class="hljs-string">"Some message for pull-request"</span> -p master -b chetanmishra8660:master -h mylocalbranch -c <span class="hljs-_">-f</span>
-NOTE: <span class="hljs-_">-f</span> (this flag is really good, as you can omit the git push <span class="hljs-built_in">command</span> before making the pull-request <span class="hljs-built_in">command</span>, as this <span class="hljs-built_in">command</span> does this inclusively before making the pull-request.
+$ hub pull-request -m <span class="hljs-string">&quot;Some message for pull-request&quot;</span> -b chetanmishra8660:master -h sahilrajput03:master -c
+$ hub pull-request -m <span class="hljs-string">&quot;Some message for pull-request&quot;</span> -b chetanmishra8660:master -h master -c
+$ hub pull-request -m <span class="hljs-string">&quot;Some message for pull-request&quot;</span> -b chetanmishra8660:master -h mylocalbranch -c
+$ hub pull-request -m <span class="hljs-string">&quot;Some message for pull-request&quot;</span> -p master -b chetanmishra8660:master -h mylocalbranch -c -f
+NOTE: -f (this flag is really good, as you can omit the git push <span class="hljs-built_in">command</span> before making the pull-request <span class="hljs-built_in">command</span>, as this <span class="hljs-built_in">command</span> does this inclusively before making the pull-request.
 But <span class="hljs-keyword">for</span> THIS TO WORK, you need to specify, -p &lt;branch&gt; to be pushed to you forked-remote-repository, like <span class="hljs-keyword">in</span> the above <span class="hljs-built_in">command</span> we are specifying <span class="hljs-built_in">local</span> master brach to be pushed to its default upstream.     AWESOME.)
-$ hub pull-request -m <span class="hljs-string">"Some message for pull-request"</span> -b chetanmishra8660:master -c
+$ hub pull-request -m <span class="hljs-string">&quot;Some message for pull-request&quot;</span> -b chetanmishra8660:master -c
 
 ALL ABOVE COMMANDS WORK FINE, i.e., -c switch copies the url of the pull-request to clipboard.
 You can close a pull-request via visiting the pull-request-url and clicking [Close pull request] button. (The owner of the actual repo, can <span class="hljs-keyword">do</span> this, or you can <span class="hljs-keyword">do</span> this too.)
 YOu cannot edit/update the pull-request you have made from the terminal(hub cli). 
 If the terminal is saying
-<span class="hljs-string">"A pull request already exists for sahilrajput03:master."</span> 
+<span class="hljs-string">&quot;A pull request already exists for sahilrajput03:master.&quot;</span> 
 (additionalyy you can make more pull-request from a new-branch or making pull-request from the same-branch only by deleting the old pull request yourself.)
-Then you should go the github.com and click <span class="hljs-string">"Pull requests"</span> at the top of the page.
-ALTERNATELY: You can go to the owner\<span class="hljs-string">'s repository and view you pull request there.
+Then you should go the github.com and click <span class="hljs-string">&quot;Pull requests&quot;</span> at the top of the page.
+ALTERNATELY: You can go to the owner\<span class="hljs-string">&#x27;s repository and view you pull request there.
 ___
 </span></code></pre><p>Cheatsheet about hub:- <a href="https://kapeli.com/cheat_sheets/Hub.docset/Contents/Resources/Documents/index">Kapeli.com/cheatsheet####</a>
 Help link from official hub page: <a href="https://hub.github.com/hub-pull-request.1.html">Link</a> <a href="https://hub.github.com/">Link2</a></p>

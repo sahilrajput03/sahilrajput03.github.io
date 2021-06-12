@@ -13,7 +13,7 @@
   <body>
     <article class="markdown-body"><p>kicking</p>
 <hr>
-<h2 id="actual-handling-of-error-data(sting-or-complex-data-send-via-express-route)-and-handled-in-front-end-try-catch-appropriately"><a class="header-link" href="#actual-handling-of-error-data(sting-or-complex-data-send-via-express-route)-and-handled-in-front-end-try-catch-appropriately"></a>Actual handling of error data(sting or complex data send via express route) and handled in front-end try catch appropriately</h2>
+<h2 id="actual-handling-of-error-datasting-or-complex-data-send-via-express-route-and-handled-in-front-end-try-catch-appropriately"><a class="header-link" href="#actual-handling-of-error-datasting-or-complex-data-send-via-express-route-and-handled-in-front-end-try-catch-appropriately"></a>Actual handling of error data(sting or complex data send via express route) and handled in front-end try catch appropriately</h2>
 <p><a href="https://stackoverflow.com/questions/14154337/how-to-send-a-custom-http-status-message-in-node-express">helpful resource link@stackoverflowc</a></p>
 <p class="img-container"><img src=".imgs_typora/image-20200714004605392.png" alt="image-20200714004605392"></p>
 <hr>
@@ -30,109 +30,109 @@
 <pre class="hljs"><code>#create note <span class="hljs-keyword">with</span> authorization
 post http:<span class="hljs-comment">//localhost:3003/api/notes</span>
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1a3UiLCJpZCI6IjVlN2Y0NTM2YmU3NGI4NTIyNDRlZjJmOSIsImlhdCI6MTU4NTM5OTExOH0.NLGlyS2naCpso_0qSe4AYCuWWXZC6X-uiD2JKhoxOJg
+<span class="hljs-attr">Authorization</span>: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imt1a3UiLCJpZCI6IjVlN2Y0NTM2YmU3NGI4NTIyNDRlZjJmOSIsImlhdCI6MTU4NTM5OTExOH0.NLGlyS2naCpso_0qSe4AYCuWWXZC6X-uiD2JKhoxOJg
 
 {
-  <span class="hljs-string">"content"</span>: <span class="hljs-string">"Single Page Apps use token authentication"</span>,
-  <span class="hljs-string">"important"</span>: <span class="hljs-literal">false</span>
+  <span class="hljs-string">&quot;content&quot;</span>: <span class="hljs-string">&quot;Single Page Apps use token authentication&quot;</span>,
+  <span class="hljs-string">&quot;important&quot;</span>: <span class="hljs-literal">false</span>
 }</code></pre><pre class="hljs"><code><span class="hljs-keyword">POST</span> VIA CURL
-curl -<span class="hljs-keyword">d</span> '{<span class="hljs-string">"key1"</span>:<span class="hljs-string">"value1"</span>, <span class="hljs-string">"key2"</span>:<span class="hljs-string">"value2"</span>}' -<span class="hljs-keyword">H</span> <span class="hljs-string">"Content-Type: application/json"</span> -X <span class="hljs-keyword">POST</span> http:<span class="hljs-comment">//localhost:3000/data</span></code></pre><p>src: <a href="https://gist.github.com/subfuzion/08c5d85437d5d4f00e58">https://gist.github.com/subfuzion/08c5d85437d5d4f00e58</a></p>
+curl -<span class="hljs-keyword">d</span> &#x27;{<span class="hljs-string">&quot;key1&quot;</span>:<span class="hljs-string">&quot;value1&quot;</span>, <span class="hljs-string">&quot;key2&quot;</span>:<span class="hljs-string">&quot;value2&quot;</span>}&#x27; -<span class="hljs-keyword">H</span> <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> -X <span class="hljs-keyword">POST</span> http:<span class="hljs-comment">//localhost:3000/data</span></code></pre><p>src: <a href="https://gist.github.com/subfuzion/08c5d85437d5d4f00e58">https://gist.github.com/subfuzion/08c5d85437d5d4f00e58</a></p>
 <pre class="hljs"><code>#create-user
 post http:<span class="hljs-comment">//localhost:3003/api/users</span>
 Content-Type: application/json
-
+ 
 {
-  <span class="hljs-string">"username"</span>: <span class="hljs-string">"kuku"</span>,
-  <span class="hljs-string">"password"</span>: <span class="hljs-string">"password123"</span>
+  <span class="hljs-string">&quot;username&quot;</span>: <span class="hljs-string">&quot;kuku&quot;</span>,
+  <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;password123&quot;</span>
 }</code></pre><pre class="hljs"><code>#simple get request
 get http:<span class="hljs-comment">//localhost:3001/notes</span>
 <span class="hljs-comment">// when using locahost, you should always use http not https, bcoz you to use https you need to configure you node server for that.</span></code></pre><pre class="hljs"><code>#login
 post http:<span class="hljs-comment">//localhost:3003/api/login</span>
 Content-Type: application/json
-
+ 
 {
-  <span class="hljs-string">"username"</span>: <span class="hljs-string">"kuku"</span>,
-  <span class="hljs-string">"password"</span>: <span class="hljs-string">"password123"</span>
+  <span class="hljs-string">&quot;username&quot;</span>: <span class="hljs-string">&quot;kuku&quot;</span>,
+  <span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;password123&quot;</span>
 }
 </code></pre><pre class="hljs"><code>#put
 put  http:<span class="hljs-comment">//localhost:3003/api/blogs/5e88bc06cf0e942188515fd1</span>
 Content-Type: application/json
 
 {
-    <span class="hljs-string">"likes"</span>: <span class="hljs-number">30</span>
+    <span class="hljs-string">&quot;likes&quot;</span>: <span class="hljs-number">30</span>
 }
 #You have to sent what all you need at that url(<span class="hljs-keyword">let</span> say you forget to send the content then it will be removed what was already there), you can skip id(atleast <span class="hljs-keyword">with</span> json-server). And <span class="hljs-keyword">if</span> </code></pre><hr>
-<h2 id="know-your-architecture-of-windows:"><a class="header-link" href="#know-your-architecture-of-windows:"></a>Know your architecture of windows:</h2>
+<h2 id="know-your-architecture-of-windows"><a class="header-link" href="#know-your-architecture-of-windows"></a>Know your architecture of windows:</h2>
 <pre class="hljs"><code>wmic os get osarchitecture</code></pre><hr>
-<h2 id="the-motive-of-the-desired-code-is-to-ensure-the-variable-to-be-'undefined',-find-if-the-variable-is-undefined"><a class="header-link" href="#the-motive-of-the-desired-code-is-to-ensure-the-variable-to-be-'undefined',-find-if-the-variable-is-undefined"></a>THE MOTIVE OF THE DESIRED CODE IS TO ENSURE THE VARIABLE TO BE &#39;undefined&#39;, find if the variable is undefined</h2>
+<h2 id="the-motive-of-the-desired-code-is-to-ensure-the-variable-to-be-undefined-find-if-the-variable-is-undefined"><a class="header-link" href="#the-motive-of-the-desired-code-is-to-ensure-the-variable-to-be-undefined-find-if-the-variable-is-undefined"></a>THE MOTIVE OF THE DESIRED CODE IS TO ENSURE THE VARIABLE TO BE &#39;undefined&#39;, find if the variable is undefined</h2>
 <h2 id="check-if-the-variable-is-undefined"><a class="header-link" href="#check-if-the-variable-is-undefined"></a>Check if the variable is undefined</h2>
 <pre class="hljs"><code>#somethings that works amaz...
-if(<span class="hljs-keyword">typeof</span> tutu ===<span class="hljs-string">"undefined"</span>){
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'its okay you are undefined'</span>)
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> tutu ===<span class="hljs-string">&quot;undefined&quot;</span>){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;its okay you are undefined&#x27;</span>)
 }
 <span class="hljs-comment">//above example prints when tutu is undefined.</span>
 
 
 #But..
-if(<span class="hljs-keyword">typeof</span> tutu){
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'its not okay, I\'m getting printed even when you do exist, as string \'undefined\' evaluates as truthy value.'</span>)
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> tutu){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;its not okay, I\&#x27;m getting printed even when you do exist, as string \&#x27;undefined\&#x27; evaluates as truthy value.&#x27;</span>)
 }
 
 
 #Also..
-if(!tutu){
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'its not okay, this piece of code throws error: Reference Error, tutu is not defined.'</span>)
+<span class="hljs-keyword">if</span>(!tutu){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;its not okay, this piece of code throws error: Reference Error, tutu is not defined.&#x27;</span>)
 }</code></pre><hr>
 <pre class="hljs"><code>#Deleting
 DELETE http:<span class="hljs-comment">//localhost:3001/api/notes/5dbfeba6117b9f1ecc3fb2b6</span>
 ###
 DELETE http:<span class="hljs-comment">//localhost:3001/api/notes/5dbfebdd9edc4017dce88838</span></code></pre><hr>
-<h2 id="responses-exapmles:-"><a class="header-link" href="#responses-exapmles:-"></a>Responses Exapmles:-</h2>
+<h2 id="responses-exapmles-"><a class="header-link" href="#responses-exapmles-"></a>Responses Exapmles:-</h2>
 <p>when we do:</p>
-<pre class="hljs"><code>blogsRouter.post(<span class="hljs-string">"/comment"</span>, <span class="hljs-keyword">async</span> (request, response) =&gt; {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"$request.body:-"</span>, request.body);
-  response.send(<span class="hljs-string">"I reveive that:-"</span>+<span class="hljs-built_in">JSON</span>.stringify(request.body))
+<pre class="hljs"><code>blogsRouter.post(<span class="hljs-string">&quot;/comment&quot;</span>, <span class="hljs-keyword">async</span> (request, response) =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;$request.body:-&quot;</span>, request.body);
+  response.send(<span class="hljs-string">&quot;I reveive that:-&quot;</span>+<span class="hljs-built_in">JSON</span>.stringify(request.body))
 });</code></pre><pre class="hljs"><code>post http://localhost:3003/api/blogs/comment
 Content-Type: application/json
 
 {
-  <span class="hljs-string">"title"</span>: <span class="hljs-string">"Tuntunaa99"</span>,
-  <span class="hljs-string">"author"</span>: <span class="hljs-string">"Pagal Tipu Sultan"</span>,
-  <span class="hljs-string">"url"</span>: <span class="hljs-string">"Bablitera-mera.com"</span>,
-  <span class="hljs-string">"likes"</span>: 90
+  <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Tuntunaa99&quot;</span>,
+  <span class="hljs-string">&quot;author&quot;</span>: <span class="hljs-string">&quot;Pagal Tipu Sultan&quot;</span>,
+  <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;Bablitera-mera.com&quot;</span>,
+  <span class="hljs-string">&quot;likes&quot;</span>: 90
 }</code></pre><pre class="hljs"><code>HTTP/1.1 200 OK
 X-Powered-By: Express
 Access-Control-Allow-Origin: *
 Content-Type: text/html; charset=utf-8
 Content-Length: 105
-ETag: W/<span class="hljs-string">"69-q6ixFC158sbfSYtjVqmNTJzlAvE"</span>
+ETag: W/<span class="hljs-string">&quot;69-q6ixFC158sbfSYtjVqmNTJzlAvE&quot;</span>
 Date: Wed, 06 May 2020 07:56:43 GMT
 Connection: close
 
-I reveive that:-{<span class="hljs-string">"title"</span>:<span class="hljs-string">"Tuntunaa99"</span>,<span class="hljs-string">"author"</span>:<span class="hljs-string">"Pagal Tipu Sultan"</span>,<span class="hljs-string">"url"</span>:<span class="hljs-string">"Bablitera-mera.com"</span>,<span class="hljs-string">"likes"</span>:90}</code></pre><hr>
+I reveive that:-{<span class="hljs-string">&quot;title&quot;</span>:<span class="hljs-string">&quot;Tuntunaa99&quot;</span>,<span class="hljs-string">&quot;author&quot;</span>:<span class="hljs-string">&quot;Pagal Tipu Sultan&quot;</span>,<span class="hljs-string">&quot;url&quot;</span>:<span class="hljs-string">&quot;Bablitera-mera.com&quot;</span>,<span class="hljs-string">&quot;likes&quot;</span>:90}</code></pre><hr>
 <p>and when we do:(json is the type we are sending in exchange or the request)</p>
-<pre class="hljs"><code>  response.json(<span class="hljs-string">"I reveive that:-"</span>+<span class="hljs-built_in">JSON</span>.stringify(request.body))</code></pre><pre class="hljs"><code>HTTP/1.1 <span class="hljs-number">200</span> OK
-<span class="hljs-attribute">X-Powered-By</span>: Express
-<span class="hljs-attribute">Access-Control-Allow-Origin</span>: *
-<span class="hljs-attribute">Content-Type</span>: application/json; charset=utf-8
-<span class="hljs-attribute">Content-Length</span>: 121
-<span class="hljs-attribute">ETag</span>: W/"79-ORXKBxto7dVwMMuMVcyyHxMrJCY"
-<span class="hljs-attribute">Date</span>: Wed, 06 May 2020 08:00:16 GMT
-<span class="hljs-attribute">Connection</span>: close
+<pre class="hljs"><code>  response.json(<span class="hljs-string">&quot;I reveive that:-&quot;</span>+<span class="hljs-built_in">JSON</span>.stringify(request.body))</code></pre><pre class="hljs"><code><span class="hljs-meta">HTTP/1.1</span> <span class="hljs-number">200</span> OK
+<span class="hljs-attribute">X-Powered-By</span><span class="hljs-punctuation">: </span>Express
+<span class="hljs-attribute">Access-Control-Allow-Origin</span><span class="hljs-punctuation">: </span>*
+<span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/json; charset=utf-8
+<span class="hljs-attribute">Content-Length</span><span class="hljs-punctuation">: </span>121
+<span class="hljs-attribute">ETag</span><span class="hljs-punctuation">: </span>W/&quot;79-ORXKBxto7dVwMMuMVcyyHxMrJCY&quot;
+<span class="hljs-attribute">Date</span><span class="hljs-punctuation">: </span>Wed, 06 May 2020 08:00:16 GMT
+<span class="hljs-attribute">Connection</span><span class="hljs-punctuation">: </span>close
 
-<span class="lsl"><span class="hljs-string">"I reveive that:-{<span class="hljs-subst">\"</span>title<span class="hljs-subst">\"</span>:<span class="hljs-subst">\"</span>Tuntunaa99<span class="hljs-subst">\"</span>,<span class="hljs-subst">\"</span>author<span class="hljs-subst">\"</span>:<span class="hljs-subst">\"</span>Pagal Tipu Sultan<span class="hljs-subst">\"</span>,<span class="hljs-subst">\"</span>url<span class="hljs-subst">\"</span>:<span class="hljs-subst">\"</span>Bablitera-mera.com<span class="hljs-subst">\"</span>,<span class="hljs-subst">\"</span>likes<span class="hljs-subst">\"</span>:90}"</span></span></code></pre><hr>
-<h2 id="==use-intellisense-in-vscode-rest-to-create-request,-for-e.g.,=="><a class="header-link" href="#==use-intellisense-in-vscode-rest-to-create-request,-for-e.g.,=="></a>==use intellisense in vscode rest to create request, for e.g.,==</h2>
+<span class="lsl"><span class="hljs-string">&quot;I reveive that:-{<span class="hljs-subst">\&quot;</span>title<span class="hljs-subst">\&quot;</span>:<span class="hljs-subst">\&quot;</span>Tuntunaa99<span class="hljs-subst">\&quot;</span>,<span class="hljs-subst">\&quot;</span>author<span class="hljs-subst">\&quot;</span>:<span class="hljs-subst">\&quot;</span>Pagal Tipu Sultan<span class="hljs-subst">\&quot;</span>,<span class="hljs-subst">\&quot;</span>url<span class="hljs-subst">\&quot;</span>:<span class="hljs-subst">\&quot;</span>Bablitera-mera.com<span class="hljs-subst">\&quot;</span>,<span class="hljs-subst">\&quot;</span>likes<span class="hljs-subst">\&quot;</span>:90}&quot;</span></span></code></pre><hr>
+<h2 id="use-intellisense-in-vscode-rest-to-create-request-for-eg"><a class="header-link" href="#use-intellisense-in-vscode-rest-to-create-request-for-eg"></a>==use intellisense in vscode rest to create request, for e.g.,==</h2>
 <p>type get/post/put whatever you want.
 then press CTRL + SPACE. and select the suggestion.
 then navigate and type &quot;type&quot; in place of &quot;header name&quot; and select Content-Type
 then navigate to &quot;header value &quot; and type &quot;json&quot; and press CTRL + SPACE and select application/json from the suggestion. 
 then navigate to content, and type the body, i.e., { .. what ever you want to send in the body}</p>
 <hr>
-<pre class="hljs"><code><span class="hljs-keyword">POST</span> <span class="hljs-string">http://localhost:4000/graphql</span> HTTP/1.1
-<span class="hljs-attribute">Content-Type</span>: application/json
+<pre class="hljs"><code><span class="hljs-keyword">POST</span> <span class="hljs-string">http://localhost:4000/graphql</span> <span class="hljs-meta">HTTP/1.1</span>
+<span class="hljs-attribute">Content-Type</span><span class="hljs-punctuation">: </span>application/json
 
 <span class="clean">{
-    <span class="hljs-string">"query"</span>: <span class="hljs-string">"query{ allPersons{ name , phone } }"</span>
+    <span class="hljs-string">&quot;query&quot;</span>: <span class="hljs-string">&quot;query{ allPersons{ name , phone } }&quot;</span>
 }
 
 ###

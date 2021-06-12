@@ -11,7 +11,7 @@
     <script src="assets/myJs/copyToClipboardScript.js" defer></script>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="for-the-sake-of-example-lets-choose-slug-(namespace)-as-`somecityname`-though-you-can-use-any-slug-as-per-your-need."><a class="header-link" href="#for-the-sake-of-example-lets-choose-slug-(namespace)-as-`somecityname`-though-you-can-use-any-slug-as-per-your-need."></a>For the sake of example lets choose slug (namespace) as <code>someCityName</code> though you can use any slug as per your need.</h2>
+    <article class="markdown-body"><h2 id="for-the-sake-of-example-lets-choose-slug-namespace-as-somecityname-though-you-can-use-any-slug-as-per-your-need"><a class="header-link" href="#for-the-sake-of-example-lets-choose-slug-namespace-as-somecityname-though-you-can-use-any-slug-as-per-your-need"></a>For the sake of example lets choose slug (namespace) as <code>someCityName</code> though you can use any slug as per your need.</h2>
 <ol class="list">
 <li>Make request to this site with <code>axios</code> or <code>postman</code> with some slug(defines a namespace) following the <code>/</code> in the url of this site to store data at that namespace. For e.g.,</li>
 </ol>
@@ -20,22 +20,22 @@
   <span class="hljs-attr">bikes</span>: <span class="hljs-number">400</span>,
   <span class="hljs-attr">ships</span>: {
     <span class="hljs-attr">big</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">small</span>: [<span class="hljs-string">'rem'</span>, <span class="hljs-string">'bem'</span>, <span class="hljs-string">'tem'</span>]
+    <span class="hljs-attr">small</span>: [<span class="hljs-string">&#x27;rem&#x27;</span>, <span class="hljs-string">&#x27;bem&#x27;</span>, <span class="hljs-string">&#x27;tem&#x27;</span>]
   }
 }
-<span class="hljs-keyword">let</span> {data} = <span class="hljs-keyword">await</span> axios.post(<span class="hljs-string">"https://jsonbackendserver.herokuapp.com/someCityName"</span>, dataToPost)</code></pre><ol start="2">
+<span class="hljs-keyword">let</span> {data} = <span class="hljs-keyword">await</span> axios.post(<span class="hljs-string">&quot;https://jsonbackendserver.herokuapp.com/someCityName&quot;</span>, dataToPost)</code></pre><ol start="2">
 <li>Access data from database -</li>
 </ol>
-<pre class="hljs"><code><span class="hljs-keyword">let</span> {data} = <span class="hljs-keyword">await</span> axios.post(<span class="hljs-string">"https://jsonbackendserver.herokuapp.com/someCityName"</span>)</code></pre><ol start="3">
+<pre class="hljs"><code><span class="hljs-keyword">let</span> {data} = <span class="hljs-keyword">await</span> axios.post(<span class="hljs-string">&quot;https://jsonbackendserver.herokuapp.com/someCityName&quot;</span>)</code></pre><ol start="3">
 <li>Partially update data in database -</li>
 </ol>
 <pre class="hljs"><code><span class="hljs-keyword">let</span> dataToPost = {
   <span class="hljs-attr">$partial</span>: {
-    <span class="hljs-attr">ships</span>: <span class="hljs-string">"Cool"</span>,
+    <span class="hljs-attr">ships</span>: <span class="hljs-string">&quot;Cool&quot;</span>,
     <span class="hljs-attr">kicks</span>: <span class="hljs-number">200</span>
   }
 }
-<span class="hljs-keyword">let</span> {data} = <span class="hljs-keyword">await</span> axios.post(<span class="hljs-string">"https://jsonbackendserver.herokuapp.com/someCityName"</span>, dataToPost)</code></pre><p>so this way it&#39;ll replace or add(if property doesn&#39;t exist earlier) in the database of your namespace. (For the sake of true clarity, <code>{...oldData, ..req.body.$partial})</code> is replace in the database file, so it works like that.</p>
+<span class="hljs-keyword">let</span> {data} = <span class="hljs-keyword">await</span> axios.post(<span class="hljs-string">&quot;https://jsonbackendserver.herokuapp.com/someCityName&quot;</span>, dataToPost)</code></pre><p>so this way it&#39;ll replace or add(if property doesn&#39;t exist earlier) in the database of your namespace. (For the sake of true clarity, <code>{...oldData, ..req.body.$partial})</code> is replace in the database file, so it works like that.</p>
 <p>Wanna make your own custom <strong>Object database server</strong> ? Refer : <a href="https://www.npmjs.com/package/jsonbackend">jsonbackend@npm</a></p>
 </article>
   </body>

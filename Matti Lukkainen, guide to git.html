@@ -71,7 +71,7 @@
 <p>Press Tab to complete the command name or parameter you typed on the command line. For example, if you are going to a directory called <em>Software Engineering-Spring-2019</em> , all you have to do is type <code>cd oh</code>and press Tab. If there are no other files in your directory or directories starting with <em>oh</em> , the name will be completed. If so, you may need to type a character or two more. If there are several files and you are not sure of the correct name, press Tab several times to see the possible options.</p>
 <p>Command names can also be supplemented with a tab-complete. For example, if you want to open the <em>chromium-browser</em> from the command line of a web browser, all you have to do is type <code>chro</code>and press Tab. The command name is completed.</p>
 <p>Nor should we forget the up <em>arrow</em> . It allows you to scroll through the commands you have previously written.</p>
-<h2 id="simultaneous-terminals-/-terminal-tabs"><a class="header-link" href="#simultaneous-terminals-/-terminal-tabs"></a>simultaneous terminals / terminal tabs</h2>
+<h2 id="simultaneous-terminals--terminal-tabs"><a class="header-link" href="#simultaneous-terminals--terminal-tabs"></a>simultaneous terminals / terminal tabs</h2>
 <p>A novice command line user often keeps only one terminal window open at a time. In most situations, your workload will multiply if you open multiple terminals on the screen or open multiple &quot;tabs&quot; on a single terminal. To open a new tab, press <em>ctrl</em> , <em>shift,</em> and <em>t at the</em> same time or from the application menu (located at the top of the screen on Linux on your plant).</p>
 <h2 id="version-control"><a class="header-link" href="#version-control"></a>version control</h2>
 <p>Next, let’s take a look at version control.</p>
@@ -86,14 +86,14 @@
 <h3 id="configurations"><a class="header-link" href="#configurations"></a>configurations</h3>
 <p>Open the terminal on your own machine. <strong>So the following tasks are done locally, not almost!</strong></p>
 <p>Enter the commands to specify <strong>your name</strong> and <strong>the email address you use for</strong> git :</p>
-<pre class="hljs"><code> git config --global user<span class="hljs-selector-class">.name</span> <span class="hljs-string">"Your Name"</span>
- git config --global user<span class="hljs-selector-class">.email</span> you@example.com</code></pre><p>Use the command to verify <code>git config -l</code>that the configurations went correctly.</p>
+<pre class="hljs"><code> git <span class="hljs-built_in">config</span> <span class="hljs-comment">--global user.name &quot;Your Name&quot;</span>
+ git <span class="hljs-built_in">config</span> <span class="hljs-comment">--global user.email you@example.com</span></code></pre><p>Use the command to verify <code>git config -l</code>that the configurations went correctly.</p>
 <p>Let&#39;s <strong>specify</strong> git to use the appropriate colors with the command <code>git config --global color.ui</code>and <strong>change the default editor used by Git with the</strong> <em>nano</em> command<code>git config --global core.editor nano</code></p>
 <ul class="list">
 <li>if you use gadgets, you can leave the default editor unchanged</li>
 </ul>
 <p>Make the following configuration</p>
-<pre class="hljs"><code>git <span class="hljs-built_in">config</span> --global push.<span class="hljs-built_in">default</span> matching</code></pre><p>This is related to the default functionality of the <em>git push</em> command. More on the command later.</p>
+<pre class="hljs"><code>git config --<span class="hljs-meta">global</span> <span class="hljs-keyword">push</span><span class="hljs-number">.</span><span class="hljs-meta">default</span> matching</code></pre><p>This is related to the default functionality of the <em>git push</em> command. More on the command later.</p>
 <h3 id="repositorio"><a class="header-link" href="#repositorio"></a>repositorio</h3>
 <p>Now make a suitable directory for Git&#39;s training and go to the directory, ie give the following commands:</p>
 <ul class="list">
@@ -103,8 +103,8 @@
 <p><strong>NOTE:</strong> now make sure you are in the directory you created, i.e. if you run the <em>ls</em> command , there should be nothing in the directory.</p>
 <p>Create a local <em>git repository from the</em> directory by issuing the command<code>git init</code></p>
 <p>Git announces that it has initialized the repository:</p>
-<pre class="hljs"><code>mluukkai<span class="hljs-meta">@melkinpaasi</span>:~/ot_viikko1$ git init
-Initialised empty Git repository <span class="hljs-keyword">in</span> <span class="hljs-regexp">/home/</span>ad<span class="hljs-regexp">/fshome4/</span>u4<span class="hljs-regexp">/m/</span>mluukkai<span class="hljs-regexp">/Linux/</span>ot_viikko1<span class="hljs-regexp">/.git/</span></code></pre><p>If you look at the contents of a directory with the command, <code>ls -la</code>you will notice that a directory has appeared inside the directory <code>.git</code>. Git uses the created directory to keep track of the files stored in the repository.</p>
+<pre class="hljs"><code>mluukkai@melkinpaasi:~/ot_viikko1$ git init
+Initialised empty Git repository <span class="hljs-keyword">in</span> <span class="hljs-regexp">/home/</span>ad<span class="hljs-regexp">/fshome4/u</span>4<span class="hljs-regexp">/m/m</span>luukkai<span class="hljs-regexp">/Linux/</span>ot_viikko1<span class="hljs-regexp">/.git/</span></code></pre><p>If you look at the contents of a directory with the command, <code>ls -la</code>you will notice that a directory has appeared inside the directory <code>.git</code>. Git uses the created directory to keep track of the files stored in the repository.</p>
 <p><strong>NOTE</strong> because the directory name ( <em>.git</em> ) starts with a dot, the <em>ls</em> command does not display it by default. Parameter <em>a</em> also shows files and directories starting with a dot. Try how <em>ls -a</em> and <em>ls -la</em> differ!</p>
 <p>Continue to stay in your repository directory <em>ot_week1</em> .</p>
 <p>Create a directory file named <em>file.txt</em> , eg. Command <code>touch</code>. After creating the file, run the command <code>git status</code>:</p>
@@ -115,11 +115,11 @@ On branch master
 No commits yet
 
 Untracked <span class="hljs-symbol">files:</span>
-  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git add ..."</span> to <span class="hljs-keyword">include</span> <span class="hljs-keyword">in</span> what will be committed)
+  (<span class="hljs-keyword">use</span> <span class="hljs-string">&quot;git add ...&quot;</span> to <span class="hljs-keyword">include</span> <span class="hljs-keyword">in</span> what will be committed)
 
     tiedosto.txt
 
-nothing added to commit but untracked files present (<span class="hljs-keyword">use</span> <span class="hljs-string">"git add"</span> to track)
+nothing added to commit but untracked files present (<span class="hljs-keyword">use</span> <span class="hljs-string">&quot;git add&quot;</span> to track)
 mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span>$</code></pre><p>Git reports that there is a file that is in <em>untracked</em> mode , meaning the file has not been added to the version control pair.</p>
 <p>As the output of the command says, adding a file to Git (... to include in what will be committed) is done with the command <code>git add tiedosto.txt</code></p>
 <p>Perform the addition and then the command <code>git status</code>:</p>
@@ -130,20 +130,20 @@ On branch master
 No commits yet
 
 Changes to be <span class="hljs-symbol">committed:</span>
-  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git rm --cached ..."</span> to unstage)
+  (<span class="hljs-keyword">use</span> <span class="hljs-string">&quot;git rm --cached ...&quot;</span> to unstage)
 
     new <span class="hljs-symbol">file:</span>   tiedosto.txt</code></pre><p>Git now says that <em>tiedosto.txt</em> are among the changes that can be <em>commitoida</em> .</p>
 <h3 id="commit"><a class="header-link" href="#commit"></a>commit</h3>
 <p>Commitment refers to the storage of files and directories and related changes in the <em>git repository</em> .</p>
 <p>Commitment is performed by issuing a command <code>git commit -m &quot;tiedosto.txt luotu&quot;</code></p>
-<pre class="hljs"><code>mluukkai@melkinpaasi:~/ot_viikko1$ git <span class="hljs-keyword">commit</span> -m <span class="hljs-string">"tiedosto.txt luotu"</span>
-[<span class="hljs-keyword">master</span> (root-<span class="hljs-keyword">commit</span>) <span class="hljs-number">0e12</span>cfa] tiedosto.txt luotu
- <span class="hljs-number">1</span> <span class="hljs-keyword">file</span> <span class="hljs-keyword">changed</span>, <span class="hljs-number">0</span> insertions(+), <span class="hljs-number">0</span> deletions(-)
- <span class="hljs-keyword">create</span> <span class="hljs-keyword">mode</span> <span class="hljs-number">100644</span> tiedosto.txt</code></pre><p>Run the command again <code>git status</code></p>
+<pre class="hljs"><code>mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span><span class="hljs-variable">$ </span>git commit -m <span class="hljs-string">&quot;tiedosto.txt luotu&quot;</span>
+[master (root-commit) 0e12cfa] tiedosto.txt luotu
+ <span class="hljs-number">1</span> file changed, 0 insertions(+), 0 deletions(-)
+ create mode <span class="hljs-number">100644</span> tiedosto.txt</code></pre><p>Run the command again <code>git status</code></p>
 <pre class="hljs"><code>mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span><span class="hljs-variable">$ </span>git status
 On branch master
 nothing to commit, working directory clean</code></pre><p>Git reports that <em>working directory clean</em> , i.e. your directory is in the same state as the git repository.</p>
-<h3 id="working-directory,-index-/-staging,-repository"><a class="header-link" href="#working-directory,-index-/-staging,-repository"></a>working directory, index / staging, repository</h3>
+<h3 id="working-directory-index--staging-repository"><a class="header-link" href="#working-directory-index--staging-repository"></a>working directory, index / staging, repository</h3>
 <p><strong>Be sure to use the tab-complete when doing tasks!</strong></p>
 <p>When you make changes to the files (or directories) below your directory, the changes affect the <em>working Directory</em> .</p>
 <ul class="list">
@@ -156,29 +156,29 @@ nothing to commit, working directory clean</code></pre><p>Git reports that <em>w
 <p>Run again <code>git status</code></p>
 <pre class="hljs"><code>mluukkai@melkinpaasi:~/ot_viikko1$ git status
 On branch master
-Changes not staged for <span class="hljs-keyword">commit</span>:
-  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git add ..."</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">update</span> what will be committed)
-  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git checkout -- ..."</span> <span class="hljs-keyword">to</span> discard changes <span class="hljs-keyword">in</span> working <span class="hljs-keyword">directory</span>)
+Changes not staged <span class="hljs-keyword">for</span> commi<span class="hljs-variable">t:</span>
+  (use <span class="hljs-string">&quot;git add ...&quot;</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">update</span> what will <span class="hljs-keyword">be</span> committed)
+  (use <span class="hljs-string">&quot;git checkout -- ...&quot;</span> <span class="hljs-keyword">to</span> discard <span class="hljs-keyword">changes</span> in working directory)
 
     modified:   tiedosto.txt
 
-Untracked files:
-  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git add ..."</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">include</span> <span class="hljs-keyword">in</span> what will be committed)
+Untracked <span class="hljs-keyword">file</span><span class="hljs-variable">s:</span>
+  (use <span class="hljs-string">&quot;git add ...&quot;</span> <span class="hljs-keyword">to</span> include in what will <span class="hljs-keyword">be</span> committed)
 
     toinen.txt
 
-<span class="hljs-keyword">no</span> changes added <span class="hljs-keyword">to</span> <span class="hljs-keyword">commit</span> (<span class="hljs-keyword">use</span> <span class="hljs-string">"git add"</span> <span class="hljs-keyword">and</span>/<span class="hljs-keyword">or</span> <span class="hljs-string">"git commit -a"</span>)</code></pre><p>Git now reports that the new file has been <em>untracked</em> and that there are changes to the previous file that are not <em>staged for commit</em> .</p>
+<span class="hljs-keyword">no</span> <span class="hljs-keyword">changes</span> added <span class="hljs-keyword">to</span> commit (use <span class="hljs-string">&quot;git add&quot;</span> <span class="hljs-built_in">and</span>/<span class="hljs-built_in">or</span> <span class="hljs-string">&quot;git commit -a&quot;</span>)</code></pre><p>Git now reports that the new file has been <em>untracked</em> and that there are changes to the previous file that are not <em>staged for commit</em> .</p>
 <p>Follow the instructions, ie add the changes and the new file to the list of commitments. You can &quot;add&quot; both files at the same time with the command<code>git add .</code></p>
 <p>Let&#39;s check the situation again with the command <code>git status</code></p>
 <pre class="hljs"><code>mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span><span class="hljs-variable">$ </span>git status
 On branch master
 Changes to be <span class="hljs-symbol">committed:</span>
-  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git reset HEAD ..."</span> to unstage)
+  (<span class="hljs-keyword">use</span> <span class="hljs-string">&quot;git reset HEAD ...&quot;</span> to unstage)
 
     <span class="hljs-symbol">modified:</span>   tiedosto.txt
     new <span class="hljs-symbol">file:</span>   toinen.txt</code></pre><p>Both the change and the new file are now ready to be commissioned.</p>
 <p>Commitment is accomplished with the <em>git commit</em> command . As before, the command is given a parameter <em>commit message</em> , a string that describes what changes the new commit will make to the previous one:</p>
-<pre class="hljs"><code><span class="hljs-attribute">git</span> commit -m<span class="hljs-string">"muutos ja lisäys"</span></code></pre><p>After committing, check the situation again with the <em>git status</em> command .</p>
+<pre class="hljs"><code><span class="hljs-attribute">git</span> commit -m<span class="hljs-string">&quot;muutos ja lisäys&quot;</span></code></pre><p>After committing, check the situation again with the <em>git status</em> command .</p>
 <p><strong>NOTE</strong> If you accidentally execute a commit without a commit message, that is, the <em>-m</em> parameter , open the git text editor and assume that you want to write a commit message to the editor. If you didn&#39;t specify nano as the editor for git according to the initial instructions, the default editor <em>vim</em> will open and you may need to google how to get out of the editor.</p>
 <p>Thus, the files and the changes made to them can be in <em>three different states</em> with respect to Git .</p>
 <ul class="list">
@@ -191,19 +191,19 @@ Changes to be <span class="hljs-symbol">committed:</span>
 <p>When the file is created, it goes to Git&#39;s <em>working Directory</em> . The <em>git add</em> command moves the file to the <em>staging</em> area, ie ready for committing. The file in the staging is exported (i.e. &quot;committed&quot;) to the repository with the <em>git commit</em> command . When the committed file is edited again, the changes go back to the <em>working Directory</em> .</p>
 <h2 id="git-commit"><a class="header-link" href="#git-commit"></a>git commit</h2>
 <p>Thus, each execution of the <em>git commit</em> command creates a new commit, i.e. a new &quot;state&quot;, in the repository. With this command <code>git log</code>it is possible to see which commits the repository contains:</p>
-<pre class="hljs"><code>mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span><span class="hljs-variable">$ </span>git log
-commit <span class="hljs-number">6</span>aff75ab51d14d7cb9a72867ba13d9782d06c7ff (HEAD -&gt; master)
-<span class="hljs-symbol">Author:</span> Matti Luukkainen 
-<span class="hljs-symbol">Date:</span>   Sun Oct <span class="hljs-number">7</span> <span class="hljs-number">19</span><span class="hljs-symbol">:</span><span class="hljs-number">33</span><span class="hljs-symbol">:</span><span class="hljs-number">32</span> <span class="hljs-number">2018</span> +<span class="hljs-number">0300</span>
+<pre class="hljs"><code><span class="hljs-attribute">mluukkai</span>@melkinpaasi:~/ot_viikko<span class="hljs-number">1</span>$ git log
+<span class="hljs-attribute">commit</span> <span class="hljs-number">6</span>aff<span class="hljs-number">75</span>ab<span class="hljs-number">51</span>d<span class="hljs-number">14</span>d<span class="hljs-number">7</span>cb<span class="hljs-number">9</span>a<span class="hljs-number">72867</span>ba<span class="hljs-number">13</span>d<span class="hljs-number">9782</span>d<span class="hljs-number">06</span>c<span class="hljs-number">7</span>ff (HEAD -&gt; master)
+<span class="hljs-attribute">Author</span>: Matti Luukkainen 
+<span class="hljs-attribute">Date</span>:   Sun Oct <span class="hljs-number">7</span> <span class="hljs-number">19</span>:<span class="hljs-number">33</span>:<span class="hljs-number">32</span> <span class="hljs-number">2018</span> +<span class="hljs-number">0300</span>
 
-    muutos ja lisäys
+    <span class="hljs-attribute">muutos</span> ja lisäys
 
-commit <span class="hljs-number">9</span>e6a83d058c9564e8a390f8766845d45b365f36<span class="hljs-number">0</span>
-<span class="hljs-symbol">Author:</span> Matti Luukkainen 
-<span class="hljs-symbol">Date:</span>   Sun Oct <span class="hljs-number">7</span> <span class="hljs-number">19</span><span class="hljs-symbol">:</span><span class="hljs-number">32</span><span class="hljs-symbol">:</span><span class="hljs-number">12</span> <span class="hljs-number">2018</span> +<span class="hljs-number">0300</span>
+<span class="hljs-attribute">commit</span> <span class="hljs-number">9</span>e<span class="hljs-number">6</span>a<span class="hljs-number">83</span>d<span class="hljs-number">058</span>c<span class="hljs-number">9564</span>e<span class="hljs-number">8</span>a<span class="hljs-number">390</span>f<span class="hljs-number">8766845</span>d<span class="hljs-number">45</span>b<span class="hljs-number">365</span>f<span class="hljs-number">360</span>
+<span class="hljs-attribute">Author</span>: Matti Luukkainen 
+<span class="hljs-attribute">Date</span>:   Sun Oct <span class="hljs-number">7</span> <span class="hljs-number">19</span>:<span class="hljs-number">32</span>:<span class="hljs-number">12</span> <span class="hljs-number">2018</span> +<span class="hljs-number">0300</span>
 
-    tiedosto.txt luotu
-mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span>$</code></pre><p>The Git log tells you the time, author, message, and <em>tag of</em> each commit . Tags are used if, for example, there is a need to return to an old commit state.</p>
+    <span class="hljs-attribute">tiedosto</span>.txt luotu
+<span class="hljs-attribute">mluukkai</span>@melkinpaasi:~/ot_viikko<span class="hljs-number">1</span>$</code></pre><p>The Git log tells you the time, author, message, and <em>tag of</em> each commit . Tags are used if, for example, there is a need to return to an old commit state.</p>
 <p>Use the arrow keys to scroll through the log. To exit the <em>git log</em> , press <em>q</em> .</p>
 <h2 id="more-practice"><a class="header-link" href="#more-practice"></a>more practice</h2>
 <p>Be sure to use the <em>git status</em> command as often as possible. Also, don’t forget the tab-complete!</p>
@@ -265,13 +265,13 @@ mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol"
 </ul>
 <pre class="hljs"><code>mluukkai@melkinpaasi:~/ot_viikko1$ git status
 On branch master
-Changes not staged for <span class="hljs-keyword">commit</span>:
-  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git add &lt;file&gt;..."</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">update</span> what will be committed)
-  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git checkout -- &lt;file&gt;..."</span> <span class="hljs-keyword">to</span> discard changes <span class="hljs-keyword">in</span> working <span class="hljs-keyword">directory</span>)
+Changes not staged <span class="hljs-keyword">for</span> commi<span class="hljs-variable">t:</span>
+  (use <span class="hljs-string">&quot;git add &lt;file&gt;...&quot;</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">update</span> what will <span class="hljs-keyword">be</span> committed)
+  (use <span class="hljs-string">&quot;git checkout -- &lt;file&gt;...&quot;</span> <span class="hljs-keyword">to</span> discard <span class="hljs-keyword">changes</span> in working directory)
 
     modified:   eka.txt
 
-<span class="hljs-keyword">no</span> changes added <span class="hljs-keyword">to</span> <span class="hljs-keyword">commit</span> (<span class="hljs-keyword">use</span> <span class="hljs-string">"git add"</span> <span class="hljs-keyword">and</span>/<span class="hljs-keyword">or</span> <span class="hljs-string">"git commit -a"</span>)</code></pre><p>As assumed, git tells you that we have made changes that are not &quot;staged for commit&quot;, i.e. added to commit.</p>
+<span class="hljs-keyword">no</span> <span class="hljs-keyword">changes</span> added <span class="hljs-keyword">to</span> commit (use <span class="hljs-string">&quot;git add&quot;</span> <span class="hljs-built_in">and</span>/<span class="hljs-built_in">or</span> <span class="hljs-string">&quot;git commit -a&quot;</span>)</code></pre><p>As assumed, git tells you that we have made changes that are not &quot;staged for commit&quot;, i.e. added to commit.</p>
 <ul class="list">
 <li>It is decided to undo the changes. It succeeds with the command<code>git checkout -- eka.txt</code></li>
 <li>When you run the <em>git status</em> command again , you will notice that the working directory no longer contains any changes:</li>
@@ -290,7 +290,7 @@ nothing to commit, working directory clean</code></pre><ul class="list">
 <pre class="hljs"><code>mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol">:~/ot_viikko1</span><span class="hljs-variable">$ </span>git status
 On branch master
 Changes to be <span class="hljs-symbol">committed:</span>
-  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git reset HEAD &lt;file&gt;..."</span> to unstage)
+  (<span class="hljs-keyword">use</span> <span class="hljs-string">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage)
 
     <span class="hljs-symbol">modified:</span>   kolmas.txt
 
@@ -301,13 +301,13 @@ mluukkai<span class="hljs-variable">@melkinpaasi</span><span class="hljs-symbol"
 </ul>
 <pre class="hljs"><code>mluukkai@melkinpaasi:~/ot_viikko1$ git status
 On branch master
-Changes not staged for <span class="hljs-keyword">commit</span>:
-  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git add &lt;file&gt;..."</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">update</span> what will be committed)
-  (<span class="hljs-keyword">use</span> <span class="hljs-string">"git checkout -- &lt;file&gt;..."</span> <span class="hljs-keyword">to</span> discard changes <span class="hljs-keyword">in</span> working <span class="hljs-keyword">directory</span>)
+Changes not staged <span class="hljs-keyword">for</span> commi<span class="hljs-variable">t:</span>
+  (use <span class="hljs-string">&quot;git add &lt;file&gt;...&quot;</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">update</span> what will <span class="hljs-keyword">be</span> committed)
+  (use <span class="hljs-string">&quot;git checkout -- &lt;file&gt;...&quot;</span> <span class="hljs-keyword">to</span> discard <span class="hljs-keyword">changes</span> in working directory)
 
     modified:   kolmas.txt
 
-<span class="hljs-keyword">no</span> changes added <span class="hljs-keyword">to</span> <span class="hljs-keyword">commit</span> (<span class="hljs-keyword">use</span> <span class="hljs-string">"git add"</span> <span class="hljs-keyword">and</span>/<span class="hljs-keyword">or</span> <span class="hljs-string">"git commit -a"</span>)</code></pre><p>So the file is no longer in <em>staged</em> mode, but the changes are in the <em>working Directory</em> , so if you look at the contents of the file, the changes still exist</p>
+<span class="hljs-keyword">no</span> <span class="hljs-keyword">changes</span> added <span class="hljs-keyword">to</span> commit (use <span class="hljs-string">&quot;git add&quot;</span> <span class="hljs-built_in">and</span>/<span class="hljs-built_in">or</span> <span class="hljs-string">&quot;git commit -a&quot;</span>)</code></pre><p>So the file is no longer in <em>staged</em> mode, but the changes are in the <em>working Directory</em> , so if you look at the contents of the file, the changes still exist</p>
 <ul class="list">
 <li>you can cancel the changes completely by issuing the command <code>git checkout -- kolmas.txt</code></li>
 <li>make sure the file has returned to its pre-change state</li>
@@ -339,7 +339,7 @@ Changes not staged for <span class="hljs-keyword">commit</span>:
 git init
 touch README.md
 git <span class="hljs-built_in">add</span> .
-git commit -<span class="hljs-keyword">m</span><span class="hljs-string">"initial commit"</span></code></pre><p>Then let&#39;s move on to GitHub</p>
+git commit -<span class="hljs-keyword">m</span><span class="hljs-string">&quot;initial commit&quot;</span></code></pre><p>Then let&#39;s move on to GitHub</p>
 <ul class="list">
 <li>Create an account for yourself on GitHub (if you don&#39;t already have one)</li>
 <li>Create a new repository</li>
@@ -360,7 +360,7 @@ git commit -<span class="hljs-keyword">m</span><span class="hljs-string">"initia
 <li>copy the top line from <em>... or push an existing repository from the command line</em></li>
 <li>in my own example, the line is</li>
 </ul>
-<pre class="hljs"><code>git remote <span class="hljs-keyword">add</span><span class="bash"> origin git@github.com:mluukkai/ot-harjoitustyo.git</span></code></pre><ul class="list">
+<pre class="hljs"><code>git remote <span class="hljs-keyword">add</span> origin git<span class="hljs-title">@github.com</span>:mluukkai/ot-harjoitustyo.git</code></pre><ul class="list">
 <li>paste a line on the command line and press enter to execute the command</li>
 <li>run the command <em>git remote -v</em></li>
 <li>the printout indicates that the github remote repository is linked to your local repository as <em>origin</em></li>
@@ -373,13 +373,13 @@ origin    git<span class="hljs-variable">@github</span>.<span class="hljs-symbol
 <li>you may need to do the first push in a longer format <em>--set-upstream origin master</em></li>
 <li>tested</li>
 </ul>
-<pre class="hljs"><code>mluukkai@melkki:~/ot-harjoitustyo$ git push <span class="hljs-comment">--set-upstream origin master</span>
-Warning: Permanently added <span class="hljs-keyword">the</span> RSA host key <span class="hljs-keyword">for</span> IP address <span class="hljs-string">'192.30.253.112'</span> <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> list <span class="hljs-keyword">of</span> known hosts.
-Permission denied (publickey).
-fatal: Could <span class="hljs-keyword">not</span> <span class="hljs-built_in">read</span> <span class="hljs-built_in">from</span> remote repository.
+<pre class="hljs"><code>mluukkai@melkki:~/ot-harjoitustyo<span class="hljs-symbol">$</span> git push --<span class="hljs-keyword">set</span>-upstream <span class="hljs-comment">origin master</span>
+Warning: Permanently <span class="hljs-comment">added the RSA host key for IP address</span> <span class="hljs-comment">&#x27;192.30.253.112&#x27;</span> <span class="hljs-comment">to the list of known hosts.</span>
+Permission <span class="hljs-comment">denied (publickey).</span>
+fatal: Could <span class="hljs-comment">not read from remote repository.</span>
 
-Please make sure you have <span class="hljs-keyword">the</span> correct access rights
-<span class="hljs-keyword">and</span> <span class="hljs-keyword">the</span> repository exists.</code></pre><h2 id="public-key"><a class="header-link" href="#public-key"></a>Public key</h2>
+Please <span class="hljs-comment">make sure you have the correct access rights</span>
+and <span class="hljs-comment">the repository exists.</span></code></pre><h2 id="public-key"><a class="header-link" href="#public-key"></a>Public key</h2>
 <p>If you have already set a public key in eg Database Basics, pushing should work and you can move on to the <a href="https://github.com/mluukkai/ohjelmistotekniikka-kevat2019/blob/master/tehtavat/viikko1.md#kertausta">next step</a> .</p>
 <p>Pushaus does not work. Now the point is that git would like to perform <a href="https://the.earth.li/~sgtatham/putty/0.55/htmldoc/Chapter8.html">public key</a> authentication. However, it doesn’t work because we haven’t told git about our public encryption key.</p>
 <ul class="list">
@@ -397,16 +397,16 @@ Please make sure you have <span class="hljs-keyword">the</span> correct access r
 <li>Run push again:</li>
 </ul>
 <pre class="hljs"><code>mluukkai@melkki:~/ot-harjoitustyo$ git push
-Counting objects: 3, done.
-Writing objects: 100% (3/3), 213 bytes | 106.00 KiB/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
+Counting objects: <span class="hljs-number">3</span>, done.
+Writing objects: <span class="hljs-number">100</span>% (<span class="hljs-number">3</span>/<span class="hljs-number">3</span>), <span class="hljs-number">213</span> bytes | <span class="hljs-number">106.00</span> KiB/s, done.
+Total <span class="hljs-number">3</span> (delta <span class="hljs-number">0</span>), reused <span class="hljs-number">0</span> (delta <span class="hljs-number">0</span>)
 remote:
-remote: <span class="hljs-keyword">Create</span> a pull request <span class="hljs-keyword">for</span> <span class="hljs-string">'master'</span> <span class="hljs-keyword">on</span> GitHub <span class="hljs-keyword">by</span> visiting:
-remote:      https://github.com/mluukkai/ot-harjoitustyo/pull/<span class="hljs-keyword">new</span>/<span class="hljs-keyword">master</span>
-remote:
-<span class="hljs-keyword">To</span> github.com:mluukkai/ot-harjoitustyo.git
- * [<span class="hljs-keyword">new</span> branch]      <span class="hljs-keyword">master</span> -&gt; <span class="hljs-keyword">master</span>
-Branch <span class="hljs-keyword">master</span> <span class="hljs-keyword">set</span> up <span class="hljs-keyword">to</span> track remote branch <span class="hljs-keyword">master</span> <span class="hljs-keyword">from</span> origin.</code></pre><ul class="list">
+remote: Create a pull request for &#x27;<span class="hljs-literal">master</span>&#x27; on GitHub by visiting:
+remote:      https://github.com/mluukkai/ot-harjoitustyo/pull/new/<span class="hljs-keyword">master</span>
+<span class="hljs-title">remote</span>:
+To github.com:mluukkai/ot-harjoitustyo.git
+ * [new branch]      <span class="hljs-keyword">master</span> <span class="hljs-title">-&gt; master</span>
+Branch <span class="hljs-keyword">master</span> <span class="hljs-title">set</span> up to track remote branch <span class="hljs-keyword">master</span> <span class="hljs-title">from</span> origin.</code></pre><ul class="list">
 <li>now everything seems to work</li>
 </ul>
 <h2 id="more-files"><a class="header-link" href="#more-files"></a>More files</h2>
@@ -469,12 +469,12 @@ Branch <span class="hljs-keyword">master</span> <span class="hljs-keyword">set</
 <pre class="hljs"><code>mluukkai<span class="hljs-variable">@melkki</span><span class="hljs-symbol">:~/ot-harjoitustyo</span><span class="hljs-variable">$ </span>git push
 To git<span class="hljs-variable">@github</span>.<span class="hljs-symbol">com:</span>mluukkai/ot-harjoitustyo.git
  ! [rejected]        master -&gt; master (fetch first)
-<span class="hljs-symbol">error:</span> failed to push some refs to <span class="hljs-string">'git@github.com:mluukkai/ot-harjoitustyo.git'</span>
+<span class="hljs-symbol">error:</span> failed to push some refs to <span class="hljs-string">&#x27;git@github.com:mluukkai/ot-harjoitustyo.git&#x27;</span>
 <span class="hljs-symbol">hint:</span> Updates were rejected because the remote contains work that you <span class="hljs-keyword">do</span>
 <span class="hljs-symbol">hint:</span> <span class="hljs-keyword">not</span> have locally. This is usually caused by another repository pushing
 <span class="hljs-symbol">hint:</span> to the same ref. You may want to first integrate the remote changes
-<span class="hljs-symbol">hint:</span> (e.g., <span class="hljs-string">'git pull ...'</span>) before pushing again.
-<span class="hljs-symbol">hint:</span> See the <span class="hljs-string">'Note about fast-forwards'</span> <span class="hljs-keyword">in</span> <span class="hljs-string">'git push --help'</span> <span class="hljs-keyword">for</span> details.
+<span class="hljs-symbol">hint:</span> (e.g., <span class="hljs-string">&#x27;git pull ...&#x27;</span>) before pushing again.
+<span class="hljs-symbol">hint:</span> See the <span class="hljs-string">&#x27;Note about fast-forwards&#x27;</span> <span class="hljs-keyword">in</span> <span class="hljs-string">&#x27;git push --help&#x27;</span> <span class="hljs-keyword">for</span> details.
 mluukkai<span class="hljs-variable">@melkki</span><span class="hljs-symbol">:~/ot-harjoitustyo</span>$</code></pre><ul class="list">
 <li>You will probably come across this many times in the future as well.</li>
 <li>The problem is not bad. Because local and GitHub changes have affected <strong>different files</strong> , we can handle it easily</li>

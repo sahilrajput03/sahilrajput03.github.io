@@ -11,7 +11,7 @@
     <script src="assets/myJs/copyToClipboardScript.js" defer></script>
   </head>
   <body>
-    <article class="markdown-body"><h2 id="running-apollo-server(graphql)-on-custom-port:"><a class="header-link" href="#running-apollo-server(graphql)-on-custom-port:"></a>Running apollo server(graphql) on custom port:</h2>
+    <article class="markdown-body"><h2 id="running-apollo-servergraphql-on-custom-port"><a class="header-link" href="#running-apollo-servergraphql-on-custom-port"></a>Running apollo server(graphql) on custom port:</h2>
 <pre class="hljs"><code><span class="hljs-keyword">const</span> server = <span class="hljs-keyword">new</span> ApolloServer({
   typeDefs,
   resolvers,
@@ -27,7 +27,7 @@ server.listen({<span class="hljs-attr">port</span>: <span class="hljs-number">40
 <li>All below code snippets are for graphQL playground. Execute any of the below.</li>
 </ul>
 <pre class="hljs"><code>query {
-  findPerson(name: <span class="hljs-string">"Arto Hellas"</span>) {
+  <span class="hljs-function"><span class="hljs-title">findPerson</span>(<span class="hljs-params">name: <span class="hljs-string">&quot;Arto Hellas&quot;</span></span>)</span> {
     phone 
     address {
       city 
@@ -43,70 +43,70 @@ server.listen({<span class="hljs-attr">port</span>: <span class="hljs-number">40
   }
 }</code></pre><pre class="hljs"><code>query {
   allPersons{
-    name
+    <span class="hljs-built_in">name</span>
     city
     street
   }
 }</code></pre><pre class="hljs"><code>query {
-  findPerson(<span class="hljs-built_in">name</span>: <span class="hljs-string">"Arto Hellas"</span>) {
+  findPerson(<span class="hljs-built_in">name</span>: <span class="hljs-string">&quot;Arto Hellas&quot;</span>) {
     phone 
     <span class="hljs-built_in">id</span>
   }
-}</code></pre><pre class="hljs"><code><span class="hljs-selector-tag">query</span> {
-  <span class="hljs-selector-tag">findPerson</span>(<span class="hljs-attribute">name</span>: <span class="hljs-string">"Donald Trump"</span>) {
-    <span class="hljs-selector-tag">phone</span> 
+}</code></pre><pre class="hljs"><code>query {
+  <span class="hljs-function"><span class="hljs-title">findPerson</span>(<span class="hljs-params">name: <span class="hljs-string">&quot;Donald Trump&quot;</span></span>)</span> {
+    phone 
   }
-}</code></pre><pre class="hljs"><code><span class="hljs-class">mutation </span>{
-  addPerson(
-<span class="hljs-symbol">    name:</span> <span class="hljs-string">"Pekka Mikkola"</span>
-<span class="hljs-symbol">    phone:</span> <span class="hljs-string">"045-2374321"</span>
-<span class="hljs-symbol">    street:</span> <span class="hljs-string">"Vilppulantie 25"</span>
-<span class="hljs-symbol">    city:</span> <span class="hljs-string">"Helsinki"</span>
+}</code></pre><pre class="hljs"><code><span class="hljs-selector-tag">mutation</span> {
+  <span class="hljs-selector-tag">addPerson</span>(
+    <span class="hljs-attribute">name</span>: <span class="hljs-string">&quot;Pekka Mikkola&quot;</span>
+    <span class="hljs-attribute">phone</span>: <span class="hljs-string">&quot;045-2374321&quot;</span>
+    <span class="hljs-attribute">street</span>: <span class="hljs-string">&quot;Vilppulantie 25&quot;</span>
+    <span class="hljs-attribute">city</span>: <span class="hljs-string">&quot;Helsinki&quot;</span>
   ) {
-    name
-    phone
-    address{
-      city
-      street
+    <span class="hljs-selector-tag">name</span>
+    <span class="hljs-selector-tag">phone</span>
+    <span class="hljs-selector-tag">address</span>{
+      <span class="hljs-selector-tag">city</span>
+      <span class="hljs-selector-tag">street</span>
     }
-    id
+    <span class="hljs-selector-tag">id</span>
   }
 }</code></pre><pre class="hljs"><code><span class="hljs-section">query</span> {
   <span class="hljs-attribute">personCount</span>
   allPersons {
     <span class="hljs-attribute">name</span>
   }
-}</code></pre><pre class="hljs"><code><span class="hljs-selector-tag">query</span> {
-  <span class="hljs-attribute">havePhone</span>: allPersons(<span class="hljs-attribute">phone</span>: YES){
+}</code></pre><pre class="hljs"><code>query {
+  havePhone: <span class="hljs-built_in">allPersons</span>(phone: YES){
     name
   }
-  <span class="hljs-attribute">phoneless</span>: allPersons(<span class="hljs-attribute">phone</span>: NO){
+  phoneless: <span class="hljs-built_in">allPersons</span>(phone: NO){
     name
   }
-}</code></pre><h3 id="using-multiple-queries:-"><a class="header-link" href="#using-multiple-queries:-"></a>Using multiple queries:-</h3>
-<pre class="hljs"><code>query <span class="hljs-class">phoneOwnership </span>{
-<span class="hljs-symbol">  havePhone:</span> allPersons(phone: YES){
+}</code></pre><h3 id="using-multiple-queries-"><a class="header-link" href="#using-multiple-queries-"></a>Using multiple queries:-</h3>
+<pre class="hljs"><code>query phoneOwnership {
+  havePhone: <span class="hljs-built_in">allPersons</span>(phone: YES){
     name
   }
-<span class="hljs-symbol">  phoneless:</span> allPersons(phone: NO){
+  phoneless: <span class="hljs-built_in">allPersons</span>(phone: NO){
     name
   }
 }
 
-query <span class="hljs-class">stats </span>{
+query stats {
   personCount
 }</code></pre><hr>
 <h2 id="schema"><a class="header-link" href="#schema"></a>Schema</h2>
 <pre class="hljs"><code>  type Query {
     <span class="hljs-attr">bookCount</span>: Int!
     authorCount: Int!
-    allBooks(author: <span class="hljs-built_in">String</span>, <span class="hljs-attr">genre</span>: <span class="hljs-built_in">String</span>): [Book!]! <span class="xml"><span class="hljs-tag">&lt;&lt; <span class="hljs-attr">we</span> <span class="hljs-attr">have</span> <span class="hljs-attr">give</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">optional</span> <span class="hljs-attr">params</span>&lt;&lt;
-    <span class="hljs-attr">allAuthors:</span> [<span class="hljs-attr">allAuth</span>]
+    allBooks(author: <span class="hljs-built_in">String</span>, <span class="hljs-attr">genre</span>: <span class="hljs-built_in">String</span>): [Book!]! &lt;&lt; we have give multiple optional params&lt;&lt;
+    allAuthors: [allAuth]
   }
-</span></span></code></pre><hr>
-<h3 id="graphql-says-invalid-argument-on-queries-sometimes,-its-only-when-you-have'nt-refreshed-the-graphql-playground-webpage.-doing-a-refresh-would-help-it."><a class="header-link" href="#graphql-says-invalid-argument-on-queries-sometimes,-its-only-when-you-have'nt-refreshed-the-graphql-playground-webpage.-doing-a-refresh-would-help-it."></a>GraphQL says invalid argument on queries sometimes, its only when you have&#39;nt refreshed the graphql playground webpage. Doing a refresh would help it.</h3>
+</code></pre><hr>
+<h3 id="graphql-says-invalid-argument-on-queries-sometimes-its-only-when-you-havent-refreshed-the-graphql-playground-webpage-doing-a-refresh-would-help-it"><a class="header-link" href="#graphql-says-invalid-argument-on-queries-sometimes-its-only-when-you-havent-refreshed-the-graphql-playground-webpage-doing-a-refresh-would-help-it"></a>GraphQL says invalid argument on queries sometimes, its only when you have&#39;nt refreshed the graphql playground webpage. Doing a refresh would help it.</h3>
 <hr>
-<h2 id="all-queries-and-mutations-in-exercises:"><a class="header-link" href="#all-queries-and-mutations-in-exercises:"></a>All queries and mutations in exercises:</h2>
+<h2 id="all-queries-and-mutations-in-exercises"><a class="header-link" href="#all-queries-and-mutations-in-exercises"></a>All queries and mutations in exercises:</h2>
 <pre class="hljs"><code>query query1 {
   allAuthors {
     name
@@ -116,7 +116,7 @@ query <span class="hljs-class">stats </span>{
 }
 
 query query2 {
-  allBooks(author: <span class="hljs-string">"Robert Martin"</span>) {
+  <span class="hljs-function"><span class="hljs-title">allBooks</span>(<span class="hljs-params">author: <span class="hljs-string">&quot;Robert Martin&quot;</span></span>)</span> {
     title
     author
   }
@@ -130,45 +130,45 @@ query query3 {
 }
 
 query customGenre {
-  allBooks(genre: <span class="hljs-string">"refactoring"</span>) {
+  <span class="hljs-function"><span class="hljs-title">allBooks</span>(<span class="hljs-params">genre: <span class="hljs-string">&quot;refactoring&quot;</span></span>)</span> {
     title
     author
   }
 }
 
 query customAuthorandGenre {
-  allBooks(author: <span class="hljs-string">"Robert Martin"</span>, <span class="hljs-attr">genre</span>: <span class="hljs-string">"refactoring"</span>) {
+  <span class="hljs-function"><span class="hljs-title">allBooks</span>(<span class="hljs-params">author: <span class="hljs-string">&quot;Robert Martin&quot;</span>, genre: <span class="hljs-string">&quot;refactoring&quot;</span></span>)</span> {
     title
     author
   }
 }
 
 mutation addingA_Book {
-  addBook(
-    title: <span class="hljs-string">"NoSQL Distilled"</span>,
-    <span class="hljs-attr">author</span>: <span class="hljs-string">"Martin Fowler"</span>,
-    <span class="hljs-attr">published</span>: <span class="hljs-number">2012</span>,
-    <span class="hljs-attr">genres</span>: [<span class="hljs-string">"database"</span>, <span class="hljs-string">"nosql"</span>]
-  ) {
+  <span class="hljs-function"><span class="hljs-title">addBook</span>(<span class="hljs-params">
+    title: <span class="hljs-string">&quot;NoSQL Distilled&quot;</span>,
+    author: <span class="hljs-string">&quot;Martin Fowler&quot;</span>,
+    published: <span class="hljs-number">2012</span>,
+    genres: [<span class="hljs-string">&quot;database&quot;</span>, <span class="hljs-string">&quot;nosql&quot;</span>]
+  </span>)</span> {
     title,
     author
   }
 }
 
 mutation addingA_Book_A_Author {
-  addBook(
-    title: <span class="hljs-string">"Pimeyden tango"</span>,
-    <span class="hljs-attr">author</span>: <span class="hljs-string">"Reijo Mäki"</span>,
-    <span class="hljs-attr">published</span>: <span class="hljs-number">1997</span>,
-    <span class="hljs-attr">genres</span>: [<span class="hljs-string">"crime"</span>]
-  ) {
+  <span class="hljs-function"><span class="hljs-title">addBook</span>(<span class="hljs-params">
+    title: <span class="hljs-string">&quot;Pimeyden tango&quot;</span>,
+    author: <span class="hljs-string">&quot;Reijo Mäki&quot;</span>,
+    published: <span class="hljs-number">1997</span>,
+    genres: [<span class="hljs-string">&quot;crime&quot;</span>]
+  </span>)</span> {
     title,
     author
   }
 }
 
 mutation editingAuthorsBorn {
-  editAuthor(name: <span class="hljs-string">"Reijo Mäki"</span>, <span class="hljs-attr">setBornTo</span>: <span class="hljs-number">1968</span>) {
+  <span class="hljs-function"><span class="hljs-title">editAuthor</span>(<span class="hljs-params">name: <span class="hljs-string">&quot;Reijo Mäki&quot;</span>, setBornTo: <span class="hljs-number">1968</span></span>)</span> {
     name
     born
   }

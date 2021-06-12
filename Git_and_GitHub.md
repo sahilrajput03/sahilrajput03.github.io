@@ -1,3 +1,16 @@
+#### Back to last commit's state
+
+```bash
+#Either of below is cool!
+$ git reset --hard
+$ git checkout -f
+
+#To reset some file to last commit
+$ git checkout fileName
+```
+
+
+
 ## Remove all the the recent changes, and reset to last commit.
 
 ```bash

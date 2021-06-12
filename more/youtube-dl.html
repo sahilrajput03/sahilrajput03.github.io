@@ -18,41 +18,41 @@
 <p>The Guide of Ubuntu&#39;s youtube-dl - <a href="https://manpages.ubuntu.com/manpages/artful/en/man1/youtube-dl.1.html">link</a></p>
 <hr>
 <p>The best of all guides found so far- <a href="https://www.ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/">https://www.ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/</a></p>
-<pre class="hljs"><code>$ youtube-dl <span class="hljs-_">-f</span> <span class="hljs-string">"bestvideo[height&lt;=540]"</span>+bestaudio &lt;URL OF THE PAGE THAT HAS VIDEO&gt;
-<span class="hljs-comment">#Sometimes the extension code are like text so, better select video via height parameter.</span></code></pre><h5 id="src:-same-above-link"><a class="header-link" href="#src:-same-above-link"></a>src: same above link</h5>
+<pre class="hljs"><code>$ youtube-dl -f <span class="hljs-string">&quot;bestvideo[height&lt;=540]&quot;</span>+bestaudio &lt;URL OF THE PAGE THAT HAS VIDEO&gt;
+<span class="hljs-comment">#Sometimes the extension code are like text so, better select video via height parameter.</span></code></pre><h5 id="src-same-above-link"><a class="header-link" href="#src-same-above-link"></a>src: same above link</h5>
 <hr>
-<h2 id="info:"><a class="header-link" href="#info:"></a>Info:</h2>
+<h2 id="info"><a class="header-link" href="#info"></a>Info:</h2>
 <p>If the download is paused, you can do press <strong>Enter key</strong>  or <strong>ctrl+c</strong> to <strong>refresh</strong> the currently downloading video or playlist.(hacks)</p>
 <hr>
 <h3 id="download-a-list-of-video-urls-from-a-give-file"><a class="header-link" href="#download-a-list-of-video-urls-from-a-give-file"></a>Download a list of video urls from a give file</h3>
 <pre class="hljs"><code>$ youtube-<span class="hljs-selector-tag">dl</span> -<span class="hljs-selector-tag">a</span> list.txt</code></pre><p>Above command will download all the video-urls listed in the list.txt file.</p>
 <hr>
-<pre class="hljs"><code>youtube-<span class="hljs-selector-tag">dl</span> https:<span class="hljs-comment">//www.youtube.com/watch?v=blabla</span>
-<span class="hljs-selector-id">#automatic</span> merge is done after completion(<span class="hljs-selector-tag">i</span><span class="hljs-selector-class">.e</span>., audio_only file + video_only file)
+<pre class="hljs"><code>youtube-<span class="hljs-keyword">dl</span> http<span class="hljs-variable">s:</span>//www.youtube.<span class="hljs-keyword">com</span>/watch?v=blabla
+#automatic merge <span class="hljs-keyword">is</span> done after completion(i.<span class="hljs-keyword">e</span>., audio_only <span class="hljs-keyword">file</span> + video_only <span class="hljs-keyword">file</span>)
 
-youtube-<span class="hljs-selector-tag">dl</span> --list-subs</code></pre><p>lists all available subtiles for the requested file</p>
+youtube-<span class="hljs-keyword">dl</span> --<span class="hljs-keyword">list</span>-subs</code></pre><p>lists all available subtiles for the requested file</p>
 <hr>
 <h2 id="download-a-particular-quality-of-a-video"><a class="header-link" href="#download-a-particular-quality-of-a-video"></a>Download a particular quality of a video</h2>
 <pre class="hljs"><code>youtube-dl -F &lt;video-url&gt;
-youtube-dl -F <span class="hljs-string">'http://www.youtube.com/watch?v=P9pzm5b6FFY'</span></code></pre><pre class="hljs"><code>#note the uppercase letter F option <span class="hljs-keyword">to</span> <span class="hljs-built_in">get</span> the available formats <span class="hljs-keyword">to</span> download. Anything(any format) <span class="hljs-keyword">is</span> either audio <span class="hljs-keyword">only</span> <span class="hljs-built_in">or</span> video <span class="hljs-keyword">only</span> <span class="hljs-keyword">file</span>. SAD.</code></pre><p>Above command will list all the available quality and formats availabe to download, good thing is that corresponding to every available item, there&#39;s a format code(extreme left column). You need to use that format code to download that. </p>
+youtube-dl -F <span class="hljs-string">&#x27;http://www.youtube.com/watch?v=P9pzm5b6FFY&#x27;</span></code></pre><pre class="hljs"><code>#note the uppercase letter F option <span class="hljs-keyword">to</span> <span class="hljs-built_in">get</span> the available formats <span class="hljs-keyword">to</span> download. Anything(any format) <span class="hljs-keyword">is</span> either audio <span class="hljs-keyword">only</span> <span class="hljs-built_in">or</span> video <span class="hljs-keyword">only</span> <span class="hljs-keyword">file</span>. SAD.</code></pre><p>Above command will list all the available quality and formats availabe to download, good thing is that corresponding to every available item, there&#39;s a format code(extreme left column). You need to use that format code to download that. </p>
 <p>_</p>
 <p>Like below:</p>
-<pre class="hljs"><code>youtube-dl <span class="hljs-_">-f</span> 22 <span class="hljs-string">'http://www.youtube.com/watch?v=P9pzm5b6FFY'</span>
-youtube-dl <span class="hljs-_">-f</span> 394+140 https://www.youtube.com/watch?v=M3BM9TB-8yA
-youtube-dl <span class="hljs-_">-f</span> 394+249 https://www.youtube.com/watch?v=M3BM9TB-8yA
-youtube-dl <span class="hljs-_">-f</span> 137+250  https://www.youtube.com/watch?v=HjdJzNoT_qg</code></pre><pre class="hljs"><code><span class="hljs-selector-id">#note</span> the lowercase letter f option to set the download format <span class="hljs-selector-tag">code</span>.
-<span class="hljs-selector-id">#note</span>: <span class="hljs-number">394</span> is mp4 <span class="hljs-selector-tag">video</span> only and <span class="hljs-number">140</span> is m4a <span class="hljs-selector-tag">audio</span> only. Automatic Mege Succesful.
-<span class="hljs-selector-id">#note</span>: <span class="hljs-number">394</span> is mp4 <span class="hljs-selector-tag">video</span> only and <span class="hljs-number">249</span> is webm <span class="hljs-selector-tag">audio</span> only. Automatic Mege Succesful.
-<span class="hljs-selector-id">#note</span>:<span class="hljs-number">137</span> is <span class="hljs-keyword">for</span> <span class="hljs-number">1080</span>p(mp4), <span class="hljs-number">250</span> is <span class="hljs-keyword">for</span> webm(<span class="hljs-number">68</span>k) <span class="hljs-selector-tag">audio</span>.</code></pre><p class="img-container"><img src=".imgs_typora/image-20200715222257715.png" alt="image-20200715222257715"></p>
+<pre class="hljs"><code>youtube-dl -f 22 <span class="hljs-string">&#x27;http://www.youtube.com/watch?v=P9pzm5b6FFY&#x27;</span>
+youtube-dl -f 394+140 https://www.youtube.com/watch?v=M3BM9TB-8yA
+youtube-dl -f 394+249 https://www.youtube.com/watch?v=M3BM9TB-8yA
+youtube-dl -f 137+250  https://www.youtube.com/watch?v=HjdJzNoT_qg</code></pre><pre class="hljs"><code><span class="hljs-selector-id">#note</span> <span class="hljs-selector-tag">the</span> <span class="hljs-selector-tag">lowercase</span> <span class="hljs-selector-tag">letter</span> <span class="hljs-selector-tag">f</span> <span class="hljs-selector-tag">option</span> <span class="hljs-selector-tag">to</span> <span class="hljs-selector-tag">set</span> <span class="hljs-selector-tag">the</span> <span class="hljs-selector-tag">download</span> <span class="hljs-selector-tag">format</span> <span class="hljs-selector-tag">code</span>.
+<span class="hljs-selector-id">#note</span>: <span class="hljs-selector-tag">394</span> <span class="hljs-selector-tag">is</span> <span class="hljs-selector-tag">mp4</span> <span class="hljs-selector-tag">video</span> <span class="hljs-selector-tag">only</span> <span class="hljs-selector-tag">and</span> <span class="hljs-selector-tag">140</span> <span class="hljs-selector-tag">is</span> <span class="hljs-selector-tag">m4a</span> <span class="hljs-selector-tag">audio</span> <span class="hljs-selector-tag">only</span>. <span class="hljs-selector-tag">Automatic</span> <span class="hljs-selector-tag">Mege</span> <span class="hljs-selector-tag">Succesful</span>.
+<span class="hljs-selector-id">#note</span>: <span class="hljs-selector-tag">394</span> <span class="hljs-selector-tag">is</span> <span class="hljs-selector-tag">mp4</span> <span class="hljs-selector-tag">video</span> <span class="hljs-selector-tag">only</span> <span class="hljs-selector-tag">and</span> <span class="hljs-selector-tag">249</span> <span class="hljs-selector-tag">is</span> <span class="hljs-selector-tag">webm</span> <span class="hljs-selector-tag">audio</span> <span class="hljs-selector-tag">only</span>. <span class="hljs-selector-tag">Automatic</span> <span class="hljs-selector-tag">Mege</span> <span class="hljs-selector-tag">Succesful</span>.
+<span class="hljs-selector-id">#note</span>:<span class="hljs-selector-tag">137</span> <span class="hljs-selector-tag">is</span> <span class="hljs-selector-tag">for</span> <span class="hljs-selector-tag">1080p</span>(mp4), <span class="hljs-selector-tag">250</span> <span class="hljs-selector-tag">is</span> <span class="hljs-selector-tag">for</span> <span class="hljs-selector-tag">webm</span>(<span class="hljs-number">68</span>k) <span class="hljs-selector-tag">audio</span>.</code></pre><p class="img-container"><img src=".imgs_typora/image-20200715222257715.png" alt="image-20200715222257715"></p>
 <p>here formats =&gt; 18, and 22 includes audio in it too.</p>
 <hr>
 <h2 id="other-general-useful-options"><a class="header-link" href="#other-general-useful-options"></a>Other General Useful options</h2>
-<pre class="hljs"><code>$ youtube-<span class="hljs-selector-tag">dl</span> -h will list the help <span class="hljs-keyword">for</span> the program.
-<span class="hljs-comment">// help-text</span>
+<pre class="hljs"><code>$ youtube-<span class="hljs-keyword">dl</span> -h will <span class="hljs-keyword">list</span> the <span class="hljs-keyword">help</span> <span class="hljs-keyword">for</span> the program.
+// <span class="hljs-keyword">help</span>-text
 
-$ youtube-<span class="hljs-selector-tag">dl</span><span class="hljs-selector-class">.exe</span> --version
-<span class="hljs-comment">// Output: 2020.03.08</span>
+$ youtube-<span class="hljs-keyword">dl</span>.<span class="hljs-keyword">exe</span> --<span class="hljs-keyword">version</span>
+// Outpu<span class="hljs-variable">t:</span> <span class="hljs-number">2020.03</span>.<span class="hljs-number">08</span>
 
-$ youtube-<span class="hljs-selector-tag">dl</span> -U <span class="hljs-comment">// will update the program to the latest version.</span></code></pre></article>
+$ youtube-<span class="hljs-keyword">dl</span> -U // will <span class="hljs-keyword">update</span> the program <span class="hljs-keyword">to</span> the latest <span class="hljs-keyword">version</span>.</code></pre></article>
   </body>
 </html>

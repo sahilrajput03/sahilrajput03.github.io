@@ -18,8 +18,8 @@
 <p><a href="https://eslint.org/docs/rules/no-undef#disallow-undeclared-variables-no-undef">Undeclared Variables Notify - Using ESLint</a>    </p>
 <p><a href="https://code.visualstudio.com/docs/editor/debugging">Debuggin in js @ MDN</a></p>
 <hr>
-<h4 id="example---object,-array-object"><a class="header-link" href="#example---object,-array-object"></a>Example - Object, Array Object</h4>
-<pre class="hljs"><code><span class="hljs-keyword">const</span> saf = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> [<span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span>]
+<h4 id="example---object-array-object"><a class="header-link" href="#example---object-array-object"></a>Example - Object, Array Object</h4>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> saf = <span class="hljs-function">() =&gt;</span> [<span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span>]
 <span class="hljs-keyword">const</span> [p,q,r] = saf()</code></pre><hr>
 <p><a href="https://stackoverflow.com/questions/15886272/what-is-the-difference-between-a-function-call-and-function-reference">Read here - Function call and Function Reference@StackOverflow</a> 
 •Do you need the function to run now?</p>
@@ -30,23 +30,23 @@
 <p>like, either () =&gt; <strong>(</strong>    mamosa(23)    <strong>)</strong> or () =&gt; <strong>{</strong>    mamosa(23)    <strong>}</strong></p>
 <p>••&gt; Also, here <code>setTimeout()</code> function expects 1st parameter as function reference and second parameter as time in milliseconds. i.e., <code>setTimeout(function-reference, time-in-milliseconds)</code>. 
 The function passed as the first parameter to the <em>setTimeout</em> function is invoked one second after calling the <em>setTimeout</em> function. So what we refer to function reference is -</p>
-<pre class="hljs"><code>setTimeout(
+<pre class="hljs"><code><span class="hljs-built_in">setTimeout</span>(
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rafell</span>(<span class="hljs-params"></span>)</span>{setCounter(counter + <span class="hljs-number">1</span>)}
     ,
     <span class="hljs-number">1000</span>
   )</code></pre><p>or</p>
-<pre class="hljs"><code>setTimeout(
+<pre class="hljs"><code><span class="hljs-built_in">setTimeout</span>(
     <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>{setCounter(counter + <span class="hljs-number">1</span>)}
     ,
     <span class="hljs-number">1000</span>
   )</code></pre><p>or</p>
-<pre class="hljs"><code>setTimeout(
-    <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {setCounter(counter + <span class="hljs-number">1</span>)}
+<pre class="hljs"><code><span class="hljs-built_in">setTimeout</span>(
+    <span class="hljs-function">() =&gt;</span> {setCounter(counter + <span class="hljs-number">1</span>)}
     ,
     <span class="hljs-number">1000</span>
   )</code></pre><p>or</p>
-<pre class="hljs"><code>setTimeout(
-    <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> (setCounter(counter + <span class="hljs-number">1</span>))
+<pre class="hljs"><code><span class="hljs-built_in">setTimeout</span>(
+    <span class="hljs-function">() =&gt;</span> (setCounter(counter + <span class="hljs-number">1</span>))
     ,
     <span class="hljs-number">1000</span>
   )</code></pre><p>So, these were all the possible cases for the function reference.</p>
@@ -56,14 +56,14 @@ The function passed as the first parameter to the <em>setTimeout</em> function i
 <pre class="hljs"><code><span class="hljs-keyword">const</span> App = <span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span> {
   <span class="hljs-keyword">const</span> [ counter, setCounter ] = useState(<span class="hljs-number">0</span>)
 
-  <span class="hljs-keyword">const</span> handleClick = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'clicked'</span>)
+  <span class="hljs-keyword">const</span> handleClick = <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;clicked&#x27;</span>)
   }
 
   <span class="hljs-keyword">return</span> (
     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{counter}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">handleClick</span>&gt;</span> // onClick needs a "reference to function"(or function reference), not a "call to function"(or function call);;ALSO a fuction call would be like "handleClick()"
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">handleClick</span>&gt;</span> // onClick needs a &quot;reference to function&quot;(or function reference), not a &quot;call to function&quot;(or function call);;ALSO a fuction call would be like &quot;handleClick()&quot;
         plus
       <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
@@ -72,8 +72,8 @@ The function passed as the first parameter to the <em>setTimeout</em> function i
 <pre class="hljs"><code><span class="hljs-keyword">const</span> App = <span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span> {
   <span class="hljs-keyword">const</span> [ counter, setCounter ] = useState(<span class="hljs-number">0</span>)
 
-  <span class="hljs-keyword">const</span> handleClick = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'clicked'</span>)
+  <span class="hljs-keyword">const</span> handleClick = <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;clicked&#x27;</span>)
   }
 
   <span class="hljs-keyword">return</span> (
@@ -88,14 +88,14 @@ The function passed as the first parameter to the <em>setTimeout</em> function i
 <pre class="hljs"><code><span class="hljs-keyword">const</span> App = <span class="hljs-function">(<span class="hljs-params">props</span>) =&gt;</span> {
   <span class="hljs-keyword">const</span> [ counter, setCounter ] = useState(<span class="hljs-number">0</span>)
 
-  <span class="hljs-keyword">const</span> handleClick = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'clicked'</span>)
+  <span class="hljs-keyword">const</span> handleClick = <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;clicked&#x27;</span>)
   }
 
   <span class="hljs-keyword">return</span> (
     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{counter}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> handleClick}&gt; // THIS LINE now a fuction body which contains a "function reference" and thus, the onClick will not execute the handleClick() function.
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> handleClick}&gt; // THIS LINE now a fuction body which contains a &quot;function reference&quot; and thus, the onClick will not execute the handleClick() function.
         plus
       <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
@@ -107,12 +107,12 @@ Here, <code>setToValue(0)</code> or <code>setToValue(1)</code> is a function cal
 • This way of utilizing functions that return functions is effectively the same thing as <a href="https://web.archive.org/web/20170919010057/http://www.datchley.name/currying-vs-partial-application/">currying</a> in functional programming. The term currying does not originate from functional programming, rather the term is deeply rooted in <a href="https://en.wikipedia.org/wiki/Currying">mathematics</a>.
 Double Arrow (My Lang): Function call to a function returning another function which returns a function call. ;)</p>
 <h2 id="currying"><a class="header-link" href="#currying"></a>currying</h2>
-<pre class="hljs"><code>tu = <span class="hljs-function">(<span class="hljs-params">t</span>) =&gt;</span>  () =&gt;  <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span>  () =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hulaaa'</span>,t)
-tu(<span class="hljs-string">'sa'</span>)()()()
+<pre class="hljs"><code>tu = <span class="hljs-function">(<span class="hljs-params">t</span>) =&gt;</span>  <span class="hljs-function">() =&gt;</span>  <span class="hljs-function">() =&gt;</span>  <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;hulaaa&#x27;</span>,t)
+tu(<span class="hljs-string">&#x27;sa&#x27;</span>)()()()
 ***
     The example you are looking <span class="hljs-keyword">for</span>:
-tu = <span class="hljs-function">(<span class="hljs-params">t</span>) =&gt;</span>  () =&gt;  <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span>  () =&gt; t()
-tu(<span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'sahil'</span>))()()()</code></pre><hr>
+tu = <span class="hljs-function">(<span class="hljs-params">t</span>) =&gt;</span>  <span class="hljs-function">() =&gt;</span>  <span class="hljs-function">() =&gt;</span>  <span class="hljs-function">() =&gt;</span> t()
+tu(<span class="hljs-function">()=&gt;</span><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;sahil&#x27;</span>))()()()</code></pre><hr>
 <p><a href="https://wesbos.com/">https://wesbos.com</a> - Good LINK - tutor - JS react teacher</p>
 <hr>
 <p>Setting Language mode to &quot;JavaScript React&quot;.I would feel the below is the easiest way of formatting the code</p>
@@ -124,26 +124,26 @@ tu(<span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span><s
 <h4 id="comments-in-jsx--"><a class="header-link" href="#comments-in-jsx--"></a>Comments in JSX -</h4>
 <p><code>{/* A JSX comment */}</code> </p>
 <p><strong>OR</strong> </p>
-<pre class="hljs"><code>{<span class="hljs-comment">/* 
-  Multi
+<pre class="hljs"><code><span class="hljs-template-tag">{/* 
+  <span class="hljs-name">Multi</span>
   line
   comment
-*/</span>}</code></pre><hr>
+*/}</span></code></pre><hr>
 <p>NO nee - extra worries -  [46 k, downloads]React Syntax Highlighter - extension <a href="https://marketplace.visualstudio.com/items?itemName=blanu.vscode-styled-jsx">extension link</a></p>
 <hr>
 <pre class="hljs"><code><span class="hljs-keyword">let</span> sd = [<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">24</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">7</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">00</span>]
-sd.join(<span class="hljs-string">".."</span>) <span class="hljs-comment">// OUTPUT: "6..7..24..6..7..7..4..3..0"</span>
-sd.join(<span class="hljs-string">'yono'</span>) <span class="hljs-comment">// OUTPUT: "6yono7yono24yono6yono7yono7yono4yono3yono0"</span>
-sd.join(<span class="hljs-string">' '</span>) <span class="hljs-comment">// OUTPUT: "6 7 24 6 7 7 4 3 0"</span>
-yui = sd.join(<span class="hljs-string">' '</span>)
-<span class="hljs-keyword">typeof</span> yui <span class="hljs-comment">//OUTPUT: "string"</span>
+sd.join(<span class="hljs-string">&quot;..&quot;</span>) <span class="hljs-comment">// OUTPUT: &quot;6..7..24..6..7..7..4..3..0&quot;</span>
+sd.join(<span class="hljs-string">&#x27;yono&#x27;</span>) <span class="hljs-comment">// OUTPUT: &quot;6yono7yono24yono6yono7yono7yono4yono3yono0&quot;</span>
+sd.join(<span class="hljs-string">&#x27; &#x27;</span>) <span class="hljs-comment">// OUTPUT: &quot;6 7 24 6 7 7 4 3 0&quot;</span>
+yui = sd.join(<span class="hljs-string">&#x27; &#x27;</span>)
+<span class="hljs-keyword">typeof</span> yui <span class="hljs-comment">//OUTPUT: &quot;string&quot;</span>
 
-sd.concat(<span class="hljs-number">999</span>,<span class="hljs-number">999</span>) <span class="hljs-comment">// OUTPUT: (11) [6, 7, 24, 6, 7, 7, 4, 3, 0, 999, 999]</span>
+sd.concat(<span class="hljs-number">999</span>,<span class="hljs-number">999</span>) <span class="hljs-comment">// OUTPUT: (11) [6, 7, 24, 6, 7, 7, 4, 3, 0, 999, 999]</span>
 iuo = sd.concat(<span class="hljs-number">888</span>,<span class="hljs-number">888</span>)
-<span class="hljs-keyword">typeof</span> iuo <span class="hljs-comment">// OUTPUT: "object"</span></code></pre><hr>
-<pre class="hljs"><code>&lt;p id=<span class="hljs-string">"demo"</span>&gt;JavaScript can change HTML content.&lt;<span class="hljs-regexp">/p&gt;
-        /</span><span class="hljs-regexp">/        ^^ this refers to the &gt;&gt; innerHTML property of the p tag(or any other tag).
-&lt;button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'&gt;Click Me!&lt;/</span>button&gt;</code></pre><hr>
+<span class="hljs-keyword">typeof</span> iuo <span class="hljs-comment">// OUTPUT: &quot;object&quot;</span></code></pre><hr>
+<pre class="hljs"><code>&lt;p id=<span class="hljs-string">&quot;demo&quot;</span>&gt;JavaScript can change HTML content.&lt;/p&gt;
+        <span class="hljs-comment">//        ^^ this refers to the &gt;&gt; innerHTML property of the p tag(or any other tag).</span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&#x27;document.getElementById(&quot;demo&quot;).innerHTML = &quot;Hello JavaScript!&quot;&#x27;</span>&gt;</span>Click Me!<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span></code></pre><hr>
 <p><a href="https://github.com/Microsoft/vscode-chrome-debug">vscode - chrome debug - debug</a></p>
 <p><a href="https://da-14.com">da-14.com</a> - Trusted JavaScript Adepts - (Has Regular Blog)</p>
 <p>React 16: A look inside an API-compatible rewrite of our frontend UI library - <a href="https://engineering.fb.com/web/react-16-a-look-inside-an-api-compatible-rewrite-of-our-frontend-ui-library/">post@engineering.fb.com</a>         </p>
@@ -162,42 +162,42 @@ iuo = sd.concat(<span class="hljs-number">888</span>,<span class="hljs-number">8
 <p>W3schools.com - <a href="https://www.w3schools.com/js/js_function_apply.asp">JavaScript Function Apply</a>, <a href="https://www.w3schools.com/js/js_function_call.asp">JavaScript Function Call</a>,    <a href="https://www.w3schools.com/js/js_function_call.asp">JavaScript Use Strict</a>,    </p>
 <hr>
 <hr>
-<h6 id="objects-some-concepts-:-source:-[link](https://developer.mozilla.org/en-us/docs/web/javascript/reference/global_objects/object/assign)"><a class="header-link" href="#objects-some-concepts-:-source:-[link](https://developer.mozilla.org/en-us/docs/web/javascript/reference/global_objects/object/assign)"></a>Objects Some Concepts : source: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">Link</a></h6>
-<h4 id="object.assign()-//-creates-shallow-copy(1-level-copy-only,-if-objects-are-referenced-in-properties,-this-is-useless)"><a class="header-link" href="#object.assign()-//-creates-shallow-copy(1-level-copy-only,-if-objects-are-referenced-in-properties,-this-is-useless)"></a>Object.assign() // creates shallow copy(1 level copy only, if objects are referenced in properties, this is useless)</h4>
-<h5 id="cloning-object:(shallow-copy)"><a class="header-link" href="#cloning-object:(shallow-copy)"></a>Cloning Object:(Shallow Copy)</h5>
+<h6 id="objects-some-concepts--source-link"><a class="header-link" href="#objects-some-concepts--source-link"></a>Objects Some Concepts : source: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">Link</a></h6>
+<h4 id="objectassign--creates-shallow-copy1-level-copy-only-if-objects-are-referenced-in-properties-this-is-useless"><a class="header-link" href="#objectassign--creates-shallow-copy1-level-copy-only-if-objects-are-referenced-in-properties-this-is-useless"></a>Object.assign() // creates shallow copy(1 level copy only, if objects are referenced in properties, this is useless)</h4>
+<h5 id="cloning-objectshallow-copy"><a class="header-link" href="#cloning-objectshallow-copy"></a>Cloning Object:(Shallow Copy)</h5>
 <pre class="hljs"><code><span class="hljs-keyword">var</span> obj = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span> };
 <span class="hljs-keyword">var</span> copy = <span class="hljs-built_in">Object</span>.assign({}, obj);
 
 <span class="hljs-built_in">console</span>.log(copy); <span class="hljs-comment">// { a: 1 }</span></code></pre><hr>
-<h2 id="deep-cloning-an-object:(deep-copy)"><a class="header-link" href="#deep-cloning-an-object:(deep-copy)"></a>Deep Cloning an Object:(Deep Copy)</h2>
+<h2 id="deep-cloning-an-objectdeep-copy"><a class="header-link" href="#deep-cloning-an-objectdeep-copy"></a>Deep Cloning an Object:(Deep Copy)</h2>
 <p><a href="https://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-deep-clone-an-object-in-javascript/10916838#10916838">helpful link (question/answers) @ stackoverflow</a></p>
 <p><a href="https://medium.com/javascript-in-plain-english/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089">helpfule link (amazing article)@ medium.com</a> - this brings us to the conclusion of using rfdc(really fast deep clone) everytime so as to be protective from the negative effects of deep clone via the JSON.parse(JSON.stringify(obj)) method. i.e., </p>
-<pre class="hljs"><code>“If you <span class="hljs-keyword">do</span> not use Dates, <span class="hljs-built_in">functions</span>, undefined, Infinity, [NaN], RegExps, Maps, Sets, Blobs, FileLists, ImageDatas, sparse Arrays, Typed Arrays or other complex types within your object, a very simple one liner to deep <span class="hljs-built_in">clone</span> an object is: JSON.parse(JSON.stringify(object))” — Dan Dascalescu <span class="hljs-keyword">in</span> his StackOverflow answer</code></pre><h2 id="joni's-recommendations-of-deep-clone-needs-for-redux-states:-"><a class="header-link" href="#joni's-recommendations-of-deep-clone-needs-for-redux-states:-"></a>Joni&#39;s Recommendations of deep clone needs for redux states:-</h2>
+<pre class="hljs"><code>“If you <span class="hljs-keyword">do</span> not use Dates, <span class="hljs-built_in">functions</span>, undefined, Infinity, [NaN], RegExps, Maps, Sets, Blobs, FileLists, ImageDatas, sparse Arrays, Typed Arrays or other complex types within your object, a very simple one liner to deep <span class="hljs-built_in">clone</span> an object is: JSON.parse(JSON.stringify(object))” — Dan Dascalescu <span class="hljs-keyword">in</span> his StackOverflow answer</code></pre><h2 id="jonis-recommendations-of-deep-clone-needs-for-redux-states-"><a class="header-link" href="#jonis-recommendations-of-deep-clone-needs-for-redux-states-"></a>Joni&#39;s Recommendations of deep clone needs for redux states:-</h2>
 <p>Immer:- <a href="https://immerjs.github.io/immer/docs/introduction">https://immerjs.github.io/immer/docs/introduction</a>
 Quick Example from the above link:-
 immer at egghead.io - <a href="https://egghead.io/courses/immutable-javascript-data-structures-with-immer">link</a>
 read on medium about immer (haven&#39;t read yet): - <a href="https://medium.com/hackernoon/introducing-immer-immutability-the-easy-way-9d73d8f71cb3">link</a>
 immer at github - <a href="https://github.com/immerjs/immer">https://github.com/immerjs/immer</a>
 immer at github.io - <a href="https://immerjs.github.io/immer/docs/introduction">https://immerjs.github.io/immer/docs/introduction</a></p>
-<pre class="hljs"><code><span class="hljs-keyword">import</span> produce <span class="hljs-keyword">from</span> <span class="hljs-string">"immer"</span>
+<pre class="hljs"><code><span class="hljs-keyword">import</span> produce <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;immer&quot;</span>
 
 <span class="hljs-keyword">const</span> baseState = [
     {
-        <span class="hljs-attr">todo</span>: <span class="hljs-string">"Learn typescript"</span>,
+        <span class="hljs-attr">todo</span>: <span class="hljs-string">&quot;Learn typescript&quot;</span>,
         <span class="hljs-attr">done</span>: <span class="hljs-literal">true</span>
     },
     {
-        <span class="hljs-attr">todo</span>: <span class="hljs-string">"Try immer"</span>,
+        <span class="hljs-attr">todo</span>: <span class="hljs-string">&quot;Try immer&quot;</span>,
         <span class="hljs-attr">done</span>: <span class="hljs-literal">false</span>
     }
 ]
 
-<span class="hljs-keyword">const</span> nextState = produce(baseState, draftState =&gt; {
-    draftState.push({<span class="hljs-attr">todo</span>: <span class="hljs-string">"Tweet about it"</span>})
+<span class="hljs-keyword">const</span> nextState = produce(baseState, <span class="hljs-function"><span class="hljs-params">draftState</span> =&gt;</span> {
+    draftState.push({<span class="hljs-attr">todo</span>: <span class="hljs-string">&quot;Tweet about it&quot;</span>})
     draftState[<span class="hljs-number">1</span>].done = <span class="hljs-literal">true</span>
-})</code></pre><h2 id="preffered-way-to-deep-copy:--(rfdc-has-only-196-stars-on-github)"><a class="header-link" href="#preffered-way-to-deep-copy:--(rfdc-has-only-196-stars-on-github)"></a>PREFFERED WAY TO DEEP COPY:- (rfdc has only 196 stars on github)</h2>
+})</code></pre><h2 id="preffered-way-to-deep-copy--rfdc-has-only-196-stars-on-github"><a class="header-link" href="#preffered-way-to-deep-copy--rfdc-has-only-196-stars-on-github"></a>PREFFERED WAY TO DEEP COPY:- (rfdc has only 196 stars on github)</h2>
 <pre class="hljs"><code># best DEEP COPY
-<span class="hljs-keyword">const</span> clone = <span class="hljs-built_in">require</span>(<span class="hljs-string">'rfdc'</span>)() <span class="hljs-comment">// Returns the deep copy function</span>
+<span class="hljs-keyword">const</span> clone = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;rfdc&#x27;</span>)() <span class="hljs-comment">// Returns the deep copy function</span>
 clone({<span class="hljs-attr">a</span>: <span class="hljs-number">37</span>, <span class="hljs-attr">b</span>: {<span class="hljs-attr">c</span>: <span class="hljs-number">3700</span>}}) <span class="hljs-comment">// {a: 37, b: {c: 3700}} // deep clones while preserving all the special data types discussed in above box.</span></code></pre><pre class="hljs"><code># DEEP COPY
 <span class="hljs-keyword">var</span> obj1 = { <span class="hljs-attr">a</span>: <span class="hljs-number">0</span> , <span class="hljs-attr">b</span>: { <span class="hljs-attr">c</span>: <span class="hljs-number">0</span>}};
 <span class="hljs-keyword">let</span> obj3 = <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-built_in">JSON</span>.stringify(obj1));
@@ -206,26 +206,26 @@ clone({<span class="hljs-attr">a</span>: <span class="hljs-number">37</span>, <s
 <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(obj3)); <span class="hljs-comment">// { a: 0, b: { c: 0}}</span>
 
 <span class="hljs-comment">// This deep clone method has a side effect that some native objects would be converted to strings. for e.g., Date object will be converted to string, and further operations via the date methods cannot be implemented on them after that.</span></code></pre><hr>
-<h5 id="shallow-copy-vs.-deep-copy"><a class="header-link" href="#shallow-copy-vs.-deep-copy"></a>Shallow Copy VS. Deep Copy</h5>
+<h5 id="shallow-copy-vs-deep-copy"><a class="header-link" href="#shallow-copy-vs-deep-copy"></a>Shallow Copy VS. Deep Copy</h5>
 <pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) </span>{
-<span class="hljs-meta">  'use strict'</span>;
+<span class="hljs-meta">  &#x27;use strict&#x27;</span>;
 
   <span class="hljs-keyword">let</span> obj1 = { <span class="hljs-attr">a</span>: <span class="hljs-number">0</span> , <span class="hljs-attr">b</span>: { <span class="hljs-attr">c</span>: <span class="hljs-number">0</span>}};
   <span class="hljs-keyword">let</span> obj2 = <span class="hljs-built_in">Object</span>.assign({}, obj1); <span class="hljs-comment">// Creates shallow copy(1 level copy).</span>
   <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(obj2)); <span class="hljs-comment">// { a: 0, b: { c: 0}}</span>
-
+  
   obj1.a = <span class="hljs-number">1</span>;
   <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(obj1)); <span class="hljs-comment">// { a: 1, b: { c: 0}}</span>
   <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(obj2)); <span class="hljs-comment">// { a: 0, b: { c: 0}}</span>
-
+  
   obj2.a = <span class="hljs-number">2</span>;
   <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(obj1)); <span class="hljs-comment">// { a: 1, b: { c: 0}}</span>
   <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(obj2)); <span class="hljs-comment">// { a: 2, b: { c: 0}}</span>
-
+  
   obj2.b.c = <span class="hljs-number">3</span>;
   <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(obj1)); <span class="hljs-comment">// { a: 1, b: { c: 3}}</span>
   <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(obj2)); <span class="hljs-comment">// { a: 2, b: { c: 3}}</span>
-
+  
   <span class="hljs-comment">// Deep Clone</span>
   obj1 = { <span class="hljs-attr">a</span>: <span class="hljs-number">0</span> , <span class="hljs-attr">b</span>: { <span class="hljs-attr">c</span>: <span class="hljs-number">0</span>}};
   <span class="hljs-keyword">let</span> obj3 = <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-built_in">JSON</span>.stringify(obj1));
@@ -235,15 +235,15 @@ clone({<span class="hljs-attr">a</span>: <span class="hljs-number">37</span>, <s
 }
 
 test();</code></pre><hr>
-<h5 id="merging-object:"><a class="header-link" href="#merging-object:"></a>Merging object:</h5>
+<h5 id="merging-object"><a class="header-link" href="#merging-object"></a>Merging object:</h5>
 <pre class="hljs"><code><span class="hljs-keyword">var</span> o1 = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span> };
 <span class="hljs-keyword">var</span> o2 = { <span class="hljs-attr">b</span>: <span class="hljs-number">2</span> };
 <span class="hljs-keyword">var</span> o3 = { <span class="hljs-attr">c</span>: <span class="hljs-number">3</span> };
 
 <span class="hljs-keyword">var</span> obj = <span class="hljs-built_in">Object</span>.assign(o1, o2, o3);
 <span class="hljs-built_in">console</span>.log(obj); <span class="hljs-comment">// { a: 1, b: 2, c: 3 }</span>
-<span class="hljs-built_in">console</span>.log(o1);  <span class="hljs-comment">// { a: 1, b: 2, c: 3 }, object "o1" itself is changed.</span></code></pre><hr>
-<h5 id="merging-objects-with-same-properties:"><a class="header-link" href="#merging-objects-with-same-properties:"></a>Merging objects with same properties:</h5>
+<span class="hljs-built_in">console</span>.log(o1);  <span class="hljs-comment">// { a: 1, b: 2, c: 3 }, object &quot;o1&quot; itself is changed.</span></code></pre><hr>
+<h5 id="merging-objects-with-same-properties"><a class="header-link" href="#merging-objects-with-same-properties"></a>Merging objects with same properties:</h5>
 <pre class="hljs"><code><span class="hljs-keyword">var</span> o1 = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">c</span>: <span class="hljs-number">1</span> };
 <span class="hljs-keyword">var</span> o2 = { <span class="hljs-attr">b</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">c</span>: <span class="hljs-number">2</span> };
 <span class="hljs-keyword">var</span> o3 = { <span class="hljs-attr">c</span>: <span class="hljs-number">3</span> };
@@ -253,33 +253,33 @@ test();</code></pre><hr>
 <span class="hljs-comment">//o1,o2,o3 remains the same even though.</span></code></pre><p>The properties are overwritten by other objects that have the same properties later in the parameters order.</p>
 <hr>
 <p><a href="https://github.com/tc39/proposal-object-rest-spread">https://github.com/tc39/proposal-object-rest-spread</a></p>
-<h4 id="object-rest/spread-properties-for-`ecmascript`"><a class="header-link" href="#object-rest/spread-properties-for-`ecmascript`"></a>Object Rest/Spread Properties for <code>ECMAScript</code></h4>
+<h4 id="object-restspread-properties-for-ecmascript"><a class="header-link" href="#object-restspread-properties-for-ecmascript"></a>Object Rest/Spread Properties for <code>ECMAScript</code></h4>
 <p>ECMAScript 6 introduces <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">rest elements</a> for array destructuring assignment and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator">spread elements</a> for array literals.</p>
 <p>This proposal introduces analogous <a href="https://github.com/tc39/proposal-object-rest-spread/blob/master/Rest.md">rest properties</a> for object destructuring assignment and <a href="https://github.com/tc39/proposal-object-rest-spread/blob/master/Spread.md">spread properties</a> for object literals.
 <strong>source</strong>: 
     &quot;Here the <a href="https://github.com/tc39/proposal-object-rest-spread">object spread</a> syntax is being used, which hasn&#39;t yet been standardized as a part of JavaScript&#39;s language specification.&quot; - <em>Full Stack Course</em></p>
 <hr>
-<h5 id="converting-string-to-number-with-unary-operator:"><a class="header-link" href="#converting-string-to-number-with-unary-operator:"></a>Converting string to number with unary operator:</h5>
-<pre class="hljs"><code>&gt;    y = <span class="hljs-string">"5"</span>
-&lt;•    <span class="hljs-string">"5"</span>
+<h5 id="converting-string-to-number-with-unary-operator"><a class="header-link" href="#converting-string-to-number-with-unary-operator"></a>Converting string to number with unary operator:</h5>
+<pre class="hljs"><code>&gt;    y = <span class="hljs-string">&quot;5&quot;</span>
+&lt;•    <span class="hljs-string">&quot;5&quot;</span>
 &gt;    x = +y
 &lt;•    <span class="hljs-number">5</span></code></pre><p>If the variable cannot be converted, it will still become a number, but with the value NaN</p>
-<pre class="hljs"><code><span class="hljs-keyword">var</span> y = <span class="hljs-string">"John"</span>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> y = <span class="hljs-string">&quot;John&quot;</span>
 <span class="hljs-keyword">var</span> x = +y <span class="hljs-comment">// x is a number NaN</span></code></pre><p>PS:</p>
-<pre class="hljs"><code>&gt;    y = <span class="hljs-string">"5"</span>
+<pre class="hljs"><code>&gt;    y = <span class="hljs-string">&quot;5&quot;</span>
 &gt;    q = <span class="hljs-number">0</span>+y
-&lt;•<span class="hljs-string">"05"</span>
+&lt;•<span class="hljs-string">&quot;05&quot;</span>
 <span class="hljs-comment">//Also</span>
-&gt;    <span class="hljs-built_in">Number</span>(<span class="hljs-string">"a"</span>)
+&gt;    <span class="hljs-built_in">Number</span>(<span class="hljs-string">&quot;a&quot;</span>)
 &lt;•    <span class="hljs-literal">NaN</span>
 <span class="hljs-comment">//Also</span>
-&gt;    <span class="hljs-built_in">Number</span>(<span class="hljs-string">"10"</span>)
+&gt;    <span class="hljs-built_in">Number</span>(<span class="hljs-string">&quot;10&quot;</span>)
 &lt;•    <span class="hljs-number">10</span>
 <span class="hljs-comment">//Also</span>
-&gt;    <span class="hljs-built_in">Number</span>(<span class="hljs-string">"10s"</span>)
+&gt;    <span class="hljs-built_in">Number</span>(<span class="hljs-string">&quot;10s&quot;</span>)
 &lt;•    <span class="hljs-literal">NaN</span>
 <span class="hljs-comment">//Also</span>
-&gt;    <span class="hljs-built_in">Number</span>(<span class="hljs-string">"true"</span>)
+&gt;    <span class="hljs-built_in">Number</span>(<span class="hljs-string">&quot;true&quot;</span>)
 &lt;•    <span class="hljs-literal">NaN</span>
 <span class="hljs-comment">//Also</span>
 &gt;    <span class="hljs-built_in">Number</span>(<span class="hljs-literal">true</span>)
@@ -287,7 +287,7 @@ test();</code></pre><hr>
 <span class="hljs-comment">//Also</span>
 &gt;    <span class="hljs-built_in">Number</span>(<span class="hljs-literal">false</span>)
 &lt;•    <span class="hljs-number">0</span></code></pre><hr>
-<h4 id="use-of-json.stringify()-and-json.parse()"><a class="header-link" href="#use-of-json.stringify()-and-json.parse()"></a>Use of JSON.stringify() and JSON.parse()</h4>
+<h4 id="use-of-jsonstringify-and-jsonparse"><a class="header-link" href="#use-of-jsonstringify-and-jsonparse"></a>Use of JSON.stringify() and JSON.parse()</h4>
 <pre class="hljs"><code>&gt;    w = {<span class="hljs-attr">ram</span>:<span class="hljs-number">20</span>,<span class="hljs-attr">shayam</span>:<span class="hljs-number">40</span>}
 &lt;•    ►{<span class="hljs-attr">ram</span>: <span class="hljs-number">20</span>, <span class="hljs-attr">shayam</span>: <span class="hljs-number">40</span>}
 &gt;    <span class="hljs-built_in">console</span>.log(w+<span class="hljs-number">1</span>)
@@ -298,32 +298,32 @@ test();</code></pre><hr>
 &lt;•    <span class="hljs-number">3</span>
 
 <span class="hljs-comment">// with arrow function, throws error arguments is not defined.</span>
-&gt;    <span class="hljs-keyword">let</span> yahu = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span>{ <span class="hljs-keyword">return</span>(<span class="hljs-built_in">arguments</span>.length)}
+&gt;    <span class="hljs-keyword">let</span> yahu = <span class="hljs-function">() =&gt;</span>{ <span class="hljs-keyword">return</span>(<span class="hljs-built_in">arguments</span>.length)}
 &lt;•    <span class="hljs-literal">undefined</span>
 &gt;    yahu(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>)
 &lt;•    VM3640:<span class="hljs-number">1</span> Uncaught <span class="hljs-built_in">ReferenceError</span>: <span class="hljs-built_in">arguments</span> is not defined
-    at yahu (&lt;anonymous&gt;:1:20)
-    at &lt;anonymous&gt;:1:1</code></pre><hr>
+    at yahu (&lt;anonymous&gt;:<span class="hljs-number">1</span>:<span class="hljs-number">20</span>)
+    at &lt;anonymous&gt;:<span class="hljs-number">1</span>:<span class="hljs-number">1</span></code></pre><hr>
 <p>Also read here: - <a href="https://stackoverflow.com/questions/2856059/passing-an-array-as-a-function-parameter-in-javascript">Passing an array as a function parameter in JavaScript</a>    </p>
 <p>Answer: </p>
-<pre class="hljs"><code><span class="hljs-keyword">const</span> args = [<span class="hljs-string">'p0'</span>, <span class="hljs-string">'p1'</span>, <span class="hljs-string">'p2'</span>];
-call_me.apply(<span class="hljs-keyword">this</span>, args);</code></pre><p>or <strong>If the environment supports ECMAScript 6</strong>, you can use a <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator#A_better_apply">spread argument</a> instead:</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> args = [<span class="hljs-string">&#x27;p0&#x27;</span>, <span class="hljs-string">&#x27;p1&#x27;</span>, <span class="hljs-string">&#x27;p2&#x27;</span>];
+call_me.apply(<span class="hljs-built_in">this</span>, args);</code></pre><p>or <strong>If the environment supports ECMAScript 6</strong>, you can use a <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator#A_better_apply">spread argument</a> instead:</p>
 <pre class="hljs"><code>call_me(...args);</code></pre><hr>
-<pre class="hljs"><code>&gt;    yahi = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<span class="hljs-keyword">return</span> (<span class="hljs-built_in">arguments</span>.length)}
+<pre class="hljs"><code>&gt;    yahi = <span class="hljs-function">() =&gt;</span> {<span class="hljs-keyword">return</span> (<span class="hljs-built_in">arguments</span>.length)}
 &lt;•    () =&gt; {<span class="hljs-keyword">return</span> (<span class="hljs-built_in">arguments</span>.length)}
-<span class="hljs-comment">// if function is created with keyword "function", then it would be</span>
+<span class="hljs-comment">// if function is created with keyword &quot;function&quot;, then it would be</span>
 &gt;    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">yah</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-keyword">return</span>(<span class="hljs-built_in">arguments</span>.length)}
-&lt;•    ƒ yah(){ <span class="hljs-keyword">return</span>(<span class="hljs-built_in">arguments</span>.length)}</code></pre><hr>
+&lt;•    ƒ <span class="hljs-function"><span class="hljs-title">yah</span>(<span class="hljs-params"></span>)</span>{ <span class="hljs-keyword">return</span>(<span class="hljs-built_in">arguments</span>.length)}</code></pre><hr>
 <pre class="hljs"><code>&gt;    <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">radhe</span>(<span class="hljs-params"></span>)</span>{<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>}()    )
-&lt;•    <span class="hljs-string">"0"</span>
+&lt;•    <span class="hljs-string">&quot;0&quot;</span>
 &gt;     <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">radhe</span>(<span class="hljs-params"></span>)</span>{<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>}    )
 &lt;•    <span class="hljs-literal">undefined</span> <span class="hljs-comment">// for all type of functions.</span></code></pre><hr>
 <p>stackoverflow what is REQUEST PAYLOAD: <a href="https://stackoverflow.com/questions/23118249/whats-the-difference-between-request-payload-vs-form-data-as-seen-in-chrome">https://stackoverflow.com/questions/23118249/whats-the-difference-between-request-payload-vs-form-data-as-seen-in-chrome</a></p>
 <hr>
-<h5 id="add-style-to-react-using-style-attribute-with-dual-curly-braces."><a class="header-link" href="#add-style-to-react-using-style-attribute-with-dual-curly-braces."></a>Add style to react using style attribute with dual curly braces.</h5>
+<h5 id="add-style-to-react-using-style-attribute-with-dual-curly-braces"><a class="header-link" href="#add-style-to-react-using-style-attribute-with-dual-curly-braces"></a>Add style to react using style attribute with dual curly braces.</h5>
 <pre class="hljs"><code><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">style</span>=</span></span><span class="hljs-template-variable">{{width: "90px"}</span><span class="xml"><span class="hljs-tag">}&gt;</span></span><span class="hljs-template-variable">{props.text}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">style</span>=</span></span><span class="hljs-template-variable">{{width: "90px"}</span><span class="xml"><span class="hljs-tag">}&gt;</span></span><span class="hljs-template-variable">{props.value}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">style</span>=</span></span><span class="hljs-template-variable">{{<span class="hljs-name">width:</span> <span class="hljs-string">&quot;90px&quot;</span>}}</span><span class="xml"><span class="hljs-tag">&gt;</span>{props.text}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">style</span>=</span></span><span class="hljs-template-variable">{{<span class="hljs-name">width:</span> <span class="hljs-string">&quot;90px&quot;</span>}}</span><span class="xml"><span class="hljs-tag">&gt;</span>{props.value}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span></span></code></pre><hr>
 <p>Fix decimals in javascript : <a href="https://www.w3schools.com/jsref/jsref_tofixed.asp">w3schools.com - Number.tofixed</a></p>
 <hr>
@@ -331,7 +331,7 @@ call_me.apply(<span class="hljs-keyword">this</span>, args);</code></pre><p>or <
 <pre class="hljs"><code><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Math</span>.max(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>));
 <span class="hljs-comment">// expected output: 3</span>
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Math</span>.max(<span class="hljs-number">-1</span>, <span class="hljs-number">-3</span>, <span class="hljs-number">-2</span>));
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Math</span>.max(-<span class="hljs-number">1</span>, -<span class="hljs-number">3</span>, -<span class="hljs-number">2</span>));
 <span class="hljs-comment">// expected output: -1</span>
 
 <span class="hljs-keyword">var</span> array1 = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>];
@@ -362,44 +362,44 @@ call_me.apply(<span class="hljs-keyword">this</span>, args);</code></pre><p>or <
 <li>undefined</li>
 <li>symbol</li>
 </ul>
-<h3 id="why-can’t-i-use-`=`-to-copy-an-array?"><a class="header-link" href="#why-can’t-i-use-`=`-to-copy-an-array?"></a>Why Can’t I Use <code>=</code> to Copy an Array?</h3>
+<h3 id="why-cant-i-use--to-copy-an-array"><a class="header-link" href="#why-cant-i-use--to-copy-an-array"></a>Why Can’t I Use <code>=</code> to Copy an Array?</h3>
 <p>Because arrays in JS are reference values, so when you try to copy it using the <code>=</code> it will only copy the reference to the original array and not the value of the array. To create a real copy of an array, you need to copy over the value of the array under a new value variable. That way this new array does not reference to the old array address in memory.</p>
-<pre class="hljs"><code><span class="hljs-keyword">const</span> sheeps = [<span class="hljs-string">'🐑'</span>, <span class="hljs-string">'🐑'</span>, <span class="hljs-string">'🐑'</span>];
+<pre class="hljs"><code><span class="hljs-keyword">const</span> sheeps = [<span class="hljs-string">&#x27;🐑&#x27;</span>, <span class="hljs-string">&#x27;🐑&#x27;</span>, <span class="hljs-string">&#x27;🐑&#x27;</span>];
 
 <span class="hljs-keyword">const</span> fakeSheeps = sheeps;
 <span class="hljs-keyword">const</span> cloneSheeps = [...sheeps];
 
 <span class="hljs-built_in">console</span>.log(sheeps === fakeSheeps);
-<span class="hljs-comment">// true --&gt; it's pointing to the same memory space</span>
+<span class="hljs-comment">// true --&gt; it&#x27;s pointing to the same memory space</span>
 
 <span class="hljs-built_in">console</span>.log(sheeps === cloneSheeps);
-<span class="hljs-comment">// false --&gt; it's pointing to a new memory space</span></code></pre><h3 id="problem-with-reference-values"><a class="header-link" href="#problem-with-reference-values"></a>Problem with Reference Values</h3>
+<span class="hljs-comment">// false --&gt; it&#x27;s pointing to a new memory space</span></code></pre><h3 id="problem-with-reference-values"><a class="header-link" href="#problem-with-reference-values"></a>Problem with Reference Values</h3>
 <p>If you ever dealt with Redux or any state management framework. You will know immutability is super important. Let me briefly explain. An immutable object is an object where the state can&#39;t be modified after it is created. The problem with JavaScript is that <code>arrays</code> are mutable. So this can happen:</p>
-<pre class="hljs"><code><span class="hljs-keyword">const</span> sheeps = [<span class="hljs-string">'🐑'</span>, <span class="hljs-string">'🐑'</span>];
+<pre class="hljs"><code><span class="hljs-keyword">const</span> sheeps = [<span class="hljs-string">&#x27;🐑&#x27;</span>, <span class="hljs-string">&#x27;🐑&#x27;</span>];
 
 <span class="hljs-keyword">const</span> sheeps2 = sheeps;
 
-sheeps2.push(<span class="hljs-string">'🐺'</span>);
+sheeps2.push(<span class="hljs-string">&#x27;🐺&#x27;</span>);
 
 <span class="hljs-built_in">console</span>.log(sheeps2);
-<span class="hljs-comment">// [ '🐑', '🐑', '🐺' ]</span>
+<span class="hljs-comment">// [ &#x27;🐑&#x27;, &#x27;🐑&#x27;, &#x27;🐺&#x27; ]</span>
 
 <span class="hljs-comment">// Ahhh 😱 , our original sheeps have changed?!</span>
 <span class="hljs-built_in">console</span>.log(sheeps);
-<span class="hljs-comment">// [ '🐑', '🐑', '🐺' ]</span></code></pre><p>That&#39;s why we need to clone an array:</p>
-<pre class="hljs"><code><span class="hljs-keyword">const</span> sheeps = [<span class="hljs-string">'🐑'</span>, <span class="hljs-string">'🐑'</span>];
+<span class="hljs-comment">// [ &#x27;🐑&#x27;, &#x27;🐑&#x27;, &#x27;🐺&#x27; ]</span></code></pre><p>That&#39;s why we need to clone an array:</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> sheeps = [<span class="hljs-string">&#x27;🐑&#x27;</span>, <span class="hljs-string">&#x27;🐑&#x27;</span>];
 
 <span class="hljs-keyword">const</span> sheeps2 = [...sheeps];
 
-<span class="hljs-comment">// Let's change our sheeps2 array</span>
-sheeps2.push(<span class="hljs-string">'🐺'</span>);
+<span class="hljs-comment">// Let&#x27;s change our sheeps2 array</span>
+sheeps2.push(<span class="hljs-string">&#x27;🐺&#x27;</span>);
 
 <span class="hljs-built_in">console</span>.log(sheeps2);
-<span class="hljs-comment">// [ '🐑', '🐑', '🐺' ]</span>
+<span class="hljs-comment">// [ &#x27;🐑&#x27;, &#x27;🐑&#x27;, &#x27;🐺&#x27; ]</span>
 
 <span class="hljs-comment">// ✅ Yay, our original sheeps is not affected!</span>
 <span class="hljs-built_in">console</span>.log(sheeps);
-<span class="hljs-comment">// [ '🐑', '🐑' ]</span></code></pre><hr>
+<span class="hljs-comment">// [ &#x27;🐑&#x27;, &#x27;🐑&#x27; ]</span></code></pre><hr>
 <h3 id="shallow-copy-only-1"><a class="header-link" href="#shallow-copy-only-1"></a>Shallow Copy Only</h3>
 <p>Please note <code>spread</code> only goes one level deep when copying an array. So if you&#39;re trying to copy a multi-dimensional arrays, you will have to use other alternatives.</p>
 <pre class="hljs"><code><span class="hljs-keyword">const</span> nums = [
@@ -409,18 +409,18 @@ sheeps2.push(<span class="hljs-string">'🐺'</span>);
 
 <span class="hljs-keyword">const</span> cloneNums = [...nums];
 
-<span class="hljs-comment">// Let's change the first item in the first nested item in our cloned array.</span>
-cloneNums[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-string">'👻'</span>;
+<span class="hljs-comment">// Let&#x27;s change the first item in the first nested item in our cloned array.</span>
+cloneNums[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-string">&#x27;👻&#x27;</span>;
 
 <span class="hljs-built_in">console</span>.log(cloneNums);
-<span class="hljs-comment">// [ [ '👻', 2 ], [ 10 ], [ 300 ] ]</span>
-
+<span class="hljs-comment">// [ [ &#x27;👻&#x27;, 2 ], [ 10 ], [ 300 ] ]</span>
+ 
 <span class="hljs-comment">// NOOooo, the original is also affected</span>
 <span class="hljs-built_in">console</span>.log(nums);
-<span class="hljs-comment">// [ [ '👻', 2 ], [ 10 ], [ 300 ] ]</span></code></pre><p>🤓 Here&#39;s an interesting thing I learned. Shallow copy means the first level is copied, deeper levels are <strong>referenced</strong>.</p>
+<span class="hljs-comment">// [ [ &#x27;👻&#x27;, 2 ], [ 10 ], [ 300 ] ]</span></code></pre><p>🤓 Here&#39;s an interesting thing I learned. Shallow copy means the first level is copied, deeper levels are <strong>referenced</strong>.</p>
 <h2 id="community-input"><a class="header-link" href="#community-input"></a>Community Input</h2>
-<h3 id="`array.from`-is-another-way-to-clone-array"><a class="header-link" href="#`array.from`-is-another-way-to-clone-array"></a><code>Array.from</code> is Another Way to Clone Array</h3>
-<pre class="hljs"><code><span class="hljs-keyword">const</span> sheeps = [<span class="hljs-string">'🐑'</span>, <span class="hljs-string">'🐑'</span>, <span class="hljs-string">'🐑'</span>];
+<h3 id="arrayfrom-is-another-way-to-clone-array"><a class="header-link" href="#arrayfrom-is-another-way-to-clone-array"></a><code>Array.from</code> is Another Way to Clone Array</h3>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> sheeps = [<span class="hljs-string">&#x27;🐑&#x27;</span>, <span class="hljs-string">&#x27;🐑&#x27;</span>, <span class="hljs-string">&#x27;🐑&#x27;</span>];
 
 <span class="hljs-keyword">const</span> cloneSheeps = <span class="hljs-built_in">Array</span>.from(sheeps);</code></pre><p><em>Thanks: <a href="https://twitter.com/hakankaraduman_/status/1046145318251843584">@hakankaraduman</a></em></p>
 <ul class="list">
@@ -458,7 +458,7 @@ cloneNums[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>
 <p>Using the effect hook - <a href="https://reactjs.org/docs/hooks-effect.html">https://reactjs.org/docs/hooks-effect.html</a></p>
 <p>There are two hooks - state hooks and effect hooks in react.</p>
 <hr>
-<h3 id="effects-in-react:(useeffect)"><a class="header-link" href="#effects-in-react:(useeffect)"></a>effects in React:(useEffect)</h3>
+<h3 id="effects-in-reactuseeffect"><a class="header-link" href="#effects-in-reactuseeffect"></a>effects in React:(useEffect)</h3>
 <blockquote>
 <p> import React, {useEffect} from &#39;react&#39;</p>
 <p>or</p>
@@ -471,7 +471,7 @@ cloneNums[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>
 <hr>
 <p> suffice :  be enough or adequate. </p>
 <hr>
-<pre class="hljs"><code>&lt;input value={search} onChange={handleSearchChange} placeholder=<span class="hljs-string">"Search.."</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span></span></code></pre><hr>
+<pre class="hljs"><code>&lt;input value={search} onChange={handleSearchChange} placeholder=<span class="hljs-string">&quot;Search..&quot;</span>&gt;&lt;/input&gt;</code></pre><hr>
 <p>Styling in react: <a href="https://codeburst.io/4-four-ways-to-style-react-components-ac6f323da822">Codeburst article</a>,         <a href="https://codeburst.io/4-four-ways-to-style-react-components-ac6f323da822">img tag in react</a>            ,<a href="https://www.w3schools.com/react/react_css.asp">styling in react @w3schools.com</a>, </p>
 <p>learn methods - Javascript      <a href="https://www.w3schools.com/jsref/jsref_filter.asp">https://www.w3schools.com/jsref/jsref_filter.asp</a> </p>
 <hr>
@@ -483,7 +483,7 @@ cloneNums[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>
 <p>code becomes bloated: </p>
 <p> <a href="https://dictionary.cambridge.org/dictionary/english/swollen">swollen</a> <strong>and</strong> <a href="https://dictionary.cambridge.org/dictionary/english/rounded">rounded</a> <strong>because of</strong> <a href="https://dictionary.cambridge.org/dictionary/english/contain">containing</a> <strong>too much</strong> <a href="https://dictionary.cambridge.org/dictionary/english/air">air</a><strong>,</strong> <a href="https://dictionary.cambridge.org/dictionary/english/liquid">liquid</a><strong>, or</strong> <a href="https://dictionary.cambridge.org/dictionary/english/food">food</a><strong>:</strong> </p>
 <hr>
-<h4 id="running-json-server-locally(meaning-to-be-able-to-access-via-192.168.43.29-via-mobile)-via-npx-command-in-the-node-package-"><a class="header-link" href="#running-json-server-locally(meaning-to-be-able-to-access-via-192.168.43.29-via-mobile)-via-npx-command-in-the-node-package-"></a>Running json-server locally(meaning to be able to access via 192.168.43.29 via mobile) via npx command in the node package-</h4>
+<h4 id="running-json-server-locallymeaning-to-be-able-to-access-via-1921684329-via-mobile-via-npx-command-in-the-node-package-"><a class="header-link" href="#running-json-server-locallymeaning-to-be-able-to-access-via-1921684329-via-mobile-via-npx-command-in-the-node-package-"></a>Running json-server locally(meaning to be able to access via 192.168.43.29 via mobile) via npx command in the node package-</h4>
 <p>•To run at local address i.e. 192.168.43.29 on default port 3000 via <strong>npx</strong> for locally instlled on default port
 <code>npx json-server --host 192.168.43.29 db.json</code> </p>
 <p>•Common <strong>custom</strong> is to run the json-server on <strong>port: 3001</strong> via below command:
@@ -500,21 +500,21 @@ cloneNums[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>
 <p><em>Create <code>db.js</code>:</em></p>
 <pre class="hljs"><code><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">return</span> {
-    <span class="hljs-attr">one</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./one.json'</span>),
-    <span class="hljs-attr">two</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./two.json'</span>)
+    <span class="hljs-attr">one</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./one.json&#x27;</span>),
+    <span class="hljs-attr">two</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./two.json&#x27;</span>)
   }
 }</code></pre><p>run the json-server via - </p>
 <p><code>json-server db.js</code></p>
 <p>See all the objects in the two json files at 
-<a href="http://localhost:3000/db">http://localhost:3000/db</a> (no matter how many files you join the <strong><em>db.js</em></strong> file or may be <strong><em>SomeTHingName.js</em></strong>
-, the database will always be available @ URL <strong><em>localhost:3000/db</em></strong> -the complete database including multiple files ) Also, the database can also be fetched via the imported varible names i.e., localhost:3000/one or localhost:3000/two individually.</p>
-<p><em>Data won&#39;t be persisted and you can&#39;t watch for changes. But if it&#39;s a test, that&#39;s fine.<strong>
-</strong>Or, as suggested previously, manually copy the content of the JSON files and create a <code>db.json</code> file. Unlike the <code>db.js</code> solution, If you restart your server, changed data won&#39;t be lost.</em></p>
+<a href="http://localhost:3000/db">http://localhost:3000/db</a> (no matter how many files you join the <em><strong>db.js</strong></em> file or may be <em><strong>SomeTHingName.js</strong></em>
+, the database will always be available @ URL <em><strong>localhost:3000/db</strong></em> -the complete database including multiple files ) Also, the database can also be fetched via the imported varible names i.e., localhost:3000/one or localhost:3000/two individually.</p>
+<p><em>Data won&#39;t be persisted and you can&#39;t watch for changes. But if it&#39;s a test, that&#39;s fine.</em>*
+*<em>Or, as suggested previously, manually copy the content of the JSON files and create a <code>db.json</code> file. Unlike the <code>db.js</code> solution, If you restart your server, changed data won&#39;t be lost.</em></p>
 <hr>
 <p>If you are working with routes like above and want to be working with resource like - </p>
 <p>localhost:30001/ persons, then you may server the file as array of object(not the object which contains the resource (property) i.e. persons).
-Earlier, while serving the <code>data.json</code> was containing an object which contained a property naming persons which further contains an <strong><em>array of objects</em></strong>. </p>
-<p>And, now we have defined the <strong><em>array of objects</em></strong> itself in the route file and imported it as variable <em>persons</em> in the <code>TheSingleFileWorkedAsIs.js</code> otherwise - <code>server.js</code> (actually linked  to <code>db.js</code> which contains the <code>persons</code> route) </p>
+Earlier, while serving the <code>data.json</code> was containing an object which contained a property naming persons which further contains an <em><strong>array of objects</strong></em>. </p>
+<p>And, now we have defined the <em><strong>array of objects</strong></em> itself in the route file and imported it as variable <em>persons</em> in the <code>TheSingleFileWorkedAsIs.js</code> otherwise - <code>server.js</code> (actually linked  to <code>db.js</code> which contains the <code>persons</code> route) </p>
 <p><strong>src</strong>: <a href="https://stackoverflow.com/questions/36836424/cant-watch-multiple-files-with-json-server">@StackOverflow(two-files-js)</a>
 <strong>src</strong>: <a href="https://github.com/typicode/json-server/issues/265">github.com/tpicode</a>    </p>
 <hr>
@@ -528,11 +528,11 @@ Earlier, while serving the <code>data.json</code> was containing an object which
 <span class="hljs-comment">// }</span>
 
 ***
-<span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">'axios'</span>
-<span class="hljs-keyword">import</span> Note <span class="hljs-keyword">from</span> <span class="hljs-string">'./components/Note'</span>
-<span class="hljs-keyword">import</span> React, { useState, useEffect } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
-<span class="hljs-keyword">import</span> noteService <span class="hljs-keyword">from</span> <span class="hljs-string">'./services/notes'</span>
-<span class="hljs-keyword">import</span> React, { useState } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;axios&#x27;</span>
+<span class="hljs-keyword">import</span> Note <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./components/Note&#x27;</span>
+<span class="hljs-keyword">import</span> React, { useState, useEffect } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>
+<span class="hljs-keyword">import</span> noteService <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./services/notes&#x27;</span>
+<span class="hljs-keyword">import</span> React, { useState } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>
 
 </code></pre><hr>
 <p><a href="https://blog.logrocket.com/how-to-make-http-requests-like-a-pro-with-axios/">How to make HTTP requests like a pro with Axios</a></p>
@@ -550,7 +550,7 @@ Earlier, while serving the <code>data.json</code> was containing an object which
 <p><code>import &#39;./index.css&#39;</code></p>
 <hr>
 <p>Centering the content of div elements in html (or React) </p>
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">align</span>=<span class="hljs-string">"center"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{footerStyle}</span>&gt;</span></code></pre><hr>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">align</span>=<span class="hljs-string">&quot;center&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{footerStyle}</span>&gt;</span></code></pre><hr>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">Pseudo-classes @ MDN Web Docs</a>    <a href="https://reactjs.org/docs/dom-elements.html#style">DOM Elements @ React Docs</a>    </p>
 <hr>
 <p><a href="https://github.com/npm/validate-npm-package-name">npm/validate-npm-package-name</a> - Good list of rules defining the name.</p>
@@ -576,7 +576,7 @@ Earlier, while serving the <code>data.json</code> was containing an object which
 <hr>
 <p>Non-existent Files -  <a href="https://superuser.com/questions/1060888/non-existent-files-in-windows-documents-folder">https://superuser.com/questions/1060888/non-existent-files-in-windows-documents-folder</a> </p>
 <hr>
-<h2 id="download-a-file-with-curl:-(usually-github)"><a class="header-link" href="#download-a-file-with-curl:-(usually-github)"></a>Download a file with Curl: (usually github)</h2>
+<h2 id="download-a-file-with-curl-usually-github"><a class="header-link" href="#download-a-file-with-curl-usually-github"></a>Download a file with Curl: (usually github)</h2>
 <pre class="hljs"><code>curl -LO https://github.com/github/gitignore/raw/master/Node.gitignore
 //here -L option provide the service of redirection.
 //here -O(uppercase) options tells curl to save with name of original file
@@ -584,7 +584,7 @@ Earlier, while serving the <code>data.json</code> was containing an object which
 
 curl -O  https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore
 
-Below <span class="hljs-built_in">command</span> doesn<span class="hljs-string">'t work-
+Below <span class="hljs-built_in">command</span> doesn<span class="hljs-string">&#x27;t work-
 curl -LO  https://github.com/github/gitignore/blob/master/Node.gitignore</span></code></pre><hr>
 <p>•<code>rm -rf x</code></p>
 <p>x - Could be a single file/folder.</p>
@@ -602,92 +602,90 @@ curl -LO  https://github.com/github/gitignore/blob/master/Node.gitignore</span><
 <p>Network Analysis Reference - Chrome</p>
 <p><a href="https://developers.google.com/web/tools/chrome-devtools/network/reference#timing-explanation">Blogpost @ developers.google.com</a></p>
 <hr>
-<pre class="hljs"><code><span class="hljs-keyword">var</span> text = <span class="hljs-string">'3.14someRandomStuff234'</span>;
+<pre class="hljs"><code><span class="hljs-keyword">var</span> text = <span class="hljs-string">&#x27;3.14someRandomStuff234&#x27;</span>;
 <span class="hljs-keyword">var</span> pointNum = <span class="hljs-built_in">parseFloat</span>(text);
 <span class="hljs-comment">// returns 3.14 // returns only the digits with decimal till letter character is encountered.</span></code></pre><hr>
-<pre class="hljs"><code><span class="hljs-keyword">var</span> text = <span class="hljs-string">'42px'</span>;
+<pre class="hljs"><code><span class="hljs-keyword">var</span> text = <span class="hljs-string">&#x27;42px&#x27;</span>;
 <span class="hljs-keyword">var</span> integer = <span class="hljs-built_in">parseInt</span>(text, <span class="hljs-number">10</span>);
 <span class="hljs-comment">// returns 42 // returns without any decimal</span></code></pre><hr>
-<pre class="hljs"><code><span class="hljs-string">"I am number 1 and I love number 13."</span>.replace(<span class="hljs-regexp">/[^0-9]/g</span>,<span class="hljs-string">''</span>)
-<span class="hljs-comment">// output =&gt; "113"</span></code></pre><hr>
-<pre class="hljs"><code><span class="hljs-string">"Anything that is some string."</span>.replace(<span class="hljs-regexp">/[^a-zA-Z0-9]/g</span>,<span class="hljs-string">'-'</span>);
-<span class="hljs-comment">// outpu =&gt; it wud output the string only with the character set defined above i.e., a to z ; A to Z; and 0 to 9. If it found any other character then it would replace it with character '-'.</span></code></pre><p>src : <a href="https://stackoverflow.com/questions/1983767/only-keep-a-z-0-9-and-remove-other-characters-from-string-using-javascript">Link to StackOverflow question.</a></p>
+<pre class="hljs"><code><span class="hljs-string">&quot;I am number 1 and I love number 13.&quot;</span>.replace(<span class="hljs-regexp">/[^0-9]/g</span>,<span class="hljs-string">&#x27;&#x27;</span>)
+<span class="hljs-comment">// output =&gt; &quot;113&quot;</span></code></pre><hr>
+<pre class="hljs"><code><span class="hljs-string">&quot;Anything that is some string.&quot;</span>.replace(<span class="hljs-regexp">/[^a-zA-Z0-9]/g</span>,<span class="hljs-string">&#x27;-&#x27;</span>);
+<span class="hljs-comment">// outpu =&gt; it wud output the string only with the character set defined above i.e., a to z ; A to Z; and 0 to 9. If it found any other character then it would replace it with character &#x27;-&#x27;.</span></code></pre><p>src : <a href="https://stackoverflow.com/questions/1983767/only-keep-a-z-0-9-and-remove-other-characters-from-string-using-javascript">Link to StackOverflow question.</a></p>
 <hr>
-<pre class="hljs"><code>By adding our .cleanup() method to the <span class="hljs-built_in">String</span> object itself, you can then cleanup any string <span class="hljs-keyword">in</span> Javascript simply by calling a local method, like <span class="hljs-keyword">this</span>:
+<pre class="hljs"><code>By adding our .cleanup() method to the <span class="hljs-built_in">String</span> object itself, you can then cleanup any string <span class="hljs-keyword">in</span> Javascript simply by calling a local method, like <span class="hljs-built_in">this</span>:
 
 # Attaching our method to the <span class="hljs-built_in">String</span> <span class="hljs-built_in">Object</span>
 <span class="hljs-built_in">String</span>.prototype.cleanup = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-   <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.toLowerCase().replace(<span class="hljs-regexp">/[^a-zA-Z0-9]+/g</span>, <span class="hljs-string">"-"</span>);
+   <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.toLowerCase().replace(<span class="hljs-regexp">/[^a-zA-Z0-9]+/g</span>, <span class="hljs-string">&quot;-&quot;</span>);
 }
 
 # Using our <span class="hljs-keyword">new</span> .cleanup() method
-<span class="hljs-keyword">var</span> clean = <span class="hljs-string">"Hello World"</span>.cleanup(); <span class="hljs-comment">// "hello-world"</span>
-Because there is a plus sign at the end <span class="hljs-keyword">of</span> the regular expression it matches one or more characters. Thus, the output will always have one <span class="hljs-string">'-'</span> <span class="hljs-keyword">for</span> each series <span class="hljs-keyword">of</span> one or more non-alphanumeric characters:
+<span class="hljs-keyword">var</span> clean = <span class="hljs-string">&quot;Hello World&quot;</span>.cleanup(); <span class="hljs-comment">// &quot;hello-world&quot;</span>
+Because there is a plus sign at the end <span class="hljs-keyword">of</span> the regular expression it matches one or more characters. Thus, the output will always have one <span class="hljs-string">&#x27;-&#x27;</span> <span class="hljs-keyword">for</span> each series <span class="hljs-keyword">of</span> one or more non-alphanumeric characters:
 
 # An example to demonstrate the effect <span class="hljs-keyword">of</span> the plus sign <span class="hljs-keyword">in</span> the regular expression above
-<span class="hljs-keyword">var</span> foo = <span class="hljs-string">"  Hello   World    . . .     "</span>.cleanup(); <span class="hljs-comment">// "-hello-world-"</span>
-Without the plus sign the result would be <span class="hljs-string">"--hello-world--------------"</span> <span class="hljs-keyword">for</span> the last example</code></pre><hr>
+<span class="hljs-keyword">var</span> foo = <span class="hljs-string">&quot;  Hello   World    . . .     &quot;</span>.cleanup(); <span class="hljs-comment">// &quot;-hello-world-&quot;</span>
+Without the plus sign the result would be <span class="hljs-string">&quot;--hello-world--------------&quot;</span> <span class="hljs-keyword">for</span> the last example</code></pre><hr>
 <p><a href="https://www.w3schools.com/jsref/jsref_replace.asp"> w3school - replace()jsref/jsref_replace.asp </a></p>
 <hr>
-<h5 id="javascript-tojson()-method:-definition-and-usage"><a class="header-link" href="#javascript-tojson()-method:-definition-and-usage"></a>JavaScript toJSON() Method: Definition and Usage</h5>
+<h5 id="javascript-tojson-method-definition-and-usage"><a class="header-link" href="#javascript-tojson-method-definition-and-usage"></a>JavaScript toJSON() Method: Definition and Usage</h5>
 <p>The toJSON() method converts a Date object into a string, formatted as a JSON date.</p>
 <p>JSON dates have the same format as the ISO-8601 standard: YYYY-MM-DDTHH:mm:ss.sssZ</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Return Value:</th>
+<th align="left">Return Value:</th>
 <th>A String, representing the date and time formated as a JSON date</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">JavaScript Version:</td>
+<tbody><tr>
+<td align="left">JavaScript Version:</td>
 <td>ECMAScript 5</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
-<h2 id="throw-keyword:"><a class="header-link" href="#throw-keyword:"></a>throw keyword:</h2>
+<h2 id="throw-keyword"><a class="header-link" href="#throw-keyword"></a>throw keyword:</h2>
 <p>You may throw CUSTOM ERRORS like the one below:</p>
 <pre class="hljs"><code><span class="hljs-keyword">try</span> {
-    <span class="hljs-keyword">if</span>(<span class="hljs-literal">true</span>) <span class="hljs-keyword">throw</span> <span class="hljs-string">"Too big"</span>;
+    <span class="hljs-keyword">if</span>(<span class="hljs-literal">true</span>) <span class="hljs-keyword">throw</span> <span class="hljs-string">&quot;Too big&quot;</span>;
 }
 <span class="hljs-keyword">catch</span> (err) {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Error is:'</span>,err,<span class="hljs-string">'\nWith err.message:'</span>,err.message)
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Error is:&#x27;</span>,err,<span class="hljs-string">&#x27;\nWith err.message:&#x27;</span>,err.message)
 }
 <span class="hljs-comment">//Output:</span>
 <span class="hljs-built_in">Error</span> is: Too big 
 With err.message: <span class="hljs-literal">undefined</span></code></pre><p>**</p>
-<h2 id="different-style-of-throw:"><a class="header-link" href="#different-style-of-throw:"></a>Different style of throw:</h2>
+<h2 id="different-style-of-throw"><a class="header-link" href="#different-style-of-throw"></a>Different style of throw:</h2>
 <p>All below thrown values will cause the program to abrubt and show what is thrown....</p>
-<pre class="hljs"><code><span class="hljs-keyword">throw</span> { <span class="hljs-attr">name</span>: <span class="hljs-string">"Nicholas"</span> };
-<span class="hljs-comment">// Uncaught {name: "Nicholas"}</span>
+<pre class="hljs"><code><span class="hljs-keyword">throw</span> { <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Nicholas&quot;</span> };
+<span class="hljs-comment">// Uncaught {name: &quot;Nicholas&quot;}</span>
 <span class="hljs-keyword">throw</span> <span class="hljs-literal">true</span>;
 <span class="hljs-comment">// Uncaught true</span>
 <span class="hljs-keyword">throw</span> <span class="hljs-number">12345</span>;
 <span class="hljs-comment">// Uncaught 12345</span>
 <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
 <span class="hljs-comment">// Uncaught Sun Apr 19 2020 18:28:04 GMT+0530 (India Standard Time)</span>
-<span class="hljs-keyword">throw</span> <span class="hljs-string">"message"</span>;
+<span class="hljs-keyword">throw</span> <span class="hljs-string">&quot;message&quot;</span>;
 <span class="hljs-comment">// Uncaught message</span>
-<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"*****Whooooooooooooops!********"</span>);
+<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;*****Whooooooooooooops!********&quot;</span>);
 <span class="hljs-comment">// throw error</span></code></pre><p>**</p>
-<h2 id="create-your-own-custom-error:"><a class="header-link" href="#create-your-own-custom-error:"></a>Create your own custom error:</h2>
+<h2 id="create-your-own-custom-error"><a class="header-link" href="#create-your-own-custom-error"></a>Create your own custom error:</h2>
 <p>Read this amazing article on medium, to find out more about logging errors in a good way. <a href="https://medium.com/@iaincollins/error-handling-in-javascript-a6172ccdf9af">Link</a></p>
 <pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyError</span>(<span class="hljs-params">message</span>)</span>{
-    <span class="hljs-keyword">this</span>.message = message; <span class="hljs-comment">//you may specify more things here....according to need...</span>
+    <span class="hljs-built_in">this</span>.message = message; <span class="hljs-comment">//you may specify more things here....according to need...</span>
 }
-<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> MyError(<span class="hljs-string">"Hello world!"</span>);
-<span class="hljs-comment">//Output: Uncaught MyError {message: "Hello world!"}</span></code></pre><hr>
+<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> MyError(<span class="hljs-string">&quot;Hello world!&quot;</span>);
+<span class="hljs-comment">//Output: Uncaught MyError {message: &quot;Hello world!&quot;}</span></code></pre><hr>
 <h2 id="try-and-catch-error-in-js"><a class="header-link" href="#try-and-catch-error-in-js"></a>Try and catch error in JS</h2>
 <pre class="hljs"><code>Note.findById(request.params.id)
         .then(<span class="hljs-function"><span class="hljs-params">note</span> =&gt;</span> {
-            <span class="hljs-comment">// console.log("---sf-sf---s-ff-befor .. note.JSON()");</span>
+            <span class="hljs-comment">// console.log(&quot;---sf-sf---s-ff-befor .. note.JSON()&quot;);</span>
             response.json(note.toJSON())
-            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"*****Whooooooooooooops!********"</span>);
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;*****Whooooooooooooops!********&quot;</span>);
         })
         .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(err))    
-<span class="hljs-comment">// Output: Uncaught SyntaxError: Unexpected token '=&gt;'</span>
+<span class="hljs-comment">// Output: Uncaught SyntaxError: Unexpected token &#x27;=&gt;&#x27;</span>
 *********************************************************************
 Syntax <span class="hljs-keyword">of</span> <span class="hljs-keyword">try</span> and <span class="hljs-keyword">catch</span> :
 <span class="hljs-keyword">try</span> {
@@ -705,23 +703,23 @@ Optionally you can use <span class="hljs-keyword">finally</span> too:
   Block <span class="hljs-keyword">of</span> code to handle errors
 }
 <span class="hljs-keyword">finally</span> {
-  Block <span class="hljs-keyword">of</span> code to be executed regardless <span class="hljs-keyword">of</span> the <span class="hljs-keyword">try</span> <span class="hljs-string">''</span>/ <span class="hljs-keyword">catch</span> result
+  Block <span class="hljs-keyword">of</span> code to be executed regardless <span class="hljs-keyword">of</span> the <span class="hljs-keyword">try</span> <span class="hljs-string">&#x27;&#x27;</span>/ <span class="hljs-keyword">catch</span> result
 }
-
+   
 ***********************************************************************
 NOTE: For .then PROMISES YOU have to use callback <span class="hljs-keyword">for</span> the <span class="hljs-keyword">catch</span>...like below
-.then(<span class="hljs-function">(<span class="hljs-params">val</span>)=&gt;</span>consolle.log(val, <span class="hljs-string">"error bcoz consolle is not correct"</span>)).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'pippi is throwing error, my lord. err:'</span>,err) )
-</code></pre><hr>
+.then(<span class="hljs-function">(<span class="hljs-params">val</span>)=&gt;</span>consolle.log(val, <span class="hljs-string">&quot;error bcoz consolle is not correct&quot;</span>)).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;pippi is throwing error, my lord. err:&#x27;</span>,err) )
+    </code></pre><hr>
 <p><a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client">Rest Client - Read here knowledge spreads..</a></p>
 <hr>
 <p>Api -  <a href="https://swapi.co/">https://swapi.co</a> </p>
 <hr>
-<h5 id="clean-unused-dependenices-in-package.json"><a class="header-link" href="#clean-unused-dependenices-in-package.json"></a>Clean unused dependenices in package.json</h5>
+<h5 id="clean-unused-dependenices-in-packagejson"><a class="header-link" href="#clean-unused-dependenices-in-packagejson"></a>Clean unused dependenices in package.json</h5>
 <pre class="hljs"><code>npm cache clean
-npm ERR! As of npm@5, the npm cache self-heals from corruption issues and data extracted from the cache is guaranteed to be valid. If you want to make sure everything is consistent, use <span class="hljs-string">'npm cache verify'</span> instead. On the other hand, <span class="hljs-keyword">if</span> you<span class="hljs-string">'re debugging an issue with the installer, you can use `npm install --cache /tmp/empty-cache` to use a temporary cache instead
+npm ERR! As of npm@5, the npm cache self-heals from corruption issues and data extracted from the cache is guaranteed to be valid. If you want to make sure everything is consistent, use <span class="hljs-string">&#x27;npm cache verify&#x27;</span> instead. On the other hand, <span class="hljs-keyword">if</span> you<span class="hljs-string">&#x27;re debugging an issue with the installer, you can use `npm install --cache /tmp/empty-cache` to use a temporary cache instead
 of nuking the actual one.
 npm ERR!
-npm ERR! If you'</span>re sure you want to delete the entire cache,
+npm ERR! If you&#x27;</span>re sure you want to delete the entire cache,
 rerun this <span class="hljs-built_in">command</span> with --force.
 
 npm ERR! A complete <span class="hljs-built_in">log</span> of this run can be found <span class="hljs-keyword">in</span>:
@@ -735,26 +733,26 @@ $ npm -v
 $ npm install -g npm
 $ npm -v
 // Output:6.14.4
-</code></pre><h1 id="[npm---using-stale-package-data---error??-](https://stackoverflow.com/questions/45553401/npm-using-stale-package-data)"><a class="header-link" href="#[npm---using-stale-package-data---error??-](https://stackoverflow.com/questions/45553401/npm-using-stale-package-data)"></a><a href="https://stackoverflow.com/questions/45553401/npm-using-stale-package-data">npm - using stale package data  - Error?? </a></h1>
+</code></pre><h1 id="npm---using-stale-package-data----error"><a class="header-link" href="#npm---using-stale-package-data----error"></a><a href="https://stackoverflow.com/questions/45553401/npm-using-stale-package-data">npm - using stale package data  - Error?? </a></h1>
 <pre class="hljs"><code>rm ./package-lock.json
 rm -r ./node_modules
 npm cache clear --force</code></pre><hr>
 <pre class="hljs"><code><span class="hljs-comment">//Javascript replace method to retain only character from numeric 0 to 9.</span>
-ii = ii.replace(<span class="hljs-regexp">/[^0-9]/g</span>,<span class="hljs-string">''</span>)</code></pre><hr>
+ii = ii.replace(<span class="hljs-regexp">/[^0-9]/g</span>,<span class="hljs-string">&#x27;&#x27;</span>)</code></pre><hr>
 <p>Minimum and maximum value for a number in personSchema in moongose.Schema</p>
 <p><a href="https://stackoverflow.com/questions/46806943/mongoose-schema-number-field-to-be-at-exact-length">Mongoose Schema number field to be at exact length</a></p>
 <hr>
-<pre class="hljs"><code>rules: {<span class="hljs-string">"no-unused-vars"</span>: <span class="hljs-string">"off"</span>}</code></pre><p>For disabling the error for unused variables - eslint.</p>
+<pre class="hljs"><code>rules: {<span class="hljs-string">&quot;no-unused-vars&quot;</span>: <span class="hljs-string">&quot;off&quot;</span>}</code></pre><p>For disabling the error for unused variables - eslint.</p>
 <hr>
 <p>You should always use lines as &#39;unix&#39; in eslint,(.eslintrc.js file).</p>
 <hr>
 <p>Minimise Everything with [Winodws + M]</p>
 <hr>
 <p>command prompt: </p>
-<pre class="hljs"><code><span class="hljs-keyword">if</span> 2 EQU (ECHO <span class="hljs-string">"Amazing thing"</span>) <span class="hljs-keyword">else</span> (<span class="hljs-built_in">echo</span> <span class="hljs-string">"Not such amazing thing"</span>)</code></pre><hr>
+<pre class="hljs"><code><span class="hljs-keyword">if</span> 2 EQU (ECHO <span class="hljs-string">&quot;Amazing thing&quot;</span>) <span class="hljs-keyword">else</span> (<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Not such amazing thing&quot;</span>)</code></pre><hr>
 <p>  <code>if not exist &quot;C:\VTS\&quot; mkdir C:\VTS</code> </p>
 <hr>
-<h2 id="connect-to-adb-over-wifi:"><a class="header-link" href="#connect-to-adb-over-wifi:"></a>Connect to adb over wifi:</h2>
+<h2 id="connect-to-adb-over-wifi"><a class="header-link" href="#connect-to-adb-over-wifi"></a>Connect to adb over wifi:</h2>
 <p>connect mobile with usb to pc</p>
 <p>And make sure you have it in the devices: adb devices</p>
 <p>Then make the listen on other port</p>
@@ -762,7 +760,7 @@ ii = ii.replace(<span class="hljs-regexp">/[^0-9]/g</span>,<span class="hljs-str
 <p>Connect to device over wifi </p>
 <p>{you can use arp -a command to scan the connected devices with the network you have connected to (you may confirm with the mac accress.)}</p>
 <p>adb connect <device-ip>:5555</p>
-<h2 id="store-a-file:"><a class="header-link" href="#store-a-file:"></a>Store a file:</h2>
+<h2 id="store-a-file"><a class="header-link" href="#store-a-file"></a>Store a file:</h2>
 <p><strong>Press win+X and press a (To open command prompt as admin.)</strong></p>
 <p>Execute the below code in once.</p>
 <pre class="hljs"><code><span class="hljs-built_in">cd</span> /adbPulledData
@@ -778,32 +776,32 @@ adb pull /sdcard/Apple/Mahabharat/51-71/72.mp4 ./
 
 <span class="hljs-comment"># To Disconnect all devices:</span>
 adb disconnect</code></pre><hr>
-<h1 id="async-await,-promises"><a class="header-link" href="#async-await,-promises"></a>async await, promises</h1>
+<h1 id="async-await-promises"><a class="header-link" href="#async-await-promises"></a>async await, promises</h1>
 <p class="img-container"><img src="https://miro.medium.com/max/1001/1*0mBlni5vsYZE2wFzfVv8EA.png" alt="img"></p>
 <p><a href="https://medium.com/better-programming/should-i-use-promises-or-async-await-126ab5c98789">https://medium.com/better-programming/should-i-use-promises-or-async-await-126ab5c98789</a></p>
 <hr>
-<h1 id="why-is-export-default-const-invalid-in-node(react-style)?"><a class="header-link" href="#why-is-export-default-const-invalid-in-node(react-style)?"></a>Why Is Export Default Const invalid in node(react style)?</h1>
+<h1 id="why-is-export-default-const-invalid-in-nodereact-style"><a class="header-link" href="#why-is-export-default-const-invalid-in-nodereact-style"></a>Why Is Export Default Const invalid in node(react style)?</h1>
 <p><a href="https://stackoverflow.com/questions/36261225/why-is-export-default-const-invalid">https://stackoverflow.com/questions/36261225/why-is-export-default-const-invalid</a></p>
 <hr>
-<h1 id="react-hooks:-how-to-use-useeffect()-@medium.com"><a class="header-link" href="#react-hooks:-how-to-use-useeffect()-@medium.com"></a>React Hooks: How to use useEffect() @medium.com</h1>
+<h1 id="react-hooks-how-to-use-useeffect-mediumcom"><a class="header-link" href="#react-hooks-how-to-use-useeffect-mediumcom"></a>React Hooks: How to use useEffect() @medium.com</h1>
 <p><a href="https://medium.com/javascript-in-plain-english/react-hooks-how-to-use-useeffect-ecea3e90d84f">https://medium.com/javascript-in-plain-english/react-hooks-how-to-use-useeffect-ecea3e90d84f</a></p>
 <p>follow the related code in your code in the help code folder. yeah...!!</p>
-<pre class="hljs"><code>useEffect(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+<pre class="hljs"><code>useEffect(<span class="hljs-function">() =&gt;</span> {
     user &amp;&amp; blogService.getAll().then(<span class="hljs-function">(<span class="hljs-params">initialNotes</span>) =&gt;</span> setBlogs(initialNotes));
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"useeffect executed.."</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;useeffect executed..&quot;</span>);
   });
 <span class="hljs-comment">//here above code can only access the user variable from the the app component if it is set to update on every render</span>
 ***
 #    below code is suggested by hook-guide <span class="hljs-keyword">in</span> chrome dev tools**
-useEffect(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+useEffect(<span class="hljs-function">() =&gt;</span> {
     user &amp;&amp; readyToFetch&amp;&amp; blogService.getAll().then(<span class="hljs-function">(<span class="hljs-params">initialNotes</span>) =&gt;</span> setBlogs(initialNotes)) &amp;&amp; setreadyToFetch(<span class="hljs-literal">false</span>)
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"useeffect executed.."</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;useeffect executed..&quot;</span>);
   },[user,readyToFetch]);
 <span class="hljs-comment">///the last parameter i.e., [user, readyTOFetch] states that only when these variables have changes then only the useEffect() function will execute.</span></code></pre><hr>
-<h1 id="master-the-javascript-interview:-what-is-a-promise?-@medium.com-<<-important-as-hellll."><a class="header-link" href="#master-the-javascript-interview:-what-is-a-promise?-@medium.com-<<-important-as-hellll."></a>Master the JavaScript Interview: What is a Promise? @medium.com  &lt;&lt; IMPORTANT AS HELLLL.</h1>
+<h1 id="master-the-javascript-interview-what-is-a-promise-mediumcom---important-as-hellll"><a class="header-link" href="#master-the-javascript-interview-what-is-a-promise-mediumcom---important-as-hellll"></a>Master the JavaScript Interview: What is a Promise? @medium.com  &lt;&lt; IMPORTANT AS HELLLL.</h1>
 <p><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261">https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261</a></p>
 <hr>
-<h1 id=".then(func1,func2)"><a class="header-link" href="#.then(func1,func2)"></a>.then(func1,func2)</h1>
+<h1 id="thenfunc1func2"><a class="header-link" href="#thenfunc1func2"></a>.then(func1,func2)</h1>
 <p>func1 will execute if promise is fulfilled, and func2 will execute if promise if rejected.</p>
 <hr>
 <h1 id="promises"><a class="header-link" href="#promises"></a>Promises</h1>
