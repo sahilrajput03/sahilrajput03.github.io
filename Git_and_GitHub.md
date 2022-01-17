@@ -1,9 +1,8 @@
 #### Back to last commit's state
 
 ```bash
-#Either of below is cool!
 $ git reset --hard
-$ git checkout -f
+# Or you can use that as well => $ git checkout -f
 ```
 
 **_also,_**
