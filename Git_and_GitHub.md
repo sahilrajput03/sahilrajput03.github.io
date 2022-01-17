@@ -187,16 +187,6 @@ or ![image-20200611123353308](image-20200611123353308.png)
 
 ---
 
-## Chrome full screen always, scroll tabs using
-
-ctrl+tab,ctrl+1,ctrl+pagedown,
-
-Ctrl+w to close tab.
-
-https://dottech.org/181522/how-to-enter-a-url-while-viewing-chrome-in-full-screen-tip/#:~:text=Just%20view%20any%20page%20in,field%20in%20a%20popup%20window.
-
----
-
 ![image-20200610175341364](image-20200610175341364.png)
 
 ![image-20200610175310793](image-20200610175310793.png)
@@ -324,12 +314,6 @@ Experiement-what the hell this doo...
 ```bash
 git pull <url-of-the-repo>
 ```
-
----
-
-## Clone and work in vscode
-
-![image-20200528200127242](image-20200528200127242.png)
 
 ---
 
