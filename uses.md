@@ -58,6 +58,8 @@
 
 # Chrome Extensions
 
+[Code Copier](https://chrome.google.com/webstore/detail/code-copier/polidkhcaghmmijeemenkiloblpdfphp/related?hl=en)
+
 [EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg?hl=en) 
 
 [Fea KeyLogger](https://chrome.google.com/webstore/detail/fea-keylogger/fgkghpghjcbfcflhoklkcincndlpobja?hl=en)
