@@ -1,3 +1,4 @@
+```yaml
 ---
 
 Rumours are worst to deal with.	This is YAML front matter. You may this to any document via context menu > insert > YAML front matter.
@@ -6,6 +7,7 @@ Rumours are worst to deal with.	This is YAML front matter. You may this to any d
 :happy:
 :family_man_girl_boy:
 :StartTypingSomeCharactedAutocompleteWillHelp
+```
 
 Video
 You can use the <video> HTML tag to embed videos. For example:
