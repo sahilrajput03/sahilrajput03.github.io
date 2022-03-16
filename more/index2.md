@@ -2,60 +2,60 @@
 
 Some files
 
--   [Articles, Writings, Inpired](Articles, Writings, Inpired.html)
+[Articles, Writings, Inpired](Articles, Writings, Inpired.html)
 
--   [Chrome Extensions](Chrome Extensions.html)
+[Chrome Extensions](Chrome Extensions.html)
 
--   [Firefox Help - Customise](Firefox Help - Customise.html)
+[Firefox Help - Customise](Firefox Help - Customise.html)
 
--   [Glitch(Deploy)-Custom-Domain](<Glitch(Deploy)-Custom-Domain.html>)
+[Glitch(Deploy)-Custom-Domain](<Glitch(Deploy)-Custom-Domain.html>)
 
--   [Government Stats](Government Stats.html)
+[Government Stats](Government Stats.html)
 
--   [HTML - Rules](HTML - Rules.html)
+[HTML - Rules](HTML - Rules.html)
 
--   [Health Activities](Health Activities.html)
+[Health Activities](Health Activities.html)
 
--   [IELTS, TOEFL](IELTS, TOEFL.html)
+[IELTS, TOEFL](IELTS, TOEFL.html)
 
--   [Javascript ES6 - Rules](Javascript ES6 - Rules.html)
+[Javascript ES6 - Rules](Javascript ES6 - Rules.html)
 
--   [Machine Learning DAMM](Machine Learning DAMM.html)
+[Machine Learning DAMM](Machine Learning DAMM.html)
 
--   [Measurings](Measurings.html)
+[Measurings](Measurings.html)
 
--   [Php](Php.html)
+[Php](Php.html)
 
--   [React Native](React Native.html)
+[React Native](React Native.html)
 
--   [Read Articles - NOW](Read Articles - NOW.html)
+[Read Articles - NOW](Read Articles - NOW.html)
 
--   [SRE - SWE - GOOGLE](SRE - SWE - GOOGLE.html)
+[SRE - SWE - GOOGLE](SRE - SWE - GOOGLE.html)
 
--   [Site Designs](Site Designs.html)
+[Site Designs](Site Designs.html)
 
--   [Software Review - Android](Software Review - Android.html)
+[Software Review - Android](Software Review - Android.html)
 
--   [Software Review - Windows](Software Review - Windows.html)
+[Software Review - Windows](Software Review - Windows.html)
 
--   [StackOverflow](StackOverflow.html)
+[StackOverflow](StackOverflow.html)
 
--   [TechLinks](TechLinks.html)
+[TechLinks](TechLinks.html)
 
--   [Typora - Shots](Typora - Shots.html)
+[Typora - Shots](Typora - Shots.html)
 
--   [Wikipedia Articles](Wikipedia Articles.html)
+[Wikipedia Articles](Wikipedia Articles.html)
 
--   [Youtube Clear Classes](Youtube Clear Classes.html)
+[Youtube Clear Classes](Youtube Clear Classes.html)
 
--   [cmd vs linux](cmd vs linux.html)
+[cmd vs linux](cmd vs linux.html)
 
--   [company - Snake](company - Snake.html)
+[company - Snake](company - Snake.html)
 
--   [fever, cold, allergy, xylomist](fever, cold, allergy, xylomist.html)
+[fever, cold, allergy, xylomist](fever, cold, allergy, xylomist.html)
 
--   [much free - node](much free - node.html)
+[much free - node](much free - node.html)
 
--   [pndit](pndit.html)
+[pndit](pndit.html)
 
--   [youtube-dl](youtube-dl.html)
+[youtube-dl](youtube-dl.html)
