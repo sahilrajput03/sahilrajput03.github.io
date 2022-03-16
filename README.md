@@ -15,7 +15,7 @@
   
 [Git and GitHub](https://sahilrajput03.github.io/Git_and_GitHub.html)  
   
-[List all markdowns](index2.html)  
+[List all markdowns](index2.md)  
   
 [List more markdowns](more/index2)  
   
