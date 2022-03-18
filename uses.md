@@ -184,9 +184,9 @@ Lazarus Form Recovery - No longer works or exists
 
 ## [Typescript Playground](https://www.typescriptlang.org/play?#code/Q) - Provides online execution of typescript intelligently.
 
-## [Try it Yourself @ W3schools](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default) - You can use below script to make it run every 500ms easily with [chrome extension](https://chrome.google.com/webstore/detail/custom-javascript-for-web/poakhlngfciodnhlhhgnaaelnpjljija?hl=en).
+## [Try it Yourself @ W3schools](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default) - You can use below script to make it run every 500ms easily with if you run below code in browser's console:
 
-`setInterval(() => document.getElementsByClassName("w3-button w3-bar-item w3-green w3-hover-white w3-hover-text-green")[0].click(), 500)`
+`setInterval(() => document.getElementById('runbtn').click(), 500)`
 
 # Vscode Extensions
 
