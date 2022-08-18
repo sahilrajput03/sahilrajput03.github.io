@@ -132,7 +132,7 @@ mode(["a","b","b","b","b","c","c","c"])
 
 ## **Flattening arrays using Javascript reduce method**
 
-We can use the reduce() function to flatten the nested amounts into a single array.
+We can use the [reduce() function](https://www.scaler.com/topics/reduce-in-javascript/) to flatten the nested amounts into a single array.
 
 We set an initial value to the empty array and then concatenate the current value to the total.
 
