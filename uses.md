@@ -16,12 +16,6 @@
 
 ***
 
-# Cli tools
-
-## bat - A better cat(Tip: Use `bat *` to print all files in current folder(also works with `cat`)),      [Docs](https://github.com/sharkdp/bat)
-
-***
-
 # Web Apps
 
 - [Workflowy](https://workflowy.com/) - WorkFlowy offers a simpler way to stay organized. If you have a crazy job or an ambitious project, we will be your trusty sidekick.
