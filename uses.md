@@ -24,17 +24,7 @@
 
 ***
 
-# Chrome's new tab
-
-## [Palettab](https://chrome.google.com/webstore/detail/palettab/bidckpnndigbjhmojikkhmejkfkpgoih) - Bringing awesome colors and fonts to the new tab page! A little bit of something fresh every time you hit that new tab button.
-
-## [Momentum](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=en) - Replace new tab page with a personal dashboard featuring to-do, weather, and inspiration.
-
-***
-
 # Cli tools
-
-
 
 ## bat - A better cat(Tip: Use `bat *` to print all files in current folder(also works with `cat`)),      [Docs](https://github.com/sharkdp/bat)
 
@@ -148,7 +138,9 @@ Google Docs Offline - Built in
 
 [Cookies Editor](https://chrome.google.com/webstore/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm?hl=en)
 
-[Momentum - Extension for new tab](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=en) 
+[Palettab](https://chrome.google.com/webstore/detail/palettab/bidckpnndigbjhmojikkhmejkfkpgoih) - Bringing awesome colors and fonts to the new tab page! A little bit of something fresh every time you hit that new tab button.
+
+[Momentum](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=en) - Replace new tab page with a personal dashboard featuring to-do, weather, and inspiration.
 
 Gum Shoe - `gselog` (No longer works or exists )
 
