@@ -14,8 +14,6 @@
 - [Netlimiter](https://www.netlimiter.com/) - NetLimiter is an ultimate internet traffic control and monitoring tool designed for Windows. Finally, you will become master over your internet connection.
 - [Typora](https://typora.io/#windows) - Typora gives you a seamless experience as both a reader and a writer. It removes the preview window, mode switcher, syntax symbols of markdown source code, and all other unnecessary distractions.
 
-***
-
 # Web Apps
 
 - [Workflowy](https://workflowy.com/) - WorkFlowy offers a simpler way to stay organized. If you have a crazy job or an ambitious project, we will be your trusty sidekick.
@@ -23,10 +21,6 @@
 - [Message Tab](https://www.clocktab.com/msg-tab) - Beautiful window to write full width of texts.
 - [Countdown Tab](https://www.clocktab.com/countdown) - Amazing tool to alwasys have a countdonwn running for big events.
 - [World Clock](https://www.clocktab.com/world-clock) - Change a time to use as Time Zone Converter
-
-
-
-***
 
 # Chrome Extensions
 
@@ -87,8 +81,6 @@
 - [Multiple Tools for Facebook](https://chrome.google.com/webstore/detail/multiple-tools-for-facebo/eojdckfcadamkapabechhbnkleligand)
 - [Convertio](https://chrome.google.com/webstore/detail/convertio/eppjkefeiehhflmgkhdooajgbkkegpcl?hl=en) - A Document format converter Better use web service @ https://convertio.co 
 - [Screen Recorder](https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden/related?hl=en) - (via Ratan)
-
-***
 
 # Online Coding Environmensts
 
