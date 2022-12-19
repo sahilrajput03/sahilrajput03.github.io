@@ -120,22 +120,16 @@
 - [vscode-faker - Budi Irawan](https://marketplace.visualstudio.com/items?itemName=deerawan.vscode-faker)
 - [Live Share Extension Pack](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare-pack)
 
-# Guides
+## Guides
 
-## [vscodecandothat](https://www.vscodecandothat.com/)
+- [vscodecandothat](https://www.vscodecandothat.com/)
+- [emmet cheatsheet](https://docs.emmet.io/cheat-sheet/), [Abbrevation Syntax emmet](https://docs.emmet.io/abbreviations/syntax/)
 
-## [emmet cheatsheet](https://docs.emmet.io/cheat-sheet/), [Abbrevation Syntax emmet](https://docs.emmet.io/abbreviations/syntax/)
+## Other people uses
 
-# Other people uses
+- https://dzhavat.github.io/uses
+- https://kentcdodds.com/uses
+- [Interesting post](https://dev.to/nickytonline/do-you-have-a-uses-page-5b82)
 
-## https://dzhavat.github.io/uses
-
-## https://kentcdodds.com/uses
-
-### [Interesting post](https://dev.to/nickytonline/do-you-have-a-uses-page-5b82)
-
-
-
-Thanks for visiting.
-
-~ [Sahil Rajput](https://twitter.com/freakstarrocks) - [Twitter](https://twitter.com/freakstarrocks)
+> Thanks for visiting.
+> [Sahil Rajput](https://twitter.com/freakstarrocks) - [Twitter](https://twitter.com/freakstarrocks)
