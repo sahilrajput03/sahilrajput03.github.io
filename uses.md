@@ -132,4 +132,4 @@
 - [Interesting post](https://dev.to/nickytonline/do-you-have-a-uses-page-5b82)
 
 > Thanks for visiting.
-> [Sahil Rajput](https://twitter.com/freakstarrocks) - [Twitter](https://twitter.com/freakstarrocks)
+> Sahil Rajput - [Twitter](https://twitter.com/freakstarrocks)
