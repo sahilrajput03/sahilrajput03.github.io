@@ -97,9 +97,7 @@
 - [StackBlitz](https://stackblitz.com/) - StackBlitz is an online IDE where you can create Angular & React projects that are immediately online & shareable via link… in just one click. [Docs](https://developer.stackblitz.com/docs/platform/), Have Emmet support + Live reload(Only after you sign in(Has support for Github integrated signing)).
 - [Expo](https://expo.io/) - [Expo](http://expo.io/) is a framework and a platform for universal React applications(including React native).
 - [Typescript Playground](https://www.typescriptlang.org/play?#code/Q) - Provides online execution of typescript intelligently.
-- [Try it Yourself @ W3schools](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default) - You can use below script to make it run every 500ms easily with if you run below code in browser's console:
-
-`setInterval(() => document.getElementById('runbtn').click(), 500)`
+- [Try it Yourself @ W3schools](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default) - You can use below script to make it run every 500ms easily with if you run below code in browser's console: `setInterval(() => document.getElementById('runbtn').click(), 500)`
 
 # Vscode Extensions
 
