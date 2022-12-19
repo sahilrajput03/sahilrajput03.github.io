@@ -98,17 +98,12 @@
 
 # Online Coding Environmensts
 
-## [JS Bin](https://jsbin.com/) - JS Bin is a tool for experimenting with web languages. In particular HTML, CSS and JavaScript, but JS Bin also supports other languages too (like Markdown, Jade and Sass). [Docs](https://jsbin.com/help/getting-started/) , [Shortcut Keys](https://jsbin.com/help/keyboard-shortcuts/) , Have Emmet support + Live reload, [FAQ's](https://jsbin.com/help/faq/).
-
-## [CodeSandbox](https://codesandbox.io/) - CodeSandbox is an online editor for rapid web development. With CodeSandbox, you can prototype quickly, experiment easily, and share creations with a click. [Docs](https://codesandbox.io/docs) , Have Emmet support + Live reload, [FAQ's](https://codesandbox.io/docs/faq).
-
-## [StackBlitz](https://stackblitz.com/) - StackBlitz is an online IDE where you can create Angular & React projects that are immediately online & shareable via link… in just one click. [Docs](https://developer.stackblitz.com/docs/platform/), Have Emmet support + Live reload(Only after you sign in(Has support for Github integrated signing)).
-
-## [Expo](https://expo.io/) - [Expo](http://expo.io/) is a framework and a platform for universal React applications(including React native).
-
-## [Typescript Playground](https://www.typescriptlang.org/play?#code/Q) - Provides online execution of typescript intelligently.
-
-## [Try it Yourself @ W3schools](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default) - You can use below script to make it run every 500ms easily with if you run below code in browser's console:
+- [JS Bin](https://jsbin.com/) - JS Bin is a tool for experimenting with web languages. In particular HTML, CSS and JavaScript, but JS Bin also supports other languages too (like Markdown, Jade and Sass). [Docs](https://jsbin.com/help/getting-started/) , [Shortcut Keys](https://jsbin.com/help/keyboard-shortcuts/) , Have Emmet support + Live reload, [FAQ's](https://jsbin.com/help/faq/).
+- [CodeSandbox](https://codesandbox.io/) - CodeSandbox is an online editor for rapid web development. With CodeSandbox, you can prototype quickly, experiment easily, and share creations with a click. [Docs](https://codesandbox.io/docs) , Have Emmet support + Live reload, [FAQ's](https://codesandbox.io/docs/faq).
+- [StackBlitz](https://stackblitz.com/) - StackBlitz is an online IDE where you can create Angular & React projects that are immediately online & shareable via link… in just one click. [Docs](https://developer.stackblitz.com/docs/platform/), Have Emmet support + Live reload(Only after you sign in(Has support for Github integrated signing)).
+- [Expo](https://expo.io/) - [Expo](http://expo.io/) is a framework and a platform for universal React applications(including React native).
+- [Typescript Playground](https://www.typescriptlang.org/play?#code/Q) - Provides online execution of typescript intelligently.
+- [Try it Yourself @ W3schools](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default) - You can use below script to make it run every 500ms easily with if you run below code in browser's console:
 
 `setInterval(() => document.getElementById('runbtn').click(), 500)`
 
